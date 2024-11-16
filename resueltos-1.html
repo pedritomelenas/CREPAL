@@ -1,0 +1,3011 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Matrices y sistemas de ecuaciones – Problemas resueltos de Álgebra Lineal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<!--Sagecell-->
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage",evalButtonText: 'Evaluar'});</script>
+
+<!--GeoGebra-->
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<!--<link rel = "shortcut icon" href = "favicon.png" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+<!-- selector cuerpos finitos -->
+<script type="text/javascript" language="javascript">
+
+//difference of two arrays
+Array.prototype.diff = function(arr2) { 
+  return this.filter(x => !arr2.includes(x)); 
+}
+
+//ocultar todos los articulos
+function ocultar_todo(){
+  var xs = document.querySelectorAll("article");
+  var i;
+  console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      xs[i].style.display = "none";
+  } 
+}
+
+//mostrar los articulos con las casillas seleccionadas
+function mostrar(){
+  var xs=[]; 
+  var i, xsbasico, xsmedio, xsavanzado, xscf, x;
+  //console.log(xs);
+  
+  ocultar_todo();
+  
+  if (casilla_basico.checked){
+    xsbasico=document.querySelectorAll("[class*='basico']");
+    console.log(xsbasico);
+    //xs=xs.join(xsbasico);
+    xs= [...new Set([...xs, ...xsbasico])];
+  }
+  if (casilla_medio.checked){
+    xsmedio=document.querySelectorAll("[class*='medio']");
+    console.log(xsmedio);
+    //xs=xs.join(xsmedio);
+    xs= [...new Set([...xs, ...xsmedio])];
+  }
+  if (casilla_avanzado.checked){
+    xsavanzado=document.querySelectorAll("[class*='avanzado']");
+    console.log(xsavanzado);
+    //xs=xs.join(xsavanzado);
+    xs = [...new Set([...xs, ...xsavanzado])];
+  }
+  
+  for(i=0; i<xs.length; i++){
+      if(!xs[i].className.includes("cuerpo_finito")){
+        xs[i].style.display = "block";        
+      }else{
+        if (casilla_cf.checked){
+          xs[i].style.display = "block";
+        }
+      }
+  }
+}
+
+
+function CF() {
+  var xs = document.querySelectorAll("[class*='cuerpo_finito']");
+  var i;
+  //console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      x = xs[i]
+      if (casilla_cf.checked) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      } 
+    }  
+}
+
+</script>
+  
+  
+  <!-- contador para artículos (ejercicios) -->
+  
+  <style>
+    body {
+      counter-reset: article;
+    }
+    
+    article:before {
+      counter-increment: article;
+      content: "Ejercicio " counter(article) ". ";
+      font-weight: bold;
+    }
+    
+    article {
+      border-style: solid;
+      border-width: 1px 1px 1px 5px;
+      border-color: gray gray gray gray;
+      border-radius: 5px;
+      padding: 0.5em 0.5em 0.5em 0.5em;
+      margin-bottom: 0.5em;
+    }
+    </style>
+    
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Problemas resueltos de Álgebra Lineal</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/pedritomelenas/Algebra-Lineal"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./resueltos-1.html">Matrices y sistemas de ecuaciones</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Matrices y sistemas de ecuaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Espacios vectoriales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aplicaciones lineales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Espacio euclídeo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-examenes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Otros</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Hecho con <a href="https://quarto.org/">Quarto</a></p>
+</div></div></nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matrices y sistemas de ecuaciones</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- LTeX: language=es-ES --->
+<p>Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked="" onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos.</p>
+<p><input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Mostrar ejercicios básicos. <input type="checkbox" id="casilla_medio" value="medioon" checked="" onclick="mostrar();"> Mostrar ejercicios de dificultad media. <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Mostrar ejercicios avanzados.</p>
+<!--
+Si quieres ocultar o mostrar los ejercicios referentes a cuerpos finitos, puedes hacerlo pulsando este botón. <button id="mostrarcf" class="button" style="display:inline;vertical-align: middle;" onclick="mostrarCF();">Ocultar CF</button>  
+ </p>-->
+<article class="cuerpo_finito-basico" style="display:block;">
+<p>Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span> y <span class="math inline">\(\mathbb{Z}_5\)</span>.</p>
+<span class="math display">\[\left\{\begin{aligned} x_{2}-2x_{3}&amp;= -4,\\ x_{1}+x_{2}-x_{3}&amp;=0,\\ 2x_{1}-x_{2}+x_{3}&amp;=3. \end{aligned}\right.\]</span>
+<details>
+<summary>
+Solución
+</summary>
+<p>Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada.</p>
+<h3 class="anchored">
+Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>
+</h3>
+<p>En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+0 &amp; 1 &amp; -2 &amp; -4\\
+1 &amp; 1 &amp; -1 &amp; 0\\
+2 &amp; -1 &amp; 1 &amp; 3
+\end{array}\right)\sim_{f_1\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; -1 &amp; 0\\
+0 &amp; 1 &amp; -2 &amp; -4\\
+2 &amp; -1 &amp; 1 &amp; 3
+\end{array}\right).\]</span></p>
+<p>Ahora utilizamos el pivote para hacer ceros debajo de él, por medio de una operación elemental del tipo: a la fila <span class="math inline">\(j\)</span> se le resta la fila uno multiplicada por el coeficiente <span class="math inline">\(a_{j1}\)</span>. En este caso solo hay que realizarlo para la fila tres:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; -1 &amp; 0\\
+0 &amp; 1 &amp; -2 &amp; -4\\
+2 &amp; -1 &amp; 1 &amp; 3
+\end{array}\right)
+\sim_{f_3-2f_1\rightarrow f_3}  
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; -1 &amp; 0\\
+0 &amp; 1 &amp; -2 &amp; -4\\
+0 &amp; -3 &amp; 3 &amp; 3
+\end{array}\right).\]</span></p>
+<p>Ahora procedemos de un modo similar con el pivote de la segunda ecuación, que ya está en la posición deseada, con él hacemos cero todos los elementos que están en su columna, tanto debajo como encima:</p>
+<p><span class="math display">\[  
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; -1 &amp; 0\\
+0 &amp; \boxed{1} &amp; -2 &amp; -4\\
+0 &amp; -3 &amp; 3 &amp; 3
+\end{array}\right)\sim_{f_1-f_2\rightarrow f_1}  
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; -2 &amp; -4\\
+0 &amp; -3 &amp; 3 &amp; 3
+\end{array}\right)\sim_{f_3+3f_2\rightarrow f_3}  
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; -2 &amp; -4\\
+0 &amp; 0 &amp; -3 &amp; -9
+\end{array}\right).\]</span></p>
+<p>Por último, normalizamos la tercera fila dividiéndola por menos tres:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; -2 &amp; -4\\
+0 &amp; 0 &amp; -3 &amp; -9
+\end{array}\right)
+\sim_{-\frac{1}{3}f_3\rightarrow f_3}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; -2 &amp; -4\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3
+\end{array}\right).\]</span></p>
+<p>Por último usamos este pivote para hacer ceros el resto de entradas de su columna:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; -2 &amp; -4\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3
+\end{array}\right)
+\sim_{f_1-f_3\rightarrow f_1}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; \boxed{1} &amp; -2 &amp; -4\\
+0 &amp; 0 &amp; \boxed{1} &amp; -3
+\end{array}\right)\sim_{f_2+2f_3\rightarrow f_2}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; \boxed{1} &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3
+\end{array}\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[0,1,-2],[1,1,-1],[2,-1,1]]) #matriz de coeficientes
+b=vector(QQ,[-4,0,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+<p>El sistema asociado a esta matriz tiene exactamente las mismas soluciones que el de partida (son sistemas equivalentes), y ha quedado de la siguiente manera:</p>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+x_{1}&amp;= 1,\\
+x_{2}&amp;=2,\\
+x_{3}&amp;=3.
+\end{aligned}\right.
+\]</span></p>
+<p>Luego es un sistema compatible determinado, y su única solución es <span class="math display">\[(1,2,3).\]</span></p>
+<h3 class="anchored">
+Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>
+</h3>
+<p>En primer lugar vamos a substituir los coeficientes por representantes en <span class="math inline">\(\{0,1,2\}\)</span>:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+0 &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 1 &amp; 2 &amp; 0\\
+2 &amp; 2 &amp; 1 &amp; 0
+\end{array}\right).\]</span></p>
+<p>Y ahora calculamos la forma escalonada reducida por filas de esa matriz. Buscamos un pivote para la primera columna, que puede ser perfectamente el primer elemento de la segunda fila.</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+0 &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 1 &amp; 2 &amp; 0\\
+2 &amp; 2 &amp; 1 &amp; 0
+\end{array}\right)\sim_{f_1\rightarrow f_2}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 2\\
+2 &amp; 2 &amp; 1 &amp; 0
+\end{array}\right).\]</span></p>
+<p>Para eliminar la otra entrada no nula de la primera columna, que está en la tercera fila, multiplicamos la primera por <span class="math inline">\(-2\)</span> y se lo sumamos a la última fila. Como <span class="math inline">\(-2\)</span> módulo <span class="math inline">\(3\)</span> es <span class="math inline">\(1\)</span>, esto equivale a sumarle a la tercera la primera fila.</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 2\\
+2 &amp; 2 &amp; 1 &amp; 0
+\end{array}\right)\sim_{f_3+f_1\rightarrow f_3}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right).\]</span></p>
+<p>Ahora señalamos (ya está hecho) el pivote de la segunda fila y lo usamos para hacer cero el resto de posiciones de su columna:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; \boxed{1} &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_{f_1+2f_2\rightarrow f_1}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; \boxed{1} &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right).
+\]</span></p>
+<p>Obtenemos así la forma escalonada reducida de nuestra matriz de coeficientes ampliada.</p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(3),[[0,1,-2],[1,1,-1],[2,-1,1]]) #matriz de coeficientes
+b=vector(GF(3),[-4,0,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+<p>Puesto que la tercera fila ha quedado <span class="math inline">\(0=0\)</span>, la correspondiente ecuación se puede eliminar, quedando el siguiente sistema que es equivalente al de partida:</p>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+x_{1}+x_3&amp;= 1,\\
+x_{2}+x_3&amp;=2.\\
+\end{aligned}\right.
+\]</span></p>
+<p>Donde podemos despejar <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> (que son las incógnitas que corresponden con los pivotes) y usar <span class="math inline">\(x_3\)</span> como parámetro (la incógnita restante), quedando las soluciones parametrizadas de la siguiente forma:</p>
+<p><span class="math display">\[
+\left.\begin{aligned}
+x_{1}&amp;= 1+2\lambda\\
+x_{2}&amp;=2+2\lambda\\
+x_3&amp;=\lambda
+\end{aligned}\right\}, \lambda \in \mathbb{Z}_3.
+\]</span></p>
+<p>Luego este sistema tiene el siguiente conjunto de soluciones:</p>
+<p><span class="math display">\[\{ (1,2,0), (0,1,1),(2,0,2)\}.\]</span></p>
+<p>Por tanto, en el caso de tomar coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>, obtenemos un sistema compatible indeterminado.</p>
+<h3 class="anchored">
+Coeficientes en <span class="math inline">\(\mathbb{Z}_5\)</span>
+</h3>
+<p>En primer lugar vamos a sustituir los coeficientes por sus respectivos representantes en <span class="math inline">\(\{0,1,2,3,4\}\)</span>:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+0 &amp; 1 &amp; 3 &amp; 1\\
+1 &amp; 1 &amp; 4 &amp; 0\\
+2 &amp; 4 &amp; 1 &amp; 3
+\end{array}\right).\]</span></p>
+<p>Procedemos com en los casos anteriores, buscando un pivote con el que reducir la primera columna.</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+0 &amp; 1 &amp; 3 &amp; 1\\
+1 &amp; 1 &amp; 4 &amp; 0\\
+2 &amp; 4 &amp; 1 &amp; 3
+\end{array}\right)
+\sim_{f_1\rightarrow f_2}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 4 &amp; 0\\
+0 &amp; 1 &amp; 3 &amp; 1\\
+2 &amp; 4 &amp; 1 &amp; 3
+\end{array}\right) \sim_{f_3+3f_1\rightarrow f_3}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 4 &amp; 0\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 2 &amp; 3 &amp; 3
+\end{array}\right).\]</span></p>
+<p>Procedemos con la segunda fila (y columna):</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 4 &amp; 0\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 2 &amp; 3 &amp; 3
+\end{array}\right)
+\sim_{f_1+4f_2\rightarrow f_1}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 2 &amp; 3 &amp; 3
+\end{array}\right)\sim_{f_3+3f_2\rightarrow f_3}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 0 &amp; 2 &amp; 1
+\end{array}\right).
+\]</span></p>
+<p>Teniendo en cuenta que <span class="math inline">\(2^{-1}=3\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 0 &amp; 2 &amp; 1
+\end{array}\right)\sim_{3f_3\rightarrow f_3}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3
+\end{array}\right).
+\]</span></p>
+<p>Por último usamos este pivote para hacer todos los ceros que sea posible:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 4\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3
+\end{array}\right)\sim_{f_1+4f_3\rightarrow f_1}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3
+\end{array}\right)\sim_{f_2+2f_3\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; \boxed{1} &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3
+\end{array}\right).
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(5),[[0,1,-2],[1,1,-1],[2,-1,1]]) #matriz de coeficientes
+b=vector(GF(5),[-4,0,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+<p>Nos ha quedado el sistema (equivalente al original):</p>
+<p><span class="math display">\[
+\left\{\begin{aligned}
+x_{1}&amp;= 1,\\
+x_{2}&amp;=2,\\
+x_{3}&amp;=3.
+\end{aligned}\right.
+\]</span></p>
+<p>Luego este sistema tiene una única solución:</p>
+<p><span class="math display">\[(1,2,3),\]</span></p>
+y de esta forma es compatible determinado.
+</details>
+</article>
+<article class="cuerpo_finito-basico" style="display:block;">
+<p>Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_2\)</span>.</p>
+<p><span class="math display">\[\left\{\begin{aligned} x-y+z+t+v&amp;=0,\\ x+y+z+t-v&amp;=0,\\ -x-y+z+t-v&amp;=0. \end{aligned}\right.\]</span></p>
+<details>
+<summary>
+Solución
+</summary>
+<p>Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. Además, un sistema homogéneo siempre es Compatible puesto que admite la solución <span class="math inline">\((0,0,0,0,0)\)</span>.</p>
+<h3 class="anchored">
+Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>
+</h3>
+<p><span class="math display">\[\left(\begin{array}{rrrrr}
+\boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; -1\\
+-1 &amp; -1 &amp; 1 &amp; 1 &amp; -1
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_2-f_1\rightarrow f_2\\
+f_3+f_1\rightarrow f_3 \end{array}}
+\left(\begin{array}{rrrrr}
+\boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; -2 &amp; 2 &amp; 2 &amp; 0
+\end{array}\right).\]</span></p>
+<p>Podemos tomar como pivote el segundo elemento de la segunda fila o utilizarla antes para hacer cero en la posición <span class="math inline">\((3,2)\)</span>. Estaríamos apartándonos del método de Gauss-Jordan, pero al ser la forma de escalonada reducida por filas de la matriz única, no importa cuál es el camino para obtenerla.</p>
+<p><span class="math display">\[\left(\begin{array}{rrrrr}
+\boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; -2 &amp; 2 &amp; 2 &amp; 0
+\end{array}\right)
+\sim_{f_3+f_2\rightarrow f_3}  
+\left(\begin{array}{rrrrr}
+\boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; 0 &amp; 2 &amp; 2 &amp; -2
+\end{array}\right).\]</span></p>
+<p>Ahora sí tomamos como pivote el segundo elemento de la segunda fila y con él hacemos cero todos los elementos que están en su columna; después continuamos con el pivote de la tercera fila:</p>
+<p><span class="math display">\[\left(\begin{array}{rrrrr}
+\boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; 0 &amp; 2 &amp; 2 &amp; -2
+\end{array}\right)
+\sim_{\tiny \begin{array}{l} \frac{1}{2}f_2\rightarrow f_2\\
+f_1+f_2\rightarrow f_1 \end{array}}\left(\begin{array}{rrrrr}
+\boxed{1} &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 2 &amp; 2 &amp; -2
+\end{array}\right)\sim_{\tiny \begin{array}{l} \frac{1}{2}f_3\rightarrow f_3 \\f_1-f_3\rightarrow f_1 \end{array}}
+\left(\begin{array}{rrrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; \boxed{1} &amp; 1 &amp; -1
+\end{array}\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,-1,1,1,1],[1,1,1,1,-1],[-1,-1,1,1,-1]])
+show(A,"~",A.rref())
+</script>
+</div>
+<p>Como ya tenemos una matriz escalonada reducida por filas, el sistema no puede simplificarse más. Solo queda escribir las soluciones: para ello observamos que las incógnitas <span class="math inline">\(x,y\)</span> y <span class="math inline">\(z\)</span> están listas para ser despejadas, son las que corresponden a los pivotes. Las que no corresponden a pivotes se utilizan como parámetros (o variables libres). La solución del sistema queda:</p>
+<p><span class="math display">\[\left.\begin{aligned}
+x&amp;=-\lambda_2\\
+y&amp;=\lambda_2\\
+z&amp;=-\lambda_1+\lambda_2\\
+t&amp;=\lambda_1 \\
+v&amp;=\lambda_2
+\end{aligned}\right\},   \lambda_1, \lambda_2 \in \mathbb{Q}.\]</span></p>
+<p>luego es un sistema compatible Indeterminado.</p>
+<h3 class="anchored">
+Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>
+</h3>
+<p>Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que <span class="math inline">\(1\not = -1\)</span>.</p>
+<p>Si repasamos las operaciones utilizadas, son también válidas en <span class="math inline">\(\mathbb{Z}_3\)</span> y en <span class="math inline">\(\mathbb{Z}_5\)</span> (aunque multiplicar por <span class="math inline">\(\frac{1}{2}\)</span> correspondería a multiplicar por <span class="math inline">\(2\)</span> en <span class="math inline">\(\mathbb{Z}_3\)</span> o por <span class="math inline">\(3\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>).</p>
+<p>Comprobemos el razonamiento con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(3),[[1,-1,1,1,1],[1,1,1,1,-1],[-1,-1,1,1,-1]])
+show(A,"~",A.rref())
+</script>
+</div>
+<p>Las soluciones en <span class="math inline">\(\mathbb{Z}_3\)</span> serían</p>
+<p><span class="math display">\[\left.\begin{aligned}
+x&amp;=2\lambda_2\\
+y&amp;=\lambda_2\\
+z&amp;=2\lambda_1+\lambda_2\\
+t&amp;=\lambda_1 \\
+v&amp;=\lambda_2
+\end{aligned}\right\},  \lambda_1, \lambda_2 \in \mathbb{Z}_3.\]</span></p>
+<p>y por tanto es compatible indeterminado y tiene un total de <span class="math inline">\(9\)</span> soluciones.</p>
+<h3 class="anchored">
+Coeficientes en <span class="math inline">\(\mathbb{Z}_5\)</span>
+</h3>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(5),[[1,-1,1,1,1],[1,1,1,1,-1],[-1,-1,1,1,-1]])
+show(A,"~",A.rref())
+</script>
+</div>
+<p>Como hemos comentado, la matriz escalonada reducida es la misma, luego las soluciones son:</p>
+<p><span class="math display">\[\left.\begin{aligned}
+x&amp;=4\lambda_2\\
+y&amp;=\lambda_2\\
+z&amp;=4\lambda_1+\lambda_2\\
+t&amp;=\lambda_1 \\
+v&amp;=\lambda_2
+\end{aligned}\right\},  \ \lambda_1, \lambda_2 \in \mathbb{Z}_5,\]</span></p>
+<p>y por tanto es compatible indeterminado y tiene un total de <span class="math inline">\(25\)</span> soluciones.</p>
+<h3 class="anchored">
+Coeficientes en <span class="math inline">\(\mathbb{Z}_2\)</span>
+</h3>
+<p><span class="math display">\[\left(\begin{array}{ccccc}
+\boxed{1} &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_2-f_1\rightarrow f_2\\
+f_3-f_1\rightarrow f_3 \end{array}}
+\left(\begin{array}{ccccc}
+\boxed{1} &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right),\]</span></p>
+<p>luego la única incógnita despejada sería <span class="math inline">\(x\)</span>, y las soluciones dependerían de <span class="math inline">\(4\)</span> parámetros:</p>
+<p><span class="math display">\[\left.\begin{aligned}
+x&amp;=\lambda_1+\lambda_2+\lambda_3+\lambda_4\\
+y&amp;=\lambda_1\\
+z&amp;=\lambda_2\\
+t&amp;=\lambda_3 \\
+v&amp;=\lambda_4
+\end{aligned}\right\},  \lambda_i \in \mathbb{Z}_2,\ i\in\{1,2,3,4\},\]</span></p>
+luego es compatible indeterminado y tiene un total de <span class="math inline">\(2^4=16\)</span> soluciones.
+</details>
+</article>
+<article class="cuerpo_finito-basico" style="display:block;">
+<p>Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_7\)</span>.</p>
+<p><span class="math display">\[\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&amp;= 2,\\ x_{1}+2x_{2}+x_{3}&amp;=1,\\ x_{2}&amp;=3. \end{aligned}\right.\]</span></p>
+<details>
+<summary>
+Solución
+</summary>
+<p>Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.</p>
+<h3 class="anchored">
+En <span class="math inline">\(\mathbb{Z}_7\)</span>:
+</h3>
+<p><span class="math display">\[\begin{aligned}\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 2 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; \boxed{1} &amp; 0 &amp; 6\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
+f_3-f_1\rightarrow f_3 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp; 6\\
+0 &amp; 0 &amp; 0 &amp;  4
+\end{array}\right)\\
+\sim_{2f_3\rightarrow f_3}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp;  6\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2-6f_3\rightarrow f_2 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp;  0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}\\
+\end{array}\right).
+\end{aligned}
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(7),[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
+b=vector(GF(7),[2,1,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+<p>En el último paso no hemos escrito las operaciones elementales puesto que se da una circunstancia muy especial: el único elemento no nulo es el pivote. Eso hace que operar con esta fila sea muy sencillo, solo borra los elementos de su columna sin cambiar nada más.</p>
+<p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>) entonces el sistema es incompatible.</p>
+<h3 class="anchored">
+En <span class="math inline">\(\mathbb{Z}_5\)</span>:
+</h3>
+<p><span class="math display">\[\begin{aligned}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 2 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; \boxed{1} &amp; 0 &amp; 4\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
+f_3-f_1\rightarrow f_3 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp; 4\\
+0 &amp; 0 &amp; 0 &amp;  4
+\end{array}\right)\\
+\sim_{4f_3\rightarrow f_3}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp;  4\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2-4f_3\rightarrow f_2 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp;  0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}\\
+\end{array}\right).
+\end{aligned}
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(5),[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
+b=vector(GF(5),[2,1,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+<p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
+<h3 class="anchored">
+En <span class="math inline">\(\mathbb{Z}_3\)</span>:
+</h3>
+<p><span class="math display">\[\begin{aligned}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 2 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp;  0
+\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; \boxed{1} &amp; 0 &amp; 4\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
+f_3-f_1\rightarrow f_3 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp; 4\\
+0 &amp; 0 &amp; 0 &amp;  4
+\end{array}\right)\\
+\sim_{4f_3\rightarrow f_3}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp;  4\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2-4f_3\rightarrow f_2 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp;  0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}\\
+\end{array}\right).
+\end{aligned}
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(3),[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
+b=vector(GF(3),[2,1,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+<p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
+<h3 class="anchored">
+En <span class="math inline">\(\mathbb{Q}\)</span>:
+</h3>
+<p><span class="math display">\[\begin{aligned}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 2 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; \boxed{1} &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
+f_3-f_1\rightarrow f_3 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 0 &amp;  4
+\end{array}\right)\\
+\sim_{\frac{1}{4}f_3\rightarrow f_3}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp;  -1\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)
+\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2+f_3\rightarrow f_2 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp;  0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}\\
+\end{array}\right).
+\end{aligned}
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
+b=vector(QQ,[2,1,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.
+</details>
+</article>
+<article class="cuerpo_finito-basico" style="display:block;">
+<p>En el cuerpo <span class="math inline">\(\mathbb{Z}_5\)</span> se considera la matriz <span class="math display">\[C = \begin{pmatrix} 1&amp;1&amp;1&amp;1 \\ 0&amp;2&amp;1&amp;2 \\ 0&amp;4&amp;1&amp;1 \\ \end{pmatrix}.\]</span></p>
+<ol type="a">
+<li>
+Calcula la forma de Hermite por filas de <span class="math inline">\(C\)</span>.
+</li>
+<li>
+Calcula la forma de Hermite por columnas de <span class="math inline">\(C\)</span>.
+</li>
+<li>
+Elige una submatriz cuadrada de <span class="math inline">\(C\)</span> de orden tres que sea regular y calcula su inversa.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Forma de Hermite por filas. Realizamos operaciones elemntales por filas hasta obtener una matriz escalonada reducida por filas:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(
+\begin{array}{rrrr}
+\boxed{1} &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 2 &amp; 1 &amp; 2\\
+0 &amp; 4 &amp; 1 &amp; 1\\
+\end{array}
+\right) &amp; \sim_{\begin{array}{l} 3f_2\rightarrow f_2\end{array}}
+\left(
+\begin{array}{rrrr}
+\boxed{1} &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 3 &amp; 1\\
+0 &amp; 4 &amp; 1 &amp; 1\\
+\end{array}
+\right)\sim_{ \begin{array}{l} f_3-4f_2\rightarrow f_3\end{array}}
+\left(
+\begin{array}{rrrr}
+\boxed{1} &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 0 &amp; 4 &amp; 2\\
+\end{array}
+\right) \\
+&amp; \sim_{ \begin{array}{l} 4f_3\rightarrow f_3\end{array}}
+\left(
+\begin{array}{rrrr}
+\boxed{1} &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; \boxed{1} &amp; 3 &amp; 1\\
+0 &amp; 0 &amp;\boxed{1} &amp; 3\\
+\end{array}
+\right)\sim_{ \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2-3f_3\rightarrow f_2 \end{array}}
+\left(
+\begin{array}{rrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 1\\
+0 &amp;\boxed{1} &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; \boxed{1} &amp; 3\\
+\end{array}
+\right).
+\end{aligned}
+\]</span></p>
+<p>Por tanto la forma de Hermite por filas es</p>
+<p><span class="math display">\[\left(
+\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; 1 &amp; 3\\
+\end{array}
+\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(5),[[1,1,1,1],[0,2,1,2],[0,4,1,1]])
+show(A,"~",A.rref())
+</script>
+</div>
+</li>
+<li>
+<p>Forma de Hermite por columnas. Como el número de pivotes en la forma de Hermite por columnas coincide con el que hay en la de filas, entonces la única posibilidad es que sea <span class="math display">\[\left(
+\begin{array}{rrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0\\
+\end{array}
+\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code> (para eso transponemos la matriz, calculamos su forma escalonada reducida por filas, y volvemos a transponer).</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(5),[[1,1,1,1],[0,2,1,2],[0,4,1,1]])
+show(A,"~",(A.T).rref().T)
+</script>
+</div>
+</li>
+<li>
+<p>Una submatriz cuadrada de orden tres regular y su inversa. Hay cuatro elecciones posibles. Solo damos un ejemplo de cómo calcularlo. Elegimos por ejemplo las tres primeras columnas (como el determinante vale <span class="math inline">\(2-4=-2=3\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>, es regular) y unimos una matriz identidad a la derecha. Para calcular la inversa realizamos operaciones elementales por filas en las filas de <span class="math inline">\((A\mid I)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+(A \mid I)&amp; =\left(
+\begin{array}{rrr|rrr}
+\boxed{1} &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 4 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}
+\right)\sim_{ \begin{array}{l} 3f_2\rightarrow f_2\end{array}}
+\left(
+\begin{array}{rrr|rrr}
+\boxed{1} &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 3 &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; 4 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}
+\right) \sim_{ \begin{array}{l} f_3-4f_2\rightarrow f_3\end{array}}
+\left(
+\begin{array}{rrr|rrr}
+\boxed{1} &amp; 0 &amp; 3 &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; \boxed{1} &amp; 3 &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; 0 &amp; 4 &amp; 0 &amp; 3 &amp; 1\\
+\end{array}
+\right)  \\
+&amp; \sim_{ \begin{array}{l} 4f_3\rightarrow f_3\end{array}}
+\left(
+\begin{array}{rrr|rrr}
+\boxed{1} &amp; 0 &amp; 3 &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; \boxed{1} &amp; 3 &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0 &amp; 2 &amp; 4\\
+\end{array}
+\right) \sim_{ \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2-3f_3\rightarrow f_2 \end{array}}
+\left(
+\begin{array}{rrr|rrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; 2 &amp; 3\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0 &amp; 2 &amp; 4\\
+\end{array}
+\right)=(I\mid A^{-1}).
+\end{aligned}
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(5),[[1,1,1],[0,2,1],[0,4,1]])
+I=matrix(GF(5),[[1,0,0],[0,1,0],[0,0,1]]) #matriz identidad
+AI=A.augment(I,subdivide=True) #matriz aumentada
+show(AI,"~",AI.rref())
+</script>
+</div>
+Finalmente comprobamos que es inversa: <span class="math display">\[\left(
+\begin{array}{rrr}
+1 &amp; 1 &amp; 1 \\
+0 &amp; 2 &amp; 1 \\
+0 &amp; 4 &amp; 1 \\
+\end{array}
+\right)\left(
+\begin{array}{rrr}
+1 &amp; 1 &amp; 3 \\
+0 &amp; 2 &amp; 3 \\
+0 &amp; 2 &amp; 4 \\
+\end{array}
+\right)=\left(
+\begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+\end{array}
+\right).\]</span>
+</li>
+</ol>
+</details>
+</article>
+<article class="cuerpo_finito-medio" style="display:block;">
+<p>Encuentra, si es posible, <span class="math inline">\(P \in \mathcal{M}_{4}(\mathbb{Z}_3)\)</span>, regular, tal que <span class="math inline">\(PA=B\)</span>, donde <span class="math display">\[A = \begin{pmatrix} 1&amp;1&amp;0&amp;2&amp;1 \\ 2&amp;1&amp;1&amp;2&amp;0 \\ 0&amp;2&amp;1&amp;0&amp;2 \\ 0&amp;1&amp;2&amp;1&amp;0 \end{pmatrix}, \qquad B = \begin{pmatrix} 1&amp;1&amp;0&amp;1&amp;2 \\ 1&amp;2&amp;2&amp;1&amp;0 \\ 1&amp;0&amp;1&amp;2&amp;0 \\ 2&amp;2&amp;0&amp;0&amp;0 \end{pmatrix}.\]</span></p>
+<details>
+<summary>
+Solución
+</summary>
+<p>Sabemos que <span class="math inline">\(A\sim_f B\)</span> si y sólo si existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(PA=B\)</span>. Por tanto, primero comprobaremos que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> tienen la misma forma escalonada reducida por filas, calculando además las matrices de paso. Si coinciden, entonces usando las matrices de paso que hemos calculado, podremos encontrar <span class="math inline">\(P\)</span>.</p>
+<ol type="a">
+<li>
+<p>En primer lugar calculamos las formas de Hermite por filas para comprobar que ambas, la de <span class="math inline">\(A\)</span> y la de <span class="math inline">\(B\)</span> son iguales. Al mismo tiempo calcularemos matrices de paso correspondientes a cada una de ellas.</p>
+<p><span class="math display">\[
+\begin{aligned}
+(A \mid I) &amp; = \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 1 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+2 &amp; 1 &amp; 1 &amp; 2 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 2 &amp; 1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{array}\right)\sim_f  \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 1 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 2 &amp; 1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{array}\right) \\
+&amp; \sim_f  \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 1 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; \boxed{1} &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 0 &amp; 0  \\
+0 &amp; 2 &amp; 1 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{array}\right)
+\sim_f  \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; \boxed{1} &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 2 &amp; 1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 \\
+\end{array}\right) \\
+&amp; \sim_f  \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; \boxed{1} &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 2 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2 &amp; 2 &amp; 2 &amp; 1 \\
+\end{array}\right)
+\sim_f  \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; \boxed{1} &amp; 2 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 2 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2 &amp; 2 &amp; 2 &amp; 1 \\
+\end{array}\right)=(H_A|P_A).
+\end{aligned}\]</span></p>
+<span class="math display">\[
+\begin{aligned}
+(B \mid I) &amp; = \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 1 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+1 &amp; 2 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\
+1 &amp; 0 &amp; 1 &amp; 2 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+2 &amp; 2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+\end{array}\right)\sim_f \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 1 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 1 &amp; 2 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+\end{array}\right) \\
+&amp; \sim_f \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 2 &amp; 2 &amp; 0 &amp; 0  \\
+0 &amp; \boxed{1} &amp; 2 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+\end{array}\right) \sim_f \left(\begin{array}{ccccc|cccc}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0  \\
+0 &amp; \boxed{1} &amp; 2 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2 &amp; 2 &amp; 1 \\
+\end{array}\right)=(H_B \mid P_B).
+\end{aligned}
+\]</span>
+</li>
+<li>
+Hemos comprobado que <span class="math inline">\(H_A=H_B\)</span> y por tanto <span class="math inline">\(A\sim_f B\)</span> y existe una matriz <span class="math inline">\(P\)</span> tal que <span class="math inline">\(PA=B\)</span>.
+</li>
+<li>
+<p>Para calcular <span class="math inline">\(P\)</span> podemos ayudarnos de las matrices de paso <span class="math inline">\(P_A\)</span> y <span class="math inline">\(P_B\)</span> calculadas: <span class="math display">\[P_A A=H_A=H_B=P_B B,\]</span> y por tanto <span class="math display">\[P_A A=P_B B.\]</span> Como <span class="math inline">\(P_B\)</span> es regular, <span class="math display">\[(P_B)^{-1}P_A A=B.\]</span> Luego una matriz que verifica la condición pedida sería el producto <span class="math inline">\((P_B)^{-1}P_A\)</span>.</p>
+<p>Para calcularla necesitamos en primer lugar calcular la inversa de <span class="math inline">\(P_B\)</span>, también usando operaciones elementales por filas.</p>
+<p><span class="math display">\[\begin{aligned}
+(P_B \mid I) &amp; = \left(\begin{array}{cccc|cccc}
+1 &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 0 &amp; 0  &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 1 &amp; 0  &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1  &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_f \left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 0 &amp; 0  &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 1 &amp; 0  &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1  &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right) \\
+&amp; \sim_f \left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 0  &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 2 &amp; 0  &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1  &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_f
+\left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 0  &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 2 &amp; 0  &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1  &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right) \\
+&amp; \sim_f \left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 1 &amp; 0  &amp; 2 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 2 &amp; 0  &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1  &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)
+\sim_f \left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 1 &amp; 0  &amp; 2 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 2 &amp; 0  &amp; 2 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1  &amp; 2 &amp; 2 &amp; 0 &amp; 1\\
+\end{array}\right) \\
+&amp; \sim_f \left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 1 &amp; 0  &amp; 2 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0  &amp; 1 &amp; 0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}  &amp; 2 &amp; 2 &amp; 0 &amp; 1\\
+\end{array}\right)
+\sim_f \left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 1 &amp; 0 &amp; 0  &amp; 2 &amp; 0 &amp; 2 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0  &amp; 1 &amp; 2 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0  &amp; 1 &amp; 0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}  &amp; 2 &amp; 2 &amp; 0 &amp; 1\\
+\end{array}\right) \\
+&amp; \sim_f \left(\begin{array}{cccc|cccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0  &amp; 1 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0  &amp; 1 &amp; 2 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0  &amp; 1 &amp; 0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}  &amp; 2 &amp; 2 &amp; 0 &amp; 1\\
+\end{array}\right).
+\end{aligned}\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+PB=matrix(GF(3),[[1,1,2,0],[2,1,0,0],[1,1,1,0],[0,2,2,1]]) 
+I=matrix(GF(3),[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]) #matriz identidad
+PBI=PB.augment(I,subdivide=True) #matriz aumentada
+show(PBI,"~",PBI.rref())
+</script>
+</div>
+<p>Luego una posible <span class="math inline">\(P\)</span> es <span class="math display">\[P=(P_B)^{-1}P_A=\left(\begin{array}{cccc}
+1 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 2 &amp; 0\\
+2 &amp; 2 &amp; 0 &amp; 1\\
+\end{array}\right) \left(\begin{array}{cccc}
+2 &amp; 1 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 2 &amp; 0  \\
+1 &amp; 1 &amp; 2 &amp; 0 \\
+2 &amp; 2 &amp; 2 &amp; 1 \\
+\end{array}\right)= \left(\begin{array}{cccc}
+0 &amp; 2 &amp; 1 &amp; 0  \\
+0 &amp; 2 &amp; 0 &amp; 0  \\
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1 \\
+\end{array}\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+PBI=matrix(GF(3),[[1,1,1,0],[1,2,1,0],[1,0,2,0],[2,2,0,1]]) 
+PA=matrix(GF(3),[[2,1,0,0],[0,0,2,0],[1,1,2,0],[2,2,2,1]])
+P=PBI*PA
+A=matrix(GF(3),[[1,1,0,2,1],[2,1,1,2,0],[0,2,1,0,2],[0,1,2,1,0]]) 
+B=matrix(GF(3),[[1,1,0,1,2],[1,2,2,1,0],[1,0,1,2,0],[2,2,0,0,0]]) 
+P*A==B
+</script>
+</div>
+</li>
+</ol>
+</details>
+</article>
+<article class="cuerpo_finito-avanzado" style="display:block;">
+<p>Sea <span class="math display">\[A=\left (\begin{array}{cccc} 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)\]</span></p>
+<ol type="a">
+<li>
+Encuentra una matriz <span class="math inline">\(B\)</span> tal que <span class="math inline">\(A\cdot B = Id\)</span>.
+</li>
+<li>
+Encuentra todas las matrices <span class="math inline">\(B\)</span> que cumplan la propiedad anterior.
+</li>
+<li>
+¿Existe una matriz <span class="math inline">\(C\)</span> tal que <span class="math inline">\(C\cdot A = Id\)</span>?
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Encontrar <span class="math inline">\(B\)</span> tal que <span class="math inline">\(A\cdot B = Id\)</span>.</p>
+<p>¿Qué orden debe tener <span class="math inline">\(B\)</span>? Como la identidad es una matriz cuadrada, y <span class="math inline">\(A\)</span> tiene tres filas, deducimos que <span class="math inline">\(I\)</span> es la identidad <span class="math inline">\(3\times 3\)</span>. De aquí también deducimos que <span class="math inline">\(B\)</span> tiene que tener cuatro filas y tres columnas.<br></p>
+<p>Si calculamos la forma de Hermite por columnas de <span class="math inline">\(A\)</span> y la matriz de paso, a la que llamaremos <span class="math inline">\(Q\)</span>, entonces <span class="math inline">\(A Q=H\)</span>. La matriz <span class="math inline">\(H\)</span> no es la matriz identidad, por supuesto, porque tiene orden <span class="math inline">\(3\times 4\)</span>, pero puede parecerse bastante. Calculémosla:</p>
+<p><span class="math display">\[\left[ \begin{array}{c}
+A\\
+\hline
+I_4
+\end{array}\right]=\left (\begin{array}{cccc}
+2 &amp; \boxed{1} &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1\\
+\hline
+1 &amp; 0 &amp; 0 &amp;0\\
+0 &amp; 1 &amp; 0 &amp;0\\
+0 &amp; 0 &amp; 1 &amp;0\\
+0 &amp; 0 &amp; 0 &amp;1\\
+\end{array}\right)\sim_c
+\left (\begin{array}{cccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 \\ 2 &amp; 2 &amp; 1 &amp; 0 \\
+4 &amp; 0 &amp; 1 &amp; 0\\
+\hline
+0 &amp; 1 &amp; 0 &amp;0\\
+1 &amp; 3 &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp;1\\
+0 &amp; 0 &amp; 1 &amp;0\\
+\end{array}\right) \sim_c
+\left (\begin{array}{cccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 \\
+2 &amp; \boxed{1} &amp; 1 &amp; 0 \\
+4 &amp; 0 &amp; 1 &amp; 0\\
+\hline
+0 &amp; 3 &amp; 0 &amp;0\\
+1 &amp; 4 &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp;1\\
+0 &amp; 0 &amp; 1 &amp;0\\
+\end{array}\right)
+\]</span></p>
+<p><span class="math display">\[
+\sim_c
+\left (\begin{array}{cccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 \\
+4 &amp; 0 &amp; \boxed{1} &amp; 0\\
+\hline
+4 &amp; 3 &amp; 2 &amp;0\\
+3 &amp; 4 &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp;1\\
+0 &amp; 0 &amp; 1 &amp;0\\
+\end{array}\right) \sim_c
+\left (\begin{array}{cccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \boxed{1} &amp; 0\\
+\hline
+1 &amp; 3 &amp; 2 &amp;0\\
+4 &amp; 4 &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp;1\\
+1 &amp; 0 &amp; 1 &amp;0\\
+\end{array}\right)=\left[ \begin{array}{c}
+H\\
+\hline
+Q
+\end{array}\right].
+\]</span></p>
+<p>Así que <span class="math display">\[\left(\begin{array}{cccc}
+2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1\\
+\end{array}\right)
+\left (\begin{array}{ccc|c}
+1 &amp; 3 &amp; 2 &amp;0\\
+4 &amp; 4 &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp;1\\
+1 &amp; 0 &amp; 1 &amp;0\\
+\end{array}\right)=\left (\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \boxed{1} &amp; 0\\
+\end{array}\right).
+\]</span></p>
+<p>Observando el producto anterior nos damos cuenta de que si tomamos solo las 3 primeras columnas de <span class="math inline">\(Q\)</span> tenemos una matriz que verifica la condición. Así que una posible matriz <span class="math inline">\(B\)</span> es</p>
+<p><span class="math display">\[
+B=\left (\begin{array}{ccc}
+1 &amp; 3 &amp; 2 \\
+4 &amp; 4 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 1 \\
+\end{array}\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(5),[[2,1,3,0],[1,2,1,1],[3,4,2,1]]) 
+B=matrix(GF(5),[[1,3,2],[4,4,1],[0,0,0],[1,0,1]]) 
+I=matrix(GF(5),[[1,0,0],[0,1,0],[0,0,1]])
+A*B==I
+</script>
+</div>
+</li>
+<li>
+<p>Todas las matrices <span class="math inline">\(B\)</span> que cumplen la propiedad anterior. En realidad el planteamiento es sencillo, sería resolver: <span class="math display">\[\left(\begin{array}{cccc}
+2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1\\
+\end{array}\right)
+\left (\begin{array}{ccc}
+x_1 &amp; y_1 &amp; z_1 \\
+x_2 &amp; y_2 &amp; z_2\\
+x_3 &amp; y_3 &amp; z_3\\
+x_4 &amp; y_4 &amp; z_4\\
+\end{array}\right)=\left (\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0  \\
+0 &amp; 0 &amp; 1 \\
+\end{array}\right),
+\]</span></p>
+<p>que puede parecer complicado, son <span class="math inline">\(12\)</span> incógnitas, pero realmente no se mezclan (por eso las he designado con letras distintas). El primer sistema será el que corresponde a las <span class="math inline">\(x\)</span>:</p>
+<p><span class="math display">\[\left(\begin{array}{cccc}
+2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1\\
+\end{array}\right)
+\left (\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4\\
+\end{array}\right)=\left (\begin{array}{c}
+1 \\
+0   \\
+0  \\
+\end{array}\right)
+\]</span></p>
+<p>con matriz ampliada</p>
+<p><span class="math display">\[\left(\begin{array}{cccc|c}
+2 &amp; 1 &amp; 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 0 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 0\\
+\end{array}\right)\]</span></p>
+<p>y las correspondientes a los sistemas para las <span class="math inline">\(y\)</span> y las <span class="math inline">\(z\)</span>:</p>
+<p><span class="math display">\[\left(\begin{array}{cccc|c}
+2 &amp; 1 &amp; 3 &amp; 0 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 0\\
+\end{array}\right), \quad \left(\begin{array}{cccc|c}
+2 &amp; 1 &amp; 3 &amp; 0 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 0 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 1\\
+\end{array}\right).\]</span></p>
+<p>Como se resuelven haciendo operaciones elementales por filas sobre la matriz de coeficientes, los tres pueden resolverse simultáneamente utilizando la matriz:</p>
+<p><span class="math display">\[\left(\begin{array}{cccc|ccc}
+2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)\]</span></p>
+<p>que incluye las tres columnas de términos independientes.</p>
+<p>Utilizamos el método de Gauss-Jordan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left(\begin{array}{cccc|ccc}
+2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\ \boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right) &amp; \sim_f
+\left(\begin{array}{cccc|ccc}
+\boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 2 &amp; 1 &amp; 3 &amp; 1 &amp; 3 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1\\
+\end{array}\right)  \sim_f
+\left(\begin{array}{cccc|ccc}
+\boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; \boxed{1} &amp; 3 &amp; 4 &amp; 3 &amp; 4 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1\\
+\end{array}\right)\\
+&amp; \sim_f
+\left(\begin{array}{cccc|ccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 3 &amp; 4 &amp; 3 &amp; 0 \\
+0 &amp; \boxed{1} &amp; 3 &amp; 4 &amp; 3 &amp; 4 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 1 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_f \left(\begin{array}{cccc|ccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 3 &amp; 2 \\
+0 &amp; \boxed{1} &amp; 3 &amp; 0 &amp; 4 &amp; 4 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 1 &amp; 0 &amp; 1\\
+\end{array}\right).
+\end{aligned}
+\]</span></p>
+<p>Eligiendo en cada caso la columna de términos independientes que corresponde tendremos la solución de los tres sistemas. Por tanto la solución de cada uno de los sistemas es</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+x_1=1, &amp; y_1= 3, &amp; z_1=2,\\
+x_2=4+2\lambda_1, &amp; y_2=4+2\lambda_2, &amp; z_2=1+2\lambda_3,\\
+x_3=\lambda_1, &amp; y_3=\lambda_2, &amp;z_3=\lambda_3,\\
+x_4=1, &amp; y_4=0, &amp; z_4=1,\\
+\end{array} \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.\]</span></p>
+<p>Es decir, todas las matrices son de la forma:</p>
+<span class="math display">\[\left(\begin{array}{ccc}
+1 &amp;  3 &amp; 2\\
+4+2\lambda_1 &amp; 4+2\lambda_2 &amp; 1+2\lambda_3\\
+\lambda_1 &amp; \lambda_2 &amp;\lambda_3\\
+1 &amp; 0 &amp; 1\\
+\end{array}\right), \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.\]</span>
+</li>
+<li>
+<p>Encontrar <span class="math inline">\(C\)</span> tal que <span class="math inline">\(C\cdot A = Id\)</span>. Si pensamos primero en el orden de <span class="math inline">\(C\)</span>, como <span class="math inline">\(A\)</span> tiene tres filas y cuatro columnas, necesariamente <span class="math inline">\(C\)</span> debe tener tres columnas. Por otro lado, como la matriz identidad es cuadrada, en este caso será una matriz <span class="math inline">\(4\times4\)</span>, por lo que <span class="math inline">\(C\)</span> debe tener cuatro filas.<br></p>
+<p>El argumento más fácil de utilizar es posterior al momento en que nos encontramos en el desarrollo del tema. Se usa: <span class="math display">\[\operatorname{rg}(A\cdot B)\leq \min\{\operatorname{rg}(A),\operatorname{rg}(B)\}\]</span> en este caso, por los órdenes de <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> su rango máximo posible es <span class="math inline">\(3\)</span>, luego <span class="math inline">\(\operatorname{rg}(C\cdot A)\leq 3\)</span> mientras que <span class="math inline">\(\operatorname{rg}(I_4)=4.\)</span><br></p>
+También es posible plantearlo de una forma similar al apartado 2, al resolver los sistemas encontraremos que son incompatibles.
+</li>
+</ol>
+</details>
+</article>
+<article class="basico" style="display:block;">
+<p>Dado el sistema de ecuaciones con coeficientes en <span class="math inline">\(\mathbb{Q}\)</span> <span class="math display">\[\left\{\begin{aligned} x - ay + (a+1)z &amp; = 4, \\ ax + 2y + z &amp; = -1. \end{aligned}\right.\]</span> Discútelo según los valores del parámetro <span class="math inline">\(a\)</span>, y resuélvelo para <span class="math inline">\(a=-1\)</span>.</p>
+<details>
+<summary>
+Solución
+</summary>
+<p>En este tipo de ejercicio utilizaremos el Teorema de Rouché-Frobenius junto a los distintos métodos para calcular el rango de una matriz.</p>
+<p>En primer lugar escribimos la matriz ampliada del sistema</p>
+<p><span class="math display">\[(A|b)=\left( \begin{array}{rcc|r}
+1 &amp; -a &amp; a+1 &amp; 4\\
+a &amp; 2 &amp; 1 &amp; -1
+\end{array}\right).\]</span></p>
+<p>Puesto que el orden de matriz de coeficientes es <span class="math inline">\(2\times3\)</span> y el de la ampliada <span class="math inline">\(2\times4\)</span>, en el caso de que <span class="math inline">\(\operatorname{rg}(A)=2\)</span>, entonces <span class="math inline">\(\operatorname{rg}(A|b)=2\)</span> (puesto que no puede haber más de dos pivotes, uno por fila) y usando Teorema de Rouché-Frobenius el sistema será compatible indeterminado. Puesto que el rango no cambia si realizamos cualquier operaciones elementales por columnas, para calcular <span class="math inline">\(\operatorname{rg}(A)\)</span> realizamos algunas, por ejemplo: <span class="math display">\[{\small A=\left( \begin{array}{rcc}
+1 &amp; -a &amp; a+1 \\
+a &amp; 2 &amp; 1  
+\end{array}\right) \sim_c \left( \begin{array}{rcc}
+1 &amp; -a &amp; 1 \\
+a &amp; 2 &amp; 3
+\end{array}\right) \sim_c \left( \begin{array}{rcc}
+1 &amp; -a &amp; 0 \\
+a &amp; 2 &amp; 3-a
+\end{array}\right) }.\]</span> Para el rango de esta matriz es muy fácil utilizar el cálculo de determinantes: si <span class="math inline">\(\begin{vmatrix}
+1 &amp; 0 \\
+a &amp; 3-a
+\end{vmatrix}= 3-a \not = 0\)</span> el rango de <span class="math inline">\(A\)</span> es dos. (También se podría haber hecho en la matriz <span class="math inline">\(A\)</span> directamente, pero este determinante es muy sencillo de calcular y de determinar cuándo es distinto de <span class="math inline">\(0\)</span>.)<br></p>
+<p>Entonces tenemos que en todos los casos en los que <span class="math inline">\(a\not = 3\)</span> tendremos <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|b)=2\)</span> es menor que el número de incógnitas y el sistema es compatible indeterminado.<br> Solo nos queda estudiar el caso <span class="math inline">\(a=3\)</span>, para el que podemos proceder como en los ejercicios del comienzo del tema:</p>
+<p><span class="math display">\[(A|b)=\left( \begin{array}{rrr|r}
+\boxed{1} &amp; -3 &amp; 4 &amp; 4\\
+3 &amp; 2 &amp; 1 &amp; -1
+\end{array}\right)\sim_f  \left( \begin{array}{rrr|r}
+\boxed{1} &amp; 0 &amp; 1 &amp; 5/11\\
+0 &amp; 1 &amp; -1 &amp; -13/11
+\end{array}\right).\]</span></p>
+<p>O bien, podemos volver a aplicar el Teorema de Rouché-Frobenius, en este caso observamos que tomando las dos primeras columnas de <span class="math inline">\(A\)</span> se tiene</p>
+<p><span class="math inline">\(\begin{vmatrix}
+1 &amp; 3 \\
+-3 &amp; 2
+\end{vmatrix}=2+9=11\)</span> luego <span class="math inline">\(\operatorname{rg}(A)=2\)</span> y el mismo razonamiento nos lleva a que también en este caso es compatible indeterminado. <br></p>
+<p>Por tanto, siempre es compatible indeterminado dependiendo de un parámetro.<br></p>
+<p>Para el caso <span class="math inline">\(a=-1\)</span>: <span class="math display">\[(A|b)=\left( \begin{array}{rrr|r}
+\boxed{1} &amp; 1 &amp; 0 &amp; 4\\
+-1 &amp; 2 &amp; 1 &amp; -1
+\end{array}\right)\sim_f \left( \begin{array}{rrr|r}
+\boxed{1} &amp; 1 &amp; 0 &amp; 4\\
+0 &amp; 3 &amp; 1 &amp; 3
+\end{array}\right)\sim_f \left( \begin{array}{rrr|r}
+\boxed{1} &amp; 1 &amp; 0 &amp; 4\\
+0 &amp; \boxed{1} &amp; 1/3 &amp; 1
+\end{array}\right)\sim_f \left( \begin{array}{rrr|r}
+\boxed{1} &amp; 0 &amp; -1/3 &amp; 3\\
+0 &amp; \boxed{1} &amp; 1/3 &amp; 1
+\end{array}\right).
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,1,0],[-1,2,1]]) #matriz de coeficientes
+b=vector(QQ,[4,-1]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+</details>
+</article>
+<article class="cuerpo_finito-medio" style="display:block;">
+<p>Calcula el rango de la siguiente matriz, con coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>, según los valores de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>. <span class="math display">\[\begin{pmatrix} 1 &amp; a &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; b \\ 0 &amp; a &amp; b &amp; a+b \end{pmatrix}\]</span></p>
+<details>
+<summary>
+Solución
+</summary>
+<p>El rango máximo posible de esta matriz es 3. Elegimos una submatriz cuadrada de orden 3 y calculamos su determinante. Escogemos una que a priori sepamos que su determinante no sea nulo y que sea fácil de calcular. Por ejemplo <span class="math display">\[
+\begin{vmatrix}
+1 &amp; a &amp; 0  \\ 2 &amp; 1 &amp; 1  \\ 0 &amp; a &amp; b
+\end{vmatrix}=_{
+(C_2-aC_1 \rightarrow C_2)}= \begin{vmatrix}
+1 &amp; 0 &amp; 0  \\ 2 &amp; 1-2a &amp; 1  \\ 0 &amp; a &amp; b
+\end{vmatrix}=(1-2a)b-a=(1+a)b+2a=2a+b+ab.
+\]</span> Al estar trabajando en <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> pueden tomar solo 3 valores posibles.</p>
+<p>Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo, si <span class="math inline">\(a=0\)</span>, entonces <span class="math inline">\(|A|= b\)</span>; si <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|= 2b+2\)</span>; si <span class="math inline">\(a=2\)</span>, <span class="math inline">\(|A|= 1\)</span>.<br></p>
+<table class="default">
+<tbody><tr>
+<td>
+<span class="math inline">\(_b \setminus  ^a\)</span>
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+</tbody></table>
+<p>De la observación de la tabla anterior deducimos que <span class="math inline">\(\operatorname{rg}(A)=3\)</span> para 7 de los 9 casos, siempre que el determinante es distinto de <span class="math inline">\(0\)</span>. Ahora, estudiamos los dos casos particulares que nos faltan.<br></p>
+<p>Para <span class="math inline">\(a=0=b\)</span>:<br> <span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span> que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.<br></p>
+Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>:<br> <span class="math display">\[
+\begin{pmatrix}
+1 &amp; 1 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 2 &amp; 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 2 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 0
+\end{pmatrix}
+\]</span> que también tiene rango 2 (recordemos que estamos en <span class="math inline">\(\mathbb{Z}_3\)</span>).
+</details>
+</article>
+<article class="cuerpo_finito-basico" style="display:block;">
+Sea <span class="math display">\[A=\left( \begin{array}{cccc} 3-\lambda &amp; 1 &amp; 1 &amp; 0\\ 5 &amp;-\lambda &amp; 0 &amp; 0\\ 0 &amp; -\lambda &amp; -\lambda &amp; 1\\ 0 &amp; -1 &amp; -1 &amp; 2-\lambda \end{array}\right).\]</span>
+<ol type="a">
+<li>
+Calcula el determinante de la matriz <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
+</li>
+<li>
+Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(\lambda\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>.
+</li>
+<li>
+Discute el sistema de ecuaciones con matriz ampliada <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Determinante. Para calcular el determinante más fácilmente, a la segunda columna le restamos la tercera, luego desarrollamos por la segunda columna:</p>
+<p><span class="math display">\[|A|=\left| \begin{array}{cccc}
+3-\lambda &amp; 1 &amp; 1 &amp; 0\\
+5 &amp;-\lambda &amp; 0 &amp; 0\\
+0 &amp; -\lambda &amp; -\lambda &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2-\lambda
+\end{array}\right|=\left| \begin{array}{cccc}
+3-\lambda &amp; 0 &amp; 1 &amp; 0\\
+5 &amp;-\lambda &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; -\lambda &amp; 1\\
+0 &amp; 0 &amp; -1 &amp; 2-\lambda
+\end{array}\right|=(-\lambda)\left| \begin{array}{ccc}
+3-\lambda &amp;  1 &amp; 0\\
+0 &amp;  -\lambda &amp; 1\\
+0 &amp;  -1 &amp; 2-\lambda
+\end{array}\right|\]</span></p>
+Desarrollando ahora por la primera columna <span class="math display">\[|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2\]</span> y este resultado es válido en cualquier cuerpo.
+</li>
+<li>
+<p>Rango. Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.<br></p>
+<p>Para <span class="math inline">\(\lambda=0\)</span>:<br> <span class="math display">\[A=\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 2
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 2
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp;1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\]</span> luego el rango es 3. <br></p>
+Para <span class="math inline">\(\lambda=1\)</span>:<br> <span class="math display">\[A=\left( \begin{array}{cccc}
+2 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp;2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+2 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp;1 &amp; 2 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\]</span> que tiene rango 3.
+</li>
+<li>
+<p>Sistema de ecuaciones.</p>
+<p>Como la matriz ampliada tiene rango 4 para <span class="math inline">\(\lambda\not\in \{0,1,3\}\)</span>, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares <span class="math inline">\(\lambda\in\{0,1,3\}\)</span>:<br></p>
+<p>Para <span class="math inline">\(\lambda=0\)</span>: <span class="math display">\[\left( \begin{array}{ccc|c}
+3 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2
+\end{array}\right).\]</span></p>
+<p>Como aparece la ecuación <span class="math inline">\(0=1\)</span> entonces también es incompatible.<br></p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[\left( \begin{array}{ccc|c}
+2 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 &amp; 0 &amp; 0 &amp; 1\\
+5 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\]</span></p>
+<p>en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.<br></p>
+<p>Para <span class="math inline">\(\lambda=3\)</span>: <span class="math display">\[\left( \begin{array}{ccc|c}
+0 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -3 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; -1
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+0 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -3 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{array}\right)\]</span></p>
+y de nuevo aparece la ecuación <span class="math inline">\(0=1\)</span> con lo que en este caso es incompatible.
+</li>
+</ol>
+</details>
+</article>
+<article class="medio" style="display:block;">
+<p>Sea <span class="math display">\[A=\left(\begin{array}{rccc} 1 &amp; 1 &amp; 1 &amp; 0\\ a &amp; a-1 &amp; a &amp; 1\\ 1 &amp; 1 &amp; 1 &amp; a-1\\ 1 &amp; a &amp; 0 &amp; 0  \end{array}\right)\in \mathcal{M}_4(\mathbb{R}).\]</span> y el sistema de ecuaciones <span class="math display">\[\left\{\begin{aligned}
+x+y+z&amp;=0,\\
+ax+(a-1)y+az&amp;=1,\\
+x+y+z&amp;=a-1,\\
+x+ay&amp;=0.
+\end{aligned}\right.\]</span></p>
+<ol type="a">
+<li>
+Calcula el determinante de la matriz <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Calcula el rango de <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Discute el sistema de ecuaciones según los valores de <span class="math inline">\(a\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Determinante: <span class="math display">\[|A|=\left|\begin{array}{rccc}
+1 &amp; 1 &amp; 1 &amp; 0\\
+a &amp; a-1 &amp; a &amp; 1\\
+1 &amp; 1 &amp; 1 &amp; a-1\\
+1 &amp; a &amp; 0 &amp; 0
+\end{array}\right|= \left|\begin{array}{rccc}
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; -1 &amp; a &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; a-1\\
+1 &amp; a &amp; 0 &amp; 0
+\end{array}\right|
+\]</span> donde a la primera y a la segunda columnas le hemos restado la tercera. Ahora, desarrollando el determinante por la primera columna (y el de orden 3 que aparece de nuevo por su primera columna): <span class="math display">\[
+|A|= (-1) \left|\begin{array}{ccc}
+0 &amp; 1 &amp; 0\\
+-1 &amp; a &amp; 1\\
+0 &amp; 1 &amp; a-1\\
+\end{array}\right|= (-1)^3 \left|\begin{array}{cc}
+1 &amp; 0\\
+1 &amp; a-1\\
+\end{array}\right|=1-a.
+\]</span>
+</li>
+<li>
+<p>Rango. Como <span class="math inline">\(|A|=a-1\)</span>, si <span class="math inline">\(a\not = 1\)</span> el rango de <span class="math inline">\(A\)</span> es 4. Solo queda calcular el rango si <span class="math inline">\(a=1\)</span>. Como después se pide calcular la forma de Hermite por filas, lo realizamos ahora:</p>
+<p><span class="math display">\[
+\begin{aligned}
+A= &amp; \left(\begin{array}{rccc}
+1 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; 1 &amp; 0\\
+\mathbf{1} &amp; 1 &amp; 0 &amp; 0
+\end{array}\right)\sim_f \left(\begin{array}{rccc}
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; -1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+\mathbf{1} &amp; 1 &amp; 0 &amp; 0
+\end{array}\right)\sim_f \left(\begin{array}{rccc}
+\mathbf{1} &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \mathbf{1} &amp; 0\\
+0 &amp; -1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+\end{array}\right)\\
+&amp; \sim_f  \left(\begin{array}{rccc}
+\mathbf{1} &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \mathbf{1} &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+\end{array}\right)\sim_f \left(\begin{array}{rccc}
+\mathbf{1} &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; \mathbf{1} &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; \mathbf{1} &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+\end{array}\right).
+\end{aligned}\]</span> Así, si <span class="math inline">\(a=1\)</span> el rango es <span class="math inline">\(3\)</span>.</p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,1,1,0],[1,0,1,1],[1,1,1,0],[1,1,0,0]]) #matriz de coeficientes
+show(A,"~",A.rref())
+</script>
+</div>
+</li>
+<li>
+Forma de Hermite por filas. Cuando <span class="math inline">\(a\not = 1\)</span> como el rango es <span class="math inline">\(4\)</span>, la forma de Hermite por filas es <span class="math inline">\(I_4\)</span>, para <span class="math inline">\(a=1\)</span> es la calculada en el apartado anterior.
+</li>
+<li>
+Discusión del sistema. Como la matriz ampliada del sistema es <span class="math inline">\(A\)</span>, entonces cuando <span class="math inline">\(a\not = 1\)</span> la matriz ampliada tiene rango 4 mientras que la de coeficientes como máximo podría tener rango 3, así que el sistema es incompatible; en el caso <span class="math inline">\(a=1\)</span>, usando la forma de Hermite por filas de <span class="math inline">\(A\)</span> que hemos calculado observamos que el sistema es compatible determinado.
+</li>
+</ol>
+</details>
+</article>
+<article class="avanzado" style="display:block;">
+<p>Dadas las matrices <span class="math display">\[A=\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; a\\
+1 &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; 1 &amp; a-2 &amp; 1
+\end{pmatrix} \hspace{1cm}
+B=\begin{pmatrix}
+1 &amp; a-1&amp; 1 &amp; 1\\
+1 &amp; 0 &amp; 1 &amp; 1\\
+1 &amp; a &amp; 1 &amp; 1\\
+\end{pmatrix}
+\]</span></p>
+<ol type="a">
+<li>
+Calcula los valores de <span class="math inline">\(a\)</span> para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes.
+</li>
+<li>
+Calcula para qué valores de <span class="math inline">\(a\)</span> son equivalentes por filas.
+</li>
+<li>
+Para <span class="math inline">\(a=1\)</span> calcula la forma de Hermite por columnas de <span class="math inline">\(B\)</span>, que llamaremos <span class="math inline">\(H\)</span>, y <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(H=BP\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Calcular los valores de <span class="math inline">\(a\)</span> para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes.<br> Dos matrices son equivalentes <span class="math inline">\(\Leftrightarrow\)</span> tienen el mismo rango.<br> Calculamos el rango de ambas matrices. Como son de orden <span class="math inline">\(3\times 4\)</span> su rango máximo es tres. <br> Para <span class="math inline">\(A\)</span> calculamos un menor de orden tres <span class="math display">\[\left|\begin{array}{ccc}
+1 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; a-2 \\
+\end{array}\right|= \left|\begin{array}{ccc}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; a-2 \\
+\end{array}\right|=a-2.\]</span> Si <span class="math inline">\(a\not = 2\)</span> este menor es distinto de cero y por tanto <span class="math inline">\(\operatorname{rg}(A)=2\)</span>. Veamos qué ocurre para <span class="math inline">\(a=2\)</span>, para lo que sustituimos y calculamos la forma de Hermite por filas: <span class="math display">\[A=\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 2\\
+1 &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; 1 &amp; 0 &amp; 1
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; -1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 2\\
+0 &amp; 1 &amp; -1 &amp; -1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix},\]</span><br> así que para <span class="math inline">\(a=2\)</span> tiene rango 2.</p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,0,1,2],[1,1,0,1],[1,1,0,1]]) #matriz de coeficientes
+show(A,"~",A.rref())
+</script>
+</div>
+Para <span class="math inline">\(B\)</span> observamos que tiene tres columnas idénticas, por lo que el rango máximo puede ser dos. También podemos calcular su forma de Hermite por filas <span class="math display">\[B=\begin{pmatrix}
+1 &amp; a-1&amp; 1 &amp; 1\\
+1 &amp; 0 &amp; 1 &amp; 1\\
+1 &amp; a &amp; 1 &amp; 1\\
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; a-1 &amp; 0 &amp; 0\\
+0 &amp; a &amp; 0 &amp; 0\\
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+\end{pmatrix},\]</span> con lo que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> para todo valor de <span class="math inline">\(a\)</span>.Así que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes para <span class="math inline">\(a=2\)</span>.
+</li>
+<li>
+Calcular para qué valores de <span class="math inline">\(a\)</span> son equivalentes por filas.<br> Para que sean equivalentes por filas deben tener la misma forma de Hermite por filas, y en particular el mismo rango, así que en cualquier caso solo hay que investigar el caso <span class="math inline">\(a=2\)</span>. Como en el apartado anterior hemos calculado la forma de Hermite por filas en este caso, concluimos que nunca son equivalentes por filas.
+</li>
+<li>
+<p>Calcular <span class="math inline">\(H\)</span>, y <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(H=BP\)</span>.<br> Sustituimos <span class="math inline">\(a=1\)</span> en <span class="math inline">\(B\)</span> y realizamos operaciones elementales por columnas apuntándolas en una matriz regular: <span class="math display">\[B=\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 1\\
+1 &amp; 0 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; 1 &amp; 1\\
+\hline
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}\sim_c
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+\hline
+1 &amp; 0 &amp; -1 &amp; -1\\
+-1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix},
+\]</span></p>
+luego <span class="math display">\[H= \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+\end{pmatrix} \hspace{2cm}
+P=\begin{pmatrix}
+1 &amp; 0 &amp; -1 &amp; -1\\
+-1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}.\]</span>
+</li>
+</ol>
+</details>
+</article>
+<article class="medio" style="display:block;">
+<p>Dada la matriz <span class="math display">\[A=\begin{pmatrix}
+1 &amp; a-1 &amp; a &amp; 1\\
+-1 &amp; a-1 &amp; a &amp; 1\\
+0 &amp;2a-2 &amp; 2a &amp; 1\\
+1 &amp; 0 &amp; 2a &amp; 3
+\end{pmatrix}
+\]</span></p>
+<ol type="a">
+<li>
+Calcula el determinante.
+</li>
+<li>
+Calcula la forma de Hermite por filas según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Discute el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span> en función de los valores de <span class="math inline">\(a\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular el determinante.<br> <span class="math display">\[\begin{aligned}
+|A|= &amp;\left|\begin{array}{cccc}
+1 &amp; a-1 &amp; a &amp; 1\\
+-1 &amp; a-1 &amp; a &amp; 1\\
+0 &amp;2a-2 &amp; 2a &amp; 1\\
+1 &amp; 0 &amp; 2a &amp; 3
+\end{array}\right|=\left|\begin{array}{cccc}
+1 &amp; a-1 &amp; a &amp; 1\\
+0 &amp; 2a-2 &amp; 2a &amp; 2\\
+0 &amp;2a-2 &amp; 2a &amp; 1\\
+0 &amp; 1-a &amp; a &amp; 2
+\end{array}\right|= \left|\begin{array}{ccc}
+2a-2 &amp; 2a &amp; 2\\
+2a-2 &amp; 2a &amp; 1\\
+1-a &amp; a &amp; 2
+\end{array}\right|\\
+= &amp; \left|\begin{array}{ccc}
+0 &amp; 0 &amp; 1\\
+2a-2 &amp; 2a &amp; 1\\
+1-a &amp; a &amp; 2
+\end{array}\right|= \left|\begin{array}{cc}
+2a-2 &amp; 2a \\
+1-a &amp; a  
+\end{array}\right|=4a^2-4a=4a(a-1).
+\end{aligned}\]</span>
+</li>
+<li>
+<p>Calcular la forma de Hermite por filas según los valores de <span class="math inline">\(a\)</span>.<br> Por el Teorema de las matrices regulares, si <span class="math inline">\(|A|\not = 0\)</span> la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>, por tanto si <span class="math inline">\(a\not = 0,1\)</span> entonces <span class="math inline">\(H=I_4\)</span>. Estudiamos los casos particulares <span class="math inline">\(a=0\)</span> y <span class="math inline">\(a=1\)</span>.<br> Si <span class="math inline">\(a=0\)</span> <span class="math display">\[A=\begin{pmatrix}
+1 &amp; -1 &amp; 0 &amp; 1\\
+-1 &amp; -1 &amp; 0 &amp; 1\\
+0 &amp; -2 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; 0 &amp; 3
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; -1 &amp; 0 &amp; 1\\
+0 &amp; -2 &amp; 0 &amp; 2\\
+0 &amp; -2 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp; 2
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 5
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}=H.
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,-1,0,1],[-1,-1,0,1],[0,-2,0,1],[1,0,0,3]])
+show(A,"~",A.rref())
+</script>
+</div>
+<p>Si <span class="math inline">\(a=1\)</span> <span class="math display">\[A=\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 1\\
+-1 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 2 &amp; 1\\
+1 &amp; 0 &amp; 2 &amp; 3
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 2 &amp; 2\\
+0 &amp; 0 &amp; 2 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 2
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix} =H.
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,0,1,1],[-1,0,1,1],[0,0,2,1],[1,0,2,3]])
+show(A,"~",A.rref())
+</script>
+</div>
+</li>
+<li>
+Discutir el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span> en función de los valores de <span class="math inline">\(a\)</span>.<br> Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada <span class="math inline">\(H\)</span>.<br> Si <span class="math inline">\(a\not = 0,1\)</span> entonces <span class="math display">\[H= \left(\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)
+\]</span> y como aparece la ecuación <span class="math inline">\(0=1\)</span> es incompatible.<br> Si <span class="math inline">\(a=0\)</span> <span class="math display">\[H=\left( \begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> y también es incompatible.<br> Por último para <span class="math inline">\(a=1\)</span> <span class="math display">\[H= \left( \begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> también es incompatible.
+</li>
+</ol>
+</details>
+</article>
+<article class="medio" style="display:block;">
+<p>Para las matrices: <span class="math display">\[
+A=\begin{pmatrix}
+2 &amp; 1 &amp; 2 \\
+1 &amp; 2 &amp; 2 \\
+2 &amp; 1 &amp; 2 \\
+1 &amp; 2 &amp; 2  
+\end{pmatrix},\;\;
+B=\begin{pmatrix}
+2 &amp; 1 &amp; 2 \\
+1 &amp; 2 &amp; 2 \\
+2 &amp; 1 &amp; 2 \\
+2 &amp; 2 &amp; 2  
+\end{pmatrix},\;\;
+C=\begin{pmatrix}
+1 &amp; 0 &amp; 0  \\
+0 &amp; 1 &amp;  0  \\
+0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0  \\
+\end{pmatrix}.
+\]</span> Determinar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot A \cdot P= C\)</span>.<br> Razonar que no pueden existir matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot B \cdot P=C\)</span></p>
+<details>
+<summary>
+Solución
+</summary>
+<p>El rango de <span class="math inline">\(A\)</span> es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como <span class="math inline">\(C\)</span> es de rango dos y del mismo orden, entonces <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> son equivalentes y por tanto existen matrices regulares <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> verificando <span class="math inline">\(Q\, A \, P=C\)</span>. Sin embargo <span class="math inline">\(B\)</span> tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con <span class="math inline">\(C\)</span>.<br></p>
+<p>Para calcular <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> realizamos operaciones elementales por filas y columnas sobre <span class="math inline">\(A\)</span> hasta obtener <span class="math inline">\(C\)</span>. Una forma posible es transformar <span class="math inline">\(A\)</span> hasta su forma de Hermite por filas y después, a la matriz obtenida se le realizan operaciones elementales por columnas. También podrían realizarse unas y otras operaciones elementales en cualquier orden. <span class="math display">\[\begin{aligned}
+\left(\begin{array}{ccc|cccc}
+2 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 2 &amp; 2 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 2 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; 2 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)&amp; \sim_f
+\left(\begin{array}{ccc|cccc}
+2 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 2 &amp; 2 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1
+\end{array}\right)\sim_f
+\left(\begin{array}{ccc|cccc}
+1 &amp; 1/2 &amp; 1 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 3/2 &amp; 1 &amp; -1/2 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1
+\end{array}\right)\\
+&amp; \sim_f \left(\begin{array}{ccc|cccc}
+1 &amp; 1/2 &amp; 1 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1/2 &amp; 1/3 &amp; -1/6 &amp; 1/3 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1
+\end{array}\right)\sim_f
+\left(\begin{array}{ccc|cccc}
+1 &amp; 0 &amp; 2/3 &amp; 2/3 &amp; -1/3 &amp; 0 &amp; 0\\
+0 &amp; 1/2 &amp; 1/3 &amp; -1/6 &amp; 1/3 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1
+\end{array}\right)\\
+&amp;\sim_f \left(\begin{array}{ccc|cccc}
+1 &amp; 0 &amp; 2/3 &amp; 2/3 &amp; -1/3 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 2/3 &amp; -1/3 &amp; 2/3 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1
+\end{array}\right)
+\end{aligned}\]</span> Ahora por columnas <span class="math display">\[
+\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 2/3 \\
+0 &amp; 1 &amp; 2/3 \\
+0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0  \\
+\hline
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c
+\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0  \\
+\hline
+1 &amp; 0 &amp; -2/3 \\
+0 &amp; 1 &amp; -2/3\\
+0 &amp; 0 &amp; 1
+\end{array}\right).\]</span> Luego, una solución (hay muchas) es <span class="math display">\[Q=
+\left(\begin{array}{cccc}
+2/3 &amp; -1/3 &amp; 0 &amp; 0\\
+-1/3 &amp; 2/3 &amp; 0 &amp; 0\\
+-1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 1
+\end{array}\right),  \hspace{2cm}  
+P=\left(\begin{array}{ccc}
+1 &amp; 0 &amp; -2/3 \\
+0 &amp; 1 &amp; -2/3\\
+0 &amp; 0 &amp; 1
+\end{array}\right).\]</span></p>
+</details>
+</article>
+<article class="medio" style="display:block;">
+<p>Dada la matriz <span class="math display">\[A= \left(\begin{array}{rrrr}
+a &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; a &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; a &amp; 1\\
+1 &amp; 0 &amp; 1 &amp; a
+\end{array}\right).\]</span></p>
+<ol type="a">
+<li>
+Calcula el determinante de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Determina los valores de <span class="math inline">\(a\)</span> para los que la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>.
+</li>
+<li>
+Estudia el rango de <span class="math inline">\(A\)</span> para todos los valores reales de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular el determinante de <span class="math inline">\(A\)</span>.<br> <span class="math display">\[\begin{aligned}
+|A| &amp; = \left|\begin{array}{rrrr}
+a &amp; 1 &amp; 0 &amp; 1\\
+1 &amp; a &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; a &amp; 1\\
+1 &amp; 0 &amp; 1 &amp; a
+\end{array}\right|=\begin{array}{l}\text{restamos a cada fila}\\ \text{la anterior,} \\ \text{empezando desde arriba} \end{array}  = \left|\begin{array}{rrrr}
+a-1 &amp; 1-a &amp; 0 &amp; 0\\
+0 &amp; a &amp; -a &amp; 1\\
+0 &amp; 0 &amp; a-1 &amp; 1-a\\
+1 &amp; 0 &amp; 1 &amp; a
+\end{array}\right|\\
+&amp; =\begin{array}{l}\text{desarrollando}\\ \text{por la primera fila} \end{array}  =
+(a-1)\left|  \begin{array}{ccc}
+a &amp; -a &amp; 0 \\
+0 &amp; a-1 &amp; 1-a \\
+0 &amp; 1 &amp; a \\
+\end{array}
+\right| + (-1)^{1+2}(1-a) \left|  \begin{array}{ccc}
+0 &amp; -a &amp; 0 \\
+0 &amp; a-1 &amp; 1-a \\
+1 &amp; 1 &amp; a \\
+\end{array}
+\right|\\
+&amp; =(a-1)a[a(a-1)+(a-1)]+(1-a)[a(1-a)]=(a-1)^2a(a+1)+(a-1)^2a\\
+&amp; =(a-1)^2a[a+1+1]=(a-1)^2a(a+2).
+\end{aligned}\]</span>
+</li>
+<li>
+Determinar los valores de <span class="math inline">\(a\)</span> para los que la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>.<br> Por el Teorema de las matrices regulares, la forma de Hermite por filas es <span class="math inline">\(I_4\)</span> sí y sólo sí <span class="math inline">\(|A|\neq 0\)</span>, luego ocurre para todo <span class="math inline">\(a\in\mathbb{R}\setminus\{-2,0,1\}\)</span>, esto es , si <span class="math inline">\(a\neq -2, 0, 1\)</span>.
+</li>
+<li>
+<p>Estudiar el rango de <span class="math inline">\(A\)</span>.<br> Si <span class="math inline">\(a\neq -2, 0, 1\)</span>, entonces el <span class="math inline">\(\operatorname{rg}(A)=4\)</span>.<br></p>
+<p>Si <span class="math inline">\(a=1\)</span>:</p>
+<p><span class="math display">\[\left|
+    \begin{array}{cccc}
+      1 &amp; 1 &amp; 0 &amp; 1 \\
+      1 &amp; 1 &amp; 0 &amp; 1 \\
+      1 &amp; 0 &amp; 1 &amp; 1 \\
+      1 &amp; 0 &amp; 1 &amp; 1 \\
+    \end{array}
+  \right| \sim_f\left| \begin{array}{cccc}
+      1 &amp; 1 &amp; 0 &amp; 1 \\
+      0 &amp; -1 &amp; 1 &amp; 0  \\
+      0 &amp; 0 &amp; 0 &amp; 0 \\
+      0 &amp; 0 &amp; 0 &amp; 0 \\
+    \end{array}
+  \right| \Rightarrow \operatorname{rg}(A)=2. \]</span> Si <span class="math inline">\(a=0\)</span>:</p>
+<p><span class="math display">\[\left|
+    \begin{array}{cccc}
+      0 &amp; 1 &amp; 0 &amp; 1 \\
+      1 &amp; 0 &amp; 0 &amp; 1 \\
+      1 &amp; 0 &amp; 0 &amp; 1 \\
+      1 &amp; 0 &amp; 1 &amp; 0 \\
+    \end{array}
+  \right| \sim_c\left| \begin{array}{cccc}
+      1 &amp; 0 &amp; 0 &amp; 0 \\
+      0 &amp; 1 &amp; 0 &amp; 0  \\
+      0 &amp; 1 &amp; 0 &amp; 0 \\
+      0 &amp; 0 &amp; 1 &amp; 0 \\
+    \end{array}
+  \right| \Rightarrow \operatorname{rg}(A)=3. \]</span></p>
+<p>Si <span class="math inline">\(a=-2\)</span>:</p>
+<p><span class="math display">\[\left|
+    \begin{array}{cccc}
+      -2 &amp; 1 &amp; 0 &amp; 1 \\
+      1 &amp; -2 &amp; 0 &amp; 1 \\
+      1 &amp; 0 &amp; -2 &amp; 1 \\
+      1 &amp; 0 &amp; 1 &amp; -2 \\
+    \end{array}
+  \right| \sim_f\left| \begin{array}{cccc}
+      1 &amp; 0 &amp; 1 &amp; -2 \\
+      0 &amp; 1 &amp; 2 &amp; -3  \\
+      0 &amp; -2 &amp; -1 &amp; 3 \\
+      0 &amp; 0 &amp; -3 &amp; 3 \\
+    \end{array}
+  \right| \sim_f \left| \begin{array}{cccc}
+      1 &amp; 0 &amp; 1 &amp; -2 \\
+      0 &amp; 1 &amp; 2 &amp; -3  \\
+      0 &amp; 0&amp; 3 &amp; -3 \\
+      0 &amp; 0 &amp; -3 &amp; 3 \\
+    \end{array}
+  \right| \sim_f \left| \begin{array}{cccc}
+      1 &amp; 0 &amp; 0 &amp; -1 \\
+      0 &amp; 1 &amp; 0 &amp; -1  \\
+      0 &amp; 0&amp; 1 &amp; -1 \\
+      0 &amp; 0 &amp; 0&amp; 0 \\
+    \end{array}
+  \right|    .\]</span></p>
+Luego <span class="math inline">\(\operatorname{rg}(A)=3\)</span>.
+</li>
+<li>
+<p>Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span>.<br> Se ha calculado en el apartado anterior, <span class="math display">\[H=\left( \begin{array}{cccc}
+      1 &amp; 0 &amp; 0 &amp; -1 \\
+      0 &amp; 1 &amp; 0 &amp; -1  \\
+      0 &amp; 0&amp; 1 &amp; -1 \\
+      0 &amp; 0 &amp; 0&amp; 0 \\
+    \end{array}
+\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[-2,1,0,1],[1,-2,0,1],[1,0,-2,1],[1,0,1,-2]])
+show(A,"~",A.rref())
+</script>
+</div>
+</li>
+</ol>
+</details>
+</article>
+<article class="avanzado" style="display:block;">
+<p>Se consideran las matrices: <span class="math display">\[
+A=\begin{pmatrix}
+-1 &amp; -a &amp; a-1 \\
+2a-1 &amp; a &amp; a-1 \\
+1-2a &amp; 0 &amp; 1
+\end{pmatrix},\;\;\;\;
+B=\begin{pmatrix}
+2 &amp; 3 &amp; 4\\
+-2 &amp;-3 &amp;-4 \\
+3 &amp; 4 &amp; 5
+\end{pmatrix}.
+\]</span></p>
+<ol type="a">
+<li>
+Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> es la matriz <span class="math inline">\(A\)</span> invertible.
+</li>
+<li>
+Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> regular de forma que <span class="math inline">\(B=A\cdot P\)</span>.
+</li>
+<li>
+Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(B=A\cdot P\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> es la matriz <span class="math inline">\(A\)</span> invertible.<br> La matriz <span class="math inline">\(A\)</span> es invertible si, y solo si, su determinante es distinto de cero. Calculamos el determinante realizando primero algunas operaciones elementales: <span class="math display">\[
+|A|=\left|\begin{array}{ccc}
+-1 &amp; -a &amp; a-1 \\
+2a-1 &amp; a &amp; a-1 \\
+1-2a &amp; 0 &amp; 1
+\end{array}\right|= \left|\begin{array}{ccc}
+-1 &amp; -a &amp; a-1 \\
+0 &amp; a &amp; a \\
+1-2a &amp; 0 &amp; 1
+\end{array}\right|=\left|\begin{array}{ccc}
+-1 &amp; 0 &amp; 2a-1 \\
+0 &amp; a &amp; a \\
+1-2a &amp; 0 &amp; 1
+\end{array}\right|,
+\]</span> y desarrollando por la segunda columna, <span class="math display">\[\left|\begin{array}{ccc}
+-1 &amp; 0 &amp; 2a-1 \\
+0 &amp; a &amp; a \\
+1-2a &amp; 0 &amp; 1
+\end{array}\right|=a(-1+(2a-1)^2)=a(4a^2-4a)=4a^2(a-1).\]</span> Así, que <span class="math inline">\(A\)</span> tiene inversa cuando <span class="math inline">\(a\not = 0,1\)</span>.
+</li>
+<li>
+<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> regular de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Para que exista esa matriz regular <span class="math inline">\(P\)</span> (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.<br> Entonces calculamos la de <span class="math inline">\(B\)</span>: <span class="math display">\[
+B=\begin{pmatrix}
+2 &amp; 3 &amp; 4\\
+-2 &amp;-3 &amp;-4 \\
+3 &amp; 4 &amp; 5
+\end{pmatrix}\sim_c \begin{pmatrix}
+2 &amp; 3 &amp; 0\\
+-2 &amp;-3 &amp;0 \\
+3 &amp; 4 &amp; -1
+\end{pmatrix} \sim_c \begin{pmatrix}
+2 &amp; 3 &amp; 0\\
+-2 &amp;-3 &amp;0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix} \sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+-1 &amp;0 &amp;0 \\
+0 &amp; 1 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+B=matrix([[2,3,4],[-2,-3,-4],[3,4,5]])
+show(B,"~",(B.T).rref().T)
+</script>
+</div>
+Puesto que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> solo es posible que sean equivalentes por columnas cuando <span class="math inline">\(a=0\)</span> o <span class="math inline">\(a=1\)</span>, porque en otro caso <span class="math inline">\(A\)</span> tiene rango tres.<br> Calculamos la forma de Hermite de <span class="math inline">\(A\)</span> en ambos casos: <span class="math display">\[
+A=\begin{pmatrix}
+-1 &amp; 0 &amp; -1 \\
+-1 &amp; 0 &amp; -1 \\
+1 &amp; 0 &amp; 1
+\end{pmatrix}\sim_c \begin{pmatrix}
+-1 &amp; 0 &amp; 0 \\
+-1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0
+\end{pmatrix}.
+\]</span> En el caso <span class="math inline">\(a=0\)</span> no existe <span class="math inline">\(P\)</span> regular. <span class="math display">\[
+A=\begin{pmatrix}
+-1 &amp; -1 &amp; 0 \\
+1 &amp; 1 &amp; 0 \\
+-1 &amp; 0 &amp; 1
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+-1 &amp;0 &amp;0 \\
+0 &amp; 1 &amp; 0
+\end{pmatrix}.
+\]</span>
+</li>
+<li>
+Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Como hemos razonado en el caso anterior, <span class="math inline">\(P\)</span> existe para <span class="math inline">\(a=1\)</span> y es regular. Cuando <span class="math inline">\(a\not=0,1\)</span> como <span class="math inline">\(A\)</span> es regular, podemos despejar <span class="math inline">\(P\)</span> en la fórmula <span class="math inline">\(B=AP\)</span>: <span class="math display">\[P=A^{-1}B,\]</span> que existe, aunque no es regular porque <span class="math inline">\(B\)</span> no lo es. Así que existe una tal <span class="math inline">\(P\)</span> para todo <span class="math inline">\(a\)</span> salvo <span class="math inline">\(a=0\)</span>.
+</li>
+</ol>
+</details>
+</article>
+<article class="basico" style="display:block;">
+<p>Discutir en función de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> el sistema de ecuaciones lineales: <span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x+y+z &amp;=&amp; 1, \\
+x+y+az &amp;=&amp; 2, \\
+x+y+bz &amp;=&amp; 3. \\
+\end{array}
+\right.
+\]</span> y resolverlo en aquellos casos en que sea compatible.</p>
+<details>
+<summary>
+Solución
+</summary>
+<p>La matriz de coeficientes del sistema <span class="math display">\[\begin{pmatrix}
+1 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; a\\
+1 &amp; 1 &amp; b
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; a-1\\
+0 &amp; 0 &amp; b-1
+\end{pmatrix},
+\]</span> tiene rango 1 si <span class="math inline">\(a=b=1\)</span> y rango 2 en otro caso. La matriz ampliada del sistema <span class="math display">\[\begin{pmatrix}
+1 &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 1 &amp; a &amp; 2\\
+1 &amp; 1 &amp; b &amp; 3
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; a-1 &amp; 1\\
+0 &amp; 0 &amp; b-1 &amp; 2
+\end{pmatrix},
+\]</span> tiene rango 2 si <span class="math inline">\(b-1=2(a-1)\)</span> ( o lo que es lo mismo <span class="math inline">\(b=2a-1\)</span>, que incluye el caso <span class="math inline">\(a=b=1\)</span>) y rango 3 en cualquier otro caso.<br> Así, el sistema es compatible si, y solo si, <span class="math inline">\(b= 2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span> y en esos casos, como <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|B)=2\)</span>, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando <span class="math inline">\(a=b=1\)</span> o bien cuando <span class="math inline">\(b\not = 2a-1\)</span>) es incompatible.<br> Cuando <span class="math inline">\(b=2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span>, resolviendo desde la matriz anterior <span class="math display">\[
+\begin{pmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; a-1 &amp; 1\\
+0 &amp; 0 &amp; 2(a-1) &amp; 2
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; a-1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix},
+\]</span> y el conjunto de soluciones es <span class="math display">\[\left\{ \left(1-\lambda-\frac{1}{a-1}  , \lambda, \frac{1}{a-1}\right); \lambda \in \mathbb{R} \right\}.\]</span></p>
+</details>
+</article>
+<article class="medio" style="display:block;">
+<p>Dadas las matrices <span class="math display">\[
+A=\left(\begin{array}{rrr}
+   1 &amp; a &amp; -1\\
+   a &amp; 1 &amp; 1\\
+   1 &amp; -1 &amp; a\\
+  0 &amp; 0 &amp; a
+  \end{array}
+\right),\,\,\,\,
+B=\left(\begin{array}{rrr}
+   1 &amp; -1 &amp; 1\\
+   1 &amp; 1 &amp; 0\\
+   0 &amp; -b &amp; b\\
+  b &amp; b &amp; 0
+  \end{array}
+\right)
+\]</span></p>
+<ol type="a">
+<li>
+Encuentra los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes.
+</li>
+<li>
+Encuentra los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes por filas.
+</li>
+<li>
+Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=1\)</span>, calcula una matriz <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(QA=B\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes.<br> Dos matrices del mismo orden son equivalentes cuando tienen el mismo rango. Calculamos el rango en función de los parámetros: en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.<br> Para <span class="math inline">\(A\)</span> elegimos <span class="math display">\[
+\left|\begin{array}{rrr}
+      a &amp; 1 &amp; 1\\
+   1 &amp; -1 &amp; a\\
+  0 &amp; 0 &amp; a
+  \end{array}
+\right|= a\left|\begin{array}{rr}
+    a &amp; 1 \\
+   1 &amp; -1 \\
+    \end{array}
+\right|= a(-a-1).\]</span> Así que si <span class="math inline">\(a\not =0, a\not = -1\)</span>, <span class="math inline">\(\operatorname{rg}(A)=3\)</span>.<br> Para <span class="math inline">\(a=0\)</span> <span class="math display">\[A=\left(\begin{array}{rrr}
+   1 &amp; 0 &amp; -1\\
+   0 &amp; 1 &amp; 1\\
+   1 &amp; -1 &amp; 0\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right) \sim_{f} \left(\begin{array}{rrr}
+   1 &amp; 0 &amp; -1\\
+   0 &amp; 1 &amp; 1\\
+   0 &amp; -1 &amp; 1\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right) \sim_{f} \left(\begin{array}{rrr}
+   1 &amp; 0 &amp; -1\\
+   0 &amp; 1 &amp; 1\\
+   0 &amp; 0 &amp; 2\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right) \sim_{f} \left(\begin{array}{rrr}
+   1 &amp; 0 &amp; 0\\
+   0 &amp; 1 &amp; 0\\
+   0 &amp; 0 &amp; 1\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right),
+\]</span> tiene también rango tres y la anterior es su forma de Hermite por filas.<br></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,0,-1],[0,1,1],[1,-1,0],[0,0,0]])
+show(A,"~",A.rref())
+</script>
+</div>
+Para <span class="math inline">\(a=-1\)</span> $$A=(
+<span class="math display">\[\begin{array}{rrr}
+   1 &amp; -1 &amp; -1\\
+   -1 &amp; 1 &amp; 1\\
+   1 &amp; -1 &amp; -1\\
+  0 &amp; 0 &amp; -1
+  \end{array}\]</span>
+)_{f} (
+<span class="math display">\[\begin{array}{rrr}
+   1 &amp; -1 &amp; -1\\
+   0 &amp; 0 &amp; 0\\
+   0 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; -1
+  \end{array}\]</span>
+)_{f} (
+<span class="math display">\[\begin{array}{rrr}
+   1 &amp; -1 &amp; 0\\
+  0 &amp; 0 &amp; 1\\
+   0 &amp; 0 &amp; 0\\
+   0 &amp; 0 &amp; 0\\
+
+  \end{array}\]</span>
+<p>). $$<br>
+tiene rango dos y la anterior es su forma de Hermite por filas.<br></p>
+<p>Para <span class="math inline">\(B\)</span>: <span class="math display">\[\left|\begin{array}{rrr}
+   1 &amp; -1 &amp; 1\\
+   1 &amp; 1 &amp; 0\\
+   0 &amp; -b &amp; b\\
+    \end{array}
+\right|=\left|\begin{array}{rrr}
+   1 &amp; -1 &amp; 1\\
+   0 &amp; 2 &amp; -1\\
+   0 &amp; -b &amp; b\\
+    \end{array}
+\right|=\left|\begin{array}{rr}
+    1 &amp; 0\\
+    -b &amp; b\\
+    \end{array}
+\right|=b.
+\]</span> Así, cuando <span class="math inline">\(b\not = 0\)</span>, <span class="math inline">\(\operatorname{rg}(B)=3\)</span>. Para <span class="math inline">\(b=0\)</span> <span class="math display">\[
+B=\left(\begin{array}{rrr}
+   1 &amp; -1 &amp; 1\\
+   1 &amp; 1 &amp; 0\\
+   0 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right)\sim_{f} \left(\begin{array}{rrr}
+   1 &amp; -1 &amp; 1\\
+   0 &amp; 2 &amp; -1\\
+   0 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right)\sim_{f} \left(\begin{array}{rrr}
+   1 &amp; 0 &amp; 1/2\\
+   0 &amp; 1 &amp; -1/2\\
+   0 &amp; 0 &amp; 0\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right),
+\]</span> que tiene rango dos y tenemos su forma de Hermite por filas.<br></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+B=matrix([[1,-1,1],[1,1,0],[0,0,0],[0,0,0]])
+show(B,"~",B.rref())
+</script>
+</div>
+Por tanto, concluimos que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b=0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>, son equivalentes mientras que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b\neq0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b=0\)</span>, no son equivalentes.
+</li>
+<li>
+Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes por filas.<br> En el caso de que una matriz <span class="math inline">\(4\times 3\)</span> tenga rango tres, su forma de Hermite por filas es necesariamente <span class="math display">\[
+H= \left(\begin{array}{rrr}
+   1 &amp; 0 &amp; 0\\
+   0 &amp; 1 &amp; 0\\
+   0 &amp; 0 &amp; 1\\
+  0 &amp; 0 &amp; 0
+  \end{array}
+\right)
+\]</span> puesto que cada uno de los tres pivotes tienen que estar en columnas distintas. Así que tenemos calculada la forma de Hermite en todos los casos y podemos concluir que no serán equivalentes por filas excepto si <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>.
+</li>
+<li>
+Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=1\)</span>, calcular una matriz <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(QA=B\)</span>.<br> En ese caso las matrices son equivalentes por filas, para encontrar una matriz <span class="math inline">\(Q\)</span>, calculamos <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_2\)</span> tales que: <span class="math display">\[ Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.\]</span> Igualando y despejando <span class="math inline">\(B\)</span> sería <span class="math inline">\(Q=Q_{2}^{-1}Q_{1}\)</span>.
+</li>
+</ol>
+</details>
+</article>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/pedritomelenas\.github\.io\/Software-Matematicas-GAP\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/pedritomelenas/Algebra-Lineal/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>

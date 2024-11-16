@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Espacios vectoriales – Problemas resueltos de Álgebra Lineal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<!--Sagecell-->
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage",evalButtonText: 'Evaluar'});</script>
+
+<!--GeoGebra-->
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<!--<link rel = "shortcut icon" href = "favicon.png" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+<!-- selector cuerpos finitos -->
+<script type="text/javascript" language="javascript">
+
+//difference of two arrays
+Array.prototype.diff = function(arr2) { 
+  return this.filter(x => !arr2.includes(x)); 
+}
+
+//ocultar todos los articulos
+function ocultar_todo(){
+  var xs = document.querySelectorAll("article");
+  var i;
+  console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      xs[i].style.display = "none";
+  } 
+}
+
+//mostrar los articulos con las casillas seleccionadas
+function mostrar(){
+  var xs=[]; 
+  var i, xsbasico, xsmedio, xsavanzado, xscf, x;
+  //console.log(xs);
+  
+  ocultar_todo();
+  
+  if (casilla_basico.checked){
+    xsbasico=document.querySelectorAll("[class*='basico']");
+    console.log(xsbasico);
+    //xs=xs.join(xsbasico);
+    xs= [...new Set([...xs, ...xsbasico])];
+  }
+  if (casilla_medio.checked){
+    xsmedio=document.querySelectorAll("[class*='medio']");
+    console.log(xsmedio);
+    //xs=xs.join(xsmedio);
+    xs= [...new Set([...xs, ...xsmedio])];
+  }
+  if (casilla_avanzado.checked){
+    xsavanzado=document.querySelectorAll("[class*='avanzado']");
+    console.log(xsavanzado);
+    //xs=xs.join(xsavanzado);
+    xs = [...new Set([...xs, ...xsavanzado])];
+  }
+  
+  for(i=0; i<xs.length; i++){
+      if(!xs[i].className.includes("cuerpo_finito")){
+        xs[i].style.display = "block";        
+      }else{
+        if (casilla_cf.checked){
+          xs[i].style.display = "block";
+        }
+      }
+  }
+}
+
+
+function CF() {
+  var xs = document.querySelectorAll("[class*='cuerpo_finito']");
+  var i;
+  //console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      x = xs[i]
+      if (casilla_cf.checked) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      } 
+    }  
+}
+
+</script>
+  
+  
+  <!-- contador para artículos (ejercicios) -->
+  
+  <style>
+    body {
+      counter-reset: article;
+    }
+    
+    article:before {
+      counter-increment: article;
+      content: "Ejercicio " counter(article) ". ";
+      font-weight: bold;
+    }
+    
+    article {
+      border-style: solid;
+      border-width: 1px 1px 1px 5px;
+      border-color: gray gray gray gray;
+      border-radius: 5px;
+      padding: 0.5em 0.5em 0.5em 0.5em;
+      margin-bottom: 0.5em;
+    }
+    </style>
+    
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Problemas resueltos de Álgebra Lineal</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/pedritomelenas/Algebra-Lineal"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./resueltos-2.html">Espacios vectoriales</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrices y sistemas de ecuaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Espacios vectoriales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aplicaciones lineales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Espacio euclídeo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-examenes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Otros</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Hecho con <a href="https://quarto.org/">Quarto</a></p>
+</div></div></nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Espacios vectoriales</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- LTeX: language=es-ES --->
+<p>Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br> <input type="checkbox" id="casilla_cf" value="cfon" checked="" onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos.</p>
+<article>
+<p>En <span class="math inline">\(\mathbb{R}^4\)</span> se considera el conjunto <span class="math display">\[
+\{(b,0,a,b),(0,a,1+a,0),(0,1,1+a,0),(0,1+a,2+2a,1-a)\}.
+\]</span> ¿Cuál es el número máximo de vectores linealmente independientes que puede contener dicho conjunto, según los valores de a y b?</p>
+<details>
+<summary>
+Solución
+</summary>
+<p>Para determinar si los vectores son linealmente independientes o linealmente dependientes construimos la matriz cuyas columnas son esos vectores, a continuación calculamos su rango y lo comparamos con el número de vectores. Se tiene que los vectores son linealmente independientes si y sólo si <span class="math inline">\(\operatorname{rg}(A)\)</span> es máximo (coincide con el número de vectores) y en otro caso son linealmente dependientes.<br></p>
+<p>La matriz que se forma es:</p>
+<p><span class="math display">\[A=\left( \begin{array}{cccc}
+b &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a &amp; 1 &amp; 1+a\\
+a &amp; 1+a&amp; 1+a &amp; 2+2a\\
+b &amp; 0 &amp; 0 &amp; 1-a
+\end{array}\right).\]</span></p>
+<p>Puesto que es cuadrada de orden cuatro, entonces tendrá rango cuatro exactamente cuando el determinante sea distinto de cero. Lo calculamos:</p>
+<p><span class="math display">\[|A|=\left| \begin{array}{cccc}
+b &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a &amp; 1 &amp; 1+a\\
+a &amp; 1+a&amp; 1+a &amp; 2+2a\\
+b &amp; 0 &amp; 0 &amp; 1-a
+\end{array}\right|= \left| \begin{array}{cccc}
+b &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a-1 &amp; 1 &amp; 1+a\\
+a &amp; 0 &amp; 1+a &amp; 2+2a\\
+b &amp; 0 &amp; 0 &amp; 1-a
+\end{array}\right|= b(a-1)(1+a)(1-a).\]</span></p>
+<p>Luego si <span class="math inline">\(b\not = 0\)</span> y <span class="math inline">\(a\not\in\{-1,1\}\)</span>, el rango es cuatro y los vectores son linealmente independientes.</p>
+<p>Para estudiar todos los casos podemos representarlos en una tabla de doble entrada e iremos calculando cada uno de ellos. El primero que completamos es el caso que acabamos de obtener, si <span class="math inline">\(b\not = 0, a\not = \pm 1\)</span> el rango es cuatro. En los demás uno o los dos parámetros toman valores concretos, por lo que es más fácil su estudio. La solución es:</p>
+<table border="1">
+<tbody><tr>
+<td>
+</td>
+<td>
+<span class="math inline">\(a=1\)</span>
+</td>
+<td>
+<span class="math inline">\(a=-1\)</span>
+</td>
+<td>
+<span class="math inline">\(a\not = \pm 1\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(b=0\)</span>
+</td>
+<td>
+rango 2
+</td>
+<td>
+rango 3
+</td>
+<td>
+rango 3
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\(b\not =0\)</span>
+</td>
+<td>
+rango 2
+</td>
+<td>
+rango 3
+</td>
+<td>
+rango 4
+</td>
+</tr>
+</tbody></table>
+<p>Veamos por ejemplo el caso <span class="math inline">\(b\not = 0, a=1\)</span>: <span class="math display">\[A=\left( \begin{array}{cccc}
+b &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 2&amp; 2 &amp; 4\\
+b &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_c \left( \begin{array}{cccc}
+b &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 2&amp; 0 &amp; 0\\
+b &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\]</span> y es inmediato que el rango es dos.</p>
+</details>
+</article>
+<article>
+<p>Estudia si los siguientes conjuntos de vectores son linealmente independientes o linealmente dependientes (se recomienda usar coordenadas en las bases más adecuadas).</p>
+<ol type="a">
+<li>
+<p>En el conjunto de polinomios de <span class="math inline">\(\mathbb{R}[x]\)</span> con grado menor o igual que dos:</p>
+<span class="math display">\[\{ 1+2x+3x^{2},\; 1-x+x^{2},\; 1+x-x^{2},\; x+2x^{2} \}.\]</span>
+</li>
+<li>
+<p>En el conjunto de polinomios de <span class="math inline">\(\mathbb{Z}_3[x]\)</span> con grado menor o igual que tres:</p>
+<span class="math display">\[\{2x, x^3-3, 1+x -4x^3, x^3 + 18x -9\}.\]</span>
+</li>
+<li>
+<p>En <span class="math inline">\(\mathcal{M}_{2}(\mathbb{Z}_7)\)</span>:</p>
+<span class="math display">\[\left\{ \begin{pmatrix} 1 &amp; -1 \\ 0 &amp; 6
+\end{pmatrix}, \begin{pmatrix} -1 &amp; 0 \\ 3 &amp; 1 \end{pmatrix},
+\begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix}, \begin{pmatrix}
+0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\right\}.\]</span>
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<p>En cada caso utilizaremos la base más sencilla que conozcamos del espacio vectorial para obtener coordenadas de los vectores y aplicar el criterio conocido.</p>
+<ol type="a">
+<li>
+<p>Podemos utilizar la base <span class="math inline">\(B=\{1,x,x^2\}\)</span> en la que resulta muy sencillo escribir las coordenadas de los vectores:</p>
+<p><span class="math display">\[\begin{array}{rl}
+1+2x+3x^{2}&amp;=(1,2,3)_B,\\
+1-x+x^{2}&amp;=(1,-1,1)_B,\\
+1+x-x^{2}&amp;=(1,1,-1)_B,\\
+x+2x^{2}&amp;=(0,1,2)_B.
+\end{array}\]</span></p>
+<p>Ahora escribimos las coordenadas por columnas en una matriz y calculamos el rango:</p>
+<p><span class="math display">\[\left(\begin{array}{rrrr}
+1 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp; -1 &amp; 1 &amp; 1\\
+3 &amp; 1 &amp; -1 &amp; 2
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+2 &amp; -3 &amp; -1 &amp; 1\\
+3 &amp; -2 &amp; -4 &amp; 2
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 0 &amp; -3\\
+3 &amp; 2 &amp; -2 &amp; -2
+\end{array}\right),\]</span></p>
+<p>que tiene rango tres (las tres primeras columnas forman una submatriz con determinante distinto de cero). Los cuatro vectores son linealmente dependientes.</p>
+<p>Realmente no era necesario el cálculo del rango, puesto que no podía ser en ningún caso mayor que tres. Podíamos haber utilizado que como la dimensión del espacio es tres, el máximo número de vectores linealmente independientes en este espacio vectorial es también tres.</p>
+Comprobemos el resultado obtenido con <code>sage</code>.
+</li>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,2,3],[1,-1,1],[1,1,-1],[0,1,2]])
+show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
+</script>
+</div>
+<li>
+<p>En este caso, utilizamos la base <span class="math inline">\(B=\{1,x,x^2,x^3\}\)</span> y de nuevo escribimos los vectores por sus coordenadas:</p>
+<p><span class="math display">\[\begin{array}{rl}
+2x&amp;=(0,2,0,0)_B,\\
+x^3-3&amp;=(0,0,0,1)_B,\\
+1+x-4x^{3}&amp;=(1,1,0,2)_B,\\
+x^{3}+18x-9&amp;=(0,0,0,1)_B.
+\end{array}\]</span></p>
+<p>Hemos tenido en cuenta que los coeficientes están en <span class="math inline">\(\mathbb{Z}_3\)</span> y por tanto <span class="math inline">\(-3=0,-4=2,18=0,9=0\)</span>. En este caso observamos que se repite el mismo vector <span class="math inline">\((0,0,0,1)_B\)</span>, si lo consideramos dos veces el conjunto sería linealmente dependientes, pero como es un conjunto observamos que en realidad lo forman de tres vectores. Escribimos la matriz <span class="math display">\[\left(\begin{array}{rrr}
+0 &amp; 0 &amp; 1 \\
+2 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 2
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+0 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0
+\end{array}\right)\]</span></p>
+que tiene rango tres y los tres vectores son linealmente independientes.
+</li>
+<li>
+<p>En <span class="math inline">\(\mathcal{M}_{2}(\mathbb{Z}_7)\)</span> una base sencilla es</p>
+<p><span class="math display">\[\left\{ \begin{pmatrix}
+1 &amp; 0 \\ 0 &amp; 0 \\
+\end{pmatrix}, \begin{pmatrix}
+0 &amp; 1 \\ 0 &amp; 0 \\
+\end{pmatrix}, \begin{pmatrix}
+0 &amp; 0 \\ 1 &amp; 0 \\
+\end{pmatrix},\begin{pmatrix}
+0 &amp; 0 \\ 0 &amp; 1 \\
+\end{pmatrix}\right\}.\]</span></p>
+<p>Escribimos cada una de las matrices por sus coordenadas en esta base:</p>
+<p><span class="math display">\[
+\begin{pmatrix} 1 &amp; -1 \\ 0 &amp; 6
+\end{pmatrix}=(1,-1,0,6)_B,\]</span> <span class="math display">\[\begin{pmatrix} -1 &amp; 0 \\ 3 &amp; 1 \end{pmatrix}=(-1,0,3,1)_B,\]</span> <span class="math display">\[
+\begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix}=(1,1,-1,2)_B,\]</span> <span class="math display">\[\begin{pmatrix}
+0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}=(0,1,1,0)_B.\]</span></p>
+<p>Calculamos el rango de la matriz que forman (los coeficientes están en <span class="math inline">\(\mathbb{Z}_7\)</span>):</p>
+<p><span class="math display">\[\left(\begin{array}{rrrr}
+1 &amp; -1 &amp; 1 &amp; 0\\
+-1 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 3 &amp; -1 &amp; 1 \\
+6 &amp; 1 &amp; 2 &amp; 0
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+-1 &amp; -1 &amp; 2 &amp; 1\\
+0 &amp; 3 &amp; -1 &amp; 1 \\
+6 &amp; 0 &amp; 2 &amp; 0
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 4 &amp; 4 \\
+6 &amp; 0 &amp; 2 &amp; 0
+\end{array}\right)\]</span></p>
+<p>que tiene determinante distinto de cero y por tanto rango cuatro, así que los vectores son linealmente independientes.</p>
+Comprobemos el resultado obtenido con <code>sage</code>.
+</li>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,-1,0,6],[-1,0,3,1],[1,1,-1,2],[0,1,1,0]])
+show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
+</script>
+</div>
+</ol>
+</details>
+</article>
+<article>
+<p>calcula las matrices de cambio de base para las bases de <span class="math inline">\(\mathbb{R}^{3}\)</span>:</p>
+<p><span class="math display">\[B=\{(4,0,7);\ (2,1,1);\ (3,1,3)\},\quad B'=\{(1,0,2);\ (4,1,5);\ (1,0,3)\}.\]</span></p>
+<details>
+<summary>
+Solución
+</summary>
+<p>Este ejercicio puede realizarse por varios métodos. Explicaremos dos de ellos.<br></p>
+<p><strong>Método 1</strong></p>
+<p>Para calcular la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> necesitamos como datos los vectores que forman <span class="math inline">\(B\)</span> escritos por sus coordenadas en <span class="math inline">\(B'\)</span>. Nos planteamos entonces calcular <span class="math inline">\(\alpha, \beta, \gamma\)</span> tales que: <span class="math display">\[(4,0,7)=\alpha (1,0,2)+\beta (4,1,5)+\gamma (1,0,3)\]</span> y por tanto tenemos que resolver el sistema con matriz ampliada:</p>
+<p><span class="math display">\[\left( \begin{array}{rrr|r}
+1 &amp; 4 &amp; 1 &amp; 4\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+2 &amp; 5 &amp; 3 &amp; 7
+\end{array} \right).\]</span></p>
+<p>Para el siguiente vector de <span class="math inline">\(B\)</span> tenemos que resolver <span class="math display">\[(2,1,1)=\alpha (1,0,2)+\beta (4,1,5)+\gamma (1,0,3)\]</span> con matriz ampliada:</p>
+<p><span class="math display">\[\left( \begin{array}{rrr|r}
+1 &amp; 4 &amp; 1 &amp; 2\\
+0 &amp; 1 &amp; 0 &amp; 1\\
+2 &amp; 5 &amp; 3 &amp; 1
+\end{array} \right).\]</span></p>
+<p>Observamos que ambos sistemas tienen la misma matriz de coeficientes, y también el tercer sistema que debemos resolver, solo cambian las columnas de términos independientes. Podemos resolver los tres sistemas simultáneamente escribiendo</p>
+<p><span class="math display">\[\left( \begin{array}{rrr|rrr}
+1 &amp; 4 &amp; 1 &amp; 4 &amp; 2 &amp; 3\\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
+2 &amp; 5 &amp; 3 &amp; 7 &amp; 1 &amp; 3
+\end{array} \right)\sim_f \left( \begin{array}{rrr|rrr}
+1 &amp; 0 &amp; 0 &amp; 5 &amp; -2 &amp; -1\\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; -1 &amp; 0 &amp; 0
+\end{array} \right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,4,1],[0,1,0],[2,5,3]])
+B=matrix([[4,2,3],[0,1,1],[7,1,3]]) 
+AB=A.augment(B,subdivide=True) #matriz aumentada
+show(AB,"~",AB.rref())
+</script>
+</div>
+<p>La matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> es entonces</p>
+<p><span class="math display">\[M_{BB'}=\left( \begin{array}{rrr}
+5 &amp; -2 &amp; -1\\
+0 &amp; 1 &amp; 1\\
+-1 &amp; 0 &amp; 0
+\end{array} \right).\]</span></p>
+<p><strong>Método 2</strong></p>
+<p>Considerando la base canónica en <span class="math inline">\(\mathbb{R}^3\)</span>: <span class="math inline">\(B_c=\{(1,0,0),(0,1,0),(0,0,1)\}\)</span> es muy fácil calcular</p>
+<p><span class="math display">\[M_{BB_c}=P=\left( \begin{array}{rrr}
+4 &amp; 2 &amp; 3 \\
+0 &amp; 1 &amp; 1 \\
+7 &amp; 1 &amp; 3
+\end{array} \right)\]</span></p>
+<p>y</p>
+<p><span class="math display">\[M_{B'B_c}=Q=\left( \begin{array}{rrr}
+1 &amp; 4 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\
+2 &amp; 5 &amp; 3
+\end{array} \right).\]</span></p>
+<p>Entonces, <span class="math inline">\(X_c=PX\)</span>, <span class="math inline">\(X_c=QX'\)</span> donde <span class="math inline">\(X,X',X_c\)</span> representan a las coordenadas de <span class="math inline">\(\overrightarrow{x}\)</span> en las bases <span class="math inline">\(B,B'\)</span> y <span class="math inline">\(B_c\)</span>, respectivamente. Igualando las dos fórmulas</p>
+<p><span class="math display">\[QX'=PX\]</span></p>
+<p>y despejando <span class="math inline">\(X'=Q^{-1}PX\)</span>, por lo que la matriz <span class="math inline">\(M_{BB'}=Q^{-1}P\)</span>.<br></p>
+<p>Si observamos el método anterior, hemos calculado precisamente <span class="math inline">\(Q^{-1}P\)</span> utilizando operaciones elementales.<br> La matriz <span class="math inline">\(M_{B'B}=(Q^{-1}P)^{-1}=P^{-1}Q\)</span>.</p>
+</details>
+</article>
+<article>
+<p>En un espacio vectorial sobre <span class="math inline">\(\mathbb{R}\)</span>, tenemos unos vectores <span class="math inline">\(e_{1},e_{2},\dots ,e_{n},\, x\)</span> cuyas coordenadas en una cierta base vienen dadas a continuación. Comprueba que <span class="math inline">\(\{e_{1},e_{2},\dots,e_{n}\}\)</span> es una base en cada uno de los casos, y halla las coordenadas del vector <span class="math inline">\(x\)</span> en dicha base.</p>
+<ol type="a">
+<li>
+$ .
+<span class="math display">\[\begin{array}{c}
+e_{1}=(1,0,1)\\
+e_{2}=(1,2,2)\\
+e_{3}=(0,1,1)
+\end{array}\]</span>
+} x=(1,0,2). $
+</li>
+<li>
+$ .
+<span class="math display">\[\begin{array}{l}
+e_{1}=(1,1,1,1)\\
+e_{2}=(0,1,1,1)\\
+e_{3}=(0,0,1,1)\\
+e_{4}=(0,0,0,1)
+\end{array}\]</span>
+} x=(1,0,1,0). $
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Para comprobar que los vectores <span class="math inline">\(\{e_1,e_2,e_3\}\)</span> forman base es suficiente probar que son linealmente independientes, puesto que son tres que es la dimensión del espacio vectorial. Calculamos el rango de la matriz que forman:</p>
+<p><span class="math display">\[\begin{pmatrix}
+1 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 1\\
+1 &amp; 2 &amp; 1
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 0\\
+0 &amp; 2 &amp; 1\\
+0 &amp; 1 &amp; 1
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; -1
+\end{pmatrix}.\]</span></p>
+<p>Como tiene rango tres, son linealmente independientes y por tanto base.</p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,0,1],[1,2,2],[0,1,1]])
+show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
+</script>
+</div>
+<p>Para calcular las coordenadas de <span class="math inline">\(x\)</span> en esta base planteamos <span class="math display">\[(1,0,2)=\alpha (1,0,1)+\beta (1,2,2)+\gamma (0,1,1)\]</span> que nos da el sistema</p>
+<p><span class="math display">\[\left\{\begin{aligned}
+\alpha+\beta &amp;= 1,\\
+2\beta+\gamma &amp;= 0,\\
+\alpha+2\beta+\gamma&amp;=2.
+\end{aligned}\right.\]</span></p>
+<p>Observamos la matriz ampliada y las columnas de la matriz de coeficientes son los vectores de la base, mientras que la de términos independientes es el vector que queremos escribir por coordenadas en esta base:</p>
+<p><span class="math display">\[\left( \begin{array}{rrr|r}
+1 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; 1 &amp; 2
+\end{array} \right).\]</span></p>
+<p>Recordaremos esta relación para la próxima vez que realicemos este tipo de cálculos. Resolvemos:</p>
+<p><span class="math display">\[\left( \begin{array}{rrr|r}
+1 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; 1 &amp; 2
+\end{array} \right)\sim_f  \left( \begin{array}{rrr|r}
+1 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 1
+\end{array} \right)\sim_f \left( \begin{array}{rrr|r}
+1 &amp; 0 &amp; -1 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; -1 &amp; -2
+\end{array} \right)\sim_f \left( \begin{array}{rrr|r}
+1 &amp; 0 &amp; 0 &amp; 2\\
+0 &amp; 1 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 1 &amp; 2
+\end{array} \right).\]</span></p>
+<p>Luego <span class="math inline">\(x=(2,-1,2)_B\)</span>.<br></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,1,0],[0,2,1],[1,2,1]])
+b=vector([1,0,2]) 
+Ab=A.augment(b,subdivide=True) 
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+</li>
+<li>
+<p>Procedemos del mismo modo sin repetir los razonamientos, puesto que son idénticos al apartado anterior.</p>
+<p><span class="math display">\[\left( \begin{array}{rrrr|r}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{array} \right)\sim_f \left( \begin{array}{rrrr|r}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; -1 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{array} \right)\]</span> luego son base (la matriz de coeficientes tiene rango cuatro) y <span class="math inline">\(x=(1,-1,1,0)_B\)</span>.<br></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,1,1,1],[0,1,1,1],[0,0,1,1],[0,0,0,1]])
+b=vector([1,0,1,0]) 
+Ab=A.augment(b,subdivide=True) 
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>Completa <span class="math inline">\(\{(1,1,0),(2,1,1)\}\)</span> a una base de <span class="math inline">\(\mathbb{Q}^3\)</span>.</p>
+<details>
+<summary>
+Solución
+</summary>
+<p>Comenzamos observando que los dos vectores son linealmente independientes (no son múltiplo uno del otro). Se trata de añadir vectores a los dados hasta obtener una base de <span class="math inline">\(\mathbb{Q}^3\)</span>, como <span class="math inline">\(\operatorname{dim}(\mathbb{Q}^3)=3\)</span> en cualquier base debe haber tres vectores, con lo que en este caso habrá que añadir un vector. Se puede realizar de infinitas formas, la única condición es que los tres vectores sean linealmente independientes; se aconseja hacerlo de modo que esta condición sea fácil de comprobar. Partimos de la matriz</p>
+<p><span class="math display">\[\begin{pmatrix}
+1 &amp; 2 &amp; \_\\
+1 &amp; 1 &amp; \_\\
+0 &amp; 1 &amp; \_
+\end{pmatrix}\]</span></p>
+<p>y si añadimos una columna sencilla, por ejemplo</p>
+<p><span class="math display">\[\begin{pmatrix}
+1 &amp; 2 &amp; 1\\
+1 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0
+\end{pmatrix}\]</span></p>
+<p>comprobar que el determinante es distinto de cero es muy fácil. Entonces hemos completado con el vector <span class="math inline">\((1,0,0)\)</span>. También valdría añadir <span class="math inline">\((0,0,1)\)</span>:</p>
+<p><span class="math display">\[\begin{pmatrix}
+1 &amp; 2 &amp; 0\\
+1 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1
+\end{pmatrix}.\]</span></p>
+</details>
+</article>
+<article class="cf" style="display:block;">
+<p>Determina si los siguientes conjuntos de vectores generan al espacio vectorial dado.</p>
+<ol type="a">
+<li>
+En el conjunto de polinomios de <span class="math inline">\((\mathbb{Z}_5)[x]\)</span> de grado menor o igual a dos: <span class="math inline">\(\{1+4x, 3+4x^2\}\)</span>.
+</li>
+<li>
+En el conjunto de polinomios de <span class="math inline">\((\mathbb{Z}_5)[x]\)</span> de grado menor o igual a dos: <span class="math inline">\(\{1+4x, 3+4x^2, x\}\)</span>.
+</li>
+<li>
+En <span class="math inline">\(\mathcal{M}_{2}(\mathbb{Z}_7)\)</span>: <span class="math inline">\(\left\{ \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0
+\end{pmatrix}, \begin{pmatrix} 1 &amp; 2 \\ 0 &amp; 0 \end{pmatrix},
+\begin{pmatrix} 4 &amp; 6 \\ 3 &amp; 0 \end{pmatrix}, \begin{pmatrix} 5
+&amp; 5 \\ 6 &amp; 0 \end{pmatrix}\right\}\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Como la dimensión de este espacio es tres, cualquier conjunto de generadores tiene que tener al menos tres vectores. Así que en este caso la respuesta es negativa.
+</li>
+<li>
+<p>Estamos en el mismo espacio vectorial y ahora sí tenemos tres vectores. Serán sistema de generadores si y solo si son base, lo que equivale a que sean linealmente independientes. Escribimos sus coordenadas en <span class="math inline">\(B_s=\{1,x,x^2\}\)</span> y calculamos el rango de la matriz que forman:</p>
+<p><span class="math display">\[1+4x=(1,4,0)_{B_s},\]</span> <span class="math display">\[3+4x^2=(2,0,4)_{B_s},\]</span> <span class="math display">\[x=(0,1,0)_{B_S},\]</span></p>
+<p><span class="math display">\[\begin{pmatrix}
+1 &amp; 2 &amp; 0\\
+4 &amp; 0 &amp; 1\\
+0 &amp; 4 &amp; 0
+\end{pmatrix}.\]</span></p>
+Esta matriz tiene determinante <span class="math inline">\((-1)(4)=-4\)</span> y por tanto son sistema de generadores.
+</li>
+<li>
+<p>En este caso tenemos cuatro vectores y <span class="math inline">\(\operatorname{dim}(\mathcal{M}_{2}(\mathbb{Z}_7))=4\)</span>, así que razonamos como antes, esta vez usando coordenadas en la base estándar</p>
+<p><span class="math display">\[B_s=\left\{ \begin{pmatrix}
+1 &amp; 0 \\ 0 &amp; 0 \\
+\end{pmatrix}, \begin{pmatrix}
+0 &amp; 1 \\ 0 &amp; 0 \\
+\end{pmatrix}, \begin{pmatrix}
+0 &amp; 0 \\ 1 &amp; 0 \\
+\end{pmatrix},\begin{pmatrix}
+0 &amp; 0 \\ 0 &amp; 1 \\
+\end{pmatrix}\right\},\]</span></p>
+<p><span class="math display">\[  
+\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}=(1,0,1,0)_{B_s},\]</span> <span class="math display">\[\begin{pmatrix} 1 &amp; 2 \\ 0 &amp; 0 \end{pmatrix}=(1,2,0,0)_{B_s},\]</span> <span class="math display">\[\begin{pmatrix} 4 &amp; 6 \\ 3 &amp; 0 \end{pmatrix}=(4,6,3,0)_{B_s},\]</span> <span class="math display">\[\begin{pmatrix} 5 &amp; 5 \\ 6 &amp; 0 \end{pmatrix}=(5,5,6,0)_{B_s}.\]</span></p>
+<p>Y ahora calculamos el rango de la matriz que forman:</p>
+<p><span class="math display">\[\begin{pmatrix}
+1 &amp; 1 &amp; 4 &amp; 5\\
+0 &amp; 2 &amp; 6 &amp; 5\\
+1 &amp; 0 &amp; 3 &amp; 6\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}\]</span></p>
+que como tiene una fila entera de ceros tiene rango menor que cuatro, luego no son sistema de generadores.
+</li>
+</ol>
+</details>
+</article>
+<article class="cf" style="display:block;">
+<p>Sea <span class="math inline">\(V = \mathbb{Z}_3^4\)</span> y sean los subespacios vectoriales</p>
+<p><span class="math display">\[
+U = \left\{(x,y,z,t) \in V ~\left|~
+\begin{aligned}
+x-y-z &amp;= 0 \\
+t &amp;= 0
+\end{aligned} \right. \right\}, \qquad W = \langle
+(1,1,1,1), (0,1,0,1) \rangle.
+\]</span></p>
+<ol type="a">
+<li>
+¿Cuántos elementos hay en <span class="math inline">\(W\)</span>?
+</li>
+<li>
+Calcula unas ecuaciones paramétricas de <span class="math inline">\(U\)</span> y unas ecuaciones cartesianas (o implícitas) de <span class="math inline">\(W\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p><span class="math inline">\(W = \langle (1,1,1,1), (0,1,0,1) \rangle\)</span>. En primer lugar calculamos la base más sencilla y con ella escribimos las paramétricas: <span class="math display">\[\begin{pmatrix}
+1 &amp; 0\\
+1 &amp; 1 \\
+1 &amp; 0\\
+1 &amp; 1
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0\\
+0 &amp; 1 \\
+1 &amp; 0\\
+0 &amp; 1
+\end{pmatrix},
+\]</span> luego <span class="math display">\[
+W \equiv \left\{ \begin{array}{l}
+x=1\cdot \lambda_1 + 0\cdot \lambda_2, \\
+y=0\cdot \lambda_1 + 1\cdot \lambda_2,\\
+z=1\cdot \lambda_1 + 0\cdot \lambda_2,\\
+t=0\cdot \lambda_1 + 1\cdot \lambda_2,\\
+\end{array}\right.  \lambda_1,\lambda_2\in \mathbb{Z}_3.
+\]</span> Como aparecen 2 parámetros que pueden tomar valores en <span class="math inline">\(\mathbb{Z}_3\)</span>, en total hay <span class="math inline">\(3\cdot 3=9\)</span> vectores distintos en <span class="math inline">\(W\)</span>.</p>
+También se puede razonar sin necesidad de calcular las paramétricas, comprobando que la dimensión de <span class="math inline">\(W\)</span> es dos, simplemente probando que los dos generadores son linealmente independientes.
+</li>
+<li>
+<p>Paramétricas de <span class="math inline">\(U\)</span>. Para ello resolvemos el sistema que forman las ecuaciones cartesianas, que en este caso ya es escalonado reducido; depende de dos parámetros (las incógnitas <span class="math inline">\(y\)</span> y <span class="math inline">\(z\)</span> son libres):</p>
+<span class="math display">\[ U\equiv  \left\{ \begin{array}{l}
+x=\lambda_1 + \lambda_2, \\
+y=\lambda_1, \\
+z=\lambda_2,\\
+t=0.\\
+\end{array}\right.\]</span> O también, <span class="math display">\[
+\left\{ \begin{array}{l}
+x=1\cdot \lambda_1 +1\cdot \lambda_2,\\
+y=1\cdot \lambda_1 + 0\cdot \lambda_2,\\
+z=0\cdot \lambda_1 + 1\cdot \lambda_2,\\
+t=0\cdot \lambda_1 + 0\cdot \lambda_2.\\
+\end{array}\right. \]</span> Además obtenemos que una base es: <span class="math display">\[\{ (1,1,0,0), (1,0,1,0) \}.\]</span>
+</li>
+<li>
+Cartesianas de <span class="math inline">\(W\)</span>. Puesto que ya tenemos las ecuaciones paramétricas de <span class="math inline">\(W\)</span> podemos calcular unas ecuaciones cartesianas eliminando parámetros: despejamos los dos parámetros <span class="math inline">\(\lambda_1=x\)</span> (en la primera ecuación), <span class="math inline">\(\lambda_2= y\)</span> (en la segunda ecuación), uno en una ecuación paramétrica en la que aparece y sustituimos en las otras dos ecuaciones: <span class="math display">\[W\equiv \left\{ \begin{array}{r}
+x-z=0,\\
+y-t=0.
+\end{array}\right.\]</span> Ha sido tan sencillo porque las ecuaciones paramétricas de las que partimos son las más sencillas (hemos usado la base más sencilla). También podría procederse formando la matriz <span class="math display">\[\begin{pmatrix}
+x &amp; 1 &amp; 0\\
+y &amp; 0 &amp; 1\\
+z &amp; 1 &amp; 0\\
+t &amp; 0 &amp; 1
+\end{pmatrix}\]</span> e imponiendo que su rango debe ser dos, con lo que hay que elegir dos menores de orden tres que al igualarlos a cero nos den dos ecuaciones que no sean múltiplo una de la otra. Este procedimiento es en general mucho más laborioso.
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>Para cada uno de los siguientes subespacios de <span class="math inline">\(\mathbb{R}^{4}\)</span> calcula unas ecuaciones paramétricas y unas cartesianas.</p>
+<ol type="a">
+<li>
+<span class="math inline">\(U=\{(a,b,-b,a) : a,b\in \mathbb{R} \}\)</span>, <span class="math inline">\(W=\{(a,b,0,c) : a,b,c\in \mathbb{R}\}\)</span>.
+</li>
+<li>
+<span class="math inline">\(U\equiv \left\{
+\begin{array}{lcrrr}
+x_{1} &amp;=&amp; \lambda,\\
+x_{2} &amp;=&amp; 0,\\
+x_{3} &amp;=&amp; \lambda &amp; +\mu,\\
+x_{4} &amp;=&amp; \lambda &amp; +\mu &amp; +\gamma,\\
+\end{array}
+\right.\)</span> <span class="math inline">\(W\equiv \left\{
+\begin{array}{lcrrr}
+x_{1} &amp;=&amp; \lambda &amp; +\mu &amp;+\gamma,\\
+x_{2} &amp;=&amp; \lambda &amp; +\mu,\\
+x_{3} &amp;=&amp; 0,\\
+x_{4} &amp;=&amp; \lambda.\\
+\end{array}
+\right.\)</span>
+</li>
+<li>
+<span class="math inline">\(U=\langle(1,1,0,0), (0,1,1,0), (0,0,1,1)\rangle\)</span>, <span class="math inline">\(W\equiv \left\{
+\begin{array}{lcrrr}
+x_{1} &amp;+x_{2}&amp; &amp; -x_{4} &amp;=0,\\
+      &amp; x_{2}&amp;+x_{3}&amp;   &amp;=0,\\
+x_{1}&amp;-x_{2}&amp;-x_{3}&amp;-x_{4}&amp;=0.\\
+\end{array}
+\right.\)</span>
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Observemos la información que tenemos sobre los vectores que están en <span class="math inline">\(U\)</span>: llamamos <span class="math inline">\((x_1,x_2,x_3,x_4)\)</span> a las coordenadas de un vector de <span class="math inline">\(\mathbb{R}^4\)</span> y para que pertenezca a <span class="math inline">\(U\)</span> se tiene que cumplir: <span class="math display">\[U\equiv \left\{
+\begin{array}{lcrr}
+x_{1} &amp;=&amp; a,\\
+x_{2} &amp;=&amp; b,\\
+x_{3} &amp;=&amp; -b,\\
+x_{4} &amp;=&amp; a.\\
+\end{array}
+\right.
+\]</span> Donde <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> son parámetros. Así tenemos unas ecuaciones paramétricas de <span class="math inline">\(U\)</span>. Para calcular cartesianas podemos eliminar parámetros, que en este caso es muy sencillo: <span class="math display">\[ U\equiv  \left\{ \begin{array}{l}
+x_1-x_4=0,\\
+x_2+x_3=0.
+\end{array}\right. \]</span> También estas ecuaciones podían deducirse de la descripción del conjunto <span class="math inline">\(U\)</span>.<br></p>
+De la misma forma, en el caso de <span class="math inline">\(W\)</span> podemos escribir unas paramétricas directamente: <span class="math display">\[W\equiv \left\{
+\begin{array}{lcrr}
+x_{1} &amp;=&amp; a,\\
+x_{2} &amp;=&amp; b,\\
+x_{3} &amp;=&amp; 0,\\
+x_{4} &amp;=&amp; c.\\
+\end{array}
+\right.
+\]</span> Donde <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> son parámetros. Como los vectores que acompañan a cada parámetro son linealmente independientes (esos vectores son <span class="math inline">\(\{(1,0,0,0),(0,1,0,0),(0,0,0,1)\}\)</span>) entonces la dimensión de <span class="math inline">\(W\)</span> es tres y debe tener una ecuación cartesiana (puesto que la dimensión de <span class="math inline">\(W\)</span> es la dimensión del total menos el número de ecuaciones cartesianas), así que con encontrar una hemos terminado. Observando las paramétricas descubrimos que la tercera ecuación (<span class="math inline">\(x_3=0\)</span>) ya es una cartesiana puesto que en ella no aparece ningún parámetro, así que <span class="math display">\[W\equiv x_3=0.\]</span>
+</li>
+<li>
+<p>Para el caso de <span class="math inline">\(U\)</span>, puesto que nos dan unas ecuaciones paramétricas, podemos usar un argumento idéntico al anterior: los vectores del sistema de generadores que aparecen en las paramétricas que nos dan son linealmente independientes (hay que comprobarlo, claro). En este caso esos vectores son <span class="math inline">\(\{(1,0,1,1),(0,0,1,1),(0,0,0,1)\}\)</span>. Utilizando de nuevo el argumento de antes, necesitamos solo una ecuación cartesiana y la segunda, <span class="math inline">\(x_2=0\)</span>, ya lo es, luego <span class="math display">\[U\equiv x_2=0.\]</span></p>
+Para <span class="math inline">\(W\)</span> el mismo razonamiento nos da que <span class="math display">\[W\equiv x_3=0.\]</span>
+</li>
+<li>
+<p>Para <span class="math inline">\(U\)</span> en primer lugar calculamos la base más sencilla: <span class="math display">\[\begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1\\
+1 &amp; -1 &amp; 1
+\end{pmatrix}\]</span> y con ellas escribimos unas paramétricas: <span class="math display">\[U\equiv \left\{
+\begin{array}{lclr}
+x_{1} &amp;=&amp; \lambda_1,\\
+x_{2} &amp;=&amp; \lambda_2,\\
+x_{3} &amp;=&amp; \lambda_3,\\
+x_{4} &amp;=&amp; \lambda_1 -\lambda_2 +\lambda_3.\\
+\end{array}
+\right.
+\]</span> usando las tres primeras para eliminar parámetros nos queda <span class="math display">\[U\equiv x_4=x_1-x_2+x_3,\]</span> o bien, <span class="math display">\[U\equiv x_1-x_2+x_3-x_4=0.\]</span></p>
+<p>De <span class="math inline">\(W\)</span> nos dan unas ecuanciones cartesianas y para encontrar unas paramétricas solo hay que resolver el sistema: <span class="math display">\[\left(\begin{array}{rrrr}
+1 &amp; 1 &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp; -1 &amp; -1 &amp; -1
+\end{array}\right)\sim_f \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right).\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,1,0,-1],[0,1,1,0],[1,-1,-1,-1]])
+show(A,"~",A.rref())
+</script>
+</div>
+Así obtenemos que <span class="math inline">\(x_4\)</span> actúa como parámetro mientras que las otras tres incógnitas están despejadas: <span class="math display">\[W\equiv \left\{
+\begin{array}{lcrrr}
+x_{1} &amp;=&amp; \lambda,\\
+x_{2} &amp;=&amp; 0,\\
+x_{3} &amp;=&amp; 0,\\
+x_{4} &amp;=&amp; 0.\\
+\end{array}
+\right.
+\]</span> son unas ecuaciones paramétricas de <span class="math inline">\(W\)</span>.
+</li>
+</ol>
+</details>
+</article>
+<article class="cf" style="display:block;">
+<ol type="a">
+<li>
+Calcula las coordenadas del vector <span class="math inline">\(v=(1,1)_B\)</span> respecto de <span class="math inline">\(B'\)</span> siendo <span class="math inline">\(B=\{(1,1),(1,2)\}\)</span> y <span class="math inline">\(B'=\{(2,1),(0,1)\}\)</span>, en el espacio vectorial <span class="math inline">\(\mathbb{Z}_3^2\)</span>.
+</li>
+<li>
+En el espacio vectorial <span class="math inline">\(\mathbb{Z}_3^3\)</span> se considera el plano generado por los vectores <span class="math inline">\(u=(1,2,1)\)</span> y <span class="math inline">\(v=(1,1,2)\)</span>. Calcula una ecuación cartesiana de dicho plano.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Debemos calcular en primer lugar las coordenadas de <span class="math inline">\(v\)</span> en la base canónica: <span class="math display">\[v=(1,1)_B=1\cdot (1,1)+1\cdot (1,2)=(2,0)\]</span> y ahora planteamos el sistema: <span class="math display">\[v=(2,0)=\alpha (2,1)+\beta (0,1)=(\alpha,\beta)_{B'}\]</span> que resolvemos: <span class="math display">\[\left(\begin{array}{cc|c}
+2 &amp; 0 &amp; 2\\
+1 &amp; 1 &amp; 0
+\end{array}\right)\sim_f \left(\begin{array}{cc|c}
+1 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 2
+\end{array}\right),\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(3),[[2,0],[1,1]])
+b=vector(GF(3),[2,0]) 
+Ab=A.augment(b,subdivide=True) 
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+Luego <span class="math inline">\(v=(1,2)_{B'}\)</span>.
+</li>
+<li>
+<p>Como nos dan un sistema de generadores del subespacio podemos buscar la base más sencilla <span class="math display">\[\begin{pmatrix}
+1 &amp; 1 \\
+2 &amp; 1 \\
+1 &amp; 2 \\
+  \end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+0 &amp; 2 \\
+  \end{pmatrix}.
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(GF(3),[[1,1],[2,1],[1,2]])
+show(A,"~",((A.T).rref()).T)
+</script>
+</div>
+<p>Y con esta base escribimos las ecuaciones paramétricas más sencillas:</p>
+<span class="math display">\[\pi\equiv \left\{
+\begin{array}{lcrrr}
+x &amp;=&amp; \lambda_1,\\
+y &amp;=&amp; \lambda_2,\\
+z &amp;=&amp; 2\lambda_2.\\
+\end{array}
+\right.
+\]</span> Eliminando los dos parámetros nos queda <span class="math display">\[\pi \equiv 2y-z=0.\]</span>
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En <span class="math inline">\(\mathbb{R}^4\)</span> consideramos los subespacios</p>
+<p><span class="math display">\[U\equiv \left\{ \begin{array}{l}
+x+y+z=0,\\
+t=0.\\
+\end{array}\right.  \hspace{.5cm} W=\mathcal{L}\{(0,1,1,1),(0,1,-1,1),(-2,1,1,0)\}.\]</span></p>
+<p>Calcula la base más sencilla de <span class="math inline">\(U\)</span> y unas cartesianas de <span class="math inline">\(W\)</span>.</p>
+<details>
+<summary>
+Solución
+</summary>
+<p>Para calcular la base más sencilla de <span class="math inline">\(U\)</span>, de las ecuaciones cartesianas obtendremos unas paramétricas resolviendo el sistema. De estas paramétricas obtenemos una base desde la que calcular la base más sencilla.<br></p>
+<p>Resolver las cartesianas es inmediato puesto que ya es un sistema escalonado reducido, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> actúan como parámetros, luego nos queda:</p>
+<p><span class="math display">\[U\equiv \left\{
+\begin{array}{lcrrr}
+x &amp;=&amp; -\lambda_1-\lambda_2,\\
+y &amp;=&amp; \lambda_1,\\
+z &amp;=&amp; \lambda_2,\\
+t &amp;=&amp; 0.\\
+\end{array}
+\right.
+\]</span> Con lo que obtenemos la base de <span class="math inline">\(U\)</span>, <span class="math inline">\(\{ (-1,1,0,0),(-1,0,1,0)\}\)</span>. Ahora calculamos la base más sencilla a partir de la forma de Hermite por columnas: <span class="math display">\[\begin{pmatrix}
+-1 &amp; -1  \\
+1 &amp; 0 \\
+0 &amp; -1  \\
+0 &amp; 0
+  \end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0  \\
+0 &amp; 1 \\
+1 &amp; 1  \\
+0 &amp; 0
+  \end{pmatrix},\]</span> luego la base más sencilla de <span class="math inline">\(U\)</span> es <span class="math display">\[ \{(1,0,1,0),(0,1,1,0)\}.\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[-1,-1],[1,0],[0,-1],[0,0]])
+show(A,"~",((A.T).rref()).T)
+</script>
+</div>
+<p>Para calcular las cartesianas de <span class="math inline">\(W\)</span> procedemos en primer lugar a calcular la base más sencilla: <span class="math display">\[\begin{pmatrix}
+0 &amp; 0 &amp; -2  \\
+1 &amp; 1 &amp; 1\\
+1 &amp; -1 &amp; 1 \\
+1 &amp; 1 &amp; 0
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0  \\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 \\
+1/2 &amp; 1 &amp; 0
+\end{pmatrix}.\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[0,0,-2],[1,1,1],[1,-1,1],[1,1,0]])
+show(A,"~",((A.T).rref()).T)
+</script>
+</div>
+<p>Y escribimos las paramétricas:</p>
+<p><span class="math display">\[W\equiv \left\{
+\begin{array}{lclrr}
+x &amp;=&amp; \lambda_1,\\
+y &amp;=&amp; \lambda_2,\\
+z &amp;=&amp; \lambda_3,\\
+t &amp;=&amp; \frac{1}{2}\lambda_1+\lambda_2.\\
+\end{array}
+\right.
+\]</span></p>
+<p>Eliminando los tres parámetros y reordenando la ecuación restante nos queda <span class="math display">\[W\equiv x+2y-2t=0.\]</span></p>
+</details>
+</article>
+<article>
+<p>Para los subespacios de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> siguientes: <span class="math display">\[U=\left\{ A\in  \mathcal{M}_2(\mathbb{R}) \mbox{ tal que } A=A^t\right\},\]</span> <span class="math display">\[W=\left\{ A\in  \mathcal{M}_2(\mathbb{R})\mbox{ tal que } A=-A^t\right\}.\]</span></p>
+<ol type="a">
+<li>
+Calcula la dimensión y una base de cada uno de ellos.
+</li>
+<li>
+Calcula, respecto de la base estándar <span class="math display">\[B_s=\left\{ \begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{pmatrix}; \begin{pmatrix}
+0 &amp; 1 \\
+0 &amp; 0
+\end{pmatrix};\begin{pmatrix}
+0 &amp; 0 \\
+1 &amp; 0
+\end{pmatrix};\begin{pmatrix}
+0 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}\right\},\]</span> unas ecuaciones cartesianas de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>.
+</li>
+<li>
+Prueba que <span class="math inline">\(\mathcal{M}_2(\mathbb{R})=U\oplus W\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular la dimensión y una base de cada uno de ellos.<br> <span class="math inline">\(U\)</span> está formado por las matrices simétricas de orden 2, que tienen la forma <span class="math display">\[\begin{pmatrix}
+a &amp; b \\
+b &amp; c
+\end{pmatrix}.\]</span> Una base de este subespacio es <span class="math display">\[\left\{ \begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{pmatrix}, \begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}, \begin{pmatrix}
+0 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix} \right\} \]</span> y por tanto <span class="math inline">\(\operatorname{dim}(U)=3\)</span>.<br> <span class="math inline">\(W\)</span> está formado por las matrices antisimétricas de orden dos que tienen la forma <span class="math display">\[\begin{pmatrix}
+0 &amp; b \\
+-b &amp; 0
+\end{pmatrix}.\]</span> Una base de este subespacio es <span class="math display">\[\left\{ \begin{pmatrix}
+0 &amp; 1 \\
+-1 &amp; 0
+\end{pmatrix}\right\}\]</span> y por tanto <span class="math inline">\(\operatorname{dim}(W)=1\)</span>.
+</li>
+<li>
+Calcular unas ecuaciones cartesianas de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>.<br> Dada una matriz de orden <span class="math inline">\(2\)</span> <span class="math display">\[\begin{pmatrix}
+x &amp; y \\
+z &amp; t
+\end{pmatrix}=(x,y,z,t)_{B_s}.\]</span> Entonces <span class="math display">\[U\equiv \left\{ \begin{array}{l}
+x=a,\\
+y=b,\\
+z=b,\\
+t=c.
+\end{array} \right.\]</span> y la cartesiana es <span class="math inline">\(U\equiv y-z=0\)</span>.<br> Por otro lado, <span class="math display">\[W\equiv  \left\{ \begin{array}{l}
+x=0,\\
+y=b,\\
+z=-b,\\
+t=0.
+\end{array} \right.\]</span> y por tanto unas cartesianas son <span class="math display">\[W\equiv  \left\{ \begin{array}{l}
+x=0,\\
+y+z=0,\\
+t=0.
+\end{array} \right.\]</span>
+</li>
+<li>
+Probar que <span class="math inline">\(\mathcal{M}_2(\mathbb{R})=U\oplus W\)</span>.<br> Calculamos <span class="math inline">\(U\cap W\)</span> reuniendo cartesianas: <span class="math display">\[U\cap W\equiv  \left\{ \begin{array}{l}
+x=0,\\
+y+z=0,\\
+y-z=0,\\
+t=0.
+\end{array} \right. \sim_f  \left\{ \begin{array}{l}
+x=0,\\
+y=0,\\
+z=0,\\
+t=0.
+\end{array} \right.\]</span> Por tanto <span class="math inline">\(U\cap W=\{0 \}\)</span>.<br> Por la fórmula de las dimensiones, <span class="math display">\[\operatorname{dim}(U) +  \operatorname{dim}(W)= \operatorname{dim}(U\cap W) + \operatorname{dim}(U+W),\]</span> deducimos que <span class="math inline">\(\operatorname{dim}(U+W)=4=\operatorname{dim}(\mathcal{M}_2(\mathbb{R}))\)</span> y por tanto <span class="math inline">\(U+W=\mathcal{M}_2(\mathbb{R})\)</span>.
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En el espacio <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> se consideran los subespacios <span class="math display">\[U=\mathcal{L}\Biggl(\biggl\{\begin{pmatrix}
+1 &amp; 2 \\ 0 &amp; 0
+\end{pmatrix}, \begin{pmatrix}
+1&amp; 0 \\ 0 &amp; 2\\
+\end{pmatrix}, \begin{pmatrix}
+2  &amp; a \\ 0 &amp; a
+\end{pmatrix}\biggr\}\Biggr),\]</span> y <span class="math inline">\(W\)</span> con ecuaciones cartesianas respecto de la base estándar: <span class="math display">\[W\equiv 2x-y-t=0.\]</span></p>
+<ol type="a">
+<li>
+Calcular la base más sencilla de <span class="math inline">\(W\)</span>.
+</li>
+<li>
+Calcular la dimensión de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Probar que cuando <span class="math inline">\(a=2\)</span> se tiene que <span class="math inline">\(U \subseteq W\)</span>.
+</li>
+<li>
+Calcular unas ecuaciones cartesianas de <span class="math inline">\(U \cap W\)</span> para <span class="math inline">\(a\not = 2\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Calcular la base más sencilla de <span class="math inline">\(W\)</span>.<br> De la cartesiana <span class="math inline">\(2x-y-t=0\)</span> obtenemos la reducida: <span class="math inline">\(x-\frac{1}{2} y-\frac{1}{2}t=0\)</span>.<br> Asignando parámetros a las incógnitas secundarias (<span class="math inline">\(y, z\)</span>, <span class="math inline">\(t\)</span>) y despejando la principal obtenemos las paramétricas: <span class="math display">\[\left\{\begin{array}{ll}
+x=&amp;\frac{1}{2}\lambda_1 + \frac{1}{2}\lambda_3,\\
+y=&amp;\lambda_1,\\
+z=&amp;\lambda_2,\\
+t=&amp;\lambda_3,\\
+\end{array}\right.\]</span> y por tanto una base es <span class="math inline">\(\{(\frac{1}{2},1,0,0)_{B_{s}},(0,0,1,0)_{B_{s}},
+(\frac{1}{2},0,0,1)_{B_{s}}\}\)</span>. <br></p>
+<p>Para obtener la base más sencilla escalonamos la matriz que se obtiene al escribir las coordenadas de estos vectores por columnas: <span class="math display">\[
+\begin{pmatrix}
+\frac{1}{2} &amp; 0 &amp; \frac{1}{2}\\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1\\
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1\\
+2 &amp; -1 &amp; 0\\
+\end{pmatrix}.
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1/2,0,1/2],[1,0,0],[0,1,0],[0,0,1]])
+show(A,"~",((A.T).rref()).T)
+</script>
+</div>
+Así pues, la base más sencilla es: <span class="math display">\[
+\left\{
+\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 2 \end{pmatrix},
+\begin{pmatrix}
+0 &amp; 1 \\ 0 &amp; -1
+\end{pmatrix},
+\begin{pmatrix}
+0 &amp; 0 \\ 1 &amp; 0
+\end{pmatrix}
+\right\}.
+\]</span>
+</li>
+<li>
+Calcular la dimensión de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.<br> Escribimos los vectores por sus coordenadas en la base <span class="math inline">\(B_{s}\)</span> y calculamos el rango de la matriz que forman: <span class="math display">\[\left(\begin{array}{lll}
+1 &amp; 1 &amp; 2\\
+2 &amp; 0 &amp; a\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; a
+\end{array}\right).\]</span> Como tiene una fila de ceros, el único menor de orden tres que puede ser no nulo es <span class="math display">\[\left|\begin{array}{lll}
+1 &amp; 1 &amp; 2\\
+2 &amp; 0 &amp; a\\
+0 &amp; 2 &amp; a
+\end{array}\right|=8-2a-2a=8-4a,\]</span> así que si <span class="math inline">\(a\not = 2\)</span> el rango es tres y <span class="math inline">\(\operatorname{dim}(U)=3\)</span> y si <span class="math inline">\(a=2\)</span> el rango es dos y <span class="math inline">\(\operatorname{dim}(U)=2\)</span>.
+</li>
+<li>
+Probar que cuando <span class="math inline">\(a=2\)</span> se tiene que <span class="math inline">\(U \subseteq W\)</span>.<br> Hemos visto que para <span class="math inline">\(a=2\)</span> la dimensión de <span class="math inline">\(U\)</span> es dos y por tanto los dos primeros vectores son base de <span class="math inline">\(U\)</span>, además cada uno de ellos verifica la ecuación de <span class="math inline">\(W\)</span> (<span class="math inline">\(2\cdot 1-2-0=0; \, 2\cdot 1-0-2=0\)</span>), así que <span class="math inline">\(U\subseteq W\)</span>.
+</li>
+<li>
+Calcular unas ecuaciones cartesianas de <span class="math inline">\(U \cap W\)</span> para <span class="math inline">\(a\not = 2\)</span>.<br> Si <span class="math inline">\(a\not = 2\)</span> la dimensión de <span class="math inline">\(U\)</span> es tres y unas paramétricas son: <span class="math display">\[\left\{\begin{array}{ll}
+x=&amp;\lambda_1+ \lambda_2+2\lambda_3,\\
+y=&amp;2\lambda_1+a\lambda_3,\\
+z=&amp;0,\\
+t=&amp;2\lambda_2+a\lambda_3.\\
+\end{array}\right.\]</span> Y como solo necesitamos una cartesiana, entonces <span class="math inline">\(z=0\)</span> es la ecuación cartesiana de <span class="math inline">\(U\)</span>.<br> Por tanto, <span class="math display">\[U\cap W\equiv \left\{ \begin{array}{r}
+2x-y-t=0,\\
+z=0.
+\end{array}\right..\]</span>
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>Dada la matriz <span class="math display">\[A= \left(\begin{array}{rrrr}
+a &amp; -1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; a+1 &amp; 0\\
+0 &amp; 0 &amp; a+1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\]</span></p>
+<ol type="a">
+<li>
+Se considera el subespacio <span class="math inline">\(U\)</span> de <span class="math inline">\(\mathbb{R}^4\)</span> con ecuaciones cartesianas <span class="math inline">\(AX=0\)</span>. Calcula la base más sencilla de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Para el subespacio <span class="math inline">\(W\)</span> de <span class="math inline">\(\mathbb{R}^4\)</span> generado por las columnas de <span class="math inline">\(A\)</span> calcula unas ecuaciones cartesianas según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Calcula las dimensiones de <span class="math inline">\(U\cap W\)</span> y <span class="math inline">\(U + W\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular la base más sencilla de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.<br> Puesto que se trata del sistema <span class="math inline">\(AX=0\)</span>, podemos transformarlo en el sistema escalonado reducido equivalente utilizando operaciones elementales por filas sobre <span class="math inline">\(A\)</span>.<br> En primer lugar distinguimos el caso <span class="math inline">\(a=0\)</span> en el que el elemento en la posición <span class="math inline">\((1,1)\)</span> no es pivote: <span class="math display">\[A= \left(\begin{array}{rrrr}
+0 &amp; -1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_f \left(\begin{array}{rrrr}
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right).\]</span> En este caso obtenemos que las ecuaciones cartesianas más sencillas de <span class="math inline">\(U\)</span> son <span class="math display">\[U\equiv \left\{ \begin{array}{c}
+y=0,\\
+z=0,\\
+t=0.
+\end{array} \right. \]</span> Por tanto <span class="math inline">\(\operatorname{dim}(U)=1\)</span> y la base más sencilla es <span class="math inline">\(\{(1,0,0,0)\}\)</span>.<br> Si <span class="math inline">\(a\not = 0\)</span> entonces <span class="math display">\[A\sim_f \left(\begin{array}{rrrr}
+1 &amp; -1/a &amp; 1/a &amp; 0\\
+0 &amp; 0 &amp; a+1 &amp; 0\\
+0 &amp; 0 &amp; a+1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right),\]</span> y de nuevo distinguimos el caso <span class="math inline">\(a=-1\)</span> cuando no hay pivote en la segunda fila y nos queda <span class="math display">\[A\sim_f \left(\begin{array}{rrrr}
+1 &amp; 1 &amp; -1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right),\]</span> con lo que las cartesianas de <span class="math inline">\(U\)</span> quedan: <span class="math display">\[U\equiv \left\{ \begin{array}{c}
+x+y-z=0,\\
+t=0.
+\end{array} \right. \]</span> Por tanto <span class="math inline">\(\operatorname{dim}(U)=2\)</span> y una base sería <span class="math inline">\(\{(1,-1,0,0),(1,0,1,0)\}\)</span>, realizando operaciones elementales nos queda que la base más sencilla es <span class="math inline">\(\{(1,0,1,0),(0,1,1,0)\}\)</span>.<br> Por último, si <span class="math inline">\(a\not = 0,-1\)</span> entonces <span class="math display">\[A\sim_f \left(\begin{array}{rrrr}
+1 &amp; -1/a &amp; 1/a &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; a+1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_f  \left(\begin{array}{rrrr}
+1 &amp; -1/a &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right).\]</span> En este caso obtenemos que las ecuaciones cartesianas más sencillas de <span class="math inline">\(U\)</span> son <span class="math display">\[U\equiv \left\{ \begin{array}{c}
+x-\frac{1}{a}y=0,\\
+z=0,\\
+t=0.
+\end{array} \right. \]</span> Por tanto <span class="math inline">\(\operatorname{dim}(U)=1\)</span> y la base más sencilla es <span class="math inline">\(\{(1,a,0,0)\}\)</span>.
+</li>
+<li>
+Calcular unas ecuaciones cartesianas según los valores de <span class="math inline">\(a\)</span>.<br> Ya hemos visto que el rango de <span class="math inline">\(A\)</span> depende de <span class="math inline">\(a\)</span>: es tres si <span class="math inline">\(a\not =-1\)</span> y dos cuando <span class="math inline">\(a=-1\)</span>. Así que tenemos ya la dimensión de <span class="math inline">\(W\)</span>, que coincide con el rango de <span class="math inline">\(A\)</span>.<br> Para <span class="math inline">\(a=-1\)</span>: <span class="math display">\[A= \left(\begin{array}{rrrr}
+-1 &amp; -1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0
+\end{array}\right).\]</span> Es claro que unas cartesianas de <span class="math inline">\(W\)</span> son: <span class="math display">\[W\equiv \left\{ \begin{array}{c}
+y=0,\\
+z=0.
+\end{array} \right. \]</span> Cuando <span class="math inline">\(a\neq -1\)</span> <span class="math display">\[A= \left(\begin{array}{rrrr}
+a &amp; -1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; a+1 &amp; 0\\
+0 &amp; 0 &amp; a+1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right),\]</span> y unas cartesianas son: <span class="math display">\[W\equiv y-z=0.\]</span>
+</li>
+<li>
+<p>Calcular las dimensiones de <span class="math inline">\(U\cap W\)</span> y <span class="math inline">\(U + W\)</span> según los valores de <span class="math inline">\(a\)</span>.<br> Podemos calcular la dimensión de la suma y usar después la fórmula de las dimensiones para obtener la de la intersección. Para ello en cada caso reunimos bases de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> y calculamos el rango de la matriz que forman, lo que nos da la dimensión de <span class="math inline">\(U+W\)</span>:<br> <strong>Si <span class="math inline">\(a=0\)</span></strong><br> <span class="math display">\[\left(\begin{array}{r|rrr}
+1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{r|rrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\right),\]</span> entonces <span class="math inline">\(\operatorname{dim}(U+W)=3\)</span>.<br></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,0,1,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]])
+show(A,"~",((A.T).rref()).T)
+</script>
+</div>
+<p><strong>Si <span class="math inline">\(a=-1\)</span></strong><br> <span class="math display">\[\left(\begin{array}{rr|rr}
+1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{r|rrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right),\]</span> entonces <span class="math inline">\(\operatorname{dim}(U+W)=4\)</span>.<br></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,0,1,0],[0,1,0,0],[1,1,0,0],[0,0,0,1]])
+show(A,"~",((A.T).rref()).T)
+</script>
+</div>
+<p><strong>Si <span class="math inline">\(a\not =0,-1\)</span></strong><br> <span class="math display">\[\left(\begin{array}{r|rrr}
+1 &amp; 1 &amp; 0 &amp; 0\\
+a &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{r|rrr}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right),\]</span> entonces <span class="math inline">\(\operatorname{dim}(U+W)=4\)</span>.<br> Así que usando <span class="math inline">\(\operatorname{dim}(U) +\operatorname{dim}(W)=\operatorname{dim}(U+W)+ \operatorname{dim}(U\cap W)\)</span> obtenemos:<br></p>
+Si <span class="math inline">\(a=0\)</span>, <span class="math inline">\(\operatorname{dim}(U)=1\)</span>, <span class="math inline">\(\operatorname{dim}(W)=3\)</span>, <span class="math inline">\(\operatorname{dim}(U+W)=3\)</span> y <span class="math inline">\(\operatorname{dim}(U\cap W)=1\)</span>.<br> Si <span class="math inline">\(a=-1\)</span>, <span class="math inline">\(\operatorname{dim}(U)=2\)</span>, <span class="math inline">\(\operatorname{dim}(W)=2\)</span>, <span class="math inline">\(\operatorname{dim}(U+W)=4\)</span> y <span class="math inline">\(\operatorname{dim}(U\cap W)=0\)</span>.<br> Si <span class="math inline">\(a\not =0,-1\)</span>, <span class="math inline">\(\operatorname{dim}(U)=1\)</span>, <span class="math inline">\(\operatorname{dim}(W)=3\)</span>, <span class="math inline">\(\operatorname{dim}(U+W)=4\)</span> y <span class="math inline">\(\operatorname{dim}(U\cap W)=0\)</span>.
+</li>
+</ol>
+</details>
+</article>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/pedritomelenas\.github\.io\/Software-Matematicas-GAP\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/pedritomelenas/Algebra-Lineal/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>

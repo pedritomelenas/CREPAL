@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Espacio euclídeo – Problemas resueltos de Álgebra Lineal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<!--Sagecell-->
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage",evalButtonText: 'Evaluar'});</script>
+
+<!--GeoGebra-->
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<!--<link rel = "shortcut icon" href = "favicon.png" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+<!-- selector cuerpos finitos -->
+<script type="text/javascript" language="javascript">
+
+//difference of two arrays
+Array.prototype.diff = function(arr2) { 
+  return this.filter(x => !arr2.includes(x)); 
+}
+
+//ocultar todos los articulos
+function ocultar_todo(){
+  var xs = document.querySelectorAll("article");
+  var i;
+  console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      xs[i].style.display = "none";
+  } 
+}
+
+//mostrar los articulos con las casillas seleccionadas
+function mostrar(){
+  var xs=[]; 
+  var i, xsbasico, xsmedio, xsavanzado, xscf, x;
+  //console.log(xs);
+  
+  ocultar_todo();
+  
+  if (casilla_basico.checked){
+    xsbasico=document.querySelectorAll("[class*='basico']");
+    console.log(xsbasico);
+    //xs=xs.join(xsbasico);
+    xs= [...new Set([...xs, ...xsbasico])];
+  }
+  if (casilla_medio.checked){
+    xsmedio=document.querySelectorAll("[class*='medio']");
+    console.log(xsmedio);
+    //xs=xs.join(xsmedio);
+    xs= [...new Set([...xs, ...xsmedio])];
+  }
+  if (casilla_avanzado.checked){
+    xsavanzado=document.querySelectorAll("[class*='avanzado']");
+    console.log(xsavanzado);
+    //xs=xs.join(xsavanzado);
+    xs = [...new Set([...xs, ...xsavanzado])];
+  }
+  
+  for(i=0; i<xs.length; i++){
+      if(!xs[i].className.includes("cuerpo_finito")){
+        xs[i].style.display = "block";        
+      }else{
+        if (casilla_cf.checked){
+          xs[i].style.display = "block";
+        }
+      }
+  }
+}
+
+
+function CF() {
+  var xs = document.querySelectorAll("[class*='cuerpo_finito']");
+  var i;
+  //console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      x = xs[i]
+      if (casilla_cf.checked) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      } 
+    }  
+}
+
+</script>
+  
+  
+  <!-- contador para artículos (ejercicios) -->
+  
+  <style>
+    body {
+      counter-reset: article;
+    }
+    
+    article:before {
+      counter-increment: article;
+      content: "Ejercicio " counter(article) ". ";
+      font-weight: bold;
+    }
+    
+    article {
+      border-style: solid;
+      border-width: 1px 1px 1px 5px;
+      border-color: gray gray gray gray;
+      border-radius: 5px;
+      padding: 0.5em 0.5em 0.5em 0.5em;
+      margin-bottom: 0.5em;
+    }
+    </style>
+    
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Problemas resueltos de Álgebra Lineal</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/pedritomelenas/Algebra-Lineal"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./resueltos-4.html">Espacio euclídeo</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Matrices y sistemas de ecuaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Espacios vectoriales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aplicaciones lineales</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Espacio euclídeo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resueltos-examenes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Otros</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+<div class="quarto-sidebar-footer"><div class="sidebar-footer-item">
+<p>Hecho con <a href="https://quarto.org/">Quarto</a></p>
+</div></div></nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Espacio euclídeo</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- LTeX: language=es-ES --->
+<!--En principio se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>
+<input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. -->
+<article>
+<p>En <span class="math inline">\(\mathbb{R}^4\)</span> con el producto escalar usual se consideran los subespacios: <span class="math display">\[
+U\equiv \left\{ \begin{aligned}
+x+t&amp;=0,\\
+y+z&amp;=0,\\
+x-y-z+t&amp;=0.
+\end{aligned}\right.
+\qquad  W=\mathcal{L}((1,0,0,1),(0,0,1,-1)).\]</span></p>
+<ol type="a">
+<li>
+Calcula una base ortogonal de cada uno de ellos.
+</li>
+<li>
+Prueba que <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son complementarios, pero que <span class="math inline">\(U^{\perp}\not = W\)</span>.
+</li>
+<li>
+Para el vector <span class="math inline">\(v=(1,-1,1,1)\)</span> calcula <span class="math inline">\(p_{U}(v)\)</span> y <span class="math inline">\(p_{U^{\perp}}(v)\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular una base ortogonal.<br> Para calcular una base ortogonal de <span class="math inline">\(U\)</span> empezamos simplificando las ecuaciones cartesianas y obteniendo una base: <span class="math display">\[U\equiv \left\{ \begin{array}{rl}
+x+t&amp;=0,\\
+y+z&amp;=0,\\
+x-y-z+t&amp;=0.
+\end{array}\right. \sim_f U\equiv \left\{ \begin{array}{rl}
+x+t&amp;=0,\\
+y+z&amp;=0.\\
+\end{array}\right.
+\]</span> Podemos calcular una base usando como parámetros a <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>: <span class="math inline">\(\{ (1,0,0,-1),(0,1,-1,0)\}\)</span>; además esta base resulta ser ortogonal.<br> Para <span class="math inline">\(W\)</span> ya tenemos un sistema de generadores y observamos que son linealmente independientes; pero no son ortogonales, así que utilizamos el método de Gram-Schimdt partiendo de estos vectores: <span class="math display">\[\begin{array}{l}
+u_1=(1,0,0,1),\\
+u_2=(0,0,1,-1),
+\end{array}\hspace{1cm}
+\begin{array}{l}
+e_1=(1,0,0,1),\\
+e_2=(0,0,1,-1)+\lambda_{2,1}(1,0,0,1).
+\end{array}\]</span> Calculamos <span class="math display">\[\lambda_{2,1}=-\frac{\langle(0,0,1,-1),(1,0,0,1)\rangle}{\langle(1,0,0,1),(1,0,0,1)\rangle}=-\frac{-1}{2}=\frac{1}{2}.\]</span> Así que la base ortogonal de <span class="math inline">\(W\)</span> que obtenemos es: <span class="math display">\[\{(1,0,0,1),(1/2,0,1,-1/2)\}.\]</span>
+</li>
+<li>
+<p>Probar que <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son complementarios, pero que <span class="math inline">\(U^{\perp}\not = W\)</span>.<br> Son complementarios si <span class="math inline">\(U+W=\mathbb{R}^4\)</span> y <span class="math inline">\(U\cap W=\{ 0 \}\)</span>. Calculamos <span class="math inline">\(U+W\)</span> reuniendo bases: <span class="math display">\[\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 1\\
+-1 &amp; 0 &amp; 1 &amp; -1
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 1\\
+-1 &amp; 0 &amp; 2 &amp; -1
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}.\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,0,1,0],[0,1,0,0],[0,-1,0,1],[-1,0,1,-1]])
+show(A,"~",((A.T).rref()).T)
+</script>
+</div>
+y obtenemos que <span class="math inline">\(U+W=\mathbb{R}^4\)</span> puesto que obtenemos la base canónica. Ahora usando la fórmula de las dimensiones <span class="math display">\[\operatorname{dim}(U) + \operatorname{dim}(W) = \operatorname{dim}(U+W)+ \operatorname{dim}(U\cap W)\]</span> obtenemos que <span class="math inline">\(\operatorname{dim}(U\cap W)=0\)</span> y por tanto <span class="math inline">\(U\cap W=\{ 0 \}\)</span>. Sin embargo, como <span class="math inline">\(\langle (1,0,0,-1),(0,0,1,-1)\rangle =1\)</span> y <span class="math inline">\((1,0,0,-1)\in U\)</span> y <span class="math inline">\((0,0,1,-1)\in W\)</span>, entonces <span class="math inline">\(W\not = U^{\perp}\)</span>.
+</li>
+<li>
+Calcular <span class="math inline">\(p_{U}(v)\)</span> y <span class="math inline">\(p_{U^{\perp}}(v)\)</span>.<br> De la base de <span class="math inline">\(U\)</span> obtenemos las cartesianas de <span class="math inline">\(U^{\perp}\)</span> que son: <span class="math display">\[U^{\perp}\equiv \left\{ \begin{array}{rl}
+x-t&amp;=0,\\
+y-z&amp;=0.\\
+\end{array}\right.\]</span> Escribimos ahora <span class="math inline">\(v=p_{U}(v)+p_{U^{\perp}}\)</span> usando 4 incógnitas <span class="math display">\[(1,-1,1,1)=(\alpha, \beta, \gamma, \delta)+ (1-\alpha, -1-\beta,1-\gamma, 1-\delta)\]</span> e imponemos las condiciones de que el primero cumpla las cartesianas de <span class="math inline">\(U\)</span> y el segundo las de <span class="math inline">\(U^{\perp}\)</span> y resolvemos: <span class="math display">\[\begin{array}{r}
+\alpha +\delta = 0,\\
+-\alpha + \delta = 0,\\
+\beta + \gamma = 0,\\
+-1-\beta -1+ \gamma = 0,
+\end{array}\]</span> y resulta <span class="math inline">\(\alpha= 0, \beta=-1, \gamma = 1, \delta= 0\)</span>, así que: <span class="math display">\[p_U(1,-1,1,1)=(0,-1,1,0); \, \, p_{U^{\perp}}(1,-1,1,1)=(1,0,0,1).\]</span>
+</li>
+</ol>
+</details>
+</article>
+<article>
+<ol type="a">
+<li>
+En <span class="math inline">\(\mathbb{R}^{3}\)</span>, dado el subespacio <span class="math inline">\(U\equiv \left\{ \begin{array}{l}
+x+y=0,\\
+x+z=0.
+\end{array}\right.\)</span> y considerando el producto escalar usual, calcula <span class="math inline">\(p_{U^{\perp}}(0,1,2)\)</span>.
+</li>
+<li>
+En el espacio vectorial <span class="math inline">\(V\)</span>, <span class="math inline">\(B=\{ e_1,e_2\}\)</span> es una base. Calcula las coordenadas respecto de la base <span class="math inline">\(B'=\{e_1+e_2, 2e_1-e_2\}\)</span> del vector <span class="math inline">\(v=(1,-1)_{B}\)</span>.
+</li>
+<li>
+Consideramos en <span class="math inline">\(\mathbb{R}^{2}\)</span> el producto escalar que tiene, respecto de la base canónica, matriz de Gram (o matriz métrica) <span class="math inline">\(\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 2
+\end{pmatrix}\)</span>. Calcula una base de <span class="math inline">\(\mathbb{R}^{2}\)</span> respecto de la cual la matriz de Gram de este producto escalar sea <span class="math inline">\(I_2\)</span>.
+</li>
+<li>
+Determina, en función de <span class="math inline">\(b\)</span>, la signatura de la forma cuadrática <span class="math inline">\(\phi:\mathbb{R}^{2} \to \mathbb{R}\)</span> dada por <span class="math display">\[\phi(x,y)= bxy.\]</span>
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular <span class="math inline">\(p_{U^{\perp}}(0,1,2)\)</span>.<br> Una base de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{(1,-1,-1)\}\)</span> y por tanto <span class="math inline">\(U^{\perp}\equiv x-y-z=0\)</span>, descomponemos <span class="math display">\[(0,1,2)=(a,b,c)+(-a,1-b,2-c),\]</span> e imponemos al primer vector que esté en <span class="math inline">\(U\)</span> y al segundo que esté en <span class="math inline">\(W\)</span>: <span class="math display">\[\left\{ \begin{array}{l}
+a+b=0,\\
+a+c=0,\\
+-a-1+b-2+c=0.
+\end{array}\right. \sim_f \left\{ \begin{array}{l}
+b=-a,\\
+c=-a,\\
+-3a-3=0.
+\end{array}\right. \sim_f \left\{ \begin{array}{l}
+a=-1,\\
+b=1,\\
+c=1.
+\end{array}\right. \]</span> Así <span class="math inline">\(p_{U^{\perp}}(0,1,2)=(1,0,1)\)</span>.
+</li>
+<li>
+Calcular las coordenadas respecto de la base <span class="math inline">\(B'\)</span> del vector <span class="math inline">\(v\)</span>.<br> Como <span class="math inline">\(B'=\{(1,1)_B, (2,-1)_B\}\)</span>, planteamos <span class="math display">\[(1,-1)_B=a(1,1)_B+b(2,-1)_B\]</span> y resolvemos <span class="math display">\[\left\{ \begin{array}{l}
+a+2b=1,\\
+a-b=-1.
+\end{array}\right.\sim_f  \left\{ \begin{array}{l}
+a=-1/3,\\
+b=2/3.
+\end{array}\right.\]</span> Luego <span class="math inline">\(v=(-1/3,2/3)_{B'}\)</span>.
+</li>
+<li>
+Calcular una base de <span class="math inline">\(\mathbb{R}^{2}\)</span> respecto de la cual la matriz de Gram sea <span class="math inline">\(I_2\)</span>.<br> Que la matriz de Gram sea la identidad significa que la base sea ortonormal. En primer lugar, aplicamos Gram-Schmidt para calcular una base ortogonal. Partimos por ejemplo de la base canónica: <span class="math display">\[u_1=(1,0), u_2=(0,1).\]</span> Entonces <span class="math inline">\(e_1=(1,0)\)</span> y <span class="math inline">\(e_2=(0,1)+\lambda_{21}(1,0)\)</span> donde <span class="math display">\[\lambda_{21}=-\frac{\langle u_2,e_1\rangle }{\langle e_1,e_1\rangle }=-\frac{1}{1}=-1,\]</span> donde los datos se han recogido de la matriz de Gram respecto de <span class="math inline">\(B_c\)</span>. Por tanto una base ortogonal es <span class="math inline">\(\{(1,0),(-1,1)\}\)</span>, el primero tiene norma 1, calculamos la del segundo: <span class="math display">\[\begin{pmatrix}
+1 &amp; 1
+\end{pmatrix}\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 2
+\end{pmatrix}\begin{pmatrix}
+-1\\
+1
+\end{pmatrix}=\begin{pmatrix}
+0 &amp; 1
+\end{pmatrix} \begin{pmatrix}
+-1\\
+1
+\end{pmatrix}=1\]</span> Así que esta base es ortonormal.
+</li>
+<li>
+Determinar, en función de <span class="math inline">\(b\)</span>, la signatura de la forma cuadrática <span class="math inline">\(\phi\)</span>.<br> La matriz asociada a la forma cuadrática es <span class="math display">\[\begin{pmatrix}
+0 &amp; b/2\\
+b/2 &amp; 0
+\end{pmatrix}\]</span> que podemos diagonalizar por congruencia <span class="math display">\[\begin{pmatrix}
+0 &amp; b/2\\
+b/2 &amp; 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+b/2 &amp; b/2\\
+b/2 &amp; 0
+\end{pmatrix}\sim_c\begin{pmatrix}
+b &amp; b/2\\
+b/2 &amp; 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+b &amp; b/2\\
+0 &amp; -b/4
+\end{pmatrix}\sim_c\begin{pmatrix}
+b &amp; 0\\
+0 &amp; -b/4
+\end{pmatrix}\]</span> Si <span class="math inline">\(b=0\)</span> la signatura es <span class="math inline">\((0,0)\)</span>; si <span class="math inline">\(b\not = 0\)</span> la signatura es <span class="math inline">\((1,1)\)</span>.<br> También pueden calcularse los valores propios que son <span class="math display">\[\lambda= \pm (b/4)\]</span> y queda el mismo resultado, por supuesto.
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En el espacio vectorial <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de los polinomios de grado menor o igual que tres se considera el subespacio <span class="math inline">\(U\)</span> generado por <span class="math inline">\(x\)</span> y <span class="math inline">\(x^3\)</span> y el producto escalar dado por: <span class="math display">\[
+\langle p(x),q(x)\rangle = \int_{-1}^1 p(x)\cdot q(x) dx.
+\]</span></p>
+<ol type="a">
+<li>
+Determinar una base ortogonal de <span class="math inline">\(U\)</span>.
+</li>
+<li>
+Determinar una base de su complementario, <span class="math inline">\(U^{\perp}\)</span>.
+</li>
+<li>
+Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(1+x\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Determinar una base ortogonal de <span class="math inline">\(U\)</span>.<br> Como <span class="math inline">\(\{ x, x^3\}\)</span> es base, y <span class="math inline">\(\langle x,x^3 \rangle =\int_{-1}^1 x^4dx= \left. x^5\right]_{-1}^1=2/5\)</span> por lo que no es ortogonal. Usamos el algoritmo de Gram-Schmidt para calcular una:</p>
+<span class="math display">\[\begin{array}{lr}
+e_1=x, &amp; \\
+e_2=x^3+\lambda_{21}x,&amp; \lambda_{21}= \frac{- \langle x,x^3\rangle}{\langle x,x\rangle}.\\
+\end{array}\]</span> Calculamos <span class="math inline">\(\langle x,x\rangle =\int_{-1}^1 x^2dx= \left. x^3\right]_{-1}^1=2/3\)</span> luego una base ortogonal de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{x,x^3-3/5x\}\)</span>.
+</li>
+<li>
+Determinar una base de su complementario, <span class="math inline">\(U^{\perp}\)</span>.<br> Podemos observar que <span class="math inline">\(\langle 1,x\rangle =\langle 1,x^3\rangle =0\)</span> y <span class="math inline">\(\langle x^2,x\rangle =\langle x^2,x^3\rangle =0\)</span> por lo que <span class="math inline">\(\{1,x^2\}\)</span> es una base de <span class="math inline">\(U^{\perp}\)</span>, ya que este subespacio debe tener dimensión dos.
+</li>
+<li>
+Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(1+x\)</span>.<br> Puesto que tenemos bases sencillas de <span class="math inline">\(U\)</span> y de <span class="math inline">\(U^{\perp}\)</span> podemos expresar el polinomio dado como combinación lineal de todos ellos: <span class="math display">\[1+x=\alpha_1\cdot x +  \alpha_2\cdot x^3 + \alpha_3\cdot 1 +\alpha_4\cdot x^2\]</span> donde los dos primeros sumandos nos dan la proyección sobre <span class="math inline">\(U\)</span> y los dos últimos la proyección sobre <span class="math inline">\(U^{\perp}\)</span>. Es inmediato que <span class="math inline">\(\alpha_1=1\)</span>, <span class="math inline">\(\alpha_2=0\)</span>, <span class="math inline">\(\alpha_3=1\)</span> y <span class="math inline">\(\alpha_4=0\)</span>. Por tanto <span class="math display">\[p_U (1+x)=x.\]</span>
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En <span class="math inline">\(\mathbb{R}^{3}\)</span> se consideran el producto escalar cuya matriz de Gram respecto de la base canónica es <span class="math display">\[
+\begin{pmatrix}
+1 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</span> y los subespacios <span class="math inline">\(U=L((1,1,2),(2,1,1))\)</span> y <span class="math inline">\(W=L((1,a,1))\)</span>, siendo <span class="math inline">\(a\)</span> un parámetro.</p>
+<ol type="a">
+<li>
+Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U \cap W\)</span> en función de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Calcular el complemento ortogonal de <span class="math inline">\(U\)</span>.
+</li>
+<li>
+Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\((5,-3,4)\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+<p>Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U \cap W\)</span> en función de <span class="math inline">\(a\)</span>.<br></p>
+<p>Los sistemas de generadores dados de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son bases, así que <span class="math inline">\(\operatorname{dim}(U)=2\)</span> y <span class="math inline">\(\operatorname{dim}(W)=1\)</span> para todos los valores de <span class="math inline">\(a\)</span>. Un sistema de generadores de <span class="math inline">\(U+W\)</span> se obtiene al reuinir bases de ambos, comprobaremos para qué valores de <span class="math inline">\(a\)</span> son linealmente independientes: <span class="math display">\[\left|\begin{array}{ccc}
+1 &amp; 2 &amp; 1\\
+1 &amp; 1 &amp; a\\
+2 &amp; 1 &amp; 1
+\end{array}\right|=\left|\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+1 &amp; -1 &amp; a-1\\
+2 &amp; -3 &amp; -1
+\end{array}\right|=1+3(a-1)=3a-2.
+\]</span> Si <span class="math inline">\(a=2/3\)</span> la dimensión de <span class="math inline">\(U+W\)</span> es dos y por tanto <span class="math inline">\(U+W=U\)</span>, o lo que es lo mismo, <span class="math inline">\(W\subset U\)</span>, así que una base es, por ejemplo, <span class="math inline">\(\{ (1,1,2),(2,1,1)\}\)</span>, o también su base más sencilla que es <span class="math inline">\(\{(1,0,-1),(0,1,3)\}\)</span>. Por tanto <span class="math inline">\(U\cap W=W\)</span> y una base es <span class="math inline">\(\{(1,a,1)\}\)</span>. <br></p>
+Si <span class="math inline">\(a\not = 2/3\)</span> entonces <span class="math inline">\(\operatorname{dim}(U+W)=3\)</span> y por tanto <span class="math inline">\(U+W=\mathbb{R}^{3}\)</span> y una base es la canónica. Por la fórmula de las dimensiones <span class="math inline">\(\operatorname{dim}(U\cap W) + \operatorname{dim}(U+W)= d\operatorname{dim}(U) + \operatorname{dim}(W)\)</span> y por tanto <span class="math inline">\(U\cap W=\{0\}\)</span> que no tiene base.
+</li>
+<li>
+<p>Calcular el complemento ortogonal de <span class="math inline">\(U\)</span>.<br></p>
+Por cada vector de la base de <span class="math inline">\(U\)</span> obtenemos una cartesiana de <span class="math inline">\(U^{\perp}\)</span> imponiendo que el producto escalar sea cero (usamos la base más sencilla, aunque sirve cualquier otra): <span class="math display">\[(1,0,-1)\begin{pmatrix}
+1 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}=0, \, \, \text{obteniendo   } \,  x+y-z=0;\]</span> <span class="math display">\[(0,1,3)\begin{pmatrix}
+1 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{pmatrix}\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}=0, \, \, \text{obteniendo   } \,  x+2y+3z=0.\]</span> Así que <span class="math display">\[U^{\perp}\equiv \left\{\begin{array}{r}
+x+y-z=0,\\
+x+2y+3z=0.
+\end{array}\right. \sim \left\{\begin{array}{r}
+x-5z=0,\\
+y+4z=0.
+\end{array}\right.
+\]</span> Y una base es <span class="math inline">\(\{ (5,-4,1)\}\)</span>.
+</li>
+<li>
+<p>Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\((5,-3,4)\)</span>.<br></p>
+<p>Como sabemos una base (ortogonal, puesto que tiene un solo vector) de <span class="math inline">\(U^{\perp}\)</span> calculamos <span class="math display">\[p_{U^{\perp}}(5,-3,4)=\frac{\langle(5,-3,4)(5,-4,1)\rangle}{\langle(5,-4,1)(5,-4,1)\rangle}(5,-4,1)= \frac{18}{18}(5,-4,1)=(5,-4,1).\]</span> Luego <span class="math display">\[p_U(5,-3,4)=(5,-3,4)-p_{U^{\perp}}(5,-3,4)=(5,-3,4)-(5,-4,1)=(0,1,3).\]</span></p>
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>Dada la matriz: <span class="math display">\[A=
+\begin{pmatrix}
+2 &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 2 &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; 2 &amp; 0 \\
+-1 &amp; 0 &amp; 0 &amp; 2
+\end{pmatrix}
+\]</span></p>
+<p>Razonar que es diagonalizable y determinar su forma diagonal y una matriz de paso, <span class="math inline">\(P\)</span>, verificando que <span class="math inline">\(P^{-1}=P^t\)</span>. ¿Cuál es la signatura de <span class="math inline">\(A\)</span>?</p>
+<details>
+<summary>
+Solución
+</summary>
+<p>La matriz <span class="math inline">\(A\)</span> es simétrica y el Teorema espectral afirma que toda matriz simétrica y real es diagonali-zable, por tanto <span class="math inline">\(A\)</span> lo es. Nos piden una diagonalización por semejanza ortogonal, aí que tenemos que calcular en primer lugar los valores propios: <span class="math display">\[\begin{align*}
+|A-\lambda I| &amp; =\left|
+\begin{array}{rrrr}
+2-\lambda &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 2-\lambda &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; 2-\lambda &amp; 0 \\
+-1 &amp; 0 &amp; 0 &amp; 2-\lambda
+\end{array}\right|=(F_4+F_1\rightarrow F_4)=
+\left|
+\begin{array}{rrrr}
+2-\lambda &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 2-\lambda &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; 2-\lambda &amp; 0 \\
+1-\lambda &amp; 0 &amp; 0 &amp; 1-\lambda
+\end{array}\right|\\
+&amp; =(C_1-C_4 \rightarrow C_1)=
+\left|\begin{array}{rrrr}
+3-\lambda &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 2-\lambda &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; 2-\lambda &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1-\lambda
+\end{array}\right|=(3-\lambda)(1-\lambda)[(2-\lambda)^2-1]=(3-\lambda)^2(1-\lambda)^2.
+\end{align*}
+\]</span> Tenemos entonces los valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=3\)</span> ambos con multiplicidad algebraica dos. Tenemos entonces que la matriz diagonal semejante y congruente con <span class="math inline">\(A\)</span> es <span class="math display">\[D=\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1&amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 3
+\end{pmatrix},\]</span> y por tanto la signatura de <span class="math inline">\(A\)</span> es <span class="math inline">\((4,0)\)</span>, por tanto definida positiva.<br> Calculamos ahora los subespacios propios y elgimos una base ortonormal de cada uno.<br></p>
+<p><strong><span class="math inline">\(V_{\lambda=1}\)</span></strong> <span class="math display">\[(A-1\cdot I)=\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; 1 &amp; 0 \\
+-1 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix},
+\]</span> nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
+x-t=0\\
+y-z=0
+\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,1),(0,1,1,0)\}\)</span>.<br></p>
+<p><strong><span class="math inline">\(V_{\lambda=3}\)</span></strong> <span class="math display">\[(A-1\cdot I)=\begin{pmatrix}
+-1 &amp; 0 &amp; 0 &amp; -1\\
+0 &amp; -1 &amp; -1 &amp; 0 \\
+0 &amp; -1 &amp; -1 &amp; 0 \\
+-1 &amp; 0 &amp; 0 &amp; -1
+\end{pmatrix},
+\]</span> nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
+x+t=0\\
+y+z=0
+\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,-1),(0,1,-1,0)\}\)</span>.<br> Dividiendo cada vector por su norma obtenemos una base ortonormal de vectores propios, lo que nos da la matriz ortogonal <span class="math inline">\(P\)</span>: <span class="math display">\[P=\begin{pmatrix}
+1/\sqrt{2} &amp; 0 &amp; 0 &amp; 1/\sqrt{2}\\
+0 &amp; 1/\sqrt{2} &amp; 1/\sqrt{2} &amp; 0\\
+0 &amp; 1/\sqrt{2} &amp; -1/\sqrt{2} &amp; 0\\
+1/\sqrt{2} &amp; 0 &amp; 0 &amp; -1/\sqrt{2}\\
+\end{pmatrix}.\]</span></p>
+</details>
+</article>
+<article>
+<p>En <span class="math inline">\(\mathbb{R}^3\)</span> consideramos el producto escalar que, respecto de la base canónica, tiene matriz de Gram <span class="math display">\[G= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 1\\
+1 &amp; 3 &amp; 0\\
+1 &amp; 0 &amp; 2
+\end{array}\right).\]</span></p>
+<ol type="a">
+<li>
+Calcula una base ortogonal de este espacio vectorial.
+</li>
+<li>
+Calcula <span class="math inline">\(U^{\perp}\)</span> para el subespacio <span class="math display">\[U\equiv \left\{ \begin{array}{r}
+x+y+z=0,\\
+x-z=0.
+\end{array}\right.\]</span>
+</li>
+<li>
+Calcula <span class="math inline">\(p_U(1,1,1)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1,1,1)\)</span>.
+</li>
+<li>
+Determina para qué valores de <span class="math inline">\(a\)</span> la fórmula <span class="math display">\[f(x,y,z)=x^2+2axy+2xz+2ay^2+(a+1)z^2,\]</span> define una forma cuadrática definida positiva.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular una base ortogonal de este espacio vectorial.<br> Partimos de la base canónica de <span class="math inline">\(\mathbb{R}^{3}\)</span> y aplicamos Gram-Schmidt: <span class="math inline">\(\{u_1=(1,0,0), u_2=(0,1,0),  u_3=(0,0,1)\}\)</span>, <span class="math display">\[e_1=u_1=(1,0,0),\]</span> <span class="math inline">\(e_2=u_2+\lambda_{21}e_1,\)</span> necesitamos calcular <span class="math display">\[\lambda_{21}=\frac{-\langle u_2,e_1\rangle}{\langle e_1,e_1\rangle}=\frac{-1}{1}=-1,\]</span> puesto que tanto numerador como denominador aparecen en la matriz de Gram. Así <span class="math display">\[e_2=(0,1,0)-(1,0,0)=(-1,1,0),\]</span> ahora <span class="math inline">\(e_3=u_3+\lambda_{31}e_1+\lambda_{32}e_2\)</span>, y de nuevo numerador y denominador de <span class="math inline">\(\lambda_{31}\)</span> aparecen en la matriz de Gram: <span class="math display">\[\lambda_{31}=\frac{-\langle u_3,e_1\rangle}{\langle e_1,e_1\rangle}=\frac{-1}{1}=-1,\]</span> pero los de <span class="math inline">\(\lambda_{32}\)</span> deben ser calculados: <span class="math display">\[\langle u_3,e_2\rangle(0\, 0\, 1)\left(\begin{array}{rrr}
+1 &amp; 1 &amp; 1\\
+1 &amp; 3 &amp; 0\\
+1 &amp; 0 &amp; 2
+\end{array}\right)\left(\begin{array}{r}
+-1 \\
+1\\
+0
+\end{array}\right)=-1,\]</span> <span class="math display">\[\langle e_2,e_2\rangle(-1\, 1\, 0)\left(\begin{array}{rrr}
+1 &amp; 1 &amp; 1\\
+1 &amp; 3 &amp; 0\\
+1 &amp; 0 &amp; 2
+\end{array}\right)\left(\begin{array}{r}
+-1 \\
+1\\
+0
+\end{array}\right)=2,\]</span> luego <span class="math inline">\(\lambda_{32}=1/2\)</span> y por tanto <span class="math display">\[e_3=(0,0,1)-(1,0,0)+1/2(-1,1,0)=(-3/2,1/2,1).\]</span> Luego una base ortogonal es <span class="math display">\[\{(1,0,0),(-1,1,0),(-3/2,1/2,1)\}.\]</span>
+</li>
+<li>
+Calcular <span class="math inline">\(U^{\perp}\)</span>. <br> Calculamos en primer lugar una base de <span class="math inline">\(U\)</span>, como <span class="math inline">\(\operatorname{dim}(U)=3- \text{nº cartesianas}=1\)</span> basta encontrar un vector que cumpla las cartesianas: <span class="math inline">\(\{u=(1,-2,1)\}\)</span>. Ahora imponemos la condición <span class="math inline">\(\langle(1,-2,1),(x,y,z)\rangle=0\)</span> que nos da la ecuación cartesiana de <span class="math inline">\(U^{\perp}\)</span>: <span class="math display">\[(1\, -2\,\,  1)\left(\begin{array}{rrr}
+1 &amp; 1 &amp; 1\\
+1 &amp; 3 &amp; 0\\
+1 &amp; 0 &amp; 2
+\end{array}\right)\left(\begin{array}{r}
+x \\
+y\\
+z
+\end{array}\right)=-5y+3z=0.\]</span>
+</li>
+<li>
+Calcula <span class="math inline">\(p_U(1,1,1)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1,1,1)\)</span>.<br> Podemos usar la base ortogonal de <span class="math inline">\(U\)</span>: <span class="math inline">\(\{(1,-2,1)\}\)</span> (que lo es por tener un solo vector) y la fórmula de los coeficientes de Fourier: <span class="math display">\[p_U(1,1,1)=\frac{\langle(1,1,1),(1,-2,1)\rangle}{\langle(1,-2,1),(1,-2,1)\rangle}(1,-2,1).\]</span> Calculamos los dos productos escalares y obtenemos <span class="math display">\[(1\, -2\,\,  1)\left(\begin{array}{rrr}
+1 &amp; 1 &amp; 1\\
+1 &amp; 3 &amp; 0\\
+1 &amp; 0 &amp; 2
+\end{array}\right)\left(\begin{array}{r|r}
+1 &amp; 1\\
+1 &amp; -2\\
+1 &amp; 1
+\end{array}\right)=(-2|13),\]</span> <span class="math display">\[p_U(1,1,1)=\frac{-2}{13}(1,-2,1)=(-2/13, 4/13, -2/13),\]</span> <span class="math display">\[p_{U^{\perp}}(1,1,1)=(1,1,1)-(-2/13, 4/13, -2/13)=(15/13, 9/13, 15/13).\]</span>
+</li>
+<li>
+Determina para qué valores de <span class="math inline">\(a\)</span> <span class="math inline">\(f\)</span> es una forma cuadrática definida positiva.<br> Calculamos la matriz simétrica asociada a esta forma cuadrática y la diagonalizamos por congruencia para obtener su signatura: <span class="math display">\[\left(\begin{array}{ccc}
+1 &amp; a &amp; 1\\
+a &amp; 2a &amp; 0\\
+1 &amp; 0 &amp; a+1
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+1 &amp; a &amp; 1\\
+0 &amp; 2a-a^2 &amp; -a\\
+0 &amp; -a &amp; a
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; 2a-a^2 &amp; -a\\
+0 &amp; -a &amp; a
+\end{array}\right)\]</span> Ahora intercambiamos las filas segunda y tercera y también las columnas segunda y tercera: <span class="math display">\[\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; 2a-a^2 &amp; -a\\
+0 &amp; -a &amp; a
+\end{array}\right)
+\sim_f \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; -a  &amp; a\\
+0 &amp; 2a-a^2 &amp; -a
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; a  &amp; -a\\
+0 &amp; -a &amp; 2a-a^2
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; a  &amp; -a\\
+0 &amp; 0 &amp; a-a^2
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; a  &amp; 0\\
+0 &amp; 0 &amp; a-a^2
+\end{array}\right).\]</span> Luego será definida positiva cuando los tres elementos de la diagonal lo sean, es decir <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(a(1-a)&gt;0\)</span> luego debe ser <span class="math inline">\(0&lt;a&lt;1\)</span>.
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En <span class="math inline">\(\mathcal{P}_2(\mathbb{R})\)</span> consideramos el producto escalar dado por <span class="math display">\[\langle p(x),q(x)\rangle=\int_0^1 p(x)q(x)dx.\]</span></p>
+<ol type="a">
+<li>
+Calcula la matriz de Gram respecto de la base <span class="math inline">\(\{1, 1-x, x^2\}\)</span>.
+</li>
+<li>
+Calcula una base de <span class="math inline">\(U=\{p(x)\in \mathcal{P}_2(\mathbb{R}) \text{ tal que } p(1)=p'(1)=0\}\)</span>.
+</li>
+<li>
+Calcula las ecuaciones cartesianas del subespacio <span class="math inline">\(U^{\perp}\)</span>.
+</li>
+<li>
+Calcula <span class="math inline">\(p_U(1-2x^2)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1-2x^2)\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular la matriz de Gram respecto de la base <span class="math inline">\(\{1, 1-x, x^2\}\)</span>. <span class="math display">\[\langle 1,1\rangle=\int_0^1 1\cdot 1dx=\left. x \right]_0^1=1,\]</span> <span class="math display">\[\langle 1,1-x\rangle=\int_0^1 1\cdot (1-x)dx=x-\left. \dfrac{1}{2}x^2\right]_0^1=\dfrac{1}{2},\]</span> <span class="math display">\[\langle 1,x^2\rangle=\int_0^1 1\cdot x^2dx=\left. \dfrac{1}{3}x^3\right]_0^1=\dfrac{1}{3},\]</span> <span class="math display">\[\langle 1-x,1-x\rangle=\int_0^1 (1-x)^2dx=\left. \dfrac{1}{3}(x-1)^3\right]_0^1=\dfrac{1}{3},\]</span> <span class="math display">\[\langle 1-x,x^2\rangle=\int_0^1 (x^2-x^3)dx=\dfrac{1}{3}x^3-\left. \dfrac{1}{4}x^4\right]_0^1=\dfrac{1}{12},\]</span> <span class="math display">\[\langle x^2,x^2\rangle=\int_0^1 x^4dx=\left. \dfrac{1}{5}x^5\right]_0^1=\dfrac{1}{5},\]</span> <span class="math display">\[G_B=\left(
+\begin{array}{ccc}
+  1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
+  \frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{12} \\
+  \frac{1}{3} &amp; \frac{1}{12} &amp; \frac{1}{5}\\
+\end{array}\right).\]</span>
+</li>
+<li>
+Calcular una base de <span class="math inline">\(U\)</span>.<br> <span class="math display">\[p(x)=a_0+a_1x+a_2x^2=(a_0,a_1,a_2)_{B_S} \Rightarrow p(1)=a_0+a_1+a_2=0.\]</span> Por otro lado, <span class="math display">\[p'(x)=a_1+2a_2x \Rightarrow p'(1)=a_1+2a_2=0.\]</span><br> Luego unas ecuaciones cartesianas son <span class="math inline">\(U\equiv \left\{\begin{array}{l} a_0+a_1+a_2=0, \\ a_1+2a_2=0. \end{array}\right.\)</span><br> Resolviendo, <span class="math display">\[\left\{\begin{array}{l} a_1=-2a_2, \\ a_0-2a_2+a_2=0. \end{array}\right.\Rightarrow \left\{ \begin{array}{l} a_0=\lambda, \\ a_1=-2\lambda,\\ a_2=\lambda. \end{array} \right.\]</span> Por lo tanto, una base de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{(1,-2,1)_{B_{S}}\}=\{1-2x+x^2\}\)</span>.
+</li>
+<li>
+Calcula las ecuaciones cartesianas del subespacio <span class="math inline">\(U^{\perp}\)</span>.<br> Para usar la matriz de Gram para calcular el producto escalar, será necesario calcular la matriz de Gram con respecto a la base estándar, que no es la del apartado a). Algunos de los cálculos sí sirven: <span class="math display">\[\langle 1,1\rangle=1,\]</span> <span class="math display">\[\langle 1,x\rangle=\int_0^1 1\cdot (x)dx=\left. \dfrac{1}{2}x^2\right]_0^1=\dfrac{1}{2},\]</span> <span class="math display">\[\langle 1,x^2\rangle=\dfrac{1}{3},\]</span> <span class="math display">\[\langle x,x\rangle=\int_0^1 x^2dx=\left. \dfrac{1}{3}x^3\right]_0^1=\dfrac{1}{3},\]</span> <span class="math display">\[\langle x,x^2\rangle=\int_0^1 x^3dx=\left. \dfrac{1}{4}x^4\right]_0^1=\dfrac{1}{4},\]</span> <span class="math display">\[\langle x^2,x^2\rangle=\dfrac{1}{5},\]</span> <span class="math display">\[G_{B_{S}}=\left(
+\begin{array}{ccc}
+1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
+\frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{4} \\
+\frac{1}{3} &amp; \frac{1}{4} &amp; \frac{1}{5}\\
+\end{array}
+\right).\]</span> Ahora imponemos la condición <span class="math display">\[\langle(1,-2,1)_{B_{S}}, (a_0, a_1,a_2)\rangle=0,\]</span> <span class="math display">\[(1,-2,1)\left(
+\begin{array}{ccc}
+1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
+\frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{4} \\
+\frac{1}{3} &amp; \frac{1}{4} &amp; \frac{1}{5}\\
+\end{array}
+\right) \left(
+\begin{array}{c}
+a_0 \\
+a_1 \\
+a_2 \\
+\end{array}
+\right)=0. \]</span><br>
+Luego unas cartesianas son <span class="math inline">\(\dfrac{1}{3}a_0+\dfrac{1}{12}a_1+\dfrac{1}{30}a_2=0\)</span>, o bien<br>
+<span class="math inline">\(U^{\perp}\equiv a_0+\dfrac{1}{4}a_1+\dfrac{1}{10}a_2=0\)</span>.
+</li>
+<li>
+Calcula <span class="math inline">\(p_U(1-2x^2)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1-2x^2)\)</span>.<br> Como <span class="math inline">\(\operatorname{dim}(U)=1\)</span> es rápido calcular <span class="math inline">\(p_U(1-2x^2)\)</span> usando coeficientes de Fourier. Puesto que <span class="math inline">\(\{ (1,-2,1)_{B_S} \}\)</span> es un base ortogonal de <span class="math inline">\(U\)</span>. <span class="math display">\[p_U((1,0,-2)_{B_S})=\dfrac{\langle(1,0,-2)_{B_S},(1,-2,1)_{B_S}\rangle}{\langle(1,-2,1)_{B_S},(1,-2,1)_{B_S}\rangle} (1,-2,1)_{B_S}.\]</span> Calculamos <span class="math display">\[(1,-2,1)\left(
+\begin{array}{ccc}
+1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
+\frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{4} \\
+\frac{1}{3} &amp; \frac{1}{4} &amp; \frac{1}{5}\\
+\end{array}
+\right) \left(
+\begin{array}{c}
+1 \\
+-2 \\
+1 \\
+\end{array}
+\right)=\dfrac{1}{5}; (1,-2,1)\left(
+\begin{array}{ccc}
+1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
+\frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{4} \\
+\frac{1}{3} &amp; \frac{1}{4} &amp; \frac{1}{5}\\
+\end{array}
+\right) \left(
+\begin{array}{c}
+1 \\
+0 \\
+2 \\
+\end{array}
+\right)=\dfrac{4}{15}.\]</span> Luego <span class="math display">\[p_U((1,0,-2)_{B_S})=\dfrac{\frac{1}{4}}{\frac{1}{5}}(1,-2,1)_{B_S}=\dfrac{20}{15}(1,-2,1)_{B_S}=(\dfrac{4}{3},\dfrac{-8}{3},\dfrac{4}{3})_{B_S},\]</span> y por lo tanto <span class="math display">\[p_{U^{\perp}}((1,0,-2)_{B_S})=(1,0,-2)_{B_S}-(\dfrac{4}{3},\dfrac{-8}{3},\dfrac{4}{3})_{B_S}= (-\dfrac{1}{3},\dfrac{8}{3},\dfrac{-10}{3})_{B_S}.\]</span> Podemos comprobar el resultado: <span class="math display">\[\dfrac{-1}{3}+\dfrac{1}{4}\cdot\dfrac{8}{3}+\dfrac{1}{10}\cdot\dfrac{-10}{3}=-\dfrac{1}{3}+\dfrac{2}{3}-\dfrac{1}{3}=0.\]</span>
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> se consideran los subespacios vectoriales:<br> <span class="math display">\[U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=-p(x) \}.\]</span></p>
+<ol type="a">
+<li>
+Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.
+</li>
+<li>
+Descomponer el vector <span class="math inline">\(3x^3+x-2\)</span> como suma de un vector en <span class="math inline">\(U\)</span> y otro en <span class="math inline">\(W\)</span>.
+</li>
+<li>
+Para el producto escalar dado por <span class="math display">\[\langle p(x),q(x)\rangle= \int_{-1} ^1 p(x)q(x)dx.\]</span> calcular una base ortogonal de <span class="math inline">\(U\)</span>.
+</li>
+<li>
+Con el mismo producto escalar, calcular <span class="math inline">\(W^{\perp}\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.<br> Los polinomios que cumplen la condición de <span class="math inline">\(U\)</span> son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a <span class="math inline">\(W\)</span> son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar <span class="math inline">\(B_s=\{1,x,x^2,x^3\}\)</span>: <span class="math display">\[p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(a_0,-a_1,a_2,-a_3)_{B_s}=p(-x).\]</span> Así las cartesianas de <span class="math inline">\(U\)</span> son <span class="math inline">\(\left\{\begin{array}{l}
+a_1=0,\\
+a_3=0.
+\end{array}\right.\)</span> Y una base <span class="math inline">\(\{1,x^2\}\)</span>. <span class="math display">\[p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(-a_0,a_1,-a_2,a_3)_{B_s}=-p(-x),\]</span> nos da que las cartesianas de <span class="math inline">\(W\)</span> son <span class="math inline">\(\left\{\begin{array}{l}
+a_0=0,\\
+a_2=0.
+\end{array}\right.\)</span> Y una base <span class="math inline">\(\{x,x^3\}\)</span>.<br> Así que un sistema de generadores de <span class="math inline">\(U+W\)</span> es <span class="math inline">\(\{1,x,x^2,x^3\}\)</span> con lo que <span class="math inline">\(U+W=\mathcal{P}_3(\mathbb{R})\)</span>, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que <span class="math inline">\(U\cap W=0\)</span>, con lo que se obtiene <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.
+</li>
+<li>
+Descomponer el vector <span class="math inline">\(3x^3+x-2\)</span> como suma de un vector en <span class="math inline">\(U\)</span> y otro en <span class="math inline">\(W\)</span>.<br> Es inmediato que <span class="math display">\[3x^3+x-2= (-2) + (x+3x^3)\]</span> y el primer polinomio está en <span class="math inline">\(U\)</span> y el segundo en <span class="math inline">\(W\)</span>.
+</li>
+<li>
+Para el producto escalar dado calcular una base ortogonal de <span class="math inline">\(U\)</span>.<br> Partimos de la base de <span class="math inline">\(U\)</span> obtenida <span class="math inline">\(\{1,x^2\}\)</span> y aplicamos Gram-Schimdt: <span class="math display">\[e_1=1,\]</span> <span class="math display">\[e_2=x^2-\frac{\langle 1,x^2\rangle}{\langle 1,1\rangle}\cdot 1.\]</span> Calculamos <span class="math inline">\(\langle 1,1\rangle=\int_{-1} ^1 1\cdot 1 dx =  2,\)</span> <span class="math inline">\(\langle 1,x^2\rangle=\int_{-1} ^1 x^2dx = \frac{2}{3}.\)</span> Así <span class="math inline">\(e_2= x^2-\frac{1}{3}\)</span> y la base ortogonal de <span class="math inline">\(U\)</span> obtenida es <span class="math inline">\(\{1, x^2-\frac{1}{3}\}\)</span>.
+</li>
+<li>
+Calcular <span class="math inline">\(W^{\perp}\)</span>.<br> Dada la base de <span class="math inline">\(W\)</span>, <span class="math inline">\(\{x,x^3\}\)</span> observamos que <span class="math display">\[\langle x,1\rangle=\int_{-1} ^1 x\cdot 1 dx = 0,\]</span> <span class="math display">\[\langle x,x^2\rangle=\int_{-1} ^1 x\cdot x^2 dx = 0,\]</span> <span class="math display">\[\langle x^3,1\rangle=\int_{-1} ^1 x^3\cdot 1 dx = 0,\]</span> <span class="math display">\[\langle x^3,x^2\rangle=\int_{-1} ^1 x^3\cdot x^2 dx = 0.\]</span> Así que <span class="math inline">\(U=\mathcal{L}(1,x^2)\)</span> es el subespacio ortogonal a <span class="math inline">\(W\)</span>.
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En el espacio <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de los polinomios de grado menor o igual que tres, se consideran los subespacios <span class="math display">\[P=\{ p(x)\in \mathcal{P}_3(\mathbb{R}) |\,  p(x)=p(-x) \}\]</span> <span class="math display">\[I=\{ p(x)\in \mathcal{P}_3(\mathbb{R}) |\, p(x)=-p(-x) \}\]</span> y el producto escalar <span class="math display">\[\langle p(x),q(x)\rangle = \int_{-1}^{1} p(x)q(x)dx \]</span></p>
+<ol type="a">
+<li>
+Calcular bases de <span class="math inline">\(P\)</span> e <span class="math inline">\(I\)</span> y comprobar que <span class="math inline">\(I\)</span> y <span class="math inline">\(P\)</span> son complementarios.
+</li>
+<li>
+Calcular bases ortogonales de <span class="math inline">\(P\)</span> y de <span class="math inline">\(I\)</span>.
+</li>
+<li>
+¿Es <span class="math inline">\(P\)</span> el complemento ortogonal de <span class="math inline">\(I\)</span> respecto de este producto escalar?
+</li>
+<li>
+Escribir la fórmula para calcular la proyección ortogonal de un polinomio genérico <span class="math inline">\(p(x)=a_0 +a_1 x+a_2 x^2 +a_3 x^3\)</span> sobre <span class="math inline">\(P\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular bases de <span class="math inline">\(P\)</span> e <span class="math inline">\(I\)</span> y comprobar que <span class="math inline">\(I\)</span> y <span class="math inline">\(P\)</span> son complementarios.<br> Para calcular la base de <span class="math inline">\(P\)</span> escribimos la condición <span class="math inline">\(p(x)=p(-x)\)</span> sobre un polinomio genérico, <span class="math inline">\(p(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3\)</span>: <span class="math display">\[a_0+a_1 x+a_2 x^2 +a_3 x^3=a_0-a_1 x+a_2 x^2 -a_3 x^3,\]</span> y nos queda <span class="math inline">\(2a_1 x+ 2a_3x^3=0\)</span>, por tanto, para que este polinomio sea cero, deben ser cero ambos coeficientes: <span class="math display">\[a_1=0,\\
+a_3=0,\]</span> que son las ecuaciones cartesianas del subespacio. Una base será <span class="math inline">\(\{1,x^2\}\)</span>, o bien, utilizando coordenadas respecto de la base estándar <span class="math inline">\(\{1,x,x^2,x^3\}\)</span>, <span class="math inline">\(\{(1,0,0,0),(0,0,1,0)\}\)</span>.<br> De la misma forma para calcular la base de <span class="math inline">\(I\)</span> escribimos la condición <span class="math inline">\(p(x)=-p(-x)\)</span> sobre un polinomio genérico, <span class="math inline">\(p(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3\)</span>: <span class="math display">\[a_0+a_1 x+a_2 x^2 +a_3 x^3=-(a_0-a_1 x+a_2 x^2 -a_3 x^3), \]</span> y nos queda <span class="math inline">\(2a_0 + 2a_2x^2=0\)</span>, por tanto, para que este polinomio sea cero, deben ser cero ambos coeficientes: <span class="math display">\[a_0=0,\\
+a_2=0,\]</span> que son las ecuaciones cartesianas del subespacio. Una base será <span class="math inline">\(\{x,x^3\}\)</span>, o bien, utilizando coordenadas respecto de la base estándar <span class="math inline">\(\{1,x,x^2,x^3\}\)</span>, <span class="math inline">\(\{(0,1,0,0),(0,0,0,1)\}\)</span>.
+</li>
+<li>
+Calcular bases ortogonales de <span class="math inline">\(P\)</span> y de <span class="math inline">\(I\)</span>.<br> Utilizando el método de Gram-Schmidt en ambos casos, sólo es necesario el cálculo de un vector.<br> Comenzamos con <span class="math inline">\(P\)</span>: <span class="math display">\[p_1(x)=1,\\
+p_2 (x)= x^2 +\lambda \cdot 1,\]</span> Calculamos el valor de <span class="math inline">\(\lambda\)</span> para que <span class="math inline">\(\langle p_1(x),p_2(x)\rangle=0\)</span>: <span class="math display">\[0= \int_{-1}^{1} p_1(x)p_2(x)dx = \int_{-1}^{1} 1\cdot(x^2+\lambda )dx = \left. \frac{x^3}{3}+ \lambda x \right]_{-1}^{1} =
+(1/3 +\lambda )-(-1/3-\lambda),
+\]</span> y nos queda $ 2(1/3 + )=0$ con lo que <span class="math inline">\(\lambda = -1/3\)</span>. Así una base ortogonal de <span class="math inline">\(P\)</span> es <span class="math inline">\(\{1, x^2-1/3 \}\)</span>.<br> Ahora para <span class="math inline">\(I\)</span>: <span class="math display">\[p_1(x)=x,\\
+p_2 (x)= x^3 +\lambda \cdot 1.\]</span> Calculamos el valor de <span class="math inline">\(\lambda\)</span> para que <span class="math inline">\(\langle p_1(x),p_2(x)\rangle=0\)</span>: <span class="math display">\[0= \int_{-1}^{1} p_1(x)p_2(x)dx = \int_{-1}^{1} x\cdot(x^3+\lambda x )dx = \left. \frac{x^5}{5}+ \lambda \frac{x^3}{3} \right]_{-1}^{1} =
+(1/5 + (1/3)\lambda )-(-(1/5)-(1/3)\lambda),
+\]</span> y nos queda $ 2(1/5 + (1/3))=0$ con lo que <span class="math inline">\(\lambda = -5/3\)</span>.Así una base ortogonal de <span class="math inline">\(I\)</span> es <span class="math inline">\(\{x, x^3-(5/3)x \}\)</span>.
+</li>
+<li>
+¿Es <span class="math inline">\(P\)</span> el complemento ortogonal de <span class="math inline">\(I\)</span> respecto de este producto escalar?<br> Sólo es necesario comprobar que cada uno de los vectores de una base de <span class="math inline">\(P\)</span> es ortogonal con todos los de una base de <span class="math inline">\(I\)</span>.<br> Usamos las bases calculadas en el apartado a): <span class="math display">\[\langle 1,x\rangle=\int_{-1}^{1} 1\cdot x dx =  \left. \frac{x^2}{2}\right]_{-1}^{1}=0\]</span> <span class="math display">\[\langle 1,x^3\rangle=\int_{-1}^{1} 1\cdot x^3 dx =  \left. \frac{x^4}{4}\right]_{-1}^{1}=0\]</span> <span class="math display">\[\langle x^2,x\rangle=\int_{-1}^{1} x^2\cdot x dx =  \left. \frac{x^4}{4}\right]_{-1}^{1}=0\]</span> <span class="math display">\[\langle x^2,x^3\rangle=\int_{-1}^{1} x^2\cdot x^3 dx =  \left. \frac{x^6}{6}\right]_{-1}^{1}=0\]</span>
+</li>
+<li>
+Escribir la fórmula para calcular la proyección ortogonal de un polinomio genérico <span class="math inline">\(p(x)=a_0 +a_1 x+a_2 x^2 +a_3 x^3\)</span> sobre <span class="math inline">\(P\)</span>.<br> Pueden usarse las cartesianas de <span class="math inline">\(P\)</span> y de su ortogonal que es <span class="math inline">\(I\)</span> para descomponer el vector genérico <span class="math display">\[(a_0,a_1,a_2,a_3)=(a,b,c,d)+(a_0 -a,a_1 -b, a_2 -c, a_3 -d).\]</span> Como el primer vector debe estar en <span class="math inline">\(P\)</span> se tiene <span class="math inline">\(b=0\)</span> y <span class="math inline">\(d=0\)</span>. Como el segundo sumando debe estar en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(a_0-a=0\)</span> y <span class="math inline">\(a_2-c=0\)</span>. Entonces se tiene que la proyección sobre <span class="math inline">\(P\)</span> es <span class="math inline">\((a_0,0,a_2,0)\)</span> o bien <span class="math inline">\(a_0+a_2x^2\)</span>.
+</li>
+</ol>
+</details>
+</article>
+<article>
+<p>En <span class="math inline">\(\mathbb{R}^{4}\)</span> con el producto escalar usual se considera el subespacio <span class="math display">\[U= \mathcal{L} ((1,1,0,1)),\]</span> y el endomorfismo <span class="math inline">\(f:\mathbb{R}^{4} \to \mathbb{R}^{4}\)</span> dado por <span class="math display">\[\begin{array}{rl}
+f(1,-1,0,0)&amp;=(1,-1,0,0),\\
+f(1,0,0,-1)&amp;=(1,0,0,-1),\\
+f(0,0,1,0)&amp;=(0,0,1,0),\\
+f(1,1,0,1)&amp;=(0,0,0,0).\\
+\end{array}
+\]</span></p>
+<ol type="a">
+<li>
+Calcula la proyección ortogonal sobre <span class="math inline">\(U\)</span> de cada uno de los vectores de la base canónica.
+</li>
+<li>
+Calcula la proyección ortogonal sobre <span class="math inline">\(U^{\perp}\)</span> de cada uno de los vectores de la base canónica.
+</li>
+<li>
+Calcula la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(\overline{B}=\{(1,-1,0,0),(1,0,0,-1),(0,0,1,0),(1,1,0,1)\}\)</span>.
+</li>
+<li>
+Calcula la matriz asociada al endomorfismo respecto de la base canónica.
+</li>
+<li>
+Calcula bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.
+</li>
+</ol>
+<details>
+<summary>
+Solución
+</summary>
+<ol type="a">
+<li>
+Calcular la proyección ortogonal sobre <span class="math inline">\(U\)</span> de cada uno de los vectores de la base canónica.<br> Como <span class="math inline">\(U\)</span> tiene dimensión 1, es fácil calcular la proyección usando los coeficientes de Fourier: <span class="math display">\[\begin{align*}
+p_U (1,0,0,0)&amp;=\frac{\langle(1,0,0,0),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=\frac{1}{3}(1,1,0,1)=(1/3,1/3,0,1/3),\\
+p_U (0,1,0,0)&amp;=\frac{\langle(0,1,0,0),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=\frac{1}{3}(1,1,0,1)=(1/3,1/3,0,1/3),\\
+p_U (0,0,1,0)&amp;=\frac{\langle(0,0,1,0),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=(0,0,0,0),\\
+p_U (0,0,0,1)&amp;=\frac{\langle(0,0,0,1),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=\frac{1}{3}(1,1,0,1)=(1/3,1/3,0,1/3).\\
+\end{align*}\]</span>
+</li>
+<li>
+Calcular la proyección ortogonal sobre <span class="math inline">\(U^{\perp}\)</span> de cada uno de los vectores de la base canónica.<br> <span class="math inline">\(p_{U^{\perp}} (v)=v-p_U (v)\)</span> <span class="math display">\[\begin{align*}
+p_{U^{\perp}}(1,0,0,0)&amp;=(1,0,0,0)-(1/3,1/3,0,1/3)=(2/3, -1/3,0, -1/3),\\
+p_{U^{\perp}}(0,1,0,0)&amp;=(0,1,0,0)-(1/3,1/3,0,1/3)=(-1/3, 2/3,0, -1/3),\\
+p_{U^{\perp}}(0,0,1,0)&amp;=(0,0,1,0)-(0,0,0,0)=(0,0,1,0),\\
+p_{U^{\perp}}(0,0,0,1)&amp;=(0,0,0,1)-(1/3,1/3,0,1/3)=(-1/3, -1/3,0, 2/3).\\
+\end{align*}\]</span>
+</li>
+<li>
+Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(\overline{B}\)</span>.<br> Tenemos calculadas las imágenes de los vectores de <span class="math inline">\(\overline{B}\)</span>, así que sólo tenemos que calcular sus coordenadas respecto de <span class="math inline">\(\overline{B}\)</span>, que son inmediatas <span class="math display">\[\begin{array}{rll}
+f(1,-1,0,0)&amp;=(1,-1,0,0)&amp;=(1,0,0,0)_{\overline{B}},\\
+f(1,0,0,-1)&amp;=(1,0,0,-1)&amp;=(0,1,0,0)_{\overline{B}},\\
+f(0,0,1,0)&amp;=(0,0,1,0)&amp;=(0,0,1,0)_{\overline{B}},\\
+f(1,1,0,1)&amp;=(0,0,0,0)&amp;=(0,0,0,0)_{\overline{B}}.\\
+\end{array}\]</span> Así que <span class="math display">\[\mathcal{M}(f,\overline{B})=\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp;  0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}.\]</span>
+</li>
+<li>
+Calcular la matriz asociada al endomorfismo respecto de la base canónica.<br> <span class="math inline">\(f\)</span> es la proyección ortogonal sobre <span class="math inline">\(U^{\perp}\)</span>, por lo que <span class="math display">\[\mathcal{M}(f,B_c)=\begin{pmatrix}
+2/3 &amp; -1/3 &amp; 0 &amp; -1/3\\
+-1/3 &amp; 2/3 &amp;  0 &amp; -1/3\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+-1/3 &amp; -1/3 &amp; 0 &amp; 2/3
+\end{pmatrix}.\]</span>
+</li>
+<li>
+Calcular bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.<br> Como <span class="math inline">\(\operatorname{dim}(\operatorname{Im}(f))=\operatorname{rg}(\mathcal{M}(f,\overline{B}))=3\)</span> entonces una base de la imagen son los tres primeros vectores de la base <span class="math inline">\(\overline{B}\)</span>, es decir, <span class="math inline">\(\operatorname{Im}(f)=U^{\perp}\)</span>. Así <span class="math inline">\(\operatorname{dim}(\operatorname{ker}(f))=1\)</span> y como <span class="math inline">\(f(1,1,0,1)=(0,0,0,0)\)</span>, entonces una base de <span class="math inline">\(\operatorname{ker}(f)\)</span> es <span class="math inline">\(\{(1,1,0,1)\}\)</span>, con lo que <span class="math inline">\(\operatorname{ker}(f)=U\)</span>.
+</li>
+</ol>
+</details>
+</article>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/pedritomelenas\.github\.io\/Software-Matematicas-GAP\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/pedritomelenas/Algebra-Lineal/issues" class="toc-action"><i class="bi bi-github"></i>Informar de un problema</a></li></ul></div></div></div></footer></body></html>
