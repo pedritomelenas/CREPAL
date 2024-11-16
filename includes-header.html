@@ -1,0 +1,147 @@
+<!--Sagecell-->
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage",evalButtonText: 'Evaluar'});</script>
+
+<!--GeoGebra-->
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<!--<link rel = "shortcut icon" href = "favicon.png" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+<!-- selector cuerpos finitos -->
+<script type="text/javascript" language="javascript">
+
+//difference of two arrays
+Array.prototype.diff = function(arr2) { 
+  return this.filter(x => !arr2.includes(x)); 
+}
+
+//ocultar todos los articulos
+function ocultar_todo(){
+  var xs = document.querySelectorAll("article");
+  var i;
+  console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      xs[i].style.display = "none";
+  } 
+}
+
+//mostrar los articulos con las casillas seleccionadas
+function mostrar(){
+  var xs=[]; 
+  var i, xsbasico, xsmedio, xsavanzado, xscf, x;
+  //console.log(xs);
+  
+  ocultar_todo();
+  
+  if (casilla_basico.checked){
+    xsbasico=document.querySelectorAll("[class*='basico']");
+    console.log(xsbasico);
+    //xs=xs.join(xsbasico);
+    xs= [...new Set([...xs, ...xsbasico])];
+  }
+  if (casilla_medio.checked){
+    xsmedio=document.querySelectorAll("[class*='medio']");
+    console.log(xsmedio);
+    //xs=xs.join(xsmedio);
+    xs= [...new Set([...xs, ...xsmedio])];
+  }
+  if (casilla_avanzado.checked){
+    xsavanzado=document.querySelectorAll("[class*='avanzado']");
+    console.log(xsavanzado);
+    //xs=xs.join(xsavanzado);
+    xs = [...new Set([...xs, ...xsavanzado])];
+  }
+  
+  for(i=0; i<xs.length; i++){
+      if(!xs[i].className.includes("cuerpo_finito")){
+        xs[i].style.display = "block";        
+      }else{
+        if (casilla_cf.checked){
+          xs[i].style.display = "block";
+        }
+      }
+  }
+}
+
+
+function CF() {
+  var xs = document.querySelectorAll("[class*='cuerpo_finito']");
+  var i;
+  //console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      x = xs[i]
+      if (casilla_cf.checked) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      } 
+    }  
+}
+function basico() {
+  var xs = document.querySelectorAll("[class*='basico']");
+  var i;
+  //console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      x = xs[i]
+      if (casilla_basico.checked) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      } 
+    }  
+}
+function medio() {
+  var xs = document.querySelectorAll("[class*='medio']");
+  var i;
+  //console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      x = xs[i]
+      if (casilla_medio.checked) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      } 
+    }  
+}
+function avanzado() {
+  var xs = document.querySelectorAll("[class*='avanzado']");
+  var i;
+  //console.log(xs);
+  for(i=0; i<xs.length; i++) {
+      x = xs[i]
+      if (casilla_avanzado.checked) {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      } 
+    }
+}
+</script>
+  
+  
+  <!-- contador para artículos (ejercicios) -->
+  
+  <style>
+    body {
+      counter-reset: article;
+    }
+    
+    article:before {
+      counter-increment: article;
+      content: "Ejercicio " counter(article) ". ";
+      font-weight: bold;
+    }
+    
+    article {
+      border-style: solid;
+      border-width: 1px 1px 1px 5px;
+      border-color: gray gray gray gray;
+      border-radius: 5px;
+      padding: 0.5em 0.5em 0.5em 0.5em;
+      margin-bottom: 0.5em;
+    }
+    </style>
+    

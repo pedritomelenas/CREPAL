@@ -1,0 +1,24 @@
+---
+title: "Álgebra para el Grado en Estadística"
+---
+
+
+
+Los ejercicios aquí mostrados han sido amablemente proporcionados por [Evangelina Santos](https://www.ugr.es/~esantos/) y maquetados por [Juan Rivas](https://github.com/MrRiversGit) y [Pedro A. García Sánchez](https://github.com/pedritomelenas).
+
+
+En los repositorios <a href="https://github.com/pedritomelenas/R-algebra-lineal">Álgebra lineal con R</a> y <a href="https://github.com/pedritomelenas/Python-algebra-lineal">Álgebra lineal con Python</a> se encuentran ejemplos hechos en <code>R</code> y <code>Python</code> que complementan los guiones que aquí se proponen.
+
+
+
+Si detecta algún error, por favor informe a través del <a href="https://github.com/pedritomelenas/Algebra-Lineal/issues">portal de errores</a> de este <a href="https://github.com/pedritomelenas/Algebra-Lineal">repositorio</a>.
+
+
+Estos contenidos forman parte del Proyecto de Innovación Docente PID-24-117 "Creación de Repositorio de Ejercicios para Álgebra Lineal (CREPAL)" aprobado en la convocatoria 2024-25 (Plan AcademiaUGR) de la Universidad de Granada.
+
+Los componentes del equipo son 
+
+- Evangelina Sántos Aláez (Coordinadora)
+- Jesús García Miranda
+- Pedro A. García Sánchez
+- Luis M. Merino González
