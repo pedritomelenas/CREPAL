@@ -3,13 +3,13 @@ project:
 website:
   title: "Problemas resueltos de Álgebra Lineal"
   search: false
-  site-url: https://pedritomelenas.github.io/Software-Matematicas-GAP/
-  repo-url: https://github.com/pedritomelenas/Algebra-Lineal
-  issue-url: https://github.com/pedritomelenas/Algebra-Lineal/issues
+  site-url: https://pedritomelenas.github.io/CREPAL
+  repo-url: https://github.com/pedritomelenas/CREPAL
+  issue-url: https://github.com/pedritomelenas/CREPAL/issues
   navbar:
     right:
       - icon: github
-        href: https://github.com/pedritomelenas/Algebra-Lineal
+        href: https://github.com/pedritomelenas/CREPAL
         aria-label: GitHub
 
   sidebar: 
