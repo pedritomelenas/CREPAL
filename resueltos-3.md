@@ -17,7 +17,7 @@ Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Pu
 
 
 
-<article class="cf" style="display:block;">
+<article class="cuerpo_finito" style="display:block;">
 Determina cuáles de las siguientes aplicaciones son lineales:
 
 <ol type="a">
@@ -99,7 +99,7 @@ $$M_{B_sB_s}(D)=\begin{pmatrix}
 </details>
 </article>
 
-<article class="cf" style="display:block;">
+<article class="cuerpo_finito" style="display:block;">
 
 Se considera la matriz sobre $\mathbb{Z}_5$: 
 $$A=\begin{pmatrix}
@@ -377,7 +377,7 @@ Concluimos que solo es diagonalizable en el caso $a=b=0$.
 </details>
 </article>
 
-<article class="cf" style="display:block;">
+<article class="cuerpo_finito" style="display:block;">
 Sea $f:(\mathbb{Z}_{13})^3 \longrightarrow  (\mathbb{Z}_{13})^3 $ la aplicación lineal dada
 por:
 $$f(x,y,z)=(7x+12y+4z, x+6y+3z, 5x+6y+12z).$$
@@ -546,7 +546,7 @@ Basta realizar la operación $f^{2432}(1,2,3)=A^{2431}(1,2,3)^T$.</li>
 </details>
 </article>
 
-<article class="cf" style="display:block;">
+<article class="cuerpo_finito" style="display:block;">
 Sea $f:(\mathbb{Z}_{5})^3\longrightarrow (\mathbb{Z}_{5})^3$ la
 aplicación lineal dada por:
 $$

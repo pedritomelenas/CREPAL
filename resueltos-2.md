@@ -96,7 +96,7 @@ y es inmediato que el rango es dos.
 </details>
 </article>
 
-<article>
+<article class="cuerpo_finito" style="display:block;">
 Estudia si los siguientes conjuntos de vectores son
 linealmente independientes o linealmente dependientes (se recomienda usar coordenadas en las bases más adecuadas).
 
@@ -344,27 +344,23 @@ En un espacio vectorial sobre $\mathbb{R}$, tenemos unos vectores $e_{1},e_{2},\
 
 <ol type="a">
 <li>
-$
-\left.
+$\left.
 \begin{array}{c}
 e_{1}=(1,0,1)\\
 e_{2}=(1,2,2)\\
 e_{3}=(0,1,1)
 \end{array}
-\right\} x=(1,0,2).
-$
+\right\} x=(1,0,2).$
 </li>
 <li>
-$
-\left.
+$\left.
 \begin{array}{l}
 e_{1}=(1,1,1,1)\\
 e_{2}=(0,1,1,1)\\
 e_{3}=(0,0,1,1)\\
 e_{4}=(0,0,0,1)
 \end{array}
-\right\} x=(1,0,1,0).
-$
+\right\} x=(1,0,1,0).$
 </li>
 </ol>
 
@@ -515,7 +511,7 @@ $$\begin{pmatrix}
 </details>
 </article>
 
-<article class="cf" style="display:block;">
+<article class="cuerpo_finito" style="display:block;">
 Determina si los siguientes conjuntos de vectores generan al
 espacio vectorial dado.
 
@@ -580,7 +576,7 @@ que como tiene una fila entera de ceros tiene rango menor que cuatro, luego no s
 </details>
 </article>
 
-<article class="cf" style="display:block;">
+<article class="cuerpo_finito" style="display:block;">
 
 Sea $V = \mathbb{Z}_3^4$ y sean los subespacios vectoriales
 
@@ -808,7 +804,7 @@ son unas ecuaciones paramétricas de $W$.</li>
 </details>
 </article>
 
-<article class="cf" style="display:block;">
+<article class="cuerpo_finito" style="display:block;">
 <ol type="a">
 
 <li>Calcula las coordenadas del vector $v=(1,1)_B$ respecto de $B'$ siendo
