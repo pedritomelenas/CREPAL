@@ -7,7 +7,7 @@ title: "Álgebra para el Grado en Estadística"
 Los ejercicios aquí mostrados han sido amablemente proporcionados por [Evangelina Santos](https://www.ugr.es/~esantos/) y maquetados por [Juan Rivas](https://github.com/MrRiversGit) y [Pedro A. García Sánchez](https://github.com/pedritomelenas).
 
 
-En los repositorios <a href="https://github.com/pedritomelenas/R-algebra-lineal">Álgebra lineal con R</a> y <a href="https://github.com/pedritomelenas/Python-algebra-lineal">Álgebra lineal con Python</a> se encuentran ejemplos hechos en <code>R</code> y <code>Python</code> que complementan los guiones que aquí se proponen.
+En los repositorios <a href="https://github.com/pedritomelenas/R-algebra-lineal">Álgebra lineal con R</a> y <a href="https://github.com/pedritomelenas/Python-algebra-lineal">Álgebra lineal con Python</a> se encuentran ejemplos hechos en <code>R</code> y <code>Python</code> que complementan los ejercicios que aquí se proponen.
 
 
 
