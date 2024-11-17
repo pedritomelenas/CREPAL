@@ -29,5 +29,5 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     lang: es
