@@ -20,7 +20,7 @@ Array.prototype.diff = function(arr2) {
 
 //ocultar todos los articulos
 function ocultar_todo(){
-  var xs = document.querySelectorAll("article");
+  var xs = document.querySelectorAll("[class*='exercise']");
   var i;
   console.log(xs);
   for(i=0; i<xs.length; i++) {
@@ -106,4 +106,3 @@ function CF() {
       margin-bottom: 0.5em;
     }
     </style>
-    

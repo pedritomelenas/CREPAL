@@ -7,7 +7,7 @@ format:
     html-math-method: mathjax
     css: styles.css
     page-layout: full
-include-in-header: includes-header.html
+    include-in-header: includes-header.html
 ---
 
 <!-- LTeX: language=es-ES --->
@@ -19,20 +19,18 @@ Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Pu
 <input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Mostrar ejercicios de dificultad media. 
 <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Mostrar ejercicios avanzados. 
 
-<!--
-Si quieres ocultar o mostrar los ejercicios referentes a cuerpos finitos, puedes hacerlo pulsando este botón. <button id="mostrarcf" class="button" style="display:inline;vertical-align: middle;" onclick="mostrarCF();">Ocultar CF</button>  
- </p>-->
 
-
-<article class="cuerpo_finito-basico" style="display:block;">
+::: {#exr-1 .cuerpo_finito-basico}
 Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$, $\mathbb{Z}_3$ y $\mathbb{Z}_5$.
 
 $$\left\{\begin{aligned} x_{2}-2x_{3}&= -4,\\ x_{1}+x_{2}-x_{3}&=0,\\ 2x_{1}-x_{2}+x_{3}&=3. \end{aligned}\right.$$
-<details>
-<summary>Solución</summary>
+
+:::{.callout collapse="true" title="Solución"}
+
 Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada. 
 
-<h3>Coeficientes en $\mathbb{Q}$</h3>
+**Coeficientes en $\mathbb{Q}$**
+
 En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:
 
 $$\left(\begin{array}{ccc|c}
@@ -133,7 +131,7 @@ $$
 
 Luego es un sistema compatible determinado, y su única solución es $$(1,2,3).$$
 
-<h3> Coeficientes en $\mathbb{Z}_3$ </h3>
+**Coeficientes en $\mathbb{Z}_3$**
 
 En primer lugar vamos a substituir los coeficientes por representantes en $\{0,1,2\}$:
 
@@ -220,7 +218,7 @@ $$\{ (1,2,0), (0,1,1),(2,0,2)\}.$$
 
 Por tanto, en el caso de tomar coeficientes en $\mathbb{Z}_3$, obtenemos un sistema compatible indeterminado.
 
-<h3>Coeficientes en $\mathbb{Z}_5$</h3>
+**Coeficientes en $\mathbb{Z}_5$**
 
 En primer lugar vamos a sustituir los coeficientes por sus respectivos  representantes en $\{0,1,2,3,4\}$:
 
@@ -325,22 +323,25 @@ Luego este sistema tiene una única solución:
 $$(1,2,3),$$
 
 y de esta forma es compatible determinado.
-</details>
-</article>
+:::
+:::
 
-<article class="cuerpo_finito-basico" style="display:block;">
+:::{#exr-2 .cuerpo_finito-basico}
+
 Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_2$.
 
 $$\left\{\begin{aligned} x-y+z+t+v&=0,\\ x+y+z+t-v&=0,\\ -x-y+z+t-v&=0. \end{aligned}\right.$$
 
-<details>
-<summary>Solución</summary>
+:::{.callout collapse="true" title="Solución"}
+
 
 Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. 
 Además, un sistema homogéneo siempre es Compatible puesto que admite la solución $(0,0,0,0,0)$.
 
-<h3>Coeficientes en $\mathbb{Q}$</h3>
-$$\left(\begin{array}{rrrrr}
+**Coeficientes en $\mathbb{Q}$**
+
+$$
+\left(\begin{array}{rrrrr}
 \boxed{1} & -1 & 1 & 1 & 1\\
 1 & 1 & 1 & 1 & -1\\
 -1 & -1 & 1 & 1 & -1
@@ -350,11 +351,13 @@ f_3+f_1\rightarrow f_3 \end{array}}
 \boxed{1} & -1 & 1 & 1 & 1\\
 0 & 2 & 0 & 0 & -2\\
 0 & -2 & 2 & 2 & 0
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Podemos tomar como pivote el segundo elemento de la segunda fila o utilizarla antes para hacer cero en la posición $(3,2)$. Estaríamos apartándonos del método de Gauss-Jordan, pero al ser la forma de escalonada reducida por filas de la matriz única, no importa cuál es el camino para obtenerla.
 
-$$\left(\begin{array}{rrrrr}
+$$
+\left(\begin{array}{rrrrr}
 \boxed{1} & -1 & 1 & 1 & 1\\
 0 & 2 & 0 & 0 & -2\\
 0 & -2 & 2 & 2 & 0
@@ -364,11 +367,13 @@ $$\left(\begin{array}{rrrrr}
 \boxed{1} & -1 & 1 & 1 & 1\\
 0 & 2 & 0 & 0 & -2\\
 0 & 0 & 2 & 2 & -2
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Ahora sí tomamos como pivote el segundo elemento de la segunda fila y con él hacemos cero todos los elementos que están en su columna; después continuamos con el pivote de la tercera fila:
 
-$$\left(\begin{array}{rrrrr}
+$$
+\left(\begin{array}{rrrrr}
 \boxed{1} & -1 & 1 & 1 & 1\\
 0 & 2 & 0 & 0 & -2\\
 0 & 0 & 2 & 2 & -2
@@ -383,7 +388,8 @@ f_1+f_2\rightarrow f_1 \end{array}}\left(\begin{array}{rrrrr}
 \boxed{1} & 0 & 0 & 0 & 1\\
 0 & \boxed{1} & 0 & 0 & -1\\
 0 & 0 & \boxed{1} & 1 & -1
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -396,17 +402,20 @@ show(A,"~",A.rref())
 
 Como ya tenemos una matriz escalonada reducida por filas, el sistema no puede simplificarse más. Solo queda escribir las soluciones: para ello observamos que las incógnitas $x,y$ y $z$ están listas para ser despejadas, son las que corresponden a los pivotes. Las que no corresponden a pivotes se utilizan como parámetros (o variables libres). La solución del sistema queda:  
 
-$$\left.\begin{aligned}
+$$
+\left.\begin{aligned}
 x&=-\lambda_2\\
 y&=\lambda_2\\
 z&=-\lambda_1+\lambda_2\\
 t&=\lambda_1 \\
 v&=\lambda_2 
-\end{aligned}\right\},   \lambda_1, \lambda_2 \in \mathbb{Q}.$$
+\end{aligned}\right\},   \lambda_1, \lambda_2 \in \mathbb{Q}.
+$$
 
-luego es un sistema compatible Indeterminado.
+Luego es un sistema compatible Indeterminado.
 
-<h3>Coeficientes en $\mathbb{Z}_3$</h3>
+**Coeficientes en $\mathbb{Z}_3$**
+
 Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que $1\not = -1$. 
 
 Si repasamos las operaciones utilizadas, son también válidas en $\mathbb{Z}_3$ y en $\mathbb{Z}_5$ (aunque multiplicar por $\frac{1}{2}$ correspondería a multiplicar por $2$ en $\mathbb{Z}_3$ o por $3$ en $\mathbb{Z}_5$).
@@ -423,17 +432,19 @@ show(A,"~",A.rref())
 
 Las soluciones en $\mathbb{Z}_3$ serían
 
-$$\left.\begin{aligned}
+$$
+\left.\begin{aligned}
 x&=2\lambda_2\\
 y&=\lambda_2\\
 z&=2\lambda_1+\lambda_2\\
 t&=\lambda_1 \\
 v&=\lambda_2 
-\end{aligned}\right\},  \lambda_1, \lambda_2 \in \mathbb{Z}_3.$$
+\end{aligned}\right\},  \lambda_1, \lambda_2 \in \mathbb{Z}_3,
+$$
 
 y por tanto es compatible indeterminado y tiene un total de $9$ soluciones.
 
-<h3>Coeficientes en $\mathbb{Z}_5$</h3>
+**Coeficientes en $\mathbb{Z}_5$**
 
 <div class="sage">
 <script type="text/x-sage">
@@ -444,19 +455,22 @@ show(A,"~",A.rref())
 
 Como hemos comentado, la matriz escalonada reducida es la misma, luego las soluciones son:
 
-$$\left.\begin{aligned}
+$$
+\left.\begin{aligned}
 x&=4\lambda_2\\
 y&=\lambda_2\\
 z&=4\lambda_1+\lambda_2\\
 t&=\lambda_1 \\
 v&=\lambda_2 
-\end{aligned}\right\},  \ \lambda_1, \lambda_2 \in \mathbb{Z}_5,$$
+\end{aligned}\right\},  \ \lambda_1, \lambda_2 \in \mathbb{Z}_5,
+$$
 
 y por tanto es compatible indeterminado y tiene un total de $25$ soluciones.
 
-<h3>Coeficientes en $\mathbb{Z}_2$</h3>
+**Coeficientes en $\mathbb{Z}_2$**
 
-$$\left(\begin{array}{ccccc}
+$$
+\left(\begin{array}{ccccc}
 \boxed{1} & 1 & 1 & 1 & 1\\
 1 & 1 & 1 & 1 & 1\\
 1 & 1 & 1 & 1 & 1
@@ -466,35 +480,41 @@ f_3-f_1\rightarrow f_3 \end{array}}
 \boxed{1} & 1 & 1 & 1 & 1\\
 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0
-\end{array}\right),$$
+\end{array}\right),
+$$
 
 luego la única incógnita despejada sería $x$, y las soluciones dependerían de $4$ parámetros:
 
-$$\left.\begin{aligned}
+$$
+\left.\begin{aligned}
 x&=\lambda_1+\lambda_2+\lambda_3+\lambda_4\\
 y&=\lambda_1\\
 z&=\lambda_2\\
 t&=\lambda_3 \\
 v&=\lambda_4 
-\end{aligned}\right\},  \lambda_i \in \mathbb{Z}_2,\ i\in\{1,2,3,4\},$$
+\end{aligned}\right\},  \lambda_i \in \mathbb{Z}_2,\ i\in\{1,2,3,4\},
+$$
 
 luego es compatible indeterminado y tiene un total de $2^4=16$ soluciones.
-</details>
-</article>
+:::
+:::
 
-<article class="cuerpo_finito-basico" style="display:block;">
+
+:::{#exr-3 .cuerpo_finito-basico}
+
 Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_7$.
 
 $$\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&= 2,\\ x_{1}+2x_{2}+x_{3}&=1,\\ x_{2}&=3. \end{aligned}\right.$$
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
+
 
 Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.
 
-<h3>En $\mathbb{Z}_7$:</h3>
+**En $\mathbb{Z}_7$:**
 
-$$\begin{aligned}\left(\begin{array}{ccc|c}
+$$
+\begin{aligned}\left(\begin{array}{ccc|c}
 \boxed{1} & 1 & 1 & 2\\
 1 & 2 & 1 & 1\\
 0 & 1 & 0 &  3
@@ -540,7 +560,7 @@ En el último paso no hemos escrito las operaciones elementales puesto que se da
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$) entonces el sistema es incompatible.
 
-<h3>En $\mathbb{Z}_5$:</h3>
+**En $\mathbb{Z}_5$:**
 
 $$\begin{aligned}
 \left(\begin{array}{ccc|c}
@@ -587,7 +607,7 @@ show(Ab,"~",Ab.rref())
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 
-<h3>En $\mathbb{Z}_3$:</h3>
+**En $\mathbb{Z}_3$:**
 
 $$\begin{aligned}
 \left(\begin{array}{ccc|c}
@@ -634,7 +654,7 @@ show(Ab,"~",Ab.rref())
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 
-<h3>En $\mathbb{Q}$:</h3>
+**En $\mathbb{Q}$:**
 
 $$\begin{aligned}
 \left(\begin{array}{ccc|c}
@@ -681,10 +701,11 @@ show(Ab,"~",Ab.rref())
 </div>  
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
-</details>
-</article>
+:::
+:::
 
-<article class="cuerpo_finito-basico" style="display:block;">
+:::{#exr-4 .cuerpo_finito-basico}
+
 En el cuerpo $\mathbb{Z}_5$ se considera la matriz
 $$C = \begin{pmatrix} 1&1&1&1 \\ 0&2&1&2 \\ 0&4&1&1 \\ \end{pmatrix}.$$
 
@@ -694,8 +715,8 @@ $$C = \begin{pmatrix} 1&1&1&1 \\ 0&2&1&2 \\ 0&4&1&1 \\ \end{pmatrix}.$$
   <li>Elige una submatriz cuadrada de $C$ de orden tres que sea regular y calcula su inversa.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
+
 <ol type="a">
 <li>Forma de Hermite por filas.
 Realizamos operaciones elemntales por filas hasta obtener una matriz escalonada reducida por filas:
@@ -744,13 +765,15 @@ $$
 
 Por tanto la forma de Hermite por filas es 
 
-$$\left( 
+$$
+\left( 
 \begin{array}{rrrr}
 1 & 0 & 0 & 1\\
 0 & 1 & 0 & 2\\
 0 & 0 & 1 & 3\\
 \end{array}
-\right).$$
+\right).
+$$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -763,13 +786,15 @@ show(A,"~",A.rref())
 
 <li>Forma de Hermite por columnas.
 Como el número de pivotes en la forma de Hermite por columnas coincide con el que hay en la de filas, entonces la única posibilidad es que sea 
-$$\left( 
+$$
+\left( 
 \begin{array}{rrrr}
 \boxed{1} & 0 & 0 & 0\\
 0 & \boxed{1} & 0 & 0\\
 0 & 0 & \boxed{1} & 0\\
 \end{array}
-\right).$$
+\right).
+$$
 
 Comprobemos el resultado obtenido con <code>sage</code> (para eso transponemos la matriz, calculamos su forma escalonada reducida por filas, y volvemos a transponer).
 
@@ -839,7 +864,9 @@ show(AI,"~",AI.rref())
 </div>  
 
 Finalmente comprobamos que es inversa:
-$$\left( 
+
+$$
+\left( 
 \begin{array}{rrr}
 1 & 1 & 1 \\
 0 & 2 & 1 \\
@@ -857,18 +884,22 @@ $$\left(
 0 & 1 & 0 \\
 0 & 0 & 1 \\
 \end{array}
-\right).$$</li>
+\right).
+$$
+</li>
 
 </ol>
-</details>
-</article>
+:::
+:::
 
-<article class="cuerpo_finito-medio" style="display:block;">
+:::{#exr-5 .cuerpo_finito-medio}
+
 Encuentra, si es posible, $P \in \mathcal{M}_{4}(\mathbb{Z}_3)$, regular, tal que $PA=B$, donde
-$$A = \begin{pmatrix} 1&1&0&2&1 \\ 2&1&1&2&0 \\ 0&2&1&0&2 \\ 0&1&2&1&0 \end{pmatrix}, \qquad B = \begin{pmatrix} 1&1&0&1&2 \\ 1&2&2&1&0 \\ 1&0&1&2&0 \\ 2&2&0&0&0 \end{pmatrix}.$$
+$$
+A = \begin{pmatrix} 1&1&0&2&1 \\ 2&1&1&2&0 \\ 0&2&1&0&2 \\ 0&1&2&1&0 \end{pmatrix}, \qquad B = \begin{pmatrix} 1&1&0&1&2 \\ 1&2&2&1&0 \\ 1&0&1&2&0 \\ 2&2&0&0&0 \end{pmatrix}.
+$$
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 Sabemos que $A\sim_f B$ si y sólo si existe  $P$ regular tal que $PA=B$. Por tanto, primero comprobaremos que $A$ y $B$ tienen la misma forma escalonada reducida por filas, calculando además las matrices de paso. Si coinciden, entonces usando las matrices de paso que hemos calculado, podremos encontrar $P$.
 
@@ -912,7 +943,8 @@ $$
 0 & 0 & 0 & \boxed{1} & 2 & 1 & 1 & 2 & 0 \\ 
 0 & 0 & 0 & 0 & 0 & 2 & 2 & 2 & 1 \\
 \end{array}\right)=(H_A|P_A).
-\end{aligned}$$
+\end{aligned}
+$$
 
 $$
 \begin{aligned}
@@ -939,20 +971,33 @@ $$
 0 & 0 & 0 & 0 & 0 & 0 & 2 & 2 & 1 \\
 \end{array}\right)=(H_B \mid P_B).
 \end{aligned}
-$$</li>
+$$
+</li>
 
 <li> Hemos comprobado que $H_A=H_B$ y por tanto $A\sim_f B$ y existe una matriz $P$ tal que $PA=B$.</li>
 <li> Para calcular $P$ podemos ayudarnos de las matrices de paso $P_A$ y $P_B$ calculadas:
-$$P_A A=H_A=H_B=P_B B,$$
+$$
+P_A A=H_A=H_B=P_B B,
+$$
+
 y por tanto
-$$P_A A=P_B B.$$
+
+$$
+P_A A=P_B B.
+$$
+
 Como $P_B$ es regular, 
-$$(P_B)^{-1}P_A A=B.$$
+
+$$
+(P_B)^{-1}P_A A=B.
+$$
+
 Luego una matriz que verifica la condición pedida sería el producto $(P_B)^{-1}P_A$.
 
 Para calcularla necesitamos en primer lugar calcular la inversa de $P_B$, también usando operaciones elementales por filas.
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 (P_B \mid I) & = \left(\begin{array}{cccc|cccc}
  1 & 1 & 2 & 0  & 1 & 0 & 0 & 0\\
  2 & 1 & 0 & 0  & 0 & 1 & 0 & 0\\ 
@@ -1006,7 +1051,8 @@ $$\begin{aligned}
  0 & 0 & \boxed{1} & 0  & 1 & 0 & 2 & 0\\ 
  0 & 0 & 0 & \boxed{1}  & 2 & 2 & 0 & 1\\
 \end{array}\right).
-\end{aligned}$$
+\end{aligned}
+$$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -1020,7 +1066,9 @@ show(PBI,"~",PBI.rref())
 </div> 
 
 Luego una posible $P$ es
-$$P=(P_B)^{-1}P_A=\left(\begin{array}{cccc}
+
+$$
+P=(P_B)^{-1}P_A=\left(\begin{array}{cccc}
  1 & 1 & 1 & 0\\ 
  1 & 2 & 1 & 0\\
  1 & 0 & 2 & 0\\ 
@@ -1035,7 +1083,8 @@ $$P=(P_B)^{-1}P_A=\left(\begin{array}{cccc}
  0 & 2 & 0 & 0  \\ 
  1 & 0 & 1 & 0 \\ 
  0 & 1 & 0 & 1 \\
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -1049,12 +1098,12 @@ B=matrix(GF(3),[[1,1,0,1,2],[1,2,2,1,0],[1,0,1,2,0],[2,2,0,0,0]])
 P*A==B
 </script>
 </div> </li>
-
 </ol>
-</details>
-</article>
+:::
+:::
 
-<article class="cuerpo_finito-avanzado" style="display:block;">
+::: {#exr-6 .cuerpo_finito-avanzado}
+
 Sea $$A=\left (\begin{array}{cccc} 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 & 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)$$
 
 <ol type="a">
@@ -1063,8 +1112,7 @@ Sea $$A=\left (\begin{array}{cccc} 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 &
   <li>¿Existe una matriz $C$ tal que $C\cdot A = Id$?</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Encontrar $B$ tal que $A\cdot B = Id$.
@@ -1073,7 +1121,8 @@ Sea $$A=\left (\begin{array}{cccc} 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 &
 
 Si calculamos la forma de Hermite por columnas de $A$ y la matriz de paso, a la que llamaremos $Q$, entonces $A Q=H$. La matriz $H$ no es la matriz identidad, por supuesto, porque tiene orden $3\times 4$, pero puede parecerse bastante. Calculémosla:
 
-$$\left[ \begin{array}{c}
+$$
+\left[ \begin{array}{c}
 A\\
 \hline
 I_4
@@ -1135,6 +1184,7 @@ Q
 $$ 
 
 Así que 
+
 $$\left(\begin{array}{cccc}
 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 & 1\\
 \end{array}\right)
@@ -1160,7 +1210,8 @@ B=\left (\begin{array}{ccc}
 4 & 4 & 1 \\
 0 & 0 & 0 \\
 1 & 0 & 1 \\
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -1175,7 +1226,9 @@ A*B==I
 
 <li>Todas las matrices $B$ que cumplen la propiedad anterior.
 En realidad el planteamiento es sencillo, sería resolver:
-$$\left(\begin{array}{cccc}
+
+$$
+\left(\begin{array}{cccc}
 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 & 1\\
 \end{array}\right)
 \left (\begin{array}{ccc}
@@ -1193,7 +1246,8 @@ $$
 que puede parecer complicado, son $12$ incógnitas, pero realmente no se mezclan (por eso las  he designado con letras distintas).
 El primer sistema será el que corresponde a las $x$:
 
-$$\left(\begin{array}{cccc}
+$$
+\left(\begin{array}{cccc}
 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 & 1\\
 \end{array}\right)
 \left (\begin{array}{c}
@@ -1210,7 +1264,8 @@ $$
 
 con matriz ampliada
 
-$$\left(\begin{array}{cccc|c}
+$$
+\left(\begin{array}{cccc|c}
 2 & 1 & 3 & 0 & 1\\ 1 & 2 & 1 & 1 & 0 \\ 3 & 4 & 2 & 1 & 0\\
 \end{array}\right)$$
 
@@ -1220,13 +1275,16 @@ $$\left(\begin{array}{cccc|c}
 2 & 1 & 3 & 0 & 0\\ 1 & 2 & 1 & 1 & 1 \\ 3 & 4 & 2 & 1 & 0\\
 \end{array}\right), \quad \left(\begin{array}{cccc|c}
 2 & 1 & 3 & 0 & 0\\ 1 & 2 & 1 & 1 & 0 \\ 3 & 4 & 2 & 1 & 1\\
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Como se resuelven haciendo operaciones elementales por filas sobre la matriz de coeficientes, los tres pueden resolverse simultáneamente utilizando la matriz:
 
-$$\left(\begin{array}{cccc|ccc}
+$$
+\left(\begin{array}{cccc|ccc}
 2 & 1 & 3 & 0 & 1 & 0 & 0\\ 1 & 2 & 1 & 1 & 0 & 1 & 0 \\ 3 & 4 & 2 & 1 & 0 & 0 & 1\\
-\end{array}\right)$$
+\end{array}\right)
+$$
 
 que incluye las tres columnas de términos independientes.
 
@@ -1269,50 +1327,63 @@ x_1=1, & y_1= 3, & z_1=2,\\
 x_2=4+2\lambda_1, & y_2=4+2\lambda_2, & z_2=1+2\lambda_3,\\
 x_3=\lambda_1, & y_3=\lambda_2, &z_3=\lambda_3,\\
 x_4=1, & y_4=0, & z_4=1,\\
-\end{array} \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.$$
+\end{array} \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.
+$$
 
 Es decir, todas las matrices son de la forma:
 
-$$\left(\begin{array}{ccc}
+$$
+\left(\begin{array}{ccc}
 1 &  3 & 2\\ 
 4+2\lambda_1 & 4+2\lambda_2 & 1+2\lambda_3\\
 \lambda_1 & \lambda_2 &\lambda_3\\
 1 & 0 & 1\\
-\end{array}\right), \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.$$</li>
+\end{array}\right), \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.
+$$
+</li>
 
 <li>Encontrar $C$ tal que $C\cdot A = Id$.
 Si pensamos primero en el orden de $C$, como $A$ tiene tres filas y cuatro columnas, necesariamente $C$ debe tener tres columnas. Por otro lado, como la matriz identidad es cuadrada, en este caso será una matriz $4\times4$, por lo que $C$ debe tener cuatro filas.<br>
 
 El argumento más fácil de utilizar es posterior al momento en que nos encontramos en el desarrollo del tema. Se usa:
-$$\operatorname{rg}(A\cdot B)\leq \min\{\operatorname{rg}(A),\operatorname{rg}(B)\}$$
+
+$$
+\operatorname{rg}(A\cdot B)\leq \min\{\operatorname{rg}(A),\operatorname{rg}(B)\}
+$$
+
 en este caso, por los órdenes de $A$ y $C$ su rango máximo posible es $3$, luego $\operatorname{rg}(C\cdot A)\leq 3$ mientras que $\operatorname{rg}(I_4)=4.$<br>
 
 También es posible plantearlo de una forma similar al apartado 2, al resolver los sistemas encontraremos que son incompatibles.</li>
 </ol>
+:::
+:::
 
-</details>
-</article>
 
-<article class="basico" style="display:block;">
+::: {#exr-7 .basico}
+
 Dado el sistema de ecuaciones con coeficientes en $\mathbb{Q}$
 $$\left\{\begin{aligned} x - ay + (a+1)z & = 4, \\ ax + 2y + z & = -1. \end{aligned}\right.$$
 Discútelo según los valores del parámetro $a$, y resuélvelo para $a=-1$.
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
+
 
 En este tipo de ejercicio utilizaremos el Teorema de Rouché-Frobenius  junto a los distintos métodos para calcular el rango de una matriz.
 
 En primer lugar escribimos la matriz ampliada del sistema
 
-$$(A|b)=\left( \begin{array}{rcc|r}
+$$
+(A|b)=\left( \begin{array}{rcc|r}
 1 & -a & a+1 & 4\\
 a & 2 & 1 & -1
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Puesto que el orden de matriz de coeficientes es $2\times3$ y el de la ampliada $2\times4$, en el caso de que $\operatorname{rg}(A)=2$, entonces $\operatorname{rg}(A|b)=2$ (puesto que no puede haber más de dos pivotes, uno por fila) y usando Teorema de Rouché-Frobenius el sistema será compatible indeterminado. 
 Puesto que el rango no cambia si realizamos cualquier operaciones elementales por columnas, para calcular $\operatorname{rg}(A)$ realizamos algunas, por ejemplo:
-$${\small A=\left( \begin{array}{rcc}
+
+$$
+{\small A=\left( \begin{array}{rcc}
 1 & -a & a+1 \\
 a & 2 & 1  
 \end{array}\right) \sim_c \left( \begin{array}{rcc}
@@ -1321,7 +1392,9 @@ a & 2 & 3
 \end{array}\right) \sim_c \left( \begin{array}{rcc}
 1 & -a & 0 \\
 a & 2 & 3-a 
-\end{array}\right) }.$$ 
+\end{array}\right) }.
+$$ 
+
 Para el rango de esta matriz es muy fácil utilizar el cálculo de determinantes: si
 $\begin{vmatrix}
 1 & 0 \\
@@ -1333,13 +1406,15 @@ el rango de $A$ es dos.
 Entonces tenemos que en todos los casos en los que $a\not = 3$ tendremos  $\operatorname{rg}(A)=\operatorname{rg}(A|b)=2$ es menor que el  número de incógnitas y el sistema es compatible indeterminado.<br>
 Solo nos queda estudiar el caso $a=3$, para el que podemos proceder como en los ejercicios del comienzo del tema: 
 
-$$(A|b)=\left( \begin{array}{rrr|r}
+$$
+(A|b)=\left( \begin{array}{rrr|r}
 \boxed{1} & -3 & 4 & 4\\
 3 & 2 & 1 & -1
 \end{array}\right)\sim_f  \left( \begin{array}{rrr|r}
 \boxed{1} & 0 & 1 & 5/11\\
 0 & 1 & -1 & -13/11
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 O bien, podemos volver a aplicar el Teorema de Rouché-Frobenius, en este caso observamos que tomando las dos primeras columnas de $A$ se tiene
 
@@ -1351,7 +1426,9 @@ $\begin{vmatrix}
 Por tanto, siempre es compatible indeterminado dependiendo de un parámetro.<br>
 
 Para el caso $a=-1$:
-$$(A|b)=\left( \begin{array}{rrr|r}
+
+$$
+(A|b)=\left( \begin{array}{rrr|r}
 \boxed{1} & 1 & 0 & 4\\
 -1 & 2 & 1 & -1
 \end{array}\right)\sim_f \left( \begin{array}{rrr|r}
@@ -1376,19 +1453,20 @@ Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
 </div>  
+:::
+:::
 
-</details>
-</article>
+::: {#exr-8 .cuerpo_finito-medio}
 
-<article class="cuerpo_finito-medio" style="display:block;">
 Calcula el rango de la siguiente matriz, con coeficientes en $\mathbb{Z}_3$, según los valores de los parámetros $a$ y $b$.
 $$\begin{pmatrix} 1 & a & 0 & 1 \\ 2 & 1 & 1 & b \\ 0 & a & b & a+b \end{pmatrix}$$
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
+
 
 El rango máximo posible de esta matriz es 3. Elegimos una submatriz cuadrada de orden 3 y calculamos su determinante. Escogemos una que a priori sepamos que su determinante no sea nulo y que sea fácil de calcular.
 Por ejemplo
+
 $$
 \begin{vmatrix}
 1 & a & 0  \\ 2 & 1 & 1  \\ 0 & a & b 
@@ -1397,6 +1475,7 @@ $$
 1 & 0 & 0  \\ 2 & 1-2a & 1  \\ 0 & a & b 
 \end{vmatrix}=(1-2a)b-a=(1+a)b+2a=2a+b+ab.
 $$
+
 Al estar trabajando en $\mathbb{Z}_3$, $a$ y $b$ pueden tomar solo 3 valores posibles.
 
 Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo,
@@ -1433,14 +1512,17 @@ De la observación de la tabla anterior deducimos que $\operatorname{rg}(A)=3$ p
 Ahora, estudiamos los dos casos particulares que nos faltan.<br>
 
 Para $a=0=b$:<br>
+
 $$
 \begin{pmatrix}
 1 & 0 & 0 & 1 \\ 2 & 1 & 1 & 0 \\ 0 & 0 & 0 & 0
 \end{pmatrix}
 $$
+
 que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.<br>
 
 Para $a=1$, $b=2$:<br>
+
 $$
 \begin{pmatrix}
 1 & 1 & 0 & 1 \\ 2 & 1 & 1 & 2 \\ 0 & 1 & 2 & 0
@@ -1448,11 +1530,14 @@ $$
 1 & 1 & 0 & 1 \\ 0 & 2 & 1 & 0 \\ 0 & 1 & 2 & 0
 \end{pmatrix}
 $$
-que también tiene rango 2 (recordemos que estamos en $\mathbb{Z}_3$).
-</details>
-</article>
 
-<article class="cuerpo_finito-basico" style="display:block;">
+que también tiene rango 2 (recordemos que estamos en $\mathbb{Z}_3$).
+:::
+:::
+
+
+::: {#exr-9 .cuerpo_finito-basico}
+
 Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).$$
 <ol type="a">
 <li>Calcula el determinante de la matriz $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
@@ -1460,14 +1545,14 @@ Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\
 <li>Discute el sistema de ecuaciones con matriz ampliada $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Determinante.
 Para calcular el determinante más fácilmente, a la segunda columna le restamos la tercera, luego desarrollamos por la segunda columna:
 
-$$|A|=\left| \begin{array}{cccc}
+$$
+|A|=\left| \begin{array}{cccc}
 3-\lambda & 1 & 1 & 0\\
 5 &-\lambda & 0 & 0\\
 0 & -\lambda & -\lambda & 1\\
@@ -1481,17 +1566,23 @@ $$|A|=\left| \begin{array}{cccc}
 3-\lambda &  1 & 0\\
 0 &  -\lambda & 1\\
 0 &  -1 & 2-\lambda 
-\end{array}\right|$$
+\end{array}\right|.
+$$
 
 Desarrollando ahora por la primera columna
-$$|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2$$ 
+$$
+|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
+$$ 
+
 y este resultado es válido en cualquier cuerpo.</li>
 
 <li>Rango.
 Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda\in \{0,1\}$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.<br>
 
 Para $\lambda=0$:<br>
-$$A=\left( \begin{array}{cccc}
+
+$$
+A=\left( \begin{array}{cccc}
 0 & 1 & 1 & 0\\
 2 &0 & 0 & 0\\
 0 & 0 & 0 & 1\\
@@ -1506,10 +1597,13 @@ $$A=\left( \begin{array}{cccc}
 0 &1 & 1 & 0\\
 0 & 0 & 0 & 1\\
 0 & 0 & 0 & 0 
-\end{array}\right)$$ luego el rango es 3. <br>
+\end{array}\right)
+$$ 
+luego el rango es 3. <br>
 
 Para $\lambda=1$:<br>
-$$A=\left( \begin{array}{cccc}
+$$
+A=\left( \begin{array}{cccc}
 2 & 1 & 1 & 0\\
 2 &2 & 0 & 0\\
 0 & 2 & 2 & 1\\
@@ -1519,7 +1613,8 @@ $$A=\left( \begin{array}{cccc}
 0 &1 & 2 & 0\\
 0 & 2 & 2 & 1\\
 0 & 0 & 0 & 0 
-\end{array}\right)$$
+\end{array}\right)
+$$
 que tiene rango 3.</li>
 
 <li>Sistema de ecuaciones.
@@ -1527,17 +1622,20 @@ que tiene rango 3.</li>
 Como la matriz ampliada tiene rango 4 para $\lambda\not\in \{0,1,3\}$, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares $\lambda\in\{0,1,3\}$:<br>
 
 Para $\lambda=0$:
-$$\left( \begin{array}{ccc|c}
+$$
+\left( \begin{array}{ccc|c}
 3 & 1 & 1 & 0\\
 5 & 0 & 0 & 0\\
 0 & 0 & 0 & 1\\
 0 & -1 & -1 & 2 
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 Como aparece la ecuación $0=1$ entonces también es incompatible.<br>
 
 Para $\lambda=1$:
-$$\left( \begin{array}{ccc|c}
+$$
+\left( \begin{array}{ccc|c}
 2 & 1 & 1 & 0\\
 5 & -1 & 0 & 0\\
 0 & -1 & -1 & 1\\
@@ -1547,12 +1645,15 @@ $$\left( \begin{array}{ccc|c}
 5 & -1 & 0 & 0\\
 0 & -1 & -1 & 1\\
 0 & 0 & 0 & 0 
-\end{array}\right)$$
+\end{array}\right)
+$$
 
 en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.<br>
 
 Para $\lambda=3$:
-$$\left( \begin{array}{ccc|c}
+
+$$
+\left( \begin{array}{ccc|c}
 0 & 1 & 1 & 0\\
 5 & -3 & 0 & 0\\
 0 & -3 & -3 & 1\\
@@ -1562,24 +1663,31 @@ $$\left( \begin{array}{ccc|c}
 5 & -3 & 0 & 0\\
 0 & -3 & -3 & 1\\
 0 & 0 & 0 & -1 
-\end{array}\right)$$
+\end{array}\right).
+$$
 
 y de nuevo aparece la ecuación $0=1$ con lo que en este caso es incompatible.</li>
 </ol>
+:::
+:::
 
-</details>
-</article>
 
-<article class="medio" style="display:block;">
+::: {#exr-10 .medio}
+
 Sea 
-$$A=\left(\begin{array}{rccc} 1 & 1 & 1 & 0\\ a & a-1 & a & 1\\ 1 & 1 & 1 & a-1\\ 1 & a & 0 & 0  \end{array}\right)\in \mathcal{M}_4(\mathbb{R}).$$
+
+$$
+A=\left(\begin{array}{rccc} 1 & 1 & 1 & 0\\ a & a-1 & a & 1\\ 1 & 1 & 1 & a-1\\ 1 & a & 0 & 0  \end{array}\right)\in \mathcal{M}_4(\mathbb{R}).
+$$
 y el sistema de ecuaciones
-$$\left\{\begin{aligned} 
+$$
+\left\{\begin{aligned} 
 x+y+z&=0,\\
 ax+(a-1)y+az&=1,\\
 x+y+z&=a-1,\\ 
 x+ay&=0. 
-\end{aligned}\right.$$
+\end{aligned}\right.
+$$
 
 <ol type="a">
 <li>Calcula el determinante de la matriz $A$.</li>
@@ -1588,13 +1696,13 @@ x+ay&=0.
 <li>Discute el sistema de ecuaciones según los valores de $a$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-
 <li>Determinante:
-$$|A|=\left|\begin{array}{rccc}
+
+$$
+|A|=\left|\begin{array}{rccc}
 1 & 1 & 1 & 0\\
 a & a-1 & a & 1\\
 1 & 1 & 1 & a-1\\
@@ -1606,7 +1714,9 @@ a & a-1 & a & 1\\
 1 & a & 0 & 0 
 \end{array}\right|
 $$
+
 donde a la primera y a la segunda columnas le hemos restado la tercera. Ahora, desarrollando el determinante por la primera columna (y el de orden 3 que aparece de nuevo por su primera columna):
+
 $$
 |A|= (-1) \left|\begin{array}{ccc}
 0 & 1 & 0\\
@@ -1616,7 +1726,8 @@ $$
 1 & 0\\
 1 & a-1\\
 \end{array}\right|=1-a.
-$$</li>
+$$
+</li>
 
 <li>Rango.
 Como $|A|=a-1$, si $a\not = 1$ el rango de $A$ es 4. Solo queda calcular el rango si $a=1$. Como después se pide calcular la forma de Hermite por filas, lo realizamos ahora:
@@ -1650,7 +1761,9 @@ A= & \left(\begin{array}{rccc}
 0 & 0 & \mathbf{1} & 0\\
 0 & 0 & 0 & 0\\
 \end{array}\right).
-\end{aligned}$$
+\end{aligned}
+$$
+
 Así, si $a=1$ el rango es $3$.
 
 Comprobemos el resultado obtenido con <code>sage</code>.
@@ -1668,23 +1781,25 @@ Cuando $a\not = 1$ como el rango es $4$, la forma de Hermite por filas es $I_4$,
 <li>Discusión del sistema.
 Como la matriz ampliada del sistema es $A$, entonces cuando $a\not = 1$ la matriz ampliada tiene rango 4 mientras que la de coeficientes como máximo podría tener rango 3, así que el sistema es incompatible; en el caso $a=1$, usando la forma de Hermite por filas de $A$ que hemos calculado observamos que el sistema es compatible determinado.</li>
 </ol>
+:::
+:::
 
-</details>
-</article>
 
-<article class="avanzado" style="display:block;">
+::: {#exr-11 .avanzado}
 
 Dadas las matrices 
-$$A=\begin{pmatrix}
+
+$$
+A=\begin{pmatrix}
 1 & 0 & 1 & a\\
 1 & 1 & 0 & 1\\
 1 & 1 & a-2 & 1
-\end{pmatrix} \hspace{1cm}
+\end{pmatrix}, \hspace{1em}
 B=\begin{pmatrix}
 1 & a-1& 1 & 1\\
 1 & 0 & 1 & 1\\
 1 & a & 1 & 1\\
-\end{pmatrix}
+\end{pmatrix}.
 $$
 
 <ol type="a">
@@ -1693,15 +1808,16 @@ $$
 <li>Para $a=1$ calcula la forma de Hermite por columnas de $B$, que llamaremos $H$, y $P$ regular tal que $H=BP$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Calcular los valores de $a$ para los que $A$ y $B$ son equivalentes.<br>
 Dos matrices son equivalentes $\Leftrightarrow$ tienen el mismo rango.<br>
 Calculamos el rango de ambas matrices. Como son de orden $3\times 4$ su rango máximo es tres. <br>
 Para $A$ calculamos un menor de orden tres
-$$\left|\begin{array}{ccc}
+
+$$
+\left|\begin{array}{ccc}
 1 & 0 & 1 \\
 1 & 1 & 0 \\
 1 & 1 & a-2 \\
@@ -1709,21 +1825,29 @@ $$\left|\begin{array}{ccc}
 1 & 0 & 1 \\
 0 & 1 & 0 \\
 0 & 1 & a-2 \\
-\end{array}\right|=a-2.$$
+\end{array}\right|=a-2.
+$$
+
 Si $a\not = 2$ este menor es distinto de cero y por tanto $\operatorname{rg}(A)=2$. Veamos qué ocurre para $a=2$, para lo que sustituimos y calculamos la forma de Hermite por filas:
- $$A=\begin{pmatrix}
+
+$$
+A=\begin{pmatrix}
 1 & 0 & 1 & 2\\
 1 & 1 & 0 & 1\\
 1 & 1 & 0 & 1
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix} \sim_f 
+\begin{pmatrix}
 1 & 1 & 0 & 1\\
 0 & -1 & 1 & 1\\
 0 & 0 & 0 & 0
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix} \sim_f 
+\begin{pmatrix}
 1 & 0 & 1 & 2\\
 0 & 1 & -1 & -1\\
 0 & 0 & 0 & 0
-\end{pmatrix},$$<br>
+\end{pmatrix},
+$$
+
 así que para $a=2$ tiene rango 2.
 
 Comprobemos el resultado obtenido con <code>sage</code>.
@@ -1736,19 +1860,25 @@ show(A,"~",A.rref())
 </div>
 
 Para $B$ observamos que tiene tres columnas idénticas, por lo que el rango máximo puede ser dos. También podemos calcular su forma de Hermite por filas 
-$$B=\begin{pmatrix}
+
+$$
+B=\begin{pmatrix}
 1 & a-1& 1 & 1\\
 1 & 0 & 1 & 1\\
 1 & a & 1 & 1\\
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix}\sim_f 
+\begin{pmatrix}
 1 & 0 & 1 & 1\\
 0 & a-1 & 0 & 0\\
 0 & a & 0 & 0\\
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix}\sim_f 
+\begin{pmatrix}
 1 & 0 & 1 & 1\\
 0 & 1 & 0 & 0\\
 0 & 0 & 0 & 0\\
-\end{pmatrix},$$
+\end{pmatrix},
+$$
+
 con lo que $\operatorname{rg}(B)=2$ para todo valor de $a$.Así que $A$ y $B$ son equivalentes para $a=2$.</li>
 
 <li>Calcular para qué valores de $a$ son equivalentes por filas.<br>
@@ -1756,7 +1886,9 @@ Para que sean equivalentes por filas deben tener la misma forma de Hermite por f
 
 <li>Calcular $H$, y $P$ regular tal que $H=BP$.<br>
 Sustituimos $a=1$ en $B$ y realizamos operaciones elementales por columnas apuntándolas en una matriz regular:
-$$B=\begin{pmatrix}
+
+$$
+B=\begin{pmatrix}
 1 & 0 & 1 & 1\\
 1 & 0 & 1 & 1\\
 1 & 1 & 1 & 1\\
@@ -1778,7 +1910,9 @@ $$B=\begin{pmatrix}
 \end{pmatrix},
 $$
 
-luego $$H= \begin{pmatrix}
+luego 
+
+$$H= \begin{pmatrix}
 1 & 0 & 0 & 0\\
 1 & 0 & 0 & 0\\
 0 & 1 & 0 & 0\\
@@ -1788,16 +1922,20 @@ P=\begin{pmatrix}
 -1 & 1 & 0 & 0\\
 0 & 0 & 1 & 0\\
 0 & 0 & 0 & 1
-\end{pmatrix}.$$</li>
+\end{pmatrix}.
+$$
+</li>
 </ol>
+:::
+:::
 
-</details>
-</article>
 
-<article class="medio" style="display:block;">
+::: {#exr-12 .medio}
 
 Dada la matriz
-$$A=\begin{pmatrix}
+
+$$
+A=\begin{pmatrix}
 1 & a-1 & a & 1\\
 -1 & a-1 & a & 1\\
 0 &2a-2 & 2a & 1\\
@@ -1811,12 +1949,13 @@ $$
 <li>Discute el sistema cuya matriz ampliada es $A$ en función de los valores de $a$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular el determinante.<br>
-$$\begin{aligned}
+<li>Calcular el determinante.
+
+$$
+\begin{aligned}
 |A|= &\left|\begin{array}{cccc}
 1 & a-1 & a & 1\\
 -1 & a-1 & a & 1\\
@@ -1840,13 +1979,17 @@ $$\begin{aligned}
 2a-2 & 2a \\
 1-a & a  
 \end{array}\right|=4a^2-4a=4a(a-1).
-\end{aligned}$$</li>
+\end{aligned}
+$$
+</li>
 
 <li>Calcular la forma de Hermite por filas según los valores de $a$.<br>
 Por el Teorema de las matrices regulares, si $|A|\not = 0$ la forma de Hermite por filas de $A$ es $I_4$, por tanto si $a\not = 0,1$ entonces $H=I_4$.
 Estudiamos los casos particulares $a=0$ y $a=1$.<br>
 Si $a=0$ 
-$$A=\begin{pmatrix}
+
+$$
+A=\begin{pmatrix}
 1 & -1 & 0 & 1\\
 -1 & -1 & 0 & 1\\
 0 & -2 & 0 & 1\\
@@ -1879,7 +2022,9 @@ show(A,"~",A.rref())
 </div>  
 
 Si $a=1$
-$$A=\begin{pmatrix}
+
+$$
+A=\begin{pmatrix}
 1 & 0 & 1 & 1\\
 -1 & 0 & 1 & 1\\
 0 & 0 & 2 & 1\\
@@ -1915,38 +2060,49 @@ show(A,"~",A.rref())
 <li>Discutir el sistema cuya matriz ampliada es $A$ en función de los valores de $a$.<br>
 Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada $H$.<br>
 Si $a\not = 0,1$ entonces 
-$$H= \left(\begin{array}{ccc|c}
+
+$$
+H= \left(\begin{array}{ccc|c}
 1 & 0 & 0 & 0\\
 0 & 1 & 0 & 0 \\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{array}\right)
 $$
+
 y como aparece la ecuación $0=1$ es incompatible.<br>
 Si $a=0$
-$$H=\left( \begin{array}{ccc|c}
+
+$$
+H=\left( \begin{array}{ccc|c}
 1 & 0 & 0 & 0\\
 0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 1 \\
 0 & 0 & 0 & 0
 \end{array}\right)
-$$ y también es incompatible.<br>
+$$ 
+
+y también es incompatible.<br>
 Por último para $a=1$
-$$H= \left( \begin{array}{ccc|c}
+
+$$
+H= \left( \begin{array}{ccc|c}
 1 & 0 & 0 & 0\\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1 \\
 0 & 0 & 0 & 0
 \end{array}\right)
 $$
+
 también es incompatible.</li>
 </ol>
+:::
+:::
 
-</details>
-</article>
 
-<article class="medio" style="display:block;">
+::: {#exr-13 .cuerpo_finito-basico}
 Para las matrices:
+
 $$
 A=\begin{pmatrix}
 2 & 1 & 2 \\
@@ -1967,19 +2123,21 @@ C=\begin{pmatrix}
 0 & 0 & 0  \\
 \end{pmatrix}.
 $$
+
 Determinar matrices regulares $P$ y $Q$ de forma que:
 $Q\cdot A \cdot P= C$.<br>
 Razonar que 
 no pueden existir matrices regulares $P$ y $Q$ de forma que:
 $Q\cdot B \cdot P=C$
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 El rango de $A$ es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como $C$ es de rango dos y del mismo orden, entonces $A$ y $C$ son equivalentes y por tanto existen matrices regulares $Q$ y $P$ verificando $Q\, A \, P=C$. Sin embargo $B$ tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con $C$.<br>
 
 Para calcular $Q$ y $P$ realizamos operaciones elementales por filas y columnas sobre $A$ hasta obtener $C$. Una forma posible es transformar $A$ hasta su forma de Hermite por filas y después, a la matriz obtenida se le realizan operaciones elementales por columnas. También podrían realizarse unas y otras operaciones elementales en cualquier orden.
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 \left(\begin{array}{ccc|cccc}
 2 & 1 & 2 & 1 & 0 & 0 & 0\\
 1 & 2 & 2 & 0 & 1 & 0 & 0\\
@@ -2016,8 +2174,11 @@ $$\begin{aligned}
 0 & 0 & 0 & -1 & 0 & 1 & 0\\
 0 & 0 & 0 & 0 & -1 & 0 & 1
 \end{array}\right)
-\end{aligned}$$
+\end{aligned}
+$$
+
 Ahora por columnas
+
 $$
 \left(\begin{array}{ccc}
 1 & 0 & 2/3 \\
@@ -2038,9 +2199,13 @@ $$
 1 & 0 & -2/3 \\
 0 & 1 & -2/3\\
 0 & 0 & 1
-\end{array}\right).$$
+\end{array}\right).
+$$
+
 Luego, una solución (hay muchas) es 
-$$Q=
+
+$$
+Q=
 \left(\begin{array}{cccc}
  2/3 & -1/3 & 0 & 0\\
  -1/3 & 2/3 & 0 & 0\\
@@ -2051,20 +2216,24 @@ P=\left(\begin{array}{ccc}
 1 & 0 & -2/3 \\
 0 & 1 & -2/3\\
 0 & 0 & 1
-\end{array}\right).$$
+\end{array}\right).
+$$
+:::
+:::
 
-</details>
-</article>
 
-<article class="medio" style="display:block;">
+::: {#exr-14 .medio}
 
 Dada la matriz
-$$A= \left(\begin{array}{rrrr}
+
+$$
+A= \left(\begin{array}{rrrr}
 a & 1 & 0 & 1\\
 1 & a & 0 & 1\\
 1 & 0 & a & 1\\
 1 & 0 & 1 & a
-\end{array}\right).$$
+\end{array}\right).
+$$
 
 <ol type="a">
 <li>Calcula el determinante de $A$.</li>
@@ -2073,8 +2242,7 @@ a & 1 & 0 & 1\\
 <li>Para $a=-2$ calcula la forma de Hermite por filas de $A$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Calcular el determinante de $A$.<br>
@@ -2104,7 +2272,8 @@ a-1 & 1-a & 0 & 0\\
  \right|\\
 & =(a-1)a[a(a-1)+(a-1)]+(1-a)[a(1-a)]=(a-1)^2a(a+1)+(a-1)^2a\\
 & =(a-1)^2a[a+1+1]=(a-1)^2a(a+2).
-\end{aligned}$$
+\end{aligned}
+$$
 </li> 
 
 <li>Determinar los valores de $a$ para los que la forma de Hermite por filas de $A$ es $I_4$.<br>
@@ -2116,7 +2285,8 @@ Si  $a\neq -2, 0, 1$, entonces el $\operatorname{rg}(A)=4$.<br>
 
 Si $a=1$:
 
-$$\left|
+$$
+\left|
     \begin{array}{cccc}
       1 & 1 & 0 & 1 \\
       1 & 1 & 0 & 1 \\
@@ -2129,10 +2299,13 @@ $$\left|
       0 & 0 & 0 & 0 \\
       0 & 0 & 0 & 0 \\
     \end{array}
-  \right| \Rightarrow \operatorname{rg}(A)=2. $$
-  Si $a=0$:
+  \right| \Rightarrow \operatorname{rg}(A)=2. 
+$$
+  
+Si $a=0$:
 
-$$\left|
+$$
+\left|
     \begin{array}{cccc}
       0 & 1 & 0 & 1 \\
       1 & 0 & 0 & 1 \\
@@ -2145,12 +2318,14 @@ $$\left|
       0 & 1 & 0 & 0 \\
       0 & 0 & 1 & 0 \\
     \end{array}
-  \right| \Rightarrow \operatorname{rg}(A)=3. $$
+  \right| \Rightarrow \operatorname{rg}(A)=3. 
+$$
   
   
 Si $a=-2$:
 
-$$\left|
+$$
+\left|
     \begin{array}{cccc}
       -2 & 1 & 0 & 1 \\
       1 & -2 & 0 & 1 \\
@@ -2175,19 +2350,24 @@ $$\left|
       0 & 0& 1 & -1 \\
       0 & 0 & 0& 0 \\
     \end{array}
-  \right|    .$$
+  \right|    .
+$$
   
 Luego $\operatorname{rg}(A)=3$.
 </li>
 
 <li>Para $a=-2$ calcula la forma de Hermite por filas de $A$.<br>
-Se ha calculado en el apartado anterior, $$H=\left( \begin{array}{cccc}
+Se ha calculado en el apartado anterior, 
+
+$$
+H=\left( \begin{array}{cccc}
       1 & 0 & 0 & -1 \\
       0 & 1 & 0 & -1  \\
       0 & 0& 1 & -1 \\
       0 & 0 & 0& 0 \\
     \end{array}
-\right).$$
+\right).
+$$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -2198,14 +2378,15 @@ show(A,"~",A.rref())
 </script>
 </div>  
 </li>
-
 </ol>
-</details>
-</article>
+:::
+:::
 
-<article class="avanzado" style="display:block;">
+
+::: {#exr-15 .avanzado}
 
 Se consideran las matrices:
+
 $$
 A=\begin{pmatrix}
 -1 & -a & a-1 \\
@@ -2225,12 +2406,12 @@ $$
 <li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ de forma que $B=A\cdot P$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Determinar para qué valores del parámetro $a$ es la matriz $A$ invertible.<br>
 La matriz $A$ es invertible si, y solo si, su determinante es distinto de cero. Calculamos el determinante realizando primero algunas operaciones elementales:
+
 $$
 |A|=\left|\begin{array}{ccc}
 -1 & -a & a-1 \\
@@ -2246,18 +2427,24 @@ $$
 1-2a & 0 & 1
 \end{array}\right|,
 $$
+
 y desarrollando por la segunda columna,
-$$\left|\begin{array}{ccc}
+
+$$
+\left|\begin{array}{ccc}
 -1 & 0 & 2a-1 \\
 0 & a & a \\
 1-2a & 0 & 1
-\end{array}\right|=a(-1+(2a-1)^2)=a(4a^2-4a)=4a^2(a-1).$$
+\end{array}\right|=a(-1+(2a-1)^2)=a(4a^2-4a)=4a^2(a-1).
+$$
+
 Así, que $A$ tiene inversa cuando $a\not = 0,1$.
 </li>
 
 <li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ regular de forma que $B=A\cdot P$.<br>
 Para que exista esa matriz regular $P$ (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser $A$ y $B$ equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.<br>
 Entonces calculamos la de $B$:
+
 $$
 B=\begin{pmatrix}
 2 & 3 & 4\\
@@ -2289,6 +2476,7 @@ show(B,"~",(B.T).rref().T)
 
 Puesto que $\operatorname{rg}(B)=2$ solo es posible que sean equivalentes por columnas cuando $a=0$ o $a=1$, porque en otro caso $A$ tiene rango tres.<br>
 Calculamos la forma de Hermite de $A$ en ambos casos:
+
 $$
 A=\begin{pmatrix}
 -1 & 0 & -1 \\
@@ -2300,7 +2488,9 @@ A=\begin{pmatrix}
 1 & 0 & 0
 \end{pmatrix}.
 $$ 
+
 En el caso $a=0$ no existe $P$ regular.
+
 $$
 A=\begin{pmatrix}
 -1 & -1 & 0 \\
@@ -2316,17 +2506,22 @@ $$
 
 <li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ de forma que $B=A\cdot P$.<br>
 Como hemos razonado en el caso anterior, $P$ existe para $a=1$ y es regular. Cuando $a\not=0,1$ como $A$ es regular, podemos despejar $P$ en la fórmula $B=AP$:
-$$P=A^{-1}B,$$
+
+$$
+P=A^{-1}B,
+$$
+
 que existe, aunque no es regular porque $B$ no lo es. Así que existe una tal $P$ para todo $a$ salvo $a=0$.
 </li>
 </ol>
+:::
+:::
 
-</details>
-</article>
 
-<article class="basico" style="display:block;">
+::: {#exr-16 .basico}
 
 Discutir en función de los parámetros $a$ y $b$ el sistema de ecuaciones lineales:
+
 $$
 \left\{
 \begin{array}{rcl}
@@ -2336,13 +2531,15 @@ x+y+bz &=& 3. \\
 \end{array}
 \right.
 $$
+
 y resolverlo en aquellos casos en que sea compatible.
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
 
 La matriz de coeficientes del sistema 
-$$\begin{pmatrix}
+
+$$
+\begin{pmatrix}
 1 & 1 & 1\\
 1 & 1 & a\\
 1 & 1 & b
@@ -2352,9 +2549,12 @@ $$\begin{pmatrix}
 0 & 0 & b-1
 \end{pmatrix},
 $$
+
 tiene rango 1 si $a=b=1$ y rango 2 en otro caso.
 La matriz ampliada del sistema 
-$$\begin{pmatrix}
+
+$$
+\begin{pmatrix}
 1 & 1 & 1 & 1\\
 1 & 1 & a & 2\\
 1 & 1 & b & 3
@@ -2364,9 +2564,11 @@ $$\begin{pmatrix}
 0 & 0 & b-1 & 2
 \end{pmatrix},
 $$
+
 tiene rango 2 si $b-1=2(a-1)$ ( o lo que es lo mismo $b=2a-1$, que incluye el caso $a=b=1$) y rango 3 en cualquier otro caso.<br>
 Así, el sistema es compatible si, y solo si, $b= 2a-1$ y $a\not = 1$ y en esos casos, como $\operatorname{rg}(A)=\operatorname{rg}(A|B)=2$, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando $a=b=1$ o bien cuando $b\not = 2a-1$) es incompatible.<br>
 Cuando $b=2a-1$ y $a\not = 1$, resolviendo desde la matriz anterior 
+
 $$
 \begin{pmatrix}
 1 & 1 & 1 & 1 \\
@@ -2378,13 +2580,17 @@ $$
 0 & 0 & 0 & 0
 \end{pmatrix},
 $$
+
 y el conjunto de soluciones es
-$$\left\{ \left(1-\lambda-\frac{1}{a-1}  , \lambda, \frac{1}{a-1}\right); \lambda \in \mathbb{R} \right\}.$$
 
-</details>
-</article>
+$$
+\left\{ \left(1-\lambda-\frac{1}{a-1}  , \lambda, \frac{1}{a-1}\right); \lambda \in \mathbb{R} \right\}.
+$$
+:::
+:::
 
-<article class="medio" style="display:block;">
+
+::: {#exr-17 .medio}
 
 Dadas las matrices 
 $$
@@ -2410,14 +2616,15 @@ $$
 <li>Para la pareja de valores $a=0$, $b=1$, calcula una matriz $Q$ tal que $QA=B$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+::: {.callout collapse="true" title="Solución"}
+
 
 <ol type="a">
 <li>Encontrar los valores de $a$ y $b$ para los que las matrices $A$ y $B$ sean equivalentes.<br>
 Dos matrices del mismo orden son equivalentes cuando tienen el mismo rango.  Calculamos el rango en función de los parámetros:
 en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.<br>
 Para $A$ elegimos
+
 $$
 \left|\begin{array}{rrr}
       a & 1 & 1\\
@@ -2457,6 +2664,7 @@ $$A=\left(\begin{array}{rrr}
   \end{array}
 \right),
 $$
+
 tiene también rango tres y la anterior es su forma de Hermite por filas.<br>
 
 Comprobemos el resultado obtenido con <code>sage</code>.
@@ -2470,7 +2678,9 @@ show(A,"~",A.rref())
 
 
 Para $a=-1$
-$$A=\left(\begin{array}{rrr}
+
+$$
+A=\left(\begin{array}{rrr}
    1 & -1 & -1\\
    -1 & 1 & 1\\
    1 & -1 & -1\\
@@ -2491,10 +2701,13 @@ $$A=\left(\begin{array}{rrr}
   \end{array}
 \right).
 $$  
+
 tiene rango dos y la anterior es su forma de Hermite por filas.<br>
 
 Para $B$:
-$$\left|\begin{array}{rrr}
+
+$$
+\left|\begin{array}{rrr}
    1 & -1 & 1\\
    1 & 1 & 0\\
    0 & -b & b\\
@@ -2510,8 +2723,10 @@ $$\left|\begin{array}{rrr}
     \end{array}
 \right|=b.
 $$
+
 Así, cuando $b\not = 0$, $\operatorname{rg}(B)=3$.
 Para $b=0$
+
 $$
 B=\left(\begin{array}{rrr}
    1 & -1 & 1\\
@@ -2533,6 +2748,7 @@ B=\left(\begin{array}{rrr}
   \end{array}
 \right),
 $$
+
 que tiene rango dos y tenemos su forma de Hermite por filas.<br>
 
 Comprobemos el resultado obtenido con <code>sage</code>.
@@ -2549,6 +2765,7 @@ Por tanto, concluimos que si $a=-1$ y $b=0$, o bien, $a\neq-1$ y $b\neq0$, son e
 
 <li>Encontrar los valores de $a$ y $b$ para los que las matrices $A$ y $B$ sean equivalentes por filas.<br>
 En el caso de que una matriz $4\times 3$ tenga rango tres, su forma de Hermite por filas es necesariamente 
+
 $$
 H= \left(\begin{array}{rrr}
    1 & 0 & 0\\
@@ -2556,17 +2773,21 @@ H= \left(\begin{array}{rrr}
    0 & 0 & 1\\
   0 & 0 & 0
   \end{array}
-\right)
- $$
+\right),
+$$
+
 puesto que cada uno de los tres pivotes tienen que estar en columnas distintas. Así que tenemos calculada la forma de Hermite en todos los casos y podemos concluir que no serán equivalentes por filas excepto si $a\neq-1$ y $b\neq0$.
 </li>
 
 <li>Para la pareja de valores $a=0$, $b=1$, calcular una matriz $Q$ tal que $QA=B$.<br>
 En ese caso las matrices son equivalentes por filas, para encontrar una matriz $Q$, calculamos $Q_1$ y $Q_2$ tales que:
-$$ Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.$$
+
+$$ 
+Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.
+$$
+
 Igualando y despejando $B$ sería $Q=Q_{2}^{-1}Q_{1}$. 
 </li>
 </ol>
-
-</details>
-</article>
+:::
+:::
