@@ -72,7 +72,7 @@ Array.prototype.diff = function(arr2) {
 
 //ocultar todos los articulos
 function ocultar_todo(){
-  var xs = document.querySelectorAll("article");
+  var xs = document.querySelectorAll("[class*='exercise']");
   var i;
   console.log(xs);
   for(i=0; i<xs.length; i++) {
@@ -158,7 +158,6 @@ function CF() {
       margin-bottom: 0.5em;
     }
     </style>
-    
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -300,20 +299,23 @@ window.Quarto = {
 <!-- LTeX: language=es-ES --->
 <p>Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked="" onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos.</p>
 <p><input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Mostrar ejercicios básicos. <input type="checkbox" id="casilla_medio" value="medioon" checked="" onclick="mostrar();"> Mostrar ejercicios de dificultad media. <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Mostrar ejercicios avanzados.</p>
-<!--
-Si quieres ocultar o mostrar los ejercicios referentes a cuerpos finitos, puedes hacerlo pulsando este botón. <button id="mostrarcf" class="button" style="display:inline;vertical-align: middle;" onclick="mostrarCF();">Ocultar CF</button>  
- </p>-->
-<article class="cuerpo_finito-basico" style="display:block;">
-<p>Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span> y <span class="math inline">\(\mathbb{Z}_5\)</span>.</p>
-<span class="math display">\[\left\{\begin{aligned} x_{2}-2x_{3}&amp;= -4,\\ x_{1}+x_{2}-x_{3}&amp;=0,\\ 2x_{1}-x_{2}+x_{3}&amp;=3. \end{aligned}\right.\]</span>
-<details>
-<summary>
+<div id="exr-1" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span> y <span class="math inline">\(\mathbb{Z}_5\)</span>.</p>
+<p><span class="math display">\[\left\{\begin{aligned} x_{2}-2x_{3}&amp;= -4,\\ x_{1}+x_{2}-x_{3}&amp;=0,\\ 2x_{1}-x_{2}+x_{3}&amp;=3. \end{aligned}\right.\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada.</p>
-<h3 class="anchored">
-Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>
-</h3>
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></p>
 <p>En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
 0 &amp; 1 &amp; -2 &amp; -4\\
@@ -398,9 +400,7 @@ x_{3}&amp;=3.
 \end{aligned}\right.
 \]</span></p>
 <p>Luego es un sistema compatible determinado, y su única solución es <span class="math display">\[(1,2,3).\]</span></p>
-<h3 class="anchored">
-Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>
-</h3>
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span></strong></p>
 <p>En primer lugar vamos a substituir los coeficientes por representantes en <span class="math inline">\(\{0,1,2\}\)</span>:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
 0 &amp; 1 &amp; 1 &amp; 2\\
@@ -467,9 +467,7 @@ x_3&amp;=\lambda
 <p>Luego este sistema tiene el siguiente conjunto de soluciones:</p>
 <p><span class="math display">\[\{ (1,2,0), (0,1,1),(2,0,2)\}.\]</span></p>
 <p>Por tanto, en el caso de tomar coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>, obtenemos un sistema compatible indeterminado.</p>
-<h3 class="anchored">
-Coeficientes en <span class="math inline">\(\mathbb{Z}_5\)</span>
-</h3>
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_5\)</span></strong></p>
 <p>En primer lugar vamos a sustituir los coeficientes por sus respectivos representantes en <span class="math inline">\(\{0,1,2,3,4\}\)</span>:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
 0 &amp; 1 &amp; 3 &amp; 1\\
@@ -556,21 +554,30 @@ x_{3}&amp;=3.
 \]</span></p>
 <p>Luego este sistema tiene una única solución:</p>
 <p><span class="math display">\[(1,2,3),\]</span></p>
-y de esta forma es compatible determinado.
-</details>
-</article>
-<article class="cuerpo_finito-basico" style="display:block;">
-<p>Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_2\)</span>.</p>
+<p>y de esta forma es compatible determinado.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-2" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_2\)</span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x-y+z+t+v&amp;=0,\\ x+y+z+t-v&amp;=0,\\ -x-y+z+t-v&amp;=0. \end{aligned}\right.\]</span></p>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. Además, un sistema homogéneo siempre es Compatible puesto que admite la solución <span class="math inline">\((0,0,0,0,0)\)</span>.</p>
-<h3 class="anchored">
-Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>
-</h3>
-<p><span class="math display">\[\left(\begin{array}{rrrrr}
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></p>
+<p><span class="math display">\[
+\left(\begin{array}{rrrrr}
 \boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
 1 &amp; 1 &amp; 1 &amp; 1 &amp; -1\\
 -1 &amp; -1 &amp; 1 &amp; 1 &amp; -1
@@ -580,9 +587,11 @@ f_3+f_1\rightarrow f_3 \end{array}}
 \boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
 0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
 0 &amp; -2 &amp; 2 &amp; 2 &amp; 0
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Podemos tomar como pivote el segundo elemento de la segunda fila o utilizarla antes para hacer cero en la posición <span class="math inline">\((3,2)\)</span>. Estaríamos apartándonos del método de Gauss-Jordan, pero al ser la forma de escalonada reducida por filas de la matriz única, no importa cuál es el camino para obtenerla.</p>
-<p><span class="math display">\[\left(\begin{array}{rrrrr}
+<p><span class="math display">\[
+\left(\begin{array}{rrrrr}
 \boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
 0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
 0 &amp; -2 &amp; 2 &amp; 2 &amp; 0
@@ -592,9 +601,11 @@ f_3+f_1\rightarrow f_3 \end{array}}
 \boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
 0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
 0 &amp; 0 &amp; 2 &amp; 2 &amp; -2
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Ahora sí tomamos como pivote el segundo elemento de la segunda fila y con él hacemos cero todos los elementos que están en su columna; después continuamos con el pivote de la tercera fila:</p>
-<p><span class="math display">\[\left(\begin{array}{rrrrr}
+<p><span class="math display">\[
+\left(\begin{array}{rrrrr}
 \boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
 0 &amp; 2 &amp; 0 &amp; 0 &amp; -2\\
 0 &amp; 0 &amp; 2 &amp; 2 &amp; -2
@@ -609,7 +620,8 @@ f_1+f_2\rightarrow f_1 \end{array}}\left(\begin{array}{rrrrr}
 \boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; -1\\
 0 &amp; 0 &amp; \boxed{1} &amp; 1 &amp; -1
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -618,17 +630,17 @@ show(A,"~",A.rref())
 </script>
 </div>
 <p>Como ya tenemos una matriz escalonada reducida por filas, el sistema no puede simplificarse más. Solo queda escribir las soluciones: para ello observamos que las incógnitas <span class="math inline">\(x,y\)</span> y <span class="math inline">\(z\)</span> están listas para ser despejadas, son las que corresponden a los pivotes. Las que no corresponden a pivotes se utilizan como parámetros (o variables libres). La solución del sistema queda:</p>
-<p><span class="math display">\[\left.\begin{aligned}
+<p><span class="math display">\[
+\left.\begin{aligned}
 x&amp;=-\lambda_2\\
 y&amp;=\lambda_2\\
 z&amp;=-\lambda_1+\lambda_2\\
 t&amp;=\lambda_1 \\
 v&amp;=\lambda_2
-\end{aligned}\right\},   \lambda_1, \lambda_2 \in \mathbb{Q}.\]</span></p>
-<p>luego es un sistema compatible Indeterminado.</p>
-<h3 class="anchored">
-Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>
-</h3>
+\end{aligned}\right\},   \lambda_1, \lambda_2 \in \mathbb{Q}.
+\]</span></p>
+<p>Luego es un sistema compatible Indeterminado.</p>
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span></strong></p>
 <p>Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que <span class="math inline">\(1\not = -1\)</span>.</p>
 <p>Si repasamos las operaciones utilizadas, son también válidas en <span class="math inline">\(\mathbb{Z}_3\)</span> y en <span class="math inline">\(\mathbb{Z}_5\)</span> (aunque multiplicar por <span class="math inline">\(\frac{1}{2}\)</span> correspondería a multiplicar por <span class="math inline">\(2\)</span> en <span class="math inline">\(\mathbb{Z}_3\)</span> o por <span class="math inline">\(3\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>).</p>
 <p>Comprobemos el razonamiento con <code>sage</code>.</p>
@@ -639,17 +651,17 @@ show(A,"~",A.rref())
 </script>
 </div>
 <p>Las soluciones en <span class="math inline">\(\mathbb{Z}_3\)</span> serían</p>
-<p><span class="math display">\[\left.\begin{aligned}
+<p><span class="math display">\[
+\left.\begin{aligned}
 x&amp;=2\lambda_2\\
 y&amp;=\lambda_2\\
 z&amp;=2\lambda_1+\lambda_2\\
 t&amp;=\lambda_1 \\
 v&amp;=\lambda_2
-\end{aligned}\right\},  \lambda_1, \lambda_2 \in \mathbb{Z}_3.\]</span></p>
+\end{aligned}\right\},  \lambda_1, \lambda_2 \in \mathbb{Z}_3,
+\]</span></p>
 <p>y por tanto es compatible indeterminado y tiene un total de <span class="math inline">\(9\)</span> soluciones.</p>
-<h3 class="anchored">
-Coeficientes en <span class="math inline">\(\mathbb{Z}_5\)</span>
-</h3>
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_5\)</span></strong></p>
 <div class="sage">
 <script type="text/x-sage">
 A=matrix(GF(5),[[1,-1,1,1,1],[1,1,1,1,-1],[-1,-1,1,1,-1]])
@@ -657,18 +669,19 @@ show(A,"~",A.rref())
 </script>
 </div>
 <p>Como hemos comentado, la matriz escalonada reducida es la misma, luego las soluciones son:</p>
-<p><span class="math display">\[\left.\begin{aligned}
+<p><span class="math display">\[
+\left.\begin{aligned}
 x&amp;=4\lambda_2\\
 y&amp;=\lambda_2\\
 z&amp;=4\lambda_1+\lambda_2\\
 t&amp;=\lambda_1 \\
 v&amp;=\lambda_2
-\end{aligned}\right\},  \ \lambda_1, \lambda_2 \in \mathbb{Z}_5,\]</span></p>
+\end{aligned}\right\},  \ \lambda_1, \lambda_2 \in \mathbb{Z}_5,
+\]</span></p>
 <p>y por tanto es compatible indeterminado y tiene un total de <span class="math inline">\(25\)</span> soluciones.</p>
-<h3 class="anchored">
-Coeficientes en <span class="math inline">\(\mathbb{Z}_2\)</span>
-</h3>
-<p><span class="math display">\[\left(\begin{array}{ccccc}
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_2\)</span></strong></p>
+<p><span class="math display">\[
+\left(\begin{array}{ccccc}
 \boxed{1} &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1
@@ -678,30 +691,42 @@ f_3-f_1\rightarrow f_3 \end{array}}
 \boxed{1} &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right),\]</span></p>
+\end{array}\right),
+\]</span></p>
 <p>luego la única incógnita despejada sería <span class="math inline">\(x\)</span>, y las soluciones dependerían de <span class="math inline">\(4\)</span> parámetros:</p>
-<p><span class="math display">\[\left.\begin{aligned}
+<p><span class="math display">\[
+\left.\begin{aligned}
 x&amp;=\lambda_1+\lambda_2+\lambda_3+\lambda_4\\
 y&amp;=\lambda_1\\
 z&amp;=\lambda_2\\
 t&amp;=\lambda_3 \\
 v&amp;=\lambda_4
-\end{aligned}\right\},  \lambda_i \in \mathbb{Z}_2,\ i\in\{1,2,3,4\},\]</span></p>
-luego es compatible indeterminado y tiene un total de <span class="math inline">\(2^4=16\)</span> soluciones.
-</details>
-</article>
-<article class="cuerpo_finito-basico" style="display:block;">
-<p>Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_7\)</span>.</p>
+\end{aligned}\right\},  \lambda_i \in \mathbb{Z}_2,\ i\in\{1,2,3,4\},
+\]</span></p>
+<p>luego es compatible indeterminado y tiene un total de <span class="math inline">\(2^4=16\)</span> soluciones.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-3" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_7\)</span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&amp;= 2,\\ x_{1}+2x_{2}+x_{3}&amp;=1,\\ x_{2}&amp;=3. \end{aligned}\right.\]</span></p>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.</p>
-<h3 class="anchored">
-En <span class="math inline">\(\mathbb{Z}_7\)</span>:
-</h3>
-<p><span class="math display">\[\begin{aligned}\left(\begin{array}{ccc|c}
+<p><strong>En <span class="math inline">\(\mathbb{Z}_7\)</span>:</strong></p>
+<p><span class="math display">\[
+\begin{aligned}\left(\begin{array}{ccc|c}
 \boxed{1} &amp; 1 &amp; 1 &amp; 2\\
 1 &amp; 2 &amp; 1 &amp; 1\\
 0 &amp; 1 &amp; 0 &amp;  3
@@ -742,9 +767,7 @@ show(Ab,"~",Ab.rref())
 </div>
 <p>En el último paso no hemos escrito las operaciones elementales puesto que se da una circunstancia muy especial: el único elemento no nulo es el pivote. Eso hace que operar con esta fila sea muy sencillo, solo borra los elementos de su columna sin cambiar nada más.</p>
 <p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>) entonces el sistema es incompatible.</p>
-<h3 class="anchored">
-En <span class="math inline">\(\mathbb{Z}_5\)</span>:
-</h3>
+<p><strong>En <span class="math inline">\(\mathbb{Z}_5\)</span>:</strong></p>
 <p><span class="math display">\[\begin{aligned}
 \left(\begin{array}{ccc|c}
 \boxed{1} &amp; 1 &amp; 1 &amp; 2\\
@@ -786,9 +809,7 @@ show(Ab,"~",Ab.rref())
 </script>
 </div>
 <p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
-<h3 class="anchored">
-En <span class="math inline">\(\mathbb{Z}_3\)</span>:
-</h3>
+<p><strong>En <span class="math inline">\(\mathbb{Z}_3\)</span>:</strong></p>
 <p><span class="math display">\[\begin{aligned}
 \left(\begin{array}{ccc|c}
 \boxed{1} &amp; 1 &amp; 1 &amp; 2\\
@@ -830,9 +851,7 @@ show(Ab,"~",Ab.rref())
 </script>
 </div>
 <p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
-<h3 class="anchored">
-En <span class="math inline">\(\mathbb{Q}\)</span>:
-</h3>
+<p><strong>En <span class="math inline">\(\mathbb{Q}\)</span>:</strong></p>
 <p><span class="math display">\[\begin{aligned}
 \left(\begin{array}{ccc|c}
 \boxed{1} &amp; 1 &amp; 1 &amp; 2\\
@@ -874,11 +893,13 @@ Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
 </div>
-Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.
-</details>
-</article>
-<article class="cuerpo_finito-basico" style="display:block;">
-<p>En el cuerpo <span class="math inline">\(\mathbb{Z}_5\)</span> se considera la matriz <span class="math display">\[C = \begin{pmatrix} 1&amp;1&amp;1&amp;1 \\ 0&amp;2&amp;1&amp;2 \\ 0&amp;4&amp;1&amp;1 \\ \end{pmatrix}.\]</span></p>
+<p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-4" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> En el cuerpo <span class="math inline">\(\mathbb{Z}_5\)</span> se considera la matriz <span class="math display">\[C = \begin{pmatrix} 1&amp;1&amp;1&amp;1 \\ 0&amp;2&amp;1&amp;2 \\ 0&amp;4&amp;1&amp;1 \\ \end{pmatrix}.\]</span></p>
 <ol type="a">
 <li>
 Calcula la forma de Hermite por filas de <span class="math inline">\(C\)</span>.
@@ -890,10 +911,18 @@ Calcula la forma de Hermite por columnas de <span class="math inline">\(C\)</spa
 Elige una submatriz cuadrada de <span class="math inline">\(C\)</span> de orden tres que sea regular y calcula su inversa.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
 <p>Forma de Hermite por filas. Realizamos operaciones elemntales por filas hasta obtener una matriz escalonada reducida por filas:</p>
@@ -939,13 +968,15 @@ f_2-3f_3\rightarrow f_2 \end{array}}
 \end{aligned}
 \]</span></p>
 <p>Por tanto la forma de Hermite por filas es</p>
-<p><span class="math display">\[\left(
+<p><span class="math display">\[
+\left(
 \begin{array}{rrrr}
 1 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 1 &amp; 0 &amp; 2\\
 0 &amp; 0 &amp; 1 &amp; 3\\
 \end{array}
-\right).\]</span></p>
+\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -955,13 +986,15 @@ show(A,"~",A.rref())
 </div>
 </li>
 <li>
-<p>Forma de Hermite por columnas. Como el número de pivotes en la forma de Hermite por columnas coincide con el que hay en la de filas, entonces la única posibilidad es que sea <span class="math display">\[\left(
+<p>Forma de Hermite por columnas. Como el número de pivotes en la forma de Hermite por columnas coincide con el que hay en la de filas, entonces la única posibilidad es que sea <span class="math display">\[
+\left(
 \begin{array}{rrrr}
 \boxed{1} &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; \boxed{1} &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; \boxed{1} &amp; 0\\
 \end{array}
-\right).\]</span></p>
+\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code> (para eso transponemos la matriz, calculamos su forma escalonada reducida por filas, y volvemos a transponer).</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1022,7 +1055,9 @@ AI=A.augment(I,subdivide=True) #matriz aumentada
 show(AI,"~",AI.rref())
 </script>
 </div>
-Finalmente comprobamos que es inversa: <span class="math display">\[\left(
+<p>Finalmente comprobamos que es inversa:</p>
+<span class="math display">\[
+\left(
 \begin{array}{rrr}
 1 &amp; 1 &amp; 1 \\
 0 &amp; 2 &amp; 1 \\
@@ -1040,17 +1075,30 @@ Finalmente comprobamos que es inversa: <span class="math display">\[\left(
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1 \\
 \end{array}
-\right).\]</span>
+\right).
+\]</span>
 </li>
 </ol>
-</details>
-</article>
-<article class="cuerpo_finito-medio" style="display:block;">
-<p>Encuentra, si es posible, <span class="math inline">\(P \in \mathcal{M}_{4}(\mathbb{Z}_3)\)</span>, regular, tal que <span class="math inline">\(PA=B\)</span>, donde <span class="math display">\[A = \begin{pmatrix} 1&amp;1&amp;0&amp;2&amp;1 \\ 2&amp;1&amp;1&amp;2&amp;0 \\ 0&amp;2&amp;1&amp;0&amp;2 \\ 0&amp;1&amp;2&amp;1&amp;0 \end{pmatrix}, \qquad B = \begin{pmatrix} 1&amp;1&amp;0&amp;1&amp;2 \\ 1&amp;2&amp;2&amp;1&amp;0 \\ 1&amp;0&amp;1&amp;2&amp;0 \\ 2&amp;2&amp;0&amp;0&amp;0 \end{pmatrix}.\]</span></p>
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-5" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Encuentra, si es posible, <span class="math inline">\(P \in \mathcal{M}_{4}(\mathbb{Z}_3)\)</span>, regular, tal que <span class="math inline">\(PA=B\)</span>, donde <span class="math display">\[
+A = \begin{pmatrix} 1&amp;1&amp;0&amp;2&amp;1 \\ 2&amp;1&amp;1&amp;2&amp;0 \\ 0&amp;2&amp;1&amp;0&amp;2 \\ 0&amp;1&amp;2&amp;1&amp;0 \end{pmatrix}, \qquad B = \begin{pmatrix} 1&amp;1&amp;0&amp;1&amp;2 \\ 1&amp;2&amp;2&amp;1&amp;0 \\ 1&amp;0&amp;1&amp;2&amp;0 \\ 2&amp;2&amp;0&amp;0&amp;0 \end{pmatrix}.
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Sabemos que <span class="math inline">\(A\sim_f B\)</span> si y sólo si existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(PA=B\)</span>. Por tanto, primero comprobaremos que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> tienen la misma forma escalonada reducida por filas, calculando además las matrices de paso. Si coinciden, entonces usando las matrices de paso que hemos calculado, podremos encontrar <span class="math inline">\(P\)</span>.</p>
 <ol type="a">
 <li>
@@ -1092,7 +1140,8 @@ Solución
 0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2 &amp; 2 &amp; 2 &amp; 1 \\
 \end{array}\right)=(H_A|P_A).
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <span class="math display">\[
 \begin{aligned}
 (B \mid I) &amp; = \left(\begin{array}{ccccc|cccc}
@@ -1124,9 +1173,21 @@ Solución
 Hemos comprobado que <span class="math inline">\(H_A=H_B\)</span> y por tanto <span class="math inline">\(A\sim_f B\)</span> y existe una matriz <span class="math inline">\(P\)</span> tal que <span class="math inline">\(PA=B\)</span>.
 </li>
 <li>
-<p>Para calcular <span class="math inline">\(P\)</span> podemos ayudarnos de las matrices de paso <span class="math inline">\(P_A\)</span> y <span class="math inline">\(P_B\)</span> calculadas: <span class="math display">\[P_A A=H_A=H_B=P_B B,\]</span> y por tanto <span class="math display">\[P_A A=P_B B.\]</span> Como <span class="math inline">\(P_B\)</span> es regular, <span class="math display">\[(P_B)^{-1}P_A A=B.\]</span> Luego una matriz que verifica la condición pedida sería el producto <span class="math inline">\((P_B)^{-1}P_A\)</span>.</p>
+<p>Para calcular <span class="math inline">\(P\)</span> podemos ayudarnos de las matrices de paso <span class="math inline">\(P_A\)</span> y <span class="math inline">\(P_B\)</span> calculadas: <span class="math display">\[
+P_A A=H_A=H_B=P_B B,
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+P_A A=P_B B.
+\]</span></p>
+<p>Como <span class="math inline">\(P_B\)</span> es regular,</p>
+<p><span class="math display">\[
+(P_B)^{-1}P_A A=B.
+\]</span></p>
+<p>Luego una matriz que verifica la condición pedida sería el producto <span class="math inline">\((P_B)^{-1}P_A\)</span>.</p>
 <p>Para calcularla necesitamos en primer lugar calcular la inversa de <span class="math inline">\(P_B\)</span>, también usando operaciones elementales por filas.</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 (P_B \mid I) &amp; = \left(\begin{array}{cccc|cccc}
 1 &amp; 1 &amp; 2 &amp; 0  &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
 2 &amp; 1 &amp; 0 &amp; 0  &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
@@ -1180,7 +1241,8 @@ Hemos comprobado que <span class="math inline">\(H_A=H_B\)</span> y por tanto <s
 0 &amp; 0 &amp; \boxed{1} &amp; 0  &amp; 1 &amp; 0 &amp; 2 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; \boxed{1}  &amp; 2 &amp; 2 &amp; 0 &amp; 1\\
 \end{array}\right).
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1190,7 +1252,9 @@ PBI=PB.augment(I,subdivide=True) #matriz aumentada
 show(PBI,"~",PBI.rref())
 </script>
 </div>
-<p>Luego una posible <span class="math inline">\(P\)</span> es <span class="math display">\[P=(P_B)^{-1}P_A=\left(\begin{array}{cccc}
+<p>Luego una posible <span class="math inline">\(P\)</span> es</p>
+<p><span class="math display">\[
+P=(P_B)^{-1}P_A=\left(\begin{array}{cccc}
 1 &amp; 1 &amp; 1 &amp; 0\\
 1 &amp; 2 &amp; 1 &amp; 0\\
 1 &amp; 0 &amp; 2 &amp; 0\\
@@ -1205,7 +1269,8 @@ show(PBI,"~",PBI.rref())
 0 &amp; 2 &amp; 0 &amp; 0  \\
 1 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 1 \\
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1219,10 +1284,12 @@ P*A==B
 </div>
 </li>
 </ol>
-</details>
-</article>
-<article class="cuerpo_finito-avanzado" style="display:block;">
-<p>Sea <span class="math display">\[A=\left (\begin{array}{cccc} 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-6" class="cuerpo_finito-avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Sea <span class="math display">\[A=\left (\begin{array}{cccc} 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)\]</span></p>
 <ol type="a">
 <li>
 Encuentra una matriz <span class="math inline">\(B\)</span> tal que <span class="math inline">\(A\cdot B = Id\)</span>.
@@ -1234,16 +1301,25 @@ Encuentra todas las matrices <span class="math inline">\(B\)</span> que cumplan 
 ¿Existe una matriz <span class="math inline">\(C\)</span> tal que <span class="math inline">\(C\cdot A = Id\)</span>?
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
 <p>Encontrar <span class="math inline">\(B\)</span> tal que <span class="math inline">\(A\cdot B = Id\)</span>.</p>
 <p>¿Qué orden debe tener <span class="math inline">\(B\)</span>? Como la identidad es una matriz cuadrada, y <span class="math inline">\(A\)</span> tiene tres filas, deducimos que <span class="math inline">\(I\)</span> es la identidad <span class="math inline">\(3\times 3\)</span>. De aquí también deducimos que <span class="math inline">\(B\)</span> tiene que tener cuatro filas y tres columnas.<br></p>
 <p>Si calculamos la forma de Hermite por columnas de <span class="math inline">\(A\)</span> y la matriz de paso, a la que llamaremos <span class="math inline">\(Q\)</span>, entonces <span class="math inline">\(A Q=H\)</span>. La matriz <span class="math inline">\(H\)</span> no es la matriz identidad, por supuesto, porque tiene orden <span class="math inline">\(3\times 4\)</span>, pero puede parecerse bastante. Calculémosla:</p>
-<p><span class="math display">\[\left[ \begin{array}{c}
+<p><span class="math display">\[
+\left[ \begin{array}{c}
 A\\
 \hline
 I_4
@@ -1302,7 +1378,8 @@ H\\
 Q
 \end{array}\right].
 \]</span></p>
-<p>Así que <span class="math display">\[\left(\begin{array}{cccc}
+<p>Así que</p>
+<p><span class="math display">\[\left(\begin{array}{cccc}
 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1\\
 \end{array}\right)
 \left (\begin{array}{ccc|c}
@@ -1323,7 +1400,8 @@ B=\left (\begin{array}{ccc}
 4 &amp; 4 &amp; 1 \\
 0 &amp; 0 &amp; 0 \\
 1 &amp; 0 &amp; 1 \\
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1335,7 +1413,9 @@ A*B==I
 </div>
 </li>
 <li>
-<p>Todas las matrices <span class="math inline">\(B\)</span> que cumplen la propiedad anterior. En realidad el planteamiento es sencillo, sería resolver: <span class="math display">\[\left(\begin{array}{cccc}
+<p>Todas las matrices <span class="math inline">\(B\)</span> que cumplen la propiedad anterior. En realidad el planteamiento es sencillo, sería resolver:</p>
+<p><span class="math display">\[
+\left(\begin{array}{cccc}
 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1\\
 \end{array}\right)
 \left (\begin{array}{ccc}
@@ -1350,7 +1430,8 @@ x_4 &amp; y_4 &amp; z_4\\
 \end{array}\right),
 \]</span></p>
 <p>que puede parecer complicado, son <span class="math inline">\(12\)</span> incógnitas, pero realmente no se mezclan (por eso las he designado con letras distintas). El primer sistema será el que corresponde a las <span class="math inline">\(x\)</span>:</p>
-<p><span class="math display">\[\left(\begin{array}{cccc}
+<p><span class="math display">\[
+\left(\begin{array}{cccc}
 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1\\
 \end{array}\right)
 \left (\begin{array}{c}
@@ -1365,7 +1446,8 @@ x_4\\
 \end{array}\right)
 \]</span></p>
 <p>con matriz ampliada</p>
-<p><span class="math display">\[\left(\begin{array}{cccc|c}
+<p><span class="math display">\[
+\left(\begin{array}{cccc|c}
 2 &amp; 1 &amp; 3 &amp; 0 &amp; 1\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 0 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 0\\
 \end{array}\right)\]</span></p>
 <p>y las correspondientes a los sistemas para las <span class="math inline">\(y\)</span> y las <span class="math inline">\(z\)</span>:</p>
@@ -1373,11 +1455,14 @@ x_4\\
 2 &amp; 1 &amp; 3 &amp; 0 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 0\\
 \end{array}\right), \quad \left(\begin{array}{cccc|c}
 2 &amp; 1 &amp; 3 &amp; 0 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 0 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 1\\
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Como se resuelven haciendo operaciones elementales por filas sobre la matriz de coeficientes, los tres pueden resolverse simultáneamente utilizando la matriz:</p>
-<p><span class="math display">\[\left(\begin{array}{cccc|ccc}
+<p><span class="math display">\[
+\left(\begin{array}{cccc|ccc}
 2 &amp; 1 &amp; 3 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; 2 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 3 &amp; 4 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 1\\
-\end{array}\right)\]</span></p>
+\end{array}\right)
+\]</span></p>
 <p>que incluye las tres columnas de términos independientes.</p>
 <p>Utilizamos el método de Gauss-Jordan:</p>
 <p><span class="math display">\[
@@ -1414,36 +1499,57 @@ x_1=1, &amp; y_1= 3, &amp; z_1=2,\\
 x_2=4+2\lambda_1, &amp; y_2=4+2\lambda_2, &amp; z_2=1+2\lambda_3,\\
 x_3=\lambda_1, &amp; y_3=\lambda_2, &amp;z_3=\lambda_3,\\
 x_4=1, &amp; y_4=0, &amp; z_4=1,\\
-\end{array} \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.\]</span></p>
+\end{array} \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.
+\]</span></p>
 <p>Es decir, todas las matrices son de la forma:</p>
-<span class="math display">\[\left(\begin{array}{ccc}
+<span class="math display">\[
+\left(\begin{array}{ccc}
 1 &amp;  3 &amp; 2\\
 4+2\lambda_1 &amp; 4+2\lambda_2 &amp; 1+2\lambda_3\\
 \lambda_1 &amp; \lambda_2 &amp;\lambda_3\\
 1 &amp; 0 &amp; 1\\
-\end{array}\right), \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.\]</span>
+\end{array}\right), \quad \lambda_1,\lambda_2,\lambda_3\in \mathbb{Z}_5.
+\]</span>
 </li>
 <li>
 <p>Encontrar <span class="math inline">\(C\)</span> tal que <span class="math inline">\(C\cdot A = Id\)</span>. Si pensamos primero en el orden de <span class="math inline">\(C\)</span>, como <span class="math inline">\(A\)</span> tiene tres filas y cuatro columnas, necesariamente <span class="math inline">\(C\)</span> debe tener tres columnas. Por otro lado, como la matriz identidad es cuadrada, en este caso será una matriz <span class="math inline">\(4\times4\)</span>, por lo que <span class="math inline">\(C\)</span> debe tener cuatro filas.<br></p>
-<p>El argumento más fácil de utilizar es posterior al momento en que nos encontramos en el desarrollo del tema. Se usa: <span class="math display">\[\operatorname{rg}(A\cdot B)\leq \min\{\operatorname{rg}(A),\operatorname{rg}(B)\}\]</span> en este caso, por los órdenes de <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> su rango máximo posible es <span class="math inline">\(3\)</span>, luego <span class="math inline">\(\operatorname{rg}(C\cdot A)\leq 3\)</span> mientras que <span class="math inline">\(\operatorname{rg}(I_4)=4.\)</span><br></p>
+<p>El argumento más fácil de utilizar es posterior al momento en que nos encontramos en el desarrollo del tema. Se usa:</p>
+<p><span class="math display">\[
+\operatorname{rg}(A\cdot B)\leq \min\{\operatorname{rg}(A),\operatorname{rg}(B)\}
+\]</span></p>
+<p>en este caso, por los órdenes de <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> su rango máximo posible es <span class="math inline">\(3\)</span>, luego <span class="math inline">\(\operatorname{rg}(C\cdot A)\leq 3\)</span> mientras que <span class="math inline">\(\operatorname{rg}(I_4)=4.\)</span><br></p>
 También es posible plantearlo de una forma similar al apartado 2, al resolver los sistemas encontraremos que son incompatibles.
 </li>
 </ol>
-</details>
-</article>
-<article class="basico" style="display:block;">
-<p>Dado el sistema de ecuaciones con coeficientes en <span class="math inline">\(\mathbb{Q}\)</span> <span class="math display">\[\left\{\begin{aligned} x - ay + (a+1)z &amp; = 4, \\ ax + 2y + z &amp; = -1. \end{aligned}\right.\]</span> Discútelo según los valores del parámetro <span class="math inline">\(a\)</span>, y resuélvelo para <span class="math inline">\(a=-1\)</span>.</p>
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-7" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Dado el sistema de ecuaciones con coeficientes en <span class="math inline">\(\mathbb{Q}\)</span> <span class="math display">\[\left\{\begin{aligned} x - ay + (a+1)z &amp; = 4, \\ ax + 2y + z &amp; = -1. \end{aligned}\right.\]</span> Discútelo según los valores del parámetro <span class="math inline">\(a\)</span>, y resuélvelo para <span class="math inline">\(a=-1\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>En este tipo de ejercicio utilizaremos el Teorema de Rouché-Frobenius junto a los distintos métodos para calcular el rango de una matriz.</p>
 <p>En primer lugar escribimos la matriz ampliada del sistema</p>
-<p><span class="math display">\[(A|b)=\left( \begin{array}{rcc|r}
+<p><span class="math display">\[
+(A|b)=\left( \begin{array}{rcc|r}
 1 &amp; -a &amp; a+1 &amp; 4\\
 a &amp; 2 &amp; 1 &amp; -1
-\end{array}\right).\]</span></p>
-<p>Puesto que el orden de matriz de coeficientes es <span class="math inline">\(2\times3\)</span> y el de la ampliada <span class="math inline">\(2\times4\)</span>, en el caso de que <span class="math inline">\(\operatorname{rg}(A)=2\)</span>, entonces <span class="math inline">\(\operatorname{rg}(A|b)=2\)</span> (puesto que no puede haber más de dos pivotes, uno por fila) y usando Teorema de Rouché-Frobenius el sistema será compatible indeterminado. Puesto que el rango no cambia si realizamos cualquier operaciones elementales por columnas, para calcular <span class="math inline">\(\operatorname{rg}(A)\)</span> realizamos algunas, por ejemplo: <span class="math display">\[{\small A=\left( \begin{array}{rcc}
+\end{array}\right).
+\]</span></p>
+<p>Puesto que el orden de matriz de coeficientes es <span class="math inline">\(2\times3\)</span> y el de la ampliada <span class="math inline">\(2\times4\)</span>, en el caso de que <span class="math inline">\(\operatorname{rg}(A)=2\)</span>, entonces <span class="math inline">\(\operatorname{rg}(A|b)=2\)</span> (puesto que no puede haber más de dos pivotes, uno por fila) y usando Teorema de Rouché-Frobenius el sistema será compatible indeterminado. Puesto que el rango no cambia si realizamos cualquier operaciones elementales por columnas, para calcular <span class="math inline">\(\operatorname{rg}(A)\)</span> realizamos algunas, por ejemplo:</p>
+<p><span class="math display">\[
+{\small A=\left( \begin{array}{rcc}
 1 &amp; -a &amp; a+1 \\
 a &amp; 2 &amp; 1  
 \end{array}\right) \sim_c \left( \begin{array}{rcc}
@@ -1452,25 +1558,31 @@ a &amp; 2 &amp; 3
 \end{array}\right) \sim_c \left( \begin{array}{rcc}
 1 &amp; -a &amp; 0 \\
 a &amp; 2 &amp; 3-a
-\end{array}\right) }.\]</span> Para el rango de esta matriz es muy fácil utilizar el cálculo de determinantes: si <span class="math inline">\(\begin{vmatrix}
+\end{array}\right) }.
+\]</span></p>
+<p>Para el rango de esta matriz es muy fácil utilizar el cálculo de determinantes: si <span class="math inline">\(\begin{vmatrix}
 1 &amp; 0 \\
 a &amp; 3-a
 \end{vmatrix}= 3-a \not = 0\)</span> el rango de <span class="math inline">\(A\)</span> es dos. (También se podría haber hecho en la matriz <span class="math inline">\(A\)</span> directamente, pero este determinante es muy sencillo de calcular y de determinar cuándo es distinto de <span class="math inline">\(0\)</span>.)<br></p>
 <p>Entonces tenemos que en todos los casos en los que <span class="math inline">\(a\not = 3\)</span> tendremos <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|b)=2\)</span> es menor que el número de incógnitas y el sistema es compatible indeterminado.<br> Solo nos queda estudiar el caso <span class="math inline">\(a=3\)</span>, para el que podemos proceder como en los ejercicios del comienzo del tema:</p>
-<p><span class="math display">\[(A|b)=\left( \begin{array}{rrr|r}
+<p><span class="math display">\[
+(A|b)=\left( \begin{array}{rrr|r}
 \boxed{1} &amp; -3 &amp; 4 &amp; 4\\
 3 &amp; 2 &amp; 1 &amp; -1
 \end{array}\right)\sim_f  \left( \begin{array}{rrr|r}
 \boxed{1} &amp; 0 &amp; 1 &amp; 5/11\\
 0 &amp; 1 &amp; -1 &amp; -13/11
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>O bien, podemos volver a aplicar el Teorema de Rouché-Frobenius, en este caso observamos que tomando las dos primeras columnas de <span class="math inline">\(A\)</span> se tiene</p>
 <p><span class="math inline">\(\begin{vmatrix}
 1 &amp; 3 \\
 -3 &amp; 2
 \end{vmatrix}=2+9=11\)</span> luego <span class="math inline">\(\operatorname{rg}(A)=2\)</span> y el mismo razonamiento nos lleva a que también en este caso es compatible indeterminado. <br></p>
 <p>Por tanto, siempre es compatible indeterminado dependiendo de un parámetro.<br></p>
-<p>Para el caso <span class="math inline">\(a=-1\)</span>: <span class="math display">\[(A|b)=\left( \begin{array}{rrr|r}
+<p>Para el caso <span class="math inline">\(a=-1\)</span>:</p>
+<p><span class="math display">\[
+(A|b)=\left( \begin{array}{rrr|r}
 \boxed{1} &amp; 1 &amp; 0 &amp; 4\\
 -1 &amp; 2 &amp; 1 &amp; -1
 \end{array}\right)\sim_f \left( \begin{array}{rrr|r}
@@ -1493,22 +1605,34 @@ Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
 </div>
-</details>
-</article>
-<article class="cuerpo_finito-medio" style="display:block;">
-<p>Calcula el rango de la siguiente matriz, con coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>, según los valores de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>. <span class="math display">\[\begin{pmatrix} 1 &amp; a &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; b \\ 0 &amp; a &amp; b &amp; a+b \end{pmatrix}\]</span></p>
-<details>
-<summary>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-8" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> Calcula el rango de la siguiente matriz, con coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>, según los valores de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>. <span class="math display">\[\begin{pmatrix} 1 &amp; a &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; b \\ 0 &amp; a &amp; b &amp; a+b \end{pmatrix}\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
-<p>El rango máximo posible de esta matriz es 3. Elegimos una submatriz cuadrada de orden 3 y calculamos su determinante. Escogemos una que a priori sepamos que su determinante no sea nulo y que sea fácil de calcular. Por ejemplo <span class="math display">\[
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El rango máximo posible de esta matriz es 3. Elegimos una submatriz cuadrada de orden 3 y calculamos su determinante. Escogemos una que a priori sepamos que su determinante no sea nulo y que sea fácil de calcular. Por ejemplo</p>
+<p><span class="math display">\[
 \begin{vmatrix}
 1 &amp; a &amp; 0  \\ 2 &amp; 1 &amp; 1  \\ 0 &amp; a &amp; b
 \end{vmatrix}=_{
 (C_2-aC_1 \rightarrow C_2)}= \begin{vmatrix}
 1 &amp; 0 &amp; 0  \\ 2 &amp; 1-2a &amp; 1  \\ 0 &amp; a &amp; b
 \end{vmatrix}=(1-2a)b-a=(1+a)b+2a=2a+b+ab.
-\]</span> Al estar trabajando en <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> pueden tomar solo 3 valores posibles.</p>
+\]</span></p>
+<p>Al estar trabajando en <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> pueden tomar solo 3 valores posibles.</p>
 <p>Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo, si <span class="math inline">\(a=0\)</span>, entonces <span class="math inline">\(|A|= b\)</span>; si <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|= 2b+2\)</span>; si <span class="math inline">\(a=2\)</span>, <span class="math inline">\(|A|= 1\)</span>.<br></p>
 <table class="default">
 <tbody><tr>
@@ -1569,21 +1693,28 @@ Solución
 </tr>
 </tbody></table>
 <p>De la observación de la tabla anterior deducimos que <span class="math inline">\(\operatorname{rg}(A)=3\)</span> para 7 de los 9 casos, siempre que el determinante es distinto de <span class="math inline">\(0\)</span>. Ahora, estudiamos los dos casos particulares que nos faltan.<br></p>
-<p>Para <span class="math inline">\(a=0=b\)</span>:<br> <span class="math display">\[
+<p>Para <span class="math inline">\(a=0=b\)</span>:<br></p>
+<p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0
 \end{pmatrix}
-\]</span> que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.<br></p>
-Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>:<br> <span class="math display">\[
+\]</span></p>
+<p>que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.<br></p>
+<p>Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>:<br></p>
+<p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 2 &amp; 0
 \end{pmatrix}\sim_f \begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 2 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 0
 \end{pmatrix}
-\]</span> que también tiene rango 2 (recordemos que estamos en <span class="math inline">\(\mathbb{Z}_3\)</span>).
-</details>
-</article>
-<article class="cuerpo_finito-basico" style="display:block;">
+\]</span></p>
+<p>que también tiene rango 2 (recordemos que estamos en <span class="math inline">\(\mathbb{Z}_3\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-9" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 9</strong></span> &nbsp;</p>
 Sea <span class="math display">\[A=\left( \begin{array}{cccc} 3-\lambda &amp; 1 &amp; 1 &amp; 0\\ 5 &amp;-\lambda &amp; 0 &amp; 0\\ 0 &amp; -\lambda &amp; -\lambda &amp; 1\\ 0 &amp; -1 &amp; -1 &amp; 2-\lambda \end{array}\right).\]</span>
 <ol type="a">
 <li>
@@ -1596,14 +1727,23 @@ Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los 
 Discute el sistema de ecuaciones con matriz ampliada <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
 <p>Determinante. Para calcular el determinante más fácilmente, a la segunda columna le restamos la tercera, luego desarrollamos por la segunda columna:</p>
-<p><span class="math display">\[|A|=\left| \begin{array}{cccc}
+<p><span class="math display">\[
+|A|=\left| \begin{array}{cccc}
 3-\lambda &amp; 1 &amp; 1 &amp; 0\\
 5 &amp;-\lambda &amp; 0 &amp; 0\\
 0 &amp; -\lambda &amp; -\lambda &amp; 1\\
@@ -1617,12 +1757,18 @@ Solución
 3-\lambda &amp;  1 &amp; 0\\
 0 &amp;  -\lambda &amp; 1\\
 0 &amp;  -1 &amp; 2-\lambda
-\end{array}\right|\]</span></p>
-Desarrollando ahora por la primera columna <span class="math display">\[|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2\]</span> y este resultado es válido en cualquier cuerpo.
+\end{array}\right|.
+\]</span></p>
+<p>Desarrollando ahora por la primera columna <span class="math display">\[
+|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
+\]</span></p>
+y este resultado es válido en cualquier cuerpo.
 </li>
 <li>
 <p>Rango. Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.<br></p>
-<p>Para <span class="math inline">\(\lambda=0\)</span>:<br> <span class="math display">\[A=\left( \begin{array}{cccc}
+<p>Para <span class="math inline">\(\lambda=0\)</span>:<br></p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
 0 &amp; 1 &amp; 1 &amp; 0\\
 2 &amp;0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
@@ -1637,8 +1783,10 @@ Desarrollando ahora por la primera columna <span class="math display">\[|A|=(-\l
 0 &amp;1 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right)\]</span> luego el rango es 3. <br></p>
-Para <span class="math inline">\(\lambda=1\)</span>:<br> <span class="math display">\[A=\left( \begin{array}{cccc}
+\end{array}\right)
+\]</span> luego el rango es 3. <br></p>
+Para <span class="math inline">\(\lambda=1\)</span>:<br> <span class="math display">\[
+A=\left( \begin{array}{cccc}
 2 &amp; 1 &amp; 1 &amp; 0\\
 2 &amp;2 &amp; 0 &amp; 0\\
 0 &amp; 2 &amp; 2 &amp; 1\\
@@ -1648,19 +1796,23 @@ Para <span class="math inline">\(\lambda=1\)</span>:<br> <span class="math displ
 0 &amp;1 &amp; 2 &amp; 0\\
 0 &amp; 2 &amp; 2 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right)\]</span> que tiene rango 3.
+\end{array}\right)
+\]</span> que tiene rango 3.
 </li>
 <li>
 <p>Sistema de ecuaciones.</p>
 <p>Como la matriz ampliada tiene rango 4 para <span class="math inline">\(\lambda\not\in \{0,1,3\}\)</span>, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares <span class="math inline">\(\lambda\in\{0,1,3\}\)</span>:<br></p>
-<p>Para <span class="math inline">\(\lambda=0\)</span>: <span class="math display">\[\left( \begin{array}{ccc|c}
+<p>Para <span class="math inline">\(\lambda=0\)</span>: <span class="math display">\[
+\left( \begin{array}{ccc|c}
 3 &amp; 1 &amp; 1 &amp; 0\\
 5 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; -1 &amp; -1 &amp; 2
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Como aparece la ecuación <span class="math inline">\(0=1\)</span> entonces también es incompatible.<br></p>
-<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[\left( \begin{array}{ccc|c}
+<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[
+\left( \begin{array}{ccc|c}
 2 &amp; 1 &amp; 1 &amp; 0\\
 5 &amp; -1 &amp; 0 &amp; 0\\
 0 &amp; -1 &amp; -1 &amp; 1\\
@@ -1670,9 +1822,12 @@ Para <span class="math inline">\(\lambda=1\)</span>:<br> <span class="math displ
 5 &amp; -1 &amp; 0 &amp; 0\\
 0 &amp; -1 &amp; -1 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right)\]</span></p>
+\end{array}\right)
+\]</span></p>
 <p>en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.<br></p>
-<p>Para <span class="math inline">\(\lambda=3\)</span>: <span class="math display">\[\left( \begin{array}{ccc|c}
+<p>Para <span class="math inline">\(\lambda=3\)</span>:</p>
+<p><span class="math display">\[
+\left( \begin{array}{ccc|c}
 0 &amp; 1 &amp; 1 &amp; 0\\
 5 &amp; -3 &amp; 0 &amp; 0\\
 0 &amp; -3 &amp; -3 &amp; 1\\
@@ -1682,19 +1837,27 @@ Para <span class="math inline">\(\lambda=1\)</span>:<br> <span class="math displ
 5 &amp; -3 &amp; 0 &amp; 0\\
 0 &amp; -3 &amp; -3 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; -1
-\end{array}\right)\]</span></p>
+\end{array}\right).
+\]</span></p>
 y de nuevo aparece la ecuación <span class="math inline">\(0=1\)</span> con lo que en este caso es incompatible.
 </li>
 </ol>
-</details>
-</article>
-<article class="medio" style="display:block;">
-<p>Sea <span class="math display">\[A=\left(\begin{array}{rccc} 1 &amp; 1 &amp; 1 &amp; 0\\ a &amp; a-1 &amp; a &amp; 1\\ 1 &amp; 1 &amp; 1 &amp; a-1\\ 1 &amp; a &amp; 0 &amp; 0  \end{array}\right)\in \mathcal{M}_4(\mathbb{R}).\]</span> y el sistema de ecuaciones <span class="math display">\[\left\{\begin{aligned}
+</div>
+</div>
+</div>
+</div>
+<div id="exr-10" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 10</strong></span> Sea</p>
+<p><span class="math display">\[
+A=\left(\begin{array}{rccc} 1 &amp; 1 &amp; 1 &amp; 0\\ a &amp; a-1 &amp; a &amp; 1\\ 1 &amp; 1 &amp; 1 &amp; a-1\\ 1 &amp; a &amp; 0 &amp; 0  \end{array}\right)\in \mathcal{M}_4(\mathbb{R}).
+\]</span> y el sistema de ecuaciones <span class="math display">\[
+\left\{\begin{aligned}
 x+y+z&amp;=0,\\
 ax+(a-1)y+az&amp;=1,\\
 x+y+z&amp;=a-1,\\
 x+ay&amp;=0.
-\end{aligned}\right.\]</span></p>
+\end{aligned}\right.
+\]</span></p>
 <ol type="a">
 <li>
 Calcula el determinante de la matriz <span class="math inline">\(A\)</span>.
@@ -1709,13 +1872,23 @@ Calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span> 
 Discute el sistema de ecuaciones según los valores de <span class="math inline">\(a\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Determinante: <span class="math display">\[|A|=\left|\begin{array}{rccc}
+<p>Determinante:</p>
+<p><span class="math display">\[
+|A|=\left|\begin{array}{rccc}
 1 &amp; 1 &amp; 1 &amp; 0\\
 a &amp; a-1 &amp; a &amp; 1\\
 1 &amp; 1 &amp; 1 &amp; a-1\\
@@ -1726,7 +1899,9 @@ a &amp; a-1 &amp; a &amp; 1\\
 0 &amp; 0 &amp; 1 &amp; a-1\\
 1 &amp; a &amp; 0 &amp; 0
 \end{array}\right|
-\]</span> donde a la primera y a la segunda columnas le hemos restado la tercera. Ahora, desarrollando el determinante por la primera columna (y el de orden 3 que aparece de nuevo por su primera columna): <span class="math display">\[
+\]</span></p>
+<p>donde a la primera y a la segunda columnas le hemos restado la tercera. Ahora, desarrollando el determinante por la primera columna (y el de orden 3 que aparece de nuevo por su primera columna):</p>
+<span class="math display">\[
 |A|= (-1) \left|\begin{array}{ccc}
 0 &amp; 1 &amp; 0\\
 -1 &amp; a &amp; 1\\
@@ -1768,7 +1943,9 @@ A= &amp; \left(\begin{array}{rccc}
 0 &amp; 0 &amp; \mathbf{1} &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0\\
 \end{array}\right).
-\end{aligned}\]</span> Así, si <span class="math inline">\(a=1\)</span> el rango es <span class="math inline">\(3\)</span>.</p>
+\end{aligned}
+\]</span></p>
+<p>Así, si <span class="math inline">\(a=1\)</span> el rango es <span class="math inline">\(3\)</span>.</p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1784,19 +1961,23 @@ Forma de Hermite por filas. Cuando <span class="math inline">\(a\not = 1\)</span
 Discusión del sistema. Como la matriz ampliada del sistema es <span class="math inline">\(A\)</span>, entonces cuando <span class="math inline">\(a\not = 1\)</span> la matriz ampliada tiene rango 4 mientras que la de coeficientes como máximo podría tener rango 3, así que el sistema es incompatible; en el caso <span class="math inline">\(a=1\)</span>, usando la forma de Hermite por filas de <span class="math inline">\(A\)</span> que hemos calculado observamos que el sistema es compatible determinado.
 </li>
 </ol>
-</details>
-</article>
-<article class="avanzado" style="display:block;">
-<p>Dadas las matrices <span class="math display">\[A=\begin{pmatrix}
+</div>
+</div>
+</div>
+</div>
+<div id="exr-11" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 11</strong></span> Dadas las matrices</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; a\\
 1 &amp; 1 &amp; 0 &amp; 1\\
 1 &amp; 1 &amp; a-2 &amp; 1
-\end{pmatrix} \hspace{1cm}
+\end{pmatrix}, \hspace{1em}
 B=\begin{pmatrix}
 1 &amp; a-1&amp; 1 &amp; 1\\
 1 &amp; 0 &amp; 1 &amp; 1\\
 1 &amp; a &amp; 1 &amp; 1\\
-\end{pmatrix}
+\end{pmatrix}.
 \]</span></p>
 <ol type="a">
 <li>
@@ -1809,13 +1990,23 @@ Calcula para qué valores de <span class="math inline">\(a\)</span> son equivale
 Para <span class="math inline">\(a=1\)</span> calcula la forma de Hermite por columnas de <span class="math inline">\(B\)</span>, que llamaremos <span class="math inline">\(H\)</span>, y <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(H=BP\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular los valores de <span class="math inline">\(a\)</span> para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes.<br> Dos matrices son equivalentes <span class="math inline">\(\Leftrightarrow\)</span> tienen el mismo rango.<br> Calculamos el rango de ambas matrices. Como son de orden <span class="math inline">\(3\times 4\)</span> su rango máximo es tres. <br> Para <span class="math inline">\(A\)</span> calculamos un menor de orden tres <span class="math display">\[\left|\begin{array}{ccc}
+<p>Calcular los valores de <span class="math inline">\(a\)</span> para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes.<br> Dos matrices son equivalentes <span class="math inline">\(\Leftrightarrow\)</span> tienen el mismo rango.<br> Calculamos el rango de ambas matrices. Como son de orden <span class="math inline">\(3\times 4\)</span> su rango máximo es tres. <br> Para <span class="math inline">\(A\)</span> calculamos un menor de orden tres</p>
+<p><span class="math display">\[
+\left|\begin{array}{ccc}
 1 &amp; 0 &amp; 1 \\
 1 &amp; 1 &amp; 0 \\
 1 &amp; 1 &amp; a-2 \\
@@ -1823,19 +2014,27 @@ Solución
 1 &amp; 0 &amp; 1 \\
 0 &amp; 1 &amp; 0 \\
 0 &amp; 1 &amp; a-2 \\
-\end{array}\right|=a-2.\]</span> Si <span class="math inline">\(a\not = 2\)</span> este menor es distinto de cero y por tanto <span class="math inline">\(\operatorname{rg}(A)=2\)</span>. Veamos qué ocurre para <span class="math inline">\(a=2\)</span>, para lo que sustituimos y calculamos la forma de Hermite por filas: <span class="math display">\[A=\begin{pmatrix}
+\end{array}\right|=a-2.
+\]</span></p>
+<p>Si <span class="math inline">\(a\not = 2\)</span> este menor es distinto de cero y por tanto <span class="math inline">\(\operatorname{rg}(A)=2\)</span>. Veamos qué ocurre para <span class="math inline">\(a=2\)</span>, para lo que sustituimos y calculamos la forma de Hermite por filas:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 2\\
 1 &amp; 1 &amp; 0 &amp; 1\\
 1 &amp; 1 &amp; 0 &amp; 1
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix} \sim_f
+\begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 1\\
 0 &amp; -1 &amp; 1 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix} \sim_f
+\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 2\\
 0 &amp; 1 &amp; -1 &amp; -1\\
 0 &amp; 0 &amp; 0 &amp; 0
-\end{pmatrix},\]</span><br> así que para <span class="math inline">\(a=2\)</span> tiene rango 2.</p>
+\end{pmatrix},
+\]</span></p>
+<p>así que para <span class="math inline">\(a=2\)</span> tiene rango 2.</p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1843,25 +2042,33 @@ A=matrix(QQ,[[1,0,1,2],[1,1,0,1],[1,1,0,1]]) #matriz de coeficientes
 show(A,"~",A.rref())
 </script>
 </div>
-Para <span class="math inline">\(B\)</span> observamos que tiene tres columnas idénticas, por lo que el rango máximo puede ser dos. También podemos calcular su forma de Hermite por filas <span class="math display">\[B=\begin{pmatrix}
+<p>Para <span class="math inline">\(B\)</span> observamos que tiene tres columnas idénticas, por lo que el rango máximo puede ser dos. También podemos calcular su forma de Hermite por filas</p>
+<p><span class="math display">\[
+B=\begin{pmatrix}
 1 &amp; a-1&amp; 1 &amp; 1\\
 1 &amp; 0 &amp; 1 &amp; 1\\
 1 &amp; a &amp; 1 &amp; 1\\
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix}\sim_f
+\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 1\\
 0 &amp; a-1 &amp; 0 &amp; 0\\
 0 &amp; a &amp; 0 &amp; 0\\
-\end{pmatrix}\sim_f \begin{pmatrix}
+\end{pmatrix}\sim_f
+\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 1\\
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0\\
-\end{pmatrix},\]</span> con lo que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> para todo valor de <span class="math inline">\(a\)</span>.Así que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes para <span class="math inline">\(a=2\)</span>.
+\end{pmatrix},
+\]</span></p>
+con lo que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> para todo valor de <span class="math inline">\(a\)</span>.Así que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes para <span class="math inline">\(a=2\)</span>.
 </li>
 <li>
 Calcular para qué valores de <span class="math inline">\(a\)</span> son equivalentes por filas.<br> Para que sean equivalentes por filas deben tener la misma forma de Hermite por filas, y en particular el mismo rango, así que en cualquier caso solo hay que investigar el caso <span class="math inline">\(a=2\)</span>. Como en el apartado anterior hemos calculado la forma de Hermite por filas en este caso, concluimos que nunca son equivalentes por filas.
 </li>
 <li>
-<p>Calcular <span class="math inline">\(H\)</span>, y <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(H=BP\)</span>.<br> Sustituimos <span class="math inline">\(a=1\)</span> en <span class="math inline">\(B\)</span> y realizamos operaciones elementales por columnas apuntándolas en una matriz regular: <span class="math display">\[B=\begin{pmatrix}
+<p>Calcular <span class="math inline">\(H\)</span>, y <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(H=BP\)</span>.<br> Sustituimos <span class="math inline">\(a=1\)</span> en <span class="math inline">\(B\)</span> y realizamos operaciones elementales por columnas apuntándolas en una matriz regular:</p>
+<p><span class="math display">\[
+B=\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 1\\
 1 &amp; 0 &amp; 1 &amp; 1\\
 1 &amp; 1 &amp; 1 &amp; 1\\
@@ -1882,7 +2089,8 @@ Calcular para qué valores de <span class="math inline">\(a\)</span> son equival
 0 &amp; 0 &amp; 0 &amp; 1
 \end{pmatrix},
 \]</span></p>
-luego <span class="math display">\[H= \begin{pmatrix}
+<p>luego</p>
+<span class="math display">\[H= \begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0\\
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
@@ -1892,13 +2100,18 @@ P=\begin{pmatrix}
 -1 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}.\]</span>
+\end{pmatrix}.
+\]</span>
 </li>
 </ol>
-</details>
-</article>
-<article class="medio" style="display:block;">
-<p>Dada la matriz <span class="math display">\[A=\begin{pmatrix}
+</div>
+</div>
+</div>
+</div>
+<div id="exr-12" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 12</strong></span> Dada la matriz</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 1 &amp; a-1 &amp; a &amp; 1\\
 -1 &amp; a-1 &amp; a &amp; 1\\
 0 &amp;2a-2 &amp; 2a &amp; 1\\
@@ -1916,13 +2129,23 @@ Calcula la forma de Hermite por filas según los valores de <span class="math in
 Discute el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span> en función de los valores de <span class="math inline">\(a\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular el determinante.<br> <span class="math display">\[\begin{aligned}
+<p>Calcular el determinante.</p>
+<span class="math display">\[
+\begin{aligned}
 |A|= &amp;\left|\begin{array}{cccc}
 1 &amp; a-1 &amp; a &amp; 1\\
 -1 &amp; a-1 &amp; a &amp; 1\\
@@ -1946,10 +2169,13 @@ Calcular el determinante.<br> <span class="math display">\[\begin{aligned}
 2a-2 &amp; 2a \\
 1-a &amp; a  
 \end{array}\right|=4a^2-4a=4a(a-1).
-\end{aligned}\]</span>
+\end{aligned}
+\]</span>
 </li>
 <li>
-<p>Calcular la forma de Hermite por filas según los valores de <span class="math inline">\(a\)</span>.<br> Por el Teorema de las matrices regulares, si <span class="math inline">\(|A|\not = 0\)</span> la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>, por tanto si <span class="math inline">\(a\not = 0,1\)</span> entonces <span class="math inline">\(H=I_4\)</span>. Estudiamos los casos particulares <span class="math inline">\(a=0\)</span> y <span class="math inline">\(a=1\)</span>.<br> Si <span class="math inline">\(a=0\)</span> <span class="math display">\[A=\begin{pmatrix}
+<p>Calcular la forma de Hermite por filas según los valores de <span class="math inline">\(a\)</span>.<br> Por el Teorema de las matrices regulares, si <span class="math inline">\(|A|\not = 0\)</span> la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>, por tanto si <span class="math inline">\(a\not = 0,1\)</span> entonces <span class="math inline">\(H=I_4\)</span>. Estudiamos los casos particulares <span class="math inline">\(a=0\)</span> y <span class="math inline">\(a=1\)</span>.<br> Si <span class="math inline">\(a=0\)</span></p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 1 &amp; -1 &amp; 0 &amp; 1\\
 -1 &amp; -1 &amp; 0 &amp; 1\\
 0 &amp; -2 &amp; 0 &amp; 1\\
@@ -1978,7 +2204,9 @@ A=matrix(QQ,[[1,-1,0,1],[-1,-1,0,1],[0,-2,0,1],[1,0,0,3]])
 show(A,"~",A.rref())
 </script>
 </div>
-<p>Si <span class="math inline">\(a=1\)</span> <span class="math display">\[A=\begin{pmatrix}
+<p>Si <span class="math inline">\(a=1\)</span></p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 1\\
 -1 &amp; 0 &amp; 1 &amp; 1\\
 0 &amp; 0 &amp; 2 &amp; 1\\
@@ -2009,31 +2237,43 @@ show(A,"~",A.rref())
 </div>
 </li>
 <li>
-Discutir el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span> en función de los valores de <span class="math inline">\(a\)</span>.<br> Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada <span class="math inline">\(H\)</span>.<br> Si <span class="math inline">\(a\not = 0,1\)</span> entonces <span class="math display">\[H= \left(\begin{array}{ccc|c}
+<p>Discutir el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span> en función de los valores de <span class="math inline">\(a\)</span>.<br> Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada <span class="math inline">\(H\)</span>.<br> Si <span class="math inline">\(a\not = 0,1\)</span> entonces</p>
+<p><span class="math display">\[
+H= \left(\begin{array}{ccc|c}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right)
-\]</span> y como aparece la ecuación <span class="math inline">\(0=1\)</span> es incompatible.<br> Si <span class="math inline">\(a=0\)</span> <span class="math display">\[H=\left( \begin{array}{ccc|c}
+\]</span></p>
+<p>y como aparece la ecuación <span class="math inline">\(0=1\)</span> es incompatible.<br> Si <span class="math inline">\(a=0\)</span></p>
+<p><span class="math display">\[
+H=\left( \begin{array}{ccc|c}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
-\]</span> y también es incompatible.<br> Por último para <span class="math inline">\(a=1\)</span> <span class="math display">\[H= \left( \begin{array}{ccc|c}
+\]</span></p>
+<p>y también es incompatible.<br> Por último para <span class="math inline">\(a=1\)</span></p>
+<p><span class="math display">\[
+H= \left( \begin{array}{ccc|c}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
-\]</span> también es incompatible.
+\]</span></p>
+también es incompatible.
 </li>
 </ol>
-</details>
-</article>
-<article class="medio" style="display:block;">
-<p>Para las matrices: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-13" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13</strong></span> Para las matrices:</p>
+<p><span class="math display">\[
 A=\begin{pmatrix}
 2 &amp; 1 &amp; 2 \\
 1 &amp; 2 &amp; 2 \\
@@ -2052,13 +2292,24 @@ C=\begin{pmatrix}
 0 &amp; 0 &amp; 0  \\
 0 &amp; 0 &amp; 0  \\
 \end{pmatrix}.
-\]</span> Determinar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot A \cdot P= C\)</span>.<br> Razonar que no pueden existir matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot B \cdot P=C\)</span></p>
-<details>
-<summary>
+\]</span></p>
+<p>Determinar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot A \cdot P= C\)</span>.<br> Razonar que no pueden existir matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot B \cdot P=C\)</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>El rango de <span class="math inline">\(A\)</span> es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como <span class="math inline">\(C\)</span> es de rango dos y del mismo orden, entonces <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> son equivalentes y por tanto existen matrices regulares <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> verificando <span class="math inline">\(Q\, A \, P=C\)</span>. Sin embargo <span class="math inline">\(B\)</span> tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con <span class="math inline">\(C\)</span>.<br></p>
-<p>Para calcular <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> realizamos operaciones elementales por filas y columnas sobre <span class="math inline">\(A\)</span> hasta obtener <span class="math inline">\(C\)</span>. Una forma posible es transformar <span class="math inline">\(A\)</span> hasta su forma de Hermite por filas y después, a la matriz obtenida se le realizan operaciones elementales por columnas. También podrían realizarse unas y otras operaciones elementales en cualquier orden. <span class="math display">\[\begin{aligned}
+<p>Para calcular <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> realizamos operaciones elementales por filas y columnas sobre <span class="math inline">\(A\)</span> hasta obtener <span class="math inline">\(C\)</span>. Una forma posible es transformar <span class="math inline">\(A\)</span> hasta su forma de Hermite por filas y después, a la matriz obtenida se le realizan operaciones elementales por columnas. También podrían realizarse unas y otras operaciones elementales en cualquier orden.</p>
+<p><span class="math display">\[
+\begin{aligned}
 \left(\begin{array}{ccc|cccc}
 2 &amp; 1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
 1 &amp; 2 &amp; 2 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
@@ -2095,7 +2346,10 @@ Solución
 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1
 \end{array}\right)
-\end{aligned}\]</span> Ahora por columnas <span class="math display">\[
+\end{aligned}
+\]</span></p>
+<p>Ahora por columnas</p>
+<p><span class="math display">\[
 \left(\begin{array}{ccc}
 1 &amp; 0 &amp; 2/3 \\
 0 &amp; 1 &amp; 2/3 \\
@@ -2115,7 +2369,11 @@ Solución
 1 &amp; 0 &amp; -2/3 \\
 0 &amp; 1 &amp; -2/3\\
 0 &amp; 0 &amp; 1
-\end{array}\right).\]</span> Luego, una solución (hay muchas) es <span class="math display">\[Q=
+\end{array}\right).
+\]</span></p>
+<p>Luego, una solución (hay muchas) es</p>
+<p><span class="math display">\[
+Q=
 \left(\begin{array}{cccc}
 2/3 &amp; -1/3 &amp; 0 &amp; 0\\
 -1/3 &amp; 2/3 &amp; 0 &amp; 0\\
@@ -2126,16 +2384,22 @@ P=\left(\begin{array}{ccc}
 1 &amp; 0 &amp; -2/3 \\
 0 &amp; 1 &amp; -2/3\\
 0 &amp; 0 &amp; 1
-\end{array}\right).\]</span></p>
-</details>
-</article>
-<article class="medio" style="display:block;">
-<p>Dada la matriz <span class="math display">\[A= \left(\begin{array}{rrrr}
+\end{array}\right).
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-14" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14</strong></span> Dada la matriz</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{rrrr}
 a &amp; 1 &amp; 0 &amp; 1\\
 1 &amp; a &amp; 0 &amp; 1\\
 1 &amp; 0 &amp; a &amp; 1\\
 1 &amp; 0 &amp; 1 &amp; a
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <ol type="a">
 <li>
 Calcula el determinante de <span class="math inline">\(A\)</span>.
@@ -2150,10 +2414,18 @@ Estudia el rango de <span class="math inline">\(A\)</span> para todos los valore
 Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
 Calcular el determinante de <span class="math inline">\(A\)</span>.<br> <span class="math display">\[\begin{aligned}
@@ -2182,7 +2454,8 @@ a &amp; -a &amp; 0 \\
 \right|\\
 &amp; =(a-1)a[a(a-1)+(a-1)]+(1-a)[a(1-a)]=(a-1)^2a(a+1)+(a-1)^2a\\
 &amp; =(a-1)^2a[a+1+1]=(a-1)^2a(a+2).
-\end{aligned}\]</span>
+\end{aligned}
+\]</span>
 </li>
 <li>
 Determinar los valores de <span class="math inline">\(a\)</span> para los que la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>.<br> Por el Teorema de las matrices regulares, la forma de Hermite por filas es <span class="math inline">\(I_4\)</span> sí y sólo sí <span class="math inline">\(|A|\neq 0\)</span>, luego ocurre para todo <span class="math inline">\(a\in\mathbb{R}\setminus\{-2,0,1\}\)</span>, esto es , si <span class="math inline">\(a\neq -2, 0, 1\)</span>.
@@ -2190,7 +2463,8 @@ Determinar los valores de <span class="math inline">\(a\)</span> para los que la
 <li>
 <p>Estudiar el rango de <span class="math inline">\(A\)</span>.<br> Si <span class="math inline">\(a\neq -2, 0, 1\)</span>, entonces el <span class="math inline">\(\operatorname{rg}(A)=4\)</span>.<br></p>
 <p>Si <span class="math inline">\(a=1\)</span>:</p>
-<p><span class="math display">\[\left|
+<p><span class="math display">\[
+\left|
     \begin{array}{cccc}
       1 &amp; 1 &amp; 0 &amp; 1 \\
       1 &amp; 1 &amp; 0 &amp; 1 \\
@@ -2203,8 +2477,11 @@ Determinar los valores de <span class="math inline">\(a\)</span> para los que la
       0 &amp; 0 &amp; 0 &amp; 0 \\
       0 &amp; 0 &amp; 0 &amp; 0 \\
     \end{array}
-  \right| \Rightarrow \operatorname{rg}(A)=2. \]</span> Si <span class="math inline">\(a=0\)</span>:</p>
-<p><span class="math display">\[\left|
+  \right| \Rightarrow \operatorname{rg}(A)=2.
+\]</span></p>
+<p>Si <span class="math inline">\(a=0\)</span>:</p>
+<p><span class="math display">\[
+\left|
     \begin{array}{cccc}
       0 &amp; 1 &amp; 0 &amp; 1 \\
       1 &amp; 0 &amp; 0 &amp; 1 \\
@@ -2217,9 +2494,11 @@ Determinar los valores de <span class="math inline">\(a\)</span> para los que la
       0 &amp; 1 &amp; 0 &amp; 0 \\
       0 &amp; 0 &amp; 1 &amp; 0 \\
     \end{array}
-  \right| \Rightarrow \operatorname{rg}(A)=3. \]</span></p>
+  \right| \Rightarrow \operatorname{rg}(A)=3.
+\]</span></p>
 <p>Si <span class="math inline">\(a=-2\)</span>:</p>
-<p><span class="math display">\[\left|
+<p><span class="math display">\[
+\left|
     \begin{array}{cccc}
       -2 &amp; 1 &amp; 0 &amp; 1 \\
       1 &amp; -2 &amp; 0 &amp; 1 \\
@@ -2244,17 +2523,21 @@ Determinar los valores de <span class="math inline">\(a\)</span> para los que la
       0 &amp; 0&amp; 1 &amp; -1 \\
       0 &amp; 0 &amp; 0&amp; 0 \\
     \end{array}
-  \right|    .\]</span></p>
+  \right|    .
+\]</span></p>
 Luego <span class="math inline">\(\operatorname{rg}(A)=3\)</span>.
 </li>
 <li>
-<p>Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span>.<br> Se ha calculado en el apartado anterior, <span class="math display">\[H=\left( \begin{array}{cccc}
+<p>Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span>.<br> Se ha calculado en el apartado anterior,</p>
+<p><span class="math display">\[
+H=\left( \begin{array}{cccc}
       1 &amp; 0 &amp; 0 &amp; -1 \\
       0 &amp; 1 &amp; 0 &amp; -1  \\
       0 &amp; 0&amp; 1 &amp; -1 \\
       0 &amp; 0 &amp; 0&amp; 0 \\
     \end{array}
-\right).\]</span></p>
+\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -2264,10 +2547,13 @@ show(A,"~",A.rref())
 </div>
 </li>
 </ol>
-</details>
-</article>
-<article class="avanzado" style="display:block;">
-<p>Se consideran las matrices: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-15" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 15</strong></span> Se consideran las matrices:</p>
+<p><span class="math display">\[
 A=\begin{pmatrix}
 -1 &amp; -a &amp; a-1 \\
 2a-1 &amp; a &amp; a-1 \\
@@ -2290,13 +2576,22 @@ Determinar para qué valores del parámetro <span class="math inline">\(a\)</spa
 Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(B=A\cdot P\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> es la matriz <span class="math inline">\(A\)</span> invertible.<br> La matriz <span class="math inline">\(A\)</span> es invertible si, y solo si, su determinante es distinto de cero. Calculamos el determinante realizando primero algunas operaciones elementales: <span class="math display">\[
+<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> es la matriz <span class="math inline">\(A\)</span> invertible.<br> La matriz <span class="math inline">\(A\)</span> es invertible si, y solo si, su determinante es distinto de cero. Calculamos el determinante realizando primero algunas operaciones elementales:</p>
+<p><span class="math display">\[
 |A|=\left|\begin{array}{ccc}
 -1 &amp; -a &amp; a-1 \\
 2a-1 &amp; a &amp; a-1 \\
@@ -2310,14 +2605,20 @@ Determinar para qué valores del parámetro <span class="math inline">\(a\)</spa
 0 &amp; a &amp; a \\
 1-2a &amp; 0 &amp; 1
 \end{array}\right|,
-\]</span> y desarrollando por la segunda columna, <span class="math display">\[\left|\begin{array}{ccc}
+\]</span></p>
+<p>y desarrollando por la segunda columna,</p>
+<p><span class="math display">\[
+\left|\begin{array}{ccc}
 -1 &amp; 0 &amp; 2a-1 \\
 0 &amp; a &amp; a \\
 1-2a &amp; 0 &amp; 1
-\end{array}\right|=a(-1+(2a-1)^2)=a(4a^2-4a)=4a^2(a-1).\]</span> Así, que <span class="math inline">\(A\)</span> tiene inversa cuando <span class="math inline">\(a\not = 0,1\)</span>.
+\end{array}\right|=a(-1+(2a-1)^2)=a(4a^2-4a)=4a^2(a-1).
+\]</span></p>
+Así, que <span class="math inline">\(A\)</span> tiene inversa cuando <span class="math inline">\(a\not = 0,1\)</span>.
 </li>
 <li>
-<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> regular de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Para que exista esa matriz regular <span class="math inline">\(P\)</span> (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.<br> Entonces calculamos la de <span class="math inline">\(B\)</span>: <span class="math display">\[
+<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> regular de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Para que exista esa matriz regular <span class="math inline">\(P\)</span> (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.<br> Entonces calculamos la de <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[
 B=\begin{pmatrix}
 2 &amp; 3 &amp; 4\\
 -2 &amp;-3 &amp;-4 \\
@@ -2343,7 +2644,8 @@ B=matrix([[2,3,4],[-2,-3,-4],[3,4,5]])
 show(B,"~",(B.T).rref().T)
 </script>
 </div>
-Puesto que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> solo es posible que sean equivalentes por columnas cuando <span class="math inline">\(a=0\)</span> o <span class="math inline">\(a=1\)</span>, porque en otro caso <span class="math inline">\(A\)</span> tiene rango tres.<br> Calculamos la forma de Hermite de <span class="math inline">\(A\)</span> en ambos casos: <span class="math display">\[
+<p>Puesto que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> solo es posible que sean equivalentes por columnas cuando <span class="math inline">\(a=0\)</span> o <span class="math inline">\(a=1\)</span>, porque en otro caso <span class="math inline">\(A\)</span> tiene rango tres.<br> Calculamos la forma de Hermite de <span class="math inline">\(A\)</span> en ambos casos:</p>
+<p><span class="math display">\[
 A=\begin{pmatrix}
 -1 &amp; 0 &amp; -1 \\
 -1 &amp; 0 &amp; -1 \\
@@ -2353,7 +2655,9 @@ A=\begin{pmatrix}
 -1 &amp; 0 &amp; 0 \\
 1 &amp; 0 &amp; 0
 \end{pmatrix}.
-\]</span> En el caso <span class="math inline">\(a=0\)</span> no existe <span class="math inline">\(P\)</span> regular. <span class="math display">\[
+\]</span></p>
+<p>En el caso <span class="math inline">\(a=0\)</span> no existe <span class="math inline">\(P\)</span> regular.</p>
+<span class="math display">\[
 A=\begin{pmatrix}
 -1 &amp; -1 &amp; 0 \\
 1 &amp; 1 &amp; 0 \\
@@ -2366,13 +2670,20 @@ A=\begin{pmatrix}
 \]</span>
 </li>
 <li>
-Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Como hemos razonado en el caso anterior, <span class="math inline">\(P\)</span> existe para <span class="math inline">\(a=1\)</span> y es regular. Cuando <span class="math inline">\(a\not=0,1\)</span> como <span class="math inline">\(A\)</span> es regular, podemos despejar <span class="math inline">\(P\)</span> en la fórmula <span class="math inline">\(B=AP\)</span>: <span class="math display">\[P=A^{-1}B,\]</span> que existe, aunque no es regular porque <span class="math inline">\(B\)</span> no lo es. Así que existe una tal <span class="math inline">\(P\)</span> para todo <span class="math inline">\(a\)</span> salvo <span class="math inline">\(a=0\)</span>.
+<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Como hemos razonado en el caso anterior, <span class="math inline">\(P\)</span> existe para <span class="math inline">\(a=1\)</span> y es regular. Cuando <span class="math inline">\(a\not=0,1\)</span> como <span class="math inline">\(A\)</span> es regular, podemos despejar <span class="math inline">\(P\)</span> en la fórmula <span class="math inline">\(B=AP\)</span>:</p>
+<p><span class="math display">\[
+P=A^{-1}B,
+\]</span></p>
+que existe, aunque no es regular porque <span class="math inline">\(B\)</span> no lo es. Así que existe una tal <span class="math inline">\(P\)</span> para todo <span class="math inline">\(a\)</span> salvo <span class="math inline">\(a=0\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article class="basico" style="display:block;">
-<p>Discutir en función de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> el sistema de ecuaciones lineales: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-16" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 16</strong></span> Discutir en función de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> el sistema de ecuaciones lineales:</p>
+<p><span class="math display">\[
 \left\{
 \begin{array}{rcl}
 x+y+z &amp;=&amp; 1, \\
@@ -2380,12 +2691,23 @@ x+y+az &amp;=&amp; 2, \\
 x+y+bz &amp;=&amp; 3. \\
 \end{array}
 \right.
-\]</span> y resolverlo en aquellos casos en que sea compatible.</p>
-<details>
-<summary>
+\]</span></p>
+<p>y resolverlo en aquellos casos en que sea compatible.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
-<p>La matriz de coeficientes del sistema <span class="math display">\[\begin{pmatrix}
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La matriz de coeficientes del sistema</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 1 &amp; 1\\
 1 &amp; 1 &amp; a\\
 1 &amp; 1 &amp; b
@@ -2394,7 +2716,10 @@ Solución
 0 &amp; 0 &amp; a-1\\
 0 &amp; 0 &amp; b-1
 \end{pmatrix},
-\]</span> tiene rango 1 si <span class="math inline">\(a=b=1\)</span> y rango 2 en otro caso. La matriz ampliada del sistema <span class="math display">\[\begin{pmatrix}
+\]</span></p>
+<p>tiene rango 1 si <span class="math inline">\(a=b=1\)</span> y rango 2 en otro caso. La matriz ampliada del sistema</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 1 &amp; 1 &amp; 1\\
 1 &amp; 1 &amp; a &amp; 2\\
 1 &amp; 1 &amp; b &amp; 3
@@ -2403,7 +2728,9 @@ Solución
 0 &amp; 0 &amp; a-1 &amp; 1\\
 0 &amp; 0 &amp; b-1 &amp; 2
 \end{pmatrix},
-\]</span> tiene rango 2 si <span class="math inline">\(b-1=2(a-1)\)</span> ( o lo que es lo mismo <span class="math inline">\(b=2a-1\)</span>, que incluye el caso <span class="math inline">\(a=b=1\)</span>) y rango 3 en cualquier otro caso.<br> Así, el sistema es compatible si, y solo si, <span class="math inline">\(b= 2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span> y en esos casos, como <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|B)=2\)</span>, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando <span class="math inline">\(a=b=1\)</span> o bien cuando <span class="math inline">\(b\not = 2a-1\)</span>) es incompatible.<br> Cuando <span class="math inline">\(b=2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span>, resolviendo desde la matriz anterior <span class="math display">\[
+\]</span></p>
+<p>tiene rango 2 si <span class="math inline">\(b-1=2(a-1)\)</span> ( o lo que es lo mismo <span class="math inline">\(b=2a-1\)</span>, que incluye el caso <span class="math inline">\(a=b=1\)</span>) y rango 3 en cualquier otro caso.<br> Así, el sistema es compatible si, y solo si, <span class="math inline">\(b= 2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span> y en esos casos, como <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|B)=2\)</span>, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando <span class="math inline">\(a=b=1\)</span> o bien cuando <span class="math inline">\(b\not = 2a-1\)</span>) es incompatible.<br> Cuando <span class="math inline">\(b=2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span>, resolviendo desde la matriz anterior</p>
+<p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 1 &amp; 1 &amp; 1 \\
 0 &amp; 0 &amp; a-1 &amp; 1\\
@@ -2413,11 +2740,17 @@ Solución
 0 &amp; 0 &amp; a-1 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{pmatrix},
-\]</span> y el conjunto de soluciones es <span class="math display">\[\left\{ \left(1-\lambda-\frac{1}{a-1}  , \lambda, \frac{1}{a-1}\right); \lambda \in \mathbb{R} \right\}.\]</span></p>
-</details>
-</article>
-<article class="medio" style="display:block;">
-<p>Dadas las matrices <span class="math display">\[
+\]</span></p>
+<p>y el conjunto de soluciones es</p>
+<p><span class="math display">\[
+\left\{ \left(1-\lambda-\frac{1}{a-1}  , \lambda, \frac{1}{a-1}\right); \lambda \in \mathbb{R} \right\}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-17" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 17</strong></span> Dadas las matrices <span class="math display">\[
 A=\left(\begin{array}{rrr}
    1 &amp; a &amp; -1\\
    a &amp; 1 &amp; 1\\
@@ -2444,13 +2777,22 @@ Encuentra los valores de <span class="math inline">\(a\)</span> y <span class="m
 Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=1\)</span>, calcula una matriz <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(QA=B\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes.<br> Dos matrices del mismo orden son equivalentes cuando tienen el mismo rango. Calculamos el rango en función de los parámetros: en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.<br> Para <span class="math inline">\(A\)</span> elegimos <span class="math display">\[
+<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes.<br> Dos matrices del mismo orden son equivalentes cuando tienen el mismo rango. Calculamos el rango en función de los parámetros: en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.<br> Para <span class="math inline">\(A\)</span> elegimos</p>
+<p><span class="math display">\[
 \left|\begin{array}{rrr}
       a &amp; 1 &amp; 1\\
    1 &amp; -1 &amp; a\\
@@ -2485,7 +2827,8 @@ Solución
   0 &amp; 0 &amp; 0
   \end{array}
 \right),
-\]</span> tiene también rango tres y la anterior es su forma de Hermite por filas.<br></p>
+\]</span></p>
+<p>tiene también rango tres y la anterior es su forma de Hermite por filas.<br></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -2493,7 +2836,8 @@ A=matrix([[1,0,-1],[0,1,1],[1,-1,0],[0,0,0]])
 show(A,"~",A.rref())
 </script>
 </div>
-Para <span class="math inline">\(a=-1\)</span> $$A=(
+<p>Para <span class="math inline">\(a=-1\)</span></p>
+$$ A=(
 <span class="math display">\[\begin{array}{rrr}
    1 &amp; -1 &amp; -1\\
    -1 &amp; 1 &amp; 1\\
@@ -2515,9 +2859,11 @@ Para <span class="math inline">\(a=-1\)</span> $$A=(
    0 &amp; 0 &amp; 0\\
 
   \end{array}\]</span>
-<p>). $$<br>
-tiene rango dos y la anterior es su forma de Hermite por filas.<br></p>
-<p>Para <span class="math inline">\(B\)</span>: <span class="math display">\[\left|\begin{array}{rrr}
+<p>). $$</p>
+<p>tiene rango dos y la anterior es su forma de Hermite por filas.<br></p>
+<p>Para <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[
+\left|\begin{array}{rrr}
    1 &amp; -1 &amp; 1\\
    1 &amp; 1 &amp; 0\\
    0 &amp; -b &amp; b\\
@@ -2532,7 +2878,9 @@ tiene rango dos y la anterior es su forma de Hermite por filas.<br></p>
     -b &amp; b\\
     \end{array}
 \right|=b.
-\]</span> Así, cuando <span class="math inline">\(b\not = 0\)</span>, <span class="math inline">\(\operatorname{rg}(B)=3\)</span>. Para <span class="math inline">\(b=0\)</span> <span class="math display">\[
+\]</span></p>
+<p>Así, cuando <span class="math inline">\(b\not = 0\)</span>, <span class="math inline">\(\operatorname{rg}(B)=3\)</span>. Para <span class="math inline">\(b=0\)</span></p>
+<p><span class="math display">\[
 B=\left(\begin{array}{rrr}
    1 &amp; -1 &amp; 1\\
    1 &amp; 1 &amp; 0\\
@@ -2552,7 +2900,8 @@ B=\left(\begin{array}{rrr}
   0 &amp; 0 &amp; 0
   \end{array}
 \right),
-\]</span> que tiene rango dos y tenemos su forma de Hermite por filas.<br></p>
+\]</span></p>
+<p>que tiene rango dos y tenemos su forma de Hermite por filas.<br></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -2563,22 +2912,30 @@ show(B,"~",B.rref())
 Por tanto, concluimos que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b=0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>, son equivalentes mientras que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b\neq0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b=0\)</span>, no son equivalentes.
 </li>
 <li>
-Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes por filas.<br> En el caso de que una matriz <span class="math inline">\(4\times 3\)</span> tenga rango tres, su forma de Hermite por filas es necesariamente <span class="math display">\[
+<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes por filas.<br> En el caso de que una matriz <span class="math inline">\(4\times 3\)</span> tenga rango tres, su forma de Hermite por filas es necesariamente</p>
+<p><span class="math display">\[
 H= \left(\begin{array}{rrr}
    1 &amp; 0 &amp; 0\\
    0 &amp; 1 &amp; 0\\
    0 &amp; 0 &amp; 1\\
   0 &amp; 0 &amp; 0
   \end{array}
-\right)
-\]</span> puesto que cada uno de los tres pivotes tienen que estar en columnas distintas. Así que tenemos calculada la forma de Hermite en todos los casos y podemos concluir que no serán equivalentes por filas excepto si <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>.
+\right),
+\]</span></p>
+puesto que cada uno de los tres pivotes tienen que estar en columnas distintas. Así que tenemos calculada la forma de Hermite en todos los casos y podemos concluir que no serán equivalentes por filas excepto si <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>.
 </li>
 <li>
-Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=1\)</span>, calcular una matriz <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(QA=B\)</span>.<br> En ese caso las matrices son equivalentes por filas, para encontrar una matriz <span class="math inline">\(Q\)</span>, calculamos <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_2\)</span> tales que: <span class="math display">\[ Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.\]</span> Igualando y despejando <span class="math inline">\(B\)</span> sería <span class="math inline">\(Q=Q_{2}^{-1}Q_{1}\)</span>.
+<p>Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=1\)</span>, calcular una matriz <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(QA=B\)</span>.<br> En ese caso las matrices son equivalentes por filas, para encontrar una matriz <span class="math inline">\(Q\)</span>, calculamos <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_2\)</span> tales que:</p>
+<p><span class="math display">\[
+Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.
+\]</span></p>
+Igualando y despejando <span class="math inline">\(B\)</span> sería <span class="math inline">\(Q=Q_{2}^{-1}Q_{1}\)</span>.
 </li>
 </ol>
-</details>
-</article>
+</div>
+</div>
+</div>
+</div>
 
 
 
