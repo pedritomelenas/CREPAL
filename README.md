@@ -10,4 +10,4 @@ Los componentes del equipo son
 - Pedro A. García Sánchez
 - Luis M. Merino González
 
-Este repositorio sustituirá https://github.com/pedritomelenas/Algebra-Lineal/tree/main/problemas
+Este repositorio sustituirá a https://github.com/pedritomelenas/Algebra-Lineal/tree/main/problemas
