@@ -330,19 +330,21 @@ y de esta forma es compatible determinado.
 ::::
 :::::
 
-:::{#exr-2 .cuerpo_finito-basico}
+::::: {#exr-2 .basico}
 
-Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_2$.
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$[, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_2$]{.cuerpo_finito}.
 
 $$\left\{\begin{aligned} x-y+z+t+v&=0,\\ x+y+z+t-v&=0,\\ -x-y+z+t-v&=0. \end{aligned}\right.$$
 
-:::{.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 
 Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. 
 Además, un sistema homogéneo siempre es Compatible puesto que admite la solución $(0,0,0,0,0)$.
 
+:::{.cuerpo_finito}
 **Coeficientes en $\mathbb{Q}$**
+:::
 
 $$
 \left(\begin{array}{rrrrr}
@@ -418,6 +420,7 @@ $$
 
 Luego es un sistema compatible Indeterminado.
 
+:::{.cuerpo_finito}
 **Coeficientes en $\mathbb{Z}_3$**
 
 Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que $1\not = -1$. 
@@ -501,20 +504,22 @@ $$
 
 luego es compatible indeterminado y tiene un total de $2^4=16$ soluciones.
 :::
-:::
+::::
+:::::
 
 
-:::{#exr-3 .cuerpo_finito-basico}
+::::: {#exr-3 .basico}
 
-Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_7$.
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$[, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_7$]{.cuerpo_finito}.
 
 $$\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&= 2,\\ x_{1}+2x_{2}+x_{3}&=1,\\ x_{2}&=3. \end{aligned}\right.$$
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 
 Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.
 
+:::{.cuerpo_finito}
 **En $\mathbb{Z}_7$:**
 
 $$
@@ -659,6 +664,8 @@ show(Ab,"~",Ab.rref())
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 
 **En $\mathbb{Q}$:**
+:::
+
 
 $$\begin{aligned}
 \left(\begin{array}{ccc|c}
@@ -705,8 +712,8 @@ show(Ab,"~",Ab.rref())
 </div>  
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
-:::
-:::
+::::
+:::::
 
 :::{#exr-4 .cuerpo_finito-basico}
 
@@ -1540,12 +1547,12 @@ que también tiene rango 2 (recordemos que estamos en $\mathbb{Z}_3$).
 :::
 
 
-::: {#exr-9 .cuerpo_finito-basico}
+::: {#exr-9 .basico}
 
 Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).$$
 <ol type="a">
 <li>Calcula el determinante de la matriz $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
-<li>Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
+<li class="cuerpo_finito">Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
 <li>Discute el sistema de ecuaciones con matriz ampliada $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
 </ol>
 
@@ -1580,7 +1587,7 @@ $$
 
 y este resultado es válido en cualquier cuerpo.</li>
 
-<li>Rango.
+<li class="cuerpo_finito">Rango.
 Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda\in \{0,1\}$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.<br>
 
 Para $\lambda=0$:<br>
@@ -2104,7 +2111,7 @@ también es incompatible.</li>
 :::
 
 
-::: {#exr-13 .cuerpo_finito-basico}
+::: {#exr-13 .medio}
 Para las matrices:
 
 $$
