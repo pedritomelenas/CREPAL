@@ -19,8 +19,8 @@ format:
 <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. 
 
 
-::: {#exr-1 .cuerpo_finito-basico}
-Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$, $\mathbb{Z}_3$ y $\mathbb{Z}_5$.
+::: {#exr-1 .basico}
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$[, $\mathbb{Z}_3$ y $\mathbb{Z}_5$]{.cuerpo_finito}.
 
 $$\left\{\begin{aligned} x_{2}-2x_{3}&= -4,\\ x_{1}+x_{2}-x_{3}&=0,\\ 2x_{1}-x_{2}+x_{3}&=3. \end{aligned}\right.$$
 
@@ -28,7 +28,7 @@ $$\left\{\begin{aligned} x_{2}-2x_{3}&= -4,\\ x_{1}+x_{2}-x_{3}&=0,\\ 2x_{1}-x_{
 
 Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada. 
 
-**Coeficientes en $\mathbb{Q}$**
+[**Coeficientes en $\mathbb{Q}$**]{.cuerpo_finito}
 
 En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:
 
@@ -129,7 +129,7 @@ x_{3}&=3.
 $$
 
 Luego es un sistema compatible determinado, y su única solución es $$(1,2,3).$$
-
+<div class="cuerpo_finito">
 **Coeficientes en $\mathbb{Z}_3$**
 
 En primer lugar vamos a substituir los coeficientes por representantes en $\{0,1,2\}$:
@@ -322,6 +322,7 @@ Luego este sistema tiene una única solución:
 $$(1,2,3),$$
 
 y de esta forma es compatible determinado.
+</div>
 :::
 :::
 

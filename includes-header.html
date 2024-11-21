@@ -20,11 +20,12 @@ Array.prototype.diff = function(arr2) {
 
 //ocultar todos los articulos
 function ocultar_todo(){
-  var xs = document.querySelectorAll("[class*='exercise']");
+  var xs = document.querySelectorAll("[class*='exercise'],[class*='cuerpo_finito']");
   var i;
-  console.log(xs);
+  //console.log(xs);
   for(i=0; i<xs.length; i++) {
-      xs[i].style.display = "none";
+      //xs[i].style.display = "none";
+      xs[i].setAttribute("hidden", "hidden");
   } 
 }
 
@@ -38,29 +39,34 @@ function mostrar(){
   
   if (casilla_basico.checked){
     xsbasico=document.querySelectorAll("[class*='basico']");
-    console.log(xsbasico);
+    //console.log(xsbasico);
     //xs=xs.join(xsbasico);
     xs= [...new Set([...xs, ...xsbasico])];
   }
   if (casilla_medio.checked){
     xsmedio=document.querySelectorAll("[class*='medio']");
-    console.log(xsmedio);
+    //console.log(xsmedio);
     //xs=xs.join(xsmedio);
     xs= [...new Set([...xs, ...xsmedio])];
   }
   if (casilla_avanzado.checked){
     xsavanzado=document.querySelectorAll("[class*='avanzado']");
-    console.log(xsavanzado);
+    //console.log(xsavanzado);
     //xs=xs.join(xsavanzado);
     xs = [...new Set([...xs, ...xsavanzado])];
   }
   
+  xscf=document.querySelectorAll("[class*='cuerpo_finito']");
+  xs = [...new Set([...xs, ...xscf])];
+
   for(i=0; i<xs.length; i++){
       if(!xs[i].className.includes("cuerpo_finito")){
-        xs[i].style.display = "block";        
+        //xs[i].style.display = "block";        
+        xs[i].removeAttribute("hidden");
       }else{
         if (casilla_cf.checked){
-          xs[i].style.display = "block";
+          //xs[i].style.display = "block";
+          xs[i].removeAttribute("hidden");
         }
       }
   }
