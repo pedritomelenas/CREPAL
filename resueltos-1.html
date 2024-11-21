@@ -72,11 +72,12 @@ Array.prototype.diff = function(arr2) {
 
 //ocultar todos los articulos
 function ocultar_todo(){
-  var xs = document.querySelectorAll("[class*='exercise']");
+  var xs = document.querySelectorAll("[class*='exercise'],[class*='cuerpo_finito']");
   var i;
-  console.log(xs);
+  //console.log(xs);
   for(i=0; i<xs.length; i++) {
-      xs[i].style.display = "none";
+      //xs[i].style.display = "none";
+      xs[i].setAttribute("hidden", "hidden");
   } 
 }
 
@@ -90,29 +91,34 @@ function mostrar(){
   
   if (casilla_basico.checked){
     xsbasico=document.querySelectorAll("[class*='basico']");
-    console.log(xsbasico);
+    //console.log(xsbasico);
     //xs=xs.join(xsbasico);
     xs= [...new Set([...xs, ...xsbasico])];
   }
   if (casilla_medio.checked){
     xsmedio=document.querySelectorAll("[class*='medio']");
-    console.log(xsmedio);
+    //console.log(xsmedio);
     //xs=xs.join(xsmedio);
     xs= [...new Set([...xs, ...xsmedio])];
   }
   if (casilla_avanzado.checked){
     xsavanzado=document.querySelectorAll("[class*='avanzado']");
-    console.log(xsavanzado);
+    //console.log(xsavanzado);
     //xs=xs.join(xsavanzado);
     xs = [...new Set([...xs, ...xsavanzado])];
   }
   
+  xscf=document.querySelectorAll("[class*='cuerpo_finito']");
+  xs = [...new Set([...xs, ...xscf])];
+
   for(i=0; i<xs.length; i++){
       if(!xs[i].className.includes("cuerpo_finito")){
-        xs[i].style.display = "block";        
+        //xs[i].style.display = "block";        
+        xs[i].removeAttribute("hidden");
       }else{
         if (casilla_cf.checked){
-          xs[i].style.display = "block";
+          //xs[i].style.display = "block";
+          xs[i].removeAttribute("hidden");
         }
       }
   }
@@ -299,8 +305,8 @@ window.Quarto = {
 <!-- LTeX: language=es-ES --->
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 <p><input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked="" onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp; <input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Básicos. &nbsp; <input type="checkbox" id="casilla_medio" value="medioon" checked="" onclick="mostrar();"> Dificultad media. &nbsp; <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Avanzados.</p>
-<div id="exr-1" class="cuerpo_finito-basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span> y <span class="math inline">\(\mathbb{Z}_5\)</span>.</p>
+<div id="exr-1" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span><span class="cuerpo_finito">, <span class="math inline">\(\mathbb{Z}_3\)</span> y <span class="math inline">\(\mathbb{Z}_5\)</span></span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x_{2}-2x_{3}&amp;= -4,\\ x_{1}+x_{2}-x_{3}&amp;=0,\\ 2x_{1}-x_{2}+x_{3}&amp;=3. \end{aligned}\right.\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -315,7 +321,7 @@ Solución
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada.</p>
-<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></p>
+<p><span class="cuerpo_finito"><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></span></p>
 <p>En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
 0 &amp; 1 &amp; -2 &amp; -4\\
@@ -399,7 +405,8 @@ x_{2}&amp;=2,\\
 x_{3}&amp;=3.
 \end{aligned}\right.
 \]</span></p>
-<p>Luego es un sistema compatible determinado, y su única solución es <span class="math display">\[(1,2,3).\]</span></p>
+Luego es un sistema compatible determinado, y su única solución es <span class="math display">\[(1,2,3).\]</span>
+<div class="cuerpo_finito">
 <p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span></strong></p>
 <p>En primer lugar vamos a substituir los coeficientes por representantes en <span class="math inline">\(\{0,1,2\}\)</span>:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
@@ -555,6 +562,7 @@ x_{3}&amp;=3.
 <p>Luego este sistema tiene una única solución:</p>
 <p><span class="math display">\[(1,2,3),\]</span></p>
 <p>y de esta forma es compatible determinado.</p>
+</div>
 </div>
 </div>
 </div>
