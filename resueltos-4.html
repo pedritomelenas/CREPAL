@@ -132,9 +132,11 @@ function CF() {
   for(i=0; i<xs.length; i++) {
       x = xs[i]
       if (casilla_cf.checked) {
-        x.style.display = "block";
+        //x.style.display = "block";
+        x.removeAttribute("hidden");
       } else {
-        x.style.display = "none";
+        //x.style.display = "none";
+        x.setAttribute("hidden", "hidden");
       } 
     }  
 }
