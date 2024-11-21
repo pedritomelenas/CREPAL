@@ -321,7 +321,9 @@ Solución
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada.</p>
-<p><span class="cuerpo_finito"><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></span></p>
+<div class="cuerpo_finito">
+<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></p>
+</div>
 <p>En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
 0 &amp; 1 &amp; -2 &amp; -4\\
@@ -387,7 +389,8 @@ Solución
 \boxed{1} &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; \boxed{1} &amp; 0 &amp; 2\\
 0 &amp; 0 &amp; \boxed{1} &amp; 3
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -405,7 +408,7 @@ x_{2}&amp;=2,\\
 x_{3}&amp;=3.
 \end{aligned}\right.
 \]</span></p>
-Luego es un sistema compatible determinado, y su única solución es <span class="math display">\[(1,2,3).\]</span>
+<p>Luego es un sistema compatible determinado, y su única solución es <span class="math display">\[(1,2,3).\]</span></p>
 <div class="cuerpo_finito">
 <p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span></strong></p>
 <p>En primer lugar vamos a substituir los coeficientes por representantes en <span class="math inline">\(\{0,1,2\}\)</span>:</p>
