@@ -570,8 +570,8 @@ x_{3}&amp;=3.
 </div>
 </div>
 </div>
-<div id="exr-2" class="cuerpo_finito-basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_2\)</span>.</p>
+<div id="exr-2" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span><span class="cuerpo_finito">, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_2\)</span></span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x-y+z+t+v&amp;=0,\\ x+y+z+t-v&amp;=0,\\ -x-y+z+t-v&amp;=0. \end{aligned}\right.\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -586,7 +586,9 @@ Solución
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. Además, un sistema homogéneo siempre es Compatible puesto que admite la solución <span class="math inline">\((0,0,0,0,0)\)</span>.</p>
+<div class="cuerpo_finito">
 <p><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></p>
+</div>
 <p><span class="math display">\[
 \left(\begin{array}{rrrrr}
 \boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
@@ -651,6 +653,7 @@ v&amp;=\lambda_2
 \end{aligned}\right\},   \lambda_1, \lambda_2 \in \mathbb{Q}.
 \]</span></p>
 <p>Luego es un sistema compatible Indeterminado.</p>
+<div class="cuerpo_finito">
 <p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span></strong></p>
 <p>Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que <span class="math inline">\(1\not = -1\)</span>.</p>
 <p>Si repasamos las operaciones utilizadas, son también válidas en <span class="math inline">\(\mathbb{Z}_3\)</span> y en <span class="math inline">\(\mathbb{Z}_5\)</span> (aunque multiplicar por <span class="math inline">\(\frac{1}{2}\)</span> correspondería a multiplicar por <span class="math inline">\(2\)</span> en <span class="math inline">\(\mathbb{Z}_3\)</span> o por <span class="math inline">\(3\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>).</p>
@@ -719,8 +722,9 @@ v&amp;=\lambda_4
 </div>
 </div>
 </div>
-<div id="exr-3" class="cuerpo_finito-basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_7\)</span>.</p>
+</div>
+<div id="exr-3" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span><span class="cuerpo_finito">, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_7\)</span></span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&amp;= 2,\\ x_{1}+2x_{2}+x_{3}&amp;=1,\\ x_{2}&amp;=3. \end{aligned}\right.\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -735,6 +739,7 @@ Solución
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.</p>
+<div class="cuerpo_finito">
 <p><strong>En <span class="math inline">\(\mathbb{Z}_7\)</span>:</strong></p>
 <p><span class="math display">\[
 \begin{aligned}\left(\begin{array}{ccc|c}
@@ -863,6 +868,7 @@ show(Ab,"~",Ab.rref())
 </div>
 <p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
 <p><strong>En <span class="math inline">\(\mathbb{Q}\)</span>:</strong></p>
+</div>
 <p><span class="math display">\[\begin{aligned}
 \left(\begin{array}{ccc|c}
 \boxed{1} &amp; 1 &amp; 1 &amp; 2\\
@@ -1724,14 +1730,14 @@ Solución
 </div>
 </div>
 </div>
-<div id="exr-9" class="cuerpo_finito-basico theorem exercise">
+<div id="exr-9" class="basico theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 9</strong></span> &nbsp;</p>
 Sea <span class="math display">\[A=\left( \begin{array}{cccc} 3-\lambda &amp; 1 &amp; 1 &amp; 0\\ 5 &amp;-\lambda &amp; 0 &amp; 0\\ 0 &amp; -\lambda &amp; -\lambda &amp; 1\\ 0 &amp; -1 &amp; -1 &amp; 2-\lambda \end{array}\right).\]</span>
 <ol type="a">
 <li>
 Calcula el determinante de la matriz <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
 </li>
-<li>
+<li class="cuerpo_finito">
 Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(\lambda\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>.
 </li>
 <li>
@@ -1775,7 +1781,7 @@ Solución
 \]</span></p>
 y este resultado es válido en cualquier cuerpo.
 </li>
-<li>
+<li class="cuerpo_finito">
 <p>Rango. Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.<br></p>
 <p>Para <span class="math inline">\(\lambda=0\)</span>:<br></p>
 <p><span class="math display">\[
@@ -2282,7 +2288,7 @@ también es incompatible.
 </div>
 </div>
 </div>
-<div id="exr-13" class="cuerpo_finito-basico theorem exercise">
+<div id="exr-13" class="medio theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 13</strong></span> Para las matrices:</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
