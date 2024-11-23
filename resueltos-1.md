@@ -111,14 +111,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[0,1,-2],[1,1,-1],[2,-1,1]]) #matriz de coeficientes
 b=vector(QQ,[-4,0,3]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>  
+:::
 
 
 El sistema asociado a esta matriz tiene exactamente las mismas soluciones que el de partida (son sistemas equivalentes), y ha quedado de la siguiente manera:
@@ -187,14 +187,14 @@ Obtenemos así la forma escalonada reducida de nuestra matriz de coeficientes am
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(3),[[0,1,-2],[1,1,-1],[2,-1,1]]) #matriz de coeficientes
 b=vector(GF(3),[-4,0,3]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>  
+:::
 
 Puesto que la tercera fila ha quedado $0=0$, la correspondiente ecuación  se puede eliminar, quedando el siguiente sistema que es equivalente al de partida:
 
@@ -302,14 +302,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(5),[[0,1,-2],[1,1,-1],[2,-1,1]]) #matriz de coeficientes
 b=vector(GF(5),[-4,0,3]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>  
+:::
 
 Nos ha quedado el sistema (equivalente al original):
 
@@ -399,12 +399,12 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[1,-1,1,1,1],[1,1,1,1,-1],[-1,-1,1,1,-1]])
 show(A,"~",A.rref())
 </script>
-</div>  
+:::
 
 Como ya tenemos una matriz escalonada reducida por filas, el sistema no puede simplificarse más. Solo queda escribir las soluciones: para ello observamos que las incógnitas $x,y$ y $z$ están listas para ser despejadas, son las que corresponden a los pivotes. Las que no corresponden a pivotes se utilizan como parámetros (o variables libres). La solución del sistema queda:  
 
@@ -429,12 +429,12 @@ Si repasamos las operaciones utilizadas, son también válidas en $\mathbb{Z}_3$
 
 Comprobemos el razonamiento con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(3),[[1,-1,1,1,1],[1,1,1,1,-1],[-1,-1,1,1,-1]])
 show(A,"~",A.rref())
 </script>
-</div> 
+:::
 
 
 Las soluciones en $\mathbb{Z}_3$ serían
@@ -453,12 +453,12 @@ y por tanto es compatible indeterminado y tiene un total de $9$ soluciones.
 
 **Coeficientes en $\mathbb{Z}_5$**
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(5),[[1,-1,1,1,1],[1,1,1,1,-1],[-1,-1,1,1,-1]])
 show(A,"~",A.rref())
 </script>
-</div> 
+:::
 
 Como hemos comentado, la matriz escalonada reducida es la misma, luego las soluciones son:
 
@@ -556,14 +556,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(7),[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
 b=vector(GF(7),[2,1,3]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>  
+:::
 
 En el último paso no hemos escrito las operaciones elementales puesto que se da una circunstancia muy especial: el único elemento no nulo es el pivote. Eso hace que operar con esta fila sea muy sencillo, solo borra los elementos de su columna sin cambiar nada más.
 
@@ -605,14 +605,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(5),[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
 b=vector(GF(5),[2,1,3]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>   
+:::
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 
@@ -652,14 +652,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(3),[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
 b=vector(GF(3),[2,1,3]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>  
+:::
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 
@@ -702,20 +702,20 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
 b=vector(QQ,[2,1,3]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>  
+:::
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 ::::
 :::::
 
-:::{#exr-4 .cuerpo_finito-basico}
+::::: {#exr-4 .cuerpo_finito-basico}
 
 En el cuerpo $\mathbb{Z}_5$ se considera la matriz
 $$C = \begin{pmatrix} 1&1&1&1 \\ 0&2&1&2 \\ 0&4&1&1 \\ \end{pmatrix}.$$
@@ -726,7 +726,7 @@ $$C = \begin{pmatrix} 1&1&1&1 \\ 0&2&1&2 \\ 0&4&1&1 \\ \end{pmatrix}.$$
   <li>Elige una submatriz cuadrada de $C$ de orden tres que sea regular y calcula su inversa.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Forma de Hermite por filas.
@@ -788,12 +788,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(5),[[1,1,1,1],[0,2,1,2],[0,4,1,1]])
 show(A,"~",A.rref())
 </script>
-</div> </li>
+:::
+
+</li>
 
 <li>Forma de Hermite por columnas.
 Como el número de pivotes en la forma de Hermite por columnas coincide con el que hay en la de filas, entonces la única posibilidad es que sea 
@@ -809,12 +811,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code> (para eso transponemos la matriz, calculamos su forma escalonada reducida por filas, y volvemos a transponer).
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(5),[[1,1,1,1],[0,2,1,2],[0,4,1,1]])
 show(A,"~",(A.T).rref().T)
 </script>
-</div> </li>
+:::
+
+</li>
 
 
 <li>Una submatriz cuadrada de orden tres regular y su inversa.
@@ -865,14 +869,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(5),[[1,1,1],[0,2,1],[0,4,1]])
 I=matrix(GF(5),[[1,0,0],[0,1,0],[0,0,1]]) #matriz identidad
 AI=A.augment(I,subdivide=True) #matriz aumentada
 show(AI,"~",AI.rref())
 </script>
-</div>  
+:::
 
 Finalmente comprobamos que es inversa:
 
@@ -900,17 +904,17 @@ $$
 </li>
 
 </ol>
-:::
-:::
+::::
+:::::
 
-:::{#exr-5 .cuerpo_finito-medio}
+::::: {#exr-5 .cuerpo_finito-medio}
 
 Encuentra, si es posible, $P \in \mathcal{M}_{4}(\mathbb{Z}_3)$, regular, tal que $PA=B$, donde
 $$
 A = \begin{pmatrix} 1&1&0&2&1 \\ 2&1&1&2&0 \\ 0&2&1&0&2 \\ 0&1&2&1&0 \end{pmatrix}, \qquad B = \begin{pmatrix} 1&1&0&1&2 \\ 1&2&2&1&0 \\ 1&0&1&2&0 \\ 2&2&0&0&0 \end{pmatrix}.
 $$
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 Sabemos que $A\sim_f B$ si y sólo si existe  $P$ regular tal que $PA=B$. Por tanto, primero comprobaremos que $A$ y $B$ tienen la misma forma escalonada reducida por filas, calculando además las matrices de paso. Si coinciden, entonces usando las matrices de paso que hemos calculado, podremos encontrar $P$.
 
@@ -1067,14 +1071,14 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 PB=matrix(GF(3),[[1,1,2,0],[2,1,0,0],[1,1,1,0],[0,2,2,1]]) 
 I=matrix(GF(3),[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]) #matriz identidad
 PBI=PB.augment(I,subdivide=True) #matriz aumentada
 show(PBI,"~",PBI.rref())
 </script>
-</div> 
+:::
 
 Luego una posible $P$ es
 
@@ -1099,7 +1103,7 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 PBI=matrix(GF(3),[[1,1,1,0],[1,2,1,0],[1,0,2,0],[2,2,0,1]]) 
 PA=matrix(GF(3),[[2,1,0,0],[0,0,2,0],[1,1,2,0],[2,2,2,1]])
@@ -1108,12 +1112,14 @@ A=matrix(GF(3),[[1,1,0,2,1],[2,1,1,2,0],[0,2,1,0,2],[0,1,2,1,0]])
 B=matrix(GF(3),[[1,1,0,1,2],[1,2,2,1,0],[1,0,1,2,0],[2,2,0,0,0]]) 
 P*A==B
 </script>
-</div> </li>
-</ol>
-:::
 :::
 
-::: {#exr-6 .cuerpo_finito-avanzado}
+</li>
+</ol>
+::::
+:::::
+
+::::: {#exr-6 .cuerpo_finito-avanzado}
 
 Sea $$A=\left (\begin{array}{cccc} 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 & 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)$$
 
@@ -1226,14 +1232,16 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(GF(5),[[2,1,3,0],[1,2,1,1],[3,4,2,1]]) 
 B=matrix(GF(5),[[1,3,2],[4,4,1],[0,0,0],[1,0,1]]) 
 I=matrix(GF(5),[[1,0,0],[0,1,0],[0,0,1]])
 A*B==I
 </script>
-</div> </li>
+:::
+
+</li>
 
 <li>Todas las matrices $B$ que cumplen la propiedad anterior.
 En realidad el planteamiento es sencillo, sería resolver:
@@ -1366,17 +1374,17 @@ en este caso, por los órdenes de $A$ y $C$ su rango máximo posible es $3$, lue
 
 También es posible plantearlo de una forma similar al apartado 2, al resolver los sistemas encontraremos que son incompatibles.</li>
 </ol>
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-7 .basico}
+::::: {#exr-7 .basico}
 
 Dado el sistema de ecuaciones con coeficientes en $\mathbb{Q}$
 $$\left\{\begin{aligned} x - ay + (a+1)z & = 4, \\ ax + 2y + z & = -1. \end{aligned}\right.$$
 Discútelo según los valores del parámetro $a$, y resuélvelo para $a=-1$.
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 
 En este tipo de ejercicio utilizaremos el Teorema de Rouché-Frobenius  junto a los distintos métodos para calcular el rango de una matriz.
@@ -1456,23 +1464,23 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[1,1,0],[-1,2,1]]) #matriz de coeficientes
 b=vector(QQ,[4,-1]) #término independiente
 Ab=A.augment(b,subdivide=True) #matriz aumentada
 show(Ab,"~",Ab.rref())
 </script>
-</div>  
 :::
-:::
+::::
+:::::
 
-::: {#exr-8 .cuerpo_finito-medio}
+::::: {#exr-8 .cuerpo_finito-medio}
 
 Calcula el rango de la siguiente matriz, con coeficientes en $\mathbb{Z}_3$, según los valores de los parámetros $a$ y $b$.
 $$\begin{pmatrix} 1 & a & 0 & 1 \\ 2 & 1 & 1 & b \\ 0 & a & b & a+b \end{pmatrix}$$
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 
 El rango máximo posible de esta matriz es 3. Elegimos una submatriz cuadrada de orden 3 y calculamos su determinante. Escogemos una que a priori sepamos que su determinante no sea nulo y que sea fácil de calcular.
@@ -1543,11 +1551,11 @@ $$
 $$
 
 que también tiene rango 2 (recordemos que estamos en $\mathbb{Z}_3$).
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-9 .basico}
+::::: {#exr-9 .basico}
 
 Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).$$
 <ol type="a">
@@ -1556,7 +1564,7 @@ Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\
 <li>Discute el sistema de ecuaciones con matriz ampliada $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Determinante.
@@ -1679,11 +1687,11 @@ $$
 
 y de nuevo aparece la ecuación $0=1$ con lo que en este caso es incompatible.</li>
 </ol>
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-10 .medio}
+::::: {#exr-10 .medio}
 
 Sea 
 
@@ -1707,7 +1715,7 @@ $$
 <li>Discute el sistema de ecuaciones según los valores de $a$.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Determinante:
@@ -1779,12 +1787,14 @@ Así, si $a=1$ el rango es $3$.
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[1,1,1,0],[1,0,1,1],[1,1,1,0],[1,1,0,0]]) #matriz de coeficientes
 show(A,"~",A.rref())
 </script>
-</div>  </li>
+:::
+
+</li>
 
 <li>Forma de Hermite por filas.
 Cuando $a\not = 1$ como el rango es $4$, la forma de Hermite por filas es $I_4$, para $a=1$ es la calculada en el apartado anterior.</li>
@@ -1792,11 +1802,11 @@ Cuando $a\not = 1$ como el rango es $4$, la forma de Hermite por filas es $I_4$,
 <li>Discusión del sistema.
 Como la matriz ampliada del sistema es $A$, entonces cuando $a\not = 1$ la matriz ampliada tiene rango 4 mientras que la de coeficientes como máximo podría tener rango 3, así que el sistema es incompatible; en el caso $a=1$, usando la forma de Hermite por filas de $A$ que hemos calculado observamos que el sistema es compatible determinado.</li>
 </ol>
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-11 .avanzado}
+::::: {#exr-11 .avanzado}
 
 Dadas las matrices 
 
@@ -1819,7 +1829,7 @@ $$
 <li>Para $a=1$ calcula la forma de Hermite por columnas de $B$, que llamaremos $H$, y $P$ regular tal que $H=BP$.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Calcular los valores de $a$ para los que $A$ y $B$ son equivalentes.<br>
@@ -1863,12 +1873,12 @@ así que para $a=2$ tiene rango 2.
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[1,0,1,2],[1,1,0,1],[1,1,0,1]]) #matriz de coeficientes
 show(A,"~",A.rref())
 </script>
-</div>
+:::
 
 Para $B$ observamos que tiene tres columnas idénticas, por lo que el rango máximo puede ser dos. También podemos calcular su forma de Hermite por filas 
 
@@ -1937,11 +1947,11 @@ P=\begin{pmatrix}
 $$
 </li>
 </ol>
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-12 .medio}
+::::: {#exr-12 .medio}
 
 Dada la matriz
 
@@ -1960,7 +1970,7 @@ $$
 <li>Discute el sistema cuya matriz ampliada es $A$ en función de los valores de $a$.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Calcular el determinante.
@@ -2025,12 +2035,12 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[1,-1,0,1],[-1,-1,0,1],[0,-2,0,1],[1,0,0,3]])
 show(A,"~",A.rref())
 </script>
-</div>  
+:::
 
 Si $a=1$
 
@@ -2060,12 +2070,12 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[1,0,1,1],[-1,0,1,1],[0,0,2,1],[1,0,2,3]])
 show(A,"~",A.rref())
 </script>
-</div>  
+:::
 </li>
 
 <li>Discutir el sistema cuya matriz ampliada es $A$ en función de los valores de $a$.<br>
@@ -2107,11 +2117,11 @@ $$
 
 también es incompatible.</li>
 </ol>
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-13 .medio}
+::::: {#exr-13 .medio}
 Para las matrices:
 
 $$
@@ -2141,7 +2151,7 @@ Razonar que
 no pueden existir matrices regulares $P$ y $Q$ de forma que:
 $Q\cdot B \cdot P=C$
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 El rango de $A$ es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como $C$ es de rango dos y del mismo orden, entonces $A$ y $C$ son equivalentes y por tanto existen matrices regulares $Q$ y $P$ verificando $Q\, A \, P=C$. Sin embargo $B$ tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con $C$.<br>
 
@@ -2229,11 +2239,11 @@ P=\left(\begin{array}{ccc}
 0 & 0 & 1
 \end{array}\right).
 $$
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-14 .medio}
+::::: {#exr-14 .medio}
 
 Dada la matriz
 
@@ -2253,7 +2263,7 @@ $$
 <li>Para $a=-2$ calcula la forma de Hermite por filas de $A$.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Calcular el determinante de $A$.<br>
@@ -2382,19 +2392,19 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix(QQ,[[-2,1,0,1],[1,-2,0,1],[1,0,-2,1],[1,0,1,-2]])
 show(A,"~",A.rref())
 </script>
-</div>  
+:::
 </li>
 </ol>
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-15 .avanzado}
+::::: {#exr-15 .avanzado}
 
 Se consideran las matrices:
 
@@ -2417,7 +2427,7 @@ $$
 <li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ de forma que $B=A\cdot P$.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Determinar para qué valores del parámetro $a$ es la matriz $A$ invertible.<br>
@@ -2478,12 +2488,12 @@ $$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 B=matrix([[2,3,4],[-2,-3,-4],[3,4,5]])
 show(B,"~",(B.T).rref().T)
 </script>
-</div> 
+:::
 
 Puesto que $\operatorname{rg}(B)=2$ solo es posible que sean equivalentes por columnas cuando $a=0$ o $a=1$, porque en otro caso $A$ tiene rango tres.<br>
 Calculamos la forma de Hermite de $A$ en ambos casos:
@@ -2525,11 +2535,11 @@ $$
 que existe, aunque no es regular porque $B$ no lo es. Así que existe una tal $P$ para todo $a$ salvo $a=0$.
 </li>
 </ol>
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-16 .basico}
+::::: {#exr-16 .basico}
 
 Discutir en función de los parámetros $a$ y $b$ el sistema de ecuaciones lineales:
 
@@ -2545,7 +2555,7 @@ $$
 
 y resolverlo en aquellos casos en que sea compatible.
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 La matriz de coeficientes del sistema 
 
@@ -2597,11 +2607,11 @@ y el conjunto de soluciones es
 $$
 \left\{ \left(1-\lambda-\frac{1}{a-1}  , \lambda, \frac{1}{a-1}\right); \lambda \in \mathbb{R} \right\}.
 $$
-:::
-:::
+::::
+:::::
 
 
-::: {#exr-17 .medio}
+::::: {#exr-17 .medio}
 
 Dadas las matrices 
 $$
@@ -2627,7 +2637,7 @@ $$
 <li>Para la pareja de valores $a=0$, $b=1$, calcula una matriz $Q$ tal que $QA=B$.</li>
 </ol>
 
-::: {.callout collapse="true" title="Solución"}
+:::: {.callout collapse="true" title="Solución"}
 
 
 <ol type="a">
@@ -2680,13 +2690,12 @@ tiene también rango tres y la anterior es su forma de Hermite por filas.<br>
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 A=matrix([[1,0,-1],[0,1,1],[1,-1,0],[0,0,0]])
 show(A,"~",A.rref())
 </script>
-</div>  
-
+:::
 
 Para $a=-1$
 
@@ -2764,12 +2773,12 @@ que tiene rango dos y tenemos su forma de Hermite por filas.<br>
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-<div class="sage">
+::: {.sage}
 <script type="text/x-sage">
 B=matrix([[1,-1,1],[1,1,0],[0,0,0],[0,0,0]])
 show(B,"~",B.rref())
 </script>
-</div>  
+:::
 
 Por tanto, concluimos que si $a=-1$ y $b=0$, o bien, $a\neq-1$ y $b\neq0$, son equivalentes mientras que si $a=-1$ y $b\neq0$, o bien, $a\neq-1$ y $b=0$, no son equivalentes.
 </li>
@@ -2800,5 +2809,5 @@ $$
 Igualando y despejando $B$ sería $Q=Q_{2}^{-1}Q_{1}$. 
 </li>
 </ol>
-:::
-:::
+::::
+:::::
