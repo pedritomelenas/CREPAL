@@ -16,8 +16,7 @@ include-in-header: includes-header.html
 Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>
 <input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. 
 
-
-<article>
+::::: {#exr-1}
 
 En $\mathbb{R}^4$ se considera el conjunto 
 $$
@@ -94,9 +93,11 @@ b & 0 & 0 & 0
 y es inmediato que el rango es dos. 
 
 </details>
-</article>
+:::::
 
-<article class="cuerpo_finito" style="display:block;">
+
+::::: {#exr-2 .cuerpo_finito}
+
 Estudia si los siguientes conjuntos de vectores son
 linealmente independientes o linealmente dependientes (se recomienda usar coordenadas en las bases más adecuadas).
 
@@ -242,7 +243,8 @@ show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
 
 </ol>
 </details>
-</article>
+
+:::::
 
 <article>
 calcula las matrices de cambio de base para las bases de $\mathbb{R}^{3}$:
