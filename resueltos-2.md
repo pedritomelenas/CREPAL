@@ -13,7 +13,6 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
-Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>
 <input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. 
 
 ::::: {#exr-1}
