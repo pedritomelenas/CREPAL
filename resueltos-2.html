@@ -306,8 +306,8 @@ window.Quarto = {
 
 <!-- LTeX: language=es-ES --->
 <p>Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br> <input type="checkbox" id="casilla_cf" value="cfon" checked="" onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos.</p>
-<article>
-<p>En <span class="math inline">\(\mathbb{R}^4\)</span> se considera el conjunto <span class="math display">\[
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> En <span class="math inline">\(\mathbb{R}^4\)</span> se considera el conjunto <span class="math display">\[
 \{(b,0,a,b),(0,a,1+a,0),(0,1,1+a,0),(0,1+a,2+2a,1-a)\}.
 \]</span> ¿Cuál es el número máximo de vectores linealmente independientes que puede contener dicho conjunto, según los valores de a y b?</p>
 <details>
@@ -391,9 +391,9 @@ b &amp; 0 &amp; 0 &amp; 0\\
 b &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)\]</span> y es inmediato que el rango es dos.</p>
 </details>
-</article>
-<article class="cuerpo_finito" style="display:block;">
-<p>Estudia si los siguientes conjuntos de vectores son linealmente independientes o linealmente dependientes (se recomienda usar coordenadas en las bases más adecuadas).</p>
+</div>
+<div id="exr-2" class="cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Estudia si los siguientes conjuntos de vectores son linealmente independientes o linealmente dependientes (se recomienda usar coordenadas en las bases más adecuadas).</p>
 <ol type="a">
 <li>
 <p>En el conjunto de polinomios de <span class="math inline">\(\mathbb{R}[x]\)</span> con grado menor o igual que dos:</p>
@@ -515,7 +515,7 @@ show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
 </div>
 </ol>
 </details>
-</article>
+</div>
 <article>
 <p>calcula las matrices de cambio de base para las bases de <span class="math inline">\(\mathbb{R}^{3}\)</span>:</p>
 <p><span class="math display">\[B=\{(4,0,7);\ (2,1,1);\ (3,1,3)\},\quad B'=\{(1,0,2);\ (4,1,5);\ (1,0,3)\}.\]</span></p>
