@@ -24,7 +24,7 @@ A=\left(
 0 & a & 0 \\
 1 & 0 & 0 
 \end{array}\right)
-\hspace{1cm} \mbox{ con } a\not = 0
+\hspace{1em} \mbox{ con } a\not = 0.
 $$
 
 <ol type="a">
@@ -430,7 +430,7 @@ D=\begin{pmatrix}
  0 & 1 & 0 & 0\\
  0 & 0 & 2 & 0 \\
  0 & 0 & 0 & 2
- \end{pmatrix}, \hspace{1cm} P=\begin{pmatrix}
+ \end{pmatrix}, \hspace{1em} P=\begin{pmatrix}
  1 & 3 & 1 & 0\\
  -1 & 0 & 0 & 1\\
  0 & 2 & 1 & 0 \\
@@ -995,7 +995,7 @@ P=\begin{pmatrix}
 0 & 1/\sqrt{2} & 0 & 1/\sqrt{2} \\
 0 & -1/\sqrt{2} & 0 & 1/\sqrt{2} \\
 0 & 0 & 1 & 0
-\end{pmatrix}, \hspace{1cm } D=\begin{pmatrix}
+\end{pmatrix}, \hspace{1em } D=\begin{pmatrix}
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 \\
