@@ -305,16 +305,17 @@ window.Quarto = {
 
 
 <!-- LTeX: language=es-ES --->
-<!--En principio se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>
-<input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. -->
-<article>
-<p>En <span class="math inline">\(\mathbb{R}^4\)</span> con el producto escalar usual se consideran los subespacios: <span class="math display">\[
+<!--<input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. -->
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> En <span class="math inline">\(\mathbb{R}^4\)</span> con el producto escalar usual se consideran los subespacios:</p>
+<p><span class="math display">\[
 U\equiv \left\{ \begin{aligned}
 x+t&amp;=0,\\
 y+z&amp;=0,\\
 x-y-z+t&amp;=0.
 \end{aligned}\right.
-\qquad  W=\mathcal{L}((1,0,0,1),(0,0,1,-1)).\]</span></p>
+\qquad  W=\mathcal{L}((1,0,0,1),(0,0,1,-1)).
+\]</span></p>
 <ol type="a">
 <li>
 Calcula una base ortogonal de cada uno de ellos.
@@ -326,13 +327,24 @@ Prueba que <span class="math inline">\(U\)</span> y <span class="math inline">\(
 Para el vector <span class="math inline">\(v=(1,-1,1,1)\)</span> calcula <span class="math inline">\(p_{U}(v)\)</span> y <span class="math inline">\(p_{U^{\perp}}(v)\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular una base ortogonal.<br> Para calcular una base ortogonal de <span class="math inline">\(U\)</span> empezamos simplificando las ecuaciones cartesianas y obteniendo una base: <span class="math display">\[U\equiv \left\{ \begin{array}{rl}
+<p>Calcular una base ortogonal.</p>
+<p>Para calcular una base ortogonal de <span class="math inline">\(U\)</span> empezamos simplificando las ecuaciones cartesianas y obteniendo una base:</p>
+<p><span class="math display">\[
+U\equiv \left\{ \begin{array}{rl}
 x+t&amp;=0,\\
 y+z&amp;=0,\\
 x-y-z+t&amp;=0.
@@ -340,17 +352,33 @@ x-y-z+t&amp;=0.
 x+t&amp;=0,\\
 y+z&amp;=0.\\
 \end{array}\right.
-\]</span> Podemos calcular una base usando como parámetros a <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>: <span class="math inline">\(\{ (1,0,0,-1),(0,1,-1,0)\}\)</span>; además esta base resulta ser ortogonal.<br> Para <span class="math inline">\(W\)</span> ya tenemos un sistema de generadores y observamos que son linealmente independientes; pero no son ortogonales, así que utilizamos el método de Gram-Schimdt partiendo de estos vectores: <span class="math display">\[\begin{array}{l}
+\]</span></p>
+<p>Podemos calcular una base usando como parámetros a <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>: <span class="math inline">\(\{ (1,0,0,-1),(0,1,-1,0)\}\)</span>; además esta base resulta ser ortogonal.</p>
+<p>Para <span class="math inline">\(W\)</span> ya tenemos un sistema de generadores y observamos que son linealmente independientes; pero no son ortogonales, así que utilizamos el método de Gram-Schimdt partiendo de estos vectores:</p>
+<p><span class="math display">\[
+\begin{array}{l}
 u_1=(1,0,0,1),\\
 u_2=(0,0,1,-1),
 \end{array}\hspace{1cm}
 \begin{array}{l}
 e_1=(1,0,0,1),\\
 e_2=(0,0,1,-1)+\lambda_{2,1}(1,0,0,1).
-\end{array}\]</span> Calculamos <span class="math display">\[\lambda_{2,1}=-\frac{\langle(0,0,1,-1),(1,0,0,1)\rangle}{\langle(1,0,0,1),(1,0,0,1)\rangle}=-\frac{-1}{2}=\frac{1}{2}.\]</span> Así que la base ortogonal de <span class="math inline">\(W\)</span> que obtenemos es: <span class="math display">\[\{(1,0,0,1),(1/2,0,1,-1/2)\}.\]</span>
+\end{array}
+\]</span></p>
+<p>Calculamos</p>
+<p><span class="math display">\[
+\lambda_{2,1}=-\frac{\langle(0,0,1,-1),(1,0,0,1)\rangle}{\langle(1,0,0,1),(1,0,0,1)\rangle}=-\frac{-1}{2}=\frac{1}{2}
+\]</span></p>
+<p>Así que la base ortogonal de <span class="math inline">\(W\)</span> que obtenemos es:</p>
+<p><span class="math display">\[
+\{(1,0,0,1),(1/2,0,1,-1/2)\}.
+\]</span></p>
 </li>
 <li>
-<p>Probar que <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son complementarios, pero que <span class="math inline">\(U^{\perp}\not = W\)</span>.<br> Son complementarios si <span class="math inline">\(U+W=\mathbb{R}^4\)</span> y <span class="math inline">\(U\cap W=\{ 0 \}\)</span>. Calculamos <span class="math inline">\(U+W\)</span> reuniendo bases: <span class="math display">\[\begin{pmatrix}
+<p>Probar que <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son complementarios, pero que <span class="math inline">\(U^{\perp}\not = W\)</span>.</p>
+<p>Son complementarios si <span class="math inline">\(U+W=\mathbb{R}^4\)</span> y <span class="math inline">\(U\cap W=\{ 0 \}\)</span>. Calculamos <span class="math inline">\(U+W\)</span> reuniendo bases:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; -1 &amp; 0 &amp; 1\\
@@ -370,7 +398,8 @@ e_2=(0,0,1,-1)+\lambda_{2,1}(1,0,0,1).
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}.\]</span></p>
+\end{pmatrix}.
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -378,23 +407,46 @@ A=matrix([[1,0,1,0],[0,1,0,0],[0,-1,0,1],[-1,0,1,-1]])
 show(A,"~",((A.T).rref()).T)
 </script>
 </div>
-y obtenemos que <span class="math inline">\(U+W=\mathbb{R}^4\)</span> puesto que obtenemos la base canónica. Ahora usando la fórmula de las dimensiones <span class="math display">\[\operatorname{dim}(U) + \operatorname{dim}(W) = \operatorname{dim}(U+W)+ \operatorname{dim}(U\cap W)\]</span> obtenemos que <span class="math inline">\(\operatorname{dim}(U\cap W)=0\)</span> y por tanto <span class="math inline">\(U\cap W=\{ 0 \}\)</span>. Sin embargo, como <span class="math inline">\(\langle (1,0,0,-1),(0,0,1,-1)\rangle =1\)</span> y <span class="math inline">\((1,0,0,-1)\in U\)</span> y <span class="math inline">\((0,0,1,-1)\in W\)</span>, entonces <span class="math inline">\(W\not = U^{\perp}\)</span>.
+<p>y obtenemos que <span class="math inline">\(U+W=\mathbb{R}^4\)</span> puesto que obtenemos la base canónica. Ahora usando la fórmula de las dimensiones</p>
+<p><span class="math display">\[
+\operatorname{dim}(U) + \operatorname{dim}(W) = \operatorname{dim}(U+W)+ \operatorname{dim}(U\cap W)
+\]</span></p>
+obtenemos que <span class="math inline">\(\operatorname{dim}(U\cap W)=0\)</span> y por tanto <span class="math inline">\(U\cap W=\{ 0 \}\)</span>. Sin embargo, como <span class="math inline">\(\langle (1,0,0,-1),(0,0,1,-1)\rangle =1\)</span> y <span class="math inline">\((1,0,0,-1)\in U\)</span> y <span class="math inline">\((0,0,1,-1)\in W\)</span>, entonces <span class="math inline">\(W\not = U^{\perp}\)</span>.
 </li>
 <li>
-Calcular <span class="math inline">\(p_{U}(v)\)</span> y <span class="math inline">\(p_{U^{\perp}}(v)\)</span>.<br> De la base de <span class="math inline">\(U\)</span> obtenemos las cartesianas de <span class="math inline">\(U^{\perp}\)</span> que son: <span class="math display">\[U^{\perp}\equiv \left\{ \begin{array}{rl}
+<p>Calcular <span class="math inline">\(p_{U}(v)\)</span> y <span class="math inline">\(p_{U^{\perp}}(v)\)</span>.</p>
+<p>De la base de <span class="math inline">\(U\)</span> obtenemos las cartesianas de <span class="math inline">\(U^{\perp}\)</span> que son:</p>
+<p><span class="math display">\[
+U^{\perp}\equiv \left\{ \begin{array}{rl}
 x-t&amp;=0,\\
 y-z&amp;=0.\\
-\end{array}\right.\]</span> Escribimos ahora <span class="math inline">\(v=p_{U}(v)+p_{U^{\perp}}\)</span> usando 4 incógnitas <span class="math display">\[(1,-1,1,1)=(\alpha, \beta, \gamma, \delta)+ (1-\alpha, -1-\beta,1-\gamma, 1-\delta)\]</span> e imponemos las condiciones de que el primero cumpla las cartesianas de <span class="math inline">\(U\)</span> y el segundo las de <span class="math inline">\(U^{\perp}\)</span> y resolvemos: <span class="math display">\[\begin{array}{r}
+\end{array}\right.
+\]</span></p>
+<p>Escribimos ahora <span class="math inline">\(v=p_{U}(v)+p_{U^{\perp}}\)</span> usando 4 incógnitas</p>
+<p><span class="math display">\[
+(1,-1,1,1)=(\alpha, \beta, \gamma, \delta)+ (1-\alpha, -1-\beta,1-\gamma, 1-\delta)
+\]</span></p>
+<p>e imponemos las condiciones de que el primero cumpla las cartesianas de <span class="math inline">\(U\)</span> y el segundo las de <span class="math inline">\(U^{\perp}\)</span> y resolvemos:</p>
+<p><span class="math display">\[
+\begin{array}{r}
 \alpha +\delta = 0,\\
 -\alpha + \delta = 0,\\
 \beta + \gamma = 0,\\
 -1-\beta -1+ \gamma = 0,
-\end{array}\]</span> y resulta <span class="math inline">\(\alpha= 0, \beta=-1, \gamma = 1, \delta= 0\)</span>, así que: <span class="math display">\[p_U(1,-1,1,1)=(0,-1,1,0); \, \, p_{U^{\perp}}(1,-1,1,1)=(1,0,0,1).\]</span>
+\end{array}
+\]</span></p>
+<p>y resulta <span class="math inline">\(\alpha= 0, \beta=-1, \gamma = 1, \delta= 0\)</span>, así que:</p>
+<p><span class="math display">\[
+p_U(1,-1,1,1)=(0,-1,1,0); \, \, p_{U^{\perp}}(1,-1,1,1)=(1,0,0,1).
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
 En <span class="math inline">\(\mathbb{R}^{3}\)</span>, dado el subespacio <span class="math inline">\(U\equiv \left\{ \begin{array}{l}
@@ -412,16 +464,34 @@ Consideramos en <span class="math inline">\(\mathbb{R}^{2}\)</span> el producto 
 \end{pmatrix}\)</span>. Calcula una base de <span class="math inline">\(\mathbb{R}^{2}\)</span> respecto de la cual la matriz de Gram de este producto escalar sea <span class="math inline">\(I_2\)</span>.
 </li>
 <li>
-Determina, en función de <span class="math inline">\(b\)</span>, la signatura de la forma cuadrática <span class="math inline">\(\phi:\mathbb{R}^{2} \to \mathbb{R}\)</span> dada por <span class="math display">\[\phi(x,y)= bxy.\]</span>
+<p>Determina, en función de <span class="math inline">\(b\)</span>, la signatura de la forma cuadrática <span class="math inline">\(\phi:\mathbb{R}^{2} \to \mathbb{R}\)</span> dada por</p>
+<p><span class="math display">\[
+\phi(x,y)= bxy.
+\]</span></p>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular <span class="math inline">\(p_{U^{\perp}}(0,1,2)\)</span>.<br> Una base de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{(1,-1,-1)\}\)</span> y por tanto <span class="math inline">\(U^{\perp}\equiv x-y-z=0\)</span>, descomponemos <span class="math display">\[(0,1,2)=(a,b,c)+(-a,1-b,2-c),\]</span> e imponemos al primer vector que esté en <span class="math inline">\(U\)</span> y al segundo que esté en <span class="math inline">\(W\)</span>: <span class="math display">\[\left\{ \begin{array}{l}
+<p>Calcular <span class="math inline">\(p_{U^{\perp}}(0,1,2)\)</span>.</p>
+<p>Una base de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{(1,-1,-1)\}\)</span> y por tanto <span class="math inline">\(U^{\perp}\equiv x-y-z=0\)</span>, descomponemos</p>
+<p><span class="math display">\[
+(0,1,2)=(a,b,c)+(-a,1-b,2-c),
+\]</span></p>
+<p>e imponemos al primer vector que esté en <span class="math inline">\(U\)</span> y al segundo que esté en <span class="math inline">\(W\)</span>:</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
 a+b=0,\\
 a+c=0,\\
 -a-1+b-2+c=0.
@@ -433,19 +503,41 @@ c=-a,\\
 a=-1,\\
 b=1,\\
 c=1.
-\end{array}\right. \]</span> Así <span class="math inline">\(p_{U^{\perp}}(0,1,2)=(1,0,1)\)</span>.
+\end{array}\right.
+\]</span></p>
+Así <span class="math inline">\(p_{U^{\perp}}(0,1,2)=(1,0,1)\)</span>.
 </li>
 <li>
-Calcular las coordenadas respecto de la base <span class="math inline">\(B'\)</span> del vector <span class="math inline">\(v\)</span>.<br> Como <span class="math inline">\(B'=\{(1,1)_B, (2,-1)_B\}\)</span>, planteamos <span class="math display">\[(1,-1)_B=a(1,1)_B+b(2,-1)_B\]</span> y resolvemos <span class="math display">\[\left\{ \begin{array}{l}
+<p>Calcular las coordenadas respecto de la base <span class="math inline">\(B'\)</span> del vector <span class="math inline">\(v\)</span>.</p>
+<p>Como <span class="math inline">\(B'=\{(1,1)_B, (2,-1)_B\}\)</span>, planteamos</p>
+<p><span class="math display">\[
+(1,-1)_B=a(1,1)_B+b(2,-1)_B
+\]</span></p>
+<p>y resolvemos</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
 a+2b=1,\\
 a-b=-1.
 \end{array}\right.\sim_f  \left\{ \begin{array}{l}
 a=-1/3,\\
 b=2/3.
-\end{array}\right.\]</span> Luego <span class="math inline">\(v=(-1/3,2/3)_{B'}\)</span>.
+\end{array}\right.
+\]</span></p>
+Luego <span class="math inline">\(v=(-1/3,2/3)_{B'}\)</span>.
 </li>
 <li>
-Calcular una base de <span class="math inline">\(\mathbb{R}^{2}\)</span> respecto de la cual la matriz de Gram sea <span class="math inline">\(I_2\)</span>.<br> Que la matriz de Gram sea la identidad significa que la base sea ortonormal. En primer lugar, aplicamos Gram-Schmidt para calcular una base ortogonal. Partimos por ejemplo de la base canónica: <span class="math display">\[u_1=(1,0), u_2=(0,1).\]</span> Entonces <span class="math inline">\(e_1=(1,0)\)</span> y <span class="math inline">\(e_2=(0,1)+\lambda_{21}(1,0)\)</span> donde <span class="math display">\[\lambda_{21}=-\frac{\langle u_2,e_1\rangle }{\langle e_1,e_1\rangle }=-\frac{1}{1}=-1,\]</span> donde los datos se han recogido de la matriz de Gram respecto de <span class="math inline">\(B_c\)</span>. Por tanto una base ortogonal es <span class="math inline">\(\{(1,0),(-1,1)\}\)</span>, el primero tiene norma 1, calculamos la del segundo: <span class="math display">\[\begin{pmatrix}
+<p>Calcular una base de <span class="math inline">\(\mathbb{R}^{2}\)</span> respecto de la cual la matriz de Gram sea <span class="math inline">\(I_2\)</span>.</p>
+<p>Que la matriz de Gram sea la identidad significa que la base sea ortonormal. En primer lugar, aplicamos Gram-Schmidt para calcular una base ortogonal. Partimos por ejemplo de la base canónica:</p>
+<p><span class="math display">\[
+u_1=(1,0), u_2=(0,1).
+\]</span></p>
+<p>Entonces <span class="math inline">\(e_1=(1,0)\)</span> y <span class="math inline">\(e_2=(0,1)+\lambda_{21}(1,0)\)</span> donde</p>
+<p><span class="math display">\[
+\lambda_{21}=-\frac{\langle u_2,e_1\rangle }{\langle e_1,e_1\rangle }=-\frac{1}{1}=-1,
+\]</span></p>
+<p>donde los datos se han recogido de la matriz de Gram respecto de <span class="math inline">\(B_c\)</span>. Por tanto una base ortogonal es <span class="math inline">\(\{(1,0),(-1,1)\}\)</span>, el primero tiene norma 1, calculamos la del segundo:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 1
 \end{pmatrix}\begin{pmatrix}
 1 &amp; 1 \\
@@ -458,13 +550,22 @@ Calcular una base de <span class="math inline">\(\mathbb{R}^{2}\)</span> respect
 \end{pmatrix} \begin{pmatrix}
 -1\\
 1
-\end{pmatrix}=1\]</span> Así que esta base es ortonormal.
+\end{pmatrix}=1.
+\]</span></p>
+Así que esta base es ortonormal.
 </li>
 <li>
-Determinar, en función de <span class="math inline">\(b\)</span>, la signatura de la forma cuadrática <span class="math inline">\(\phi\)</span>.<br> La matriz asociada a la forma cuadrática es <span class="math display">\[\begin{pmatrix}
+<p>Determinar, en función de <span class="math inline">\(b\)</span>, la signatura de la forma cuadrática <span class="math inline">\(\phi\)</span>.</p>
+<p>La matriz asociada a la forma cuadrática es</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 0 &amp; b/2\\
 b/2 &amp; 0
-\end{pmatrix}\]</span> que podemos diagonalizar por congruencia <span class="math display">\[\begin{pmatrix}
+\end{pmatrix}
+\]</span></p>
+<p>que podemos diagonalizar por congruencia</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 0 &amp; b/2\\
 b/2 &amp; 0
 \end{pmatrix}\sim_f \begin{pmatrix}
@@ -479,13 +580,22 @@ b &amp; b/2\\
 \end{pmatrix}\sim_c\begin{pmatrix}
 b &amp; 0\\
 0 &amp; -b/4
-\end{pmatrix}\]</span> Si <span class="math inline">\(b=0\)</span> la signatura es <span class="math inline">\((0,0)\)</span>; si <span class="math inline">\(b\not = 0\)</span> la signatura es <span class="math inline">\((1,1)\)</span>.<br> También pueden calcularse los valores propios que son <span class="math display">\[\lambda= \pm (b/4)\]</span> y queda el mismo resultado, por supuesto.
+\end{pmatrix}.
+\]</span></p>
+<p>Si <span class="math inline">\(b=0\)</span> la signatura es <span class="math inline">\((0,0)\)</span>; si <span class="math inline">\(b\not = 0\)</span> la signatura es <span class="math inline">\((1,1)\)</span>.</p>
+<p>También pueden calcularse los valores propios que son</p>
+<span class="math display">\[
+\lambda= \pm (b/4)
+\]</span> y queda el mismo resultado, por supuesto.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En el espacio vectorial <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de los polinomios de grado menor o igual que tres se considera el subespacio <span class="math inline">\(U\)</span> generado por <span class="math inline">\(x\)</span> y <span class="math inline">\(x^3\)</span> y el producto escalar dado por: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> En el espacio vectorial <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de los polinomios de grado menor o igual que tres se considera el subespacio <span class="math inline">\(U\)</span> generado por <span class="math inline">\(x\)</span> y <span class="math inline">\(x^3\)</span> y el producto escalar dado por:</p>
+<p><span class="math display">\[
 \langle p(x),q(x)\rangle = \int_{-1}^1 p(x)\cdot q(x) dx.
 \]</span></p>
 <ol type="a">
@@ -499,35 +609,60 @@ Determinar una base de su complementario, <span class="math inline">\(U^{\perp}\
 Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(1+x\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Determinar una base ortogonal de <span class="math inline">\(U\)</span>.<br> Como <span class="math inline">\(\{ x, x^3\}\)</span> es base, y <span class="math inline">\(\langle x,x^3 \rangle =\int_{-1}^1 x^4dx= \left. x^5\right]_{-1}^1=2/5\)</span> por lo que no es ortogonal. Usamos el algoritmo de Gram-Schmidt para calcular una:</p>
-<span class="math display">\[\begin{array}{lr}
+<p>Determinar una base ortogonal de <span class="math inline">\(U\)</span>.</p>
+<p>Como <span class="math inline">\(\{ x, x^3\}\)</span> es base, y <span class="math inline">\(\langle x,x^3 \rangle =\int_{-1}^1 x^4dx= \left. x^5\right]_{-1}^1=2/5\)</span> por lo que no es ortogonal. Usamos el algoritmo de Gram-Schmidt para calcular una:</p>
+<p><span class="math display">\[
+\begin{array}{lr}
 e_1=x, &amp; \\
-e_2=x^3+\lambda_{21}x,&amp; \lambda_{21}= \frac{- \langle x,x^3\rangle}{\langle x,x\rangle}.\\
-\end{array}\]</span> Calculamos <span class="math inline">\(\langle x,x\rangle =\int_{-1}^1 x^2dx= \left. x^3\right]_{-1}^1=2/3\)</span> luego una base ortogonal de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{x,x^3-3/5x\}\)</span>.
+e_2=x^3+\lambda_{21}x,&amp; \lambda_{21}= \frac{- \langle x,x^3\rangle}{\langle x,x\rangle}.
+\end{array}
+\]</span></p>
+Calculamos <span class="math inline">\(\langle x,x\rangle =\int_{-1}^1 x^2dx= \left. x^3\right]_{-1}^1=2/3\)</span> luego una base ortogonal de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{x,x^3-3/5x\}\)</span>.
 </li>
 <li>
-Determinar una base de su complementario, <span class="math inline">\(U^{\perp}\)</span>.<br> Podemos observar que <span class="math inline">\(\langle 1,x\rangle =\langle 1,x^3\rangle =0\)</span> y <span class="math inline">\(\langle x^2,x\rangle =\langle x^2,x^3\rangle =0\)</span> por lo que <span class="math inline">\(\{1,x^2\}\)</span> es una base de <span class="math inline">\(U^{\perp}\)</span>, ya que este subespacio debe tener dimensión dos.
+<p>Determinar una base de su complementario, <span class="math inline">\(U^{\perp}\)</span>.</p>
+Podemos observar que <span class="math inline">\(\langle 1,x\rangle =\langle 1,x^3\rangle =0\)</span> y <span class="math inline">\(\langle x^2,x\rangle =\langle x^2,x^3\rangle =0\)</span> por lo que <span class="math inline">\(\{1,x^2\}\)</span> es una base de <span class="math inline">\(U^{\perp}\)</span>, ya que este subespacio debe tener dimensión dos.
 </li>
 <li>
-Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(1+x\)</span>.<br> Puesto que tenemos bases sencillas de <span class="math inline">\(U\)</span> y de <span class="math inline">\(U^{\perp}\)</span> podemos expresar el polinomio dado como combinación lineal de todos ellos: <span class="math display">\[1+x=\alpha_1\cdot x +  \alpha_2\cdot x^3 + \alpha_3\cdot 1 +\alpha_4\cdot x^2\]</span> donde los dos primeros sumandos nos dan la proyección sobre <span class="math inline">\(U\)</span> y los dos últimos la proyección sobre <span class="math inline">\(U^{\perp}\)</span>. Es inmediato que <span class="math inline">\(\alpha_1=1\)</span>, <span class="math inline">\(\alpha_2=0\)</span>, <span class="math inline">\(\alpha_3=1\)</span> y <span class="math inline">\(\alpha_4=0\)</span>. Por tanto <span class="math display">\[p_U (1+x)=x.\]</span>
+<p>Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(1+x\)</span>.</p>
+<p>Puesto que tenemos bases sencillas de <span class="math inline">\(U\)</span> y de <span class="math inline">\(U^{\perp}\)</span> podemos expresar el polinomio dado como combinación lineal de todos ellos:</p>
+<p><span class="math display">\[
+1+x=\alpha_1\cdot x +  \alpha_2\cdot x^3 + \alpha_3\cdot 1 +\alpha_4\cdot x^2
+\]</span></p>
+<p>donde los dos primeros sumandos nos dan la proyección sobre <span class="math inline">\(U\)</span> y los dos últimos la proyección sobre <span class="math inline">\(U^{\perp}\)</span>. Es inmediato que <span class="math inline">\(\alpha_1=1\)</span>, <span class="math inline">\(\alpha_2=0\)</span>, <span class="math inline">\(\alpha_3=1\)</span> y <span class="math inline">\(\alpha_4=0\)</span>. Por tanto</p>
+<p><span class="math display">\[
+p_U (1+x)=x.
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En <span class="math inline">\(\mathbb{R}^{3}\)</span> se consideran el producto escalar cuya matriz de Gram respecto de la base canónica es <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> En <span class="math inline">\(\mathbb{R}^{3}\)</span> se consideran el producto escalar cuya matriz de Gram respecto de la base canónica es</p>
+<p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 1 &amp; 0\\
 1 &amp; 2 &amp; 0\\
 0 &amp; 0 &amp; 1
 \end{pmatrix}
-\]</span> y los subespacios <span class="math inline">\(U=L((1,1,2),(2,1,1))\)</span> y <span class="math inline">\(W=L((1,a,1))\)</span>, siendo <span class="math inline">\(a\)</span> un parámetro.</p>
+\]</span></p>
+<p>y los subespacios <span class="math inline">\(U=L((1,1,2),(2,1,1))\)</span> y <span class="math inline">\(W=L((1,a,1))\)</span>, siendo <span class="math inline">\(a\)</span> un parámetro.</p>
 <ol type="a">
 <li>
 Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U \cap W\)</span> en función de <span class="math inline">\(a\)</span>.
@@ -539,14 +674,24 @@ Calcular el complemento ortogonal de <span class="math inline">\(U\)</span>.
 Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\((5,-3,4)\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U \cap W\)</span> en función de <span class="math inline">\(a\)</span>.<br></p>
-<p>Los sistemas de generadores dados de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son bases, así que <span class="math inline">\(\operatorname{dim}(U)=2\)</span> y <span class="math inline">\(\operatorname{dim}(W)=1\)</span> para todos los valores de <span class="math inline">\(a\)</span>. Un sistema de generadores de <span class="math inline">\(U+W\)</span> se obtiene al reuinir bases de ambos, comprobaremos para qué valores de <span class="math inline">\(a\)</span> son linealmente independientes: <span class="math display">\[\left|\begin{array}{ccc}
+<p>Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U \cap W\)</span> en función de <span class="math inline">\(a\)</span>.</p>
+<p>Los sistemas de generadores dados de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son bases, así que <span class="math inline">\(\operatorname{dim}(U)=2\)</span> y <span class="math inline">\(\operatorname{dim}(W)=1\)</span> para todos los valores de <span class="math inline">\(a\)</span>. Un sistema de generadores de <span class="math inline">\(U+W\)</span> se obtiene al reuinir bases de ambos, comprobaremos para qué valores de <span class="math inline">\(a\)</span> son linealmente independientes:</p>
+<p><span class="math display">\[
+\left|\begin{array}{ccc}
 1 &amp; 2 &amp; 1\\
 1 &amp; 1 &amp; a\\
 2 &amp; 1 &amp; 1
@@ -555,12 +700,15 @@ Solución
 1 &amp; -1 &amp; a-1\\
 2 &amp; -3 &amp; -1
 \end{array}\right|=1+3(a-1)=3a-2.
-\]</span> Si <span class="math inline">\(a=2/3\)</span> la dimensión de <span class="math inline">\(U+W\)</span> es dos y por tanto <span class="math inline">\(U+W=U\)</span>, o lo que es lo mismo, <span class="math inline">\(W\subset U\)</span>, así que una base es, por ejemplo, <span class="math inline">\(\{ (1,1,2),(2,1,1)\}\)</span>, o también su base más sencilla que es <span class="math inline">\(\{(1,0,-1),(0,1,3)\}\)</span>. Por tanto <span class="math inline">\(U\cap W=W\)</span> y una base es <span class="math inline">\(\{(1,a,1)\}\)</span>. <br></p>
+\]</span></p>
+<p>Si <span class="math inline">\(a=2/3\)</span> la dimensión de <span class="math inline">\(U+W\)</span> es dos y por tanto <span class="math inline">\(U+W=U\)</span>, o lo que es lo mismo, <span class="math inline">\(W\subset U\)</span>, así que una base es, por ejemplo, <span class="math inline">\(\{ (1,1,2),(2,1,1)\}\)</span>, o también su base más sencilla que es <span class="math inline">\(\{(1,0,-1),(0,1,3)\}\)</span>. Por tanto <span class="math inline">\(U\cap W=W\)</span> y una base es <span class="math inline">\(\{(1,a,1)\}\)</span>.</p>
 Si <span class="math inline">\(a\not = 2/3\)</span> entonces <span class="math inline">\(\operatorname{dim}(U+W)=3\)</span> y por tanto <span class="math inline">\(U+W=\mathbb{R}^{3}\)</span> y una base es la canónica. Por la fórmula de las dimensiones <span class="math inline">\(\operatorname{dim}(U\cap W) + \operatorname{dim}(U+W)= d\operatorname{dim}(U) + \operatorname{dim}(W)\)</span> y por tanto <span class="math inline">\(U\cap W=\{0\}\)</span> que no tiene base.
 </li>
 <li>
-<p>Calcular el complemento ortogonal de <span class="math inline">\(U\)</span>.<br></p>
-Por cada vector de la base de <span class="math inline">\(U\)</span> obtenemos una cartesiana de <span class="math inline">\(U^{\perp}\)</span> imponiendo que el producto escalar sea cero (usamos la base más sencilla, aunque sirve cualquier otra): <span class="math display">\[(1,0,-1)\begin{pmatrix}
+<p>Calcular el complemento ortogonal de <span class="math inline">\(U\)</span>.</p>
+<p>Por cada vector de la base de <span class="math inline">\(U\)</span> obtenemos una cartesiana de <span class="math inline">\(U^{\perp}\)</span> imponiendo que el producto escalar sea cero (usamos la base más sencilla, aunque sirve cualquier otra):</p>
+<p><span class="math display">\[
+(1,0,-1)\begin{pmatrix}
 1 &amp; 1 &amp; 0\\
 1 &amp; 2 &amp; 0\\
 0 &amp; 0 &amp; 1
@@ -568,7 +716,10 @@ Por cada vector de la base de <span class="math inline">\(U\)</span> obtenemos u
 x\\
 y\\
 z
-\end{pmatrix}=0, \, \, \text{obteniendo   } \,  x+y-z=0;\]</span> <span class="math display">\[(0,1,3)\begin{pmatrix}
+\end{pmatrix}=0, \, \, \text{obteniendo   } \,  x+y-z=0;
+\]</span></p>
+<p><span class="math display">\[
+(0,1,3)\begin{pmatrix}
 1 &amp; 1 &amp; 0\\
 1 &amp; 2 &amp; 0\\
 0 &amp; 0 &amp; 1
@@ -576,24 +727,39 @@ z
 x\\
 y\\
 z
-\end{pmatrix}=0, \, \, \text{obteniendo   } \,  x+2y+3z=0.\]</span> Así que <span class="math display">\[U^{\perp}\equiv \left\{\begin{array}{r}
+\end{pmatrix}=0, \, \, \text{obteniendo   } \,  x+2y+3z=0.
+\]</span></p>
+<p>Así que</p>
+<p><span class="math display">\[
+U^{\perp}\equiv \left\{\begin{array}{r}
 x+y-z=0,\\
 x+2y+3z=0.
 \end{array}\right. \sim \left\{\begin{array}{r}
 x-5z=0,\\
 y+4z=0.
 \end{array}\right.
-\]</span> Y una base es <span class="math inline">\(\{ (5,-4,1)\}\)</span>.
+\]</span></p>
+Y una base es <span class="math inline">\(\{ (5,-4,1)\}\)</span>.
 </li>
 <li>
-<p>Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\((5,-3,4)\)</span>.<br></p>
-<p>Como sabemos una base (ortogonal, puesto que tiene un solo vector) de <span class="math inline">\(U^{\perp}\)</span> calculamos <span class="math display">\[p_{U^{\perp}}(5,-3,4)=\frac{\langle(5,-3,4)(5,-4,1)\rangle}{\langle(5,-4,1)(5,-4,1)\rangle}(5,-4,1)= \frac{18}{18}(5,-4,1)=(5,-4,1).\]</span> Luego <span class="math display">\[p_U(5,-3,4)=(5,-3,4)-p_{U^{\perp}}(5,-3,4)=(5,-3,4)-(5,-4,1)=(0,1,3).\]</span></p>
+<p>Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\((5,-3,4)\)</span>.</p>
+<p>Como sabemos una base (ortogonal, puesto que tiene un solo vector) de <span class="math inline">\(U^{\perp}\)</span> calculamos</p>
+<p><span class="math display">\[
+p_{U^{\perp}}(5,-3,4)=\frac{\langle(5,-3,4)(5,-4,1)\rangle}{\langle(5,-4,1)(5,-4,1)\rangle}(5,-4,1)= \frac{18}{18}(5,-4,1)=(5,-4,1).
+\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[
+p_U(5,-3,4)=(5,-3,4)-p_{U^{\perp}}(5,-3,4)=(5,-3,4)-(5,-4,1)=(0,1,3).
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Dada la matriz: <span class="math display">\[A=
+</div>
+</div>
+</div>
+</div>
+<div id="exr-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Dada la matriz:</p>
+<p><span class="math display">\[A=
 \begin{pmatrix}
 2 &amp; 0 &amp; 0 &amp; -1\\
 0 &amp; 2 &amp; -1 &amp; 0 \\
@@ -602,11 +768,21 @@ y+4z=0.
 \end{pmatrix}
 \]</span></p>
 <p>Razonar que es diagonalizable y determinar su forma diagonal y una matriz de paso, <span class="math inline">\(P\)</span>, verificando que <span class="math inline">\(P^{-1}=P^t\)</span>. ¿Cuál es la signatura de <span class="math inline">\(A\)</span>?</p>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
-<p>La matriz <span class="math inline">\(A\)</span> es simétrica y el Teorema espectral afirma que toda matriz simétrica y real es diagonali-zable, por tanto <span class="math inline">\(A\)</span> lo es. Nos piden una diagonalización por semejanza ortogonal, aí que tenemos que calcular en primer lugar los valores propios: <span class="math display">\[\begin{align*}
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La matriz <span class="math inline">\(A\)</span> es simétrica y el Teorema espectral afirma que toda matriz simétrica y real es diagonalizable, por tanto <span class="math inline">\(A\)</span> lo es. Nos piden una diagonalización por semejanza ortogonal, aí que tenemos que calcular en primer lugar los valores propios:</p>
+<p><span class="math display">\[
+\begin{align*}
 |A-\lambda I| &amp; =\left|
 \begin{array}{rrrr}
 2-\lambda &amp; 0 &amp; 0 &amp; -1\\
@@ -629,69 +805,124 @@ Solución
 0 &amp; 0 &amp; 0 &amp; 1-\lambda
 \end{array}\right|=(3-\lambda)(1-\lambda)[(2-\lambda)^2-1]=(3-\lambda)^2(1-\lambda)^2.
 \end{align*}
-\]</span> Tenemos entonces los valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=3\)</span> ambos con multiplicidad algebraica dos. Tenemos entonces que la matriz diagonal semejante y congruente con <span class="math inline">\(A\)</span> es <span class="math display">\[D=\begin{pmatrix}
+\]</span></p>
+<p>Tenemos entonces los valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=3\)</span> ambos con multiplicidad algebraica dos. Tenemos entonces que la matriz diagonal semejante y congruente con <span class="math inline">\(A\)</span> es</p>
+<p><span class="math display">\[
+D=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1&amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 3 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 3
-\end{pmatrix},\]</span> y por tanto la signatura de <span class="math inline">\(A\)</span> es <span class="math inline">\((4,0)\)</span>, por tanto definida positiva.<br> Calculamos ahora los subespacios propios y elgimos una base ortonormal de cada uno.<br></p>
-<p><strong><span class="math inline">\(V_{\lambda=1}\)</span></strong> <span class="math display">\[(A-1\cdot I)=\begin{pmatrix}
+\end{pmatrix},
+\]</span></p>
+<p>y por tanto la signatura de <span class="math inline">\(A\)</span> es <span class="math inline">\((4,0)\)</span>, por tanto definida positiva.</p>
+<p>Calculamos ahora los subespacios propios y elegimos una base ortonormal de cada uno.</p>
+<p><strong><span class="math inline">\(V_{\lambda=1}\)</span></strong></p>
+<p><span class="math display">\[
+(A-1\cdot I)=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; -1\\
 0 &amp; 1 &amp; -1 &amp; 0 \\
 0 &amp; -1 &amp; 1 &amp; 0 \\
 -1 &amp; 0 &amp; 0 &amp; 1
 \end{pmatrix},
-\]</span> nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
+\]</span></p>
+<p>nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
 x-t=0\\
 y-z=0
-\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,1),(0,1,1,0)\}\)</span>.<br></p>
-<p><strong><span class="math inline">\(V_{\lambda=3}\)</span></strong> <span class="math display">\[(A-1\cdot I)=\begin{pmatrix}
+\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,1),(0,1,1,0)\}\)</span>.</p>
+<p><strong><span class="math inline">\(V_{\lambda=3}\)</span></strong></p>
+<p><span class="math display">\[
+(A-1\cdot I)=\begin{pmatrix}
 -1 &amp; 0 &amp; 0 &amp; -1\\
 0 &amp; -1 &amp; -1 &amp; 0 \\
 0 &amp; -1 &amp; -1 &amp; 0 \\
 -1 &amp; 0 &amp; 0 &amp; -1
 \end{pmatrix},
-\]</span> nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
+\]</span></p>
+<p>nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
 x+t=0\\
 y+z=0
-\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,-1),(0,1,-1,0)\}\)</span>.<br> Dividiendo cada vector por su norma obtenemos una base ortonormal de vectores propios, lo que nos da la matriz ortogonal <span class="math inline">\(P\)</span>: <span class="math display">\[P=\begin{pmatrix}
+\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,-1),(0,1,-1,0)\}\)</span>.</p>
+<p>Dividiendo cada vector por su norma obtenemos una base ortonormal de vectores propios, lo que nos da la matriz ortogonal <span class="math inline">\(P\)</span>:</p>
+<p><span class="math display">\[
+P=\begin{pmatrix}
 1/\sqrt{2} &amp; 0 &amp; 0 &amp; 1/\sqrt{2}\\
 0 &amp; 1/\sqrt{2} &amp; 1/\sqrt{2} &amp; 0\\
 0 &amp; 1/\sqrt{2} &amp; -1/\sqrt{2} &amp; 0\\
 1/\sqrt{2} &amp; 0 &amp; 0 &amp; -1/\sqrt{2}\\
-\end{pmatrix}.\]</span></p>
-</details>
-</article>
-<article>
-<p>En <span class="math inline">\(\mathbb{R}^3\)</span> consideramos el producto escalar que, respecto de la base canónica, tiene matriz de Gram <span class="math display">\[G= \left(\begin{array}{rrr}
+\end{pmatrix}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> En <span class="math inline">\(\mathbb{R}^3\)</span> consideramos el producto escalar que, respecto de la base canónica, tiene matriz de Gram</p>
+<p><span class="math display">\[
+G= \left(\begin{array}{rrr}
 1 &amp; 1 &amp; 1\\
 1 &amp; 3 &amp; 0\\
 1 &amp; 0 &amp; 2
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <ol type="a">
 <li>
 Calcula una base ortogonal de este espacio vectorial.
 </li>
 <li>
-Calcula <span class="math inline">\(U^{\perp}\)</span> para el subespacio <span class="math display">\[U\equiv \left\{ \begin{array}{r}
+<p>Calcula <span class="math inline">\(U^{\perp}\)</span> para el subespacio</p>
+<p><span class="math display">\[
+U\equiv \left\{ \begin{array}{r}
 x+y+z=0,\\
 x-z=0.
-\end{array}\right.\]</span>
+\end{array}\right.
+\]</span></p>
 </li>
 <li>
 Calcula <span class="math inline">\(p_U(1,1,1)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1,1,1)\)</span>.
 </li>
 <li>
-Determina para qué valores de <span class="math inline">\(a\)</span> la fórmula <span class="math display">\[f(x,y,z)=x^2+2axy+2xz+2ay^2+(a+1)z^2,\]</span> define una forma cuadrática definida positiva.
+<p>Determina para qué valores de <span class="math inline">\(a\)</span> la fórmula</p>
+<p><span class="math display">\[
+f(x,y,z)=x^2+2axy+2xz+2ay^2+(a+1)z^2,
+\]</span></p>
+define una forma cuadrática definida positiva.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular una base ortogonal de este espacio vectorial.<br> Partimos de la base canónica de <span class="math inline">\(\mathbb{R}^{3}\)</span> y aplicamos Gram-Schmidt: <span class="math inline">\(\{u_1=(1,0,0), u_2=(0,1,0),  u_3=(0,0,1)\}\)</span>, <span class="math display">\[e_1=u_1=(1,0,0),\]</span> <span class="math inline">\(e_2=u_2+\lambda_{21}e_1,\)</span> necesitamos calcular <span class="math display">\[\lambda_{21}=\frac{-\langle u_2,e_1\rangle}{\langle e_1,e_1\rangle}=\frac{-1}{1}=-1,\]</span> puesto que tanto numerador como denominador aparecen en la matriz de Gram. Así <span class="math display">\[e_2=(0,1,0)-(1,0,0)=(-1,1,0),\]</span> ahora <span class="math inline">\(e_3=u_3+\lambda_{31}e_1+\lambda_{32}e_2\)</span>, y de nuevo numerador y denominador de <span class="math inline">\(\lambda_{31}\)</span> aparecen en la matriz de Gram: <span class="math display">\[\lambda_{31}=\frac{-\langle u_3,e_1\rangle}{\langle e_1,e_1\rangle}=\frac{-1}{1}=-1,\]</span> pero los de <span class="math inline">\(\lambda_{32}\)</span> deben ser calculados: <span class="math display">\[\langle u_3,e_2\rangle(0\, 0\, 1)\left(\begin{array}{rrr}
+<p>Calcular una base ortogonal de este espacio vectorial.</p>
+<p>Partimos de la base canónica de <span class="math inline">\(\mathbb{R}^{3}\)</span> y aplicamos Gram-Schmidt: <span class="math inline">\(\{u_1=(1,0,0), u_2=(0,1,0),  u_3=(0,0,1)\}\)</span>,</p>
+<p><span class="math display">\[
+e_1=u_1=(1,0,0),
+\]</span></p>
+<p><span class="math inline">\(e_2=u_2+\lambda_{21}e_1,\)</span> necesitamos calcular</p>
+<p><span class="math display">\[
+\lambda_{21}=\frac{-\langle u_2,e_1\rangle}{\langle e_1,e_1\rangle}=\frac{-1}{1}=-1,
+\]</span></p>
+<p>puesto que tanto numerador como denominador aparecen en la matriz de Gram. Así</p>
+<p><span class="math display">\[
+e_2=(0,1,0)-(1,0,0)=(-1,1,0),
+\]</span></p>
+<p>ahora <span class="math inline">\(e_3=u_3+\lambda_{31}e_1+\lambda_{32}e_2\)</span>, y de nuevo numerador y denominador de <span class="math inline">\(\lambda_{31}\)</span> aparecen en la matriz de Gram:</p>
+<p><span class="math display">\[
+\lambda_{31}=\frac{-\langle u_3,e_1\rangle}{\langle e_1,e_1\rangle}=\frac{-1}{1}=-1,
+\]</span></p>
+<p>pero los de <span class="math inline">\(\lambda_{32}\)</span> deben ser calculados:</p>
+<p><span class="math display">\[
+\langle u_3,e_2\rangle(0\, 0\, 1)\left(\begin{array}{rrr}
 1 &amp; 1 &amp; 1\\
 1 &amp; 3 &amp; 0\\
 1 &amp; 0 &amp; 2
@@ -699,7 +930,10 @@ Calcular una base ortogonal de este espacio vectorial.<br> Partimos de la base c
 -1 \\
 1\\
 0
-\end{array}\right)=-1,\]</span> <span class="math display">\[\langle e_2,e_2\rangle(-1\, 1\, 0)\left(\begin{array}{rrr}
+\end{array}\right)=-1,
+\]</span></p>
+<p><span class="math display">\[
+\langle e_2,e_2\rangle(-1\, 1\, 0)\left(\begin{array}{rrr}
 1 &amp; 1 &amp; 1\\
 1 &amp; 3 &amp; 0\\
 1 &amp; 0 &amp; 2
@@ -707,10 +941,22 @@ Calcular una base ortogonal de este espacio vectorial.<br> Partimos de la base c
 -1 \\
 1\\
 0
-\end{array}\right)=2,\]</span> luego <span class="math inline">\(\lambda_{32}=1/2\)</span> y por tanto <span class="math display">\[e_3=(0,0,1)-(1,0,0)+1/2(-1,1,0)=(-3/2,1/2,1).\]</span> Luego una base ortogonal es <span class="math display">\[\{(1,0,0),(-1,1,0),(-3/2,1/2,1)\}.\]</span>
+\end{array}\right)=2,
+\]</span></p>
+<p>luego <span class="math inline">\(\lambda_{32}=1/2\)</span> y por tanto</p>
+<p><span class="math display">\[
+e_3=(0,0,1)-(1,0,0)+1/2(-1,1,0)=(-3/2,1/2,1).
+\]</span></p>
+<p>Luego una base ortogonal es</p>
+<p><span class="math display">\[
+\{(1,0,0),(-1,1,0),(-3/2,1/2,1)\}.
+\]</span></p>
 </li>
 <li>
-Calcular <span class="math inline">\(U^{\perp}\)</span>. <br> Calculamos en primer lugar una base de <span class="math inline">\(U\)</span>, como <span class="math inline">\(\operatorname{dim}(U)=3- \text{nº cartesianas}=1\)</span> basta encontrar un vector que cumpla las cartesianas: <span class="math inline">\(\{u=(1,-2,1)\}\)</span>. Ahora imponemos la condición <span class="math inline">\(\langle(1,-2,1),(x,y,z)\rangle=0\)</span> que nos da la ecuación cartesiana de <span class="math inline">\(U^{\perp}\)</span>: <span class="math display">\[(1\, -2\,\,  1)\left(\begin{array}{rrr}
+<p>Calcular <span class="math inline">\(U^{\perp}\)</span>.</p>
+<p>Calculamos en primer lugar una base de <span class="math inline">\(U\)</span>, como <span class="math inline">\(\operatorname{dim}(U)=3- \text{nº cartesianas}=1\)</span> basta encontrar un vector que cumpla las cartesianas: <span class="math inline">\(\{u=(1,-2,1)\}\)</span>. Ahora imponemos la condición <span class="math inline">\(\langle(1,-2,1),(x,y,z)\rangle=0\)</span> que nos da la ecuación cartesiana de <span class="math inline">\(U^{\perp}\)</span>:</p>
+<span class="math display">\[
+(1\, -2\,\,  1)\left(\begin{array}{rrr}
 1 &amp; 1 &amp; 1\\
 1 &amp; 3 &amp; 0\\
 1 &amp; 0 &amp; 2
@@ -718,10 +964,18 @@ Calcular <span class="math inline">\(U^{\perp}\)</span>. <br> Calculamos en prim
 x \\
 y\\
 z
-\end{array}\right)=-5y+3z=0.\]</span>
+\end{array}\right)=-5y+3z=0.
+\]</span>
 </li>
 <li>
-Calcula <span class="math inline">\(p_U(1,1,1)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1,1,1)\)</span>.<br> Podemos usar la base ortogonal de <span class="math inline">\(U\)</span>: <span class="math inline">\(\{(1,-2,1)\}\)</span> (que lo es por tener un solo vector) y la fórmula de los coeficientes de Fourier: <span class="math display">\[p_U(1,1,1)=\frac{\langle(1,1,1),(1,-2,1)\rangle}{\langle(1,-2,1),(1,-2,1)\rangle}(1,-2,1).\]</span> Calculamos los dos productos escalares y obtenemos <span class="math display">\[(1\, -2\,\,  1)\left(\begin{array}{rrr}
+<p>Calcula <span class="math inline">\(p_U(1,1,1)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1,1,1)\)</span>.</p>
+<p>Podemos usar la base ortogonal de <span class="math inline">\(U\)</span>: <span class="math inline">\(\{(1,-2,1)\}\)</span> (que lo es por tener un solo vector) y la fórmula de los coeficientes de Fourier:</p>
+<p><span class="math display">\[
+p_U(1,1,1)=\frac{\langle(1,1,1),(1,-2,1)\rangle}{\langle(1,-2,1),(1,-2,1)\rangle}(1,-2,1).
+\]</span></p>
+<p>Calculamos los dos productos escalares y obtenemos</p>
+<p><span class="math display">\[
+(1\, -2\,\,  1)\left(\begin{array}{rrr}
 1 &amp; 1 &amp; 1\\
 1 &amp; 3 &amp; 0\\
 1 &amp; 0 &amp; 2
@@ -729,10 +983,19 @@ Calcula <span class="math inline">\(p_U(1,1,1)\)</span> y <span class="math inli
 1 &amp; 1\\
 1 &amp; -2\\
 1 &amp; 1
-\end{array}\right)=(-2|13),\]</span> <span class="math display">\[p_U(1,1,1)=\frac{-2}{13}(1,-2,1)=(-2/13, 4/13, -2/13),\]</span> <span class="math display">\[p_{U^{\perp}}(1,1,1)=(1,1,1)-(-2/13, 4/13, -2/13)=(15/13, 9/13, 15/13).\]</span>
+\end{array}\right)=(-2|13),
+\]</span></p>
+<p><span class="math display">\[
+p_U(1,1,1)=\frac{-2}{13}(1,-2,1)=(-2/13, 4/13, -2/13),
+\]</span></p>
+<p><span class="math display">\[
+p_{U^{\perp}}(1,1,1)=(1,1,1)-(-2/13, 4/13, -2/13)=(15/13, 9/13, 15/13).
+\]</span></p>
 </li>
 <li>
-Determina para qué valores de <span class="math inline">\(a\)</span> <span class="math inline">\(f\)</span> es una forma cuadrática definida positiva.<br> Calculamos la matriz simétrica asociada a esta forma cuadrática y la diagonalizamos por congruencia para obtener su signatura: <span class="math display">\[\left(\begin{array}{ccc}
+<p>Determina para qué valores de <span class="math inline">\(a\)</span> <span class="math inline">\(f\)</span> es una forma cuadrática definida positiva.</p>
+<p>Calculamos la matriz simétrica asociada a esta forma cuadrática y la diagonalizamos por congruencia para obtener su signatura:</p>
+<p><span class="math display">\[\left(\begin{array}{ccc}
 1 &amp; a &amp; 1\\
 a &amp; 2a &amp; 0\\
 1 &amp; 0 &amp; a+1
@@ -744,7 +1007,11 @@ a &amp; 2a &amp; 0\\
 1 &amp; 0 &amp; 0\\
 0 &amp; 2a-a^2 &amp; -a\\
 0 &amp; -a &amp; a
-\end{array}\right)\]</span> Ahora intercambiamos las filas segunda y tercera y también las columnas segunda y tercera: <span class="math display">\[\left(\begin{array}{ccc}
+\end{array}\right)
+\]</span></p>
+<p>Ahora intercambiamos las filas segunda y tercera y también las columnas segunda y tercera:</p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
 1 &amp; 0 &amp; 0\\
 0 &amp; 2a-a^2 &amp; -a\\
 0 &amp; -a &amp; a
@@ -765,13 +1032,20 @@ a &amp; 2a &amp; 0\\
 1 &amp; 0 &amp; 0\\
 0 &amp; a  &amp; 0\\
 0 &amp; 0 &amp; a-a^2
-\end{array}\right).\]</span> Luego será definida positiva cuando los tres elementos de la diagonal lo sean, es decir <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(a(1-a)&gt;0\)</span> luego debe ser <span class="math inline">\(0&lt;a&lt;1\)</span>.
+\end{array}\right).
+\]</span></p>
+Luego será definida positiva cuando los tres elementos de la diagonal lo sean, es decir <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(a(1-a)&gt;0\)</span> luego debe ser <span class="math inline">\(0&lt;a&lt;1\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En <span class="math inline">\(\mathcal{P}_2(\mathbb{R})\)</span> consideramos el producto escalar dado por <span class="math display">\[\langle p(x),q(x)\rangle=\int_0^1 p(x)q(x)dx.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> En <span class="math inline">\(\mathcal{P}_2(\mathbb{R})\)</span> consideramos el producto escalar dado por</p>
+<p><span class="math display">\[
+\langle p(x),q(x)\rangle=\int_0^1 p(x)q(x)dx.
+\]</span></p>
 <ol type="a">
 <li>
 Calcula la matriz de Gram respecto de la base <span class="math inline">\(\{1, 1-x, x^2\}\)</span>.
@@ -786,30 +1060,92 @@ Calcula las ecuaciones cartesianas del subespacio <span class="math inline">\(U^
 Calcula <span class="math inline">\(p_U(1-2x^2)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1-2x^2)\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular la matriz de Gram respecto de la base <span class="math inline">\(\{1, 1-x, x^2\}\)</span>. <span class="math display">\[\langle 1,1\rangle=\int_0^1 1\cdot 1dx=\left. x \right]_0^1=1,\]</span> <span class="math display">\[\langle 1,1-x\rangle=\int_0^1 1\cdot (1-x)dx=x-\left. \dfrac{1}{2}x^2\right]_0^1=\dfrac{1}{2},\]</span> <span class="math display">\[\langle 1,x^2\rangle=\int_0^1 1\cdot x^2dx=\left. \dfrac{1}{3}x^3\right]_0^1=\dfrac{1}{3},\]</span> <span class="math display">\[\langle 1-x,1-x\rangle=\int_0^1 (1-x)^2dx=\left. \dfrac{1}{3}(x-1)^3\right]_0^1=\dfrac{1}{3},\]</span> <span class="math display">\[\langle 1-x,x^2\rangle=\int_0^1 (x^2-x^3)dx=\dfrac{1}{3}x^3-\left. \dfrac{1}{4}x^4\right]_0^1=\dfrac{1}{12},\]</span> <span class="math display">\[\langle x^2,x^2\rangle=\int_0^1 x^4dx=\left. \dfrac{1}{5}x^5\right]_0^1=\dfrac{1}{5},\]</span> <span class="math display">\[G_B=\left(
+<p>Calcular la matriz de Gram respecto de la base <span class="math inline">\(\{1, 1-x, x^2\}\)</span>.</p>
+<p>$$ ,1=_0^1 11dx=. x ]_0^1=1,</p>
+<p>$$</p>
+<p><span class="math display">\[
+\langle 1,1-x\rangle=\int_0^1 1\cdot (1-x)dx=x-\left. \dfrac{1}{2}x^2\right]_0^1=\dfrac{1}{2},
+\]</span></p>
+<p><span class="math display">\[
+\langle 1,x^2\rangle=\int_0^1 1\cdot x^2dx=\left. \dfrac{1}{3}x^3\right]_0^1=\dfrac{1}{3},
+\]</span></p>
+<p><span class="math display">\[
+\langle 1-x,1-x\rangle=\int_0^1 (1-x)^2dx=\left. \dfrac{1}{3}(x-1)^3\right]_0^1=\dfrac{1}{3},
+\]</span></p>
+<p><span class="math display">\[
+\langle 1-x,x^2\rangle=\int_0^1 (x^2-x^3)dx=\dfrac{1}{3}x^3-\left. \dfrac{1}{4}x^4\right]_0^1=\dfrac{1}{12},
+\]</span></p>
+<p><span class="math display">\[
+\langle x^2,x^2\rangle=\int_0^1 x^4dx=\left. \dfrac{1}{5}x^5\right]_0^1=\dfrac{1}{5},
+\]</span></p>
+<p><span class="math display">\[
+G_B=\left(
 \begin{array}{ccc}
   1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
   \frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{12} \\
   \frac{1}{3} &amp; \frac{1}{12} &amp; \frac{1}{5}\\
-\end{array}\right).\]</span>
+\end{array}\right).
+\]</span></p>
 </li>
 <li>
-Calcular una base de <span class="math inline">\(U\)</span>.<br> <span class="math display">\[p(x)=a_0+a_1x+a_2x^2=(a_0,a_1,a_2)_{B_S} \Rightarrow p(1)=a_0+a_1+a_2=0.\]</span> Por otro lado, <span class="math display">\[p'(x)=a_1+2a_2x \Rightarrow p'(1)=a_1+2a_2=0.\]</span><br> Luego unas ecuaciones cartesianas son <span class="math inline">\(U\equiv \left\{\begin{array}{l} a_0+a_1+a_2=0, \\ a_1+2a_2=0. \end{array}\right.\)</span><br> Resolviendo, <span class="math display">\[\left\{\begin{array}{l} a_1=-2a_2, \\ a_0-2a_2+a_2=0. \end{array}\right.\Rightarrow \left\{ \begin{array}{l} a_0=\lambda, \\ a_1=-2\lambda,\\ a_2=\lambda. \end{array} \right.\]</span> Por lo tanto, una base de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{(1,-2,1)_{B_{S}}\}=\{1-2x+x^2\}\)</span>.
+<p>Calcular una base de <span class="math inline">\(U\)</span>.</p>
+<p><span class="math display">\[
+p(x)=a_0+a_1x+a_2x^2=(a_0,a_1,a_2)_{B_S} \Rightarrow p(1)=a_0+a_1+a_2=0.
+\]</span></p>
+<p>Por otro lado, <span class="math display">\[p'(x)=a_1+2a_2x \Rightarrow p'(1)=a_1+2a_2=0.\]</span></p>
+<p>Luego unas ecuaciones cartesianas son <span class="math inline">\(U\equiv \left\{\begin{array}{l} a_0+a_1+a_2=0, \\ a_1+2a_2=0. \end{array}\right.\)</span></p>
+Resolviendo, <span class="math display">\[\left\{\begin{array}{l} a_1=-2a_2, \\ a_0-2a_2+a_2=0. \end{array}\right.\Rightarrow \left\{ \begin{array}{l} a_0=\lambda, \\ a_1=-2\lambda,\\ a_2=\lambda. \end{array} \right.\]</span> Por lo tanto, una base de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{(1,-2,1)_{B_{S}}\}=\{1-2x+x^2\}\)</span>.
 </li>
 <li>
-Calcula las ecuaciones cartesianas del subespacio <span class="math inline">\(U^{\perp}\)</span>.<br> Para usar la matriz de Gram para calcular el producto escalar, será necesario calcular la matriz de Gram con respecto a la base estándar, que no es la del apartado a). Algunos de los cálculos sí sirven: <span class="math display">\[\langle 1,1\rangle=1,\]</span> <span class="math display">\[\langle 1,x\rangle=\int_0^1 1\cdot (x)dx=\left. \dfrac{1}{2}x^2\right]_0^1=\dfrac{1}{2},\]</span> <span class="math display">\[\langle 1,x^2\rangle=\dfrac{1}{3},\]</span> <span class="math display">\[\langle x,x\rangle=\int_0^1 x^2dx=\left. \dfrac{1}{3}x^3\right]_0^1=\dfrac{1}{3},\]</span> <span class="math display">\[\langle x,x^2\rangle=\int_0^1 x^3dx=\left. \dfrac{1}{4}x^4\right]_0^1=\dfrac{1}{4},\]</span> <span class="math display">\[\langle x^2,x^2\rangle=\dfrac{1}{5},\]</span> <span class="math display">\[G_{B_{S}}=\left(
+<p>Calcula las ecuaciones cartesianas del subespacio <span class="math inline">\(U^{\perp}\)</span>.</p>
+<p>Para usar la matriz de Gram para calcular el producto escalar, será necesario calcular la matriz de Gram con respecto a la base estándar, que no es la del apartado a). Algunos de los cálculos sí sirven:</p>
+<p><span class="math display">\[
+\langle 1,1\rangle=1,
+\]</span></p>
+<p><span class="math display">\[
+\langle 1,x\rangle=\int_0^1 1\cdot (x)dx=\left. \dfrac{1}{2}x^2\right]_0^1=\dfrac{1}{2},
+\]</span></p>
+<p><span class="math display">\[
+\langle 1,x^2\rangle=\dfrac{1}{3},
+\]</span></p>
+<p><span class="math display">\[
+\langle x,x\rangle=\int_0^1 x^2dx=\left. \dfrac{1}{3}x^3\right]_0^1=\dfrac{1}{3},
+\]</span></p>
+<p><span class="math display">\[
+\langle x,x^2\rangle=\int_0^1 x^3dx=\left. \dfrac{1}{4}x^4\right]_0^1=\dfrac{1}{4},
+\]</span></p>
+<p><span class="math display">\[
+\langle x^2,x^2\rangle=\dfrac{1}{5},
+\]</span></p>
+<p><span class="math display">\[
+G_{B_{S}}=\left(
 \begin{array}{ccc}
 1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
 \frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{4} \\
 \frac{1}{3} &amp; \frac{1}{4} &amp; \frac{1}{5}\\
 \end{array}
-\right).\]</span> Ahora imponemos la condición <span class="math display">\[\langle(1,-2,1)_{B_{S}}, (a_0, a_1,a_2)\rangle=0,\]</span> <span class="math display">\[(1,-2,1)\left(
+\right).
+\]</span></p>
+<p>Ahora imponemos la condición</p>
+<p><span class="math display">\[
+\langle(1,-2,1)_{B_{S}}, (a_0, a_1,a_2)\rangle=0,
+\]</span></p>
+<p><span class="math display">\[
+(1,-2,1)\left(
 \begin{array}{ccc}
 1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
 \frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{4} \\
@@ -821,12 +1157,20 @@ a_0 \\
 a_1 \\
 a_2 \\
 \end{array}
-\right)=0. \]</span><br>
+\right)=0.
+\]</span></p>
 Luego unas cartesianas son <span class="math inline">\(\dfrac{1}{3}a_0+\dfrac{1}{12}a_1+\dfrac{1}{30}a_2=0\)</span>, o bien<br>
 <span class="math inline">\(U^{\perp}\equiv a_0+\dfrac{1}{4}a_1+\dfrac{1}{10}a_2=0\)</span>.
 </li>
 <li>
-Calcula <span class="math inline">\(p_U(1-2x^2)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1-2x^2)\)</span>.<br> Como <span class="math inline">\(\operatorname{dim}(U)=1\)</span> es rápido calcular <span class="math inline">\(p_U(1-2x^2)\)</span> usando coeficientes de Fourier. Puesto que <span class="math inline">\(\{ (1,-2,1)_{B_S} \}\)</span> es un base ortogonal de <span class="math inline">\(U\)</span>. <span class="math display">\[p_U((1,0,-2)_{B_S})=\dfrac{\langle(1,0,-2)_{B_S},(1,-2,1)_{B_S}\rangle}{\langle(1,-2,1)_{B_S},(1,-2,1)_{B_S}\rangle} (1,-2,1)_{B_S}.\]</span> Calculamos <span class="math display">\[(1,-2,1)\left(
+<p>Calcula <span class="math inline">\(p_U(1-2x^2)\)</span> y <span class="math inline">\(p_{U^{\perp}}(1-2x^2)\)</span>.</p>
+<p>Como <span class="math inline">\(\operatorname{dim}(U)=1\)</span> es rápido calcular <span class="math inline">\(p_U(1-2x^2)\)</span> usando coeficientes de Fourier. Puesto que <span class="math inline">\(\{ (1,-2,1)_{B_S} \}\)</span> es un base ortogonal de <span class="math inline">\(U\)</span>.</p>
+<p><span class="math display">\[
+p_U((1,0,-2)_{B_S})=\dfrac{\langle(1,0,-2)_{B_S},(1,-2,1)_{B_S}\rangle}{\langle(1,-2,1)_{B_S},(1,-2,1)_{B_S}\rangle} (1,-2,1)_{B_S}.
+\]</span></p>
+<p>Calculamos</p>
+<p><span class="math display">\[
+(1,-2,1)\left(
 \begin{array}{ccc}
 1 &amp; \frac{1}{2} &amp; \frac{1}{3} \\
 \frac{1}{2} &amp; \frac{1}{3} &amp; \frac{1}{4} \\
@@ -850,13 +1194,27 @@ Calcula <span class="math inline">\(p_U(1-2x^2)\)</span> y <span class="math inl
 0 \\
 2 \\
 \end{array}
-\right)=\dfrac{4}{15}.\]</span> Luego <span class="math display">\[p_U((1,0,-2)_{B_S})=\dfrac{\frac{1}{4}}{\frac{1}{5}}(1,-2,1)_{B_S}=\dfrac{20}{15}(1,-2,1)_{B_S}=(\dfrac{4}{3},\dfrac{-8}{3},\dfrac{4}{3})_{B_S},\]</span> y por lo tanto <span class="math display">\[p_{U^{\perp}}((1,0,-2)_{B_S})=(1,0,-2)_{B_S}-(\dfrac{4}{3},\dfrac{-8}{3},\dfrac{4}{3})_{B_S}= (-\dfrac{1}{3},\dfrac{8}{3},\dfrac{-10}{3})_{B_S}.\]</span> Podemos comprobar el resultado: <span class="math display">\[\dfrac{-1}{3}+\dfrac{1}{4}\cdot\dfrac{8}{3}+\dfrac{1}{10}\cdot\dfrac{-10}{3}=-\dfrac{1}{3}+\dfrac{2}{3}-\dfrac{1}{3}=0.\]</span>
+\right)=\dfrac{4}{15}.
+\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[
+p_U((1,0,-2)_{B_S})=\dfrac{\frac{1}{4}}{\frac{1}{5}}(1,-2,1)_{B_S}=\dfrac{20}{15}(1,-2,1)_{B_S}=(\dfrac{4}{3},\dfrac{-8}{3},\dfrac{4}{3})_{B_S},\]</span> y por lo tanto <span class="math display">\[p_{U^{\perp}}((1,0,-2)_{B_S})=(1,0,-2)_{B_S}-(\dfrac{4}{3},\dfrac{-8}{3},\dfrac{4}{3})_{B_S}= (-\dfrac{1}{3},\dfrac{8}{3},\dfrac{-10}{3})_{B_S}.
+\]</span></p>
+<p>Podemos comprobar el resultado:</p>
+<p><span class="math display">\[
+\dfrac{-1}{3}+\dfrac{1}{4}\cdot\dfrac{8}{3}+\dfrac{1}{10}\cdot\dfrac{-10}{3}=-\dfrac{1}{3}+\dfrac{2}{3}-\dfrac{1}{3}=0.
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> se consideran los subespacios vectoriales:<br> <span class="math display">\[U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=-p(x) \}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-8" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> En <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> se consideran los subespacios vectoriales:</p>
+<p><span class="math display">\[
+U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=-p(x) \}.
+\]</span></p>
 <ol type="a">
 <li>
 Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.
@@ -865,40 +1223,99 @@ Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)
 Descomponer el vector <span class="math inline">\(3x^3+x-2\)</span> como suma de un vector en <span class="math inline">\(U\)</span> y otro en <span class="math inline">\(W\)</span>.
 </li>
 <li>
-Para el producto escalar dado por <span class="math display">\[\langle p(x),q(x)\rangle= \int_{-1} ^1 p(x)q(x)dx.\]</span> calcular una base ortogonal de <span class="math inline">\(U\)</span>.
+<p>Para el producto escalar dado por</p>
+<p><span class="math display">\[
+\langle p(x),q(x)\rangle= \int_{-1} ^1 p(x)q(x)dx.
+\]</span></p>
+calcular una base ortogonal de <span class="math inline">\(U\)</span>.
 </li>
 <li>
 Con el mismo producto escalar, calcular <span class="math inline">\(W^{\perp}\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.<br> Los polinomios que cumplen la condición de <span class="math inline">\(U\)</span> son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a <span class="math inline">\(W\)</span> son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar <span class="math inline">\(B_s=\{1,x,x^2,x^3\}\)</span>: <span class="math display">\[p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(a_0,-a_1,a_2,-a_3)_{B_s}=p(-x).\]</span> Así las cartesianas de <span class="math inline">\(U\)</span> son <span class="math inline">\(\left\{\begin{array}{l}
+<p>Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.</p>
+<p>Los polinomios que cumplen la condición de <span class="math inline">\(U\)</span> son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a <span class="math inline">\(W\)</span> son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar <span class="math inline">\(B_s=\{1,x,x^2,x^3\}\)</span>:</p>
+<p><span class="math display">\[
+p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(a_0,-a_1,a_2,-a_3)_{B_s}=p(-x).
+\]</span></p>
+<p>Así las cartesianas de <span class="math inline">\(U\)</span> son <span class="math inline">\(\left\{\begin{array}{l}
 a_1=0,\\
 a_3=0.
-\end{array}\right.\)</span> Y una base <span class="math inline">\(\{1,x^2\}\)</span>. <span class="math display">\[p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(-a_0,a_1,-a_2,a_3)_{B_s}=-p(-x),\]</span> nos da que las cartesianas de <span class="math inline">\(W\)</span> son <span class="math inline">\(\left\{\begin{array}{l}
+\end{array}\right.\)</span> Y una base <span class="math inline">\(\{1,x^2\}\)</span>.</p>
+<p><span class="math display">\[
+p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(-a_0,a_1,-a_2,a_3)_{B_s}=-p(-x),
+\]</span></p>
+<p>nos da que las cartesianas de <span class="math inline">\(W\)</span> son <span class="math inline">\(\left\{\begin{array}{l}
 a_0=0,\\
 a_2=0.
-\end{array}\right.\)</span> Y una base <span class="math inline">\(\{x,x^3\}\)</span>.<br> Así que un sistema de generadores de <span class="math inline">\(U+W\)</span> es <span class="math inline">\(\{1,x,x^2,x^3\}\)</span> con lo que <span class="math inline">\(U+W=\mathcal{P}_3(\mathbb{R})\)</span>, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que <span class="math inline">\(U\cap W=0\)</span>, con lo que se obtiene <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.
+\end{array}\right.\)</span> Y una base <span class="math inline">\(\{x,x^3\}\)</span>.</p>
+Así que un sistema de generadores de <span class="math inline">\(U+W\)</span> es <span class="math inline">\(\{1,x,x^2,x^3\}\)</span> con lo que <span class="math inline">\(U+W=\mathcal{P}_3(\mathbb{R})\)</span>, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que <span class="math inline">\(U\cap W=0\)</span>, con lo que se obtiene <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.
 </li>
 <li>
-Descomponer el vector <span class="math inline">\(3x^3+x-2\)</span> como suma de un vector en <span class="math inline">\(U\)</span> y otro en <span class="math inline">\(W\)</span>.<br> Es inmediato que <span class="math display">\[3x^3+x-2= (-2) + (x+3x^3)\]</span> y el primer polinomio está en <span class="math inline">\(U\)</span> y el segundo en <span class="math inline">\(W\)</span>.
+<p>Descomponer el vector <span class="math inline">\(3x^3+x-2\)</span> como suma de un vector en <span class="math inline">\(U\)</span> y otro en <span class="math inline">\(W\)</span>.</p>
+<p>Es inmediato que</p>
+<p><span class="math display">\[
+3x^3+x-2= (-2) + (x+3x^3)
+\]</span></p>
+y el primer polinomio está en <span class="math inline">\(U\)</span> y el segundo en <span class="math inline">\(W\)</span>.
 </li>
 <li>
-Para el producto escalar dado calcular una base ortogonal de <span class="math inline">\(U\)</span>.<br> Partimos de la base de <span class="math inline">\(U\)</span> obtenida <span class="math inline">\(\{1,x^2\}\)</span> y aplicamos Gram-Schimdt: <span class="math display">\[e_1=1,\]</span> <span class="math display">\[e_2=x^2-\frac{\langle 1,x^2\rangle}{\langle 1,1\rangle}\cdot 1.\]</span> Calculamos <span class="math inline">\(\langle 1,1\rangle=\int_{-1} ^1 1\cdot 1 dx =  2,\)</span> <span class="math inline">\(\langle 1,x^2\rangle=\int_{-1} ^1 x^2dx = \frac{2}{3}.\)</span> Así <span class="math inline">\(e_2= x^2-\frac{1}{3}\)</span> y la base ortogonal de <span class="math inline">\(U\)</span> obtenida es <span class="math inline">\(\{1, x^2-\frac{1}{3}\}\)</span>.
+<p>Para el producto escalar dado calcular una base ortogonal de <span class="math inline">\(U\)</span>.</p>
+<p>Partimos de la base de <span class="math inline">\(U\)</span> obtenida <span class="math inline">\(\{1,x^2\}\)</span> y aplicamos Gram-Schimdt:</p>
+<p><span class="math display">\[
+e_1=1,
+\]</span></p>
+<p><span class="math display">\[
+e_2=x^2-\frac{\langle 1,x^2\rangle}{\langle 1,1\rangle}\cdot 1.
+\]</span></p>
+Calculamos <span class="math inline">\(\langle 1,1\rangle=\int_{-1} ^1 1\cdot 1 dx =  2,\)</span> <span class="math inline">\(\langle 1,x^2\rangle=\int_{-1} ^1 x^2dx = \frac{2}{3}.\)</span> Así <span class="math inline">\(e_2= x^2-\frac{1}{3}\)</span> y la base ortogonal de <span class="math inline">\(U\)</span> obtenida es <span class="math inline">\(\{1, x^2-\frac{1}{3}\}\)</span>.
 </li>
 <li>
-Calcular <span class="math inline">\(W^{\perp}\)</span>.<br> Dada la base de <span class="math inline">\(W\)</span>, <span class="math inline">\(\{x,x^3\}\)</span> observamos que <span class="math display">\[\langle x,1\rangle=\int_{-1} ^1 x\cdot 1 dx = 0,\]</span> <span class="math display">\[\langle x,x^2\rangle=\int_{-1} ^1 x\cdot x^2 dx = 0,\]</span> <span class="math display">\[\langle x^3,1\rangle=\int_{-1} ^1 x^3\cdot 1 dx = 0,\]</span> <span class="math display">\[\langle x^3,x^2\rangle=\int_{-1} ^1 x^3\cdot x^2 dx = 0.\]</span> Así que <span class="math inline">\(U=\mathcal{L}(1,x^2)\)</span> es el subespacio ortogonal a <span class="math inline">\(W\)</span>.
+<p>Calcular <span class="math inline">\(W^{\perp}\)</span>.</p>
+<p>Dada la base de <span class="math inline">\(W\)</span>, <span class="math inline">\(\{x,x^3\}\)</span> observamos que <span class="math display">\[
+\langle x,1\rangle=\int_{-1} ^1 x\cdot 1 dx = 0,
+\]</span></p>
+<p><span class="math display">\[
+\langle x,x^2\rangle=\int_{-1} ^1 x\cdot x^2 dx = 0,
+\]</span></p>
+<p><span class="math display">\[
+\langle x^3,1\rangle=\int_{-1} ^1 x^3\cdot 1 dx = 0,
+\]</span></p>
+<p><span class="math display">\[
+\langle x^3,x^2\rangle=\int_{-1} ^1 x^3\cdot x^2 dx = 0.
+\]</span></p>
+Así que <span class="math inline">\(U=\mathcal{L}(1,x^2)\)</span> es el subespacio ortogonal a <span class="math inline">\(W\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En el espacio <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de los polinomios de grado menor o igual que tres, se consideran los subespacios <span class="math display">\[P=\{ p(x)\in \mathcal{P}_3(\mathbb{R}) |\,  p(x)=p(-x) \}\]</span> <span class="math display">\[I=\{ p(x)\in \mathcal{P}_3(\mathbb{R}) |\, p(x)=-p(-x) \}\]</span> y el producto escalar <span class="math display">\[\langle p(x),q(x)\rangle = \int_{-1}^{1} p(x)q(x)dx \]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-9" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 9</strong></span> En el espacio <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de los polinomios de grado menor o igual que tres, se consideran los subespacios</p>
+<p><span class="math display">\[
+P=\{ p(x)\in \mathcal{P}_3(\mathbb{R}) |\,  p(x)=p(-x) \}
+\]</span></p>
+<p><span class="math display">\[
+I=\{ p(x)\in \mathcal{P}_3(\mathbb{R}) |\, p(x)=-p(-x) \}
+\]</span> y el producto escalar</p>
+<p><span class="math display">\[
+\langle p(x),q(x)\rangle = \int_{-1}^{1} p(x)q(x)dx.
+\]</span></p>
 <ol type="a">
 <li>
 Calcular bases de <span class="math inline">\(P\)</span> e <span class="math inline">\(I\)</span> y comprobar que <span class="math inline">\(I\)</span> y <span class="math inline">\(P\)</span> son complementarios.
@@ -913,36 +1330,106 @@ Calcular bases ortogonales de <span class="math inline">\(P\)</span> y de <span 
 Escribir la fórmula para calcular la proyección ortogonal de un polinomio genérico <span class="math inline">\(p(x)=a_0 +a_1 x+a_2 x^2 +a_3 x^3\)</span> sobre <span class="math inline">\(P\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular bases de <span class="math inline">\(P\)</span> e <span class="math inline">\(I\)</span> y comprobar que <span class="math inline">\(I\)</span> y <span class="math inline">\(P\)</span> son complementarios.<br> Para calcular la base de <span class="math inline">\(P\)</span> escribimos la condición <span class="math inline">\(p(x)=p(-x)\)</span> sobre un polinomio genérico, <span class="math inline">\(p(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3\)</span>: <span class="math display">\[a_0+a_1 x+a_2 x^2 +a_3 x^3=a_0-a_1 x+a_2 x^2 -a_3 x^3,\]</span> y nos queda <span class="math inline">\(2a_1 x+ 2a_3x^3=0\)</span>, por tanto, para que este polinomio sea cero, deben ser cero ambos coeficientes: <span class="math display">\[a_1=0,\\
-a_3=0,\]</span> que son las ecuaciones cartesianas del subespacio. Una base será <span class="math inline">\(\{1,x^2\}\)</span>, o bien, utilizando coordenadas respecto de la base estándar <span class="math inline">\(\{1,x,x^2,x^3\}\)</span>, <span class="math inline">\(\{(1,0,0,0),(0,0,1,0)\}\)</span>.<br> De la misma forma para calcular la base de <span class="math inline">\(I\)</span> escribimos la condición <span class="math inline">\(p(x)=-p(-x)\)</span> sobre un polinomio genérico, <span class="math inline">\(p(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3\)</span>: <span class="math display">\[a_0+a_1 x+a_2 x^2 +a_3 x^3=-(a_0-a_1 x+a_2 x^2 -a_3 x^3), \]</span> y nos queda <span class="math inline">\(2a_0 + 2a_2x^2=0\)</span>, por tanto, para que este polinomio sea cero, deben ser cero ambos coeficientes: <span class="math display">\[a_0=0,\\
-a_2=0,\]</span> que son las ecuaciones cartesianas del subespacio. Una base será <span class="math inline">\(\{x,x^3\}\)</span>, o bien, utilizando coordenadas respecto de la base estándar <span class="math inline">\(\{1,x,x^2,x^3\}\)</span>, <span class="math inline">\(\{(0,1,0,0),(0,0,0,1)\}\)</span>.
+<p>Calcular bases de <span class="math inline">\(P\)</span> e <span class="math inline">\(I\)</span> y comprobar que <span class="math inline">\(I\)</span> y <span class="math inline">\(P\)</span> son complementarios.</p>
+<p>Para calcular la base de <span class="math inline">\(P\)</span> escribimos la condición <span class="math inline">\(p(x)=p(-x)\)</span> sobre un polinomio genérico, <span class="math inline">\(p(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3\)</span>:</p>
+<p><span class="math display">\[
+a_0+a_1 x+a_2 x^2 +a_3 x^3=a_0-a_1 x+a_2 x^2 -a_3 x^3,
+\]</span></p>
+<p>y nos queda <span class="math inline">\(2a_1 x+ 2a_3x^3=0\)</span>, por tanto, para que este polinomio sea cero, deben ser cero ambos coeficientes:</p>
+<p><span class="math display">\[
+a_1=0,\\
+a_3=0,
+\]</span></p>
+<p>que son las ecuaciones cartesianas del subespacio. Una base será <span class="math inline">\(\{1,x^2\}\)</span>, o bien, utilizando coordenadas respecto de la base estándar <span class="math inline">\(\{1,x,x^2,x^3\}\)</span>, <span class="math inline">\(\{(1,0,0,0),(0,0,1,0)\}\)</span>.</p>
+<p>De la misma forma para calcular la base de <span class="math inline">\(I\)</span> escribimos la condición <span class="math inline">\(p(x)=-p(-x)\)</span> sobre un polinomio genérico, <span class="math inline">\(p(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3\)</span>:</p>
+<p><span class="math display">\[
+a_0+a_1 x+a_2 x^2 +a_3 x^3=-(a_0-a_1 x+a_2 x^2 -a_3 x^3),
+\]</span></p>
+<p>y nos queda <span class="math inline">\(2a_0 + 2a_2x^2=0\)</span>, por tanto, para que este polinomio sea cero, deben ser cero ambos coeficientes:</p>
+<p><span class="math display">\[
+a_0=0,\\
+a_2=0,
+\]</span></p>
+que son las ecuaciones cartesianas del subespacio. Una base será <span class="math inline">\(\{x,x^3\}\)</span>, o bien, utilizando coordenadas respecto de la base estándar <span class="math inline">\(\{1,x,x^2,x^3\}\)</span>, <span class="math inline">\(\{(0,1,0,0),(0,0,0,1)\}\)</span>.
 </li>
 <li>
-Calcular bases ortogonales de <span class="math inline">\(P\)</span> y de <span class="math inline">\(I\)</span>.<br> Utilizando el método de Gram-Schmidt en ambos casos, sólo es necesario el cálculo de un vector.<br> Comenzamos con <span class="math inline">\(P\)</span>: <span class="math display">\[p_1(x)=1,\\
-p_2 (x)= x^2 +\lambda \cdot 1,\]</span> Calculamos el valor de <span class="math inline">\(\lambda\)</span> para que <span class="math inline">\(\langle p_1(x),p_2(x)\rangle=0\)</span>: <span class="math display">\[0= \int_{-1}^{1} p_1(x)p_2(x)dx = \int_{-1}^{1} 1\cdot(x^2+\lambda )dx = \left. \frac{x^3}{3}+ \lambda x \right]_{-1}^{1} =
+<p>Calcular bases ortogonales de <span class="math inline">\(P\)</span> y de <span class="math inline">\(I\)</span>.</p>
+<p>Utilizando el método de Gram-Schmidt en ambos casos, sólo es necesario el cálculo de un vector.</p>
+<p>Comenzamos con <span class="math inline">\(P\)</span>:</p>
+<p><span class="math display">\[
+p_1(x)=1,\\
+p_2 (x)= x^2 +\lambda \cdot 1,
+\]</span></p>
+<p>Calculamos el valor de <span class="math inline">\(\lambda\)</span> para que <span class="math inline">\(\langle p_1(x),p_2(x)\rangle=0\)</span>:</p>
+<p><span class="math display">\[
+0= \int_{-1}^{1} p_1(x)p_2(x)dx = \int_{-1}^{1} 1\cdot(x^2+\lambda )dx = \left. \frac{x^3}{3}+ \lambda x \right]_{-1}^{1} =
 (1/3 +\lambda )-(-1/3-\lambda),
-\]</span> y nos queda $ 2(1/3 + )=0$ con lo que <span class="math inline">\(\lambda = -1/3\)</span>. Así una base ortogonal de <span class="math inline">\(P\)</span> es <span class="math inline">\(\{1, x^2-1/3 \}\)</span>.<br> Ahora para <span class="math inline">\(I\)</span>: <span class="math display">\[p_1(x)=x,\\
-p_2 (x)= x^3 +\lambda \cdot 1.\]</span> Calculamos el valor de <span class="math inline">\(\lambda\)</span> para que <span class="math inline">\(\langle p_1(x),p_2(x)\rangle=0\)</span>: <span class="math display">\[0= \int_{-1}^{1} p_1(x)p_2(x)dx = \int_{-1}^{1} x\cdot(x^3+\lambda x )dx = \left. \frac{x^5}{5}+ \lambda \frac{x^3}{3} \right]_{-1}^{1} =
+\]</span></p>
+<p>y nos queda $ 2(1/3 + )=0$ con lo que <span class="math inline">\(\lambda = -1/3\)</span>. Así una base ortogonal de <span class="math inline">\(P\)</span> es <span class="math inline">\(\{1, x^2-1/3 \}\)</span>.</p>
+<p>Ahora para <span class="math inline">\(I\)</span>:</p>
+<p><span class="math display">\[
+p_1(x)=x,\\
+p_2 (x)= x^3 +\lambda \cdot 1.
+\]</span></p>
+<p>Calculamos el valor de <span class="math inline">\(\lambda\)</span> para que <span class="math inline">\(\langle p_1(x),p_2(x)\rangle=0\)</span>:</p>
+<p><span class="math display">\[
+0= \int_{-1}^{1} p_1(x)p_2(x)dx = \int_{-1}^{1} x\cdot(x^3+\lambda x )dx = \left. \frac{x^5}{5}+ \lambda \frac{x^3}{3} \right]_{-1}^{1} =
 (1/5 + (1/3)\lambda )-(-(1/5)-(1/3)\lambda),
-\]</span> y nos queda $ 2(1/5 + (1/3))=0$ con lo que <span class="math inline">\(\lambda = -5/3\)</span>.Así una base ortogonal de <span class="math inline">\(I\)</span> es <span class="math inline">\(\{x, x^3-(5/3)x \}\)</span>.
+\]</span></p>
+y nos queda $ 2(1/5 + (1/3))=0$ con lo que <span class="math inline">\(\lambda = -5/3\)</span>.Así una base ortogonal de <span class="math inline">\(I\)</span> es <span class="math inline">\(\{x, x^3-(5/3)x \}\)</span>.
 </li>
 <li>
-¿Es <span class="math inline">\(P\)</span> el complemento ortogonal de <span class="math inline">\(I\)</span> respecto de este producto escalar?<br> Sólo es necesario comprobar que cada uno de los vectores de una base de <span class="math inline">\(P\)</span> es ortogonal con todos los de una base de <span class="math inline">\(I\)</span>.<br> Usamos las bases calculadas en el apartado a): <span class="math display">\[\langle 1,x\rangle=\int_{-1}^{1} 1\cdot x dx =  \left. \frac{x^2}{2}\right]_{-1}^{1}=0\]</span> <span class="math display">\[\langle 1,x^3\rangle=\int_{-1}^{1} 1\cdot x^3 dx =  \left. \frac{x^4}{4}\right]_{-1}^{1}=0\]</span> <span class="math display">\[\langle x^2,x\rangle=\int_{-1}^{1} x^2\cdot x dx =  \left. \frac{x^4}{4}\right]_{-1}^{1}=0\]</span> <span class="math display">\[\langle x^2,x^3\rangle=\int_{-1}^{1} x^2\cdot x^3 dx =  \left. \frac{x^6}{6}\right]_{-1}^{1}=0\]</span>
+<p>¿Es <span class="math inline">\(P\)</span> el complemento ortogonal de <span class="math inline">\(I\)</span> respecto de este producto escalar?</p>
+<p>Sólo es necesario comprobar que cada uno de los vectores de una base de <span class="math inline">\(P\)</span> es ortogonal con todos los de una base de <span class="math inline">\(I\)</span>.</p>
+<p>Usamos las bases calculadas en el apartado a):</p>
+<p><span class="math display">\[
+\langle 1,x\rangle=\int_{-1}^{1} 1\cdot x dx =  \left. \frac{x^2}{2}\right]_{-1}^{1}=0
+\]</span></p>
+<p><span class="math display">\[
+\langle 1,x^3\rangle=\int_{-1}^{1} 1\cdot x^3 dx =  \left. \frac{x^4}{4}\right]_{-1}^{1}=0
+\]</span></p>
+<p><span class="math display">\[
+\langle x^2,x\rangle=\int_{-1}^{1} x^2\cdot x dx =  \left. \frac{x^4}{4}\right]_{-1}^{1}=0
+\]</span></p>
+<p><span class="math display">\[
+\langle x^2,x^3\rangle=\int_{-1}^{1} x^2\cdot x^3 dx =  \left. \frac{x^6}{6}\right]_{-1}^{1}=0
+\]</span></p>
 </li>
 <li>
-Escribir la fórmula para calcular la proyección ortogonal de un polinomio genérico <span class="math inline">\(p(x)=a_0 +a_1 x+a_2 x^2 +a_3 x^3\)</span> sobre <span class="math inline">\(P\)</span>.<br> Pueden usarse las cartesianas de <span class="math inline">\(P\)</span> y de su ortogonal que es <span class="math inline">\(I\)</span> para descomponer el vector genérico <span class="math display">\[(a_0,a_1,a_2,a_3)=(a,b,c,d)+(a_0 -a,a_1 -b, a_2 -c, a_3 -d).\]</span> Como el primer vector debe estar en <span class="math inline">\(P\)</span> se tiene <span class="math inline">\(b=0\)</span> y <span class="math inline">\(d=0\)</span>. Como el segundo sumando debe estar en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(a_0-a=0\)</span> y <span class="math inline">\(a_2-c=0\)</span>. Entonces se tiene que la proyección sobre <span class="math inline">\(P\)</span> es <span class="math inline">\((a_0,0,a_2,0)\)</span> o bien <span class="math inline">\(a_0+a_2x^2\)</span>.
+<p>Escribir la fórmula para calcular la proyección ortogonal de un polinomio genérico <span class="math inline">\(p(x)=a_0 +a_1 x+a_2 x^2 +a_3 x^3\)</span> sobre <span class="math inline">\(P\)</span>.</p>
+<p>Pueden usarse las cartesianas de <span class="math inline">\(P\)</span> y de su ortogonal que es <span class="math inline">\(I\)</span> para descomponer el vector genérico</p>
+<p><span class="math display">\[
+(a_0,a_1,a_2,a_3)=(a,b,c,d)+(a_0 -a,a_1 -b, a_2 -c, a_3 -d).
+\]</span></p>
+Como el primer vector debe estar en <span class="math inline">\(P\)</span> se tiene <span class="math inline">\(b=0\)</span> y <span class="math inline">\(d=0\)</span>. Como el segundo sumando debe estar en <span class="math inline">\(I\)</span> entonces <span class="math inline">\(a_0-a=0\)</span> y <span class="math inline">\(a_2-c=0\)</span>. Entonces se tiene que la proyección sobre <span class="math inline">\(P\)</span> es <span class="math inline">\((a_0,0,a_2,0)\)</span> o bien <span class="math inline">\(a_0+a_2x^2\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En <span class="math inline">\(\mathbb{R}^{4}\)</span> con el producto escalar usual se considera el subespacio <span class="math display">\[U= \mathcal{L} ((1,1,0,1)),\]</span> y el endomorfismo <span class="math inline">\(f:\mathbb{R}^{4} \to \mathbb{R}^{4}\)</span> dado por <span class="math display">\[\begin{array}{rl}
+</div>
+</div>
+</div>
+</div>
+<div id="exr-10" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 10</strong></span> En <span class="math inline">\(\mathbb{R}^{4}\)</span> con el producto escalar usual se considera el subespacio</p>
+<p><span class="math display">\[
+U= \mathcal{L} ((1,1,0,1)),
+\]</span></p>
+<p>y el endomorfismo <span class="math inline">\(f:\mathbb{R}^{4} \to \mathbb{R}^{4}\)</span> dado por</p>
+<p><span class="math display">\[
+\begin{array}{rl}
 f(1,-1,0,0)&amp;=(1,-1,0,0),\\
 f(1,0,0,-1)&amp;=(1,0,0,-1),\\
 f(0,0,1,0)&amp;=(0,0,1,0),\\
@@ -966,54 +1453,85 @@ Calcula la matriz asociada al endomorfismo respecto de la base canónica.
 Calcula bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular la proyección ortogonal sobre <span class="math inline">\(U\)</span> de cada uno de los vectores de la base canónica.<br> Como <span class="math inline">\(U\)</span> tiene dimensión 1, es fácil calcular la proyección usando los coeficientes de Fourier: <span class="math display">\[\begin{align*}
+<p>Calcular la proyección ortogonal sobre <span class="math inline">\(U\)</span> de cada uno de los vectores de la base canónica.</p>
+<p>Como <span class="math inline">\(U\)</span> tiene dimensión 1, es fácil calcular la proyección usando los coeficientes de Fourier:</p>
+<p><span class="math display">\[
+\begin{align*}
 p_U (1,0,0,0)&amp;=\frac{\langle(1,0,0,0),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=\frac{1}{3}(1,1,0,1)=(1/3,1/3,0,1/3),\\
 p_U (0,1,0,0)&amp;=\frac{\langle(0,1,0,0),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=\frac{1}{3}(1,1,0,1)=(1/3,1/3,0,1/3),\\
 p_U (0,0,1,0)&amp;=\frac{\langle(0,0,1,0),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=(0,0,0,0),\\
 p_U (0,0,0,1)&amp;=\frac{\langle(0,0,0,1),(1,1,0,1)\rangle}{\langle(1,1,0,1),(1,1,0,1)\rangle}(1,1,0,1)=\frac{1}{3}(1,1,0,1)=(1/3,1/3,0,1/3).\\
-\end{align*}\]</span>
+\end{align*}
+\]</span></p>
 </li>
 <li>
-Calcular la proyección ortogonal sobre <span class="math inline">\(U^{\perp}\)</span> de cada uno de los vectores de la base canónica.<br> <span class="math inline">\(p_{U^{\perp}} (v)=v-p_U (v)\)</span> <span class="math display">\[\begin{align*}
+<p>Calcular la proyección ortogonal sobre <span class="math inline">\(U^{\perp}\)</span> de cada uno de los vectores de la base canónica.</p>
+<p><span class="math inline">\(p_{U^{\perp}} (v)=v-p_U (v)\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
 p_{U^{\perp}}(1,0,0,0)&amp;=(1,0,0,0)-(1/3,1/3,0,1/3)=(2/3, -1/3,0, -1/3),\\
 p_{U^{\perp}}(0,1,0,0)&amp;=(0,1,0,0)-(1/3,1/3,0,1/3)=(-1/3, 2/3,0, -1/3),\\
 p_{U^{\perp}}(0,0,1,0)&amp;=(0,0,1,0)-(0,0,0,0)=(0,0,1,0),\\
 p_{U^{\perp}}(0,0,0,1)&amp;=(0,0,0,1)-(1/3,1/3,0,1/3)=(-1/3, -1/3,0, 2/3).\\
-\end{align*}\]</span>
+\end{align*}
+\]</span></p>
 </li>
 <li>
-Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(\overline{B}\)</span>.<br> Tenemos calculadas las imágenes de los vectores de <span class="math inline">\(\overline{B}\)</span>, así que sólo tenemos que calcular sus coordenadas respecto de <span class="math inline">\(\overline{B}\)</span>, que son inmediatas <span class="math display">\[\begin{array}{rll}
+<p>Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(\overline{B}\)</span>.</p>
+<p>Tenemos calculadas las imágenes de los vectores de <span class="math inline">\(\overline{B}\)</span>, así que sólo tenemos que calcular sus coordenadas respecto de <span class="math inline">\(\overline{B}\)</span>, que son inmediatas</p>
+<p><span class="math display">\[
+\begin{array}{rll}
 f(1,-1,0,0)&amp;=(1,-1,0,0)&amp;=(1,0,0,0)_{\overline{B}},\\
 f(1,0,0,-1)&amp;=(1,0,0,-1)&amp;=(0,1,0,0)_{\overline{B}},\\
 f(0,0,1,0)&amp;=(0,0,1,0)&amp;=(0,0,1,0)_{\overline{B}},\\
 f(1,1,0,1)&amp;=(0,0,0,0)&amp;=(0,0,0,0)_{\overline{B}}.\\
-\end{array}\]</span> Así que <span class="math display">\[\mathcal{M}(f,\overline{B})=\begin{pmatrix}
+\end{array}
+\]</span></p>
+<p>Así que</p>
+<p><span class="math display">\[
+\mathcal{M}(f,\overline{B})=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp;  0 &amp; 0\\
 0 &amp; 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 0
-\end{pmatrix}.\]</span>
+\end{pmatrix}.
+\]</span></p>
 </li>
 <li>
-Calcular la matriz asociada al endomorfismo respecto de la base canónica.<br> <span class="math inline">\(f\)</span> es la proyección ortogonal sobre <span class="math inline">\(U^{\perp}\)</span>, por lo que <span class="math display">\[\mathcal{M}(f,B_c)=\begin{pmatrix}
+<p>Calcular la matriz asociada al endomorfismo respecto de la base canónica.</p>
+<p><span class="math inline">\(f\)</span> es la proyección ortogonal sobre <span class="math inline">\(U^{\perp}\)</span>, por lo que</p>
+<p><span class="math display">\[
+\mathcal{M}(f,B_c)=\begin{pmatrix}
 2/3 &amp; -1/3 &amp; 0 &amp; -1/3\\
 -1/3 &amp; 2/3 &amp;  0 &amp; -1/3\\
 0 &amp; 0 &amp; 1 &amp; 0\\
 -1/3 &amp; -1/3 &amp; 0 &amp; 2/3
-\end{pmatrix}.\]</span>
+\end{pmatrix}.
+\]</span></p>
 </li>
 <li>
-Calcular bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.<br> Como <span class="math inline">\(\operatorname{dim}(\operatorname{Im}(f))=\operatorname{rg}(\mathcal{M}(f,\overline{B}))=3\)</span> entonces una base de la imagen son los tres primeros vectores de la base <span class="math inline">\(\overline{B}\)</span>, es decir, <span class="math inline">\(\operatorname{Im}(f)=U^{\perp}\)</span>. Así <span class="math inline">\(\operatorname{dim}(\operatorname{ker}(f))=1\)</span> y como <span class="math inline">\(f(1,1,0,1)=(0,0,0,0)\)</span>, entonces una base de <span class="math inline">\(\operatorname{ker}(f)\)</span> es <span class="math inline">\(\{(1,1,0,1)\}\)</span>, con lo que <span class="math inline">\(\operatorname{ker}(f)=U\)</span>.
+<p>Calcular bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.</p>
+Como <span class="math inline">\(\operatorname{dim}(\operatorname{Im}(f))=\operatorname{rg}(\mathcal{M}(f,\overline{B}))=3\)</span> entonces una base de la imagen son los tres primeros vectores de la base <span class="math inline">\(\overline{B}\)</span>, es decir, <span class="math inline">\(\operatorname{Im}(f)=U^{\perp}\)</span>. Así <span class="math inline">\(\operatorname{dim}(\operatorname{ker}(f))=1\)</span> y como <span class="math inline">\(f(1,1,0,1)=(0,0,0,0)\)</span>, entonces una base de <span class="math inline">\(\operatorname{ker}(f)\)</span> es <span class="math inline">\(\{(1,1,0,1)\}\)</span>, con lo que <span class="math inline">\(\operatorname{ker}(f)=U\)</span>.
 </li>
 </ol>
-</details>
-</article>
+</div>
+</div>
+</div>
+</div>
 
 
 
