@@ -1134,7 +1134,8 @@ Sea $$A=\left (\begin{array}{cccc} 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 &
 <ol type="a">
 <li>Encontrar $B$ tal que $A\cdot B = Id$.
 
-¿Qué orden debe tener $B$? Como la identidad es una matriz cuadrada, y $A$ tiene tres filas, deducimos que $I$ es la identidad $3\times 3$. De aquí también deducimos que $B$ tiene que tener cuatro filas y tres columnas.<br>
+¿Qué orden debe tener $B$? Como la identidad es una matriz cuadrada, y $A$ tiene tres filas, deducimos que $I$ es la identidad $3\times 3$. De aquí también deducimos que $B$ tiene que tener cuatro filas y tres columnas.
+
 
 Si calculamos la forma de Hermite por columnas de $A$ y la matriz de paso, a la que llamaremos $Q$, entonces $A Q=H$. La matriz $H$ no es la matriz identidad, por supuesto, porque tiene orden $3\times 4$, pero puede parecerse bastante. Calculémosla:
 
@@ -1362,7 +1363,8 @@ $$
 </li>
 
 <li>Encontrar $C$ tal que $C\cdot A = Id$.
-Si pensamos primero en el orden de $C$, como $A$ tiene tres filas y cuatro columnas, necesariamente $C$ debe tener tres columnas. Por otro lado, como la matriz identidad es cuadrada, en este caso será una matriz $4\times4$, por lo que $C$ debe tener cuatro filas.<br>
+Si pensamos primero en el orden de $C$, como $A$ tiene tres filas y cuatro columnas, necesariamente $C$ debe tener tres columnas. Por otro lado, como la matriz identidad es cuadrada, en este caso será una matriz $4\times4$, por lo que $C$ debe tener cuatro filas.
+
 
 El argumento más fácil de utilizar es posterior al momento en que nos encontramos en el desarrollo del tema. Se usa:
 
@@ -1370,7 +1372,8 @@ $$
 \operatorname{rg}(A\cdot B)\leq \min\{\operatorname{rg}(A),\operatorname{rg}(B)\}
 $$
 
-en este caso, por los órdenes de $A$ y $C$ su rango máximo posible es $3$, luego $\operatorname{rg}(C\cdot A)\leq 3$ mientras que $\operatorname{rg}(I_4)=4.$<br>
+en este caso, por los órdenes de $A$ y $C$ su rango máximo posible es $3$, luego $\operatorname{rg}(C\cdot A)\leq 3$ mientras que $\operatorname{rg}(I_4)=4.$
+
 
 También es posible plantearlo de una forma similar al apartado 2, al resolver los sistemas encontraremos que son incompatibles.</li>
 </ol>
@@ -1420,9 +1423,11 @@ $\begin{vmatrix}
 a & 3-a
 \end{vmatrix}= 3-a \not = 0$ 
 el rango de $A$ es dos.
-(También se podría haber hecho en la matriz $A$ directamente, pero este determinante es muy sencillo de calcular y de determinar cuándo es distinto de $0$.)<br>
+(También se podría haber hecho en la matriz $A$ directamente, pero este determinante es muy sencillo de calcular y de determinar cuándo es distinto de $0$.)
 
-Entonces tenemos que en todos los casos en los que $a\not = 3$ tendremos  $\operatorname{rg}(A)=\operatorname{rg}(A|b)=2$ es menor que el  número de incógnitas y el sistema es compatible indeterminado.<br>
+
+Entonces tenemos que en todos los casos en los que $a\not = 3$ tendremos  $\operatorname{rg}(A)=\operatorname{rg}(A|b)=2$ es menor que el  número de incógnitas y el sistema es compatible indeterminado.
+
 Solo nos queda estudiar el caso $a=3$, para el que podemos proceder como en los ejercicios del comienzo del tema: 
 
 $$
@@ -1440,9 +1445,11 @@ O bien, podemos volver a aplicar el Teorema de Rouché-Frobenius, en este caso o
 $\begin{vmatrix}
 1 & 3 \\
 -3 & 2
-\end{vmatrix}=2+9=11$ luego $\operatorname{rg}(A)=2$ y el mismo razonamiento nos lleva a que también en este caso es compatible indeterminado. <br>
+\end{vmatrix}=2+9=11$ luego $\operatorname{rg}(A)=2$ y el mismo razonamiento nos lleva a que también en este caso es compatible indeterminado. 
 
-Por tanto, siempre es compatible indeterminado dependiendo de un parámetro.<br>
+
+Por tanto, siempre es compatible indeterminado dependiendo de un parámetro.
+
 
 Para el caso $a=-1$:
 
@@ -1498,7 +1505,8 @@ $$
 Al estar trabajando en $\mathbb{Z}_3$, $a$ y $b$ pueden tomar solo 3 valores posibles.
 
 Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo,
-si $a=0$, entonces $|A|= b$; si $a=1$, $|A|= 2b+2$; si $a=2$, $|A|= 1$.<br>
+si $a=0$, entonces $|A|= b$; si $a=1$, $|A|= 2b+2$; si $a=2$, $|A|= 1$.
+
 
 <table class="default">
   <tr>
@@ -1528,9 +1536,11 @@ si $a=0$, entonces $|A|= b$; si $a=1$, $|A|= 2b+2$; si $a=2$, $|A|= 1$.<br>
 </table>
 
 De la observación de la tabla anterior deducimos que $\operatorname{rg}(A)=3$ para 7 de los 9 casos, siempre que el determinante es distinto de $0$.
-Ahora, estudiamos los dos casos particulares que nos faltan.<br>
+Ahora, estudiamos los dos casos particulares que nos faltan.
 
-Para $a=0=b$:<br>
+
+Para $a=0=b$:
+
 
 $$
 \begin{pmatrix}
@@ -1538,9 +1548,11 @@ $$
 \end{pmatrix}
 $$
 
-que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.<br>
+que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.
 
-Para $a=1$, $b=2$:<br>
+
+Para $a=1$, $b=2$:
+
 
 $$
 \begin{pmatrix}
@@ -1596,9 +1608,11 @@ $$
 y este resultado es válido en cualquier cuerpo.</li>
 
 <li class="cuerpo_finito">Rango.
-Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda\in \{0,1\}$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.<br>
+Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda\in \{0,1\}$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.
 
-Para $\lambda=0$:<br>
+
+Para $\lambda=0$:
+
 
 $$
 A=\left( \begin{array}{cccc}
@@ -1618,9 +1632,11 @@ A=\left( \begin{array}{cccc}
 0 & 0 & 0 & 0 
 \end{array}\right)
 $$ 
-luego el rango es 3. <br>
+luego el rango es 3. 
 
-Para $\lambda=1$:<br>
+
+Para $\lambda=1$:
+
 $$
 A=\left( \begin{array}{cccc}
 2 & 1 & 1 & 0\\
@@ -1638,7 +1654,8 @@ que tiene rango 3.</li>
 
 <li>Sistema de ecuaciones.
 
-Como la matriz ampliada tiene rango 4 para $\lambda\not\in \{0,1,3\}$, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares $\lambda\in\{0,1,3\}$:<br>
+Como la matriz ampliada tiene rango 4 para $\lambda\not\in \{0,1,3\}$, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares $\lambda\in\{0,1,3\}$:
+
 
 Para $\lambda=0$:
 $$
@@ -1650,7 +1667,8 @@ $$
 \end{array}\right).
 $$
 
-Como aparece la ecuación $0=1$ entonces también es incompatible.<br>
+Como aparece la ecuación $0=1$ entonces también es incompatible.
+
 
 Para $\lambda=1$:
 $$
@@ -1667,7 +1685,8 @@ $$
 \end{array}\right)
 $$
 
-en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.<br>
+en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.
+
 
 Para $\lambda=3$:
 
@@ -1832,9 +1851,12 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular los valores de $a$ para los que $A$ y $B$ son equivalentes.<br>
-Dos matrices son equivalentes $\Leftrightarrow$ tienen el mismo rango.<br>
-Calculamos el rango de ambas matrices. Como son de orden $3\times 4$ su rango máximo es tres. <br>
+<li>Calcular los valores de $a$ para los que $A$ y $B$ son equivalentes.
+
+Dos matrices son equivalentes $\Leftrightarrow$ tienen el mismo rango.
+
+Calculamos el rango de ambas matrices. Como son de orden $3\times 4$ su rango máximo es tres. 
+
 Para $A$ calculamos un menor de orden tres
 
 $$
@@ -1902,10 +1924,12 @@ $$
 
 con lo que $\operatorname{rg}(B)=2$ para todo valor de $a$.Así que $A$ y $B$ son equivalentes para $a=2$.</li>
 
-<li>Calcular para qué valores de $a$ son equivalentes por filas.<br>
+<li>Calcular para qué valores de $a$ son equivalentes por filas.
+
 Para que sean equivalentes por filas deben tener la misma forma de Hermite por filas, y en particular el mismo rango, así que en cualquier caso solo hay que investigar el caso $a=2$. Como en el apartado anterior hemos calculado la forma de Hermite por filas en este caso, concluimos que nunca son equivalentes por filas. </li>
 
-<li>Calcular $H$, y $P$ regular tal que $H=BP$.<br>
+<li>Calcular $H$, y $P$ regular tal que $H=BP$.
+
 Sustituimos $a=1$ en $B$ y realizamos operaciones elementales por columnas apuntándolas en una matriz regular:
 
 $$
@@ -2004,9 +2028,11 @@ $$
 $$
 </li>
 
-<li>Calcular la forma de Hermite por filas según los valores de $a$.<br>
+<li>Calcular la forma de Hermite por filas según los valores de $a$.
+
 Por el Teorema de las matrices regulares, si $|A|\not = 0$ la forma de Hermite por filas de $A$ es $I_4$, por tanto si $a\not = 0,1$ entonces $H=I_4$.
-Estudiamos los casos particulares $a=0$ y $a=1$.<br>
+Estudiamos los casos particulares $a=0$ y $a=1$.
+
 Si $a=0$ 
 
 $$
@@ -2078,8 +2104,10 @@ show(A,"~",A.rref())
 :::
 </li>
 
-<li>Discutir el sistema cuya matriz ampliada es $A$ en función de los valores de $a$.<br>
-Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada $H$.<br>
+<li>Discutir el sistema cuya matriz ampliada es $A$ en función de los valores de $a$.
+
+Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada $H$.
+
 Si $a\not = 0,1$ entonces 
 
 $$
@@ -2091,7 +2119,8 @@ H= \left(\begin{array}{ccc|c}
 \end{array}\right)
 $$
 
-y como aparece la ecuación $0=1$ es incompatible.<br>
+y como aparece la ecuación $0=1$ es incompatible.
+
 Si $a=0$
 
 $$
@@ -2103,7 +2132,8 @@ H=\left( \begin{array}{ccc|c}
 \end{array}\right)
 $$ 
 
-y también es incompatible.<br>
+y también es incompatible.
+
 Por último para $a=1$
 
 $$
@@ -2146,14 +2176,16 @@ C=\begin{pmatrix}
 $$
 
 Determinar matrices regulares $P$ y $Q$ de forma que:
-$Q\cdot A \cdot P= C$.<br>
+$Q\cdot A \cdot P= C$.
+
 Razonar que 
 no pueden existir matrices regulares $P$ y $Q$ de forma que:
 $Q\cdot B \cdot P=C$
 
 :::: {.callout collapse="true" title="Solución"}
 
-El rango de $A$ es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como $C$ es de rango dos y del mismo orden, entonces $A$ y $C$ son equivalentes y por tanto existen matrices regulares $Q$ y $P$ verificando $Q\, A \, P=C$. Sin embargo $B$ tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con $C$.<br>
+El rango de $A$ es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como $C$ es de rango dos y del mismo orden, entonces $A$ y $C$ son equivalentes y por tanto existen matrices regulares $Q$ y $P$ verificando $Q\, A \, P=C$. Sin embargo $B$ tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con $C$.
+
 
 Para calcular $Q$ y $P$ realizamos operaciones elementales por filas y columnas sobre $A$ hasta obtener $C$. Una forma posible es transformar $A$ hasta su forma de Hermite por filas y después, a la matriz obtenida se le realizan operaciones elementales por columnas. También podrían realizarse unas y otras operaciones elementales en cualquier orden.
 
@@ -2266,7 +2298,8 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular el determinante de $A$.<br>
+<li>Calcular el determinante de $A$.
+
 $$\begin{aligned}
 |A| & = \left|\begin{array}{rrrr}
 a & 1 & 0 & 1\\
@@ -2297,12 +2330,15 @@ a-1 & 1-a & 0 & 0\\
 $$
 </li> 
 
-<li>Determinar los valores de $a$ para los que la forma de Hermite por filas de $A$ es $I_4$.<br>
+<li>Determinar los valores de $a$ para los que la forma de Hermite por filas de $A$ es $I_4$.
+
 Por el Teorema de las matrices regulares, la forma de Hermite por filas es $I_4$ sí y sólo sí $|A|\neq 0$, luego ocurre para todo $a\in\mathbb{R}\setminus\{-2,0,1\}$, esto es , si $a\neq -2, 0, 1$.
 </li>
 
-<li>Estudiar el rango de $A$.<br>
-Si  $a\neq -2, 0, 1$, entonces el $\operatorname{rg}(A)=4$.<br>
+<li>Estudiar el rango de $A$.
+
+Si  $a\neq -2, 0, 1$, entonces el $\operatorname{rg}(A)=4$.
+
 
 Si $a=1$:
 
@@ -2377,7 +2413,8 @@ $$
 Luego $\operatorname{rg}(A)=3$.
 </li>
 
-<li>Para $a=-2$ calcula la forma de Hermite por filas de $A$.<br>
+<li>Para $a=-2$ calcula la forma de Hermite por filas de $A$.
+
 Se ha calculado en el apartado anterior, 
 
 $$
@@ -2430,7 +2467,8 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Determinar para qué valores del parámetro $a$ es la matriz $A$ invertible.<br>
+<li>Determinar para qué valores del parámetro $a$ es la matriz $A$ invertible.
+
 La matriz $A$ es invertible si, y solo si, su determinante es distinto de cero. Calculamos el determinante realizando primero algunas operaciones elementales:
 
 $$
@@ -2462,8 +2500,10 @@ $$
 Así, que $A$ tiene inversa cuando $a\not = 0,1$.
 </li>
 
-<li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ regular de forma que $B=A\cdot P$.<br>
-Para que exista esa matriz regular $P$ (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser $A$ y $B$ equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.<br>
+<li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ regular de forma que $B=A\cdot P$.
+
+Para que exista esa matriz regular $P$ (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser $A$ y $B$ equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.
+
 Entonces calculamos la de $B$:
 
 $$
@@ -2495,7 +2535,8 @@ show(B,"~",(B.T).rref().T)
 </script>
 :::
 
-Puesto que $\operatorname{rg}(B)=2$ solo es posible que sean equivalentes por columnas cuando $a=0$ o $a=1$, porque en otro caso $A$ tiene rango tres.<br>
+Puesto que $\operatorname{rg}(B)=2$ solo es posible que sean equivalentes por columnas cuando $a=0$ o $a=1$, porque en otro caso $A$ tiene rango tres.
+
 Calculamos la forma de Hermite de $A$ en ambos casos:
 
 $$
@@ -2525,7 +2566,8 @@ A=\begin{pmatrix}
 $$
 </li>
 
-<li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ de forma que $B=A\cdot P$.<br>
+<li>Determinar para qué valores del parámetro $a$ existe una matriz $P$ de forma que $B=A\cdot P$.
+
 Como hemos razonado en el caso anterior, $P$ existe para $a=1$ y es regular. Cuando $a\not=0,1$ como $A$ es regular, podemos despejar $P$ en la fórmula $B=AP$:
 
 $$
@@ -2586,8 +2628,10 @@ $$
 \end{pmatrix},
 $$
 
-tiene rango 2 si $b-1=2(a-1)$ ( o lo que es lo mismo $b=2a-1$, que incluye el caso $a=b=1$) y rango 3 en cualquier otro caso.<br>
-Así, el sistema es compatible si, y solo si, $b= 2a-1$ y $a\not = 1$ y en esos casos, como $\operatorname{rg}(A)=\operatorname{rg}(A|B)=2$, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando $a=b=1$ o bien cuando $b\not = 2a-1$) es incompatible.<br>
+tiene rango 2 si $b-1=2(a-1)$ ( o lo que es lo mismo $b=2a-1$, que incluye el caso $a=b=1$) y rango 3 en cualquier otro caso.
+
+Así, el sistema es compatible si, y solo si, $b= 2a-1$ y $a\not = 1$ y en esos casos, como $\operatorname{rg}(A)=\operatorname{rg}(A|B)=2$, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando $a=b=1$ o bien cuando $b\not = 2a-1$) es incompatible.
+
 Cuando $b=2a-1$ y $a\not = 1$, resolviendo desde la matriz anterior 
 
 $$
@@ -2641,9 +2685,11 @@ $$
 
 
 <ol type="a">
-<li>Encontrar los valores de $a$ y $b$ para los que las matrices $A$ y $B$ sean equivalentes.<br>
+<li>Encontrar los valores de $a$ y $b$ para los que las matrices $A$ y $B$ sean equivalentes.
+
 Dos matrices del mismo orden son equivalentes cuando tienen el mismo rango.  Calculamos el rango en función de los parámetros:
-en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.<br>
+en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.
+
 Para $A$ elegimos
 
 $$
@@ -2657,7 +2703,8 @@ $$
    1 & -1 \\
     \end{array}
 \right|= a(-a-1).$$
-Así que si $a\not =0, a\not = -1$, $\operatorname{rg}(A)=3$.<br>
+Así que si $a\not =0, a\not = -1$, $\operatorname{rg}(A)=3$.
+
 Para $a=0$
 $$A=\left(\begin{array}{rrr}
    1 & 0 & -1\\
@@ -2686,7 +2733,8 @@ $$A=\left(\begin{array}{rrr}
 \right),
 $$
 
-tiene también rango tres y la anterior es su forma de Hermite por filas.<br>
+tiene también rango tres y la anterior es su forma de Hermite por filas.
+
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -2722,7 +2770,8 @@ A=\left(\begin{array}{rrr}
 \right).
 $$  
 
-tiene rango dos y la anterior es su forma de Hermite por filas.<br>
+tiene rango dos y la anterior es su forma de Hermite por filas.
+
 
 Para $B$:
 
@@ -2769,7 +2818,8 @@ B=\left(\begin{array}{rrr}
 \right),
 $$
 
-que tiene rango dos y tenemos su forma de Hermite por filas.<br>
+que tiene rango dos y tenemos su forma de Hermite por filas.
+
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -2783,7 +2833,8 @@ show(B,"~",B.rref())
 Por tanto, concluimos que si $a=-1$ y $b=0$, o bien, $a\neq-1$ y $b\neq0$, son equivalentes mientras que si $a=-1$ y $b\neq0$, o bien, $a\neq-1$ y $b=0$, no son equivalentes.
 </li>
 
-<li>Encontrar los valores de $a$ y $b$ para los que las matrices $A$ y $B$ sean equivalentes por filas.<br>
+<li>Encontrar los valores de $a$ y $b$ para los que las matrices $A$ y $B$ sean equivalentes por filas.
+
 En el caso de que una matriz $4\times 3$ tenga rango tres, su forma de Hermite por filas es necesariamente 
 
 $$
@@ -2799,7 +2850,8 @@ $$
 puesto que cada uno de los tres pivotes tienen que estar en columnas distintas. Así que tenemos calculada la forma de Hermite en todos los casos y podemos concluir que no serán equivalentes por filas excepto si $a\neq-1$ y $b\neq0$.
 </li>
 
-<li>Para la pareja de valores $a=0$, $b=1$, calcular una matriz $Q$ tal que $QA=B$.<br>
+<li>Para la pareja de valores $a=0$, $b=1$, calcular una matriz $Q$ tal que $QA=B$.
+
 En ese caso las matrices son equivalentes por filas, para encontrar una matriz $Q$, calculamos $Q_1$ y $Q_2$ tales que:
 
 $$ 
