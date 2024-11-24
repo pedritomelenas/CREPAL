@@ -37,6 +37,27 @@
     ]
   },
   {
+    "objectID": "instrucciones.html",
+    "href": "instrucciones.html",
+    "title": "Instrucciones básicas",
+    "section": "",
+    "text": "Los ejercicios tienen la siguiente estructura básica.\n::::: {#exr-identificador}\n\nEnunciado del ejercicio\n\n:::: {.callout collapse=\"true\" title=\"Solución\"}\n\nSolución del ejercicio\n\n::::\n:::::\nEl identificador puede ser cualquier cadena de caracteres. Inicialmente he usado números para los que se introdujeron en la primera fase, salvo en el fichero resueltos-examenes.md que he usado la numeración oN con N un número.\n\n\nHay dos tipos de clasificación:\n\ndependiendo de si el ejercicio contiene o no cuerpos finitos,\ndependiendo de la dificultad.\n\nSi un ejercicio involucra operaciones en cuerpos finitos tendrá una cabecera de la forma\n::::: {#exr-identificador .cuerpo_finito}\nLa dificultad puede ser básico, medio o avanzado. Así un ejercicio con dificultad básica que no trate de cuerpos finitos se etiquetará como sigue.\n::::: {#exr-identificador .basico}\nMientras que si conlleva operaciones en cuerpos finitos, se etiqueta así:\n::::: {#exr-identificador .cuerpo_finito-basico}\n\n\n\nPara introducir una celda en sagemath usamos la siguiente sintaxis.\n::: {.sage}\n&lt;script type=\"text/x-sage\"&gt;\ncódigo en sagemath\n&lt;/script&gt;\n:::"
+  },
+  {
+    "objectID": "instrucciones.html#clasificación-de-ejercicios",
+    "href": "instrucciones.html#clasificación-de-ejercicios",
+    "title": "Instrucciones básicas",
+    "section": "",
+    "text": "Hay dos tipos de clasificación:\n\ndependiendo de si el ejercicio contiene o no cuerpos finitos,\ndependiendo de la dificultad.\n\nSi un ejercicio involucra operaciones en cuerpos finitos tendrá una cabecera de la forma\n::::: {#exr-identificador .cuerpo_finito}\nLa dificultad puede ser básico, medio o avanzado. Así un ejercicio con dificultad básica que no trate de cuerpos finitos se etiquetará como sigue.\n::::: {#exr-identificador .basico}\nMientras que si conlleva operaciones en cuerpos finitos, se etiqueta así:\n::::: {#exr-identificador .cuerpo_finito-basico}"
+  },
+  {
+    "objectID": "instrucciones.html#celdas-sagemath",
+    "href": "instrucciones.html#celdas-sagemath",
+    "title": "Instrucciones básicas",
+    "section": "",
+    "text": "Para introducir una celda en sagemath usamos la siguiente sintaxis.\n::: {.sage}\n&lt;script type=\"text/x-sage\"&gt;\ncódigo en sagemath\n&lt;/script&gt;\n:::"
+  },
+  {
     "objectID": "resueltos-3.html",
     "href": "resueltos-3.html",
     "title": "Aplicaciones lineales",
