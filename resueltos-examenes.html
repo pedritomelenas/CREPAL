@@ -305,14 +305,17 @@ window.Quarto = {
 
 
 <!-- LTeX: language=es-ES --->
-<article>
-<p>Dada la matriz <span class="math display">\[A=\left(
+<div id="exr-o1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Dada la matriz</p>
+<p><span class="math display">\[
+A=\left(
 \begin{array}{ccc}
 0 &amp; 0 &amp; 1\\
 0 &amp; a &amp; 0 \\
 1 &amp; 0 &amp; 0
 \end{array}\right)
-\hspace{1cm} \mbox{ con } a\not = 0\]</span></p>
+\hspace{1cm} \mbox{ con } a\not = 0
+\]</span></p>
 <ol type="a">
 <li>
 Calcula los valores propios y sus multiplicidades algebraicas en todos los casos posibles.
@@ -324,13 +327,24 @@ Calcula los valores propios y sus multiplicidades algebraicas en todos los casos
 Para el caso <span class="math inline">\(a=1\)</span> comprueba que es diagonalizable por semejanza ortogonal y calcula <span class="math inline">\(D\)</span> diagonal y <span class="math inline">\(P\)</span> ortogonal (esto es, <span class="math inline">\(P^t=P^{-1}\)</span>) tal que <span class="math inline">\(D=P^tAP\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular los valores propios y sus multiplicidades algebraicas.<br> Calculamos los valores propios en función de <span class="math inline">\(a\)</span>: <span class="math display">\[|A-\lambda I|=\left|
+<p>Calcular los valores propios y sus multiplicidades algebraicas.</p>
+<p>Calculamos los valores propios en función de <span class="math inline">\(a\)</span>:</p>
+<p><span class="math display">\[
+|A-\lambda I|=\left|
 \begin{array}{ccc}
 -\lambda &amp; 0 &amp; 1\\
 0 &amp; a-\lambda &amp; 0 \\
@@ -339,13 +353,20 @@ Calcular los valores propios y sus multiplicidades algebraicas.<br> Calculamos l
 \begin{array}{cc}
 -\lambda &amp;  1\\
 1 &amp;  -\lambda
-\end{array}\right|=(a-\lambda)(\lambda^2-1)=(a-\lambda)(\lambda-1)(\lambda +1).\]</span> Así que cuando <span class="math inline">\(a\not = \pm 1\)</span> entonces hay tres valores propios distintos con multiplicidad algebraica 1. Pero si <span class="math inline">\(a=1\)</span> entonces hay dos valores propios, <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=-1\)</span> con multiplicidad algebraica uno; y si <span class="math inline">\(a=-1\)</span> entonces hay dos valores propios, <span class="math inline">\(\lambda=-1\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica uno.
+\end{array}\right|=(a-\lambda)(\lambda^2-1)=(a-\lambda)(\lambda-1)(\lambda +1).
+\]</span></p>
+Así que cuando <span class="math inline">\(a\not = \pm 1\)</span> entonces hay tres valores propios distintos con multiplicidad algebraica 1. Pero si <span class="math inline">\(a=1\)</span> entonces hay dos valores propios, <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=-1\)</span> con multiplicidad algebraica uno; y si <span class="math inline">\(a=-1\)</span> entonces hay dos valores propios, <span class="math inline">\(\lambda=-1\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica uno.
 </li>
 <li>
-¿Para qué valores de <span class="math inline">\(a\)</span> es diagonalizable?<br> Siempre es diagonalizable puesto que es simétrica.
+<p>¿Para qué valores de <span class="math inline">\(a\)</span> es diagonalizable?</p>
+Siempre es diagonalizable puesto que es simétrica.
 </li>
 <li>
-Comprobar que es diagonalizable por semejanza ortogonal y calcular <span class="math inline">\(D\)</span> diagonal y <span class="math inline">\(P\)</span> ortogonal.<br> Como es simétrica es diagonalizable por semejanza ortogonal (Teorema espectral). Para <span class="math inline">\(a=1\)</span> ya tenemos los valores propios: <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=-1\)</span> con multiplicidad algebraica uno, y nos queda calcular las bases ortonormales (para que <span class="math inline">\(P\)</span> sea ortogonal) de cada uno de los subespacios propios:<br> <strong><span class="math inline">\(V_{\lambda=1}\)</span></strong> <span class="math display">\[\begin{pmatrix}
+<p>Comprobar que es diagonalizable por semejanza ortogonal y calcular <span class="math inline">\(D\)</span> diagonal y <span class="math inline">\(P\)</span> ortogonal.</p>
+<p>Como es simétrica es diagonalizable por semejanza ortogonal (Teorema espectral). Para <span class="math inline">\(a=1\)</span> ya tenemos los valores propios: <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=-1\)</span> con multiplicidad algebraica uno, y nos queda calcular las bases ortonormales (para que <span class="math inline">\(P\)</span> sea ortogonal) de cada uno de los subespacios propios:</p>
+<p><strong><span class="math inline">\(V_{1}\)</span></strong></p>
+<p><span class="math display">\[
+\begin{pmatrix}
 -1 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 0\\
 1 &amp; 0 &amp; -1\\
@@ -353,7 +374,12 @@ Comprobar que es diagonalizable por semejanza ortogonal y calcular <span class="
 x\\ y\\ z
 \end{pmatrix}=  \begin{pmatrix}
 0\\ 0\\ 0
-\end{pmatrix}\]</span> nos da la ecuación <span class="math inline">\(x-z=0\)</span> y una base es <span class="math inline">\(\{(1,0,1),(0,1,0)\}\)</span> que es ortogonal, así que los dividimos por su norma: <span class="math inline">\(\{(1/\sqrt{2},0,1/\sqrt{2}),(0,1,0)\}\)</span>.<br> <strong><span class="math inline">\(V_{\lambda=-1}\)</span></strong> <span class="math display">\[\begin{pmatrix}
+\end{pmatrix}
+\]</span></p>
+<p>nos da la ecuación <span class="math inline">\(x-z=0\)</span> y una base es <span class="math inline">\(\{(1,0,1),(0,1,0)\}\)</span> que es ortogonal, así que los dividimos por su norma: <span class="math inline">\(\{(1/\sqrt{2},0,1/\sqrt{2}),(0,1,0)\}\)</span>.</p>
+<p><strong><span class="math inline">\(V_{-1}\)</span></strong></p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 0 &amp; 1\\
 0 &amp; 2 &amp; 0\\
 1 &amp; 0 &amp; 1\\
@@ -361,7 +387,12 @@ x\\ y\\ z
 x\\ y\\ z
 \end{pmatrix}=  \begin{pmatrix}
 0\\ 0\\ 0
-\end{pmatrix}\]</span> nos da las ecuaciones <span class="math inline">\(x+z=0; y=0\)</span> y una base es <span class="math inline">\(\{(1,0,-1)\}\)</span> que es ortogonal, así que lo dividimos por su norma: <span class="math inline">\(\{(1/\sqrt{2},0,-1/\sqrt{2})\}\)</span>.<br> Tenemos entonces <span class="math display">\[D=\begin{pmatrix}
+\end{pmatrix}
+\]</span></p>
+<p>nos da las ecuaciones <span class="math inline">\(x+z=0; y=0\)</span> y una base es <span class="math inline">\(\{(1,0,-1)\}\)</span> que es ortogonal, así que lo dividimos por su norma: <span class="math inline">\(\{(1/\sqrt{2},0,-1/\sqrt{2})\}\)</span>.</p>
+<p>Tenemos entonces</p>
+<p><span class="math display">\[
+D=\begin{pmatrix}
 1 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; -1
@@ -369,15 +400,23 @@ x\\ y\\ z
 1/\sqrt{2} &amp; 0  &amp; 1/\sqrt{2}\\
 0 &amp; 1 &amp; 0 \\
 1/\sqrt{2} &amp; 0  &amp; -1/\sqrt{2}\\
-\end{pmatrix}.\]</span>
+\end{pmatrix}.
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
-Calcula la matriz de Gram del producto escalar en el espacio de las matrices simétricas de orden dos dado por la fórmula: <span class="math display">\[\langle A,B\rangle=\operatorname{traza}(AB)\]</span> respecto de la base <span class="math inline">\(B= \left\{ \begin{pmatrix}
+<p>Calcula la matriz de Gram del producto escalar en el espacio de las matrices simétricas de orden dos dado por la fórmula:</p>
+<p><span class="math display">\[
+\langle A,B\rangle=\operatorname{traza}(AB)
+\]</span></p>
+respecto de la base <span class="math inline">\(B= \left\{ \begin{pmatrix}
 1 &amp; 0 \\
 0 &amp; 0
 \end{pmatrix}; \begin{pmatrix}
@@ -405,13 +444,24 @@ Calcula la signatura de la matriz <span class="math inline">\(A=\begin{pmatrix}
 De una aplicación lineal <span class="math inline">\(f:\mathbb{R}^{n} \longrightarrow \mathbb{R}^{m}\)</span> se conoce que es sobreyectiva. ¿Puedes deducir algo sobre los valores de <span class="math inline">\(n\)</span> y <span class="math inline">\(m\)</span>?
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcula la matriz de Gram.<br> Para obtener la matriz de Gram calculamos el producto de cada dos matrices de la base: <span class="math display">\[\langle \begin{pmatrix}
+<p>Calcula la matriz de Gram.</p>
+<p>Para obtener la matriz de Gram calculamos el producto de cada dos matrices de la base:</p>
+<p><span class="math display">\[
+\langle \begin{pmatrix}
 1 &amp; 0 \\
 0 &amp; 0
 \end{pmatrix} ,\begin{pmatrix}
@@ -426,7 +476,9 @@ Solución
 \end{pmatrix}\right)=\operatorname{traza}\left(  \begin{pmatrix}
 1 &amp; 0 \\
 0 &amp; 0
-\end{pmatrix} \right)=1,\]</span> <span class="math display">\[\langle \begin{pmatrix}
+\end{pmatrix} \right)=1,
+\]</span></p>
+<p><span class="math display">\[\langle \begin{pmatrix}
 1 &amp; 0 \\
 0 &amp; 0
 \end{pmatrix} ,\begin{pmatrix}
@@ -441,16 +493,23 @@ Solución
 \end{pmatrix}\right)=\operatorname{traza}\left(  \begin{pmatrix}
 0 &amp; 1 \\
 0 &amp; 0
-\end{pmatrix} \right)=0,\]</span> del mismo modo se obtienen los productos restantes y se obtiene</p>
-<span class="math display">\[G=\begin{pmatrix}
+\end{pmatrix} \right)=0,
+\]</span></p>
+<p>del mismo modo se obtienen los productos restantes y se obtiene</p>
+<span class="math display">\[
+G=\begin{pmatrix}
 1 &amp; 0 &amp; 0\\
 0 &amp; 2 &amp; 0\\
-0 &amp; 0 &amp; 1\end{pmatrix}.\]</span>
+0 &amp; 0 &amp; 1\end{pmatrix}.
+\]</span>
 </li>
 <li>
-<p>Calcula <span class="math inline">\(B'\)</span>.<br> Los vectores de <span class="math inline">\(B'\)</span> escritos en la base canónica forman la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(Bc\)</span>, así que calcularemos esta matriz para obtenerlos. Como la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B\)</span> es la inversa de <span class="math inline">\(P\)</span> y la de <span class="math inline">\(B\)</span> a <span class="math inline">\(B_c\)</span> es <span class="math inline">\(Q=\begin{pmatrix}
+<p>Calcula <span class="math inline">\(B'\)</span>.</p>
+<p>Los vectores de <span class="math inline">\(B'\)</span> escritos en la base canónica forman la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(Bc\)</span>, así que calcularemos esta matriz para obtenerlos. Como la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B\)</span> es la inversa de <span class="math inline">\(P\)</span> y la de <span class="math inline">\(B\)</span> a <span class="math inline">\(B_c\)</span> es <span class="math inline">\(Q=\begin{pmatrix}
 1 &amp; 2\\ 1 &amp;-1\\
-\end{pmatrix}\)</span>, entonces la matriz que buscamos es <span class="math inline">\(Q\cdot P^{-1}\)</span>. Calculamos <span class="math inline">\(P^{-1}\)</span>: <span class="math display">\[\left(\begin{array}{cc|cc}
+\end{pmatrix}\)</span>, entonces la matriz que buscamos es <span class="math inline">\(Q\cdot P^{-1}\)</span>. Calculamos <span class="math inline">\(P^{-1}\)</span>:</p>
+<p><span class="math display">\[
+\left(\begin{array}{cc|cc}
 1 &amp; 2 &amp; 1 &amp; 0\\
 2/3 &amp; 1/3 &amp; 0 &amp; 1
 \end{array}\right)\sim_f \left(\begin{array}{cc|cc}
@@ -459,7 +518,8 @@ Solución
 \end{array}\right)\sim_f \left(\begin{array}{cc|cc}
 1 &amp;0 &amp; -1/3 &amp; 2\\
 0 &amp; 1 &amp; 2/3 &amp; -1
-\end{array}\right)\]</span></p>
+\end{array}\right).
+\]</span></p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -469,30 +529,45 @@ PI=P.augment(I,subdivide=True)
 show(PI,"~",PI.rref())
 </script>
 </div>
-<span class="math display">\[Q\cdot P{-1}=\begin{pmatrix}
+<p><span class="math display">\[
+Q\cdot P{-1}=\begin{pmatrix}
 1 &amp; 2\\ 1 &amp; -1
 \end{pmatrix}\begin{pmatrix}
 -1/3 &amp; 2\\
 2/3 &amp; -1
 \end{pmatrix}=\begin{pmatrix}
 1 &amp; 0\\ -1 &amp; 3
-\end{pmatrix},\]</span> luego <span class="math inline">\(B'=\{ (1,-1), (0,3)\}\)</span>.
+\end{pmatrix},
+\]</span></p>
+luego <span class="math inline">\(B'=\{ (1,-1), (0,3)\}\)</span>.
 </li>
 <li>
-Calcular la signatura de la matriz <span class="math inline">\(A\)</span>.<br> Para obtener su signatura debemos diagonalizarla, bien por congruencia o por semejanza ortogonal. Como es idéntica a la del problema 4 tenemos que sus valores propios son <span class="math inline">\(1,-1\)</span> y <span class="math inline">\(b\)</span>, así que la signatura será: <span class="math display">\[\begin{array}{lr}
+<p>Calcular la signatura de la matriz <span class="math inline">\(A\)</span>.</p>
+<p>Para obtener su signatura debemos diagonalizarla, bien por congruencia o por semejanza ortogonal. Como es idéntica a la del problema 4 tenemos que sus valores propios son <span class="math inline">\(1,-1\)</span> y <span class="math inline">\(b\)</span>, así que la signatura será:</p>
+<p><span class="math display">\[
+\begin{array}{lr}
 \operatorname{sig}(A)=(2,1) &amp; \mbox{ si }b&gt;0,\\
 \operatorname{sig}(A)=(1,1) &amp; \mbox{ si }b=0,\\
 \operatorname{sig}(A)=(1,2) &amp; \mbox{ si }b&lt;0.\\
-\end{array}\]</span>
+\end{array}
+\]</span></p>
 </li>
 <li>
-¿Puedes deducir algo sobre los valores de <span class="math inline">\(n\)</span> y <span class="math inline">\(m\)</span>?<br> Como es sobreyectiva <span class="math inline">\(\operatorname{dim}(\operatorname{Im}(f))=m\)</span> y por la fórmula de las dimensiones <span class="math display">\[\operatorname{dim}(\operatorname{ker}(f))+ \operatorname{dim}(\operatorname{Im}(f))=\operatorname{dim}(\mathbb{R}^{n})=n.\]</span> Así que <span class="math inline">\(n=a+m\)</span> siendo <span class="math inline">\(a=\operatorname{dim}(\operatorname{ker}(f))\)</span>. Por tanto <span class="math display">\[n\geq m.\]</span>
+<p>¿Puedes deducir algo sobre los valores de <span class="math inline">\(n\)</span> y <span class="math inline">\(m\)</span>?</p>
+<p>Como es sobreyectiva <span class="math inline">\(\dim(\operatorname{Im}(f))=m\)</span> y por la fórmula de las dimensiones</p>
+<p><span class="math display">\[
+\dim(\operatorname{ker}(f))+ \dim(\operatorname{Im}(f))=\dim(\mathbb{R}^{n})=n.\]</span> Así que <span class="math inline">\(n=a+m\)</span> siendo <span class="math inline">\(a=\dim(\operatorname{ker}(f))\)</span>. Por tanto <span class="math display">\[n\geq m.
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Dada la matriz <span class="math display">\[A=\left(
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Dada la matriz</p>
+<p><span class="math display">\[
+A=\left(
 \begin{array}{cccc}
 -1 &amp; -2 &amp; 3 &amp; 2\\
 0 &amp; 1 &amp; 0 &amp; 1\\
@@ -511,13 +586,24 @@ Estudia si es diagonalizable y en caso afirmativo determinar su forma diagonal, 
 Razona si <span class="math inline">\(A\)</span> es o no diagonalizable por semejanza ortogonal.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular los valores propios y sus multiplicidades algebraicas.<br> Calculamos el polinomio característico: <span class="math display">\[\begin{align*}
+<p>Calcular los valores propios y sus multiplicidades algebraicas.</p>
+<p>Calculamos el polinomio característico:</p>
+<p><span class="math display">\[
+\begin{align*}
 |A-\lambda I|=&amp;
 \left|
 \begin{array}{cccc}
@@ -536,10 +622,16 @@ Calcular los valores propios y sus multiplicidades algebraicas.<br> Calculamos e
 -2 &amp;  4-\lambda \\
 \end{array}\right| \\
 =&amp;(2-\lambda)(1-\lambda)(\lambda^2-3\lambda +2)=(2-\lambda)^2(1-\lambda)^2
-\end{align*}\]</span> Así que hay dos valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=2\)</span>, ambos con multiplicidad algebraica dos.
+\end{align*}
+\]</span></p>
+Así que hay dos valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=2\)</span>, ambos con multiplicidad algebraica dos.
 </li>
 <li>
-<p>Estudiar si es diagonalizable y en caso afirmativo determinar su forma diagonal, <span class="math inline">\(D\)</span>, y una matriz de paso, <span class="math inline">\(P\)</span>.<br> Para comprobar que es diagonalizable debemos calcular las multiplicidades geométricas, es decir, las dimensiones de los correspondientes subespacios propios:<br> <span class="math inline">\(V_{\lambda=1}\)</span> tiene cartesianas dadas por las filas de <span class="math display">\[A-1\cdot I=\left(
+<p>Estudiar si es diagonalizable y en caso afirmativo determinar su forma diagonal, <span class="math inline">\(D\)</span>, y una matriz de paso, <span class="math inline">\(P\)</span>.</p>
+<p>Para comprobar que es diagonalizable debemos calcular las multiplicidades geométricas, es decir, las dimensiones de los correspondientes subespacios propios:</p>
+<p><span class="math inline">\(V_{1}\)</span> tiene cartesianas dadas por las filas de</p>
+<p><span class="math display">\[
+A-1\cdot I=\left(
 \begin{array}{cccc}
 -2 &amp; -2 &amp; 3 &amp; 2\\
 0 &amp; 0 &amp; 0 &amp; 1\\
@@ -560,10 +652,17 @@ A=matrix([[-2,-2,3,2],[0,0,0,1],[-2,-2,3,2],[0,0,0,1]])
 show(A,"~",A.rref())
 </script>
 </div>
-<p>Como hay dos ecuaciones, <span class="math inline">\(\operatorname{dim}(V_{\lambda=1})=4-2=2\)</span>, unas cartesianas son <span class="math display">\[V_{\lambda=1}\equiv \left\{ \begin{array}{l}
+<p>Como hay dos ecuaciones, <span class="math inline">\(\dim(V_{1})=4-2=2\)</span>, unas cartesianas son</p>
+<p><span class="math display">\[
+V_{1}\equiv \left\{ \begin{array}{l}
 2x+2y-3z=0,\\
 t=0.
-\end{array}\right.\]</span> Y una base es por ejemplo <span class="math inline">\(\{ (1,-1,0,0),(3,0,2,0)\}\)</span>.<br> <span class="math inline">\(V_{\lambda=2}\)</span> tiene cartesianas dadas por las filas de <span class="math display">\[A-2\cdot I=\left(
+\end{array}\right.
+\]</span></p>
+<p>Y una base es por ejemplo <span class="math inline">\(\{ (1,-1,0,0),(3,0,2,0)\}\)</span>.</p>
+<p><span class="math inline">\(V_{2}\)</span> tiene cartesianas dadas por las filas de</p>
+<p><span class="math display">\[
+A-2\cdot I=\left(
 \begin{array}{cccc}
 -3 &amp; -2 &amp; 3 &amp; 2\\
 0 &amp; -1 &amp; 0 &amp; 1\\
@@ -590,10 +689,17 @@ A=matrix([[-3,-2,3,2],[0,-1,0,1],[-2,-2,2,2],[0,0,0,0]])
 show(A,"~",A.rref())
 </script>
 </div>
-Como hay dos ecuaciones, <span class="math inline">\(\operatorname{dim}(V_{\lambda=2})=4-2=2\)</span>, unas cartesianas son <span class="math display">\[V_{\lambda=2}\equiv \left\{ \begin{array}{l}
+<p>Como hay dos ecuaciones, <span class="math inline">\(\dim(V_{2})=4-2=2\)</span>, unas cartesianas son</p>
+<p><span class="math display">\[
+V_{2}\equiv \left\{ \begin{array}{l}
 x-z=0,\\
 y-t=0.
-\end{array}\right.\]</span> Y una base es por ejemplo <span class="math inline">\(\{ (1,0,1,0),(0,1,0,1)\}\)</span>.<br> Así concluimos que ambos valores propios tienen multiplicidad geométrica dos, y como coincide con sus multiplicidades algebraicas respectivas la matriz sí es diagonalizable. <span class="math display">\[D=\begin{pmatrix}
+\end{array}\right.
+\]</span></p>
+<p>Y una base es por ejemplo <span class="math inline">\(\{ (1,0,1,0),(0,1,0,1)\}\)</span>.</p>
+<p>Así concluimos que ambos valores propios tienen multiplicidad geométrica dos, y como coincide con sus multiplicidades algebraicas respectivas la matriz sí es diagonalizable.</p>
+<p><span class="math display">\[
+D=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 2 &amp; 0 \\
@@ -603,15 +709,20 @@ y-t=0.
 -1 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 2 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix}.\]</span>
+\end{pmatrix}.
+\]</span></p>
 </li>
 <li>
-Razonar si <span class="math inline">\(A\)</span> es o no diagonalizable por semejanza ortogonal.<br> La matriz no es diagonalizable por semejanza ortogonal porque no es simétrica.
+<p>Razonar si <span class="math inline">\(A\)</span> es o no diagonalizable por semejanza ortogonal.</p>
+La matriz no es diagonalizable por semejanza ortogonal porque no es simétrica.
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
 Dadas las matrices <span class="math inline">\(A=\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}\)</span>, dar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que <span class="math inline">\(Q\cdot A \cdot P = B\)</span>.
@@ -620,23 +731,38 @@ Dadas las matrices <span class="math inline">\(A=\begin{pmatrix} 1 &amp; 0 \\ 0 
 Determinar las coordenadas del vector <span class="math inline">\(p(x)=1+x+x^2\)</span> de <span class="math inline">\(\mathcal{P}_2(\mathbb{R})\)</span> respecto de la base <span class="math inline">\(B'=\{1, 1-x, 1-x^2  \}\)</span>.
 </li>
 <li>
-Razonar que la aplicación <span class="math inline">\(G: \mathcal{M}_2(\mathbb{R})  \longrightarrow \mathcal{M}_2(\mathbb{R})\)</span> definida por: <span class="math display">\[G\left(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\right)=\begin{pmatrix} a\cdot b &amp; 0 \\ c &amp; d \end{pmatrix}\]</span> no es lineal.
+<p>Razonar que la aplicación <span class="math inline">\(G: \mathcal{M}_2(\mathbb{R})  \longrightarrow \mathcal{M}_2(\mathbb{R})\)</span> definida por:</p>
+<p><span class="math display">\[
+G\left(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\right)=\begin{pmatrix} a\cdot b &amp; 0 \\ c &amp; d \end{pmatrix}
+\]</span></p>
+no es lineal.
 </li>
 <li>
-Calcular la signatura de la matriz simétrica <span class="math display">\[
+<p>Calcular la signatura de la matriz simétrica</p>
+<p><span class="math display">\[
 C=\begin{pmatrix}
 5 &amp; 2 \\ 2 &amp; \frac{1}{2}
 \end{pmatrix}.
-\]</span>
+\]</span></p>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Dar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que <span class="math inline">\(Q\cdot A \cdot P = B\)</span>.<br> <span class="math display">\[\left(\begin{array}{rcl}
+<p>Dar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que <span class="math inline">\(Q\cdot A \cdot P = B\)</span>.</p>
+<p><span class="math display">\[
+\left(\begin{array}{rcl}
 A&amp;|&amp;I\\
 \hline
 I &amp;| \\ \end{array} \right)=\left(\begin{array}{ll|ll}
@@ -657,18 +783,30 @@ I &amp;| \\ \end{array} \right)=\left(\begin{array}{ll|ll}
 \hline
 1 &amp; 1 &amp; &amp; \\
 0 &amp; 1 &amp; &amp; \\
-\end{array}\right),\]</span> luego <span class="math display">\[Q=\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 1 \end{pmatrix} \mbox{ y } P=\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}.\]</span>
+\end{array}\right),
+\]</span></p>
+<p>luego</p>
+<p><span class="math display">\[
+Q=\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 1 \end{pmatrix} \mbox{ y } P=\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}.
+\]</span></p>
 </li>
 <li>
-<p>Determinar las coordenadas del vector <span class="math inline">\(p(x)\)</span> respecto de la base <span class="math inline">\(B'\)</span>.<br> Si denotamos <span class="math inline">\(1+x+x^2=(\alpha_1, \alpha_2,\alpha_3)_{B'}\)</span>, tenemos: <span class="math display">\[1+x+x^2=\alpha_1 \cdot  1 + \alpha_2 \cdot  (1-x)+\alpha_3 \cdot  (1-x^2)
-=
-(\alpha_1+\alpha_2+\alpha_3) \cdot 1 - \alpha_2 \cdot x - \alpha_ 3 \cdot x^2,
-\]</span> y resolviendo <span class="math inline">\(\alpha_1+\alpha_2+\alpha_3=1\)</span>, <span class="math inline">\(-\alpha_2=1\)</span>, <span class="math inline">\(-\alpha_3=1\)</span>, nos queda que <span class="math display">\[1+x+x^2=(3,-1,-1)_{B'}.\]</span></p>
-Alternativamente, la matriz del cambio de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B_s\)</span> es $ P=
-<span class="math display">\[\begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp;-1 \end{pmatrix}\]</span>
-$ , luego la matriz del cambio de <span class="math inline">\(B_s\)</span> a <span class="math inline">\(B'\)</span> es <span class="math display">\[
+<p>Determinar las coordenadas del vector <span class="math inline">\(p(x)\)</span> respecto de la base <span class="math inline">\(B'\)</span>.</p>
+<p>Si denotamos <span class="math inline">\(1+x+x^2=(\alpha_1, \alpha_2,\alpha_3)_{B'}\)</span>, tenemos:</p>
+<p><span class="math display">\[
+1+x+x^2=\alpha_1 \cdot  1 + \alpha_2 \cdot  (1-x)+\alpha_3 \cdot  (1-x^2)
+= (\alpha_1+\alpha_2+\alpha_3) \cdot 1 - \alpha_2 \cdot x - \alpha_ 3 \cdot x^2,
+\]</span></p>
+<p>y resolviendo <span class="math inline">\(\alpha_1+\alpha_2+\alpha_3=1\)</span>, <span class="math inline">\(-\alpha_2=1\)</span>, <span class="math inline">\(-\alpha_3=1\)</span>, nos queda que</p>
+<p><span class="math display">\[
+1+x+x^2=(3,-1,-1)_{B'}.
+\]</span></p>
+<p>Alternativamente, la matriz del cambio de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B_s\)</span> es <span class="math inline">\(P=\begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp;-1 \end{pmatrix}\)</span>, luego la matriz del cambio de <span class="math inline">\(B_s\)</span> a <span class="math inline">\(B'\)</span> es</p>
+<p><span class="math display">\[
 P^{-1}=\begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp;-1 \end{pmatrix}.
-\]</span> Puesto que <span class="math inline">\(1+x+x^2=(1,1,1)_{B_s}\)</span> obtenemos: <span class="math display">\[
+\]</span></p>
+<p>Puesto que <span class="math inline">\(1+x+x^2=(1,1,1)_{B_s}\)</span> obtenemos:</p>
+<p><span class="math display">\[
 \begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp;-1 \end{pmatrix}\cdot
 \begin{pmatrix}
 1 \\ 1 \\ 1
@@ -677,25 +815,39 @@ P^{-1}=\begin{pmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp
 \begin{pmatrix}
 3 \\ -1 \\ -1
 \end{pmatrix}.
-\]</span>
+\]</span></p>
 </li>
 <li>
-Razonar que la aplicación <span class="math inline">\(G\)</span> no es lineal.<br> Calculamos <span class="math display">\[G\left(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\right)=\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, G\left(\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\right)=\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\]</span> Sin embargo la imagen de la suma de estas matrices es <span class="math display">\[G\left(\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\right)=\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\not = G\left(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\right)+G\left(\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\right).\]</span>
+<p>Razonar que la aplicación <span class="math inline">\(G\)</span> no es lineal.</p>
+<p>Calculamos</p>
+<p><span class="math display">\[
+G\left(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\right)=\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}, G\left(\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\right)=\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}
+\]</span></p>
+<p>Sin embargo la imagen de la suma de estas matrices es</p>
+<p><span class="math display">\[
+G\left(\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\right)=\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\not = G\left(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\right)+G\left(\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix}\right).
+\]</span></p>
 </li>
 <li>
-Calcular la signatura de C.<br> Diagonalizamos por congruencia <span class="math display">\[
+<p>Calcular la signatura de C.</p>
+<p>Diagonalizamos por congruencia</p>
+<p><span class="math display">\[
 C=\begin{pmatrix}
 5 &amp; 2 \\ 2 &amp; \frac{1}{2}
 \end{pmatrix}\sim_f \begin{pmatrix}
 5 &amp; 2 \\ 0 &amp; -\frac{3}{10}
 \end{pmatrix}\sim_c \begin{pmatrix}
 5 &amp; 0 \\ 0 &amp; -\frac{3}{10} \end{pmatrix},
-\]</span> por lo que <span class="math inline">\(\operatorname{sig}(C)=(1,1)\)</span>.
+\]</span></p>
+por lo que <span class="math inline">\(\operatorname{sig}(C)=(1,1)\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
 De una aplicación lineal <span class="math inline">\(f:\mathbb{R}^{3}\longrightarrow \mathbb{R}^{4}\)</span> se sabe que <span class="math inline">\(f(5,1,1)=f(1,5,1)=f(1,1,5)=(5,5,5,5)\)</span>. Determinar bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.
@@ -706,25 +858,46 @@ Dar bases <span class="math inline">\(B\)</span> de <span class="math inline">\(
 \end{pmatrix}\)</span>.
 </li>
 <li>
-Determinar, en función de <span class="math inline">\(b\)</span> la signatura de la forma cuadrática <span class="math display">\[\phi(x,y)= x^2+  y^2 + 2b x y.\]</span>
+<p>Determinar, en función de <span class="math inline">\(b\)</span> la signatura de la forma cuadrática</p>
+<p><span class="math display">\[
+\phi(x,y)= x^2+  y^2 + 2b x y.
+\]</span></p>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Determinar bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.<br> La imagen de <span class="math inline">\(f\)</span> está generada por <span class="math inline">\(\{(5,5,5,5)\}\)</span> así que este vector es una base, o también <span class="math inline">\(\{(1,1,1,1)\}\)</span>, que por tanto tiene dimensión uno. <br> Como <span class="math inline">\(f(5,1,1)-f(1,5,1)=f(4,-4,0)=(0,0,0,0)\)</span> y <span class="math inline">\(f(5,1,1)-f(1,1,5)=f(4,0,-4)=(0,0,0,0)\)</span> entonces <span class="math inline">\(\{(4,-4,0),(4,0,-4)\}\)</span> es una base del núcleo (que tiene dimensión dos).
+<p>Determinar bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.</p>
+<p>La imagen de <span class="math inline">\(f\)</span> está generada por <span class="math inline">\(\{(5,5,5,5)\}\)</span> así que este vector es una base, o también <span class="math inline">\(\{(1,1,1,1)\}\)</span>, que por tanto tiene dimensión uno.</p>
+Como <span class="math inline">\(f(5,1,1)-f(1,5,1)=f(4,-4,0)=(0,0,0,0)\)</span> y <span class="math inline">\(f(5,1,1)-f(1,1,5)=f(4,0,-4)=(0,0,0,0)\)</span> entonces <span class="math inline">\(\{(4,-4,0),(4,0,-4)\}\)</span> es una base del núcleo (que tiene dimensión dos).
 </li>
 <li>
-Dar bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span>.<br> Hay muchas soluciones, las condiciones son: la imagen del primer vector de <span class="math inline">\(B\)</span> es el primer vector de <span class="math inline">\(B'\)</span>, los otros dos vectores de <span class="math inline">\(B\)</span> deben estar en el núcleo.
+<p>Dar bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span>.</p>
+Hay muchas soluciones, las condiciones son: la imagen del primer vector de <span class="math inline">\(B\)</span> es el primer vector de <span class="math inline">\(B'\)</span>, los otros dos vectores de <span class="math inline">\(B\)</span> deben estar en el núcleo.
 </li>
 <li>
-Determinar, en función de <span class="math inline">\(b\)</span> la signatura de la forma cuadrática <span class="math inline">\(\phi\)</span>.<br> La matriz asociada a la forma cuadrática es <span class="math display">\[A=\begin{pmatrix}
+<p>Determinar, en función de <span class="math inline">\(b\)</span> la signatura de la forma cuadrática <span class="math inline">\(\phi\)</span>.</p>
+<p>La matriz asociada a la forma cuadrática es</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 1 &amp; b\\
 b &amp; 1
-\end{pmatrix}.\]</span> Diagonalizando por congruencia <span class="math display">\[\begin{pmatrix}
+\end{pmatrix}.
+\]</span></p>
+<p>Diagonalizando por congruencia</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; b\\
 b &amp; 1
 \end{pmatrix}\sim_f\begin{pmatrix}
@@ -733,13 +906,22 @@ b &amp; 1
 \end{pmatrix}\sim_c \begin{pmatrix}
 1 &amp; 0\\
 0 &amp; 1-b^2
-\end{pmatrix}.\]</span> Como el segundo elemento de la diagonal se anula en <span class="math inline">\(b=1\)</span> y <span class="math inline">\(b=-1\)</span> la distinción de casos queda:<br> Si <span class="math inline">\(b=\pm 1\)</span> entonces <span class="math inline">\(\operatorname{sig}(A)=(1,0)\)</span>.<br> Si <span class="math inline">\(-1&lt;b&lt;1\)</span> entonces <span class="math inline">\(\operatorname{sig}(A)=(2,0)\)</span>.<br> Si <span class="math inline">\(b&lt;-1\)</span> o $ b&gt;1$ entonces <span class="math inline">\(\operatorname{sig}(A)=(1,1)\)</span>.<br>
+\end{pmatrix}.
+\]</span></p>
+<p>Como el segundo elemento de la diagonal se anula en <span class="math inline">\(b=1\)</span> y <span class="math inline">\(b=-1\)</span> la distinción de casos queda:</p>
+<p>Si <span class="math inline">\(b=\pm 1\)</span> entonces <span class="math inline">\(\operatorname{sig}(A)=(1,0)\)</span>.</p>
+<p>Si <span class="math inline">\(-1&lt;b&lt;1\)</span> entonces <span class="math inline">\(\operatorname{sig}(A)=(2,0)\)</span>.</p>
+Si <span class="math inline">\(b&lt;-1\)</span> o $ b&gt;1$ entonces <span class="math inline">\(\operatorname{sig}(A)=(1,1)\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Dadas las matrices <span class="math display">\[A= \left(\begin{array}{rrr}
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Dadas las matrices</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{rrr}
 1 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0
@@ -747,7 +929,8 @@ b &amp; 1
 1 &amp; 1 &amp; 0\\
 1 &amp; 0 &amp; 0\\
 1 &amp; 1 &amp; 0
-\end{array}\right)\]</span></p>
+\end{array}\right)
+\]</span></p>
 <ol type="a">
 <li>
 ¿Existen <span class="math inline">\(P, Q\)</span> matrices regulares tales que <span class="math inline">\(Q^{-1}AP=B\)</span>?
@@ -762,16 +945,28 @@ b &amp; 1
 ¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=B\)</span>?
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-¿Existen <span class="math inline">\(P, Q\)</span> matrices regulares tales que <span class="math inline">\(Q^{-1}AP=B\)</span>?<br> La pregunta es si las matrices son equivalentes, y esto ocurre si, y solo si, tienen el mismo rango. Es inmediato ver que ambas tienen rango 2, por tanto la respuesta es afirmativa.
+<p>¿Existen <span class="math inline">\(P, Q\)</span> matrices regulares tales que <span class="math inline">\(Q^{-1}AP=B\)</span>?</p>
+La pregunta es si las matrices son equivalentes, y esto ocurre si, y solo si, tienen el mismo rango. Es inmediato ver que ambas tienen rango 2, por tanto la respuesta es afirmativa.
 </li>
 <li>
-¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(AP=B\)</span>?<br> En este caso nos preguntan si son equivalentes por columnas, si, y solo si, tienen la misma forma de Hermite por columnas. Calculamos en ambos casos: <span class="math display">\[A= \left(\begin{array}{rrr}
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(AP=B\)</span>?</p>
+<p>En este caso nos preguntan si son equivalentes por columnas, si, y solo si, tienen la misma forma de Hermite por columnas. Calculamos en ambos casos:</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{rrr}
 1 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0
@@ -779,7 +974,10 @@ Solución
 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0
-\end{array}\right),\]</span> <span class="math display">\[B= \left(\begin{array}{rrr}
+\end{array}\right),
+\]</span></p>
+<p><span class="math display">\[
+B= \left(\begin{array}{rrr}
 1 &amp; 1 &amp; 0\\
 1 &amp; 0 &amp; 0\\
 1 &amp; 1 &amp; 0
@@ -787,10 +985,15 @@ Solución
 1 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0\\
 1 &amp; 0 &amp; 0
-\end{array}\right),\]</span> y como no son iguales la respuesta es negativa.
+\end{array}\right),
+\]</span></p>
+y como no son iguales la respuesta es negativa.
 </li>
 <li>
-¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(PA=B\)</span>?<br> Ahora nos preguntan si son equivalentes por filas, para lo que calculamos sus formas de Hermite por filas y las comparamos: <span class="math display">\[A= \left(\begin{array}{rrr}
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(PA=B\)</span>?</p>
+<p>Ahora nos preguntan si son equivalentes por filas, para lo que calculamos sus formas de Hermite por filas y las comparamos:</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{rrr}
 1 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0
@@ -798,7 +1001,10 @@ Solución
 1 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0
-\end{array}\right),\]</span> <span class="math display">\[B= \left(\begin{array}{rrr}
+\end{array}\right),
+\]</span></p>
+<p><span class="math display">\[
+B= \left(\begin{array}{rrr}
 1 &amp; 1 &amp; 0\\
 1 &amp; 0 &amp; 0\\
 1 &amp; 1 &amp; 0
@@ -806,28 +1012,43 @@ Solución
 1 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0
-\end{array}\right),\]</span> como son iguales entonces la respuesta es afirmativa.
+\end{array}\right),
+\]</span></p>
+como son iguales entonces la respuesta es afirmativa.
 </li>
 <li>
-¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=B\)</span>?<br> Si calculamos los valores propios de ambas: <span class="math display">\[|A-\lambda I|= \left|\begin{array}{rrr}
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=B\)</span>?</p>
+<p>Si calculamos los valores propios de ambas:</p>
+<p><span class="math display">\[
+|A-\lambda I|= \left|\begin{array}{rrr}
 1- \lambda &amp; 1 &amp; 0\\
 0 &amp; -\lambda &amp; 0\\
 0 &amp; 1 &amp; -\lambda
-\end{array}\right|=(1-\lambda)(-\lambda)^2.\]</span> Pero el valor propio <span class="math inline">\(\lambda=0\)</span> tiene multiplicidad geométrica uno, luego no es diagonalizable. <span class="math display">\[|B-\lambda I|= \left|\begin{array}{rrr}
+\end{array}\right|=(1-\lambda)(-\lambda)^2.
+\]</span></p>
+<p>Pero el valor propio <span class="math inline">\(\lambda=0\)</span> tiene multiplicidad geométrica uno, luego no es diagonalizable.</p>
+<p><span class="math display">\[
+|B-\lambda I|= \left|\begin{array}{rrr}
 1-\lambda &amp; 1 &amp; 0\\
 1 &amp; -\lambda &amp; 0\\
 1 &amp; 1 &amp; -\lambda
-\end{array}\right|=(-\lambda)(\lambda^2-\lambda-1),\]</span> en este caso aparecen tres valores propios distintos <span class="math inline">\(\{0, \frac{1+\sqrt{5}}{2}, \frac{1-\sqrt{5}}{2}\}\)</span> y por tanto la matriz sí es diagonalizable. Entonces no puede existir una tal <span class="math inline">\(P\)</span>, puesto que ello implicaría que <span class="math inline">\(A\)</span> sería también diagonalizable. También es suficiente comprobar que los valores propios son distintos y que <span class="math inline">\(B\)</span> es diagonalizable.
+\end{array}\right|=(-\lambda)(\lambda^2-\lambda-1),
+\]</span></p>
+en este caso aparecen tres valores propios distintos <span class="math inline">\(\{0, \frac{1+\sqrt{5}}{2}, \frac{1-\sqrt{5}}{2}\}\)</span> y por tanto la matriz sí es diagonalizable. Entonces no puede existir una tal <span class="math inline">\(P\)</span>, puesto que ello implicaría que <span class="math inline">\(A\)</span> sería también diagonalizable. También es suficiente comprobar que los valores propios son distintos y que <span class="math inline">\(B\)</span> es diagonalizable.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Dada la matriz <span class="math display">\[A= \left(\begin{array}{rrr}
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Dada la matriz <span class="math display">\[
+A= \left(\begin{array}{rrr}
 2 &amp; 0 &amp; 2\\
 0 &amp; 1 &amp; 0\\
 2 &amp; 0 &amp; -1
-\end{array}\right).\]</span></p>
+\end{array}\right).
+\]</span></p>
 <ol type="a">
 <li>
 ¿Existen <span class="math inline">\(P, Q\)</span> matrices regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>?
@@ -839,13 +1060,24 @@ Solución
 ¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{t}AP=I_3\)</span>?
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-¿Existen <span class="math inline">\(P, Q\)</span> matrices regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>?<br> Existen <span class="math inline">\(Q , P\)</span> regulares si <span class="math inline">\(A\)</span> e <span class="math inline">\(I\)</span> son equivalentes, esto es, si tienen el mismo rango. Calculamos el rango de <span class="math inline">\(A\)</span>. Calculamos el determinante de <span class="math inline">\(A\)</span> desarrolando por el elemento 22, <span class="math display">\[det(A)=\left|
+<p>¿Existen <span class="math inline">\(P, Q\)</span> matrices regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>?</p>
+<p>Existen <span class="math inline">\(Q , P\)</span> regulares si <span class="math inline">\(A\)</span> e <span class="math inline">\(I\)</span> son equivalentes, esto es, si tienen el mismo rango. Calculamos el rango de <span class="math inline">\(A\)</span>. Calculamos el determinante de <span class="math inline">\(A\)</span> desarrolando por el elemento 22,</p>
+<p><span class="math display">\[
+\det(A)=\left|
 \begin{array}{ccc}
 2 &amp; 0 &amp; 2 \\
 0 &amp; 1 &amp; 0 \\
@@ -856,10 +1088,16 @@ Solución
       2 &amp; 2 \\
        2 &amp; -1 \\
         \end{array}
-  \right| =-6\neq 0.  \]</span> Por lo tanto el rango es tres, al igual que el de <span class="math inline">\(I_3\)</span>. Las matrices son equivalentes y por lo tanto existen <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>.
+  \right| =-6\neq 0.  
+\]</span></p>
+Por lo tanto el rango es tres, al igual que el de <span class="math inline">\(I_3\)</span>. Las matrices son equivalentes y por lo tanto existen <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>.
 </li>
 <li>
-¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=I_3\)</span>?<br> Que exista la matriz <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=I_3\)</span> equivale a decir que <span class="math inline">\(A\)</span> es diagonalizable por semejanza y su forma diagonal es <span class="math inline">\(I_3\)</span>. <br> Calculamos los valores propios de <span class="math inline">\(A\)</span>: <span class="math display">\[\left|
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=I_3\)</span>?</p>
+<p>Que exista la matriz <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=I_3\)</span> equivale a decir que <span class="math inline">\(A\)</span> es diagonalizable por semejanza y su forma diagonal es <span class="math inline">\(I_3\)</span>.</p>
+<p>Calculamos los valores propios de <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+\left|
   \begin{array}{ccc}
     2-\lambda &amp; 0 &amp; 2 \\
     0 &amp; 1-\lambda &amp; 0 \\
@@ -870,16 +1108,22 @@ Solución
       2 -\lambda&amp; 2 \\
        2 &amp; -1-\lambda \\
         \end{array}
-  \right|= (1-\lambda)(-(2-\lambda)(1+\lambda)-4)=(1-\lambda)(2+\lambda)(3-\lambda).\]</span> Como los valores propios de <span class="math inline">\(A\)</span> son 1, -2 y 3, su forma diagonal (si fuera diagonalizable) no puede ser <span class="math inline">\(I_3\)</span>, por lo tanto, no existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=I_3\)</span>
+  \right|= (1-\lambda)(-(2-\lambda)(1+\lambda)-4)=(1-\lambda)(2+\lambda)(3-\lambda).
+\]</span></p>
+Como los valores propios de <span class="math inline">\(A\)</span> son 1, -2 y 3, su forma diagonal (si fuera diagonalizable) no puede ser <span class="math inline">\(I_3\)</span>, por lo tanto, no existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=I_3\)</span>
 </li>
 <li>
-¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{t}AP=I_3\)</span>?<br> Si existiera una matriz <span class="math inline">\(P\)</span> cumpliendo la igualdad, estaríamos diciendo que <span class="math inline">\(A\)</span> es congruente con <span class="math inline">\(I_3\)</span> y por tanto su signatura sería <span class="math inline">\((3,0)\)</span>, pero como los valores propios son 1, -2 y 3, su signatura es <span class="math inline">\((2,1)\)</span>, y por tanto no existe dicha matriz <span class="math inline">\(P.\)</span>
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{t}AP=I_3\)</span>?</p>
+Si existiera una matriz <span class="math inline">\(P\)</span> cumpliendo la igualdad, estaríamos diciendo que <span class="math inline">\(A\)</span> es congruente con <span class="math inline">\(I_3\)</span> y por tanto su signatura sería <span class="math inline">\((3,0)\)</span>, pero como los valores propios son 1, -2 y 3, su signatura es <span class="math inline">\((2,1)\)</span>, y por tanto no existe dicha matriz <span class="math inline">\(P.\)</span>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Dada la matriz: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o8" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> Dada la matriz:</p>
+<p><span class="math display">\[
 A=\begin{pmatrix}
 a &amp; 0 &amp; 0 &amp; 0 \\
 a &amp; 2 &amp; 2 &amp; a \\
@@ -895,13 +1139,23 @@ Estudiar para qué valores del parámetro <span class="math inline">\(a\)</span>
 Para el valor <span class="math inline">\(a=0\)</span> la matriz <span class="math inline">\(A\)</span> es simétrica, determinar su forma diagonal <span class="math inline">\(D\)</span> así como una matriz ortogonal <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(D=P^{-1}\cdot  A\cdot P=P^{t}\cdot A\cdot P\)</span>. ¿Cuál es la signatura de <span class="math inline">\(A\)</span>?
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Estudiar para qué valores del parámetro <span class="math inline">\(a\)</span> es <span class="math inline">\(A\)</span> diagonalizable.<br> Calculamos los valores propios y sus multiplicidades algebraicas: <span class="math display">\[
+<p>Estudiar para qué valores del parámetro <span class="math inline">\(a\)</span> es <span class="math inline">\(A\)</span> diagonalizable.</p>
+<p>Calculamos los valores propios y sus multiplicidades algebraicas:</p>
+<p><span class="math display">\[
 \begin{align*}
 |A-\lambda I|&amp;=\left|\begin{array}{cccc}
 a-\lambda &amp; 0 &amp; 0 &amp; 0 \\
@@ -913,8 +1167,11 @@ a &amp; 0 &amp; 0 &amp; -\lambda
 2 &amp; 2-\lambda
 \end{array}\right|\\
 &amp;= (a-\lambda)(-\lambda)((2-\lambda)^2-4)=(a-\lambda)(-\lambda)(\lambda^2-4\lambda)=(a-\lambda)(-\lambda)^2(\lambda-4).
-\end{align*}\]</span></p>
-<p><strong>Caso <span class="math inline">\(a\not =0,4\)</span></strong><br> En este caso tenemos que para <span class="math inline">\(\lambda=4\)</span> o <span class="math inline">\(\lambda=a\)</span> ambas multiplicidades algebraicas y geométricas son 1 mientras que para <span class="math inline">\(\lambda=0\)</span> la multiplicidad algebraica es 2 y habría que estudiar la geométrica: <span class="math display">\[
+\end{align*}
+\]</span></p>
+<p><strong>Caso <span class="math inline">\(a\not \in\{0,4\}\)</span></strong></p>
+<p>En este caso tenemos que para <span class="math inline">\(\lambda=4\)</span> o <span class="math inline">\(\lambda=a\)</span> ambas multiplicidades algebraicas y geométricas son 1 mientras que para <span class="math inline">\(\lambda=0\)</span> la multiplicidad algebraica es 2 y habría que estudiar la geométrica:</p>
+<p><span class="math display">\[
 A-0\cdot I=\begin{pmatrix}
 a &amp; 0 &amp; 0 &amp; 0 \\
 a &amp; 2 &amp; 2 &amp; a \\
@@ -931,8 +1188,13 @@ a &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{pmatrix},
-\]</span> que tiene rango 2 (<span class="math inline">\(a\not = 0\)</span>) y por tanto <span class="math inline">\(m_g=\operatorname{dim}(V_{\lambda=0})=4-2=2\)</span>. Así que en este caso la matriz es diagonalizable.<br> <strong>Caso <span class="math inline">\(a=0\)</span></strong><br> En este caso la matriz es simétrica, y por tanto diagonalizable.<br></p>
-<strong>Caso <span class="math inline">\(a=4\)</span></strong><br> Ahora tenemos que para <span class="math inline">\(\lambda=0\)</span> tanto su multiplicidad algebraica como geométrica es 2 (ha sido calculada cuando <span class="math inline">\(a\not = 0\)</span> en el primer caso) y para <span class="math inline">\(\lambda=0\)</span> la multiplicidad algebraica es 2 y debemos calcular la geométrica. <span class="math display">\[
+\]</span></p>
+<p>que tiene rango 2 (<span class="math inline">\(a\not = 0\)</span>) y por tanto <span class="math inline">\(m_g=\dim(V_{0})=4-2=2\)</span>. Así que en este caso la matriz es diagonalizable.</p>
+<p><strong>Caso <span class="math inline">\(a=0\)</span></strong></p>
+<p>En este caso la matriz es simétrica, y por tanto diagonalizable.</p>
+<p><strong>Caso <span class="math inline">\(a=4\)</span></strong></p>
+<p>Ahora tenemos que para <span class="math inline">\(\lambda=0\)</span> tanto su multiplicidad algebraica como geométrica es 2 (ha sido calculada cuando <span class="math inline">\(a\not = 0\)</span> en el primer caso) y para <span class="math inline">\(\lambda=0\)</span> la multiplicidad algebraica es 2 y debemos calcular la geométrica.</p>
+<p><span class="math display">\[
 A-4\cdot I=\begin{pmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 \\
 4 &amp; -2 &amp; 2 &amp; 4 \\
@@ -944,17 +1206,23 @@ A-4\cdot I=\begin{pmatrix}
 0 &amp; 1 &amp; -1 &amp; 0 \\
 1 &amp; 0 &amp; 0 &amp; 1
 \end{pmatrix},
-\]</span> tiene rango 3, así que <span class="math inline">\(m_g=\operatorname{dim}(V_{\lambda=4})=4-3=1\)</span>. En este caso la matriz no es diagonalizable.
+\]</span></p>
+tiene rango 3, así que <span class="math inline">\(m_g=\dim(V_{4})=4-3=1\)</span>. En este caso la matriz no es diagonalizable.
 </li>
 <li>
-Para <span class="math inline">\(a=0\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> así como una matriz ortogonal <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(D=P^{-1}\cdot  A\cdot P=P^{t}\cdot A\cdot P\)</span>. ¿Cuál es la signatura de <span class="math inline">\(A\)</span>?<br> Como tenemos calculados los valores propios y en este caso son <span class="math inline">\(\lambda=0\)</span>, con multiplicidad algebraica <span class="math inline">\(3\)</span> y <span class="math inline">\(\lambda=4,\)</span>, con multiplicidad algebraica <span class="math inline">\(1\)</span> entonces la signatura es <span class="math inline">\((1,0)\)</span>.<br> Para calcular la matriz ortogonal <span class="math inline">\(P\)</span> diagonalizamos por semejanza ortogonal: <span class="math display">\[
+<p>Para <span class="math inline">\(a=0\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> así como una matriz ortogonal <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(D=P^{-1}\cdot  A\cdot P=P^{t}\cdot A\cdot P\)</span>. ¿Cuál es la signatura de <span class="math inline">\(A\)</span>?</p>
+<p>Como tenemos calculados los valores propios y en este caso son <span class="math inline">\(\lambda=0\)</span>, con multiplicidad algebraica <span class="math inline">\(3\)</span> y <span class="math inline">\(\lambda=4,\)</span>, con multiplicidad algebraica <span class="math inline">\(1\)</span> entonces la signatura es <span class="math inline">\((1,0)\)</span>.</p>
+<p>Para calcular la matriz ortogonal <span class="math inline">\(P\)</span> diagonalizamos por semejanza ortogonal:</p>
+<p><span class="math display">\[
 A-0\cdot I=\begin{pmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 2 &amp; 2 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{pmatrix},
-\]</span> y por tanto una base de <span class="math inline">\(V_{\lambda=0}\)</span> es <span class="math inline">\(\{(1,0,0,0),(0,1,-1,0),(0,0,0,1)\}\)</span> que ya es ortogonal. <span class="math display">\[
+\]</span></p>
+<p>y por tanto una base de <span class="math inline">\(V_{0}\)</span> es <span class="math inline">\(\{(1,0,0,0),(0,1,-1,0),(0,0,0,1)\}\)</span> que ya es ortogonal.</p>
+<p><span class="math display">\[
 A-4\cdot I=\begin{pmatrix}
 -4 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; -2 &amp; 2 &amp; 0 \\
@@ -966,7 +1234,15 @@ A-4\cdot I=\begin{pmatrix}
 0 &amp; 0 &amp; 0 &amp; 1 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{pmatrix},
-\]</span> y por tanto una base de <span class="math inline">\(V_{\lambda=4}\)</span> es <span class="math inline">\(\{(0,1,1,0)\}\)</span> que es obviamente ortogonal.<br> Así, una base ortonormal de <span class="math inline">\(\mathbb{R}^{4}\)</span> es <span class="math display">\[\{(1,0,0,0),(0,1/\sqrt{2},-1/\sqrt{2},0),(0,0,0,1),(0,1/\sqrt{2},1/\sqrt{2},0)\},\]</span> y por tanto <span class="math display">\[P=\begin{pmatrix}
+\]</span></p>
+<p>y por tanto una base de <span class="math inline">\(V_{4}\)</span> es <span class="math inline">\(\{(0,1,1,0)\}\)</span> que es obviamente ortogonal.</p>
+<p>Así, una base ortonormal de <span class="math inline">\(\mathbb{R}^{4}\)</span> es</p>
+<p><span class="math display">\[
+\{(1,0,0,0),(0,1/\sqrt{2},-1/\sqrt{2},0),(0,0,0,1),(0,1/\sqrt{2},1/\sqrt{2},0)\},
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+P=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1/\sqrt{2} &amp; 0 &amp; 1/\sqrt{2} \\
 0 &amp; -1/\sqrt{2} &amp; 0 &amp; 1/\sqrt{2} \\
@@ -977,49 +1253,81 @@ A-4\cdot I=\begin{pmatrix}
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 4
 \end{pmatrix}.
-\]</span>
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o8" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 9</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
 En <span class="math inline">\(\mathbb{R}^{8}\)</span> consideramos dos subespacios <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>, ambos de dimensión 5, ¿puede ser <span class="math inline">\(U\cap W=0\)</span>? ¿Por qué?
 </li>
 <li>
-Para la siguiente matriz determinar su signatura en función de <span class="math inline">\(a\)</span>: <span class="math display">\[
+<p>Para la siguiente matriz determinar su signatura en función de <span class="math inline">\(a\)</span>:</p>
+<p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; a\\
 0 &amp; a &amp; 0
 \end{pmatrix}.
-\]</span>
+\]</span></p>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-En <span class="math inline">\(\mathbb{R}^{8}\)</span> consideramos dos subespacios <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>, ambos de dimensión 5, ¿puede ser <span class="math inline">\(U\cap W=0\)</span>? ¿Por qué?<br> No puede ocurrir por la fórmula de las dimensiones: <span class="math display">\[\operatorname{dim}(U) + \operatorname{dim}(W)= \operatorname{dim}(U+W) + \operatorname{dim}(U\cap W),\]</span> así <span class="math display">\[5 + 5 = \operatorname{dim}(U+W) + 0,\]</span> y por tanto debería ser <span class="math inline">\(\operatorname{dim}(U+W)=10\)</span>, lo que es imposible porque debe estar contenido en <span class="math inline">\(\mathbb{R}^{8}\)</span> por lo que su dimensión es menor o igual que <span class="math inline">\(8\)</span>.
+<p>En <span class="math inline">\(\mathbb{R}^{8}\)</span> consideramos dos subespacios <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>, ambos de dimensión 5, ¿puede ser <span class="math inline">\(U\cap W=0\)</span>? ¿Por qué?</p>
+<p>No puede ocurrir por la fórmula de las dimensiones:</p>
+<p><span class="math display">\[
+\dim(U) + \dim(W)= \dim(U+W) + \dim(U\cap W),
+\]</span></p>
+<p>así</p>
+<p><span class="math display">\[
+5 + 5 = \dim(U+W) + 0,
+\]</span></p>
+y por tanto debería ser <span class="math inline">\(\dim(U+W)=10\)</span>, lo que es imposible porque debe estar contenido en <span class="math inline">\(\mathbb{R}^{8}\)</span> por lo que su dimensión es menor o igual que <span class="math inline">\(8\)</span>.
 </li>
 <li>
-Determinar la signatura en función de <span class="math inline">\(a\)</span>.<br> Pueden calcularse los valores propios: <span class="math display">\[
+<p>Determinar la signatura en función de <span class="math inline">\(a\)</span>.</p>
+<p>Pueden calcularse los valores propios:</p>
+<p><span class="math display">\[
 \left| \begin{array}{ccc}
 1-\lambda &amp; 0 &amp; 0\\
 0 &amp;-\lambda &amp; a\\
 0 &amp; a &amp; -\lambda
 \end{array}\right|= (1-\lambda)(\lambda^2 -a^2)=(1-\lambda)(\lambda -a)(\lambda +a).
-\]</span><br>
+\]</span></p>
 Así los valores propios son <span class="math inline">\(1, a, -a\)</span> y la signatura es <span class="math inline">\((1,0)\)</span> si <span class="math inline">\(a=0\)</span> y <span class="math inline">\((2,1)\)</span> si <span class="math inline">\(a\not =0\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En el espacio vectorial <span class="math inline">\(\mathcal{P}_4(\mathbb{R})\)</span> de los polinomios de grado menor o igual que <span class="math inline">\(4\)</span> se consideran los subespacios: <span class="math display">\[U=L(1+x^2, 1+x+x^2+x^3),\,\,\,\,\, W=L(1+x^4,x^2, 1+x+x^2).\]</span> Y consideramos el producto escalar dado por: <span class="math display">\[\langle p(x),q(x)\rangle=\int_{-1}^{1} p(x)\cdot q(x) dx.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o10" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 10</strong></span> En el espacio vectorial <span class="math inline">\(\mathcal{P}_4(\mathbb{R})\)</span> de los polinomios de grado menor o igual que <span class="math inline">\(4\)</span> se consideran los subespacios:</p>
+<p><span class="math display">\[
+U=L(1+x^2, 1+x+x^2+x^3),\,\,\,\,\, W=L(1+x^4,x^2, 1+x+x^2).
+\]</span></p>
+<p>Y consideramos el producto escalar dado por:</p>
+<p><span class="math display">\[
+\langle p(x),q(x)\rangle=\int_{-1}^{1} p(x)\cdot q(x) dx.
+\]</span></p>
 <ol type="a">
 <li>
 Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U\cap W\)</span>.
@@ -1031,14 +1339,24 @@ Calcular una base ortogonal de <span class="math inline">\(U\)</span>.
 Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(p(x)=1+x+x^2+x^3+x^4\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>En todo el ejercicio usaremos coordenadas respecto de la base estándar <span class="math inline">\(B=\{1,x,x^2,x^3,x^4\}\)</span>.</p>
 <ol type="a">
 <li>
-Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U\cap W\)</span>.<br> En primer lugar calculamos las bases más sencillas de ambos subespacios: <span class="math display">\[UP=\begin{pmatrix}
+<p>Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U\cap W\)</span>.</p>
+<p>En primer lugar calculamos las bases más sencillas de ambos subespacios: <span class="math display">\[
+UP=\begin{pmatrix}
 1 &amp; 1\\
 0 &amp; 1\\
 1 &amp; 1\\
@@ -1050,7 +1368,10 @@ Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math
 1 &amp; 0\\
 0 &amp; 1\\
 0 &amp; 0
-\end{pmatrix},\]</span> <span class="math display">\[WP=\begin{pmatrix}
+\end{pmatrix},
+\]</span></p>
+<p><span class="math display">\[
+WP=\begin{pmatrix}
 1 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 1\\
 0 &amp; 1 &amp; 1\\
@@ -1062,7 +1383,11 @@ Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math
 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0\\
 1 &amp; 0 &amp; -1
-\end{pmatrix},\]</span> y reuniendo ambas obtenemos un sistema de generadores de <span class="math inline">\(U+W\)</span>: <span class="math display">\[\begin{pmatrix}
+\end{pmatrix},
+\]</span></p>
+<p>y reuniendo ambas obtenemos un sistema de generadores de <span class="math inline">\(U+W\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 0 &amp;1 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp;0 &amp; 0 &amp; 1\\
 1 &amp; 0 &amp;0 &amp; 1 &amp; 0\\
@@ -1074,65 +1399,119 @@ Determinar bases de <span class="math inline">\(U+W\)</span> y <span class="math
 0 &amp; 0 &amp;1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp;0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp;0 &amp; 0 &amp; 1
-\end{pmatrix},\]</span> con lo que obtenemos que <span class="math inline">\(U+W= \mathcal{P}_4(\mathbb{R})\)</span> y una base es, por ejemplo, la base estándar <span class="math inline">\(B\)</span>. Usando la fórmula de las dimensiones <span class="math display">\[ \operatorname{dim}(U)+ \operatorname{dim}(W) = \operatorname{dim}(U+W) + \operatorname{dim}(U \cap W),\]</span> obtenemos que <span class="math inline">\(\operatorname{dim}(U \cap W)=0\)</span> y por tanto <span class="math inline">\(U\cap W=0\)</span> que no tiene base.
+\end{pmatrix},
+\]</span></p>
+<p>con lo que obtenemos que <span class="math inline">\(U+W= \mathcal{P}_4(\mathbb{R})\)</span> y una base es, por ejemplo, la base estándar <span class="math inline">\(B\)</span>. Usando la fórmula de las dimensiones</p>
+<p><span class="math display">\[
+\dim(U)+ \dim(W) = \dim(U+W) + \dim(U \cap W),
+\]</span></p>
+obtenemos que <span class="math inline">\(\dim(U \cap W)=0\)</span> y por tanto <span class="math inline">\(U\cap W=0\)</span> que no tiene base.
 </li>
 <li>
-Calcular una base ortogonal de <span class="math inline">\(U\)</span>.<br> Si calculamos la matriz de Gram de este producto escalar respecto de la base estándar <span class="math inline">\(B\)</span>, obtenemos la matriz <span class="math display">\[G=\begin{pmatrix}
+<p>Calcular una base ortogonal de <span class="math inline">\(U\)</span>.</p>
+<p>Si calculamos la matriz de Gram de este producto escalar respecto de la base estándar <span class="math inline">\(B\)</span>, obtenemos la matriz</p>
+<p><span class="math display">\[
+G=\begin{pmatrix}
 2 &amp; 0 &amp; 2/3 &amp; 0 &amp; 2/5\\
 0 &amp; 2/3 &amp; 0 &amp; 2/5 &amp; 0\\
 2/3 &amp; 0 &amp; 2/5 &amp; 0 &amp; 2/7\\
 0 &amp; 2/5 &amp; 0 &amp; 2/7 &amp; 0\\
 2/5 &amp; 0 &amp; 2/7 &amp; 0 &amp; 2/9
 \end{pmatrix},
-\]</span> puesto que <span class="math inline">\(\langle x^n,x^m\rangle=\int_{-1}^{1} x^{n+m}\cdot q(x) dx= \left. \frac{x^{n+m+1}}{n+m+1}\right]_{-1}^{1}\)</span>, que es <span class="math inline">\(0\)</span> cuando <span class="math inline">\(n+m+1\)</span> es par y <span class="math inline">\(\frac{2}{n+m+1}\)</span> en otro caso.<br> Para la base más sencilla de <span class="math inline">\(U\)</span> obtenida en el apartado anterior se tiene que <span class="math display">\[\begin{pmatrix}
+\]</span></p>
+<p>puesto que <span class="math inline">\(\langle x^n,x^m\rangle=\int_{-1}^{1} x^{n+m}\cdot q(x) dx= \left. \frac{x^{n+m+1}}{n+m+1}\right]_{-1}^{1}\)</span>, que es <span class="math inline">\(0\)</span> cuando <span class="math inline">\(n+m+1\)</span> es par y <span class="math inline">\(\frac{2}{n+m+1}\)</span> en otro caso.</p>
+<p>Para la base más sencilla de <span class="math inline">\(U\)</span> obtenida en el apartado anterior se tiene que</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0
 \end{pmatrix} G
 \begin{pmatrix}
 0 \\ 1 \\ 0 \\ 1 \\ 0
-\end{pmatrix}=0,\]</span> con lo que dicha base es ortogonal.
+\end{pmatrix}=0,
+\]</span></p>
+con lo que dicha base es ortogonal.
 </li>
 <li>
-Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(p(x)=1+x+x^2+x^3+x^4\)</span>.<br> Para calcular la proyección usaremos la fórmula que hace uso de los coeficientes de Fourier respecto de la base ortogonal de <span class="math inline">\(U\)</span> obtenida en el apartado anterior: <span class="math inline">\(\{u_1=(1,0,1,0,0)_B, u_2=(0,1,0,1,0)_B\}.\)</span> <span class="math display">\[p_U (v)= \frac{\langle v,u_1\rangle}{\langle u_1,u_1\rangle}u_1+ \frac{\langle v,u_2\rangle}{\langle u_2,u_2\rangle}u_2,\]</span> Haciendo uso de la matriz de Gram calculada en el apartado anterior tenemos: <span class="math display">\[\begin{array}{l}
+<p>Determinar la proyección sobre <span class="math inline">\(U\)</span> del vector <span class="math inline">\(p(x)=1+x+x^2+x^3+x^4\)</span>.</p>
+<p>Para calcular la proyección usaremos la fórmula que hace uso de los coeficientes de Fourier respecto de la base ortogonal de <span class="math inline">\(U\)</span> obtenida en el apartado anterior: <span class="math inline">\(\{u_1=(1,0,1,0,0)_B, u_2=(0,1,0,1,0)_B\}.\)</span></p>
+<p><span class="math display">\[
+p_U (v)= \frac{\langle v,u_1\rangle}{\langle u_1,u_1\rangle}u_1+ \frac{\langle v,u_2\rangle}{\langle u_2,u_2\rangle}u_2,
+\]</span></p>
+<p>Haciendo uso de la matriz de Gram calculada en el apartado anterior tenemos:</p>
+<p><span class="math display">\[
+\begin{array}{l}
 \langle v,u_1\rangle=464/105,\\
 \langle v,u_2\rangle=184/105,\\
 \langle u_1,u_1\rangle= 56/15,\\
 \langle u_2,u_2\rangle= 184/105,\\
 \end{array}
-\]</span> y por tanto <span class="math display">\[p_U(v)= (58/49,1,58/49,1,0)_B.\]</span>
+\]</span></p>
+<p>y por tanto</p>
+<p><span class="math display">\[
+p_U(v)= (58/49,1,58/49,1,0)_B.
+\]</span></p>
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o11" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 11</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
-Probar que si <span class="math inline">\(V\)</span> es un espacio vectorial de dimensión <span class="math inline">\(n\)</span>, y <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son dos subespacios distintos de <span class="math inline">\(V\)</span>, ambos de dimensión <span class="math inline">\(n-1\)</span>, entonces <span class="math inline">\(\operatorname{dim}(U\cap W)=n-2\)</span>.
+Probar que si <span class="math inline">\(V\)</span> es un espacio vectorial de dimensión <span class="math inline">\(n\)</span>, y <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son dos subespacios distintos de <span class="math inline">\(V\)</span>, ambos de dimensión <span class="math inline">\(n-1\)</span>, entonces <span class="math inline">\(\dim(U\cap W)=n-2\)</span>.
 </li>
 <li>
-De un endomorfismo <span class="math inline">\(f:\mathbb{R}^3 \longrightarrow \mathbb{R}^3\)</span> se sabe que <span class="math inline">\(f(1,2,3)=(1,2,3)\)</span>, <span class="math inline">\(f(0,1,2)=(1,2,3)\)</span> y <span class="math inline">\(\operatorname{dim}(\operatorname{Im}(f))=2\)</span>. Determinar una base de <span class="math inline">\(\operatorname{ker}(f)\)</span>.
+De un endomorfismo <span class="math inline">\(f:\mathbb{R}^3 \longrightarrow \mathbb{R}^3\)</span> se sabe que <span class="math inline">\(f(1,2,3)=(1,2,3)\)</span>, <span class="math inline">\(f(0,1,2)=(1,2,3)\)</span> y <span class="math inline">\(\dim(\operatorname{Im}(f))=2\)</span>. Determinar una base de <span class="math inline">\(\operatorname{ker}(f)\)</span>.
 </li>
 <li>
-Calcular la signatura de la matriz simétrica: <span class="math display">\[A=\begin{pmatrix}
+<p>Calcular la signatura de la matriz simétrica:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 2 &amp; 0 &amp; -2 \\
 0 &amp; 1 &amp; 3 \\
 -2 &amp; 3 &amp; 2
 \end{pmatrix}.
-\]</span>
+\]</span></p>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Probar que si <span class="math inline">\(V\)</span> es un espacio vectorial de dimensión <span class="math inline">\(n\)</span>, y <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son dos subespacios distintos de <span class="math inline">\(V\)</span>, ambos de dimensión <span class="math inline">\(n-1\)</span>, entonces <span class="math inline">\(\operatorname{dim}(U\cap W)=n-2\)</span>.<br> Si los dos subespacios son distintos, entonces <span class="math inline">\(\operatorname{dim}(U+W) &gt; \operatorname{dim}(U) =n-1\)</span> y como no puede ser mayor (porque estamos en un espacio vectorial de dimensión <span class="math inline">\(n\)</span>), entonces <span class="math inline">\(\operatorname{dim}(U+W) =n\)</span>. Usando la fórmula de las dimensiones se tiene <span class="math display">\[ \operatorname{dim}(U) + \operatorname{dim}(W) = \operatorname{dim}(U+W) +\operatorname{dim}(U\cap W),\]</span> <span class="math display">\[n-1 + n-1 = n + (n-2),\]</span> es decir, la única solución es <span class="math inline">\(\operatorname{dim}(U\cap W)= n-2\)</span>.
+<p>Probar que si <span class="math inline">\(V\)</span> es un espacio vectorial de dimensión <span class="math inline">\(n\)</span>, y <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> son dos subespacios distintos de <span class="math inline">\(V\)</span>, ambos de dimensión <span class="math inline">\(n-1\)</span>, entonces <span class="math inline">\(\dim(U\cap W)=n-2\)</span>.</p>
+<p>Si los dos subespacios son distintos, entonces <span class="math inline">\(\dim(U+W) &gt; \dim(U) =n-1\)</span> y como no puede ser mayor (porque estamos en un espacio vectorial de dimensión <span class="math inline">\(n\)</span>), entonces <span class="math inline">\(\dim(U+W) =n\)</span>. Usando la fórmula de las dimensiones se tiene</p>
+<p><span class="math display">\[
+\dim(U) + \dim(W) = \dim(U+W) +\dim(U\cap W),
+\]</span></p>
+<p><span class="math display">\[
+n-1 + n-1 = n + (n-2),
+\]</span> es decir, la única solución es <span class="math inline">\(\dim(U\cap W)= n-2\)</span>.</p>
 </li>
 <li>
-De un endomorfismo <span class="math inline">\(f:\mathbb{R}^3 \longrightarrow \mathbb{R}^3\)</span> se sabe que <span class="math inline">\(f(1,2,3)=(1,2,3)\)</span>, <span class="math inline">\(f(0,1,2)=(1,2,3)\)</span> y <span class="math inline">\(\operatorname{dim}(\operatorname{Im}(f))=2\)</span>. Determinar una base de <span class="math inline">\(\operatorname{ker}(f)\)</span>.<br> Usando la fórmula de las dimensiones para aplicaciones lineales se tiene que la dimensión de <span class="math inline">\(\operatorname{ker}=1\)</span> (puesto que <span class="math inline">\(\operatorname{dim}(\operatorname{ker}(f)) + \operatorname{dim}(\operatorname{Im}(f))= 3\)</span>) y basta con encontrar un vector no nulo cuya imagen valga <span class="math inline">\((0,0,0)\)</span>. Pero es evidente de los datos que <span class="math display">\[f(1,1,1)=f(1,2,3)-f(0,1,2)=(0,0,0),\]</span> así que <span class="math inline">\((1,1,1)\in \operatorname{ker}(f)\)</span> y así tenemos una base <span class="math inline">\(\{(1,1,1)\}\)</span>.
+<p>De un endomorfismo <span class="math inline">\(f:\mathbb{R}^3 \longrightarrow \mathbb{R}^3\)</span> se sabe que <span class="math inline">\(f(1,2,3)=(1,2,3)\)</span>, <span class="math inline">\(f(0,1,2)=(1,2,3)\)</span> y <span class="math inline">\(\dim(\operatorname{Im}(f))=2\)</span>. Determinar una base de <span class="math inline">\(\operatorname{ker}(f)\)</span>.</p>
+<p>Usando la fórmula de las dimensiones para aplicaciones lineales se tiene que la dimensión de <span class="math inline">\(\operatorname{ker}=1\)</span> (puesto que <span class="math inline">\(\dim(\operatorname{ker}(f)) + \dim(\operatorname{Im}(f))= 3\)</span>) y basta con encontrar un vector no nulo cuya imagen valga <span class="math inline">\((0,0,0)\)</span>. Pero es evidente de los datos que</p>
+<p><span class="math display">\[
+f(1,1,1)=f(1,2,3)-f(0,1,2)=(0,0,0),
+\]</span></p>
+así que <span class="math inline">\((1,1,1)\in \operatorname{ker}(f)\)</span> y así tenemos una base <span class="math inline">\(\{(1,1,1)\}\)</span>.
 </li>
 <li>
-Calcular la signatura de la matriz simétrica <span class="math inline">\(A\)</span>.<br> Diagonalizamos por congruencia: <span class="math display">\[\begin{pmatrix}
+<p>Calcular la signatura de la matriz simétrica <span class="math inline">\(A\)</span>.</p>
+<p>Diagonalizamos por congruencia:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
 2 &amp; 0 &amp; -2 \\
 0 &amp; 1 &amp; 3 \\
 -2 &amp; 3 &amp; 2
@@ -1154,15 +1533,19 @@ Calcular la signatura de la matriz simétrica <span class="math inline">\(A\)</s
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; -9
 \end{pmatrix}.
-\]</span> Así que en la diagonal hay dos elementos positivos y uno negativo, es decir, <span class="math inline">\(\operatorname{sig}(A)=(2,1)\)</span>.
+\]</span></p>
+Así que en la diagonal hay dos elementos positivos y uno negativo, es decir, <span class="math inline">\(\operatorname{sig}(A)=(2,1)\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-012" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 12</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
-Razonar que si <span class="math inline">\(A\)</span> es una matriz cualquiera de orden <span class="math inline">\(m\times n\)</span>, la matriz $A^{t} A $ es cuadrada y simétrica.
+Razonar que si <span class="math inline">\(A\)</span> es una matriz cualquiera de orden <span class="math inline">\(m\times n\)</span>, la matriz <span class="math inline">\(A^{t} \cdot A\)</span> es cuadrada y simétrica.
 </li>
 <li>
 Calcular la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> siendo <span class="math inline">\(B=\{ (1,1), (-1,1)\}\)</span> y <span class="math inline">\(B'=\{ (1,2), (-1,2)\}\)</span>.
@@ -1177,23 +1560,40 @@ Calcular la signatura de <span class="math inline">\(A= \left( \begin{array}{rr}
 \end{array} \right)\)</span> en función del parámetro <span class="math inline">\(a\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Razonar que si <span class="math inline">\(A\)</span> es una matriz cualquiera de orden <span class="math inline">\(m\times n\)</span>, la matriz $A^{t} A $ es cuadrada y simétrica.<br> Si <span class="math inline">\(A\)</span> tiene orden <span class="math inline">\(n \times m\)</span> entonces el producto <span class="math inline">\(A^t \cdot A\)</span> es de orden <span class="math inline">\(m \times m\)</span>.<br> Para comprobar que es simétrica calculamos su traspuesta: <span class="math display">\[(A^t \cdot A)^t = A^t \cdot (A^t)^t = A^t \cdot A,\]</span> y como efectivamente coincide con ella, se tiene el resultado.
+<p>Razonar que si <span class="math inline">\(A\)</span> es una matriz cualquiera de orden <span class="math inline">\(m\times n\)</span>, la matriz $A^{t} A $ es cuadrada y simétrica.</p>
+<p>Si <span class="math inline">\(A\)</span> tiene orden <span class="math inline">\(n \times m\)</span> entonces el producto <span class="math inline">\(A^t \cdot A\)</span> es de orden <span class="math inline">\(m \times m\)</span>.</p>
+<p>Para comprobar que es simétrica calculamos su traspuesta:</p>
+<p><span class="math display">\[
+(A^t \cdot A)^t = A^t \cdot (A^t)^t = A^t \cdot A,
+\]</span></p>
+y como efectivamente coincide con ella, se tiene el resultado.
 </li>
 <li>
-<p>Calcular la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span>.<br> LLamemos <span class="math inline">\(P=\left( \begin{array}{rr}
+<p>Calcular la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span>.</p>
+<p>LLamemos <span class="math inline">\(P=\left( \begin{array}{rr}
 1 &amp; -1 \\
 1 &amp; 1 \\
 \end{array} \right)\)</span> que es la matriz de cambio de base de <span class="math inline">\(B\)</span> a la base canónica, y<br>
 <span class="math inline">\(Q=\left( \begin{array}{rr}
 1 &amp; -1 \\
 2 &amp; 2 \\
-\end{array} \right)\)</span> que es la matriz de cambio de base de <span class="math inline">\(B'\)</span> a la canónica. <span class="math display">\[B \longrightarrow^{P}  B_c \longleftarrow^{Q} B',\]</span> entonces la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> es <span class="math inline">\(Q^{-1}\cdot P\)</span>.<br> Calculamos <span class="math inline">\(Q^{-1}\)</span>: <span class="math display">\[
+\end{array} \right)\)</span> que es la matriz de cambio de base de <span class="math inline">\(B'\)</span> a la canónica. <span class="math display">\[B \longrightarrow^{P}  B_c \longleftarrow^{Q} B',\]</span> entonces la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> es <span class="math inline">\(Q^{-1}\cdot P\)</span>.</p>
+<p>Calculamos <span class="math inline">\(Q^{-1}\)</span>:</p>
+<p><span class="math display">\[
 \left( \begin{array}{rr|rr}
 1 &amp; -1&amp; 1 &amp; 0 \\
 2 &amp; 2 &amp; 0 &amp; 1\\
@@ -1217,7 +1617,9 @@ A=matrix([[1,-1,1,0],[2,2,0,1]])
 show(A,"~",A.rref())
 </script>
 </div>
-Así <span class="math display">\[Q^{-1} \cdot P= \left( \begin{array}{rr}
+<p>Así</p>
+<p><span class="math display">\[
+Q^{-1} \cdot P= \left( \begin{array}{rr}
 1/2 &amp; 1/4 \\
   -1/2 &amp; 1/4\\
 \end{array} \right)\left( \begin{array}{rr}
@@ -1227,18 +1629,22 @@ Así <span class="math display">\[Q^{-1} \cdot P= \left( \begin{array}{rr}
 3/4 &amp; -1/4 \\
 -1/4 &amp; 3/4 \\
 \end{array} \right).
-\]</span>
+\]</span></p>
 </li>
 <li>
-Si <span class="math inline">\(A\)</span> es una matriz cuadrada con un único autovalor <span class="math inline">\(\lambda_1=1\)</span> y se sabe que <span class="math inline">\(A\)</span> es diagonalizable ¿qué se puede decir de <span class="math inline">\(A\)</span>?<br> Si <span class="math inline">\(A\)</span> es de orden digamos <span class="math inline">\(n\)</span>, tiene como único valor propio <span class="math inline">\(\lambda=1\)</span> y es diagonalizable, entonces la multiplicidad algebraica y geométrica de <span class="math inline">\(\lambda=1\)</span> es <span class="math inline">\(n\)</span>, y por tanto <span class="math inline">\(\operatorname{dim}(V_{\lambda= 1}) = n - \operatorname{rg}(A-I) = n\)</span>, es decir, <span class="math inline">\(\operatorname{rg}(A-I)=0\)</span> lo que indica que <span class="math inline">\(A-I=0\)</span> y por tanto <span class="math inline">\(A\)</span> es la matriz identidad.
+<p>Si <span class="math inline">\(A\)</span> es una matriz cuadrada con un único autovalor <span class="math inline">\(\lambda_1=1\)</span> y se sabe que <span class="math inline">\(A\)</span> es diagonalizable ¿qué se puede decir de <span class="math inline">\(A\)</span>?</p>
+Si <span class="math inline">\(A\)</span> es de orden digamos <span class="math inline">\(n\)</span>, tiene como único valor propio <span class="math inline">\(\lambda=1\)</span> y es diagonalizable, entonces la multiplicidad algebraica y geométrica de <span class="math inline">\(\lambda=1\)</span> es <span class="math inline">\(n\)</span>, y por tanto <span class="math inline">\(\dim(V_{ 1}) = n - \operatorname{rg}(A-I) = n\)</span>, es decir, <span class="math inline">\(\operatorname{rg}(A-I)=0\)</span> lo que indica que <span class="math inline">\(A-I=0\)</span> y por tanto <span class="math inline">\(A\)</span> es la matriz identidad.
 </li>
 <li>
-Calcular la signatura de <span class="math inline">\(A\)</span> en función del parámetro <span class="math inline">\(a\)</span>. Diagonalizamos por congruencia la matriz: <span class="math display">\[
+<p>Calcular la signatura de <span class="math inline">\(A\)</span> en función del parámetro <span class="math inline">\(a\)</span>. Diagonalizamos por congruencia la matriz:</p>
+<p><span class="math display">\[
 \left( \begin{array}{rr}
 a &amp; 1 \\
 1 &amp; -a \\
 \end{array} \right),
-\]</span> pero para elegir el elemento en la posición <span class="math inline">\((1,1)\)</span> como pivote necesitamos que sea <span class="math inline">\(a\not = 0\)</span>, caso que estudiaremos aparte. <span class="math display">\[
+\]</span></p>
+<p>pero para elegir el elemento en la posición <span class="math inline">\((1,1)\)</span> como pivote necesitamos que sea <span class="math inline">\(a\not = 0\)</span>, caso que estudiaremos aparte.</p>
+<p><span class="math display">\[
 \left( \begin{array}{rr}
 a &amp; 1 \\
 1 &amp; -a \\
@@ -1249,7 +1655,10 @@ a &amp; 1 \\
 a &amp; 0 \\
 0 &amp; -2a \\
 \end{array} \right),
-\]</span> que tiene signatura <span class="math inline">\((1,1)\)</span>.<br> Ahora, para <span class="math inline">\(a=0\)</span> <span class="math display">\[
+\]</span></p>
+<p>que tiene signatura <span class="math inline">\((1,1)\)</span>.</p>
+<p>Ahora, para <span class="math inline">\(a=0\)</span></p>
+<p><span class="math display">\[
 \left( \begin{array}{rr}
 0 &amp; 1 \\
 1 &amp; 0 \\
@@ -1267,18 +1676,26 @@ a &amp; 0 \\
 2 &amp; 0 \\
 0 &amp; -1/2 \\
 \end{array} \right),
-\]</span> con lo cual, en todos los casos <span class="math inline">\(\operatorname{sig}(A)=(1,1)\)</span>.<br> También puede hacerse calculando los valores propios de la matriz: <span class="math display">\[
+\]</span></p>
+<p>con lo cual, en todos los casos <span class="math inline">\(\operatorname{sig}(A)=(1,1)\)</span>.</p>
+<p>También puede hacerse calculando los valores propios de la matriz:</p>
+<p><span class="math display">\[
 \left| \begin{array}{rr}
 a-\lambda &amp; 1 \\
 1 &amp; -a-\lambda \\
 \end{array} \right|= (a-\lambda)(-a-\lambda)-1= \lambda^2 -1=0,
-\]</span> que nos da como valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=-1\)</span>, con lo que se tiene de nuevo <span class="math inline">\(\operatorname{sig}(A)=(1,1)\)</span>.
+\]</span></p>
+que nos da como valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=-1\)</span>, con lo que se tiene de nuevo <span class="math inline">\(\operatorname{sig}(A)=(1,1)\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>En el espacio vectorial <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> se consideran los subespacios <span class="math display">\[U=\mathcal{L}\left( \left(
+</div>
+</div>
+</div>
+</div>
+<div id="exr-o13" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13</strong></span> En el espacio vectorial <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> se consideran los subespacios</p>
+<p><span class="math display">\[
+U=\mathcal{L}\left( \left(
 \begin{array}{cc}
 1 &amp; 0 \\
 0&amp; 1 \\
@@ -1290,7 +1707,9 @@ a-\lambda &amp; 1 \\
 2 &amp; a \\
 \end{array}
 \right) \right),
-\]</span> <span class="math display">\[W=\mathcal{L}\left(
+\]</span></p>
+<p><span class="math display">\[
+W=\mathcal{L}\left(
 \left(
 \begin{array}{cc}
 a &amp; 1 \\
@@ -1303,7 +1722,11 @@ a &amp; 1 \\
 0 &amp; 0 \\
 \end{array}
 \right) \right),
-\]</span> y el producto escalar dado por <span class="math display">\[\langle A,B\rangle=\operatorname{traza}(AB^t)\]</span></p>
+\]</span></p>
+<p>y el producto escalar dado por</p>
+<p><span class="math display">\[
+\langle A,B\rangle=\operatorname{traza}(AB^t).
+\]</span></p>
 <ol type="a">
 <li>
 Calcula la base más sencilla de <span class="math inline">\(U+W\)</span> para todos los valores de <span class="math inline">\(a\)</span>.
@@ -1328,13 +1751,25 @@ Calcula la proyección ortogonal sobre <span class="math inline">\(W\)</span> de
 \right)\)</span> para <span class="math inline">\(a=1\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcula la base más sencilla de <span class="math inline">\(U+W\)</span> para todos los valores de <span class="math inline">\(a\)</span>.<br> Comenzamos calculando <span class="math inline">\(U+W\)</span> puesto que conocemos sistemas de generadores de ambos subespacios. Usaremos coordenadas respecto de la base <span class="math inline">\(B_s\)</span> habitual.<br> Reunimos los dos sistemas de generadores y hacemos operaciones elementales por columnas: <span class="math display">\[\left(\begin{array}{cccc}
+<p>Calcula la base más sencilla de <span class="math inline">\(U+W\)</span> para todos los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Comenzamos calculando <span class="math inline">\(U+W\)</span> puesto que conocemos sistemas de generadores de ambos subespacios. Usaremos coordenadas respecto de la base <span class="math inline">\(B_s\)</span> habitual.</p>
+<p>Reunimos los dos sistemas de generadores y hacemos operaciones elementales por columnas:</p>
+<p><span class="math display">\[
+\left(\begin{array}{cccc}
 1 &amp; 1 &amp; a &amp; 1\\
 0 &amp; 0 &amp; 1 &amp; -1\\
 0 &amp; 2 &amp; 2 &amp; 0\\
@@ -1354,7 +1789,12 @@ Calcula la base más sencilla de <span class="math inline">\(U+W\)</span> para t
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 2 &amp; 0\\
 1 &amp; 1 &amp; a-1 &amp; -2a\\
-\end{array}\right)\]</span> Si <span class="math inline">\(a\not = 0\)</span>, <span class="math inline">\(\operatorname{dim}(U+W)=4\)</span> y por tanto <span class="math inline">\(U+W=\mathcal{M}_2(\mathbb{R})\)</span> y la base más sencilla es <span class="math inline">\(B_s\)</span>.<br> Si <span class="math inline">\(a=0\)</span> la base más sencilla son las columnas no nulas de la forma de Hermite por columnas de la matriz anterior <span class="math display">\[\left(\begin{array}{cccc}
+\end{array}\right)
+\]</span></p>
+<p>Si <span class="math inline">\(a\not = 0\)</span>, <span class="math inline">\(\dim(U+W)=4\)</span> y por tanto <span class="math inline">\(U+W=\mathcal{M}_2(\mathbb{R})\)</span> y la base más sencilla es <span class="math inline">\(B_s\)</span>.</p>
+<p>Si <span class="math inline">\(a=0\)</span> la base más sencilla son las columnas no nulas de la forma de Hermite por columnas de la matriz anterior</p>
+<span class="math display">\[
+\left(\begin{array}{cccc}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 2 &amp; 0\\
@@ -1374,17 +1814,27 @@ Calcula la base más sencilla de <span class="math inline">\(U+W\)</span> para t
 \end{array}\right),\left(\begin{array}{cc}
 0 &amp; 0 \\
 1 &amp; -1/2
-\end{array}\right) \right\}\]</span>
+\end{array}\right) \right\}.
+\]</span>
 </li>
 <li>
-<p>Calcula unas ecuaciones cartesianas de <span class="math inline">\(U\cap W\)</span> para todos los valores de <span class="math inline">\(a\)</span>.<br> Para calcular la intersección utilizamos en primer lugar la fórmula de las dimensiones <span class="math display">\[\operatorname{dim}(U)+ \operatorname{dim}(W)=\operatorname{dim}(U+W)+\operatorname{dim}(U\cap W).\]</span> Como <span class="math inline">\(\operatorname{dim}(U)+ \operatorname{dim}(W)=2+2=4\)</span> (es inmediato de los datos), tenemos que para <span class="math inline">\(a\not = 0\)</span> <span class="math inline">\(\operatorname{dim}(U\cap W)=0\)</span> mientras que para <span class="math inline">\(a=0\)</span> <span class="math inline">\(\operatorname{dim}(U\cap W)=1\)</span>.<br> Por tanto para <span class="math inline">\(a\not = 0\)</span> las ecuaciones cartesianas de <span class="math inline">\(U\cap W\)</span> son <span class="math display">\[\begin{equation}
+<p>Calcula unas ecuaciones cartesianas de <span class="math inline">\(U\cap W\)</span> para todos los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Para calcular la intersección utilizamos en primer lugar la fórmula de las dimensiones</p>
+<p><span class="math display">\[
+\dim(U)+ \dim(W)=\dim(U+W)+\dim(U\cap W).
+\]</span></p>
+<p>Como <span class="math inline">\(\dim(U)+ \dim(W)=2+2=4\)</span> (es inmediato de los datos), tenemos que para <span class="math inline">\(a\not = 0\)</span> <span class="math inline">\(\dim(U\cap W)=0\)</span> mientras que para <span class="math inline">\(a=0\)</span> <span class="math inline">\(\dim(U\cap W)=1\)</span>.</p>
+<p>Por tanto para <span class="math inline">\(a\not = 0\)</span> las ecuaciones cartesianas de <span class="math inline">\(U\cap W\)</span> son <span class="math display">\[\begin{equation}
 U\cap W \equiv \left\{ \begin{array}{l}
 x=0,\\
 y=0,\\
 z=0,\\
 t=0.
 \end{array}\right.
-\end{equation}\]</span> Para <span class="math inline">\(a=0\)</span> calculamos unas cartesianas de <span class="math inline">\(U\)</span> y unas de <span class="math inline">\(W\)</span> y las reunimos. Para ello comenzamos desde la base más sencilla de cada subespacio para escribir las paramétricas y deducir después las cartesianas. Para <span class="math inline">\(U\)</span>: <span class="math display">\[\left(\begin{array}{cc}
+\end{equation}\]</span></p>
+<p>Para <span class="math inline">\(a=0\)</span> calculamos unas cartesianas de <span class="math inline">\(U\)</span> y unas de <span class="math inline">\(W\)</span> y las reunimos. Para ello comenzamos desde la base más sencilla de cada subespacio para escribir las paramétricas y deducir después las cartesianas. Para <span class="math inline">\(U\)</span>:</p>
+<p><span class="math display">\[
+\left(\begin{array}{cc}
 1 &amp; 1 \\
 0 &amp; 0 \\
 0 &amp; 2 \\
@@ -1399,7 +1849,11 @@ t=0.
 0 &amp; 0 \\
 0 &amp; 1 \\
 1 &amp; -1/2 \\
-\end{array}\right).\]</span> Luego unas paramétricas son <span class="math display">\[U=\left\{ \begin{array}{l}
+\end{array}\right).
+\]</span></p>
+<p>Luego unas paramétricas son</p>
+<p><span class="math display">\[
+U=\left\{ \begin{array}{l}
 x=\lambda_1,\\
 y=0,\\
 z=\lambda_2,\\
@@ -1410,7 +1864,8 @@ y=0,\\
 2x-z-2t=0.
 \end{array}\right.
 \]</span></p>
-Para <span class="math inline">\(W\)</span>: <span class="math display">\[\left(\begin{array}{cc}
+<p>Para <span class="math inline">\(W\)</span>:</p>
+<p><span class="math display">\[\left(\begin{array}{cc}
 0 &amp; 1 \\
 1 &amp; -1 \\
 2 &amp; 0 \\
@@ -1420,7 +1875,11 @@ Para <span class="math inline">\(W\)</span>: <span class="math display">\[\left(
 0 &amp; 1 \\
 2 &amp; 2 \\
 0 &amp; 0 \\
-\end{array}\right).\]</span> Luego unas paramétricas son <span class="math display">\[W=\left\{ \begin{array}{l}
+\end{array}\right).
+\]</span></p>
+<p>Luego unas paramétricas son</p>
+<p><span class="math display">\[
+W=\left\{ \begin{array}{l}
 x=\lambda_1,\\
 y=\lambda_2,\\
 z=2\lambda_1+2\lambda_2,\\
@@ -1430,7 +1889,10 @@ t=0.
 2x+2y-z=0,\\
 t=0.
 \end{array}\right.
-\]</span> Entonces <span class="math display">\[U\cap W=\left\{ \begin{array}{l}
+\]</span></p>
+<p>Entonces</p>
+<p><span class="math display">\[
+U\cap W=\left\{ \begin{array}{l}
 y=0,\\
 2x-z-2t=0,\\
 2x+2y-z=0,\\
@@ -1440,13 +1902,17 @@ y=0,\\
 2x-z=0.\\
 t=0,
 \end{array}\right.
-\]</span>
+\]</span></p>
 </li>
 <li>
-¿Son <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> complementarios para <span class="math inline">\(a=1\)</span>?<br> Sí, de hecho para <span class="math inline">\(a\not = 0\)</span>, puesto que <span class="math inline">\(U+W=\mathcal{M}_2(\mathbb{R})\)</span> y <span class="math inline">\(U\cap W=\{0\}\)</span>.
+<p>¿Son <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> complementarios para <span class="math inline">\(a=1\)</span>?</p>
+Sí, de hecho para <span class="math inline">\(a\not = 0\)</span>, puesto que <span class="math inline">\(U+W=\mathcal{M}_2(\mathbb{R})\)</span> y <span class="math inline">\(U\cap W=\{0\}\)</span>.
 </li>
 <li>
-Calcula una base ortogonal de <span class="math inline">\(U\)</span> para <span class="math inline">\(a=1\)</span>.<br> Para calcular una base ortogonal calculemos en primer lugar una base de <span class="math inline">\(U\)</span> para <span class="math inline">\(a=1\)</span>: <span class="math display">\[\left(\begin{array}{cc}
+<p>Calcula una base ortogonal de <span class="math inline">\(U\)</span> para <span class="math inline">\(a=1\)</span>.</p>
+<p>Para calcular una base ortogonal calculemos en primer lugar una base de <span class="math inline">\(U\)</span> para <span class="math inline">\(a=1\)</span>:</p>
+<p><span class="math display">\[
+\left(\begin{array}{cc}
 1 &amp; 1 \\
 0 &amp; 0 \\
 0 &amp; 2 \\
@@ -1456,13 +1922,20 @@ Calcula una base ortogonal de <span class="math inline">\(U\)</span> para <span 
 0 &amp; 0 \\
 0 &amp; 1 \\
 1 &amp; 0 \\
-\end{array}\right)\]</span> Ahora usamos el algoritmo de Gram-Schmidt para calcular una base ortogonal a partir de estos dos vectores <span class="math display">\[u_1=\begin{pmatrix}
+\end{array}\right).
+\]</span></p>
+<p>Ahora usamos el algoritmo de Gram-Schmidt para calcular una base ortogonal a partir de estos dos vectores</p>
+<p><span class="math display">\[
+u_1=\begin{pmatrix}
 1 &amp; 0\\
 0 &amp; 1
 \end{pmatrix}, u_2=\begin{pmatrix}
 0 &amp; 0\\
 1 &amp; 0
-\end{pmatrix}.\]</span> Luego <span class="math display">\[e_1= \begin{pmatrix}
+\end{pmatrix}.
+\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[e_1= \begin{pmatrix}
 1 &amp; 0\\
 0 &amp; 1
 \end{pmatrix}, e_2=\begin{pmatrix}
@@ -1471,7 +1944,14 @@ Calcula una base ortogonal de <span class="math inline">\(U\)</span> para <span 
 \end{pmatrix}+\lambda_{21}\begin{pmatrix}
 1 &amp; 0\\
 0 &amp; 1
-\end{pmatrix}.\]</span> Calculamos <span class="math display">\[\lambda_{21}=\frac{-\langle u_{2},e_{1}\rangle}{||e_{1}||^2}.\]</span> Empezamos por el numerador: <span class="math display">\[\biggl\langle\begin{pmatrix}
+\end{pmatrix}.
+\]</span></p>
+<p>Calculamos</p>
+<p><span class="math display">\[
+\lambda_{21}=\frac{-\langle u_{2},e_{1}\rangle}{||e_{1}||^2}.
+\]</span></p>
+<p>Empezamos por el numerador: <span class="math display">\[
+\biggl\langle\begin{pmatrix}
 0 &amp; 0\\
 1 &amp; 0
 \end{pmatrix}, \begin{pmatrix}
@@ -1486,10 +1966,15 @@ Calcula una base ortogonal de <span class="math inline">\(U\)</span> para <span 
 \end{pmatrix}\right)= \operatorname{traza}\begin{pmatrix}
 0 &amp; 0\\
 1 &amp; 0
-\end{pmatrix}=0.\]</span> Luego <span class="math inline">\(e_2=u_2\)</span> y la base de partida ya es ortogonal. También puede calcularse la matriz de Gram del producto escalar y usarla para hacer los productos utilizando coordenadas.
+\end{pmatrix}=0.
+\]</span></p>
+Luego <span class="math inline">\(e_2=u_2\)</span> y la base de partida ya es ortogonal. También puede calcularse la matriz de Gram del producto escalar y usarla para hacer los productos utilizando coordenadas.
 </li>
 <li>
-<p>Calcula una base del subespacio ortogonal a <span class="math inline">\(W\)</span> para <span class="math inline">\(a=1\)</span>.<br> Para calcular las cartesianas del ortogonal de <span class="math inline">\(W\)</span> partimos de una base de <span class="math inline">\(W\)</span> (<span class="math inline">\(a=1\)</span>): <span class="math display">\[\left(\begin{array}{cc}
+<p>Calcula una base del subespacio ortogonal a <span class="math inline">\(W\)</span> para <span class="math inline">\(a=1\)</span>.</p>
+<p>Para calcular las cartesianas del ortogonal de <span class="math inline">\(W\)</span> partimos de una base de <span class="math inline">\(W\)</span> (<span class="math inline">\(a=1\)</span>):</p>
+<p><span class="math display">\[
+\left(\begin{array}{cc}
 1 &amp; 1 \\
 1 &amp; -1 \\
 2 &amp; 0 \\
@@ -1504,8 +1989,11 @@ Calcula una base ortogonal de <span class="math inline">\(U\)</span> para <span 
 0 &amp; 1 \\
 1 &amp; 1 \\
 0 &amp; 0 \\
-\end{array}\right),\]</span> y para cada uno imponemos la condición de que una matriz genérica sea ortogonal:</p>
-<p><span class="math display">\[\biggl\langle\begin{pmatrix}
+\end{array}\right),
+\]</span></p>
+<p>y para cada uno imponemos la condición de que una matriz genérica sea ortogonal:</p>
+<p><span class="math display">\[
+\biggl\langle\begin{pmatrix}
 1 &amp; 0\\
 1 &amp; 0
 \end{pmatrix}, \begin{pmatrix}
@@ -1520,8 +2008,10 @@ y &amp; t
 \end{pmatrix}\right)= \operatorname{traza}\begin{pmatrix}
 x &amp; z\\
 x &amp; z
-\end{pmatrix}=x+z=0,\]</span></p>
-<p><span class="math display">\[\biggl\langle\begin{pmatrix}
+\end{pmatrix}=x+z=0,
+\]</span></p>
+<p><span class="math display">\[
+\biggl\langle\begin{pmatrix}
 0 &amp; 1\\
 1 &amp; 0
 \end{pmatrix}, \begin{pmatrix}
@@ -1536,13 +2026,21 @@ y &amp; t
 \end{pmatrix}\right)= \operatorname{traza}\begin{pmatrix}
 y &amp; t\\
 x &amp; z
-\end{pmatrix}=y+z=0.\]</span> Luego <span class="math display">\[W^{\perp}\equiv \left\{\begin{array}{l}
+\end{pmatrix}=y+z=0.
+\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[
+W^{\perp}\equiv \left\{\begin{array}{l}
 x+z=0,\\
 y+z=0.
-\end{array}\right.\]</span></p>
+\end{array}\right.
+\]</span></p>
 </li>
 <li>
-Calcula la proyección ortogonal sobre <span class="math inline">\(W\)</span> de la matriz <span class="math inline">\(A\)</span>.<br> Calculamos unas cartesianas de <span class="math inline">\(W\)</span> para <span class="math inline">\(a=1\)</span> partiendo de la base más sencilla que ya tenemos del apartado anterior, primero poniendo las paramétricas: <span class="math display">\[W=\left\{ \begin{array}{l}
+<p>Calcula la proyección ortogonal sobre <span class="math inline">\(W\)</span> de la matriz <span class="math inline">\(A\)</span>.</p>
+<p>Calculamos unas cartesianas de <span class="math inline">\(W\)</span> para <span class="math inline">\(a=1\)</span> partiendo de la base más sencilla que ya tenemos del apartado anterior, primero poniendo las paramétricas:</p>
+<p><span class="math display">\[
+W=\left\{ \begin{array}{l}
 x=\lambda_1,\\
 y=\lambda_2,\\
 z=\lambda_1+\lambda_2,\\
@@ -1552,17 +2050,24 @@ t=0.
 x+y-z=0,\\
 t=0.
 \end{array}\right.
-\]</span> La matriz del enunciado cumple estas cartesianas, luego está en <span class="math inline">\(W\)</span>. Entonces <span class="math display">\[p_W\left(\begin{pmatrix}
+\]</span></p>
+<p>La matriz del enunciado cumple estas cartesianas, luego está en <span class="math inline">\(W\)</span>. Entonces,</p>
+<p><span class="math display">\[
+p_W\left(\begin{pmatrix}
 1 &amp; 2\\
 3 &amp; 0
 \end{pmatrix}\right)=\begin{pmatrix}
 1 &amp; 2\\
 3 &amp; 0
-\end{pmatrix}.\]</span> También puede emplearse cualquier otro método (descomponer en dos vectores uno de <span class="math inline">\(W\)</span> y otro de <span class="math inline">\(W^{\perp}\)</span>, o usar coeficientes de Fourier).
+\end{pmatrix}.
+\]</span></p>
+También puede emplearse cualquier otro método (descomponer en dos vectores uno de <span class="math inline">\(W\)</span> y otro de <span class="math inline">\(W^{\perp}\)</span>, o usar coeficientes de Fourier).
 </li>
 </ol>
-</details>
-</article>
+</div>
+</div>
+</div>
+</div>
 
 
 
