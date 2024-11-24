@@ -27,7 +27,8 @@ $$
 
 :::: {.callout collapse="true" title="Solución"}
 
-Para determinar si los vectores son linealmente independientes o linealmente dependientes construimos la matriz cuyas columnas son esos vectores, a continuación calculamos su rango y lo comparamos con el número de vectores. Se tiene que los vectores son linealmente independientes si y sólo si $\operatorname{rg}(A)$ es máximo (coincide con el número de vectores) y en otro caso son linealmente dependientes.<br>
+Para determinar si los vectores son linealmente independientes o linealmente dependientes construimos la matriz cuyas columnas son esos vectores, a continuación calculamos su rango y lo comparamos con el número de vectores. Se tiene que los vectores son linealmente independientes si y sólo si $\operatorname{rg}(A)$ es máximo (coincide con el número de vectores) y en otro caso son linealmente dependientes.
+
 
 La matriz que se forma es:
 
@@ -392,9 +393,11 @@ $$
 QX'=PX
 $$
 
-y despejando $X'=Q^{-1}PX$, por lo que la matriz $M_{BB'}=Q^{-1}P$.<br>
+y despejando $X'=Q^{-1}PX$, por lo que la matriz $M_{BB'}=Q^{-1}P$.
 
-Si observamos el método anterior, hemos calculado precisamente $Q^{-1}P$ utilizando operaciones elementales.<br>
+
+Si observamos el método anterior, hemos calculado precisamente $Q^{-1}P$ utilizando operaciones elementales.
+
 La matriz $M_{B'B}=(Q^{-1}P)^{-1}=P^{-1}Q$.
 
 ::::
@@ -502,7 +505,8 @@ $$
 \end{array} \right).
 $$
 
-Luego $x=(2,-1,2)_B$.<br>
+Luego $x=(2,-1,2)_B$.
+
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -1079,7 +1083,8 @@ Calcula la base más sencilla de $U$ y unas cartesianas de $W$.
 
 :::: {.callout collapse="true" title="Solución"}
 
-Para calcular la base más sencilla de $U$, de las ecuaciones cartesianas obtendremos unas paramétricas resolviendo el sistema. De estas paramétricas obtenemos una base desde la que calcular la base más sencilla.<br>
+Para calcular la base más sencilla de $U$, de las ecuaciones cartesianas obtendremos unas paramétricas resolviendo el sistema. De estas paramétricas obtenemos una base desde la que calcular la base más sencilla.
+
 
 Resolver las cartesianas es inmediato puesto que ya es un sistema escalonado reducido, $y$, $z$ actúan como parámetros, luego nos queda:
 
@@ -1212,7 +1217,8 @@ unas ecuaciones cartesianas de $U$ y $W$.</li>
 
 <ol type="a">
 
-<li>Calcular la dimensión y una base de cada uno de ellos.<br>
+<li>Calcular la dimensión y una base de cada uno de ellos.
+
 $U$ está formado por las matrices simétricas de orden 2, que tienen la forma
 
 $$
@@ -1237,7 +1243,8 @@ $$
 \end{pmatrix} \right\} 
 $$
 
-y por tanto $\dim(U)=3$.<br>
+y por tanto $\dim(U)=3$.
+
 $W$ está formado por las matrices antisimétricas de orden dos que tienen la forma 
 
 $$
@@ -1305,7 +1312,8 @@ t=0.
 $$ 
 </li>
 
-<li>Probar que $\mathcal{M}_2(\mathbb{R})=U\oplus W$.<br>
+<li>Probar que $\mathcal{M}_2(\mathbb{R})=U\oplus W$.
+
 Calculamos $U\cap W$ reuniendo cartesianas:
 
 $$
@@ -1322,7 +1330,8 @@ t=0.
 \end{array} \right.
 $$ 
 
-Por tanto $U\cap W=\{0 \}$.<br>
+Por tanto $U\cap W=\{0 \}$.
+
 Por la fórmula de las dimensiones,
 
 $$
@@ -1367,8 +1376,10 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular la base más sencilla de $W$.<br>
-De la cartesiana $2x-y-t=0$ obtenemos la reducida: $x-\frac{1}{2} y-\frac{1}{2}t=0$.<br>
+<li>Calcular la base más sencilla de $W$.
+
+De la cartesiana $2x-y-t=0$ obtenemos la reducida: $x-\frac{1}{2} y-\frac{1}{2}t=0$.
+
 Asignando parámetros a las incógnitas secundarias ($y, z$, $t$) y despejando la principal obtenemos
 las paramétricas:
 
@@ -1428,7 +1439,8 @@ $$
 
 </li>
 
-<li>Calcular la dimensión de $U$ según los valores de $a$.<br>
+<li>Calcular la dimensión de $U$ según los valores de $a$.
+
 Escribimos los vectores por sus coordenadas en la base $B_{s}$ y calculamos el rango de la matriz que forman:
 
 $$
@@ -1452,10 +1464,12 @@ $$
 
 así que si $a\not = 2$ el rango es tres y $\dim(U)=3$ y si $a=2$ el rango es dos y $\dim(U)=2$.</li>
 
-<li>Probar que cuando $a=2$ se tiene que $U \subseteq W$.<br>
+<li>Probar que cuando $a=2$ se tiene que $U \subseteq W$.
+
 Hemos visto que para $a=2$ la dimensión de $U$ es dos y por tanto los dos primeros vectores son base de $U$, además cada uno de ellos verifica la ecuación de $W$ ($2\cdot 1-2-0=0; \, 2\cdot 1-0-2=0$), así que $U\subseteq W$.</li>
 
-<li>Calcular unas ecuaciones cartesianas de $U \cap W$ para $a\not = 2$.<br>
+<li>Calcular unas ecuaciones cartesianas de $U \cap W$ para $a\not = 2$.
+
 Si $a\not = 2$ la dimensión de $U$ es tres y unas paramétricas son:
 
 $$
@@ -1467,7 +1481,8 @@ t=&2\lambda_2+a\lambda_3.\\
 \end{array}\right.
 $$ 
 
-Y como solo necesitamos una cartesiana, entonces $z=0$ es la ecuación cartesiana de $U$.<br>
+Y como solo necesitamos una cartesiana, entonces $z=0$ es la ecuación cartesiana de $U$.
+
 Por tanto,
 
 $$
@@ -1504,8 +1519,10 @@ $$
 
 <ol type="a">
 
-<li>Calcular la base más sencilla de $U$ según los valores de $a$.<br>
-Puesto que se trata del sistema $AX=0$, podemos transformarlo en el sistema escalonado reducido equivalente utilizando operaciones elementales por filas sobre $A$.<br>
+<li>Calcular la base más sencilla de $U$ según los valores de $a$.
+
+Puesto que se trata del sistema $AX=0$, podemos transformarlo en el sistema escalonado reducido equivalente utilizando operaciones elementales por filas sobre $A$.
+
 En primer lugar distinguimos el caso $a=0$ en el que el elemento en la posición $(1,1)$ no es pivote:
 
 $$
@@ -1532,7 +1549,8 @@ t=0.
 \end{array} \right. 
 $$
 
-Por tanto, $\dim(U)=1$ y la base más sencilla es $\{(1,0,0,0)\}$.<br>
+Por tanto, $\dim(U)=1$ y la base más sencilla es $\{(1,0,0,0)\}$.
+
 Si $a\not = 0$ entonces
 
 $$
@@ -1564,7 +1582,8 @@ t=0.
 \end{array} \right. 
 $$
 
-Por tanto, $\dim(U)=2$ y una base sería $\{(1,-1,0,0),(1,0,1,0)\}$, realizando operaciones elementales nos queda que la base más sencilla es  $\{(1,0,1,0),(0,1,1,0)\}$.<br>
+Por tanto, $\dim(U)=2$ y una base sería $\{(1,-1,0,0),(1,0,1,0)\}$, realizando operaciones elementales nos queda que la base más sencilla es  $\{(1,0,1,0),(0,1,1,0)\}$.
+
 Por último, si $a\not = 0,-1$ entonces
 
 $$
@@ -1594,8 +1613,10 @@ $$
 Por tanto $\dim(U)=1$ y la base más sencilla es $\{(1,a,0,0)\}$.
 </li>
 
-<li>Calcular unas ecuaciones cartesianas según los valores de $a$.<br>
-Ya hemos visto que el rango de $A$ depende de $a$: es tres si $a\not =-1$ y dos cuando $a=-1$. Así que tenemos ya la dimensión de $W$, que coincide con el rango de $A$.<br>
+<li>Calcular unas ecuaciones cartesianas según los valores de $a$.
+
+Ya hemos visto que el rango de $A$ depende de $a$: es tres si $a\not =-1$ y dos cuando $a=-1$. Así que tenemos ya la dimensión de $W$, que coincide con el rango de $A$.
+
 Para $a=-1$:
 
 $$
@@ -1644,7 +1665,8 @@ $$
 
 </li>
 
-<li> Calcular las dimensiones de $U\cap W$ y $U + W$ según los valores de $a$.<br>
+<li> Calcular las dimensiones de $U\cap W$ y $U + W$ según los valores de $a$.
+
 Podemos calcular la dimensión de la suma y usar después la fórmula de las dimensiones para obtener la de la intersección. Para ello en cada caso reunimos bases de $U$ y $W$ y calculamos el rango de la matriz que forman, lo que nos da la dimensión de $U+W$:
 
 **Si $a=0$**
@@ -1662,7 +1684,8 @@ $$\left(\begin{array}{r|rrr}
 \end{array}\right),
 $$
 
-entonces $\dim(U+W)=3$.<br>
+entonces $\dim(U+W)=3$.
+
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -1689,7 +1712,8 @@ $$
 \end{array}\right),
 $$
 
-entonces $\dim(U+W)=4$.<br>
+entonces $\dim(U+W)=4$.
+
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
@@ -1718,7 +1742,8 @@ $$
 
 entonces $\dim(U+W)=4$.
 
-Así que usando $\dim(U) +\dim(W)=\dim(U+W)+ \dim(U\cap W)$ obtenemos:<br>
+Así que usando $\dim(U) +\dim(W)=\dim(U+W)+ \dim(U\cap W)$ obtenemos:
+
 
 Si $a=0$, $\dim(U)=1$, $\dim(W)=3$, $\dim(U+W)=3$ y $\dim(U\cap W)=1$.
 

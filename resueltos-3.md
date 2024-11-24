@@ -29,7 +29,7 @@ Determina cuáles de las siguientes aplicaciones son lineales:
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li class="cuerpo_finito">La aplicación $f:(\mathbb{Z}_3)^2 \rightarrow (\mathbb{Z}_3)^2$, $f(x,y)=(x+1,y+2)$.<br>
+<li class="cuerpo_finito">La aplicación $f:(\mathbb{Z}_3)^2 \rightarrow (\mathbb{Z}_3)^2$, $f(x,y)=(x+1,y+2)$.
 
 No es aplicación lineal. Basta tomar $u=(1,0)$ y $a=2$ y comprobar que no se cumple la segunda propiedad:
 
@@ -45,16 +45,17 @@ $$
 
 </li>
 
-<li>La aplicación $f:V \rightarrow V'$, $f(v)=0$.<br>
+<li>La aplicación $f:V \rightarrow V'$, $f(v)=0$.
 
 Es aplicación lineal:
 
-Para cualesquiera $u,v$ se tiene $f(u+v)=0=0+0=f(u)+f(v)$.<br>
+Para cualesquiera $u,v$ se tiene $f(u+v)=0=0+0=f(u)+f(v)$.
+
 Para todo $u$ y todo $a$ se verifica $f(au)=0=a\cdot 0=af(u)$.
 </li>
 
 <li>
-La aplicación $f:\mathbb{R} \rightarrow \mathbb{R}$, $f(r)=r^2$.<br>
+La aplicación $f:\mathbb{R} \rightarrow \mathbb{R}$, $f(r)=r^2$.
 
 No es lineal, tomamos $u=1$ y $a=2$ y comprobamos que no se cumple la segunda propiedad de aplicación lineal:
 
@@ -85,7 +86,8 @@ $$D:\mathbb{R}_3[x] \to \mathbb{R}_3[x] \text{ dada por } D(p(x))=p'(x).$$
 
 Es conocido que la derivada tiene las propiedades:
 
-- La derivada de una suma es la suma de las derivadas.<br>
+- La derivada de una suma es la suma de las derivadas.
+
 Es decir, dadas dos funciones (derivables, y los polinomios lo son) $f$ y $g$ se verifica
 
   $$
@@ -94,7 +96,8 @@ Es decir, dadas dos funciones (derivables, y los polinomios lo son) $f$ y $g$ se
 
   que es la primera propiedad que debe verificar una aplicación lineal. Hay que tener cuidado porque aquí $f$ y $g$ son los vectores y $D$ es la aplicación.
 
-- La derivada de una constante por una función es la constante por la derivada de la función.<br>
+- La derivada de una constante por una función es la constante por la derivada de la función.
+
 Es deir, dadas $f$ (derivable) y $a\in \mathbb{R}$ entonces
 
   $$
@@ -551,7 +554,8 @@ $$
 $$
 
 
-Calculamos las raíces de este polinomio (lo cual es laborioso) y  obtenemos que son $\lambda=5$ con multiplicidad algebraica 1 y $\lambda=-3(=10)$ con multiplicidad algebraica 2.<br>
+Calculamos las raíces de este polinomio (lo cual es laborioso) y  obtenemos que son $\lambda=5$ con multiplicidad algebraica 1 y $\lambda=-3(=10)$ con multiplicidad algebraica 2.
+
 
 Debemos calcular la multiplicidad geométrica de $\lambda=-3$ para poder decidir si es o no diagonalizable. Para ello calculamos el subespacio propio correspondiente:
 
@@ -576,7 +580,7 @@ show(A,"~",A.rref())
 </script>
 :::
 
-Luego nos queda una única ecuación cartesiana que es $x+9y+3z=0$ y por tanto la multiplicidad geométrica (esto es, la dimensión de $V_{2}$) es 2, así que la matriz es diagonalizable.<br>
+Luego nos queda una única ecuación cartesiana que es $x+9y+3z=0$ y por tanto la multiplicidad geométrica (esto es, la dimensión de $V_{2}$) es 2, así que la matriz es diagonalizable.
 Calculamos una base de  $V_{-3}$:
 
 $$
@@ -609,7 +613,8 @@ show(A,"~",A.rref())
 
 Nos quedan las ecuaciones $V_{5}\equiv \boxed{\begin{array}{l}
 x-2z=0,\\
-y+5z=0.\end{array} }$ y una base es $\{(2,-5,1)\}$.<br>
+y+5z=0.\end{array} }$ y una base es $\{(2,-5,1)\}$.
+
 Luego la solución al problema de diagonalización es:
 
 $$
@@ -621,7 +626,7 @@ D=\left(\begin{array}{ccc}
 5 & 0 & 0\\
 0 & -3 & 0\\
 0 & 0 & -3
-\end{array}\right), \hspace{1cm}  P=\left(\begin{array}{ccc}
+\end{array}\right), \hspace{1em}  P=\left(\begin{array}{ccc}
 2 & 4 & 10\\
 -5 & 1 & 0\\
 1 & 0 &  1
@@ -630,7 +635,8 @@ $$
 
 </li>
 
-<li>Calcular $A^{2431}$.<br>
+<li>Calcular $A^{2431}$.
+
 Para calcular la potencia pedida utilizamos la diagonalización:
 
 $$
@@ -735,7 +741,8 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Hallar la matriz de $f$ en la base canónica.<br>
+<li>Hallar la matriz de $f$ en la base canónica.
+
 Calculamos las imágenes de los vectores de la base canónica:
 
 $$
@@ -754,7 +761,8 @@ $$A=M_{B_c}(f)=
 $$
 </li>
 
-<li>Estudiar si $f$ es diagonalizable y hallar una base de vectores propios.<br>
+<li>Estudiar si $f$ es diagonalizable y hallar una base de vectores propios.
+
 Calculamos los valores propios y sus multiplicidades algebraica y geométrica:
 
 $$
@@ -765,7 +773,8 @@ $$
 \end{array}\right|=(2-\lambda)[(-\lambda)^2-4)]=(2-\lambda)(\lambda^2-4).
 $$
 
-Las raíces de $\lambda^2-4=0$ son $\lambda=2$ y $\lambda=3(=-2)$ en $\mathbb{Z}_5$. Así el valor propio $\lambda=2$ tiene multiplicidad algebraica 2 y $\lambda=3$ tiene multiplicidad algebraica 1.<br>
+Las raíces de $\lambda^2-4=0$ son $\lambda=2$ y $\lambda=3(=-2)$ en $\mathbb{Z}_5$. Así el valor propio $\lambda=2$ tiene multiplicidad algebraica 2 y $\lambda=3$ tiene multiplicidad algebraica 1.
+
 Calculamos $V_{2}$:
 
 $$
@@ -790,9 +799,11 @@ show(A,"~",A.rref())
 </script>
 :::
 
-Luego nos queda una única ecuación cartesiana que es $x-2z=0$ y por tanto la multiplicidad geométrica (esto es, la dimensión de $V_{2}$) es 2, así que la matriz es diagonalizable.<br>
+Luego nos queda una única ecuación cartesiana que es $x-2z=0$ y por tanto la multiplicidad geométrica (esto es, la dimensión de $V_{2}$) es 2, así que la matriz es diagonalizable.
+
 Calculamos una base de  $V_{2}$:
-$\{ (0,1,0),(2,0,1) \}$.<br>
+$\{ (0,1,0),(2,0,1) \}$.
+
 Nos queda calcular una base de $V_{3}$:
 
 $$
@@ -820,7 +831,8 @@ show(A,"~",A.rref())
 
 Nos quedan las ecuaciones $V_{3}\equiv \boxed{\begin{array}{l}
 x-3z=0,\\
-y+3z=0.\end{array} }$. Además una base es $\{(3,2,1)\}$.<br>
+y+3z=0.\end{array} }$. Además una base es $\{(3,2,1)\}$.
+
 Luego la solución al problema de diagonalización es:
 
 $$
@@ -828,7 +840,7 @@ D=\left(\begin{array}{rrr}
 2 & 0 & 0\\
 0 & 2 & 0\\
  0 & 0 & 3\\
-\end{array}\right), \hspace{1cm}
+\end{array}\right), \hspace{1em}
  P= \left(\begin{array}{rrr}
 0 & 2 & 3\\
 1 & 0 & 2\\
@@ -837,7 +849,8 @@ D=\left(\begin{array}{rrr}
 $$
 </li>
 
-<li>Calcular $A^{703}$.<br>
+<li>Calcular $A^{703}$.
+
 Para calcular la potencia pedida utilizamos la diagonalización:
 
 $$
@@ -907,7 +920,8 @@ A^{703}=PD^{703}P^{-1}=\left(\begin{array}{rrr}
 $$
 </li>
 
-<li>Hallar $f^{703}(1,2,3)$.<br>
+<li>Hallar $f^{703}(1,2,3)$.
+
 Basta realizar la operación 
 
 $$
@@ -961,7 +975,8 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Determinar la base más sencilla de $\operatorname{Im}(f)$ y unas ecuaciones cartesianas del $\operatorname{ker}(f)$.<br>
+<li>Determinar la base más sencilla de $\operatorname{Im}(f)$ y unas ecuaciones cartesianas del $\operatorname{ker}(f)$.
+
 Para calcular la base más sencilla de la Imagen realizamos operaciones elementales por columnas hasta obtener la forma de Hermite por columnas:
 
 $$ 
@@ -997,7 +1012,8 @@ show(A,"~",((A.T).rref()).T)
 </script>
 :::
 
-Luego la base más sencilla de $\operatorname{Im}(f) $ es $\{(1,0,0,1/2),(0,1,0,1/2),(0,0,1,1/2)\}$.<br>
+Luego la base más sencilla de $\operatorname{Im}(f) $ es $\{(1,0,0,1/2),(0,1,0,1/2),(0,0,1,1/2)\}$.
+
 Para obtener las cartesianas del núcleo imponemos $AX=0$:
 
 $$
@@ -1019,7 +1035,8 @@ $$
 
 </li>
 
-<li>Determinar para qué valores de $a$ el vector $(a,1,a,a)$ pertenece a $\operatorname{Im}(f)$.<br>
+<li>Determinar para qué valores de $a$ el vector $(a,1,a,a)$ pertenece a $\operatorname{Im}(f)$.
+
 Para que $(a,1,a,a)\in \operatorname{Im}(f)$ tiene que ser combinación lineal de los vectores de una base, por ejemplo la más sencilla que hemos calculado, luego el rango de la matriz que forman los cuatro vectores debe ser tres, y por tanto el determinante siguiente debe ser cero:
 
 $$
@@ -1043,7 +1060,8 @@ $$
 Como siempre es distinto de cero, este vector no está en la imagen de $f$ para ningún valor de $a$.
 </li>
 
-<li>Calcular la matriz asociada a $f$ respecto de las bases $\overline{B}$ de $\mathbb{R}^3$ y $B_c$ de $\mathbb{R}^4$.<br>
+<li>Calcular la matriz asociada a $f$ respecto de las bases $\overline{B}$ de $\mathbb{R}^3$ y $B_c$ de $\mathbb{R}^4$.
+
 Usamos el "método de los cuatro pasos", comenzando calculando la imagen de los vectores de la base $\overline{B}$ multiplicando por la matriz $A$ cada uno de los vectores:
 
 $$ 
@@ -1101,7 +1119,7 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular una base de la imagen de $f$ y determinar para qué valores de $a$ el vector $(a,1-a,a)$ pertenece a dicha imagen.<br>
+<li>Calcular una base de la imagen de $f$ y determinar para qué valores de $a$ el vector $(a,1-a,a)$ pertenece a dicha imagen.
 
 $$
 A=\begin{pmatrix}
@@ -1154,7 +1172,8 @@ $$
 obtenemos que $\dim(\operatorname{ker}(f))=2$ y por tanto como $\operatorname{ker}(f)\not = \{0\}$, entonces tampoco es inyectiva.
 </li>
 
-<li>Calcular la matriz asociada a $f$ respecto de las bases $B_c$ de $\mathbb{R}^{4}$ y $\overline{B}$ de $\mathbb{R}^{3}$.<br>
+<li>Calcular la matriz asociada a $f$ respecto de las bases $B_c$ de $\mathbb{R}^{4}$ y $\overline{B}$ de $\mathbb{R}^{3}$.
+
 Como de los datos del problema obtenemos
 
 $$
@@ -1219,7 +1238,8 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular la matriz asociada respecto de las bases canónicas.<br>
+<li>Calcular la matriz asociada respecto de las bases canónicas.
+
 La matriz asociada respecto de las bases canónicas se obtiene al calcular
 
 $$
@@ -1338,7 +1358,8 @@ f: & \mathbb{R}^{3}_{B_c}     & \longrightarrow        &\mathbb{R}^{4}_{B_c}   \
 \end{array}
 $$
 
-y por tanto la matriz $\mathcal{M}(f,B_c,B_c)=I C P^{-1}=CP^{-1}=A$.<br>
+y por tanto la matriz $\mathcal{M}(f,B_c,B_c)=I C P^{-1}=CP^{-1}=A$.
+
 
 También puede usarse esta matriz $C$ para obtener la solución del segundo apartado, en este caso siguiendo el diagrama:
 
@@ -1354,7 +1375,8 @@ f: & \mathbb{R}^{3}_{B}     & \longrightarrow        &\mathbb{R}^{4}_{B'}   \\
 $$
 </li>
 
-<li>Calcula la matriz asociada respecto de las bases B y B'.<br>
+<li>Calcula la matriz asociada respecto de las bases B y B'.
+
 Una vez que es conocida la matriz asociada a una aplicación lineal respecto de dos bases, por ejemplo 
 $\mathcal{M}(f,B_{c},B_{c})$, podemos dibujar un esquema en el que se reflejan los cambios de base a realizar en cada uno de los espacios:
 
@@ -1425,7 +1447,8 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Estudiar las dimensiones del núcleo y la imagen de $f$ según los valores del parámetro $a$.<br>
+<li>Estudiar las dimensiones del núcleo y la imagen de $f$ según los valores del parámetro $a$.
+
 Para estudiar las dimensiones del núcleo y la imagen tenemos que calcular el rango de una matriz asociada a $f$, y es indiferente respecto de qué bases esté considerada. Lo más inmediato es utilizar como base de $\mathbb{R}^3$ la base $B=\{(1,0,1),(1,1,1),(0,1,1)\}$ puesto que conocemos sus imágenes, y como base de $\mathbb{R}^4$ la base canónica, pues las imágenes que conocemos están dadas respecto de ella (al no hacerse mención en la expresión  a la base usada se trata de las componentes del vector). Así que usamos los datos del enunciado y tenemos
 
 $$
@@ -1452,7 +1475,8 @@ $$
                     \end{array} \right|= (-2a)(1-a+a^2).
 $$
 
-Como $a^2-a+1$ es siempre distinto de cero (la ecuación correspondiente no tiene raices reales), entonces este determinante sólo es cero cuando $a=0$. Por tanto, cuando $a\not = 0$, el rango de la matriz es tres. En el caso $a=0$  sustituyendo en la matriz es fácil observar que el rango es dos. <br>
+Como $a^2-a+1$ es siempre distinto de cero (la ecuación correspondiente no tiene raices reales), entonces este determinante sólo es cero cuando $a=0$. Por tanto, cuando $a\not = 0$, el rango de la matriz es tres. En el caso $a=0$  sustituyendo en la matriz es fácil observar que el rango es dos. 
+
 Resumiendo lo que hemos obtenido:
 
 Si $a\not = 0$ la dimensión de la imagen de $f$ es tres y el núcleo es trivial.
@@ -1539,7 +1563,8 @@ En el caso $a=0$ el rango de $C$ es dos y al añadir el vector $(1,0,1,1)$ el ra
 <li>¿Para qué valores de $a$ el vector $(1,-1,0)$ está en el núcleo de $f$?
 
 En el caso $a\not =0$ el núcleo se reduce al vector $(0,0,0)$,
-así que el vector dado no pertenece al núcleo. <br>
+así que el vector dado no pertenece al núcleo. 
+
 En el caso $a=0$ podemos calcular la imagen del vector $(1,-1,0)$, para lo que tenemos que usar la matriz asociada a $f$ respecto de la base canónica de $\mathbb{R}^3$, es decir $A$:
 
 $$
@@ -1607,7 +1632,8 @@ $\overline{B'}=\biggl\{
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Determinar la matriz asociada a $F$ respecto de las respectivas bases estándar y	el valor de $F(p(x))$.<br>
+<li>Determinar la matriz asociada a $F$ respecto de las respectivas bases estándar y	el valor de $F(p(x))$.
+
 Para determinar la matriz asociada solo tenemos que escribir las imágenes de $1,x,x^2,x^3$ en función de la base estándar de $\mathcal{M}_2(\mathbb{R})$ y colocarlos por columnas.
 Usando los datos dados:
 
@@ -1670,7 +1696,8 @@ p(1)
 $$
 </li>
 
-<li>Determinar la matriz asociada a $F$ respecto de las bases $\overline{B}$ y $\overline{B'}$.<br>
+<li>Determinar la matriz asociada a $F$ respecto de las bases $\overline{B}$ y $\overline{B'}$.
+
 Expresamos las imágenes de los vectores de $\overline{B}$ y obtenemos (es muy fácil en este caso) sus coordenadas respecto de $\overline{B'}$:
 
 $$
@@ -1749,7 +1776,8 @@ Q^{-1}AP
 $$
 </li>
 
-<li>Determinar bases del núcleo y la imagen de $F$.<br>
+<li>Determinar bases del núcleo y la imagen de $F$.
+
 Como $\operatorname{rg}(A)=\operatorname{rg}(C)=2$, entonces $\dim(\operatorname{Im}(F))=2$ y $\dim(\operatorname{ker}(F))=2$. Una base de la  imagen (obtenida por operaciones elementales en las columnas de $A$) puede ser: 
 
 $$
@@ -1773,7 +1801,7 @@ $$
 ::::
 :::::
 
-<article>
+::::: {#exr-12}
 
 Se considera la matriz:
 
@@ -1791,12 +1819,13 @@ $$
 <li>Para los valores $a=1$, $b=-1$ determinar su forma diagonal $D$ y una matriz de paso $P$ de forma que $D=P^{-1}\cdot A \cdot P$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Estudiar qué condición han de cumplir los parámetros $a$ y $b$ para que $A$ sea diagonalizable.<br>
+<li>Estudiar qué condición han de cumplir los parámetros $a$ y $b$ para que $A$ sea diagonalizable.
+
 En primer lugar calculamos los valores propios y sus multiplicidades algebraicas
+
 $$
 |A-\lambda I|=\left| \begin{array}{cccc}
  a-\lambda & 1 & 0 & 0 \\
@@ -1805,7 +1834,9 @@ $$
  0 & 0 & 0 & b-\lambda
  \end{array}\right|= (a-\lambda)^2 (b-\lambda)^2.
 $$
+
 Si $a=b$, hay un solo valor propio $\lambda=a$ con multiplicidad algebraica cuatro. Calculamos su multiplicidad geométrica:
+
 $$
 V_{a}\equiv \begin{pmatrix}
  0 & 1 & 0 & 0 \\
@@ -1818,10 +1849,13 @@ V_{a}\equiv \begin{pmatrix}
  0 \\ 0 \\0 \\0
  \end{pmatrix}.
 $$
-Nos da las ecuaciones $y=0; t=0$ y por tanto tiene dimensión dos, así que como no coincide con la multiplicidad algebraica, entonces no es diagonalizable.<br>
 
-Si $a\not =b$, hay dos valores propios $\lambda=a$ con multiplicidad algebraica dos y $\lambda=b$ también con multiplicidad algebraica dos.<br>
+Nos da las ecuaciones $y=0; t=0$ y por tanto tiene dimensión dos, así que como no coincide con la multiplicidad algebraica, entonces no es diagonalizable.
+
+Si $a\not =b$, hay dos valores propios $\lambda=a$ con multiplicidad algebraica dos y $\lambda=b$ también con multiplicidad algebraica dos.
+
 Calculamos su multiplicidad geométrica:
+
 $$
 V_{a}\equiv \begin{pmatrix}
  0 & 1 & 0 & 0 \\
@@ -1834,7 +1868,9 @@ V_{a}\equiv \begin{pmatrix}
  0 \\ 0 \\0 \\0
  \end{pmatrix}.
 $$
+
 Nos da las ecuaciones $y=0$, $t=0$ y por tanto tiene dimensión dos, así que coincide con la multiplicidad algebraica.
+
 $$
 V_{b}\equiv \begin{pmatrix}
  a-b & 1 & 0 & 0 \\
@@ -1847,50 +1883,72 @@ V_{b}\equiv \begin{pmatrix}
  0 \\ 0 \\0 \\0
  \end{pmatrix}.
 $$
+
 Nos da las ecuaciones $(a-b)x+y=0$, $(a-b)z+t=0$ y por tanto tiene dimensión dos, así que coincide con la multiplicidad algebraica. Por tanto en este caso la matriz si es diagonalizable.
 </li>
 
-<li>Para los valores $a=1$, $b=-1$ determinar su forma diagonal $D$ y una matriz de paso $P$.<br>
+<li>Para los valores $a=1$, $b=-1$ determinar su forma diagonal $D$ y una matriz de paso $P$.
+
 Utilizando los cálculos del segundo caso del apartado anterior  tenemos que 
-$$V_{1}\equiv \left\{ \begin{array}{l}
+
+$$
+V_{1}\equiv \left\{ \begin{array}{l}
 y=0,\\
 t=0.
-\end{array}\right.$$
+\end{array}\right.
+$$
+
 Y una base es $\{(1,0,0,0),(0,0,1,0)\}$. 
-$$V_{ -1}\equiv \left\{ \begin{array}{l}
+
+$$
+V_{ -1}\equiv \left\{ \begin{array}{l}
 2x+y=0,\\
 2z+t=0.
-\end{array}\right.$$
-Y una base es $\{(1,-2,0,0),(0,0,1,-2)\}$. <br>
+\end{array}\right.
+$$
+
+Y una base es $\{(1,-2,0,0),(0,0,1,-2)\}$. 
+
 Por tanto, 
-$$D=\begin{pmatrix}
+
+$$
+D=\begin{pmatrix}
 1 & 0 & 0 & 0\\
 0 & 1 & 0 & 0\\
 0 & 0 & -1 & 0\\
 0 & 0 & 0 & -1
-\end{pmatrix}, \hspace{1cm} P=\begin{pmatrix}
+\end{pmatrix}, \hspace{1em} P=\begin{pmatrix}
 1 & 0 & 1 & 0\\
 0 & 0 & -2 & 0\\
 0 & 1 & 0 & 1\\
 0 & 0 & 0 & -2
-\end{pmatrix}.$$</li>
+\end{pmatrix}.
+$$
+</li>
 </ol>
+::::
+:::::
 
-</details>
-</article>
-
-<article>
+:::::{#exr-13}
 
 <ol type="a">
 <li>Dado el endomorfismo de $\mathbb{R}^3$ que viene dado por
- $$\begin{array}{ll}
+ 
+ $$
+ \begin{align*}
  f(1,1,-1)&=(1,1,1),\\
  f(1,-1,1)&=(1,1,0),\\
  f(-1,1,1)&=(1,0,0).
- \end{array}$$
+ \end{align*}
+ $$
+ 
  Calcula la matriz asociada a $f$ respecto de la base
  $B'=\{(1,1,-1),(1,-1,1),(-1,1,1)\}$</li>
-<li>Dada la matriz $$A=\left(
+
+<li>Dada la matriz 
+
+$$
+A=\left(
 \begin{array}{rrr}
   1 & a & a \\
   -1 & 1 & -1 \\
@@ -1898,24 +1956,29 @@ $$D=\begin{pmatrix}
 \end{array}
 \right).
 $$
+
 Estudia para qué valores de $a\in\mathbb{R}$  es diagonalizable y para aquellos que lo sea obtén $D$ diagonal y $P$ regular tales que $D=P^{-1}AP$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
 <li>Calcular la matriz asociada a $f$ respecto de la base $B'$
 Observamos que nos dan las imágenes de los vectores de la base $B'$, pero estas vienen dadas por sus coordenadas en la base canónica y debemos calcular las coordenadas también en la base $B'$. Por tanto necesitamos la matriz de cambio de base de $B_c$ a $B'$, que es la inversa de la matriz
-$$P=\left(\begin{array}{rrr}
+
+$$
+P=\left(\begin{array}{rrr}
   1 & 1 & -1 \\
   1 & -1 & 1 \\
   -1 & 1  & 1 \\
 \end{array}
 \right).
- $$
- La calculamos:
- $$\begin{align*}
+$$
+
+La calculamos:
+
+$$
+\begin{align*}
  \left(\begin{array}{rrr|ccc}
     1 & 1 & -1 & 1 & 0 & 0 \\
     1 & -1 & 1 & 0 & 1 & 0\\
@@ -1939,9 +2002,13 @@ $$P=\left(\begin{array}{rrr}
     0 & 1  & 0 & 1/2 & 0 & 1/2\\
     0 & 0  & 1 & 0 & 1/2 & 1/2\\
   \end{array}
-\right),\end{align*}$$
+\right),\end{align*}
+$$
+
 y ahora calculamos las coordenadas de $(1,1,1),(1,1,0),(1,0,0)$ respecto de $B'$:
-$$\left(\begin{array}{ccc}
+
+$$
+\left(\begin{array}{ccc}
   1/2 & 1/2 & 0 \\
   1/2 & 0 & 1/2\\
   0 & 1/2 & 1/2\\
@@ -1955,24 +2022,36 @@ $$\left(\begin{array}{ccc}
   1 & 1 & 1/2 \\
   1 & 1/2 & 1/2\\
   1 & 1/2 & 0\\
-  \end{array}\right).$$
+  \end{array}\right).
+$$
+
 Como
-$$\begin{array}{ll}
+
+$$
+\begin{array}{ll}
  f(1,1,-1)&=(1,1,1)_{B'},\\
  f(1,-1,1)&=(1,1/2,1/2)_{B'},\\
  f(-1,1,1)&=(1/2,1/2,0)_{B'},
- \end{array}$$
+ \end{array}
+$$
+
 la matriz asociada a $f$ respecto de $B'$ es
-$$C=\left(\begin{array}{ccc}
+
+$$
+C=\left(\begin{array}{ccc}
 1 & 1 & 1/2 \\
 1 & 1/2 & 1/2\\
 1 & 1/2 & 0\\
-\end{array}\right).$$
+\end{array}\right).
+$$
 </li>
 
-<li>Estudiar para qué valores de $a\in\mathbb{R}$  es diagonalizable y obtener $D$ y $P$.<br>
+<li>Estudiar para qué valores de $a\in\mathbb{R}$  es diagonalizable y obtener $D$ y $P$.
+
 En primer lugar calculamos los valores propios:
- $$|A-\lambda I|=\left|\begin{array}{ccc}
+
+$$
+|A-\lambda I|=\left|\begin{array}{ccc}
  1-\lambda & a & a \\
  -1 & 1-\lambda & -1 \\
   1 &0  & 2-\lambda \\
@@ -1985,10 +2064,15 @@ En primer lugar calculamos los valores propios:
  0 & 1-\lambda & 0 \\
   1 &0  & 2-\lambda \\
 \end{array}\right|
-=(2-\lambda)(1-\lambda)^2,$$
- luego los valores propios son $\lambda=1$ con multiplicidad algebraica dos, y $\lambda=2$ con multiplicidad algebraica uno, y por tanto su multilicidad geométrica también es uno. Es necesario establecer para qué casos la multiplicidad geométrica de $\lambda=1$ es dos para que sea diagonalizable.<br>
- <strong>$V_{1}$:</strong>
- $$\left(\begin{array}{ccc}
+=(2-\lambda)(1-\lambda)^2,
+$$
+
+luego los valores propios son $\lambda=1$ con multiplicidad algebraica dos, y $\lambda=2$ con multiplicidad algebraica uno, y por tanto su multilicidad geométrica también es uno. Es necesario establecer para qué casos la multiplicidad geométrica de $\lambda=1$ es dos para que sea diagonalizable.
+
+**$V_{1}$:**
+
+$$
+\left(\begin{array}{ccc}
  0 & a & a \\
  -1 & 0 & -1 \\
   1 &0  & 1 \\
@@ -1996,10 +2080,15 @@ En primer lugar calculamos los valores propios:
  1 &0  & 1 \\
  0 & a & a \\
  0 & 0 & 0 \\
- \end{array}\right).$$
- Si $a\not =0$ serían dos ecuaciones cartesianas y $\dim(V_{1})=1$, luego solo es diagonalizable para $a=0$. En ese caso la cartesiana  de este subespacio propio es $x+z=0$ y por tanto una base es $\{(1,0,-1),(0,1,0)\}$.<br>
-<strong>$V_{2}$:</strong>
- $$\left(\begin{array}{ccc}
+ \end{array}\right).
+$$
+
+Si $a\not =0$ serían dos ecuaciones cartesianas y $\dim(V_{1})=1$, luego solo es diagonalizable para $a=0$. En ese caso la cartesiana  de este subespacio propio es $x+z=0$ y por tanto una base es $\{(1,0,-1),(0,1,0)\}$.
+
+**$V_{2}$:**
+
+$$
+\left(\begin{array}{ccc}
  -1 & 0 & 0 \\
  -1 & -1 & -1 \\
   1 &0  & 0 \\
@@ -2007,25 +2096,31 @@ En primer lugar calculamos los valores propios:
  1 & 0 & 0 \\
  0 & 1 & 1 \\
   0 &0  & 0 \\
-\end{array}\right),$$
-que tiene cartesianas $\left\{\begin{array}{l} x=0,\\ y+z=0.\end{array}\right.$ Así una base es $\{(0,1,-1)\}$.
-Por tanto
-$$D=\left(\begin{array}{ccc}
+\end{array}\right),
+$$
+
+que tiene cartesianas $\left\{\begin{array}{l} x=0,\\ y+z=0.\end{array}\right.$ Así una base es $\{(0,1,-1)\}$. Por tanto
+
+$$
+D=\left(\begin{array}{ccc}
  1 & 0 & 0 \\
  0 & 1 & 0 \\
   0 &0  & 2 \\
-\end{array}\right), \hspace{1cm} P=\left(\begin{array}{ccc}
+\end{array}\right), \hspace{1em} P=\left(\begin{array}{ccc}
  1 & 0 & 0 \\
  0 & 1 & 1 \\
  -1 &0  & -1 \\
-\end{array}\right).$$
+\end{array}\right).
+$$
 </li>
 </ol>
-</details>
-</article>
+::::
+:::::
 
-<article>
+::::: {#exr-14}
+
 Dado el endomorfismo de $\mathbb{R}^3$ que, respecto de la base canónica, viene dado por la matriz
+
  $$\left(
 \begin{array}{rrr}
   1 & a & a \\
@@ -2039,16 +2134,22 @@ $$
 <li>Calcula las dimensiones del núcleo y la imagen para todos los valores reales de $a$.</li>
 <li>¿Para qué valores de $a$ es una aplicación lineal biyectiva?</li>
 <li>Calcula la matriz asociada a este endomorfismo respecto de la base
-$$ B= \{ (1,0,-1), (1,1,-1),(0,1,-1)\}.$$</li>
+
+$$ 
+B= \{ (1,0,-1), (1,1,-1),(0,1,-1)\}.
+$$
+</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular las dimensiones del núcleo y la imagen para todos los valores reales de $a$.<br>
+<li>Calcular las dimensiones del núcleo y la imagen para todos los valores reales de $a$.
+
 Puesto que  $\dim(\operatorname{Im}(f))=\operatorname{rg}(A)$, calculamos el rango de $A$.
-$$\left(
+
+$$
+\left(
     \begin{array}{ccc}
       1 & a & a \\
       -1 & 1 & -1 \\
@@ -2074,9 +2175,11 @@ $$\left(
     \end{array}
   \right),
 $$
+
 luego el $\operatorname{rg}(A)=3$ para cualquier valor de $a$. También lo podemos hacer por determinantes:
 
-$$\left|
+$$
+\left|
     \begin{array}{ccc}
       1 & a & a \\
       -1 & 1 & -1 \\
@@ -2088,29 +2191,46 @@ $$\left|
       0 & 1+a & a-1 \\
       0 & -a & 2-a \\
     \end{array}
-  \right| = (1+a)(2-a)-(-a)(a-1)=2+2a-a-a^2-(a-a^2)=2.$$
+  \right| = (1+a)(2-a)-(-a)(a-1)=2+2a-a-a^2-(a-a^2)=2.
+$$
 
-Por lo tanto $\dim(\operatorname{Im}(f))=3$ para todos los valores de $a$ y como $$\dim(\operatorname{ker}(f))+\dim(\operatorname{Im}(f))=\dim(\mathbb{R}^3),$$  entonces $\dim(\operatorname{ker}(f))=0$  para todos los valores de $a$.
+Por lo tanto $\dim(\operatorname{Im}(f))=3$ para todos los valores de $a$ y como 
+
+$$
+\dim(\operatorname{ker}(f))+\dim(\operatorname{Im}(f))=\dim(\mathbb{R}^3),$$  
+
+entonces $\dim(\operatorname{ker}(f))=0$  para todos los valores de $a$.
 </li>
 
-<li>¿Para qué valores de $a$ es una aplicación lineal biyectiva?<br>
+<li>¿Para qué valores de $a$ es una aplicación lineal biyectiva?
+
 Como $\operatorname{ker}(f)=\{0\}$, la aplicación siempre es inyectiva, y como la $\dim(\operatorname{Im}(f))=\dim(\mathbb{R}^3)$, siempre es sobreyectiva, así que es biyectiva para todos los valores de $a$.
 </li>
 
-<li>Calcular la matriz asociada a este endomorfismo respecto de la base $B$.<br>
+<li>Calcular la matriz asociada a este endomorfismo respecto de la base $B$.
+
 Como conocemos los vectores de $B$ por sus coordenadas en $B_c$, la matriz $P$ viene dada por esas coordenadas.
- $$P=\left(
+ 
+$$
+P=\left(
   \begin{array}{ccc}
    1 & 1 & 0 \\
     0 & 1 & 1 \\
    -1 & -1 & -1 \\
 \end{array}
-\right),$$
+\right),
+$$
  
-luego $$??=P^{-1}\cdot A\cdot P.$$
+luego 
+
+$$
+??=P^{-1}\cdot A\cdot P.
+$$
+
 Calculamos $P^{-1}$:
 
-$$\left(
+$$
+\left(
     \begin{array}{ccc|ccc}
       1& 1 & 0 & 1 & 0 & 0 \\
       0 & 1 & 1 & 0 & 1 & 0 \\
@@ -2130,9 +2250,11 @@ $$\left(
     \end{array}
   \right).
 $$
+
 Podemos comprobar el resultado:
 
-$$\left(
+$$
+\left(
 \begin{array}{ccc}
 1 & 1 & 0 \\
 0 & 1 & 1 \\
@@ -2150,8 +2272,11 @@ $$\left(
 0 & 1 & 0 \\
 0 & 0 & 1 \\
 \end{array}
-\right),$$
-$$\mathcal{M}(f,B)=P^{-1}\cdot A\cdot P =\left(
+\right),
+$$
+
+$$
+\mathcal{M}(f,B)=P^{-1}\cdot A\cdot P =\left(
 \begin{array}{ccc}
   1 & 0 & 0 \\
   -a & 1 & 0 \\
@@ -2161,24 +2286,34 @@ $$\mathcal{M}(f,B)=P^{-1}\cdot A\cdot P =\left(
 $$
 </li>
 </ol>
-</details>
-</article>
+::::
+:::::
 
-<article>
+
+::::: {#exr-15}
 
 Se considera el endomorfismo $f: \mathcal{M}_2(\mathbb{R}) \longrightarrow\mathcal{M}_2(\mathbb{R})$
 dado por:
+
 $$
 f\begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} a+b & a-b\\ c-d & c-d \end{pmatrix}.
 $$
 
 <ol type="a">
 <li>Determinar la matriz asociada a $f$ respecto de la base estándar $B_s$ de $\mathcal{M}_2(\mathbb{R})$.</li>
+
 <li>Determinar la matriz asociada a $f$ respecto de la base de $\mathcal{M}_2(\mathbb{R})$:
-$$B' = \left\{\begin{pmatrix} 1 & 0 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ -1 & 0 \end{pmatrix},
-\begin{pmatrix}0 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix}0 & 1 \\ 0 & -1 \end{pmatrix}\right\}.$$</li>
+
+$$
+B' = \left\{\begin{pmatrix} 1 & 0 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ -1 & 0 \end{pmatrix},
+\begin{pmatrix}0 & 1 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix}0 & 1 \\ 0 & -1 \end{pmatrix}\right\}.
+$$
+</li>
+
 <li>Determinar bases de  $Ker(f)$, $Im(f)$, $Ker(f)\cap Im(f)$ y $Ker(f)+ Im(f)$.</li>
+
 <li>Determinar una base $B$ de $\mathcal{M}_2(\mathbb{R})$ de forma que la matriz asociada a $f$ respecto de las bases $B_s$ y $B$ sea
+
 $$
 H=\begin{pmatrix}
 1 & 0 & 0 & 0\\
@@ -2186,14 +2321,15 @@ H=\begin{pmatrix}
 0 & 0 & 1 & -1\\
 0 & 0 & 0 & 0
 \end{pmatrix}.
-$$</li>
+$$
+</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Determinar la matriz asociada a $f$ respecto de la base $B_s$.<br>
+<li>Determinar la matriz asociada a $f$ respecto de la base $B_s$.
+
 
 \begin{alignat}{4}
    f\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} &= \begin{pmatrix} 1 & 1\\ 0 & 0 \end{pmatrix}=(1,1,0,0)_{B_s},\qquad & f\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} &= \begin{pmatrix} 1 & -1\\ 0 & 0 \end{pmatrix}=(1,-1,0,0)_{B_s},\\
@@ -2202,6 +2338,7 @@ $$</li>
 \end{alignat}
 
 Así, la matriz asociada respecto de $B_s$ es
+
 $$
 A=\begin{pmatrix}
 1 & 1 & 0 & 0\\
@@ -2212,9 +2349,11 @@ A=\begin{pmatrix}
 $$
 </li>
 
-<li>Determinar la matriz asociada a $f$ respecto de la base B'.<br>
+<li>Determinar la matriz asociada a $f$ respecto de la base B'.
+
 Puede construirse el diagrama correspondiente y tendremos que 
 $$\mathcal{M}(f,B')= P^{-1}AP,$$ siendo $P$ la matriz de cambio de base de $B'$ a $B_s$:
+
 $$
 P=\begin{pmatrix}
 1 & 1 & 0 & 0\\
@@ -2223,6 +2362,7 @@ P=\begin{pmatrix}
 0 & 0 & 1 & -1
 \end{pmatrix},
 $$
+
 o también puede realizarse el mismo procedimiento que en el apartado anterior, teniendo en cuenta que ahora las imágenes hay que expresarlas en función de $B'$:
 
 \begin{alignat}{4}
@@ -2232,6 +2372,7 @@ o también puede realizarse el mismo procedimiento que en el apartado anterior, 
 \end{alignat}
 
 con lo que la matriz pedida es 
+
 $$
 \begin{pmatrix}
 1 & 0 & 0 & 1\\
@@ -2242,8 +2383,10 @@ $$
 $$
 </li>
 
-<li>Determinar bases de  $\operatorname{ker}(f)$, $\operatorname{Im}(f)$, $\operatorname{ker}(f)\cap \operatorname{Im}(f)$ y $\operatorname{ker}(f)+ \operatorname{Im}(f)$.<br>
+<li>Determinar bases de  $\operatorname{ker}(f)$, $\operatorname{Im}(f)$, $\operatorname{ker}(f)\cap \operatorname{Im}(f)$ y $\operatorname{ker}(f)+ \operatorname{Im}(f)$.
+
 Usando la matriz $A$, que usa coordenadas respecto de la base estándar, calculamos bases del núcleo y la imagen:
+
 $$
 \left(\frac{A}{I}\right)=\begin{pmatrix}
 1 & 1 & 0 & 0\\
@@ -2277,37 +2420,43 @@ $$
 0 & 0 & 0 & 1\\
 \end{pmatrix}, 
 $$
+
 y obtenemos que una base de $\operatorname{Im}(f)$ es $\{(1,0,0,0)_{B_s},(0,1,0,0)_{B_s},(0,0,1,1)_{B_s}\}$ y una base de $\operatorname{ker}(f)$  es $\{ (0,0,1,1)_{B_s}\}$ con lo que es evidente que $\operatorname{ker}(f)\subset \operatorname{Im}(f)$ y por tanto $\operatorname{ker}(f)+\operatorname{Im}(f)=\operatorname{Im}(f)$ y $\operatorname{ker}(f)\cap \operatorname{Im}(f)=\operatorname{ker}(f)$.
 </li>
 
-<li>Determinar una base $B$ de $\mathcal{M}_2(\mathbb{R})$ de forma que la matriz asociada a $f$ respecto de las bases $B_s$ y $B$ sea $H$.<br>
+<li>Determinar una base $B$ de $\mathcal{M}_2(\mathbb{R})$ de forma que la matriz asociada a $f$ respecto de las bases $B_s$ y $B$ sea $H$.
+
 Como nos piden que la base solo cambie en el segundo espacio, basta observar que se trata de que las coordenadas de las matrices calculadas en el primer apartado sean:
 
-$$\begin{pmatrix} 1 & 1\\ 0 & 0 \end{pmatrix}=(1,0,0,0)_{B} 
+$$
+\begin{pmatrix} 1 & 1\\ 0 & 0 \end{pmatrix}=(1,0,0,0)_{B} 
 \hspace{0.5cm} 
 \begin{pmatrix} 1 & -1\\ 0 & 0 \end{pmatrix}=(0,1,0,0)_{B}
 \hspace{0.5cm} 
 \begin{pmatrix} 0 & 0\\ 1 & 1 \end{pmatrix}=(0,0,1,0)_{B} 
 $$
+
 Así que están determinados los tres vectores de la base $B$. Para completar la base puede elegirse cualquier matriz linealmente independiente con las tres anteriores, por ejemplo podemos tomar:
 
 $$ \left\{ \begin{pmatrix} 1 & 1\\ 0 & 0 \end{pmatrix},\, 
 \begin{pmatrix} 1 & -1\\ 0 & 0 \end{pmatrix},\,
 \begin{pmatrix} 0 & 0\\ 1 & 1 \end{pmatrix},\, 
-\begin{pmatrix} 0 & 0\\ 0 & 1 \end{pmatrix} \right\}.$$
+\begin{pmatrix} 0 & 0\\ 0 & 1 \end{pmatrix} \right\}.
+$$
 </li>
 </ol>
-</details>
-</article>
+::::
+:::::
 
-<article>
+::::: {#exr-16}
 
-Se considera la aplicación lineal $D:\mathcal{P}_4(\mathbb{R}) \longrightarrow \mathcal{P}_3(\mathbb{R})$ dada por $D(p(x))=p'(x)$.
+Se considera la aplicación lineal $D:\mathcal{P}_4(\mathbb{R}) \to \mathcal{P}_3(\mathbb{R})$ dada por $D(p(x))=p'(x)$.
 
 <ol type="a">
 <li>Calcular el núcleo de $D$.</li>
 <li>Determinar la matriz asociada respecto de las bases $B_{s,4}=\{1,x,x^2,x^3, x^4\}$ de $\mathcal{P}_4(\mathbb{R})$ y $B_{s,3}=\{1,x,x^2,x^3\}$ de $\mathcal{P}_3(\mathbb{R})$.</li>
 <li>Determinar bases $B$ de $\mathcal{P}_4(\mathbb{R})$ y $B'$ de $\mathcal{P}_3(\mathbb{R})$ de forma que la matriz asociada a $D$ respecto de estas bases sea:
+
 $$
 M_{BB'}(D)=\begin{pmatrix}
 1 & 0 & 0 & 0 & 0 \\
@@ -2315,39 +2464,53 @@ M_{BB'}(D)=\begin{pmatrix}
 0 & 0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 1 & 0 \\
 \end{pmatrix}.
-$$</li>
+$$
+</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Calcular el núcleo de $D$.<br>
+<li>Calcular el núcleo de $D$.
+
 El núcleo de una aplicación lineal son los vectores cuya imagen vale cero, en este caso los polinomios cuya imagen por $D$, es decir, su derivada, vale cero. Es claro que tales polinomios son los polinomios constantes, por tanto el núcleo está formado por los polinomios constantes.
 </li>
 
-<li>Determinar la matriz asociada respecto de las bases $B_{s,4}$ y $B_{s,3}$.<br>
+<li>Determinar la matriz asociada respecto de las bases $B_{s,4}$ y $B_{s,3}$.
+
 Para calcular dicha matriz calculamos las imágenes de los vectores de la base $B_{s,4}$ y los escribimos usando coordenadas respecto de $B_{s,3}$:
-$$\begin{array}{l}
+
+$$
+\begin{array}{l}
 D(1)=0=(0,0,0,0)_{B_{s,3}},\\ 
 D(x)=1=(1,0,0,0)_{B_{s,3}},\\ 
 D(x^2)=2x=(0,2,0,0)_{B_{s,3}},\\
 D(x^3)=3x^2=(0,0,3,0)_{B_{s,3}},\\
 D(x^4)=4x^3=(0,0,0,4)_{B_{s,3}}.\\ 
-\end{array}.$$
+\end{array}.
+$$
+
 Así la matriz pedida es
-$$A=\begin{pmatrix}
+
+$$
+A=\begin{pmatrix}
 0 & 1 & 0 & 0 & 0\\
 0 & 0 & 2 & 0 & 0\\
 0 & 0 & 0 & 3 & 0\\
   0 & 0 & 0 & 0 & 4\\ 
-\end{pmatrix}.$$
+\end{pmatrix}.
+$$
 </li>
 
-<li>Determinar bases $B$ y $B'$ de forma que la matriz asociada a $D$ respecto de estas bases sea $M_{BB'}(D)$.<br>
- Es bastante fácil comprobar que la forma de Hermite por columnas de la matriz $A$ anterior es exactamente la que se da en este apartado. Por tanto existe una matriz regular $P$ tal que $AP= M_{BB'}(D)$. En un diagrama de cambio de base obtendríamos que solo es necesario realizar un cambio de base en el primer espacio para que la matriz asociada a $D$ sea la dada. Además esa nueva base $B$ viene dada por las columnas de $P$, mientras que en el segundo espacio no es necesario cambiar de base.<br>
- Calculamos una matriz $P$ (la solución no es única) que verifique $AP=M_{BB'}(D)$:
- $$A=\begin{pmatrix}
+<li>Determinar bases $B$ y $B'$ de forma que la matriz asociada a $D$ respecto de estas bases sea $M_{BB'}(D)$.
+
+Es bastante fácil comprobar que la forma de Hermite por columnas de la matriz $A$ anterior es exactamente la que se da en este apartado. Por tanto existe una matriz regular $P$ tal que $AP= M_{BB'}(D)$. En un diagrama de cambio de base obtendríamos que solo es necesario realizar un cambio de base en el primer espacio para que la matriz asociada a $D$ sea la dada.
+Además esa nueva base $B$ viene dada por las columnas de $P$, mientras que en el segundo espacio no es necesario cambiar de base. 
+
+Calculamos una matriz $P$ (la solución no es única) que verifique $AP=M_{BB'}(D)$:
+
+$$
+A=\begin{pmatrix}
  0 & 1 & 0 & 0 & 0\\
  0 & 0 & 2 & 0 & 0\\
   0 & 0 & 0 & 3 & 0\\
@@ -2369,15 +2532,18 @@ $$A=\begin{pmatrix}
  0 & 1/2 & 0 & 0 & 0\\
   0 & 0 & 1/3 & 0 & 0\\
    0 & 0 & 0 & 1/4 & 0\\ 
-    \end{pmatrix}.$$
+    \end{pmatrix}.
+$$
+
 Así tenemos que $B'=B_{s,3}$ y $B=\{x, x^2/2, x^3/3, x^4/4, 1\}$. 
 </li>
 </ol>
-</details>
-</article>
+::::
+:::::
 
-<article>
+::::: {#exr-17}
 Se considera la matriz:
+
 $$
 A=\begin{pmatrix}
 a+1 & 0 &0 \\ 1 & 1 & -1 \\ 1 &-1 & 1
@@ -2389,20 +2555,27 @@ $$
 <li>Para el valor $a=0$ determinar su forma diagonal $D$ y una matriz de paso $P$ de forma que $D=P^{-1}\cdot A \cdot P$.</li>
 </ol>
 
-<details>
-<summary>Solución</summary>
+:::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Estudiar para qué valores del parámetro $a$ es $A$ diagonalizable.<br>
+<li>Estudiar para qué valores del parámetro $a$ es $A$ diagonalizable.
+
 Calculamos la ecuación característica:
-$$\begin{align*}|A-\lambda I|&= \left|\begin{array}{ccc}
+
+$$
+\begin{align*}|A-\lambda I|&= \left|\begin{array}{ccc}
 a+1-\lambda & 0 &0 \\ 1 & 1-\lambda & -1 \\ 1 &-1 & 1-\lambda
 \end{array}\right|= (a+1-\lambda)[(1-\lambda)^2-1]\\
 &=(a+1-\lambda)(\lambda^2-2\lambda)=\lambda(a+1-\lambda)(\lambda-2).
-\end{align*}$$
-Cuando $a+1\not = 0,2$ entonces aparecen tres valores propios distintos, cada uno con multiplicidad algebraica 1 y por tanto la geométrica también es 1, con lo que la matriz es diagonalizable.<br> 
-Quedan por estudiar dos casos:<br> 
-<strong>Cuando $a=-1$:</strong> <br> 
+\end{align*}
+$$
+
+Cuando $a+1\not = 0,2$ entonces aparecen tres valores propios distintos, cada uno con multiplicidad algebraica 1 y por tanto la geométrica también es 1, con lo que la matriz es diagonalizable. 
+
+Quedan por estudiar dos casos:
+
+**Cuando $a=-1$:**
+
 Nos queda que el valor propio $\lambda=0$ tiene multiplicidad algebraica 2 y por tanto hay que calcular su multiplicidad geométrica.
 
 $$
@@ -2417,8 +2590,10 @@ z\\
 \end{pmatrix},
 $$ 
 
-nos da dos ecuaciones cartesianas y por tanto $m_g(\lambda=0)= \dim(V_{0})=1$ y por tanto en este caso no es diagonalizable.<br> 
-<strong>Cuando $a=1$: </strong><br> 
+nos da dos ecuaciones cartesianas y por tanto $m_g(\lambda=0)= \dim(V_{0})=1$ y por tanto en este caso no es diagonalizable.
+
+**Cuando $a=1$:**
+
 Tendremos que el valor propio $\lambda=2$ tiene multiplicidad algebraica 2 y por tanto hay que calcular su multiplicidad geométrica.
 
 $$
@@ -2436,31 +2611,49 @@ $$
 nos da una ecuación cartesiana y por tanto $m_g(\lambda=2)= \dim(V_{0})=2$ y por tanto en este caso sí es diagonalizable.
 </li>
 
-<li>Para el valor $a=0$ determinar su forma diagonal $D$ y una matriz de paso $P$ de forma que $D=P^{-1}\cdot A \cdot P$.<br>
-Para el caso $a=0$ tenemos los valores propios $0,1$ y $2$ que serán los elementos de la matriz diagonal. Calculamos bases de cada uno de los subespacios propios:<br> 
-<strong>$\lambda=0$:</strong><br> 
-$$\begin{pmatrix}
+<li>Para el valor $a=0$ determinar su forma diagonal $D$ y una matriz de paso $P$ de forma que $D=P^{-1}\cdot A \cdot P$.
+
+Para el caso $a=0$ tenemos los valores propios $0,1$ y $2$ que serán los elementos de la matriz diagonal. Calculamos bases de cada uno de los subespacios propios:
+
+**$\lambda=0$:**
+
+$$
+\begin{pmatrix}
 1 & 0 &0 \\ 1 & 1 & -1 \\ 1 &-1 & 1
 \end{pmatrix}\sim_f \begin{pmatrix}
 1 & 0 &0 \\ 0 & 1 & -1 \\ 0 &0 & 0
-\end{pmatrix},$$
-nos da unas ecuaciones cartesianas y por tanto una base es $\{(0,1,1)\}$.<br> 
-<strong>$\lambda=1$:</strong><br> 
-$$\begin{pmatrix}
+\end{pmatrix},
+$$
+
+nos da unas ecuaciones cartesianas y por tanto una base es $\{(0,1,1)\}$.
+
+**$\lambda=1$:**
+
+$$
+\begin{pmatrix}
 0 & 0 &0 \\ 1 & 0 & -1 \\ 1 &-1 & 0
 \end{pmatrix}\sim_f \begin{pmatrix}
 1 & 0 &-1 \\ 0 & 1 & -1 \\ 0 &0 & 0
-\end{pmatrix},$$
-nos da unas ecuaciones cartesianas y una base es $\{(1,1,1)\}$.<br> 
-<strong>$\lambda=2$:</strong><br> 
-$$\begin{pmatrix}
+\end{pmatrix},
+$$
+
+nos da unas ecuaciones cartesianas y una base es $\{(1,1,1)\}$. 
+
+**$\lambda=2$:**
+
+$$
+\begin{pmatrix}
 -1 & 0 &0 \\ 1 & -1 & -1 \\ 1 &-1 & -1
 \end{pmatrix}\sim_f \begin{pmatrix}
 1 & 0 &0 \\ 0 & 1 & 1 \\ 0 &0 & 0
-\end{pmatrix},$$
+\end{pmatrix},
+$$
+
 nos da unas ecuaciones cartesianas y  una base es $\{(0,1,-1)\}$.<br> 
 Como solución, por ejemplo, podemos tomar
-$$D=\begin{pmatrix}
+
+$$
+D=\begin{pmatrix}
 0 & 0 & 0\\
 0 & 1 & 0\\
 0 & 0 & 2
@@ -2468,29 +2661,36 @@ $$D=\begin{pmatrix}
 0 & 1 & 0\\
 1 & 1 & 1\\
 1 & 1 & -1
-\end{pmatrix}. $$
+\end{pmatrix}. 
+$$
 </li>
 </ol>
-</details>
-</article>
+::::
+:::::
 
 
-<article>
+::::: {#exr-18}
 Se considera la aplicación lineal
+
 $$
-f: \mathcal{M}_2(\mathbb{R}) \longrightarrow \mathcal{M}_2(\mathbb{R}) 
+f: \mathcal{M}_2(\mathbb{R}) \to \mathcal{M}_2(\mathbb{R}) 
 $$
+
 definida por:
+
 $$
 f\left( \begin{pmatrix} a & b \\ c & d\end{pmatrix}\right) = 
 \begin{pmatrix} a+d & b+c \\ b-c & a+d\end{pmatrix}
 $$
+
 Determinar la matriz asociada a $f$ respecto a la base estándard de $\mathcal{M}_2(\mathbb{R})$ y determinar bases de $\operatorname{ker}(f)$ e $\operatorname{Im}(f)$. ¿Es $f$ inyectiva? ¿Es $f$ sobreyectiva?
-<details>
-<summary>Solución</summary>
+
+:::: {.callout collapse="true" title="Solución"}
 
 La base estándar que vamos a usar en  $\mathcal{M}_2(\mathbb{R})$ es
-$$ B_s= \left\{  \left( \begin{array}{rr}
+
+$$ 
+B_s= \left\{  \left( \begin{array}{rr}
 1 & 0 \\
 0 & 0 \\
 \end{array} \right), \, \left( \begin{array}{rr}
@@ -2502,47 +2702,66 @@ $$ B_s= \left\{  \left( \begin{array}{rr}
 \end{array} \right), \, \left( \begin{array}{rr}
 0 & 0 \\
 0 & 1 \\
-\end{array} \right) \right\}.$$  
+\end{array} \right) \right\}.
+$$  
+
 Calculamos la imagen por $f$ de cada uno de estos vectores y la escribimos en función de $B_s$. 
-$$f(\left( \begin{array}{rr}
+
+$$
+f(\left( \begin{array}{rr}
 1 & 0 \\
 0 & 0 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 1 & 0 \\
 0 & 1 \\
-\end{array} \right)=(1,0,0,1)_{B_{s}}, $$
-$$f(\left( \begin{array}{rr}
+\end{array} \right)=(1,0,0,1)_{B_{s}}, 
+$$
+
+$$
+f(\left( \begin{array}{rr}
 0 & 1 \\
 0 & 0 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 0 & 1 \\
 1 & 0 \\
-\end{array} \right)=(0,1,1,0)_{B_{s}}, $$
-$$f(\left( \begin{array}{rr}
+\end{array} \right)=(0,1,1,0)_{B_{s}}, 
+$$
+
+$$
+f(\left( \begin{array}{rr}
 0 & 0 \\
 1 & 0 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 0 & 1 \\
 -1 & 0 \\
-\end{array} \right)=(0,1,-1,0)_{B_{s}}, $$
-$$f(\left( \begin{array}{rr}
+\end{array} \right)=(0,1,-1,0)_{B_{s}}, 
+$$
+
+$$
+f(\left( \begin{array}{rr}
 0 & 0 \\
 0 & 1 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 1 & 0 \\
 0 & 1 \\
-\end{array} \right)=(1,0,0,1)_{B_{s}}. $$
+\end{array} \right)=(1,0,0,1)_{B_{s}}. 
+$$
 
 La matriz asociada resulta de poner estos cuatro vectores por columnas:
 
-$$ A= \left( \begin{array}{rrrr}
+$$ 
+A= \left( \begin{array}{rrrr}
 1 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 \\
 0 & 1 & -1 & 0\\
 1 & 0 & 0 & 1  
-\end{array} \right). $$
+\end{array} \right). 
+$$
+
 Para calcular simultáneamente una base del núcleo y una de la imagen añadimos la identidad bajo $A$ y hacemos operaciones elementales por columnas:
-$$ \left( \begin{array}{rrrr}
+
+$$ 
+\left( \begin{array}{rrrr}
 1 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 \\
 0 & 1 & -1 & 0\\
@@ -2575,9 +2794,8 @@ $$ \left( \begin{array}{rrrr}
 0 & 0 & 0 & 1  \\
 \end{array} \right).
 $$
+
 Así tenemos que una base de la imagen es $\{(1,0,0,1),(0,1,0,0),(0,0,1,0)\}$ y una base del núcleo es $\{(-1,0,0,1)\}$.
 Puesto que la dimensión de la imagen es tres, no es sobreyectiva. Como la dimensión del núcleo es uno, no es inyectiva.
-
-</details>
-</article>
-
+::::
+:::::
