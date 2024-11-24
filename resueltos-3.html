@@ -336,7 +336,7 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li class="cuerpo_finito">
-<p>La aplicación <span class="math inline">\(f:(\mathbb{Z}_3)^2 \rightarrow (\mathbb{Z}_3)^2\)</span>, <span class="math inline">\(f(x,y)=(x+1,y+2)\)</span>.<br></p>
+<p>La aplicación <span class="math inline">\(f:(\mathbb{Z}_3)^2 \rightarrow (\mathbb{Z}_3)^2\)</span>, <span class="math inline">\(f(x,y)=(x+1,y+2)\)</span>.</p>
 <p>No es aplicación lineal. Basta tomar <span class="math inline">\(u=(1,0)\)</span> y <span class="math inline">\(a=2\)</span> y comprobar que no se cumple la segunda propiedad:</p>
 <p><span class="math display">\[
 f(au)=f(2,0)=(0,2),
@@ -347,12 +347,13 @@ af(u)=2(2,2)=(1,1).
 \]</span></p>
 </li>
 <li>
-<p>La aplicación <span class="math inline">\(f:V \rightarrow V'\)</span>, <span class="math inline">\(f(v)=0\)</span>.<br></p>
+<p>La aplicación <span class="math inline">\(f:V \rightarrow V'\)</span>, <span class="math inline">\(f(v)=0\)</span>.</p>
 <p>Es aplicación lineal:</p>
-Para cualesquiera <span class="math inline">\(u,v\)</span> se tiene <span class="math inline">\(f(u+v)=0=0+0=f(u)+f(v)\)</span>.<br> Para todo <span class="math inline">\(u\)</span> y todo <span class="math inline">\(a\)</span> se verifica <span class="math inline">\(f(au)=0=a\cdot 0=af(u)\)</span>.
+<p>Para cualesquiera <span class="math inline">\(u,v\)</span> se tiene <span class="math inline">\(f(u+v)=0=0+0=f(u)+f(v)\)</span>.</p>
+Para todo <span class="math inline">\(u\)</span> y todo <span class="math inline">\(a\)</span> se verifica <span class="math inline">\(f(au)=0=a\cdot 0=af(u)\)</span>.
 </li>
 <li>
-<p>La aplicación <span class="math inline">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span>, <span class="math inline">\(f(r)=r^2\)</span>.<br></p>
+<p>La aplicación <span class="math inline">\(f:\mathbb{R} \rightarrow \mathbb{R}\)</span>, <span class="math inline">\(f(r)=r^2\)</span>.</p>
 <p>No es lineal, tomamos <span class="math inline">\(u=1\)</span> y <span class="math inline">\(a=2\)</span> y comprobamos que no se cumple la segunda propiedad de aplicación lineal:</p>
 <p><span class="math display">\[
 af(u)=2\cdot 1^2,
@@ -386,16 +387,20 @@ Solución
 <div class="callout-body-container callout-body">
 <p>Es conocido que la derivada tiene las propiedades:</p>
 <ul>
-<li><p>La derivada de una suma es la suma de las derivadas.<br> Es decir, dadas dos funciones (derivables, y los polinomios lo son) <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> se verifica</p>
-<p><span class="math display">\[
-D(f+g)=D(f)+D(g),
-\]</span></p>
-<p>que es la primera propiedad que debe verificar una aplicación lineal. Hay que tener cuidado porque aquí <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son los vectores y <span class="math inline">\(D\)</span> es la aplicación.</p></li>
-<li><p>La derivada de una constante por una función es la constante por la derivada de la función.<br> Es deir, dadas <span class="math inline">\(f\)</span> (derivable) y <span class="math inline">\(a\in \mathbb{R}\)</span> entonces</p>
-<p><span class="math display">\[
-D(af)=aD(f),
-\]</span> que es la segunda propiedad de aplicación lineal.</p></li>
+<li>La derivada de una suma es la suma de las derivadas.</li>
 </ul>
+<p>Es decir, dadas dos funciones (derivables, y los polinomios lo son) <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> se verifica</p>
+<p><span class="math display">\[
+  D(f+g)=D(f)+D(g),
+  \]</span></p>
+<p>que es la primera propiedad que debe verificar una aplicación lineal. Hay que tener cuidado porque aquí <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> son los vectores y <span class="math inline">\(D\)</span> es la aplicación.</p>
+<ul>
+<li>La derivada de una constante por una función es la constante por la derivada de la función.</li>
+</ul>
+<p>Es deir, dadas <span class="math inline">\(f\)</span> (derivable) y <span class="math inline">\(a\in \mathbb{R}\)</span> entonces</p>
+<p><span class="math display">\[
+  D(af)=aD(f),
+  \]</span> que es la segunda propiedad de aplicación lineal.</p>
 <p>Calculemos ahora la matriz asociada a <span class="math inline">\(D\)</span> utilizando la base de <span class="math inline">\(\mathbb{R}_3[x]\)</span> (el conjunto de los polinomios con coeficientes en <span class="math inline">\(\mathbb{R}\)</span> de grado menor o igual que tres), <span class="math inline">\(B_s=\{1,x,x^2,x^3\}\)</span> en el espacio inicial y en el final, puesto que son el mismo:</p>
 <p><span class="math display">\[
 D(1)=0=(0,0,0,0)_{B_s},
@@ -798,7 +803,7 @@ A=M_{B_c}(f)=\begin{pmatrix}
 =-\lambda^3-\lambda^2+8\lambda -7.
 \end{align*}
 \]</span></p>
-<p>Calculamos las raíces de este polinomio (lo cual es laborioso) y obtenemos que son <span class="math inline">\(\lambda=5\)</span> con multiplicidad algebraica 1 y <span class="math inline">\(\lambda=-3(=10)\)</span> con multiplicidad algebraica 2.<br></p>
+<p>Calculamos las raíces de este polinomio (lo cual es laborioso) y obtenemos que son <span class="math inline">\(\lambda=5\)</span> con multiplicidad algebraica 1 y <span class="math inline">\(\lambda=-3(=10)\)</span> con multiplicidad algebraica 2.</p>
 <p>Debemos calcular la multiplicidad geométrica de <span class="math inline">\(\lambda=-3\)</span> para poder decidir si es o no diagonalizable. Para ello calculamos el subespacio propio correspondiente:</p>
 <p><span class="math display">\[
 (A+3I)=\begin{pmatrix}
@@ -818,7 +823,7 @@ A=matrix(GF(13),[[10,-1,4],[1,9,3],[5,6,2]])
 show(A,"~",A.rref())
 </script>
 </div>
-<p>Luego nos queda una única ecuación cartesiana que es <span class="math inline">\(x+9y+3z=0\)</span> y por tanto la multiplicidad geométrica (esto es, la dimensión de <span class="math inline">\(V_{2}\)</span>) es 2, así que la matriz es diagonalizable.<br> Calculamos una base de <span class="math inline">\(V_{-3}\)</span>:</p>
+<p>Luego nos queda una única ecuación cartesiana que es <span class="math inline">\(x+9y+3z=0\)</span> y por tanto la multiplicidad geométrica (esto es, la dimensión de <span class="math inline">\(V_{2}\)</span>) es 2, así que la matriz es diagonalizable. Calculamos una base de <span class="math inline">\(V_{-3}\)</span>:</p>
 <p><span class="math display">\[
 \{ (4,1,0),(10,0,1) \}.
 \]</span></p>
@@ -844,7 +849,8 @@ show(A,"~",A.rref())
 </div>
 <p>Nos quedan las ecuaciones <span class="math inline">\(V_{5}\equiv \boxed{\begin{array}{l}
 x-2z=0,\\
-y+5z=0.\end{array} }\)</span> y una base es <span class="math inline">\(\{(2,-5,1)\}\)</span>.<br> Luego la solución al problema de diagonalización es:</p>
+y+5z=0.\end{array} }\)</span> y una base es <span class="math inline">\(\{(2,-5,1)\}\)</span>.</p>
+<p>Luego la solución al problema de diagonalización es:</p>
 <p><span class="math display">\[
 D=\left(\begin{array}{ccc}
 5 &amp; 0 &amp; 0\\
@@ -854,7 +860,7 @@ D=\left(\begin{array}{ccc}
 5 &amp; 0 &amp; 0\\
 0 &amp; -3 &amp; 0\\
 0 &amp; 0 &amp; -3
-\end{array}\right), \hspace{1cm}  P=\left(\begin{array}{ccc}
+\end{array}\right), \hspace{1em}  P=\left(\begin{array}{ccc}
 2 &amp; 4 &amp; 10\\
 -5 &amp; 1 &amp; 0\\
 1 &amp; 0 &amp;  1
@@ -862,7 +868,8 @@ D=\left(\begin{array}{ccc}
 \]</span></p>
 </li>
 <li>
-<p>Calcular <span class="math inline">\(A^{2431}\)</span>.<br> Para calcular la potencia pedida utilizamos la diagonalización:</p>
+<p>Calcular <span class="math inline">\(A^{2431}\)</span>.</p>
+<p>Para calcular la potencia pedida utilizamos la diagonalización:</p>
 <p><span class="math display">\[
 D=P^{-1}AP \text{ o bien }  A=PDP^{-1},
 \]</span></p>
@@ -968,7 +975,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Hallar la matriz de <span class="math inline">\(f\)</span> en la base canónica.<br> Calculamos las imágenes de los vectores de la base canónica:</p>
+<p>Hallar la matriz de <span class="math inline">\(f\)</span> en la base canónica.</p>
+<p>Calculamos las imágenes de los vectores de la base canónica:</p>
 <span class="math display">\[
 \begin{array}{l}
 f(1,0,0)=(0,2,1),\\
@@ -983,7 +991,8 @@ f(0,0,1)=(4,1,0).
 \]</span>
 </li>
 <li>
-<p>Estudiar si <span class="math inline">\(f\)</span> es diagonalizable y hallar una base de vectores propios.<br> Calculamos los valores propios y sus multiplicidades algebraica y geométrica:</p>
+<p>Estudiar si <span class="math inline">\(f\)</span> es diagonalizable y hallar una base de vectores propios.</p>
+<p>Calculamos los valores propios y sus multiplicidades algebraica y geométrica:</p>
 <p><span class="math display">\[
 |A-\lambda I|=\left| \begin{array}{ccc}
 -\lambda &amp; 0 &amp; 4\\
@@ -991,7 +1000,8 @@ f(0,0,1)=(4,1,0).
 1 &amp; 0 &amp; -\lambda\\
 \end{array}\right|=(2-\lambda)[(-\lambda)^2-4)]=(2-\lambda)(\lambda^2-4).
 \]</span></p>
-<p>Las raíces de <span class="math inline">\(\lambda^2-4=0\)</span> son <span class="math inline">\(\lambda=2\)</span> y <span class="math inline">\(\lambda=3(=-2)\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>. Así el valor propio <span class="math inline">\(\lambda=2\)</span> tiene multiplicidad algebraica 2 y <span class="math inline">\(\lambda=3\)</span> tiene multiplicidad algebraica 1.<br> Calculamos <span class="math inline">\(V_{2}\)</span>:</p>
+<p>Las raíces de <span class="math inline">\(\lambda^2-4=0\)</span> son <span class="math inline">\(\lambda=2\)</span> y <span class="math inline">\(\lambda=3(=-2)\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>. Así el valor propio <span class="math inline">\(\lambda=2\)</span> tiene multiplicidad algebraica 2 y <span class="math inline">\(\lambda=3\)</span> tiene multiplicidad algebraica 1.</p>
+<p>Calculamos <span class="math inline">\(V_{2}\)</span>:</p>
 <p><span class="math display">\[
 A-2I =
 \left(\begin{array}{ccc}
@@ -1011,7 +1021,9 @@ A=matrix(GF(5),[[-2,0,4],[2,0,1],[1,0,-2]])
 show(A,"~",A.rref())
 </script>
 </div>
-<p>Luego nos queda una única ecuación cartesiana que es <span class="math inline">\(x-2z=0\)</span> y por tanto la multiplicidad geométrica (esto es, la dimensión de <span class="math inline">\(V_{2}\)</span>) es 2, así que la matriz es diagonalizable.<br> Calculamos una base de <span class="math inline">\(V_{2}\)</span>: <span class="math inline">\(\{ (0,1,0),(2,0,1) \}\)</span>.<br> Nos queda calcular una base de <span class="math inline">\(V_{3}\)</span>:</p>
+<p>Luego nos queda una única ecuación cartesiana que es <span class="math inline">\(x-2z=0\)</span> y por tanto la multiplicidad geométrica (esto es, la dimensión de <span class="math inline">\(V_{2}\)</span>) es 2, así que la matriz es diagonalizable.</p>
+<p>Calculamos una base de <span class="math inline">\(V_{2}\)</span>: <span class="math inline">\(\{ (0,1,0),(2,0,1) \}\)</span>.</p>
+<p>Nos queda calcular una base de <span class="math inline">\(V_{3}\)</span>:</p>
 <p><span class="math display">\[
 A-3I=
 \left(\begin{array}{rrr}
@@ -1034,13 +1046,14 @@ show(A,"~",A.rref())
 </div>
 <p>Nos quedan las ecuaciones <span class="math inline">\(V_{3}\equiv \boxed{\begin{array}{l}
 x-3z=0,\\
-y+3z=0.\end{array} }\)</span>. Además una base es <span class="math inline">\(\{(3,2,1)\}\)</span>.<br> Luego la solución al problema de diagonalización es:</p>
+y+3z=0.\end{array} }\)</span>. Además una base es <span class="math inline">\(\{(3,2,1)\}\)</span>.</p>
+<p>Luego la solución al problema de diagonalización es:</p>
 <span class="math display">\[
 D=\left(\begin{array}{rrr}
 2 &amp; 0 &amp; 0\\
 0 &amp; 2 &amp; 0\\
 0 &amp; 0 &amp; 3\\
-\end{array}\right), \hspace{1cm}
+\end{array}\right), \hspace{1em}
 P= \left(\begin{array}{rrr}
 0 &amp; 2 &amp; 3\\
 1 &amp; 0 &amp; 2\\
@@ -1049,7 +1062,8 @@ P= \left(\begin{array}{rrr}
 \]</span>
 </li>
 <li>
-<p>Calcular <span class="math inline">\(A^{703}\)</span>.<br> Para calcular la potencia pedida utilizamos la diagonalización:</p>
+<p>Calcular <span class="math inline">\(A^{703}\)</span>.</p>
+<p>Para calcular la potencia pedida utilizamos la diagonalización:</p>
 <p><span class="math display">\[
 D=P^{-1}AP \text{ o bien }  A=PDP^{-1},
 \]</span></p>
@@ -1107,7 +1121,8 @@ A^{703}=PD^{703}P^{-1}=\left(\begin{array}{rrr}
 \]</span>
 </li>
 <li>
-<p>Hallar <span class="math inline">\(f^{703}(1,2,3)\)</span>.<br> Basta realizar la operación</p>
+<p>Hallar <span class="math inline">\(f^{703}(1,2,3)\)</span>.</p>
+<p>Basta realizar la operación</p>
 <span class="math display">\[
 f^{703}(1,2,3)=A^{703}(1,2,3)^T=
 \left(\begin{array}{rrr}
@@ -1170,7 +1185,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Determinar la base más sencilla de <span class="math inline">\(\operatorname{Im}(f)\)</span> y unas ecuaciones cartesianas del <span class="math inline">\(\operatorname{ker}(f)\)</span>.<br> Para calcular la base más sencilla de la Imagen realizamos operaciones elementales por columnas hasta obtener la forma de Hermite por columnas:</p>
+<p>Determinar la base más sencilla de <span class="math inline">\(\operatorname{Im}(f)\)</span> y unas ecuaciones cartesianas del <span class="math inline">\(\operatorname{ker}(f)\)</span>.</p>
+<p>Para calcular la base más sencilla de la Imagen realizamos operaciones elementales por columnas hasta obtener la forma de Hermite por columnas:</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; -1 &amp; 0\\
@@ -1201,7 +1217,8 @@ A=matrix([[1,-1,0],[1,2,1],[0,1,1],[1,1,1]])
 show(A,"~",((A.T).rref()).T)
 </script>
 </div>
-<p>Luego la base más sencilla de $(f) $ es <span class="math inline">\(\{(1,0,0,1/2),(0,1,0,1/2),(0,0,1,1/2)\}\)</span>.<br> Para obtener las cartesianas del núcleo imponemos <span class="math inline">\(AX=0\)</span>:</p>
+<p>Luego la base más sencilla de $(f) $ es <span class="math inline">\(\{(1,0,0,1/2),(0,1,0,1/2),(0,0,1,1/2)\}\)</span>.</p>
+<p>Para obtener las cartesianas del núcleo imponemos <span class="math inline">\(AX=0\)</span>:</p>
 <p><span class="math display">\[
 \operatorname{ker}(f)\equiv \left\{ \begin{array}{rl}
 x-y&amp;=0,\\
@@ -1220,7 +1237,8 @@ z&amp;=0.
 \]</span></p>
 </li>
 <li>
-<p>Determinar para qué valores de <span class="math inline">\(a\)</span> el vector <span class="math inline">\((a,1,a,a)\)</span> pertenece a <span class="math inline">\(\operatorname{Im}(f)\)</span>.<br> Para que <span class="math inline">\((a,1,a,a)\in \operatorname{Im}(f)\)</span> tiene que ser combinación lineal de los vectores de una base, por ejemplo la más sencilla que hemos calculado, luego el rango de la matriz que forman los cuatro vectores debe ser tres, y por tanto el determinante siguiente debe ser cero:</p>
+<p>Determinar para qué valores de <span class="math inline">\(a\)</span> el vector <span class="math inline">\((a,1,a,a)\)</span> pertenece a <span class="math inline">\(\operatorname{Im}(f)\)</span>.</p>
+<p>Para que <span class="math inline">\((a,1,a,a)\in \operatorname{Im}(f)\)</span> tiene que ser combinación lineal de los vectores de una base, por ejemplo la más sencilla que hemos calculado, luego el rango de la matriz que forman los cuatro vectores debe ser tres, y por tanto el determinante siguiente debe ser cero:</p>
 <p><span class="math display">\[
 \left|\begin{array}{cccc}
 1 &amp; 0 &amp; 0 &amp; a \\
@@ -1241,7 +1259,8 @@ z&amp;=0.
 Como siempre es distinto de cero, este vector no está en la imagen de <span class="math inline">\(f\)</span> para ningún valor de <span class="math inline">\(a\)</span>.
 </li>
 <li>
-<p>Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(\overline{B}\)</span> de <span class="math inline">\(\mathbb{R}^3\)</span> y <span class="math inline">\(B_c\)</span> de <span class="math inline">\(\mathbb{R}^4\)</span>.<br> Usamos el “método de los cuatro pasos”, comenzando calculando la imagen de los vectores de la base <span class="math inline">\(\overline{B}\)</span> multiplicando por la matriz <span class="math inline">\(A\)</span> cada uno de los vectores:</p>
+<p>Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(\overline{B}\)</span> de <span class="math inline">\(\mathbb{R}^3\)</span> y <span class="math inline">\(B_c\)</span> de <span class="math inline">\(\mathbb{R}^4\)</span>.</p>
+<p>Usamos el “método de los cuatro pasos”, comenzando calculando la imagen de los vectores de la base <span class="math inline">\(\overline{B}\)</span> multiplicando por la matriz <span class="math inline">\(A\)</span> cada uno de los vectores:</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; -1 &amp; 0\\
@@ -1306,7 +1325,7 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular una base de la imagen de <span class="math inline">\(f\)</span> y determinar para qué valores de <span class="math inline">\(a\)</span> el vector <span class="math inline">\((a,1-a,a)\)</span> pertenece a dicha imagen.<br></p>
+<p>Calcular una base de la imagen de <span class="math inline">\(f\)</span> y determinar para qué valores de <span class="math inline">\(a\)</span> el vector <span class="math inline">\((a,1-a,a)\)</span> pertenece a dicha imagen.</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 1\\
@@ -1348,7 +1367,8 @@ show(A,"~",((A.T).rref()).T)
 obtenemos que <span class="math inline">\(\dim(\operatorname{ker}(f))=2\)</span> y por tanto como <span class="math inline">\(\operatorname{ker}(f)\not = \{0\}\)</span>, entonces tampoco es inyectiva.
 </li>
 <li>
-<p>Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(B_c\)</span> de <span class="math inline">\(\mathbb{R}^{4}\)</span> y <span class="math inline">\(\overline{B}\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span>.<br> Como de los datos del problema obtenemos</p>
+<p>Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(B_c\)</span> de <span class="math inline">\(\mathbb{R}^{4}\)</span> y <span class="math inline">\(\overline{B}\)</span> de <span class="math inline">\(\mathbb{R}^{3}\)</span>.</p>
+<p>Como de los datos del problema obtenemos</p>
 <p><span class="math display">\[
 \begin{array}{rl}
 f(1,0,0,0)=&amp;(1,-1,-1),\\
@@ -1417,7 +1437,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular la matriz asociada respecto de las bases canónicas.<br> La matriz asociada respecto de las bases canónicas se obtiene al calcular</p>
+<p>Calcular la matriz asociada respecto de las bases canónicas.</p>
+<p>La matriz asociada respecto de las bases canónicas se obtiene al calcular</p>
 <p><span class="math display">\[
 \begin{array}{c}
 f(1,0,0)=(\_,\_,\_,\_)_{B_c},\\
@@ -1512,7 +1533,7 @@ f: &amp; \mathbb{R}^{3}_{B}     &amp; \longrightarrow        &amp;\mathbb{R}^{4}
 f: &amp; \mathbb{R}^{3}_{B_c}     &amp; \longrightarrow        &amp;\mathbb{R}^{4}_{B_c}   \\
 \end{array}
 \]</span></p>
-<p>y por tanto la matriz <span class="math inline">\(\mathcal{M}(f,B_c,B_c)=I C P^{-1}=CP^{-1}=A\)</span>.<br></p>
+<p>y por tanto la matriz <span class="math inline">\(\mathcal{M}(f,B_c,B_c)=I C P^{-1}=CP^{-1}=A\)</span>.</p>
 <p>También puede usarse esta matriz <span class="math inline">\(C\)</span> para obtener la solución del segundo apartado, en este caso siguiendo el diagrama:</p>
 <span class="math display">\[
 \begin{array}{llcr}
@@ -1526,7 +1547,8 @@ f: &amp; \mathbb{R}^{3}_{B}     &amp; \longrightarrow        &amp;\mathbb{R}^{4}
 \]</span>
 </li>
 <li>
-<p>Calcula la matriz asociada respecto de las bases B y B’.<br> Una vez que es conocida la matriz asociada a una aplicación lineal respecto de dos bases, por ejemplo <span class="math inline">\(\mathcal{M}(f,B_{c},B_{c})\)</span>, podemos dibujar un esquema en el que se reflejan los cambios de base a realizar en cada uno de los espacios:</p>
+<p>Calcula la matriz asociada respecto de las bases B y B’.</p>
+<p>Una vez que es conocida la matriz asociada a una aplicación lineal respecto de dos bases, por ejemplo <span class="math inline">\(\mathcal{M}(f,B_{c},B_{c})\)</span>, podemos dibujar un esquema en el que se reflejan los cambios de base a realizar en cada uno de los espacios:</p>
 <p><span class="math display">\[
 \begin{array}{llcr}
      &amp;                       &amp;         A              &amp; \\
@@ -1602,7 +1624,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Estudiar las dimensiones del núcleo y la imagen de <span class="math inline">\(f\)</span> según los valores del parámetro <span class="math inline">\(a\)</span>.<br> Para estudiar las dimensiones del núcleo y la imagen tenemos que calcular el rango de una matriz asociada a <span class="math inline">\(f\)</span>, y es indiferente respecto de qué bases esté considerada. Lo más inmediato es utilizar como base de <span class="math inline">\(\mathbb{R}^3\)</span> la base <span class="math inline">\(B=\{(1,0,1),(1,1,1),(0,1,1)\}\)</span> puesto que conocemos sus imágenes, y como base de <span class="math inline">\(\mathbb{R}^4\)</span> la base canónica, pues las imágenes que conocemos están dadas respecto de ella (al no hacerse mención en la expresión a la base usada se trata de las componentes del vector). Así que usamos los datos del enunciado y tenemos</p>
+<p>Estudiar las dimensiones del núcleo y la imagen de <span class="math inline">\(f\)</span> según los valores del parámetro <span class="math inline">\(a\)</span>.</p>
+<p>Para estudiar las dimensiones del núcleo y la imagen tenemos que calcular el rango de una matriz asociada a <span class="math inline">\(f\)</span>, y es indiferente respecto de qué bases esté considerada. Lo más inmediato es utilizar como base de <span class="math inline">\(\mathbb{R}^3\)</span> la base <span class="math inline">\(B=\{(1,0,1),(1,1,1),(0,1,1)\}\)</span> puesto que conocemos sus imágenes, y como base de <span class="math inline">\(\mathbb{R}^4\)</span> la base canónica, pues las imágenes que conocemos están dadas respecto de ella (al no hacerse mención en la expresión a la base usada se trata de las componentes del vector). Así que usamos los datos del enunciado y tenemos</p>
 <p><span class="math display">\[
 C=\mathcal{M}(f,B,B_c)=
 \left( \begin{array}{ccc}
@@ -1624,7 +1647,8 @@ C=\mathcal{M}(f,B,B_c)=
            1-a &amp; 1 &amp; 1
                     \end{array} \right|= (-2a)(1-a+a^2).
 \]</span></p>
-<p>Como <span class="math inline">\(a^2-a+1\)</span> es siempre distinto de cero (la ecuación correspondiente no tiene raices reales), entonces este determinante sólo es cero cuando <span class="math inline">\(a=0\)</span>. Por tanto, cuando <span class="math inline">\(a\not = 0\)</span>, el rango de la matriz es tres. En el caso <span class="math inline">\(a=0\)</span> sustituyendo en la matriz es fácil observar que el rango es dos. <br> Resumiendo lo que hemos obtenido:</p>
+<p>Como <span class="math inline">\(a^2-a+1\)</span> es siempre distinto de cero (la ecuación correspondiente no tiene raices reales), entonces este determinante sólo es cero cuando <span class="math inline">\(a=0\)</span>. Por tanto, cuando <span class="math inline">\(a\not = 0\)</span>, el rango de la matriz es tres. En el caso <span class="math inline">\(a=0\)</span> sustituyendo en la matriz es fácil observar que el rango es dos.</p>
+<p>Resumiendo lo que hemos obtenido:</p>
 <p>Si <span class="math inline">\(a\not = 0\)</span> la dimensión de la imagen de <span class="math inline">\(f\)</span> es tres y el núcleo es trivial.</p>
 Si <span class="math inline">\(a = 0\)</span> la dimensión de la imagen de <span class="math inline">\(f\)</span> es dos y el núcleo tiene dimensión uno.
 </li>
@@ -1696,7 +1720,8 @@ En el caso <span class="math inline">\(a=0\)</span> el rango de <span class="mat
 </li>
 <li>
 <p>¿Para qué valores de <span class="math inline">\(a\)</span> el vector <span class="math inline">\((1,-1,0)\)</span> está en el núcleo de <span class="math inline">\(f\)</span>?</p>
-<p>En el caso <span class="math inline">\(a\not =0\)</span> el núcleo se reduce al vector <span class="math inline">\((0,0,0)\)</span>, así que el vector dado no pertenece al núcleo. <br> En el caso <span class="math inline">\(a=0\)</span> podemos calcular la imagen del vector <span class="math inline">\((1,-1,0)\)</span>, para lo que tenemos que usar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base canónica de <span class="math inline">\(\mathbb{R}^3\)</span>, es decir <span class="math inline">\(A\)</span>:</p>
+<p>En el caso <span class="math inline">\(a\not =0\)</span> el núcleo se reduce al vector <span class="math inline">\((0,0,0)\)</span>, así que el vector dado no pertenece al núcleo.</p>
+<p>En el caso <span class="math inline">\(a=0\)</span> podemos calcular la imagen del vector <span class="math inline">\((1,-1,0)\)</span>, para lo que tenemos que usar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base canónica de <span class="math inline">\(\mathbb{R}^3\)</span>, es decir <span class="math inline">\(A\)</span>:</p>
 <p><span class="math display">\[
 f(1,-1,0)=A\left( \begin{array}{r}
                      1\\
@@ -1771,7 +1796,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Determinar la matriz asociada a <span class="math inline">\(F\)</span> respecto de las respectivas bases estándar y el valor de <span class="math inline">\(F(p(x))\)</span>.<br> Para determinar la matriz asociada solo tenemos que escribir las imágenes de <span class="math inline">\(1,x,x^2,x^3\)</span> en función de la base estándar de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> y colocarlos por columnas. Usando los datos dados:</p>
+<p>Determinar la matriz asociada a <span class="math inline">\(F\)</span> respecto de las respectivas bases estándar y el valor de <span class="math inline">\(F(p(x))\)</span>.</p>
+<p>Para determinar la matriz asociada solo tenemos que escribir las imágenes de <span class="math inline">\(1,x,x^2,x^3\)</span> en función de la base estándar de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> y colocarlos por columnas. Usando los datos dados:</p>
 <p><span class="math display">\[
 F(1)=\frac{1}{2}(F(1+x)+F(1-x))=\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}=(1,1,1,1)_{B_{sm}},
 \]</span></p>
@@ -1822,7 +1848,8 @@ p(1)
 \]</span>
 </li>
 <li>
-<p>Determinar la matriz asociada a <span class="math inline">\(F\)</span> respecto de las bases <span class="math inline">\(\overline{B}\)</span> y <span class="math inline">\(\overline{B'}\)</span>.<br> Expresamos las imágenes de los vectores de <span class="math inline">\(\overline{B}\)</span> y obtenemos (es muy fácil en este caso) sus coordenadas respecto de <span class="math inline">\(\overline{B'}\)</span>:</p>
+<p>Determinar la matriz asociada a <span class="math inline">\(F\)</span> respecto de las bases <span class="math inline">\(\overline{B}\)</span> y <span class="math inline">\(\overline{B'}\)</span>.</p>
+<p>Expresamos las imágenes de los vectores de <span class="math inline">\(\overline{B}\)</span> y obtenemos (es muy fácil en este caso) sus coordenadas respecto de <span class="math inline">\(\overline{B'}\)</span>:</p>
 <p><span class="math display">\[
 {\small
 \begin{array}{rcll}
@@ -1889,7 +1916,8 @@ Q^{-1}AP
 \]</span>
 </li>
 <li>
-<p>Determinar bases del núcleo y la imagen de <span class="math inline">\(F\)</span>.<br> Como <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(C)=2\)</span>, entonces <span class="math inline">\(\dim(\operatorname{Im}(F))=2\)</span> y <span class="math inline">\(\dim(\operatorname{ker}(F))=2\)</span>. Una base de la imagen (obtenida por operaciones elementales en las columnas de <span class="math inline">\(A\)</span>) puede ser:</p>
+<p>Determinar bases del núcleo y la imagen de <span class="math inline">\(F\)</span>.</p>
+<p>Como <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(C)=2\)</span>, entonces <span class="math inline">\(\dim(\operatorname{Im}(F))=2\)</span> y <span class="math inline">\(\dim(\operatorname{ker}(F))=2\)</span>. Una base de la imagen (obtenida por operaciones elementales en las columnas de <span class="math inline">\(A\)</span>) puede ser:</p>
 <p><span class="math display">\[
 \left\{\begin{pmatrix}
 1 &amp; 0 \\
@@ -1909,8 +1937,8 @@ Q^{-1}AP
 </div>
 </div>
 </div>
-<article>
-<p>Se considera la matriz:</p>
+<div id="exr-12" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 12</strong></span> Se considera la matriz:</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 a &amp; 1 &amp; 0 &amp; 0 \\
@@ -1927,20 +1955,32 @@ Estudiar qué condición han de cumplir los parámetros <span class="math inline
 Para los valores <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=-1\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> y una matriz de paso <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(D=P^{-1}\cdot A \cdot P\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Estudiar qué condición han de cumplir los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que <span class="math inline">\(A\)</span> sea diagonalizable.<br> En primer lugar calculamos los valores propios y sus multiplicidades algebraicas <span class="math display">\[
+<p>Estudiar qué condición han de cumplir los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para que <span class="math inline">\(A\)</span> sea diagonalizable.</p>
+<p>En primer lugar calculamos los valores propios y sus multiplicidades algebraicas</p>
+<p><span class="math display">\[
 |A-\lambda I|=\left| \begin{array}{cccc}
 a-\lambda &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; b-\lambda &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; a-\lambda &amp; 1 \\
 0 &amp; 0 &amp; 0 &amp; b-\lambda
 \end{array}\right|= (a-\lambda)^2 (b-\lambda)^2.
-\]</span> Si <span class="math inline">\(a=b\)</span>, hay un solo valor propio <span class="math inline">\(\lambda=a\)</span> con multiplicidad algebraica cuatro. Calculamos su multiplicidad geométrica: <span class="math display">\[
+\]</span></p>
+<p>Si <span class="math inline">\(a=b\)</span>, hay un solo valor propio <span class="math inline">\(\lambda=a\)</span> con multiplicidad algebraica cuatro. Calculamos su multiplicidad geométrica:</p>
+<p><span class="math display">\[
 V_{a}\equiv \begin{pmatrix}
 0 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -1951,8 +1991,11 @@ x\\ y\\ z\\t
 \end{pmatrix}= \begin{pmatrix}
 0 \\ 0 \\0 \\0
 \end{pmatrix}.
-\]</span> Nos da las ecuaciones <span class="math inline">\(y=0; t=0\)</span> y por tanto tiene dimensión dos, así que como no coincide con la multiplicidad algebraica, entonces no es diagonalizable.<br></p>
-Si <span class="math inline">\(a\not =b\)</span>, hay dos valores propios <span class="math inline">\(\lambda=a\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=b\)</span> también con multiplicidad algebraica dos.<br> Calculamos su multiplicidad geométrica: <span class="math display">\[
+\]</span></p>
+<p>Nos da las ecuaciones <span class="math inline">\(y=0; t=0\)</span> y por tanto tiene dimensión dos, así que como no coincide con la multiplicidad algebraica, entonces no es diagonalizable.</p>
+<p>Si <span class="math inline">\(a\not =b\)</span>, hay dos valores propios <span class="math inline">\(\lambda=a\)</span> con multiplicidad algebraica dos y <span class="math inline">\(\lambda=b\)</span> también con multiplicidad algebraica dos.</p>
+<p>Calculamos su multiplicidad geométrica:</p>
+<p><span class="math display">\[
 V_{a}\equiv \begin{pmatrix}
 0 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; b-a &amp; 0 &amp; 0 \\
@@ -1963,7 +2006,9 @@ x\\ y\\ z\\ t
 \end{pmatrix}= \begin{pmatrix}
 0 \\ 0 \\0 \\0
 \end{pmatrix}.
-\]</span> Nos da las ecuaciones <span class="math inline">\(y=0\)</span>, <span class="math inline">\(t=0\)</span> y por tanto tiene dimensión dos, así que coincide con la multiplicidad algebraica. <span class="math display">\[
+\]</span></p>
+<p>Nos da las ecuaciones <span class="math inline">\(y=0\)</span>, <span class="math inline">\(t=0\)</span> y por tanto tiene dimensión dos, así que coincide con la multiplicidad algebraica.</p>
+<p><span class="math display">\[
 V_{b}\equiv \begin{pmatrix}
 a-b &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -1974,63 +2019,100 @@ x\\ y\\ z\\t
 \end{pmatrix}= \begin{pmatrix}
 0 \\ 0 \\0 \\0
 \end{pmatrix}.
-\]</span> Nos da las ecuaciones <span class="math inline">\((a-b)x+y=0\)</span>, <span class="math inline">\((a-b)z+t=0\)</span> y por tanto tiene dimensión dos, así que coincide con la multiplicidad algebraica. Por tanto en este caso la matriz si es diagonalizable.
+\]</span></p>
+Nos da las ecuaciones <span class="math inline">\((a-b)x+y=0\)</span>, <span class="math inline">\((a-b)z+t=0\)</span> y por tanto tiene dimensión dos, así que coincide con la multiplicidad algebraica. Por tanto en este caso la matriz si es diagonalizable.
 </li>
 <li>
-Para los valores <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=-1\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> y una matriz de paso <span class="math inline">\(P\)</span>.<br> Utilizando los cálculos del segundo caso del apartado anterior tenemos que <span class="math display">\[V_{1}\equiv \left\{ \begin{array}{l}
+<p>Para los valores <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=-1\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> y una matriz de paso <span class="math inline">\(P\)</span>.</p>
+<p>Utilizando los cálculos del segundo caso del apartado anterior tenemos que</p>
+<p><span class="math display">\[
+V_{1}\equiv \left\{ \begin{array}{l}
 y=0,\\
 t=0.
-\end{array}\right.\]</span> Y una base es <span class="math inline">\(\{(1,0,0,0),(0,0,1,0)\}\)</span>. <span class="math display">\[V_{ -1}\equiv \left\{ \begin{array}{l}
+\end{array}\right.
+\]</span></p>
+<p>Y una base es <span class="math inline">\(\{(1,0,0,0),(0,0,1,0)\}\)</span>.</p>
+<p><span class="math display">\[
+V_{ -1}\equiv \left\{ \begin{array}{l}
 2x+y=0,\\
 2z+t=0.
-\end{array}\right.\]</span> Y una base es <span class="math inline">\(\{(1,-2,0,0),(0,0,1,-2)\}\)</span>. <br> Por tanto, <span class="math display">\[D=\begin{pmatrix}
+\end{array}\right.
+\]</span></p>
+<p>Y una base es <span class="math inline">\(\{(1,-2,0,0),(0,0,1,-2)\}\)</span>.</p>
+<p>Por tanto,</p>
+<span class="math display">\[
+D=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; -1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; -1
-\end{pmatrix}, \hspace{1cm} P=\begin{pmatrix}
+\end{pmatrix}, \hspace{1em} P=\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; -2 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; -2
-\end{pmatrix}.\]</span>
+\end{pmatrix}.
+\]</span>
 </li>
 </ol>
-</details>
-</article>
-<article>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-13" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
-Dado el endomorfismo de <span class="math inline">\(\mathbb{R}^3\)</span> que viene dado por <span class="math display">\[\begin{array}{ll}
+<p>Dado el endomorfismo de <span class="math inline">\(\mathbb{R}^3\)</span> que viene dado por</p>
+<p><span class="math display">\[
+\begin{align*}
 f(1,1,-1)&amp;=(1,1,1),\\
 f(1,-1,1)&amp;=(1,1,0),\\
 f(-1,1,1)&amp;=(1,0,0).
-\end{array}\]</span> Calcula la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(B'=\{(1,1,-1),(1,-1,1),(-1,1,1)\}\)</span>
+\end{align*}
+\]</span></p>
+Calcula la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(B'=\{(1,1,-1),(1,-1,1),(-1,1,1)\}\)</span>
 </li>
 <li>
-Dada la matriz <span class="math display">\[A=\left(
+<p>Dada la matriz</p>
+<p><span class="math display">\[
+A=\left(
 \begin{array}{rrr}
   1 &amp; a &amp; a \\
   -1 &amp; 1 &amp; -1 \\
   1 &amp;0  &amp; 2 \\
 \end{array}
 \right).
-\]</span> Estudia para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span> es diagonalizable y para aquellos que lo sea obtén <span class="math inline">\(D\)</span> diagonal y <span class="math inline">\(P\)</span> regular tales que <span class="math inline">\(D=P^{-1}AP\)</span>.
+\]</span></p>
+Estudia para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span> es diagonalizable y para aquellos que lo sea obtén <span class="math inline">\(D\)</span> diagonal y <span class="math inline">\(P\)</span> regular tales que <span class="math inline">\(D=P^{-1}AP\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(B'\)</span> Observamos que nos dan las imágenes de los vectores de la base <span class="math inline">\(B'\)</span>, pero estas vienen dadas por sus coordenadas en la base canónica y debemos calcular las coordenadas también en la base <span class="math inline">\(B'\)</span>. Por tanto necesitamos la matriz de cambio de base de <span class="math inline">\(B_c\)</span> a <span class="math inline">\(B'\)</span>, que es la inversa de la matriz <span class="math display">\[P=\left(\begin{array}{rrr}
+<p>Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(B'\)</span> Observamos que nos dan las imágenes de los vectores de la base <span class="math inline">\(B'\)</span>, pero estas vienen dadas por sus coordenadas en la base canónica y debemos calcular las coordenadas también en la base <span class="math inline">\(B'\)</span>. Por tanto necesitamos la matriz de cambio de base de <span class="math inline">\(B_c\)</span> a <span class="math inline">\(B'\)</span>, que es la inversa de la matriz</p>
+<p><span class="math display">\[
+P=\left(\begin{array}{rrr}
   1 &amp; 1 &amp; -1 \\
   1 &amp; -1 &amp; 1 \\
   -1 &amp; 1  &amp; 1 \\
 \end{array}
 \right).
-\]</span> La calculamos: <span class="math display">\[\begin{align*}
+\]</span></p>
+<p>La calculamos:</p>
+<p><span class="math display">\[
+\begin{align*}
 \left(\begin{array}{rrr|ccc}
     1 &amp; 1 &amp; -1 &amp; 1 &amp; 0 &amp; 0 \\
     1 &amp; -1 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
@@ -2054,7 +2136,11 @@ Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de
     0 &amp; 1  &amp; 0 &amp; 1/2 &amp; 0 &amp; 1/2\\
     0 &amp; 0  &amp; 1 &amp; 0 &amp; 1/2 &amp; 1/2\\
   \end{array}
-\right),\end{align*}\]</span> y ahora calculamos las coordenadas de <span class="math inline">\((1,1,1),(1,1,0),(1,0,0)\)</span> respecto de <span class="math inline">\(B'\)</span>: <span class="math display">\[\left(\begin{array}{ccc}
+\right),\end{align*}
+\]</span></p>
+<p>y ahora calculamos las coordenadas de <span class="math inline">\((1,1,1),(1,1,0),(1,0,0)\)</span> respecto de <span class="math inline">\(B'\)</span>:</p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
   1/2 &amp; 1/2 &amp; 0 \\
   1/2 &amp; 0 &amp; 1/2\\
   0 &amp; 1/2 &amp; 1/2\\
@@ -2068,18 +2154,30 @@ Calcular la matriz asociada a <span class="math inline">\(f\)</span> respecto de
   1 &amp; 1 &amp; 1/2 \\
   1 &amp; 1/2 &amp; 1/2\\
   1 &amp; 1/2 &amp; 0\\
-  \end{array}\right).\]</span> Como <span class="math display">\[\begin{array}{ll}
+  \end{array}\right).
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+\begin{array}{ll}
 f(1,1,-1)&amp;=(1,1,1)_{B'},\\
 f(1,-1,1)&amp;=(1,1/2,1/2)_{B'},\\
 f(-1,1,1)&amp;=(1/2,1/2,0)_{B'},
-\end{array}\]</span> la matriz asociada a <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(B'\)</span> es <span class="math display">\[C=\left(\begin{array}{ccc}
+\end{array}
+\]</span></p>
+<p>la matriz asociada a <span class="math inline">\(f\)</span> respecto de <span class="math inline">\(B'\)</span> es</p>
+<span class="math display">\[
+C=\left(\begin{array}{ccc}
 1 &amp; 1 &amp; 1/2 \\
 1 &amp; 1/2 &amp; 1/2\\
 1 &amp; 1/2 &amp; 0\\
-\end{array}\right).\]</span>
+\end{array}\right).
+\]</span>
 </li>
 <li>
-Estudiar para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span> es diagonalizable y obtener <span class="math inline">\(D\)</span> y <span class="math inline">\(P\)</span>.<br> En primer lugar calculamos los valores propios: <span class="math display">\[|A-\lambda I|=\left|\begin{array}{ccc}
+<p>Estudiar para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span> es diagonalizable y obtener <span class="math inline">\(D\)</span> y <span class="math inline">\(P\)</span>.</p>
+<p>En primer lugar calculamos los valores propios:</p>
+<p><span class="math display">\[
+|A-\lambda I|=\left|\begin{array}{ccc}
 1-\lambda &amp; a &amp; a \\
 -1 &amp; 1-\lambda &amp; -1 \\
   1 &amp;0  &amp; 2-\lambda \\
@@ -2092,7 +2190,12 @@ Estudiar para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span
 0 &amp; 1-\lambda &amp; 0 \\
   1 &amp;0  &amp; 2-\lambda \\
 \end{array}\right|
-=(2-\lambda)(1-\lambda)^2,\]</span> luego los valores propios son <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica dos, y <span class="math inline">\(\lambda=2\)</span> con multiplicidad algebraica uno, y por tanto su multilicidad geométrica también es uno. Es necesario establecer para qué casos la multiplicidad geométrica de <span class="math inline">\(\lambda=1\)</span> es dos para que sea diagonalizable.<br> <strong><span class="math inline">\(V_{1}\)</span>:</strong> <span class="math display">\[\left(\begin{array}{ccc}
+=(2-\lambda)(1-\lambda)^2,
+\]</span></p>
+<p>luego los valores propios son <span class="math inline">\(\lambda=1\)</span> con multiplicidad algebraica dos, y <span class="math inline">\(\lambda=2\)</span> con multiplicidad algebraica uno, y por tanto su multilicidad geométrica también es uno. Es necesario establecer para qué casos la multiplicidad geométrica de <span class="math inline">\(\lambda=1\)</span> es dos para que sea diagonalizable.</p>
+<p><strong><span class="math inline">\(V_{1}\)</span>:</strong></p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
 0 &amp; a &amp; a \\
 -1 &amp; 0 &amp; -1 \\
   1 &amp;0  &amp; 1 \\
@@ -2100,7 +2203,12 @@ Estudiar para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span
 1 &amp;0  &amp; 1 \\
 0 &amp; a &amp; a \\
 0 &amp; 0 &amp; 0 \\
-\end{array}\right).\]</span> Si <span class="math inline">\(a\not =0\)</span> serían dos ecuaciones cartesianas y <span class="math inline">\(\dim(V_{1})=1\)</span>, luego solo es diagonalizable para <span class="math inline">\(a=0\)</span>. En ese caso la cartesiana de este subespacio propio es <span class="math inline">\(x+z=0\)</span> y por tanto una base es <span class="math inline">\(\{(1,0,-1),(0,1,0)\}\)</span>.<br> <strong><span class="math inline">\(V_{2}\)</span>:</strong> <span class="math display">\[\left(\begin{array}{ccc}
+\end{array}\right).
+\]</span></p>
+<p>Si <span class="math inline">\(a\not =0\)</span> serían dos ecuaciones cartesianas y <span class="math inline">\(\dim(V_{1})=1\)</span>, luego solo es diagonalizable para <span class="math inline">\(a=0\)</span>. En ese caso la cartesiana de este subespacio propio es <span class="math inline">\(x+z=0\)</span> y por tanto una base es <span class="math inline">\(\{(1,0,-1),(0,1,0)\}\)</span>.</p>
+<p><strong><span class="math inline">\(V_{2}\)</span>:</strong></p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
 -1 &amp; 0 &amp; 0 \\
 -1 &amp; -1 &amp; -1 \\
   1 &amp;0  &amp; 0 \\
@@ -2108,21 +2216,29 @@ Estudiar para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span
 1 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 1 \\
   0 &amp;0  &amp; 0 \\
-\end{array}\right),\]</span> que tiene cartesianas <span class="math inline">\(\left\{\begin{array}{l} x=0,\\ y+z=0.\end{array}\right.\)</span> Así una base es <span class="math inline">\(\{(0,1,-1)\}\)</span>. Por tanto <span class="math display">\[D=\left(\begin{array}{ccc}
+\end{array}\right),
+\]</span></p>
+<p>que tiene cartesianas <span class="math inline">\(\left\{\begin{array}{l} x=0,\\ y+z=0.\end{array}\right.\)</span> Así una base es <span class="math inline">\(\{(0,1,-1)\}\)</span>. Por tanto</p>
+<span class="math display">\[
+D=\left(\begin{array}{ccc}
 1 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 \\
   0 &amp;0  &amp; 2 \\
-\end{array}\right), \hspace{1cm} P=\left(\begin{array}{ccc}
+\end{array}\right), \hspace{1em} P=\left(\begin{array}{ccc}
 1 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 1 \\
 -1 &amp;0  &amp; -1 \\
-\end{array}\right).\]</span>
+\end{array}\right).
+\]</span>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Dado el endomorfismo de <span class="math inline">\(\mathbb{R}^3\)</span> que, respecto de la base canónica, viene dado por la matriz <span class="math display">\[\left(
+</div>
+</div>
+</div>
+</div>
+<div id="exr-14" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14</strong></span> Dado el endomorfismo de <span class="math inline">\(\mathbb{R}^3\)</span> que, respecto de la base canónica, viene dado por la matriz</p>
+<p><span class="math display">\[\left(
 \begin{array}{rrr}
   1 &amp; a &amp; a \\
   -1 &amp; 1 &amp; -1 \\
@@ -2138,16 +2254,30 @@ Calcula las dimensiones del núcleo y la imagen para todos los valores reales de
 ¿Para qué valores de <span class="math inline">\(a\)</span> es una aplicación lineal biyectiva?
 </li>
 <li>
-Calcula la matriz asociada a este endomorfismo respecto de la base <span class="math display">\[ B= \{ (1,0,-1), (1,1,-1),(0,1,-1)\}.\]</span>
+<p>Calcula la matriz asociada a este endomorfismo respecto de la base</p>
+<span class="math display">\[
+B= \{ (1,0,-1), (1,1,-1),(0,1,-1)\}.
+\]</span>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular las dimensiones del núcleo y la imagen para todos los valores reales de <span class="math inline">\(a\)</span>.<br> Puesto que <span class="math inline">\(\dim(\operatorname{Im}(f))=\operatorname{rg}(A)\)</span>, calculamos el rango de <span class="math inline">\(A\)</span>. <span class="math display">\[\left(
+<p>Calcular las dimensiones del núcleo y la imagen para todos los valores reales de <span class="math inline">\(a\)</span>.</p>
+<p>Puesto que <span class="math inline">\(\dim(\operatorname{Im}(f))=\operatorname{rg}(A)\)</span>, calculamos el rango de <span class="math inline">\(A\)</span>.</p>
+<p><span class="math display">\[
+\left(
     \begin{array}{ccc}
       1 &amp; a &amp; a \\
       -1 &amp; 1 &amp; -1 \\
@@ -2172,8 +2302,10 @@ Solución
       0 &amp; 0 &amp; 2 \\
     \end{array}
   \right),
-\]</span> luego el <span class="math inline">\(\operatorname{rg}(A)=3\)</span> para cualquier valor de <span class="math inline">\(a\)</span>. También lo podemos hacer por determinantes:</p>
-<p><span class="math display">\[\left|
+\]</span></p>
+<p>luego el <span class="math inline">\(\operatorname{rg}(A)=3\)</span> para cualquier valor de <span class="math inline">\(a\)</span>. También lo podemos hacer por determinantes:</p>
+<p><span class="math display">\[
+\left|
     \begin{array}{ccc}
       1 &amp; a &amp; a \\
       -1 &amp; 1 &amp; -1 \\
@@ -2185,22 +2317,36 @@ Solución
       0 &amp; 1+a &amp; a-1 \\
       0 &amp; -a &amp; 2-a \\
     \end{array}
-  \right| = (1+a)(2-a)-(-a)(a-1)=2+2a-a-a^2-(a-a^2)=2.\]</span></p>
-Por lo tanto <span class="math inline">\(\dim(\operatorname{Im}(f))=3\)</span> para todos los valores de <span class="math inline">\(a\)</span> y como <span class="math display">\[\dim(\operatorname{ker}(f))+\dim(\operatorname{Im}(f))=\dim(\mathbb{R}^3),\]</span> entonces <span class="math inline">\(\dim(\operatorname{ker}(f))=0\)</span> para todos los valores de <span class="math inline">\(a\)</span>.
+  \right| = (1+a)(2-a)-(-a)(a-1)=2+2a-a-a^2-(a-a^2)=2.
+\]</span></p>
+<p>Por lo tanto <span class="math inline">\(\dim(\operatorname{Im}(f))=3\)</span> para todos los valores de <span class="math inline">\(a\)</span> y como</p>
+<p><span class="math display">\[
+\dim(\operatorname{ker}(f))+\dim(\operatorname{Im}(f))=\dim(\mathbb{R}^3),\]</span></p>
+entonces <span class="math inline">\(\dim(\operatorname{ker}(f))=0\)</span> para todos los valores de <span class="math inline">\(a\)</span>.
 </li>
 <li>
-¿Para qué valores de <span class="math inline">\(a\)</span> es una aplicación lineal biyectiva?<br> Como <span class="math inline">\(\operatorname{ker}(f)=\{0\}\)</span>, la aplicación siempre es inyectiva, y como la <span class="math inline">\(\dim(\operatorname{Im}(f))=\dim(\mathbb{R}^3)\)</span>, siempre es sobreyectiva, así que es biyectiva para todos los valores de <span class="math inline">\(a\)</span>.
+<p>¿Para qué valores de <span class="math inline">\(a\)</span> es una aplicación lineal biyectiva?</p>
+Como <span class="math inline">\(\operatorname{ker}(f)=\{0\}\)</span>, la aplicación siempre es inyectiva, y como la <span class="math inline">\(\dim(\operatorname{Im}(f))=\dim(\mathbb{R}^3)\)</span>, siempre es sobreyectiva, así que es biyectiva para todos los valores de <span class="math inline">\(a\)</span>.
 </li>
 <li>
-<p>Calcular la matriz asociada a este endomorfismo respecto de la base <span class="math inline">\(B\)</span>.<br> Como conocemos los vectores de <span class="math inline">\(B\)</span> por sus coordenadas en <span class="math inline">\(B_c\)</span>, la matriz <span class="math inline">\(P\)</span> viene dada por esas coordenadas. <span class="math display">\[P=\left(
+<p>Calcular la matriz asociada a este endomorfismo respecto de la base <span class="math inline">\(B\)</span>.</p>
+<p>Como conocemos los vectores de <span class="math inline">\(B\)</span> por sus coordenadas en <span class="math inline">\(B_c\)</span>, la matriz <span class="math inline">\(P\)</span> viene dada por esas coordenadas.</p>
+<p><span class="math display">\[
+P=\left(
   \begin{array}{ccc}
    1 &amp; 1 &amp; 0 \\
     0 &amp; 1 &amp; 1 \\
    -1 &amp; -1 &amp; -1 \\
 \end{array}
-\right),\]</span></p>
-<p>luego <span class="math display">\[??=P^{-1}\cdot A\cdot P.\]</span> Calculamos <span class="math inline">\(P^{-1}\)</span>:</p>
-<p><span class="math display">\[\left(
+\right),
+\]</span></p>
+<p>luego</p>
+<p><span class="math display">\[
+??=P^{-1}\cdot A\cdot P.
+\]</span></p>
+<p>Calculamos <span class="math inline">\(P^{-1}\)</span>:</p>
+<p><span class="math display">\[
+\left(
     \begin{array}{ccc|ccc}
       1&amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
       0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
@@ -2219,8 +2365,10 @@ Por lo tanto <span class="math inline">\(\dim(\operatorname{Im}(f))=3\)</span> p
       0 &amp; 0 &amp; 1 &amp; -1 &amp; 0 &amp; -1 \\
     \end{array}
   \right).
-\]</span> Podemos comprobar el resultado:</p>
-<span class="math display">\[\left(
+\]</span></p>
+<p>Podemos comprobar el resultado:</p>
+<p><span class="math display">\[
+\left(
 \begin{array}{ccc}
 1 &amp; 1 &amp; 0 \\
 0 &amp; 1 &amp; 1 \\
@@ -2238,7 +2386,10 @@ Por lo tanto <span class="math inline">\(\dim(\operatorname{Im}(f))=3\)</span> p
 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1 \\
 \end{array}
-\right),\]</span> <span class="math display">\[\mathcal{M}(f,B)=P^{-1}\cdot A\cdot P =\left(
+\right),
+\]</span></p>
+<span class="math display">\[
+\mathcal{M}(f,B)=P^{-1}\cdot A\cdot P =\left(
 \begin{array}{ccc}
   1 &amp; 0 &amp; 0 \\
   -a &amp; 1 &amp; 0 \\
@@ -2248,10 +2399,13 @@ Por lo tanto <span class="math inline">\(\dim(\operatorname{Im}(f))=3\)</span> p
 \]</span>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Se considera el endomorfismo <span class="math inline">\(f: \mathcal{M}_2(\mathbb{R}) \longrightarrow\mathcal{M}_2(\mathbb{R})\)</span> dado por: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-15" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 15</strong></span> Se considera el endomorfismo <span class="math inline">\(f: \mathcal{M}_2(\mathbb{R}) \longrightarrow\mathcal{M}_2(\mathbb{R})\)</span> dado por:</p>
+<p><span class="math display">\[
 f\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = \begin{pmatrix} a+b &amp; a-b\\ c-d &amp; c-d \end{pmatrix}.
 \]</span></p>
 <ol type="a">
@@ -2259,14 +2413,18 @@ f\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = \begin{pmatrix} a+b &amp
 Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base estándar <span class="math inline">\(B_s\)</span> de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span>.
 </li>
 <li>
-Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span>: <span class="math display">\[B' = \left\{\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 1 &amp; 0 \\ -1 &amp; 0 \end{pmatrix},
-\begin{pmatrix}0 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix}0 &amp; 1 \\ 0 &amp; -1 \end{pmatrix}\right\}.\]</span>
+<p>Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span>:</p>
+<span class="math display">\[
+B' = \left\{\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \end{pmatrix}, \begin{pmatrix} 1 &amp; 0 \\ -1 &amp; 0 \end{pmatrix},
+\begin{pmatrix}0 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}, \begin{pmatrix}0 &amp; 1 \\ 0 &amp; -1 \end{pmatrix}\right\}.
+\]</span>
 </li>
 <li>
 Determinar bases de <span class="math inline">\(Ker(f)\)</span>, <span class="math inline">\(Im(f)\)</span>, <span class="math inline">\(Ker(f)\cap Im(f)\)</span> y <span class="math inline">\(Ker(f)+ Im(f)\)</span>.
 </li>
 <li>
-Determinar una base <span class="math inline">\(B\)</span> de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> de forma que la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(B_s\)</span> y <span class="math inline">\(B\)</span> sea <span class="math display">\[
+<p>Determinar una base <span class="math inline">\(B\)</span> de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> de forma que la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(B_s\)</span> y <span class="math inline">\(B\)</span> sea</p>
+<span class="math display">\[
 H=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
@@ -2276,19 +2434,28 @@ H=\begin{pmatrix}
 \]</span>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(B_s\)</span>.<br></p>
+<p>Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(B_s\)</span>.</p>
 <p><span class="math display">\[\begin{alignat}{4}
    f\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix} &amp;= \begin{pmatrix} 1 &amp; 1\\ 0 &amp; 0 \end{pmatrix}=(1,1,0,0)_{B_s},\qquad &amp; f\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} &amp;= \begin{pmatrix} 1 &amp; -1\\ 0 &amp; 0 \end{pmatrix}=(1,-1,0,0)_{B_s},\\
    f\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix} &amp;= \begin{pmatrix} 0 &amp; 0\\ 1 &amp; 1 \end{pmatrix}=(0,0,1,1)_{B_s},\qquad &amp; f\begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} &amp;= \begin{pmatrix} 0 &amp; 0\\ -1 &amp; -1 \end{pmatrix}=(0,0,-1,-1)_{B_s}.
     \notag
 \end{alignat}\]</span></p>
-Así, la matriz asociada respecto de <span class="math inline">\(B_s\)</span> es <span class="math display">\[
+<p>Así, la matriz asociada respecto de <span class="math inline">\(B_s\)</span> es</p>
+<span class="math display">\[
 A=\begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 0\\
 1 &amp; -1 &amp; 0 &amp; 0\\
@@ -2298,20 +2465,24 @@ A=\begin{pmatrix}
 \]</span>
 </li>
 <li>
-<p>Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base B’.<br> Puede construirse el diagrama correspondiente y tendremos que <span class="math display">\[\mathcal{M}(f,B')= P^{-1}AP,\]</span> siendo <span class="math inline">\(P\)</span> la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B_s\)</span>: <span class="math display">\[
+<p>Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base B’.</p>
+<p>Puede construirse el diagrama correspondiente y tendremos que <span class="math display">\[\mathcal{M}(f,B')= P^{-1}AP,\]</span> siendo <span class="math inline">\(P\)</span> la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B_s\)</span>:</p>
+<p><span class="math display">\[
 P=\begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 1 &amp; 1\\
 1 &amp; -1 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 1 &amp; -1
 \end{pmatrix},
-\]</span> o también puede realizarse el mismo procedimiento que en el apartado anterior, teniendo en cuenta que ahora las imágenes hay que expresarlas en función de <span class="math inline">\(B'\)</span>:</p>
+\]</span></p>
+<p>o también puede realizarse el mismo procedimiento que en el apartado anterior, teniendo en cuenta que ahora las imágenes hay que expresarlas en función de <span class="math inline">\(B'\)</span>:</p>
 <p><span class="math display">\[\begin{alignat}{4}
   f\begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 0 \end{pmatrix} &amp;= \begin{pmatrix} 1 &amp; 1\\ 1 &amp; 1 \end{pmatrix}=(1,0,1,0)_{B'},\qquad &amp; f\begin{pmatrix} 1 &amp; 0 \\ -1 &amp; 0 \end{pmatrix} &amp;= \begin{pmatrix} 1 &amp; 1\\ -1 &amp; -1 \end{pmatrix}=(0,1,0,1)_{B'},\\
   f\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; 1 \end{pmatrix} &amp;= \begin{pmatrix} 1 &amp; -1\\ -1 &amp; -1 \end{pmatrix}=(0,1,-1,0)_{B'},\qquad &amp; f\begin{pmatrix} 0 &amp; 1 \\ 0 &amp; -1 \end{pmatrix} &amp;= \begin{pmatrix} 1 &amp; -1\\ 1 &amp; 1 \end{pmatrix}=(1,0,0,-1)_{B'}.
   \notag
 \end{alignat}\]</span></p>
-con lo que la matriz pedida es <span class="math display">\[
+<p>con lo que la matriz pedida es</p>
+<span class="math display">\[
 \begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 1 &amp; 1 &amp; 0\\
@@ -2321,7 +2492,9 @@ con lo que la matriz pedida es <span class="math display">\[
 \]</span>
 </li>
 <li>
-Determinar bases de <span class="math inline">\(\operatorname{ker}(f)\)</span>, <span class="math inline">\(\operatorname{Im}(f)\)</span>, <span class="math inline">\(\operatorname{ker}(f)\cap \operatorname{Im}(f)\)</span> y <span class="math inline">\(\operatorname{ker}(f)+ \operatorname{Im}(f)\)</span>.<br> Usando la matriz <span class="math inline">\(A\)</span>, que usa coordenadas respecto de la base estándar, calculamos bases del núcleo y la imagen: <span class="math display">\[
+<p>Determinar bases de <span class="math inline">\(\operatorname{ker}(f)\)</span>, <span class="math inline">\(\operatorname{Im}(f)\)</span>, <span class="math inline">\(\operatorname{ker}(f)\cap \operatorname{Im}(f)\)</span> y <span class="math inline">\(\operatorname{ker}(f)+ \operatorname{Im}(f)\)</span>.</p>
+<p>Usando la matriz <span class="math inline">\(A\)</span>, que usa coordenadas respecto de la base estándar, calculamos bases del núcleo y la imagen:</p>
+<p><span class="math display">\[
 \left(\frac{A}{I}\right)=\begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 0\\
 1 &amp; -1 &amp; 0 &amp; 0\\
@@ -2353,26 +2526,33 @@ Determinar bases de <span class="math inline">\(\operatorname{ker}(f)\)</span>, 
 0 &amp; 0 &amp; 1 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 1\\
 \end{pmatrix},
-\]</span> y obtenemos que una base de <span class="math inline">\(\operatorname{Im}(f)\)</span> es <span class="math inline">\(\{(1,0,0,0)_{B_s},(0,1,0,0)_{B_s},(0,0,1,1)_{B_s}\}\)</span> y una base de <span class="math inline">\(\operatorname{ker}(f)\)</span> es <span class="math inline">\(\{ (0,0,1,1)_{B_s}\}\)</span> con lo que es evidente que <span class="math inline">\(\operatorname{ker}(f)\subset \operatorname{Im}(f)\)</span> y por tanto <span class="math inline">\(\operatorname{ker}(f)+\operatorname{Im}(f)=\operatorname{Im}(f)\)</span> y <span class="math inline">\(\operatorname{ker}(f)\cap \operatorname{Im}(f)=\operatorname{ker}(f)\)</span>.
+\]</span></p>
+y obtenemos que una base de <span class="math inline">\(\operatorname{Im}(f)\)</span> es <span class="math inline">\(\{(1,0,0,0)_{B_s},(0,1,0,0)_{B_s},(0,0,1,1)_{B_s}\}\)</span> y una base de <span class="math inline">\(\operatorname{ker}(f)\)</span> es <span class="math inline">\(\{ (0,0,1,1)_{B_s}\}\)</span> con lo que es evidente que <span class="math inline">\(\operatorname{ker}(f)\subset \operatorname{Im}(f)\)</span> y por tanto <span class="math inline">\(\operatorname{ker}(f)+\operatorname{Im}(f)=\operatorname{Im}(f)\)</span> y <span class="math inline">\(\operatorname{ker}(f)\cap \operatorname{Im}(f)=\operatorname{ker}(f)\)</span>.
 </li>
 <li>
-<p>Determinar una base <span class="math inline">\(B\)</span> de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> de forma que la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(B_s\)</span> y <span class="math inline">\(B\)</span> sea <span class="math inline">\(H\)</span>.<br> Como nos piden que la base solo cambie en el segundo espacio, basta observar que se trata de que las coordenadas de las matrices calculadas en el primer apartado sean:</p>
-<p><span class="math display">\[\begin{pmatrix} 1 &amp; 1\\ 0 &amp; 0 \end{pmatrix}=(1,0,0,0)_{B}
+<p>Determinar una base <span class="math inline">\(B\)</span> de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> de forma que la matriz asociada a <span class="math inline">\(f\)</span> respecto de las bases <span class="math inline">\(B_s\)</span> y <span class="math inline">\(B\)</span> sea <span class="math inline">\(H\)</span>.</p>
+<p>Como nos piden que la base solo cambie en el segundo espacio, basta observar que se trata de que las coordenadas de las matrices calculadas en el primer apartado sean:</p>
+<p><span class="math display">\[
+\begin{pmatrix} 1 &amp; 1\\ 0 &amp; 0 \end{pmatrix}=(1,0,0,0)_{B}
 \hspace{0.5cm}
 \begin{pmatrix} 1 &amp; -1\\ 0 &amp; 0 \end{pmatrix}=(0,1,0,0)_{B}
 \hspace{0.5cm}
 \begin{pmatrix} 0 &amp; 0\\ 1 &amp; 1 \end{pmatrix}=(0,0,1,0)_{B}
-\]</span> Así que están determinados los tres vectores de la base <span class="math inline">\(B\)</span>. Para completar la base puede elegirse cualquier matriz linealmente independiente con las tres anteriores, por ejemplo podemos tomar:</p>
+\]</span></p>
+<p>Así que están determinados los tres vectores de la base <span class="math inline">\(B\)</span>. Para completar la base puede elegirse cualquier matriz linealmente independiente con las tres anteriores, por ejemplo podemos tomar:</p>
 <span class="math display">\[ \left\{ \begin{pmatrix} 1 &amp; 1\\ 0 &amp; 0 \end{pmatrix},\,
 \begin{pmatrix} 1 &amp; -1\\ 0 &amp; 0 \end{pmatrix},\,
 \begin{pmatrix} 0 &amp; 0\\ 1 &amp; 1 \end{pmatrix},\,
-\begin{pmatrix} 0 &amp; 0\\ 0 &amp; 1 \end{pmatrix} \right\}.\]</span>
+\begin{pmatrix} 0 &amp; 0\\ 0 &amp; 1 \end{pmatrix} \right\}.
+\]</span>
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Se considera la aplicación lineal <span class="math inline">\(D:\mathcal{P}_4(\mathbb{R}) \longrightarrow \mathcal{P}_3(\mathbb{R})\)</span> dada por <span class="math inline">\(D(p(x))=p'(x)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-16" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 16</strong></span> Se considera la aplicación lineal <span class="math inline">\(D:\mathcal{P}_4(\mathbb{R}) \to \mathcal{P}_3(\mathbb{R})\)</span> dada por <span class="math inline">\(D(p(x))=p'(x)\)</span>.</p>
 <ol type="a">
 <li>
 Calcular el núcleo de <span class="math inline">\(D\)</span>.
@@ -2381,7 +2561,8 @@ Calcular el núcleo de <span class="math inline">\(D\)</span>.
 Determinar la matriz asociada respecto de las bases <span class="math inline">\(B_{s,4}=\{1,x,x^2,x^3, x^4\}\)</span> de <span class="math inline">\(\mathcal{P}_4(\mathbb{R})\)</span> y <span class="math inline">\(B_{s,3}=\{1,x,x^2,x^3\}\)</span> de <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span>.
 </li>
 <li>
-Determinar bases <span class="math inline">\(B\)</span> de <span class="math inline">\(\mathcal{P}_4(\mathbb{R})\)</span> y <span class="math inline">\(B'\)</span> de <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de forma que la matriz asociada a <span class="math inline">\(D\)</span> respecto de estas bases sea: <span class="math display">\[
+<p>Determinar bases <span class="math inline">\(B\)</span> de <span class="math inline">\(\mathcal{P}_4(\mathbb{R})\)</span> y <span class="math inline">\(B'\)</span> de <span class="math inline">\(\mathcal{P}_3(\mathbb{R})\)</span> de forma que la matriz asociada a <span class="math inline">\(D\)</span> respecto de estas bases sea:</p>
+<span class="math display">\[
 M_{BB'}(D)=\begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
@@ -2391,30 +2572,51 @@ M_{BB'}(D)=\begin{pmatrix}
 \]</span>
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular el núcleo de <span class="math inline">\(D\)</span>.<br> El núcleo de una aplicación lineal son los vectores cuya imagen vale cero, en este caso los polinomios cuya imagen por <span class="math inline">\(D\)</span>, es decir, su derivada, vale cero. Es claro que tales polinomios son los polinomios constantes, por tanto el núcleo está formado por los polinomios constantes.
+<p>Calcular el núcleo de <span class="math inline">\(D\)</span>.</p>
+El núcleo de una aplicación lineal son los vectores cuya imagen vale cero, en este caso los polinomios cuya imagen por <span class="math inline">\(D\)</span>, es decir, su derivada, vale cero. Es claro que tales polinomios son los polinomios constantes, por tanto el núcleo está formado por los polinomios constantes.
 </li>
 <li>
-Determinar la matriz asociada respecto de las bases <span class="math inline">\(B_{s,4}\)</span> y <span class="math inline">\(B_{s,3}\)</span>.<br> Para calcular dicha matriz calculamos las imágenes de los vectores de la base <span class="math inline">\(B_{s,4}\)</span> y los escribimos usando coordenadas respecto de <span class="math inline">\(B_{s,3}\)</span>: <span class="math display">\[\begin{array}{l}
+<p>Determinar la matriz asociada respecto de las bases <span class="math inline">\(B_{s,4}\)</span> y <span class="math inline">\(B_{s,3}\)</span>.</p>
+<p>Para calcular dicha matriz calculamos las imágenes de los vectores de la base <span class="math inline">\(B_{s,4}\)</span> y los escribimos usando coordenadas respecto de <span class="math inline">\(B_{s,3}\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{l}
 D(1)=0=(0,0,0,0)_{B_{s,3}},\\
 D(x)=1=(1,0,0,0)_{B_{s,3}},\\
 D(x^2)=2x=(0,2,0,0)_{B_{s,3}},\\
 D(x^3)=3x^2=(0,0,3,0)_{B_{s,3}},\\
 D(x^4)=4x^3=(0,0,0,4)_{B_{s,3}}.\\
-\end{array}.\]</span> Así la matriz pedida es <span class="math display">\[A=\begin{pmatrix}
+\end{array}.
+\]</span></p>
+<p>Así la matriz pedida es</p>
+<span class="math display">\[
+A=\begin{pmatrix}
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 2 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 3 &amp; 0\\
   0 &amp; 0 &amp; 0 &amp; 0 &amp; 4\\
-\end{pmatrix}.\]</span>
+\end{pmatrix}.
+\]</span>
 </li>
 <li>
-Determinar bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span> de forma que la matriz asociada a <span class="math inline">\(D\)</span> respecto de estas bases sea <span class="math inline">\(M_{BB'}(D)\)</span>.<br> Es bastante fácil comprobar que la forma de Hermite por columnas de la matriz <span class="math inline">\(A\)</span> anterior es exactamente la que se da en este apartado. Por tanto existe una matriz regular <span class="math inline">\(P\)</span> tal que <span class="math inline">\(AP= M_{BB'}(D)\)</span>. En un diagrama de cambio de base obtendríamos que solo es necesario realizar un cambio de base en el primer espacio para que la matriz asociada a <span class="math inline">\(D\)</span> sea la dada. Además esa nueva base <span class="math inline">\(B\)</span> viene dada por las columnas de <span class="math inline">\(P\)</span>, mientras que en el segundo espacio no es necesario cambiar de base.<br> Calculamos una matriz <span class="math inline">\(P\)</span> (la solución no es única) que verifique <span class="math inline">\(AP=M_{BB'}(D)\)</span>: <span class="math display">\[A=\begin{pmatrix}
+<p>Determinar bases <span class="math inline">\(B\)</span> y <span class="math inline">\(B'\)</span> de forma que la matriz asociada a <span class="math inline">\(D\)</span> respecto de estas bases sea <span class="math inline">\(M_{BB'}(D)\)</span>.</p>
+<p>Es bastante fácil comprobar que la forma de Hermite por columnas de la matriz <span class="math inline">\(A\)</span> anterior es exactamente la que se da en este apartado. Por tanto existe una matriz regular <span class="math inline">\(P\)</span> tal que <span class="math inline">\(AP= M_{BB'}(D)\)</span>. En un diagrama de cambio de base obtendríamos que solo es necesario realizar un cambio de base en el primer espacio para que la matriz asociada a <span class="math inline">\(D\)</span> sea la dada. Además esa nueva base <span class="math inline">\(B\)</span> viene dada por las columnas de <span class="math inline">\(P\)</span>, mientras que en el segundo espacio no es necesario cambiar de base.</p>
+<p>Calculamos una matriz <span class="math inline">\(P\)</span> (la solución no es única) que verifique <span class="math inline">\(AP=M_{BB'}(D)\)</span>:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 2 &amp; 0 &amp; 0\\
   0 &amp; 0 &amp; 0 &amp; 3 &amp; 0\\
@@ -2436,13 +2638,18 @@ Determinar bases <span class="math inline">\(B\)</span> y <span class="math inli
 0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0\\
   0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0\\
    0 &amp; 0 &amp; 0 &amp; 1/4 &amp; 0\\
-    \end{pmatrix}.\]</span> Así tenemos que <span class="math inline">\(B'=B_{s,3}\)</span> y <span class="math inline">\(B=\{x, x^2/2, x^3/3, x^4/4, 1\}\)</span>.
+    \end{pmatrix}.
+\]</span></p>
+Así tenemos que <span class="math inline">\(B'=B_{s,3}\)</span> y <span class="math inline">\(B=\{x, x^2/2, x^3/3, x^4/4, 1\}\)</span>.
 </li>
 </ol>
-</details>
-</article>
-<article>
-<p>Se considera la matriz: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-17" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 17</strong></span> Se considera la matriz:</p>
+<p><span class="math display">\[
 A=\begin{pmatrix}
 a+1 &amp; 0 &amp;0 \\ 1 &amp; 1 &amp; -1 \\ 1 &amp;-1 &amp; 1
 \end{pmatrix}
@@ -2455,17 +2662,33 @@ Estudiar para qué valores del parámetro <span class="math inline">\(a\)</span>
 Para el valor <span class="math inline">\(a=0\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> y una matriz de paso <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(D=P^{-1}\cdot A \cdot P\)</span>.
 </li>
 </ol>
-<details>
-<summary>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Estudiar para qué valores del parámetro <span class="math inline">\(a\)</span> es <span class="math inline">\(A\)</span> diagonalizable.<br> Calculamos la ecuación característica: <span class="math display">\[\begin{align*}|A-\lambda I|&amp;= \left|\begin{array}{ccc}
+<p>Estudiar para qué valores del parámetro <span class="math inline">\(a\)</span> es <span class="math inline">\(A\)</span> diagonalizable.</p>
+<p>Calculamos la ecuación característica:</p>
+<p><span class="math display">\[
+\begin{align*}|A-\lambda I|&amp;= \left|\begin{array}{ccc}
 a+1-\lambda &amp; 0 &amp;0 \\ 1 &amp; 1-\lambda &amp; -1 \\ 1 &amp;-1 &amp; 1-\lambda
 \end{array}\right|= (a+1-\lambda)[(1-\lambda)^2-1]\\
 &amp;=(a+1-\lambda)(\lambda^2-2\lambda)=\lambda(a+1-\lambda)(\lambda-2).
-\end{align*}\]</span> Cuando <span class="math inline">\(a+1\not = 0,2\)</span> entonces aparecen tres valores propios distintos, cada uno con multiplicidad algebraica 1 y por tanto la geométrica también es 1, con lo que la matriz es diagonalizable.<br> Quedan por estudiar dos casos:<br> <strong>Cuando <span class="math inline">\(a=-1\)</span>:</strong> <br> Nos queda que el valor propio <span class="math inline">\(\lambda=0\)</span> tiene multiplicidad algebraica 2 y por tanto hay que calcular su multiplicidad geométrica.</p>
+\end{align*}
+\]</span></p>
+<p>Cuando <span class="math inline">\(a+1\not = 0,2\)</span> entonces aparecen tres valores propios distintos, cada uno con multiplicidad algebraica 1 y por tanto la geométrica también es 1, con lo que la matriz es diagonalizable.</p>
+<p>Quedan por estudiar dos casos:</p>
+<p><strong>Cuando <span class="math inline">\(a=-1\)</span>:</strong></p>
+<p>Nos queda que el valor propio <span class="math inline">\(\lambda=0\)</span> tiene multiplicidad algebraica 2 y por tanto hay que calcular su multiplicidad geométrica.</p>
 <p><span class="math display">\[
 V_{0}\equiv \begin{pmatrix}
 0 &amp; 0 &amp;0 \\ 1 &amp; 1 &amp; -1 \\ 1 &amp;-1 &amp; 1
@@ -2477,7 +2700,9 @@ z\\
 0\\ 0 \\0
 \end{pmatrix},
 \]</span></p>
-<p>nos da dos ecuaciones cartesianas y por tanto <span class="math inline">\(m_g(\lambda=0)= \dim(V_{0})=1\)</span> y por tanto en este caso no es diagonalizable.<br> <strong>Cuando <span class="math inline">\(a=1\)</span>: </strong><br> Tendremos que el valor propio <span class="math inline">\(\lambda=2\)</span> tiene multiplicidad algebraica 2 y por tanto hay que calcular su multiplicidad geométrica.</p>
+<p>nos da dos ecuaciones cartesianas y por tanto <span class="math inline">\(m_g(\lambda=0)= \dim(V_{0})=1\)</span> y por tanto en este caso no es diagonalizable.</p>
+<p><strong>Cuando <span class="math inline">\(a=1\)</span>:</strong></p>
+<p>Tendremos que el valor propio <span class="math inline">\(\lambda=2\)</span> tiene multiplicidad algebraica 2 y por tanto hay que calcular su multiplicidad geométrica.</p>
 <p><span class="math display">\[
 V_{2}\equiv \begin{pmatrix}
 0 &amp; 0 &amp;0 \\ 1 &amp; -1 &amp; -1 \\ 1 &amp;-1 &amp; -1
@@ -2492,19 +2717,37 @@ z\\
 nos da una ecuación cartesiana y por tanto <span class="math inline">\(m_g(\lambda=2)= \dim(V_{0})=2\)</span> y por tanto en este caso sí es diagonalizable.
 </li>
 <li>
-Para el valor <span class="math inline">\(a=0\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> y una matriz de paso <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(D=P^{-1}\cdot A \cdot P\)</span>.<br> Para el caso <span class="math inline">\(a=0\)</span> tenemos los valores propios <span class="math inline">\(0,1\)</span> y <span class="math inline">\(2\)</span> que serán los elementos de la matriz diagonal. Calculamos bases de cada uno de los subespacios propios:<br> <strong><span class="math inline">\(\lambda=0\)</span>:</strong><br> <span class="math display">\[\begin{pmatrix}
+<p>Para el valor <span class="math inline">\(a=0\)</span> determinar su forma diagonal <span class="math inline">\(D\)</span> y una matriz de paso <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(D=P^{-1}\cdot A \cdot P\)</span>.</p>
+<p>Para el caso <span class="math inline">\(a=0\)</span> tenemos los valores propios <span class="math inline">\(0,1\)</span> y <span class="math inline">\(2\)</span> que serán los elementos de la matriz diagonal. Calculamos bases de cada uno de los subespacios propios:</p>
+<p><strong><span class="math inline">\(\lambda=0\)</span>:</strong></p>
+<p><span class="math display">\[
+\begin{pmatrix}
 1 &amp; 0 &amp;0 \\ 1 &amp; 1 &amp; -1 \\ 1 &amp;-1 &amp; 1
 \end{pmatrix}\sim_f \begin{pmatrix}
 1 &amp; 0 &amp;0 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp;0 &amp; 0
-\end{pmatrix},\]</span> nos da unas ecuaciones cartesianas y por tanto una base es <span class="math inline">\(\{(0,1,1)\}\)</span>.<br> <strong><span class="math inline">\(\lambda=1\)</span>:</strong><br> <span class="math display">\[\begin{pmatrix}
+\end{pmatrix},
+\]</span></p>
+<p>nos da unas ecuaciones cartesianas y por tanto una base es <span class="math inline">\(\{(0,1,1)\}\)</span>.</p>
+<p><strong><span class="math inline">\(\lambda=1\)</span>:</strong></p>
+<p><span class="math display">\[
+\begin{pmatrix}
 0 &amp; 0 &amp;0 \\ 1 &amp; 0 &amp; -1 \\ 1 &amp;-1 &amp; 0
 \end{pmatrix}\sim_f \begin{pmatrix}
 1 &amp; 0 &amp;-1 \\ 0 &amp; 1 &amp; -1 \\ 0 &amp;0 &amp; 0
-\end{pmatrix},\]</span> nos da unas ecuaciones cartesianas y una base es <span class="math inline">\(\{(1,1,1)\}\)</span>.<br> <strong><span class="math inline">\(\lambda=2\)</span>:</strong><br> <span class="math display">\[\begin{pmatrix}
+\end{pmatrix},
+\]</span></p>
+<p>nos da unas ecuaciones cartesianas y una base es <span class="math inline">\(\{(1,1,1)\}\)</span>.</p>
+<p><strong><span class="math inline">\(\lambda=2\)</span>:</strong></p>
+<p><span class="math display">\[
+\begin{pmatrix}
 -1 &amp; 0 &amp;0 \\ 1 &amp; -1 &amp; -1 \\ 1 &amp;-1 &amp; -1
 \end{pmatrix}\sim_f \begin{pmatrix}
 1 &amp; 0 &amp;0 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp;0 &amp; 0
-\end{pmatrix},\]</span> nos da unas ecuaciones cartesianas y una base es <span class="math inline">\(\{(0,1,-1)\}\)</span>.<br> Como solución, por ejemplo, podemos tomar <span class="math display">\[D=\begin{pmatrix}
+\end{pmatrix},
+\]</span></p>
+<p>nos da unas ecuaciones cartesianas y una base es <span class="math inline">\(\{(0,1,-1)\}\)</span>.<br> Como solución, por ejemplo, podemos tomar</p>
+<span class="math display">\[
+D=\begin{pmatrix}
 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 2
@@ -2512,23 +2755,40 @@ Para el valor <span class="math inline">\(a=0\)</span> determinar su forma diago
 0 &amp; 1 &amp; 0\\
 1 &amp; 1 &amp; 1\\
 1 &amp; 1 &amp; -1
-\end{pmatrix}. \]</span>
+\end{pmatrix}.
+\]</span>
 </li>
 </ol>
-</details>
-</article>
-<article>
-Se considera la aplicación lineal <span class="math display">\[
-f: \mathcal{M}_2(\mathbb{R}) \longrightarrow \mathcal{M}_2(\mathbb{R})
-\]</span> definida por: <span class="math display">\[
+</div>
+</div>
+</div>
+</div>
+<div id="exr-18" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 18</strong></span> Se considera la aplicación lineal</p>
+<p><span class="math display">\[
+f: \mathcal{M}_2(\mathbb{R}) \to \mathcal{M}_2(\mathbb{R})
+\]</span></p>
+<p>definida por:</p>
+<p><span class="math display">\[
 f\left( \begin{pmatrix} a &amp; b \\ c &amp; d\end{pmatrix}\right) =
 \begin{pmatrix} a+d &amp; b+c \\ b-c &amp; a+d\end{pmatrix}
-\]</span> Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto a la base estándard de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> y determinar bases de <span class="math inline">\(\operatorname{ker}(f)\)</span> e <span class="math inline">\(\operatorname{Im}(f)\)</span>. ¿Es <span class="math inline">\(f\)</span> inyectiva? ¿Es <span class="math inline">\(f\)</span> sobreyectiva?
-<details>
-<summary>
+\]</span></p>
+<p>Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto a la base estándard de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> y determinar bases de <span class="math inline">\(\operatorname{ker}(f)\)</span> e <span class="math inline">\(\operatorname{Im}(f)\)</span>. ¿Es <span class="math inline">\(f\)</span> inyectiva? ¿Es <span class="math inline">\(f\)</span> sobreyectiva?</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 Solución
-</summary>
-<p>La base estándar que vamos a usar en <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> es <span class="math display">\[ B_s= \left\{  \left( \begin{array}{rr}
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La base estándar que vamos a usar en <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> es</p>
+<p><span class="math display">\[
+B_s= \left\{  \left( \begin{array}{rr}
 1 &amp; 0 \\
 0 &amp; 0 \\
 \end{array} \right), \, \left( \begin{array}{rr}
@@ -2540,39 +2800,57 @@ Solución
 \end{array} \right), \, \left( \begin{array}{rr}
 0 &amp; 0 \\
 0 &amp; 1 \\
-\end{array} \right) \right\}.\]</span><br>
-Calculamos la imagen por <span class="math inline">\(f\)</span> de cada uno de estos vectores y la escribimos en función de <span class="math inline">\(B_s\)</span>. <span class="math display">\[f(\left( \begin{array}{rr}
+\end{array} \right) \right\}.
+\]</span></p>
+<p>Calculamos la imagen por <span class="math inline">\(f\)</span> de cada uno de estos vectores y la escribimos en función de <span class="math inline">\(B_s\)</span>.</p>
+<p><span class="math display">\[
+f(\left( \begin{array}{rr}
 1 &amp; 0 \\
 0 &amp; 0 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 1 &amp; 0 \\
 0 &amp; 1 \\
-\end{array} \right)=(1,0,0,1)_{B_{s}}, \]</span> <span class="math display">\[f(\left( \begin{array}{rr}
+\end{array} \right)=(1,0,0,1)_{B_{s}},
+\]</span></p>
+<p><span class="math display">\[
+f(\left( \begin{array}{rr}
 0 &amp; 1 \\
 0 &amp; 0 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 0 &amp; 1 \\
 1 &amp; 0 \\
-\end{array} \right)=(0,1,1,0)_{B_{s}}, \]</span> <span class="math display">\[f(\left( \begin{array}{rr}
+\end{array} \right)=(0,1,1,0)_{B_{s}},
+\]</span></p>
+<p><span class="math display">\[
+f(\left( \begin{array}{rr}
 0 &amp; 0 \\
 1 &amp; 0 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 0 &amp; 1 \\
 -1 &amp; 0 \\
-\end{array} \right)=(0,1,-1,0)_{B_{s}}, \]</span> <span class="math display">\[f(\left( \begin{array}{rr}
+\end{array} \right)=(0,1,-1,0)_{B_{s}},
+\]</span></p>
+<p><span class="math display">\[
+f(\left( \begin{array}{rr}
 0 &amp; 0 \\
 0 &amp; 1 \\
 \end{array} \right) )= \left( \begin{array}{rr}
 1 &amp; 0 \\
 0 &amp; 1 \\
-\end{array} \right)=(1,0,0,1)_{B_{s}}. \]</span></p>
+\end{array} \right)=(1,0,0,1)_{B_{s}}.
+\]</span></p>
 <p>La matriz asociada resulta de poner estos cuatro vectores por columnas:</p>
-<p><span class="math display">\[ A= \left( \begin{array}{rrrr}
+<p><span class="math display">\[
+A= \left( \begin{array}{rrrr}
 1 &amp; 0 &amp; 0 &amp; 1 \\
 0 &amp; 1 &amp; 1 &amp; 0 \\
 0 &amp; 1 &amp; -1 &amp; 0\\
 1 &amp; 0 &amp; 0 &amp; 1  
-\end{array} \right). \]</span> Para calcular simultáneamente una base del núcleo y una de la imagen añadimos la identidad bajo <span class="math inline">\(A\)</span> y hacemos operaciones elementales por columnas: <span class="math display">\[ \left( \begin{array}{rrrr}
+\end{array} \right).
+\]</span></p>
+<p>Para calcular simultáneamente una base del núcleo y una de la imagen añadimos la identidad bajo <span class="math inline">\(A\)</span> y hacemos operaciones elementales por columnas:</p>
+<p><span class="math display">\[
+\left( \begin{array}{rrrr}
 1 &amp; 0 &amp; 0 &amp; 1 \\
 0 &amp; 1 &amp; 1 &amp; 0 \\
 0 &amp; 1 &amp; -1 &amp; 0\\
@@ -2604,9 +2882,12 @@ Calculamos la imagen por <span class="math inline">\(f\)</span> de cada uno de e
 0 &amp; 1/2 &amp; -1/2 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1  \\
 \end{array} \right).
-\]</span> Así tenemos que una base de la imagen es <span class="math inline">\(\{(1,0,0,1),(0,1,0,0),(0,0,1,0)\}\)</span> y una base del núcleo es <span class="math inline">\(\{(-1,0,0,1)\}\)</span>. Puesto que la dimensión de la imagen es tres, no es sobreyectiva. Como la dimensión del núcleo es uno, no es inyectiva.</p>
-</details>
-</article>
+\]</span></p>
+<p>Así tenemos que una base de la imagen es <span class="math inline">\(\{(1,0,0,1),(0,1,0,0),(0,0,1,0)\}\)</span> y una base del núcleo es <span class="math inline">\(\{(-1,0,0,1)\}\)</span>. Puesto que la dimensión de la imagen es tres, no es sobreyectiva. Como la dimensión del núcleo es uno, no es inyectiva.</p>
+</div>
+</div>
+</div>
+</div>
 
 
 

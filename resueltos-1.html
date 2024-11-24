@@ -1335,7 +1335,7 @@ Solución
 <ol type="a">
 <li>
 <p>Encontrar <span class="math inline">\(B\)</span> tal que <span class="math inline">\(A\cdot B = Id\)</span>.</p>
-<p>¿Qué orden debe tener <span class="math inline">\(B\)</span>? Como la identidad es una matriz cuadrada, y <span class="math inline">\(A\)</span> tiene tres filas, deducimos que <span class="math inline">\(I\)</span> es la identidad <span class="math inline">\(3\times 3\)</span>. De aquí también deducimos que <span class="math inline">\(B\)</span> tiene que tener cuatro filas y tres columnas.<br></p>
+<p>¿Qué orden debe tener <span class="math inline">\(B\)</span>? Como la identidad es una matriz cuadrada, y <span class="math inline">\(A\)</span> tiene tres filas, deducimos que <span class="math inline">\(I\)</span> es la identidad <span class="math inline">\(3\times 3\)</span>. De aquí también deducimos que <span class="math inline">\(B\)</span> tiene que tener cuatro filas y tres columnas.</p>
 <p>Si calculamos la forma de Hermite por columnas de <span class="math inline">\(A\)</span> y la matriz de paso, a la que llamaremos <span class="math inline">\(Q\)</span>, entonces <span class="math inline">\(A Q=H\)</span>. La matriz <span class="math inline">\(H\)</span> no es la matriz identidad, por supuesto, porque tiene orden <span class="math inline">\(3\times 4\)</span>, pero puede parecerse bastante. Calculémosla:</p>
 <p><span class="math display">\[
 \left[ \begin{array}{c}
@@ -1531,12 +1531,12 @@ x_4=1, &amp; y_4=0, &amp; z_4=1,\\
 \]</span>
 </li>
 <li>
-<p>Encontrar <span class="math inline">\(C\)</span> tal que <span class="math inline">\(C\cdot A = Id\)</span>. Si pensamos primero en el orden de <span class="math inline">\(C\)</span>, como <span class="math inline">\(A\)</span> tiene tres filas y cuatro columnas, necesariamente <span class="math inline">\(C\)</span> debe tener tres columnas. Por otro lado, como la matriz identidad es cuadrada, en este caso será una matriz <span class="math inline">\(4\times4\)</span>, por lo que <span class="math inline">\(C\)</span> debe tener cuatro filas.<br></p>
+<p>Encontrar <span class="math inline">\(C\)</span> tal que <span class="math inline">\(C\cdot A = Id\)</span>. Si pensamos primero en el orden de <span class="math inline">\(C\)</span>, como <span class="math inline">\(A\)</span> tiene tres filas y cuatro columnas, necesariamente <span class="math inline">\(C\)</span> debe tener tres columnas. Por otro lado, como la matriz identidad es cuadrada, en este caso será una matriz <span class="math inline">\(4\times4\)</span>, por lo que <span class="math inline">\(C\)</span> debe tener cuatro filas.</p>
 <p>El argumento más fácil de utilizar es posterior al momento en que nos encontramos en el desarrollo del tema. Se usa:</p>
 <p><span class="math display">\[
 \operatorname{rg}(A\cdot B)\leq \min\{\operatorname{rg}(A),\operatorname{rg}(B)\}
 \]</span></p>
-<p>en este caso, por los órdenes de <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> su rango máximo posible es <span class="math inline">\(3\)</span>, luego <span class="math inline">\(\operatorname{rg}(C\cdot A)\leq 3\)</span> mientras que <span class="math inline">\(\operatorname{rg}(I_4)=4.\)</span><br></p>
+<p>en este caso, por los órdenes de <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> su rango máximo posible es <span class="math inline">\(3\)</span>, luego <span class="math inline">\(\operatorname{rg}(C\cdot A)\leq 3\)</span> mientras que <span class="math inline">\(\operatorname{rg}(I_4)=4.\)</span></p>
 También es posible plantearlo de una forma similar al apartado 2, al resolver los sistemas encontraremos que son incompatibles.
 </li>
 </ol>
@@ -1582,8 +1582,9 @@ a &amp; 2 &amp; 3-a
 <p>Para el rango de esta matriz es muy fácil utilizar el cálculo de determinantes: si <span class="math inline">\(\begin{vmatrix}
 1 &amp; 0 \\
 a &amp; 3-a
-\end{vmatrix}= 3-a \not = 0\)</span> el rango de <span class="math inline">\(A\)</span> es dos. (También se podría haber hecho en la matriz <span class="math inline">\(A\)</span> directamente, pero este determinante es muy sencillo de calcular y de determinar cuándo es distinto de <span class="math inline">\(0\)</span>.)<br></p>
-<p>Entonces tenemos que en todos los casos en los que <span class="math inline">\(a\not = 3\)</span> tendremos <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|b)=2\)</span> es menor que el número de incógnitas y el sistema es compatible indeterminado.<br> Solo nos queda estudiar el caso <span class="math inline">\(a=3\)</span>, para el que podemos proceder como en los ejercicios del comienzo del tema:</p>
+\end{vmatrix}= 3-a \not = 0\)</span> el rango de <span class="math inline">\(A\)</span> es dos. (También se podría haber hecho en la matriz <span class="math inline">\(A\)</span> directamente, pero este determinante es muy sencillo de calcular y de determinar cuándo es distinto de <span class="math inline">\(0\)</span>.)</p>
+<p>Entonces tenemos que en todos los casos en los que <span class="math inline">\(a\not = 3\)</span> tendremos <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|b)=2\)</span> es menor que el número de incógnitas y el sistema es compatible indeterminado.</p>
+<p>Solo nos queda estudiar el caso <span class="math inline">\(a=3\)</span>, para el que podemos proceder como en los ejercicios del comienzo del tema:</p>
 <p><span class="math display">\[
 (A|b)=\left( \begin{array}{rrr|r}
 \boxed{1} &amp; -3 &amp; 4 &amp; 4\\
@@ -1597,8 +1598,8 @@ a &amp; 3-a
 <p><span class="math inline">\(\begin{vmatrix}
 1 &amp; 3 \\
 -3 &amp; 2
-\end{vmatrix}=2+9=11\)</span> luego <span class="math inline">\(\operatorname{rg}(A)=2\)</span> y el mismo razonamiento nos lleva a que también en este caso es compatible indeterminado. <br></p>
-<p>Por tanto, siempre es compatible indeterminado dependiendo de un parámetro.<br></p>
+\end{vmatrix}=2+9=11\)</span> luego <span class="math inline">\(\operatorname{rg}(A)=2\)</span> y el mismo razonamiento nos lleva a que también en este caso es compatible indeterminado.</p>
+<p>Por tanto, siempre es compatible indeterminado dependiendo de un parámetro.</p>
 <p>Para el caso <span class="math inline">\(a=-1\)</span>:</p>
 <p><span class="math display">\[
 (A|b)=\left( \begin{array}{rrr|r}
@@ -1652,7 +1653,7 @@ Solución
 \end{vmatrix}=(1-2a)b-a=(1+a)b+2a=2a+b+ab.
 \]</span></p>
 <p>Al estar trabajando en <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> pueden tomar solo 3 valores posibles.</p>
-<p>Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo, si <span class="math inline">\(a=0\)</span>, entonces <span class="math inline">\(|A|= b\)</span>; si <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|= 2b+2\)</span>; si <span class="math inline">\(a=2\)</span>, <span class="math inline">\(|A|= 1\)</span>.<br></p>
+<p>Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo, si <span class="math inline">\(a=0\)</span>, entonces <span class="math inline">\(|A|= b\)</span>; si <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|= 2b+2\)</span>; si <span class="math inline">\(a=2\)</span>, <span class="math inline">\(|A|= 1\)</span>.</p>
 <table class="default">
 <tbody><tr>
 <td>
@@ -1711,15 +1712,15 @@ Solución
 </td>
 </tr>
 </tbody></table>
-<p>De la observación de la tabla anterior deducimos que <span class="math inline">\(\operatorname{rg}(A)=3\)</span> para 7 de los 9 casos, siempre que el determinante es distinto de <span class="math inline">\(0\)</span>. Ahora, estudiamos los dos casos particulares que nos faltan.<br></p>
-<p>Para <span class="math inline">\(a=0=b\)</span>:<br></p>
+<p>De la observación de la tabla anterior deducimos que <span class="math inline">\(\operatorname{rg}(A)=3\)</span> para 7 de los 9 casos, siempre que el determinante es distinto de <span class="math inline">\(0\)</span>. Ahora, estudiamos los dos casos particulares que nos faltan.</p>
+<p>Para <span class="math inline">\(a=0=b\)</span>:</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 0 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0
 \end{pmatrix}
 \]</span></p>
-<p>que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.<br></p>
-<p>Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>:<br></p>
+<p>que tiene rango 2 puesto que hay una fila entera de ceros y en las otras dos se pueden hacer pivotes.</p>
+<p>Para <span class="math inline">\(a=1\)</span>, <span class="math inline">\(b=2\)</span>:</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 1 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 2 &amp; 0
@@ -1784,8 +1785,8 @@ Solución
 y este resultado es válido en cualquier cuerpo.
 </li>
 <li class="cuerpo_finito">
-<p>Rango. Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.<br></p>
-<p>Para <span class="math inline">\(\lambda=0\)</span>:<br></p>
+<p>Rango. Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.</p>
+<p>Para <span class="math inline">\(\lambda=0\)</span>:</p>
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
 0 &amp; 1 &amp; 1 &amp; 0\\
@@ -1803,8 +1804,9 @@ A=\left( \begin{array}{cccc}
 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
-\]</span> luego el rango es 3. <br></p>
-Para <span class="math inline">\(\lambda=1\)</span>:<br> <span class="math display">\[
+\]</span> luego el rango es 3.</p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>:</p>
+<span class="math display">\[
 A=\left( \begin{array}{cccc}
 2 &amp; 1 &amp; 1 &amp; 0\\
 2 &amp;2 &amp; 0 &amp; 0\\
@@ -1820,7 +1822,7 @@ A=\left( \begin{array}{cccc}
 </li>
 <li>
 <p>Sistema de ecuaciones.</p>
-<p>Como la matriz ampliada tiene rango 4 para <span class="math inline">\(\lambda\not\in \{0,1,3\}\)</span>, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares <span class="math inline">\(\lambda\in\{0,1,3\}\)</span>:<br></p>
+<p>Como la matriz ampliada tiene rango 4 para <span class="math inline">\(\lambda\not\in \{0,1,3\}\)</span>, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares <span class="math inline">\(\lambda\in\{0,1,3\}\)</span>:</p>
 <p>Para <span class="math inline">\(\lambda=0\)</span>: <span class="math display">\[
 \left( \begin{array}{ccc|c}
 3 &amp; 1 &amp; 1 &amp; 0\\
@@ -1829,7 +1831,7 @@ A=\left( \begin{array}{cccc}
 0 &amp; -1 &amp; -1 &amp; 2
 \end{array}\right).
 \]</span></p>
-<p>Como aparece la ecuación <span class="math inline">\(0=1\)</span> entonces también es incompatible.<br></p>
+<p>Como aparece la ecuación <span class="math inline">\(0=1\)</span> entonces también es incompatible.</p>
 <p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[
 \left( \begin{array}{ccc|c}
 2 &amp; 1 &amp; 1 &amp; 0\\
@@ -1843,7 +1845,7 @@ A=\left( \begin{array}{cccc}
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
 \]</span></p>
-<p>en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.<br></p>
+<p>en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.</p>
 <p>Para <span class="math inline">\(\lambda=3\)</span>:</p>
 <p><span class="math display">\[
 \left( \begin{array}{ccc|c}
@@ -2023,7 +2025,10 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular los valores de <span class="math inline">\(a\)</span> para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes.<br> Dos matrices son equivalentes <span class="math inline">\(\Leftrightarrow\)</span> tienen el mismo rango.<br> Calculamos el rango de ambas matrices. Como son de orden <span class="math inline">\(3\times 4\)</span> su rango máximo es tres. <br> Para <span class="math inline">\(A\)</span> calculamos un menor de orden tres</p>
+<p>Calcular los valores de <span class="math inline">\(a\)</span> para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes.</p>
+<p>Dos matrices son equivalentes <span class="math inline">\(\Leftrightarrow\)</span> tienen el mismo rango.</p>
+<p>Calculamos el rango de ambas matrices. Como son de orden <span class="math inline">\(3\times 4\)</span> su rango máximo es tres.</p>
+<p>Para <span class="math inline">\(A\)</span> calculamos un menor de orden tres</p>
 <p><span class="math display">\[
 \left|\begin{array}{ccc}
 1 &amp; 0 &amp; 1 \\
@@ -2082,10 +2087,12 @@ B=\begin{pmatrix}
 con lo que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> para todo valor de <span class="math inline">\(a\)</span>.Así que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes para <span class="math inline">\(a=2\)</span>.
 </li>
 <li>
-Calcular para qué valores de <span class="math inline">\(a\)</span> son equivalentes por filas.<br> Para que sean equivalentes por filas deben tener la misma forma de Hermite por filas, y en particular el mismo rango, así que en cualquier caso solo hay que investigar el caso <span class="math inline">\(a=2\)</span>. Como en el apartado anterior hemos calculado la forma de Hermite por filas en este caso, concluimos que nunca son equivalentes por filas.
+<p>Calcular para qué valores de <span class="math inline">\(a\)</span> son equivalentes por filas.</p>
+Para que sean equivalentes por filas deben tener la misma forma de Hermite por filas, y en particular el mismo rango, así que en cualquier caso solo hay que investigar el caso <span class="math inline">\(a=2\)</span>. Como en el apartado anterior hemos calculado la forma de Hermite por filas en este caso, concluimos que nunca son equivalentes por filas.
 </li>
 <li>
-<p>Calcular <span class="math inline">\(H\)</span>, y <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(H=BP\)</span>.<br> Sustituimos <span class="math inline">\(a=1\)</span> en <span class="math inline">\(B\)</span> y realizamos operaciones elementales por columnas apuntándolas en una matriz regular:</p>
+<p>Calcular <span class="math inline">\(H\)</span>, y <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(H=BP\)</span>.</p>
+<p>Sustituimos <span class="math inline">\(a=1\)</span> en <span class="math inline">\(B\)</span> y realizamos operaciones elementales por columnas apuntándolas en una matriz regular:</p>
 <p><span class="math display">\[
 B=\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; 1\\
@@ -2192,7 +2199,9 @@ Solución
 \]</span>
 </li>
 <li>
-<p>Calcular la forma de Hermite por filas según los valores de <span class="math inline">\(a\)</span>.<br> Por el Teorema de las matrices regulares, si <span class="math inline">\(|A|\not = 0\)</span> la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>, por tanto si <span class="math inline">\(a\not = 0,1\)</span> entonces <span class="math inline">\(H=I_4\)</span>. Estudiamos los casos particulares <span class="math inline">\(a=0\)</span> y <span class="math inline">\(a=1\)</span>.<br> Si <span class="math inline">\(a=0\)</span></p>
+<p>Calcular la forma de Hermite por filas según los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Por el Teorema de las matrices regulares, si <span class="math inline">\(|A|\not = 0\)</span> la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>, por tanto si <span class="math inline">\(a\not = 0,1\)</span> entonces <span class="math inline">\(H=I_4\)</span>. Estudiamos los casos particulares <span class="math inline">\(a=0\)</span> y <span class="math inline">\(a=1\)</span>.</p>
+<p>Si <span class="math inline">\(a=0\)</span></p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 1 &amp; -1 &amp; 0 &amp; 1\\
@@ -2256,7 +2265,9 @@ show(A,"~",A.rref())
 </div>
 </li>
 <li>
-<p>Discutir el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span> en función de los valores de <span class="math inline">\(a\)</span>.<br> Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada <span class="math inline">\(H\)</span>.<br> Si <span class="math inline">\(a\not = 0,1\)</span> entonces</p>
+<p>Discutir el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span> en función de los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Como tenemos la forma de Hermite por filas en todos los casos, entonces el sistema es equivalente al que tiene matriz ampliada <span class="math inline">\(H\)</span>.</p>
+<p>Si <span class="math inline">\(a\not = 0,1\)</span> entonces</p>
 <p><span class="math display">\[
 H= \left(\begin{array}{ccc|c}
 1 &amp; 0 &amp; 0 &amp; 0\\
@@ -2265,7 +2276,8 @@ H= \left(\begin{array}{ccc|c}
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right)
 \]</span></p>
-<p>y como aparece la ecuación <span class="math inline">\(0=1\)</span> es incompatible.<br> Si <span class="math inline">\(a=0\)</span></p>
+<p>y como aparece la ecuación <span class="math inline">\(0=1\)</span> es incompatible.</p>
+<p>Si <span class="math inline">\(a=0\)</span></p>
 <p><span class="math display">\[
 H=\left( \begin{array}{ccc|c}
 1 &amp; 0 &amp; 0 &amp; 0\\
@@ -2274,7 +2286,8 @@ H=\left( \begin{array}{ccc|c}
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
 \]</span></p>
-<p>y también es incompatible.<br> Por último para <span class="math inline">\(a=1\)</span></p>
+<p>y también es incompatible.</p>
+<p>Por último para <span class="math inline">\(a=1\)</span></p>
 <p><span class="math display">\[
 H= \left( \begin{array}{ccc|c}
 1 &amp; 0 &amp; 0 &amp; 0\\
@@ -2312,7 +2325,8 @@ C=\begin{pmatrix}
 0 &amp; 0 &amp; 0  \\
 \end{pmatrix}.
 \]</span></p>
-<p>Determinar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot A \cdot P= C\)</span>.<br> Razonar que no pueden existir matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot B \cdot P=C\)</span></p>
+<p>Determinar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot A \cdot P= C\)</span>.</p>
+<p>Razonar que no pueden existir matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot B \cdot P=C\)</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2325,7 +2339,7 @@ Solución
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>El rango de <span class="math inline">\(A\)</span> es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como <span class="math inline">\(C\)</span> es de rango dos y del mismo orden, entonces <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> son equivalentes y por tanto existen matrices regulares <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> verificando <span class="math inline">\(Q\, A \, P=C\)</span>. Sin embargo <span class="math inline">\(B\)</span> tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con <span class="math inline">\(C\)</span>.<br></p>
+<p>El rango de <span class="math inline">\(A\)</span> es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como <span class="math inline">\(C\)</span> es de rango dos y del mismo orden, entonces <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> son equivalentes y por tanto existen matrices regulares <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> verificando <span class="math inline">\(Q\, A \, P=C\)</span>. Sin embargo <span class="math inline">\(B\)</span> tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con <span class="math inline">\(C\)</span>.</p>
 <p>Para calcular <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> realizamos operaciones elementales por filas y columnas sobre <span class="math inline">\(A\)</span> hasta obtener <span class="math inline">\(C\)</span>. Una forma posible es transformar <span class="math inline">\(A\)</span> hasta su forma de Hermite por filas y después, a la matriz obtenida se le realizan operaciones elementales por columnas. También podrían realizarse unas y otras operaciones elementales en cualquier orden.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -2447,7 +2461,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-Calcular el determinante de <span class="math inline">\(A\)</span>.<br> <span class="math display">\[\begin{aligned}
+<p>Calcular el determinante de <span class="math inline">\(A\)</span>.</p>
+<span class="math display">\[\begin{aligned}
 |A| &amp; = \left|\begin{array}{rrrr}
 a &amp; 1 &amp; 0 &amp; 1\\
 1 &amp; a &amp; 0 &amp; 1\\
@@ -2477,10 +2492,12 @@ a &amp; -a &amp; 0 \\
 \]</span>
 </li>
 <li>
-Determinar los valores de <span class="math inline">\(a\)</span> para los que la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>.<br> Por el Teorema de las matrices regulares, la forma de Hermite por filas es <span class="math inline">\(I_4\)</span> sí y sólo sí <span class="math inline">\(|A|\neq 0\)</span>, luego ocurre para todo <span class="math inline">\(a\in\mathbb{R}\setminus\{-2,0,1\}\)</span>, esto es , si <span class="math inline">\(a\neq -2, 0, 1\)</span>.
+<p>Determinar los valores de <span class="math inline">\(a\)</span> para los que la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(I_4\)</span>.</p>
+Por el Teorema de las matrices regulares, la forma de Hermite por filas es <span class="math inline">\(I_4\)</span> sí y sólo sí <span class="math inline">\(|A|\neq 0\)</span>, luego ocurre para todo <span class="math inline">\(a\in\mathbb{R}\setminus\{-2,0,1\}\)</span>, esto es , si <span class="math inline">\(a\neq -2, 0, 1\)</span>.
 </li>
 <li>
-<p>Estudiar el rango de <span class="math inline">\(A\)</span>.<br> Si <span class="math inline">\(a\neq -2, 0, 1\)</span>, entonces el <span class="math inline">\(\operatorname{rg}(A)=4\)</span>.<br></p>
+<p>Estudiar el rango de <span class="math inline">\(A\)</span>.</p>
+<p>Si <span class="math inline">\(a\neq -2, 0, 1\)</span>, entonces el <span class="math inline">\(\operatorname{rg}(A)=4\)</span>.</p>
 <p>Si <span class="math inline">\(a=1\)</span>:</p>
 <p><span class="math display">\[
 \left|
@@ -2547,7 +2564,8 @@ Determinar los valores de <span class="math inline">\(a\)</span> para los que la
 Luego <span class="math inline">\(\operatorname{rg}(A)=3\)</span>.
 </li>
 <li>
-<p>Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span>.<br> Se ha calculado en el apartado anterior,</p>
+<p>Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span>.</p>
+<p>Se ha calculado en el apartado anterior,</p>
 <p><span class="math display">\[
 H=\left( \begin{array}{cccc}
       1 &amp; 0 &amp; 0 &amp; -1 \\
@@ -2609,7 +2627,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> es la matriz <span class="math inline">\(A\)</span> invertible.<br> La matriz <span class="math inline">\(A\)</span> es invertible si, y solo si, su determinante es distinto de cero. Calculamos el determinante realizando primero algunas operaciones elementales:</p>
+<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> es la matriz <span class="math inline">\(A\)</span> invertible.</p>
+<p>La matriz <span class="math inline">\(A\)</span> es invertible si, y solo si, su determinante es distinto de cero. Calculamos el determinante realizando primero algunas operaciones elementales:</p>
 <p><span class="math display">\[
 |A|=\left|\begin{array}{ccc}
 -1 &amp; -a &amp; a-1 \\
@@ -2636,7 +2655,9 @@ Solución
 Así, que <span class="math inline">\(A\)</span> tiene inversa cuando <span class="math inline">\(a\not = 0,1\)</span>.
 </li>
 <li>
-<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> regular de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Para que exista esa matriz regular <span class="math inline">\(P\)</span> (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.<br> Entonces calculamos la de <span class="math inline">\(B\)</span>:</p>
+<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> regular de forma que <span class="math inline">\(B=A\cdot P\)</span>.</p>
+<p>Para que exista esa matriz regular <span class="math inline">\(P\)</span> (que representa la composición de operaciones elementales y en este caso por columnas porque está a la derecha de A) deben ser <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> equivalentes por columnas, es decir, deben tener la misma forma de Hermite por columnas.</p>
+<p>Entonces calculamos la de <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
 B=\begin{pmatrix}
 2 &amp; 3 &amp; 4\\
@@ -2663,7 +2684,8 @@ B=matrix([[2,3,4],[-2,-3,-4],[3,4,5]])
 show(B,"~",(B.T).rref().T)
 </script>
 </div>
-<p>Puesto que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> solo es posible que sean equivalentes por columnas cuando <span class="math inline">\(a=0\)</span> o <span class="math inline">\(a=1\)</span>, porque en otro caso <span class="math inline">\(A\)</span> tiene rango tres.<br> Calculamos la forma de Hermite de <span class="math inline">\(A\)</span> en ambos casos:</p>
+<p>Puesto que <span class="math inline">\(\operatorname{rg}(B)=2\)</span> solo es posible que sean equivalentes por columnas cuando <span class="math inline">\(a=0\)</span> o <span class="math inline">\(a=1\)</span>, porque en otro caso <span class="math inline">\(A\)</span> tiene rango tres.</p>
+<p>Calculamos la forma de Hermite de <span class="math inline">\(A\)</span> en ambos casos:</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 -1 &amp; 0 &amp; -1 \\
@@ -2689,7 +2711,8 @@ A=\begin{pmatrix}
 \]</span>
 </li>
 <li>
-<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(B=A\cdot P\)</span>.<br> Como hemos razonado en el caso anterior, <span class="math inline">\(P\)</span> existe para <span class="math inline">\(a=1\)</span> y es regular. Cuando <span class="math inline">\(a\not=0,1\)</span> como <span class="math inline">\(A\)</span> es regular, podemos despejar <span class="math inline">\(P\)</span> en la fórmula <span class="math inline">\(B=AP\)</span>:</p>
+<p>Determinar para qué valores del parámetro <span class="math inline">\(a\)</span> existe una matriz <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(B=A\cdot P\)</span>.</p>
+<p>Como hemos razonado en el caso anterior, <span class="math inline">\(P\)</span> existe para <span class="math inline">\(a=1\)</span> y es regular. Cuando <span class="math inline">\(a\not=0,1\)</span> como <span class="math inline">\(A\)</span> es regular, podemos despejar <span class="math inline">\(P\)</span> en la fórmula <span class="math inline">\(B=AP\)</span>:</p>
 <p><span class="math display">\[
 P=A^{-1}B,
 \]</span></p>
@@ -2748,7 +2771,9 @@ Solución
 0 &amp; 0 &amp; b-1 &amp; 2
 \end{pmatrix},
 \]</span></p>
-<p>tiene rango 2 si <span class="math inline">\(b-1=2(a-1)\)</span> ( o lo que es lo mismo <span class="math inline">\(b=2a-1\)</span>, que incluye el caso <span class="math inline">\(a=b=1\)</span>) y rango 3 en cualquier otro caso.<br> Así, el sistema es compatible si, y solo si, <span class="math inline">\(b= 2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span> y en esos casos, como <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|B)=2\)</span>, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando <span class="math inline">\(a=b=1\)</span> o bien cuando <span class="math inline">\(b\not = 2a-1\)</span>) es incompatible.<br> Cuando <span class="math inline">\(b=2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span>, resolviendo desde la matriz anterior</p>
+<p>tiene rango 2 si <span class="math inline">\(b-1=2(a-1)\)</span> ( o lo que es lo mismo <span class="math inline">\(b=2a-1\)</span>, que incluye el caso <span class="math inline">\(a=b=1\)</span>) y rango 3 en cualquier otro caso.</p>
+<p>Así, el sistema es compatible si, y solo si, <span class="math inline">\(b= 2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span> y en esos casos, como <span class="math inline">\(\operatorname{rg}(A)=\operatorname{rg}(A|B)=2\)</span>, que es menor que el número de incógnitas, el sistema es compatible Indeterminado dependiendo de un parámetro. En el resto de los casos es (cuando <span class="math inline">\(a=b=1\)</span> o bien cuando <span class="math inline">\(b\not = 2a-1\)</span>) es incompatible.</p>
+<p>Cuando <span class="math inline">\(b=2a-1\)</span> y <span class="math inline">\(a\not = 1\)</span>, resolviendo desde la matriz anterior</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 1 &amp; 1 &amp; 1 &amp; 1 \\
@@ -2810,7 +2835,9 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes.<br> Dos matrices del mismo orden son equivalentes cuando tienen el mismo rango. Calculamos el rango en función de los parámetros: en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.<br> Para <span class="math inline">\(A\)</span> elegimos</p>
+<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes.</p>
+<p>Dos matrices del mismo orden son equivalentes cuando tienen el mismo rango. Calculamos el rango en función de los parámetros: en ambos casos elegiremos una submatriz cuadrada de orden 3 y calculamos el determinante.</p>
+<p>Para <span class="math inline">\(A\)</span> elegimos</p>
 <p><span class="math display">\[
 \left|\begin{array}{rrr}
       a &amp; 1 &amp; 1\\
@@ -2821,7 +2848,8 @@ Solución
     a &amp; 1 \\
    1 &amp; -1 \\
     \end{array}
-\right|= a(-a-1).\]</span> Así que si <span class="math inline">\(a\not =0, a\not = -1\)</span>, <span class="math inline">\(\operatorname{rg}(A)=3\)</span>.<br> Para <span class="math inline">\(a=0\)</span> <span class="math display">\[A=\left(\begin{array}{rrr}
+\right|= a(-a-1).\]</span> Así que si <span class="math inline">\(a\not =0, a\not = -1\)</span>, <span class="math inline">\(\operatorname{rg}(A)=3\)</span>.</p>
+<p>Para <span class="math inline">\(a=0\)</span> <span class="math display">\[A=\left(\begin{array}{rrr}
    1 &amp; 0 &amp; -1\\
    0 &amp; 1 &amp; 1\\
    1 &amp; -1 &amp; 0\\
@@ -2847,7 +2875,7 @@ Solución
   \end{array}
 \right),
 \]</span></p>
-<p>tiene también rango tres y la anterior es su forma de Hermite por filas.<br></p>
+<p>tiene también rango tres y la anterior es su forma de Hermite por filas.</p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -2879,7 +2907,7 @@ $$ A=(
 
   \end{array}\]</span>
 <p>). $$</p>
-<p>tiene rango dos y la anterior es su forma de Hermite por filas.<br></p>
+<p>tiene rango dos y la anterior es su forma de Hermite por filas.</p>
 <p>Para <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
 \left|\begin{array}{rrr}
@@ -2920,7 +2948,7 @@ B=\left(\begin{array}{rrr}
   \end{array}
 \right),
 \]</span></p>
-<p>que tiene rango dos y tenemos su forma de Hermite por filas.<br></p>
+<p>que tiene rango dos y tenemos su forma de Hermite por filas.</p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -2931,7 +2959,8 @@ show(B,"~",B.rref())
 Por tanto, concluimos que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b=0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>, son equivalentes mientras que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b\neq0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b=0\)</span>, no son equivalentes.
 </li>
 <li>
-<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes por filas.<br> En el caso de que una matriz <span class="math inline">\(4\times 3\)</span> tenga rango tres, su forma de Hermite por filas es necesariamente</p>
+<p>Encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> para los que las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> sean equivalentes por filas.</p>
+<p>En el caso de que una matriz <span class="math inline">\(4\times 3\)</span> tenga rango tres, su forma de Hermite por filas es necesariamente</p>
 <p><span class="math display">\[
 H= \left(\begin{array}{rrr}
    1 &amp; 0 &amp; 0\\
@@ -2944,7 +2973,8 @@ H= \left(\begin{array}{rrr}
 puesto que cada uno de los tres pivotes tienen que estar en columnas distintas. Así que tenemos calculada la forma de Hermite en todos los casos y podemos concluir que no serán equivalentes por filas excepto si <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>.
 </li>
 <li>
-<p>Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=1\)</span>, calcular una matriz <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(QA=B\)</span>.<br> En ese caso las matrices son equivalentes por filas, para encontrar una matriz <span class="math inline">\(Q\)</span>, calculamos <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_2\)</span> tales que:</p>
+<p>Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=1\)</span>, calcular una matriz <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(QA=B\)</span>.</p>
+<p>En ese caso las matrices son equivalentes por filas, para encontrar una matriz <span class="math inline">\(Q\)</span>, calculamos <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_2\)</span> tales que:</p>
 <p><span class="math display">\[
 Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.
 \]</span></p>

@@ -324,7 +324,7 @@ Solución
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Para determinar si los vectores son linealmente independientes o linealmente dependientes construimos la matriz cuyas columnas son esos vectores, a continuación calculamos su rango y lo comparamos con el número de vectores. Se tiene que los vectores son linealmente independientes si y sólo si <span class="math inline">\(\operatorname{rg}(A)\)</span> es máximo (coincide con el número de vectores) y en otro caso son linealmente dependientes.<br></p>
+<p>Para determinar si los vectores son linealmente independientes o linealmente dependientes construimos la matriz cuyas columnas son esos vectores, a continuación calculamos su rango y lo comparamos con el número de vectores. Se tiene que los vectores son linealmente independientes si y sólo si <span class="math inline">\(\operatorname{rg}(A)\)</span> es máximo (coincide con el número de vectores) y en otro caso son linealmente dependientes.</p>
 <p>La matriz que se forma es:</p>
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
@@ -663,8 +663,9 @@ M_{B'B_c}=Q=\left( \begin{array}{rrr}
 <p><span class="math display">\[
 QX'=PX
 \]</span></p>
-<p>y despejando <span class="math inline">\(X'=Q^{-1}PX\)</span>, por lo que la matriz <span class="math inline">\(M_{BB'}=Q^{-1}P\)</span>.<br></p>
-<p>Si observamos el método anterior, hemos calculado precisamente <span class="math inline">\(Q^{-1}P\)</span> utilizando operaciones elementales.<br> La matriz <span class="math inline">\(M_{B'B}=(Q^{-1}P)^{-1}=P^{-1}Q\)</span>.</p>
+<p>y despejando <span class="math inline">\(X'=Q^{-1}PX\)</span>, por lo que la matriz <span class="math inline">\(M_{BB'}=Q^{-1}P\)</span>.</p>
+<p>Si observamos el método anterior, hemos calculado precisamente <span class="math inline">\(Q^{-1}P\)</span> utilizando operaciones elementales.</p>
+<p>La matriz <span class="math inline">\(M_{B'B}=(Q^{-1}P)^{-1}=P^{-1}Q\)</span>.</p>
 </div>
 </div>
 </div>
@@ -766,7 +767,7 @@ show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
 0 &amp; 0 &amp; 1 &amp; 2
 \end{array} \right).
 \]</span></p>
-<p>Luego <span class="math inline">\(x=(2,-1,2)_B\)</span>.<br></p>
+<p>Luego <span class="math inline">\(x=(2,-1,2)_B\)</span>.</p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1320,7 +1321,7 @@ Solución
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Para calcular la base más sencilla de <span class="math inline">\(U\)</span>, de las ecuaciones cartesianas obtendremos unas paramétricas resolviendo el sistema. De estas paramétricas obtenemos una base desde la que calcular la base más sencilla.<br></p>
+<p>Para calcular la base más sencilla de <span class="math inline">\(U\)</span>, de las ecuaciones cartesianas obtendremos unas paramétricas resolviendo el sistema. De estas paramétricas obtenemos una base desde la que calcular la base más sencilla.</p>
 <p>Resolver las cartesianas es inmediato puesto que ya es un sistema escalonado reducido, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> actúan como parámetros, luego nos queda:</p>
 <p><span class="math display">\[
 U\equiv \left\{
@@ -1446,7 +1447,8 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular la dimensión y una base de cada uno de ellos.<br> <span class="math inline">\(U\)</span> está formado por las matrices simétricas de orden 2, que tienen la forma</p>
+<p>Calcular la dimensión y una base de cada uno de ellos.</p>
+<p><span class="math inline">\(U\)</span> está formado por las matrices simétricas de orden 2, que tienen la forma</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 a &amp; b \\
@@ -1466,7 +1468,8 @@ b &amp; c
 0 &amp; 1
 \end{pmatrix} \right\}
 \]</span></p>
-<p>y por tanto <span class="math inline">\(\dim(U)=3\)</span>.<br> <span class="math inline">\(W\)</span> está formado por las matrices antisimétricas de orden dos que tienen la forma</p>
+<p>y por tanto <span class="math inline">\(\dim(U)=3\)</span>.</p>
+<p><span class="math inline">\(W\)</span> está formado por las matrices antisimétricas de orden dos que tienen la forma</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 0 &amp; b \\
@@ -1520,7 +1523,8 @@ t=0.
 \]</span>
 </li>
 <li>
-<p>Probar que <span class="math inline">\(\mathcal{M}_2(\mathbb{R})=U\oplus W\)</span>.<br> Calculamos <span class="math inline">\(U\cap W\)</span> reuniendo cartesianas:</p>
+<p>Probar que <span class="math inline">\(\mathcal{M}_2(\mathbb{R})=U\oplus W\)</span>.</p>
+<p>Calculamos <span class="math inline">\(U\cap W\)</span> reuniendo cartesianas:</p>
 <p><span class="math display">\[
 U\cap W\equiv  \left\{ \begin{array}{l}
 x=0,\\
@@ -1534,7 +1538,8 @@ z=0,\\
 t=0.
 \end{array} \right.
 \]</span></p>
-<p>Por tanto <span class="math inline">\(U\cap W=\{0 \}\)</span>.<br> Por la fórmula de las dimensiones,</p>
+<p>Por tanto <span class="math inline">\(U\cap W=\{0 \}\)</span>.</p>
+<p>Por la fórmula de las dimensiones,</p>
 <p><span class="math display">\[
 \dim(U) +  \dim(W)= \dim(U\cap W) + \dim(U+W),
 \]</span></p>
@@ -1588,7 +1593,9 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular la base más sencilla de <span class="math inline">\(W\)</span>.<br> De la cartesiana <span class="math inline">\(2x-y-t=0\)</span> obtenemos la reducida: <span class="math inline">\(x-\frac{1}{2} y-\frac{1}{2}t=0\)</span>.<br> Asignando parámetros a las incógnitas secundarias (<span class="math inline">\(y, z\)</span>, <span class="math inline">\(t\)</span>) y despejando la principal obtenemos las paramétricas:</p>
+<p>Calcular la base más sencilla de <span class="math inline">\(W\)</span>.</p>
+<p>De la cartesiana <span class="math inline">\(2x-y-t=0\)</span> obtenemos la reducida: <span class="math inline">\(x-\frac{1}{2} y-\frac{1}{2}t=0\)</span>.</p>
+<p>Asignando parámetros a las incógnitas secundarias (<span class="math inline">\(y, z\)</span>, <span class="math inline">\(t\)</span>) y despejando la principal obtenemos las paramétricas:</p>
 <p><span class="math display">\[
 \left\{\begin{array}{ll}
 x=&amp;\frac{1}{2}\lambda_1 + \frac{1}{2}\lambda_3,\\
@@ -1636,7 +1643,8 @@ show(A,"~",((A.T).rref()).T)
 \]</span></p>
 </li>
 <li>
-<p>Calcular la dimensión de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.<br> Escribimos los vectores por sus coordenadas en la base <span class="math inline">\(B_{s}\)</span> y calculamos el rango de la matriz que forman:</p>
+<p>Calcular la dimensión de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Escribimos los vectores por sus coordenadas en la base <span class="math inline">\(B_{s}\)</span> y calculamos el rango de la matriz que forman:</p>
 <p><span class="math display">\[
 \left(\begin{array}{lll}
 1 &amp; 1 &amp; 2\\
@@ -1656,10 +1664,12 @@ show(A,"~",((A.T).rref()).T)
 así que si <span class="math inline">\(a\not = 2\)</span> el rango es tres y <span class="math inline">\(\dim(U)=3\)</span> y si <span class="math inline">\(a=2\)</span> el rango es dos y <span class="math inline">\(\dim(U)=2\)</span>.
 </li>
 <li>
-Probar que cuando <span class="math inline">\(a=2\)</span> se tiene que <span class="math inline">\(U \subseteq W\)</span>.<br> Hemos visto que para <span class="math inline">\(a=2\)</span> la dimensión de <span class="math inline">\(U\)</span> es dos y por tanto los dos primeros vectores son base de <span class="math inline">\(U\)</span>, además cada uno de ellos verifica la ecuación de <span class="math inline">\(W\)</span> (<span class="math inline">\(2\cdot 1-2-0=0; \, 2\cdot 1-0-2=0\)</span>), así que <span class="math inline">\(U\subseteq W\)</span>.
+<p>Probar que cuando <span class="math inline">\(a=2\)</span> se tiene que <span class="math inline">\(U \subseteq W\)</span>.</p>
+Hemos visto que para <span class="math inline">\(a=2\)</span> la dimensión de <span class="math inline">\(U\)</span> es dos y por tanto los dos primeros vectores son base de <span class="math inline">\(U\)</span>, además cada uno de ellos verifica la ecuación de <span class="math inline">\(W\)</span> (<span class="math inline">\(2\cdot 1-2-0=0; \, 2\cdot 1-0-2=0\)</span>), así que <span class="math inline">\(U\subseteq W\)</span>.
 </li>
 <li>
-<p>Calcular unas ecuaciones cartesianas de <span class="math inline">\(U \cap W\)</span> para <span class="math inline">\(a\not = 2\)</span>.<br> Si <span class="math inline">\(a\not = 2\)</span> la dimensión de <span class="math inline">\(U\)</span> es tres y unas paramétricas son:</p>
+<p>Calcular unas ecuaciones cartesianas de <span class="math inline">\(U \cap W\)</span> para <span class="math inline">\(a\not = 2\)</span>.</p>
+<p>Si <span class="math inline">\(a\not = 2\)</span> la dimensión de <span class="math inline">\(U\)</span> es tres y unas paramétricas son:</p>
 <p><span class="math display">\[
 \left\{\begin{array}{ll}
 x=&amp;\lambda_1+ \lambda_2+2\lambda_3,\\
@@ -1668,7 +1678,8 @@ z=&amp;0,\\
 t=&amp;2\lambda_2+a\lambda_3.\\
 \end{array}\right.
 \]</span></p>
-<p>Y como solo necesitamos una cartesiana, entonces <span class="math inline">\(z=0\)</span> es la ecuación cartesiana de <span class="math inline">\(U\)</span>.<br> Por tanto,</p>
+<p>Y como solo necesitamos una cartesiana, entonces <span class="math inline">\(z=0\)</span> es la ecuación cartesiana de <span class="math inline">\(U\)</span>.</p>
+<p>Por tanto,</p>
 <span class="math display">\[
 U\cap W\equiv \left\{ \begin{array}{r}
 2x-y-t=0,\\
@@ -1716,7 +1727,9 @@ Solución
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
-<p>Calcular la base más sencilla de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.<br> Puesto que se trata del sistema <span class="math inline">\(AX=0\)</span>, podemos transformarlo en el sistema escalonado reducido equivalente utilizando operaciones elementales por filas sobre <span class="math inline">\(A\)</span>.<br> En primer lugar distinguimos el caso <span class="math inline">\(a=0\)</span> en el que el elemento en la posición <span class="math inline">\((1,1)\)</span> no es pivote:</p>
+<p>Calcular la base más sencilla de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Puesto que se trata del sistema <span class="math inline">\(AX=0\)</span>, podemos transformarlo en el sistema escalonado reducido equivalente utilizando operaciones elementales por filas sobre <span class="math inline">\(A\)</span>.</p>
+<p>En primer lugar distinguimos el caso <span class="math inline">\(a=0\)</span> en el que el elemento en la posición <span class="math inline">\((1,1)\)</span> no es pivote:</p>
 <p><span class="math display">\[
 A= \left(\begin{array}{rrrr}
 0 &amp; -1 &amp; 1 &amp; 0\\
@@ -1738,7 +1751,8 @@ z=0,\\
 t=0.
 \end{array} \right.
 \]</span></p>
-<p>Por tanto, <span class="math inline">\(\dim(U)=1\)</span> y la base más sencilla es <span class="math inline">\(\{(1,0,0,0)\}\)</span>.<br> Si <span class="math inline">\(a\not = 0\)</span> entonces</p>
+<p>Por tanto, <span class="math inline">\(\dim(U)=1\)</span> y la base más sencilla es <span class="math inline">\(\{(1,0,0,0)\}\)</span>.</p>
+<p>Si <span class="math inline">\(a\not = 0\)</span> entonces</p>
 <p><span class="math display">\[
 A\sim_f \left(\begin{array}{rrrr}
 1 &amp; -1/a &amp; 1/a &amp; 0\\
@@ -1763,7 +1777,8 @@ x+y-z=0,\\
 t=0.
 \end{array} \right.
 \]</span></p>
-<p>Por tanto, <span class="math inline">\(\dim(U)=2\)</span> y una base sería <span class="math inline">\(\{(1,-1,0,0),(1,0,1,0)\}\)</span>, realizando operaciones elementales nos queda que la base más sencilla es <span class="math inline">\(\{(1,0,1,0),(0,1,1,0)\}\)</span>.<br> Por último, si <span class="math inline">\(a\not = 0,-1\)</span> entonces</p>
+<p>Por tanto, <span class="math inline">\(\dim(U)=2\)</span> y una base sería <span class="math inline">\(\{(1,-1,0,0),(1,0,1,0)\}\)</span>, realizando operaciones elementales nos queda que la base más sencilla es <span class="math inline">\(\{(1,0,1,0),(0,1,1,0)\}\)</span>.</p>
+<p>Por último, si <span class="math inline">\(a\not = 0,-1\)</span> entonces</p>
 <p><span class="math display">\[
 A\sim_f \left(\begin{array}{rrrr}
 1 &amp; -1/a &amp; 1/a &amp; 0\\
@@ -1788,7 +1803,9 @@ t=0.
 Por tanto <span class="math inline">\(\dim(U)=1\)</span> y la base más sencilla es <span class="math inline">\(\{(1,a,0,0)\}\)</span>.
 </li>
 <li>
-<p>Calcular unas ecuaciones cartesianas según los valores de <span class="math inline">\(a\)</span>.<br> Ya hemos visto que el rango de <span class="math inline">\(A\)</span> depende de <span class="math inline">\(a\)</span>: es tres si <span class="math inline">\(a\not =-1\)</span> y dos cuando <span class="math inline">\(a=-1\)</span>. Así que tenemos ya la dimensión de <span class="math inline">\(W\)</span>, que coincide con el rango de <span class="math inline">\(A\)</span>.<br> Para <span class="math inline">\(a=-1\)</span>:</p>
+<p>Calcular unas ecuaciones cartesianas según los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Ya hemos visto que el rango de <span class="math inline">\(A\)</span> depende de <span class="math inline">\(a\)</span>: es tres si <span class="math inline">\(a\not =-1\)</span> y dos cuando <span class="math inline">\(a=-1\)</span>. Así que tenemos ya la dimensión de <span class="math inline">\(W\)</span>, que coincide con el rango de <span class="math inline">\(A\)</span>.</p>
+<p>Para <span class="math inline">\(a=-1\)</span>:</p>
 <p><span class="math display">\[
 A= \left(\begin{array}{rrrr}
 -1 &amp; -1 &amp; 1 &amp; 0\\
@@ -1828,7 +1845,8 @@ W\equiv y-z=0.
 \]</span></p>
 </li>
 <li>
-<p>Calcular las dimensiones de <span class="math inline">\(U\cap W\)</span> y <span class="math inline">\(U + W\)</span> según los valores de <span class="math inline">\(a\)</span>.<br> Podemos calcular la dimensión de la suma y usar después la fórmula de las dimensiones para obtener la de la intersección. Para ello en cada caso reunimos bases de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> y calculamos el rango de la matriz que forman, lo que nos da la dimensión de <span class="math inline">\(U+W\)</span>:</p>
+<p>Calcular las dimensiones de <span class="math inline">\(U\cap W\)</span> y <span class="math inline">\(U + W\)</span> según los valores de <span class="math inline">\(a\)</span>.</p>
+<p>Podemos calcular la dimensión de la suma y usar después la fórmula de las dimensiones para obtener la de la intersección. Para ello en cada caso reunimos bases de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span> y calculamos el rango de la matriz que forman, lo que nos da la dimensión de <span class="math inline">\(U+W\)</span>:</p>
 <p><strong>Si <span class="math inline">\(a=0\)</span></strong></p>
 <p><span class="math display">\[\left(\begin{array}{r|rrr}
 1 &amp; 1 &amp; 0 &amp; 0\\
@@ -1842,7 +1860,7 @@ W\equiv y-z=0.
 0 &amp; 0 &amp; 1 &amp; 0
 \end{array}\right),
 \]</span></p>
-<p>entonces <span class="math inline">\(\dim(U+W)=3\)</span>.<br></p>
+<p>entonces <span class="math inline">\(\dim(U+W)=3\)</span>.</p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1864,7 +1882,7 @@ show(A,"~",((A.T).rref()).T)
 0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right),
 \]</span></p>
-<p>entonces <span class="math inline">\(\dim(U+W)=4\)</span>.<br></p>
+<p>entonces <span class="math inline">\(\dim(U+W)=4\)</span>.</p>
 <p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
@@ -1887,7 +1905,7 @@ a &amp; 0 &amp; 1 &amp; 0\\
 \end{array}\right),
 \]</span></p>
 <p>entonces <span class="math inline">\(\dim(U+W)=4\)</span>.</p>
-<p>Así que usando <span class="math inline">\(\dim(U) +\dim(W)=\dim(U+W)+ \dim(U\cap W)\)</span> obtenemos:<br></p>
+<p>Así que usando <span class="math inline">\(\dim(U) +\dim(W)=\dim(U+W)+ \dim(U\cap W)\)</span> obtenemos:</p>
 <p>Si <span class="math inline">\(a=0\)</span>, <span class="math inline">\(\dim(U)=1\)</span>, <span class="math inline">\(\dim(W)=3\)</span>, <span class="math inline">\(\dim(U+W)=3\)</span> y <span class="math inline">\(\dim(U\cap W)=1\)</span>.</p>
 <p>Si <span class="math inline">\(a=-1\)</span>, <span class="math inline">\(\dim(U)=2\)</span>, <span class="math inline">\(\dim(W)=2\)</span>, <span class="math inline">\(\dim(U+W)=4\)</span> y <span class="math inline">\(\dim(U\cap W)=0\)</span>.</p>
 Si <span class="math inline">\(a\not =0,-1\)</span>, <span class="math inline">\(\dim(U)=1\)</span>, <span class="math inline">\(\dim(W)=3\)</span>, <span class="math inline">\(\dim(U+W)=4\)</span> y <span class="math inline">\(\dim(U\cap W)=0\)</span>.
