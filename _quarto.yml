@@ -17,13 +17,13 @@ website:
     footer: Hecho con [Quarto](https://quarto.org/)
     contents:
       - text: "Matrices y sistemas de ecuaciones"
-        href: "resueltos-1.md"
+        href: "matrices-sistemas.md"
       - text: "Espacios vectoriales"
-        href: "resueltos-2.md"
+        href: "espacios-vectoriales.md"
       - text: "Aplicaciones lineales"
-        href: "resueltos-3.md"
+        href: "aplicaciones-lineales.md"
       - text: "Espacio euclídeo"
-        href: "resueltos-4.md"
+        href: "espacio-euclideo.md"
       - text: "Otros"
         href: "resueltos-examenes.md"
 
