@@ -113,11 +113,15 @@ function mostrar(){
     xs[i].removeAttribute("hidden");
   }
 
-  if (!casilla_cf.checked){
-    xscf=document.querySelectorAll("[class*='cuerpo_finito']");
-    for(i=0; i<xscf.length; i++) {
-      //xs[i].style.display = "none";
+  xscf=document.querySelectorAll("[class*='cuerpo_finito']");
+  for(i=0; i<xscf.length; i++) {
+    //xs[i].style.display = "none";
+    if(!casilla_cf.checked){ 
       xscf[i].setAttribute("hidden", "hidden");
+    }else{
+      if(!xscf[i].className.includes("exercise")){ //this is not an exercise and cf is checked
+        xscf[i].removeAttribute("hidden");
+      }
     }
   }
 }
