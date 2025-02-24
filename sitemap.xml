@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/espacios-vectoriales.html</loc>
-    <lastmod>2024-12-21T11:43:58.407Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/index.html</loc>
-    <lastmod>2024-12-21T11:43:58.407Z</lastmod>
-  </url>
-  <url>
     <loc>https://pedritomelenas.github.io/CREPAL/instrucciones.html</loc>
-    <lastmod>2024-12-21T11:43:58.407Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/aplicaciones-lineales.html</loc>
-    <lastmod>2024-12-21T11:43:58.407Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/resueltos-examenes.html</loc>
-    <lastmod>2024-12-21T11:43:58.407Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/matrices-sistemas.html</loc>
-    <lastmod>2024-12-21T11:43:58.407Z</lastmod>
+    <lastmod>2025-02-24T08:01:38.911Z</lastmod>
   </url>
   <url>
     <loc>https://pedritomelenas.github.io/CREPAL/espacio-euclideo.html</loc>
-    <lastmod>2024-12-21T11:43:58.407Z</lastmod>
+    <lastmod>2025-02-24T08:01:38.910Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/matrices-sistemas.html</loc>
+    <lastmod>2025-02-24T08:01:38.911Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/espacios-vectoriales.html</loc>
+    <lastmod>2025-02-24T08:01:38.910Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/resueltos-examenes.html</loc>
+    <lastmod>2025-02-24T08:01:38.911Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/aplicaciones-lineales.html</loc>
+    <lastmod>2025-02-24T08:01:38.910Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/index.html</loc>
+    <lastmod>2025-02-24T08:01:38.911Z</lastmod>
   </url>
 </urlset>
