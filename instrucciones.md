@@ -44,7 +44,9 @@ Mientras que si conlleva operaciones en cuerpos finitos, se etiqueta así:
 ```
 ::::: {#exr-identificador .cuerpo_finito-basico}
 ```
+## Trozos de párrafos relativos a cuerpos finitos
 
+Para etiquetar parte de un texto en línea como cuerpo finito usamos el formato `[texto]{.cuerpo_finito`, por ejemplo, `$\mathbb{Q}$[, $\mathbb{Z}_3$ y $\mathbb{Z}_5$]{.cuerpo_finito}.` oculta lo que hay entre corchetes cuando se selecciona la opción de no mostrar cuerpos finitos.
 
 ## Celdas `sagemath`
 
