@@ -1567,7 +1567,7 @@ que también tiene rango 2 (recordemos que estamos en $\mathbb{Z}_3$).
 :::::
 
 
-::::: {#exr-9 .basico}
+::::: {#exr-9 .medio}
 
 Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).$$
 <ol type="a">
@@ -1825,7 +1825,7 @@ Como la matriz ampliada del sistema es $A$, entonces cuando $a\not = 1$ la matri
 :::::
 
 
-::::: {#exr-11 .avanzado}
+::::: {#exr-11 .medio}
 
 Dadas las matrices 
 
@@ -2441,7 +2441,7 @@ show(A,"~",A.rref())
 :::::
 
 
-::::: {#exr-15 .avanzado}
+::::: {#exr-15 .medio}
 
 Se consideran las matrices:
 
@@ -2581,7 +2581,7 @@ que existe, aunque no es regular porque $B$ no lo es. Así que existe una tal $P
 :::::
 
 
-::::: {#exr-16 .basico}
+::::: {#exr-16 .medio}
 
 Discutir en función de los parámetros $a$ y $b$ el sistema de ecuaciones lineales:
 
