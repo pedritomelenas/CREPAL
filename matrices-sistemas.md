@@ -20,17 +20,13 @@ format:
 
 
 ::::: {#exr-1 .basico}
-Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$[, $\mathbb{Z}_3$ y $\mathbb{Z}_5$]{.cuerpo_finito}.
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$.
 
 $$\left\{\begin{aligned} x_{2}-2x_{3}&= -4,\\ x_{1}+x_{2}-x_{3}&=0,\\ 2x_{1}-x_{2}+x_{3}&=3. \end{aligned}\right.$$
 
 ::::{.callout collapse="true" title="Solución"}
 
 Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada. 
-
-:::{.cuerpo_finito}
-**Coeficientes en $\mathbb{Q}$**
-:::
 
 En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:
 
@@ -133,7 +129,19 @@ $$
 
 Luego es un sistema compatible determinado, y su única solución es $$(1,2,3).$$
 
-:::{.cuerpo_finito}
+::::
+:::::
+
+::::: {#exr-2 .cuerpo_finito-basico}
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Z}_3$ y $\mathbb{Z}_5$.
+
+$$\left\{\begin{aligned} x_{2}-2x_{3}&= -4,\\ x_{1}+x_{2}-x_{3}&=0,\\ 2x_{1}-x_{2}+x_{3}&=3. \end{aligned}\right.$$
+
+::::{.callout collapse="true" title="Solución"}
+
+Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada. 
+
+
 **Coeficientes en $\mathbb{Z}_3$**
 
 En primer lugar vamos a substituir los coeficientes por representantes en $\{0,1,2\}$:
@@ -326,13 +334,13 @@ Luego este sistema tiene una única solución:
 $$(1,2,3),$$
 
 y de esta forma es compatible determinado.
-:::
+
 ::::
 :::::
 
-::::: {#exr-2 .basico}
+::::: {#exr-3 .basico}
 
-Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$[, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_2$]{.cuerpo_finito}.
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$.
 
 $$\left\{\begin{aligned} x-y+z+t+v&=0,\\ x+y+z+t-v&=0,\\ -x-y+z+t-v&=0. \end{aligned}\right.$$
 
@@ -342,9 +350,6 @@ $$\left\{\begin{aligned} x-y+z+t+v&=0,\\ x+y+z+t-v&=0,\\ -x-y+z+t-v&=0. \end{ali
 Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. 
 Además, un sistema homogéneo siempre es Compatible puesto que admite la solución $(0,0,0,0,0)$.
 
-:::{.cuerpo_finito}
-**Coeficientes en $\mathbb{Q}$**
-:::
 
 $$
 \left(\begin{array}{rrrrr}
@@ -420,10 +425,25 @@ $$
 
 Luego es un sistema compatible Indeterminado.
 
-:::{.cuerpo_finito}
+::::
+:::::
+
+::::: {#exr-4 .cuerpo_finito-basico}
+
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_2$.
+
+$$\left\{\begin{aligned} x-y+z+t+v&=0,\\ x+y+z+t-v&=0,\\ -x-y+z+t-v&=0. \end{aligned}\right.$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+
+Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. 
+Además, un sistema homogéneo siempre es Compatible puesto que admite la solución $(0,0,0,0,0)$.
+
+
 **Coeficientes en $\mathbb{Z}_3$**
 
-Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que $1\not = -1$. 
+Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema [(ver solución del ejercicio 3)](#exr-3) son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que $1\not = -1$. 
 
 Si repasamos las operaciones utilizadas, son también válidas en $\mathbb{Z}_3$ y en $\mathbb{Z}_5$ (aunque multiplicar por $\frac{1}{2}$ correspondería a multiplicar por $2$ en $\mathbb{Z}_3$ o por $3$ en $\mathbb{Z}_5$).
 
@@ -503,14 +523,12 @@ v&=\lambda_4
 $$
 
 luego es compatible indeterminado y tiene un total de $2^4=16$ soluciones.
-:::
 ::::
 :::::
 
+::::: {#exr-5 .basico}
 
-::::: {#exr-3 .basico}
-
-Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$[, $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_7$]{.cuerpo_finito}.
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$.
 
 $$\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&= 2,\\ x_{1}+2x_{2}+x_{3}&=1,\\ x_{2}&=3. \end{aligned}\right.$$
 
@@ -519,7 +537,66 @@ $$\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&= 2,\\ x_{1}+2x_{2}+x_{3}&=1,\\ x_{2}
 
 Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.
 
-:::{.cuerpo_finito}
+
+$$\begin{aligned}
+\left(\begin{array}{ccc|c}
+\boxed{1} & 1 & 1 & 2\\
+1 & 2 & 1 & 1\\
+0 & 1 & 0 &  3
+\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} & 1 & 1 & 2\\
+0 & \boxed{1} & 0 & -1\\
+0 & 1 & 0 &  3
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
+f_3-f_1\rightarrow f_3 \end{array}} 
+\left(\begin{array}{ccc|c}
+\boxed{1} & 0 & 1 & 3\\
+0 & \boxed{1} & 0 & -1\\
+0 & 0 & 0 &  4
+\end{array}\right)\\
+\sim_{\frac{1}{4}f_3\rightarrow f_3} 
+\left(\begin{array}{ccc|c}
+\boxed{1} & 0 & 1 & 3\\
+0 & \boxed{1} & 0 &  -1\\
+0 & 0 & 0 & 1\\
+\end{array}\right)
+\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2+f_3\rightarrow f_2 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} & 0 & 1 & 0\\
+0 & \boxed{1} & 0 &  0\\
+0 & 0 & 0 & \boxed{1}\\
+\end{array}\right).
+\end{aligned}
+$$
+
+Comprobemos el resultado obtenido con <code>sage</code>.
+
+::: {.sage}
+<script type="text/x-sage">
+A=matrix(QQ,[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
+b=vector(QQ,[2,1,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+:::
+
+Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
+::::
+:::::
+
+::::: {#exr-6 .cuerpo_finito-basico}
+
+Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Z}_3$, $\mathbb{Z}_5$ y $\mathbb{Z}_7$.
+
+$$\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&= 2,\\ x_{1}+2x_{2}+x_{3}&=1,\\ x_{2}&=3. \end{aligned}\right.$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+
+Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.
+
 **En $\mathbb{Z}_7$:**
 
 $$
@@ -663,59 +740,10 @@ show(Ab,"~",Ab.rref())
 
 Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 
-**En $\mathbb{Q}$:**
-:::
-
-
-$$\begin{aligned}
-\left(\begin{array}{ccc|c}
-\boxed{1} & 1 & 1 & 2\\
-1 & 2 & 1 & 1\\
-0 & 1 & 0 &  3
-\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
-\left(\begin{array}{ccc|c}
-\boxed{1} & 1 & 1 & 2\\
-0 & \boxed{1} & 0 & -1\\
-0 & 1 & 0 &  3
-\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
-f_3-f_1\rightarrow f_3 \end{array}} 
-\left(\begin{array}{ccc|c}
-\boxed{1} & 0 & 1 & 3\\
-0 & \boxed{1} & 0 & -1\\
-0 & 0 & 0 &  4
-\end{array}\right)\\
-\sim_{\frac{1}{4}f_3\rightarrow f_3} 
-\left(\begin{array}{ccc|c}
-\boxed{1} & 0 & 1 & 3\\
-0 & \boxed{1} & 0 &  -1\\
-0 & 0 & 0 & 1\\
-\end{array}\right)
-\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
-f_2+f_3\rightarrow f_2 \end{array}}
-\left(\begin{array}{ccc|c}
-\boxed{1} & 0 & 1 & 0\\
-0 & \boxed{1} & 0 &  0\\
-0 & 0 & 0 & \boxed{1}\\
-\end{array}\right).
-\end{aligned}
-$$
-
-Comprobemos el resultado obtenido con <code>sage</code>.
-
-::: {.sage}
-<script type="text/x-sage">
-A=matrix(QQ,[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
-b=vector(QQ,[2,1,3]) #término independiente
-Ab=A.augment(b,subdivide=True) #matriz aumentada
-show(Ab,"~",Ab.rref())
-</script>
-:::
-
-Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación $0=1$), el sistema es incompatible.
 ::::
 :::::
 
-::::: {#exr-4 .cuerpo_finito-basico}
+::::: {#exr-7 .cuerpo_finito-basico}
 
 En el cuerpo $\mathbb{Z}_5$ se considera la matriz
 $$C = \begin{pmatrix} 1&1&1&1 \\ 0&2&1&2 \\ 0&4&1&1 \\ \end{pmatrix}.$$
@@ -907,7 +935,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-5 .cuerpo_finito-medio}
+::::: {#exr-8 .cuerpo_finito-medio}
 
 Encuentra, si es posible, $P \in \mathcal{M}_{4}(\mathbb{Z}_3)$, regular, tal que $PA=B$, donde
 $$
@@ -1119,7 +1147,7 @@ P*A==B
 ::::
 :::::
 
-::::: {#exr-6 .cuerpo_finito-avanzado}
+::::: {#exr-9 .cuerpo_finito-avanzado}
 
 Sea $$A=\left (\begin{array}{cccc} 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 1 \\ 3 & 4 & 2 & 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)$$
 
@@ -1381,7 +1409,7 @@ También es posible plantearlo de una forma similar al apartado 2, al resolver l
 :::::
 
 
-::::: {#exr-7 .basico}
+::::: {#exr-10 .basico}
 
 Dado el sistema de ecuaciones con coeficientes en $\mathbb{Q}$
 $$\left\{\begin{aligned} x - ay + (a+1)z & = 4, \\ ax + 2y + z & = -1. \end{aligned}\right.$$
@@ -1482,7 +1510,7 @@ show(Ab,"~",Ab.rref())
 ::::
 :::::
 
-::::: {#exr-8 .cuerpo_finito-medio}
+::::: {#exr-11 .cuerpo_finito-medio}
 
 Calcula el rango de la siguiente matriz, con coeficientes en $\mathbb{Z}_3$, según los valores de los parámetros $a$ y $b$.
 $$\begin{pmatrix} 1 & a & 0 & 1 \\ 2 & 1 & 1 & b \\ 0 & a & b & a+b \end{pmatrix}$$
@@ -1567,12 +1595,12 @@ que también tiene rango 2 (recordemos que estamos en $\mathbb{Z}_3$).
 :::::
 
 
-::::: {#exr-9 .medio}
+::::: {#exr-12 .medio}
 
 Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).$$
 <ol type="a">
 <li>Calcula el determinante de la matriz $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
-<li class="cuerpo_finito">Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
+<li>Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Q}$.</li>
 <li>Discute el sistema de ecuaciones con matriz ampliada $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
 </ol>
 
@@ -1605,10 +1633,12 @@ $$
 |A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
 $$ 
 
-y este resultado es válido en cualquier cuerpo.</li>
+y este resultado es válido en cualquier cuerpo.
 
-<li class="cuerpo_finito">Rango.
-Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda\in \{0,1\}$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.
+</li>
+
+<li>Rango.
+Por el cálculo del determinante, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda\in \{0,1,3\}$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.
 
 
 Para $\lambda=0$:
@@ -1616,20 +1646,25 @@ Para $\lambda=0$:
 
 $$
 A=\left( \begin{array}{cccc}
-0 & 1 & 1 & 0\\
-2 &0 & 0 & 0\\
+3 & 1 & 1 & 0\\
+5 &0 & 0 & 0\\
 0 & 0 & 0 & 1\\
-0 & 2 & 2 & 2 
+0 & -1 & -1 & 2 
+\end{array}\right)\sim_{c}\left( \begin{array}{cccc}
+3 & 1 & 0 & 0\\
+5 &0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & -1 & 0 & 2 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-0 & 1 & 1 & 0\\
-1 &0 & 0 & 0\\
-0 & 0 & 0 & 1\\
-0 & 0 & 0 & 2 
+5 & 0 & 0 & 0\\
+3 &1 & 0 & 0\\
+0 & -1 & 0 & 2\\
+0 & 0 & 0 & 1 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-1 & 0 & 0 & 0\\
-0 &1 & 1 & 0\\
-0 & 0 & 0 & 1\\
-0 & 0 & 0 & 0 
+5 & 0 & 0 & 0\\
+3 &1 & 0 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & 0 & 1 
 \end{array}\right)
 $$ 
 luego el rango es 3. 
@@ -1640,17 +1675,51 @@ Para $\lambda=1$:
 $$
 A=\left( \begin{array}{cccc}
 2 & 1 & 1 & 0\\
-2 &2 & 0 & 0\\
-0 & 2 & 2 & 1\\
-0 & 2 & 2 & 1 
+5 &-1 & 0 & 0\\
+0 & -1 & -1 & 1\\
+0 & -1 & -1 & 1 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
 2 & 1 & 1 & 0\\
-0 &1 & 2 & 0\\
-0 & 2 & 2 & 1\\
+5 & -1 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & -1 & -1 & 1 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 & 0 & 0 & 0\\
+5 & -1 & 0 & 0\\
+2 & 1 & 1 & 0\\
+0 & -1 & -1 & 1 
+\end{array}\right)
+$$
+que tiene rango 3.
+
+Para $\lambda=3$:
+
+$$
+A=\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+5 & -3 & 0 & 0\\
+0 & -3 & -3 & 1\\
+0 & -1 & -1 & 1 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+5 & -3 & 0 & 0\\
+0 & -3 & -3 & 1\\
+0 & -4 & -4 & 0 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+5 & -3 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & -3 & -3 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+5 & -3 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 1\\
 0 & 0 & 0 & 0 
 \end{array}\right)
 $$
-que tiene rango 3.</li>
+que tiene rango 3.
+
+</li>
 
 <li>Sistema de ecuaciones.
 
@@ -1709,8 +1778,145 @@ y de nuevo aparece la ecuación $0=1$ con lo que en este caso es incompatible.</
 ::::
 :::::
 
+::::: {#exr-13 .cuerpo_finito-medio}
 
-::::: {#exr-10 .medio}
+Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).$$
+<ol type="a">
+<li>Calcula el determinante de la matriz $A$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
+<li>Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
+<li>Discute el sistema de ecuaciones con matriz ampliada $A$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Determinante.
+Para calcular el determinante podemos utilizar el resultado del [ejercicio 12](#exr-12), que es válido también en $\mathbb{Z}_3$:
+
+$$
+|A|=\left| \begin{array}{cccc}
+3-\lambda & 1 & 1 & 0\\
+5 &-\lambda & 0 & 0\\
+0 & -\lambda & -\lambda & 1\\
+0 & -1 & -1 & 2-\lambda 
+\end{array}\right|=\left| \begin{array}{cccc}
+3-\lambda & 0 & 1 & 0\\
+5 &-\lambda & 0 & 0\\
+0 & 0 & -\lambda & 1\\
+0 & 0 & -1 & 2-\lambda 
+\end{array}\right|=(-\lambda)\left| \begin{array}{ccc}
+3-\lambda &  1 & 0\\
+0 &  -\lambda & 1\\
+0 &  -1 & 2-\lambda 
+\end{array}\right|.
+$$
+
+Desarrollando ahora por la primera columna
+$$
+|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
+$$ 
+
+</li>
+
+<li>Rango.
+Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda\in \{0,1\}$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.
+
+
+Para $\lambda=0$:
+
+
+$$
+A=\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+2 &0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 2 & 2 & 2 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+1 &0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 2 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 &1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$ 
+luego el rango es 3. 
+
+
+Para $\lambda=1$:
+
+$$
+A=\left( \begin{array}{cccc}
+2 & 1 & 1 & 0\\
+2 &2 & 0 & 0\\
+0 & 2 & 2 & 1\\
+0 & 2 & 2 & 1 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+2 & 1 & 1 & 0\\
+0 &1 & 2 & 0\\
+0 & 2 & 2 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$
+que tiene rango 3.
+
+</li>
+
+<li>Sistema de ecuaciones.
+
+Como la matriz ampliada tiene rango 4 para $\lambda\not\in \{0,1\}$, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares $\lambda\in\{0,1\}$:
+
+
+Para $\lambda=0$:
+$$
+\left( \begin{array}{ccc|c}
+0 & 1 & 1 & 0\\
+2 & 0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 2 & 2 & 2 
+\end{array}\right)
+$$
+
+Como aparece la ecuación $2=0$, el sistema es entonces también incompatible.
+
+
+Para $\lambda=1$:
+$$
+\left( \begin{array}{ccc|c}
+2 & 1 & 1 & 0\\
+2 & 2 & 0 & 0\\
+0 & 2 & 2 & 1\\
+0 & 2 & 2 & 1 
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 & 1 & 1 & 0\\
+2 & 2 & 0 & 0\\
+0 & 2 & 2 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 & 1 & 1 & 0\\
+0 & 1 & 2 & 0\\
+0 & 2 & 2 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 & 1 & 1 & 0\\
+0 & 1 & 2 & 0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$
+
+en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.</li>
+</ol>
+::::
+:::::
+
+
+
+
+::::: {#exr-14 .medio}
 
 Sea 
 
@@ -1825,7 +2031,7 @@ Como la matriz ampliada del sistema es $A$, entonces cuando $a\not = 1$ la matri
 :::::
 
 
-::::: {#exr-11 .medio}
+::::: {#exr-15 .medio}
 
 Dadas las matrices 
 
@@ -1975,7 +2181,7 @@ $$
 :::::
 
 
-::::: {#exr-12 .medio}
+::::: {#exr-16 .medio}
 
 Dada la matriz
 
@@ -2151,7 +2357,7 @@ también es incompatible.</li>
 :::::
 
 
-::::: {#exr-13 .medio}
+::::: {#exr-17 .medio}
 Para las matrices:
 
 $$
@@ -2275,7 +2481,7 @@ $$
 :::::
 
 
-::::: {#exr-14 .medio}
+::::: {#exr-18 .medio}
 
 Dada la matriz
 
@@ -2441,7 +2647,7 @@ show(A,"~",A.rref())
 :::::
 
 
-::::: {#exr-15 .medio}
+::::: {#exr-19 .medio}
 
 Se consideran las matrices:
 
@@ -2581,7 +2787,7 @@ que existe, aunque no es regular porque $B$ no lo es. Así que existe una tal $P
 :::::
 
 
-::::: {#exr-16 .medio}
+::::: {#exr-20 .medio}
 
 Discutir en función de los parámetros $a$ y $b$ el sistema de ecuaciones lineales:
 
@@ -2655,7 +2861,7 @@ $$
 :::::
 
 
-::::: {#exr-17 .medio}
+::::: {#exr-21 .medio}
 
 Dadas las matrices 
 $$
