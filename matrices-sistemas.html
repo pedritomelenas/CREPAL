@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.41">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,10 +31,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-48ffa3e5b9d089919c6712c39e5b00f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b81949095c673e4d07cb13933b3a727f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f6617b529ac06d890b87abd4dbe46865.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "Sin resultados",
@@ -310,7 +310,7 @@ window.Quarto = {
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 <p><input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked="" onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp; <input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Básicos. &nbsp; <input type="checkbox" id="casilla_medio" value="medioon" checked="" onclick="mostrar();"> Dificultad media. &nbsp; <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Avanzados.</p>
 <div id="exr-1" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span><span class="cuerpo_finito">, <span class="math inline">\(\mathbb{Z}_3\)</span> y <span class="math inline">\(\mathbb{Z}_5\)</span></span>.</p>
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x_{2}-2x_{3}&amp;= -4,\\ x_{1}+x_{2}-x_{3}&amp;=0,\\ 2x_{1}-x_{2}+x_{3}&amp;=3. \end{aligned}\right.\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -325,9 +325,6 @@ Solución
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada.</p>
-<div class="cuerpo_finito">
-<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></p>
-</div>
 <p>En primer lugar buscamos el pivote en la primera posición de la fila uno, en este caso intercambiando las posiciones de las ecuaciones una y dos:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
 0 &amp; 1 &amp; -2 &amp; -4\\
@@ -413,7 +410,26 @@ x_{3}&amp;=3.
 \end{aligned}\right.
 \]</span></p>
 <p>Luego es un sistema compatible determinado, y su única solución es <span class="math display">\[(1,2,3).\]</span></p>
-<div class="cuerpo_finito">
+</div>
+</div>
+</div>
+</div>
+<div id="exr-2" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Z}_3\)</span> y <span class="math inline">\(\mathbb{Z}_5\)</span>.</p>
+<p><span class="math display">\[\left\{\begin{aligned} x_{2}-2x_{3}&amp;= -4,\\ x_{1}+x_{2}-x_{3}&amp;=0,\\ 2x_{1}-x_{2}+x_{3}&amp;=3. \end{aligned}\right.\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Usaremos el método de Gauss-Jordan, que consiste en encontrar la forma escalonada reducida del sistema de ecuaciones. Trabajaremos directamente en la matriz de coeficientes ampliada.</p>
 <p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span></strong></p>
 <p>En primer lugar vamos a substituir los coeficientes por representantes en <span class="math inline">\(\{0,1,2\}\)</span>:</p>
 <p><span class="math display">\[\left(\begin{array}{ccc|c}
@@ -573,12 +589,11 @@ x_{3}&amp;=3.
 </div>
 </div>
 </div>
-</div>
-<div id="exr-2" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span><span class="cuerpo_finito">, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_2\)</span></span>.</p>
+<div id="exr-3" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x-y+z+t+v&amp;=0,\\ x+y+z+t-v&amp;=0,\\ -x-y+z+t-v&amp;=0. \end{aligned}\right.\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -587,12 +602,9 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. Además, un sistema homogéneo siempre es Compatible puesto que admite la solución <span class="math inline">\((0,0,0,0,0)\)</span>.</p>
-<div class="cuerpo_finito">
-<p><strong>Coeficientes en <span class="math inline">\(\mathbb{Q}\)</span></strong></p>
-</div>
 <p><span class="math display">\[
 \left(\begin{array}{rrrrr}
 \boxed{1} &amp; -1 &amp; 1 &amp; 1 &amp; 1\\
@@ -657,9 +669,28 @@ v&amp;=\lambda_2
 \end{aligned}\right\},   \lambda_1, \lambda_2 \in \mathbb{Q}.
 \]</span></p>
 <p>Luego es un sistema compatible Indeterminado.</p>
-<div class="cuerpo_finito">
+</div>
+</div>
+</div>
+</div>
+<div id="exr-4" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_2\)</span>.</p>
+<p><span class="math display">\[\left\{\begin{aligned} x-y+z+t+v&amp;=0,\\ x+y+z+t-v&amp;=0,\\ -x-y+z+t-v&amp;=0. \end{aligned}\right.\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Este sistema es homogéneo, es decir, la columna de términos independientes es entera de ceros. Puesto que las operaciones elementales en esa columna siempre la mantienen igual, solo escribiremos la matriz de coeficientes. Además, un sistema homogéneo siempre es Compatible puesto que admite la solución <span class="math inline">\((0,0,0,0,0)\)</span>.</p>
 <p><strong>Coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span></strong></p>
-<p>Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que <span class="math inline">\(1\not = -1\)</span>.</p>
+<p>Este ejemplo es un caso muy especial, puesto que todos los coeficientes del sistema <a href="#exr-3">(ver solución del ejercicio 3)</a> son unos y menos unos (también podrían haber sido ceros y razonaríamos igual), y estos elementos se pueden usar en cualquier cuerpo en el que <span class="math inline">\(1\not = -1\)</span>.</p>
 <p>Si repasamos las operaciones utilizadas, son también válidas en <span class="math inline">\(\mathbb{Z}_3\)</span> y en <span class="math inline">\(\mathbb{Z}_5\)</span> (aunque multiplicar por <span class="math inline">\(\frac{1}{2}\)</span> correspondería a multiplicar por <span class="math inline">\(2\)</span> en <span class="math inline">\(\mathbb{Z}_3\)</span> o por <span class="math inline">\(3\)</span> en <span class="math inline">\(\mathbb{Z}_5\)</span>).</p>
 <p>Comprobemos el razonamiento con <code>sage</code>.</p>
 <div class="sage">
@@ -726,12 +757,11 @@ v&amp;=\lambda_4
 </div>
 </div>
 </div>
-</div>
-<div id="exr-3" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span><span class="cuerpo_finito">, <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_7\)</span></span>.</p>
+<div id="exr-5" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&amp;= 2,\\ x_{1}+2x_{2}+x_{3}&amp;=1,\\ x_{2}&amp;=3. \end{aligned}\right.\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -740,10 +770,71 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.</p>
-<div class="cuerpo_finito">
+<p><span class="math display">\[\begin{aligned}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+1 &amp; 2 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; \boxed{1} &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 0 &amp;  3
+\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
+f_3-f_1\rightarrow f_3 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 0 &amp;  4
+\end{array}\right)\\
+\sim_{\frac{1}{4}f_3\rightarrow f_3}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
+0 &amp; \boxed{1} &amp; 0 &amp;  -1\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)
+\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
+f_2+f_3\rightarrow f_2 \end{array}}
+\left(\begin{array}{ccc|c}
+\boxed{1} &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp;  0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1}\\
+\end{array}\right).
+\end{aligned}
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(QQ,[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
+b=vector(QQ,[2,1,3]) #término independiente
+Ab=A.augment(b,subdivide=True) #matriz aumentada
+show(Ab,"~",Ab.rref())
+</script>
+</div>
+<p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-6" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(\mathbb{Z}_5\)</span> y <span class="math inline">\(\mathbb{Z}_7\)</span>.</p>
+<p><span class="math display">\[\left\{\begin{aligned} x_{1}+x_{2}+x_{3}&amp;= 2,\\ x_{1}+2x_{2}+x_{3}&amp;=1,\\ x_{2}&amp;=3. \end{aligned}\right.\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Trabajaremos directamente con la matriz de coeficientes ampliada, buscando en cada caso la forma escalonada reducida por filas.</p>
 <p><strong>En <span class="math inline">\(\mathbb{Z}_7\)</span>:</strong></p>
 <p><span class="math display">\[
 \begin{aligned}\left(\begin{array}{ccc|c}
@@ -871,56 +962,12 @@ show(Ab,"~",Ab.rref())
 </script>
 </div>
 <p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
-<p><strong>En <span class="math inline">\(\mathbb{Q}\)</span>:</strong></p>
-</div>
-<p><span class="math display">\[\begin{aligned}
-\left(\begin{array}{ccc|c}
-\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
-1 &amp; 2 &amp; 1 &amp; 1\\
-0 &amp; 1 &amp; 0 &amp;  3
-\end{array}\right)\sim_{f_2-f_1\rightarrow f_2}
-\left(\begin{array}{ccc|c}
-\boxed{1} &amp; 1 &amp; 1 &amp; 2\\
-0 &amp; \boxed{1} &amp; 0 &amp; -1\\
-0 &amp; 1 &amp; 0 &amp;  3
-\end{array}\right)\sim_{\tiny \begin{array}{l} f_1-f_2\rightarrow f_2\\
-f_3-f_1\rightarrow f_3 \end{array}}
-\left(\begin{array}{ccc|c}
-\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
-0 &amp; \boxed{1} &amp; 0 &amp; -1\\
-0 &amp; 0 &amp; 0 &amp;  4
-\end{array}\right)\\
-\sim_{\frac{1}{4}f_3\rightarrow f_3}
-\left(\begin{array}{ccc|c}
-\boxed{1} &amp; 0 &amp; 1 &amp; 3\\
-0 &amp; \boxed{1} &amp; 0 &amp;  -1\\
-0 &amp; 0 &amp; 0 &amp; 1\\
-\end{array}\right)
-\sim_{\tiny \begin{array}{l} f_1-3f_3\rightarrow f_1\\
-f_2+f_3\rightarrow f_2 \end{array}}
-\left(\begin{array}{ccc|c}
-\boxed{1} &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; \boxed{1} &amp; 0 &amp;  0\\
-0 &amp; 0 &amp; 0 &amp; \boxed{1}\\
-\end{array}\right).
-\end{aligned}
-\]</span></p>
-<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
-<div class="sage">
-<script type="text/x-sage">
-A=matrix(QQ,[[1,1,1],[1,2,1],[0,1,0]]) #matriz de coeficientes
-b=vector(QQ,[2,1,3]) #término independiente
-Ab=A.augment(b,subdivide=True) #matriz aumentada
-show(Ab,"~",Ab.rref())
-</script>
-</div>
-<p>Como hay un pivote en la columna de términos independientes (es decir, aparece la ecuación <span class="math inline">\(0=1\)</span>), el sistema es incompatible.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="exr-4" class="cuerpo_finito-basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> En el cuerpo <span class="math inline">\(\mathbb{Z}_5\)</span> se considera la matriz <span class="math display">\[C = \begin{pmatrix} 1&amp;1&amp;1&amp;1 \\ 0&amp;2&amp;1&amp;2 \\ 0&amp;4&amp;1&amp;1 \\ \end{pmatrix}.\]</span></p>
+<div id="exr-7" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> En el cuerpo <span class="math inline">\(\mathbb{Z}_5\)</span> se considera la matriz <span class="math display">\[C = \begin{pmatrix} 1&amp;1&amp;1&amp;1 \\ 0&amp;2&amp;1&amp;2 \\ 0&amp;4&amp;1&amp;1 \\ \end{pmatrix}.\]</span></p>
 <ol type="a">
 <li>
 Calcula la forma de Hermite por filas de <span class="math inline">\(C\)</span>.
@@ -933,7 +980,7 @@ Elige una submatriz cuadrada de <span class="math inline">\(C\)</span> de orden 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -942,7 +989,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1104,12 +1151,12 @@ show(AI,"~",AI.rref())
 </div>
 </div>
 </div>
-<div id="exr-5" class="cuerpo_finito-medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Encuentra, si es posible, <span class="math inline">\(P \in \mathcal{M}_{4}(\mathbb{Z}_3)\)</span>, regular, tal que <span class="math inline">\(PA=B\)</span>, donde <span class="math display">\[
+<div id="exr-8" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> Encuentra, si es posible, <span class="math inline">\(P \in \mathcal{M}_{4}(\mathbb{Z}_3)\)</span>, regular, tal que <span class="math inline">\(PA=B\)</span>, donde <span class="math display">\[
 A = \begin{pmatrix} 1&amp;1&amp;0&amp;2&amp;1 \\ 2&amp;1&amp;1&amp;2&amp;0 \\ 0&amp;2&amp;1&amp;0&amp;2 \\ 0&amp;1&amp;2&amp;1&amp;0 \end{pmatrix}, \qquad B = \begin{pmatrix} 1&amp;1&amp;0&amp;1&amp;2 \\ 1&amp;2&amp;2&amp;1&amp;0 \\ 1&amp;0&amp;1&amp;2&amp;0 \\ 2&amp;2&amp;0&amp;0&amp;0 \end{pmatrix}.
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1118,7 +1165,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Sabemos que <span class="math inline">\(A\sim_f B\)</span> si y sólo si existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(PA=B\)</span>. Por tanto, primero comprobaremos que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> tienen la misma forma escalonada reducida por filas, calculando además las matrices de paso. Si coinciden, entonces usando las matrices de paso que hemos calculado, podremos encontrar <span class="math inline">\(P\)</span>.</p>
 <ol type="a">
@@ -1309,8 +1356,8 @@ P*A==B
 </div>
 </div>
 </div>
-<div id="exr-6" class="cuerpo_finito-avanzado theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Sea <span class="math display">\[A=\left (\begin{array}{cccc} 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)\]</span></p>
+<div id="exr-9" class="cuerpo_finito-avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 9</strong></span> Sea <span class="math display">\[A=\left (\begin{array}{cccc} 2 &amp; 1 &amp; 3 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 1 \\ 3 &amp; 4 &amp; 2 &amp; 1 \end{array}\right ) \in \mathcal{M}_{3\times 4}({\mathbb{Z}}_5)\]</span></p>
 <ol type="a">
 <li>
 Encuentra una matriz <span class="math inline">\(B\)</span> tal que <span class="math inline">\(A\cdot B = Id\)</span>.
@@ -1323,7 +1370,7 @@ Encuentra todas las matrices <span class="math inline">\(B\)</span> que cumplan 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1332,7 +1379,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1546,10 +1593,10 @@ También es posible plantearlo de una forma similar al apartado 2, al resolver l
 </div>
 </div>
 </div>
-<div id="exr-7" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Dado el sistema de ecuaciones con coeficientes en <span class="math inline">\(\mathbb{Q}\)</span> <span class="math display">\[\left\{\begin{aligned} x - ay + (a+1)z &amp; = 4, \\ ax + 2y + z &amp; = -1. \end{aligned}\right.\]</span> Discútelo según los valores del parámetro <span class="math inline">\(a\)</span>, y resuélvelo para <span class="math inline">\(a=-1\)</span>.</p>
+<div id="exr-10" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 10</strong></span> Dado el sistema de ecuaciones con coeficientes en <span class="math inline">\(\mathbb{Q}\)</span> <span class="math display">\[\left\{\begin{aligned} x - ay + (a+1)z &amp; = 4, \\ ax + 2y + z &amp; = -1. \end{aligned}\right.\]</span> Discútelo según los valores del parámetro <span class="math inline">\(a\)</span>, y resuélvelo para <span class="math inline">\(a=-1\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1558,7 +1605,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>En este tipo de ejercicio utilizaremos el Teorema de Rouché-Frobenius junto a los distintos métodos para calcular el rango de una matriz.</p>
 <p>En primer lugar escribimos la matriz ampliada del sistema</p>
@@ -1631,10 +1678,10 @@ show(Ab,"~",Ab.rref())
 </div>
 </div>
 </div>
-<div id="exr-8" class="cuerpo_finito-medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> Calcula el rango de la siguiente matriz, con coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>, según los valores de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>. <span class="math display">\[\begin{pmatrix} 1 &amp; a &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; b \\ 0 &amp; a &amp; b &amp; a+b \end{pmatrix}\]</span></p>
+<div id="exr-11" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 11</strong></span> Calcula el rango de la siguiente matriz, con coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>, según los valores de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>. <span class="math display">\[\begin{pmatrix} 1 &amp; a &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 1 &amp; b \\ 0 &amp; a &amp; b &amp; a+b \end{pmatrix}\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1643,7 +1690,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>El rango máximo posible de esta matriz es 3. Elegimos una submatriz cuadrada de orden 3 y calculamos su determinante. Escogemos una que a priori sepamos que su determinante no sea nulo y que sea fácil de calcular. Por ejemplo</p>
 <p><span class="math display">\[
@@ -1735,22 +1782,22 @@ Solución
 </div>
 </div>
 </div>
-<div id="exr-9" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 9</strong></span> &nbsp;</p>
+<div id="exr-12" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 12</strong></span> &nbsp;</p>
 Sea <span class="math display">\[A=\left( \begin{array}{cccc} 3-\lambda &amp; 1 &amp; 1 &amp; 0\\ 5 &amp;-\lambda &amp; 0 &amp; 0\\ 0 &amp; -\lambda &amp; -\lambda &amp; 1\\ 0 &amp; -1 &amp; -1 &amp; 2-\lambda \end{array}\right).\]</span>
 <ol type="a">
 <li>
 Calcula el determinante de la matriz <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
 </li>
-<li class="cuerpo_finito">
-Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(\lambda\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>.
+<li>
+Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(\lambda\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
 </li>
 <li>
 Discute el sistema de ecuaciones con matriz ampliada <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1759,7 +1806,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1784,43 +1831,77 @@ Solución
 <p>Desarrollando ahora por la primera columna <span class="math display">\[
 |A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
 \]</span></p>
-y este resultado es válido en cualquier cuerpo.
+<p>y este resultado es válido en cualquier cuerpo.</p>
 </li>
-<li class="cuerpo_finito">
-<p>Rango. Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.</p>
+<li>
+<p>Rango. Por el cálculo del determinante, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1,3\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.</p>
 <p>Para <span class="math inline">\(\lambda=0\)</span>:</p>
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
-0 &amp; 1 &amp; 1 &amp; 0\\
-2 &amp;0 &amp; 0 &amp; 0\\
+3 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp;0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
-0 &amp; 2 &amp; 2 &amp; 2
+0 &amp; -1 &amp; -1 &amp; 2
+\end{array}\right)\sim_{c}\left( \begin{array}{cccc}
+3 &amp; 1 &amp; 0 &amp; 0\\
+5 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; -1 &amp; 0 &amp; 2
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-0 &amp; 1 &amp; 1 &amp; 0\\
-1 &amp;0 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1\\
-0 &amp; 0 &amp; 0 &amp; 2
+5 &amp; 0 &amp; 0 &amp; 0\\
+3 &amp;1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp;1 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1\\
-0 &amp; 0 &amp; 0 &amp; 0
+5 &amp; 0 &amp; 0 &amp; 0\\
+3 &amp;1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right)
 \]</span> luego el rango es 3.</p>
 <p>Para <span class="math inline">\(\lambda=1\)</span>:</p>
-<span class="math display">\[
+<p><span class="math display">\[
 A=\left( \begin{array}{cccc}
 2 &amp; 1 &amp; 1 &amp; 0\\
-2 &amp;2 &amp; 0 &amp; 0\\
-0 &amp; 2 &amp; 2 &amp; 1\\
-0 &amp; 2 &amp; 2 &amp; 1
+5 &amp;-1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 1
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
 2 &amp; 1 &amp; 1 &amp; 0\\
-0 &amp;1 &amp; 2 &amp; 0\\
-0 &amp; 2 &amp; 2 &amp; 1\\
+5 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0\\
+5 &amp; -1 &amp; 0 &amp; 0\\
+2 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1
+\end{array}\right)
+\]</span> que tiene rango 3.</p>
+<p>Para <span class="math inline">\(\lambda=3\)</span>:</p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -3 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -3 &amp; 1\\
+0 &amp; -4 &amp; -4 &amp; 0
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; -3 &amp; -3 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
-\]</span> que tiene rango 3.
+\]</span> que tiene rango 3.</p>
 </li>
 <li>
 <p>Sistema de ecuaciones.</p>
@@ -1869,8 +1950,136 @@ y de nuevo aparece la ecuación <span class="math inline">\(0=1\)</span> con lo 
 </div>
 </div>
 </div>
-<div id="exr-10" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 10</strong></span> Sea</p>
+<div id="exr-13" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13</strong></span> &nbsp;</p>
+Sea <span class="math display">\[A=\left( \begin{array}{cccc} 3-\lambda &amp; 1 &amp; 1 &amp; 0\\ 5 &amp;-\lambda &amp; 0 &amp; 0\\ 0 &amp; -\lambda &amp; -\lambda &amp; 1\\ 0 &amp; -1 &amp; -1 &amp; 2-\lambda \end{array}\right).\]</span>
+<ol type="a">
+<li>
+Calcula el determinante de la matriz <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>.
+</li>
+<li>
+Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(\lambda\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>.
+</li>
+<li>
+Discute el sistema de ecuaciones con matriz ampliada <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Determinante. Para calcular el determinante podemos utilizar el resultado del <a href="#exr-12">ejercicio 12</a>, que es válido también en <span class="math inline">\(\mathbb{Z}_3\)</span>:</p>
+<p><span class="math display">\[
+|A|=\left| \begin{array}{cccc}
+3-\lambda &amp; 1 &amp; 1 &amp; 0\\
+5 &amp;-\lambda &amp; 0 &amp; 0\\
+0 &amp; -\lambda &amp; -\lambda &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2-\lambda
+\end{array}\right|=\left| \begin{array}{cccc}
+3-\lambda &amp; 0 &amp; 1 &amp; 0\\
+5 &amp;-\lambda &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; -\lambda &amp; 1\\
+0 &amp; 0 &amp; -1 &amp; 2-\lambda
+\end{array}\right|=(-\lambda)\left| \begin{array}{ccc}
+3-\lambda &amp;  1 &amp; 0\\
+0 &amp;  -\lambda &amp; 1\\
+0 &amp;  -1 &amp; 2-\lambda
+\end{array}\right|.
+\]</span></p>
+<p>Desarrollando ahora por la primera columna <span class="math display">\[
+|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
+\]</span></p>
+</li>
+<li>
+<p>Rango. Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.</p>
+<p>Para <span class="math inline">\(\lambda=0\)</span>:</p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 2
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 2
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp;1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> luego el rango es 3.</p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>:</p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+2 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp;2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+2 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp;1 &amp; 2 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> que tiene rango 3.</p>
+</li>
+<li>
+<p>Sistema de ecuaciones.</p>
+<p>Como la matriz ampliada tiene rango 4 para <span class="math inline">\(\lambda\not\in \{0,1\}\)</span>, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es incompatible. Nos queda estudiar los casos particulares <span class="math inline">\(\lambda\in\{0,1\}\)</span>:</p>
+<p>Para <span class="math inline">\(\lambda=0\)</span>: <span class="math display">\[
+\left( \begin{array}{ccc|c}
+0 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 2
+\end{array}\right)
+\]</span></p>
+<p>Como aparece la ecuación <span class="math inline">\(2=0\)</span>, el sistema es entonces también incompatible.</p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[
+\left( \begin{array}{ccc|c}
+2 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-14" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14</strong></span> Sea</p>
 <p><span class="math display">\[
 A=\left(\begin{array}{rccc} 1 &amp; 1 &amp; 1 &amp; 0\\ a &amp; a-1 &amp; a &amp; 1\\ 1 &amp; 1 &amp; 1 &amp; a-1\\ 1 &amp; a &amp; 0 &amp; 0  \end{array}\right)\in \mathcal{M}_4(\mathbb{R}).
 \]</span> y el sistema de ecuaciones <span class="math display">\[
@@ -1896,7 +2105,7 @@ Discute el sistema de ecuaciones según los valores de <span class="math inline"
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1905,7 +2114,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1988,8 +2197,8 @@ Discusión del sistema. Como la matriz ampliada del sistema es <span class="math
 </div>
 </div>
 </div>
-<div id="exr-11" class="avanzado theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 11</strong></span> Dadas las matrices</p>
+<div id="exr-15" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 15</strong></span> Dadas las matrices</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 1 &amp; 0 &amp; 1 &amp; a\\
@@ -2014,7 +2223,7 @@ Para <span class="math inline">\(a=1\)</span> calcula la forma de Hermite por co
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2023,7 +2232,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -2136,8 +2345,8 @@ P=\begin{pmatrix}
 </div>
 </div>
 </div>
-<div id="exr-12" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 12</strong></span> Dada la matriz</p>
+<div id="exr-16" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 16</strong></span> Dada la matriz</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 1 &amp; a-1 &amp; a &amp; 1\\
@@ -2158,7 +2367,7 @@ Discute el sistema cuya matriz ampliada es <span class="math inline">\(A\)</span
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2167,7 +2376,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -2305,8 +2514,8 @@ también es incompatible.
 </div>
 </div>
 </div>
-<div id="exr-13" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 13</strong></span> Para las matrices:</p>
+<div id="exr-17" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 17</strong></span> Para las matrices:</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 2 &amp; 1 &amp; 2 \\
@@ -2330,7 +2539,7 @@ C=\begin{pmatrix}
 <p>Determinar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot A \cdot P= C\)</span>.</p>
 <p>Razonar que no pueden existir matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que: <span class="math inline">\(Q\cdot B \cdot P=C\)</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2339,7 +2548,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>El rango de <span class="math inline">\(A\)</span> es dos, las filas priemra y tercera son idénticas y también lo son la segunda y la cuarta, además el menor principal de orden dos es distinto de cero. Como <span class="math inline">\(C\)</span> es de rango dos y del mismo orden, entonces <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> son equivalentes y por tanto existen matrices regulares <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> verificando <span class="math inline">\(Q\, A \, P=C\)</span>. Sin embargo <span class="math inline">\(B\)</span> tiene rango tres (el menor principal de orden tres es distinto de cero) y por tanto no es equivalente con <span class="math inline">\(C\)</span>.</p>
 <p>Para calcular <span class="math inline">\(Q\)</span> y <span class="math inline">\(P\)</span> realizamos operaciones elementales por filas y columnas sobre <span class="math inline">\(A\)</span> hasta obtener <span class="math inline">\(C\)</span>. Una forma posible es transformar <span class="math inline">\(A\)</span> hasta su forma de Hermite por filas y después, a la matriz obtenida se le realizan operaciones elementales por columnas. También podrían realizarse unas y otras operaciones elementales en cualquier orden.</p>
@@ -2425,8 +2634,8 @@ P=\left(\begin{array}{ccc}
 </div>
 </div>
 </div>
-<div id="exr-14" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 14</strong></span> Dada la matriz</p>
+<div id="exr-18" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 18</strong></span> Dada la matriz</p>
 <p><span class="math display">\[
 A= \left(\begin{array}{rrrr}
 a &amp; 1 &amp; 0 &amp; 1\\
@@ -2450,7 +2659,7 @@ Para <span class="math inline">\(a=-2\)</span> calcula la forma de Hermite por f
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2459,7 +2668,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -2590,8 +2799,8 @@ show(A,"~",A.rref())
 </div>
 </div>
 </div>
-<div id="exr-15" class="avanzado theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 15</strong></span> Se consideran las matrices:</p>
+<div id="exr-19" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 19</strong></span> Se consideran las matrices:</p>
 <p><span class="math display">\[
 A=\begin{pmatrix}
 -1 &amp; -a &amp; a-1 \\
@@ -2616,7 +2825,7 @@ Determinar para qué valores del parámetro <span class="math inline">\(a\)</spa
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2625,7 +2834,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -2725,8 +2934,8 @@ que existe, aunque no es regular porque <span class="math inline">\(B\)</span> n
 </div>
 </div>
 </div>
-<div id="exr-16" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 16</strong></span> Discutir en función de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> el sistema de ecuaciones lineales:</p>
+<div id="exr-20" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 20</strong></span> Discutir en función de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> el sistema de ecuaciones lineales:</p>
 <p><span class="math display">\[
 \left\{
 \begin{array}{rcl}
@@ -2738,7 +2947,7 @@ x+y+bz &amp;=&amp; 3. \\
 \]</span></p>
 <p>y resolverlo en aquellos casos en que sea compatible.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2747,7 +2956,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>La matriz de coeficientes del sistema</p>
 <p><span class="math display">\[
@@ -2795,8 +3004,8 @@ Solución
 </div>
 </div>
 </div>
-<div id="exr-17" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 17</strong></span> Dadas las matrices <span class="math display">\[
+<div id="exr-21" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 21</strong></span> Dadas las matrices <span class="math display">\[
 A=\left(\begin{array}{rrr}
    1 &amp; a &amp; -1\\
    a &amp; 1 &amp; 1\\
@@ -2824,7 +3033,7 @@ Para la pareja de valores <span class="math inline">\(a=0\)</span>, <span class=
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -2833,7 +3042,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -2886,29 +3095,27 @@ show(A,"~",A.rref())
 </script>
 </div>
 <p>Para <span class="math inline">\(a=-1\)</span></p>
-$$ A=(
-<span class="math display">\[\begin{array}{rrr}
+<p><span class="math display">\[
+A=\left(\begin{array}{rrr}
    1 &amp; -1 &amp; -1\\
    -1 &amp; 1 &amp; 1\\
    1 &amp; -1 &amp; -1\\
   0 &amp; 0 &amp; -1
-  \end{array}\]</span>
-)_{f} (
-<span class="math display">\[\begin{array}{rrr}
+  \end{array}
+\right)\sim_{f} \left(\begin{array}{rrr}
    1 &amp; -1 &amp; -1\\
    0 &amp; 0 &amp; 0\\
    0 &amp; 0 &amp; 0\\
   0 &amp; 0 &amp; -1
-  \end{array}\]</span>
-)_{f} (
-<span class="math display">\[\begin{array}{rrr}
+  \end{array}
+\right)\sim_{f} \left(\begin{array}{rrr}
    1 &amp; -1 &amp; 0\\
   0 &amp; 0 &amp; 1\\
    0 &amp; 0 &amp; 0\\
-   0 &amp; 0 &amp; 0\\
-
-  \end{array}\]</span>
-<p>). $$</p>
+   0 &amp; 0 &amp; 0
+  \end{array}
+\right).
+\]</span></p>
 <p>tiene rango dos y la anterior es su forma de Hermite por filas.</p>
 <p>Para <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[
