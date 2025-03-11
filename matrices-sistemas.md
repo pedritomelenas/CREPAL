@@ -2861,7 +2861,7 @@ $$
 :::::
 
 
-::::: {#exr-21 .medio}
+::::: {#exr-21 .medio-examen}
 
 Dadas las matrices 
 $$
@@ -2871,7 +2871,7 @@ A=\left(\begin{array}{rrr}
    1 & -1 & a\\
   0 & 0 & a
   \end{array}
-\right),\,\,\,\,
+\right),\quad
 B=\left(\begin{array}{rrr}
    1 & -1 & 1\\
    1 & 1 & 0\\
@@ -3064,7 +3064,809 @@ Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.
 $$
 
 Igualando y despejando $B$ sería $Q=Q_{2}^{-1}Q_{1}$. 
+Para calcular $Q_1$ y $Q_2$ realizamos operaciones elementales por filas sobre $(A|I_4)$ y $(B|I_4)$ y cuando en la parte izquierda aparezca $H$ tendremos en la parte derecha $Q_1$ y $Q_2$ respectivamente. 
+Hay muchas soluciones correctas, por ejemplo
+$$Q_1=\left(\begin{array}{rrrr}
+1/2 & 1/2 & 1/2 & 0\\  
+1/2 & 1/2 & -1/2 & 0\\  
+-1/2 & 1/2 & 1/2 & 0\\  
+  0 & 0 & 0 & 1
+  \end{array}
+\right); \hspace{1cm} Q_2=\left(\begin{array}{rrrr}
+1 & 0 & -1 & 0\\  
+-1 & 1 & 1 & 0\\  
+-1 & 1 & 2 & 0\\  
+  0 & -1 & 0 & 1
+  \end{array}
+\right)$$
+$$ Q=Q_2^{-1}Q_1=\left(\begin{array}{rrrr}
+-1/2 & 1/2 & 3/2 & 0\\  
+1 & 1 & 0 & 0\\  
+-1 & 0 & 1 & 0\\  
+  1 & 1 & 0 & 1
+  \end{array}
+\right)$$
 </li>
 </ol>
+::::
+:::::
+
+::::: {#exr-22 .basico-cuestion}
+
+Si $A$ es una matriz cuadrada y $P$ es una matriz regular que se puede multiplicar de forma adecuada por $A$, ¿cuáles de las siguientes matrices tienen el mismo rango que $A$?
+  $$A^2, \hspace{0.5cm} PA,\hspace{0.5cm} AP,\hspace{0.5cm} P^{-1}AP$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Como $P$ es regular $PA$, $AP$ y $P^{-1}AP$ son matrices que se obtienen de $A$ realizando o.e. por filas, por columnas y por filas y columnas respectivamente; por tanto todas son equivalentes con $A$ y tienen el mismo rango que $A$.
+Por el contrario $A^2$ puede no tener el mismo rango. Ejemplo:
+$$
+A=\begin{pmatrix}
+1 & -1\\
+1 & -1\\
+\end{pmatrix};   A^2=\begin{pmatrix}
+0 & 0\\
+0 & 0\\
+\end{pmatrix}
+$$
+
+$A$ tiene rango 1 y $A^2$ tiene rango 0.
+
+Comprobemos el resultado obtenido con <code>sage</code>.
+
+::: {.sage}
+<script type="text/x-sage">
+A=matrix([[1,-1],[1,-1]])
+show(A,A^2)
+</script>
+:::
+
+Por tanto, concluimos que si $a=-1$ y $b=0$, o bien, $a\neq-1$ y $b\neq0$, son equivalentes mientras que si $a=-1$ y $b\neq0$, o bien, $a\neq-1$ y $b=0$, no son equivalentes.
+
+::::
+:::::
+
+::::: {#exr-23 .medio-examen}
+
+Se considera la matriz:
+
+$$
+A=\begin{pmatrix}
+1 & a & -1\\
+0 & a-1 & -1 \\
+1 & 1 & a+1 \\
+2 & a+1 & a
+\end{pmatrix}
+$$
+
+<ol type="a">
+<li>Calcula el rango de $A$ según los valores de $a$.</li>
+<li>Calcula la forma de Hermite por filas de $A$ según los valores de $a$.</li>
+<li>Determina los valores de $a$ para los que $A$ es equivalente por columnas con
+
+$$
+C=\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+1 & -3 & 0\\
+2 & -3 & 0
+\end{pmatrix}
+$$
+
+</li>
+
+<li>Discute, según los valores de $a$ el sistema de ecuaciones lineales que tiene matriz de coeficientes $A$ y columna de términos independientes
+
+$$
+B=\begin{pmatrix}
+a-1\\
+0 \\
+a-1 \\
+3a-1
+\end{pmatrix}
+$$
+
+</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Para calcular el rango de $A$ hacemos algunos ceros por filas: 
+
+$$
+A=\begin{pmatrix}
+1 & a & -1\\
+0 & a-1 & -1 \\
+1 & 1 & a+1 \\
+2 & a+1 & a
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 & a & -1\\
+0 & a-1 & -1 \\
+0 & 1-a & a+2 \\
+0 & 1-a & a+2
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 & a & -1\\
+0 & a-1 & -1 \\
+0 & 1-a & a+2 \\
+0 & 0 & 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 & a & -1\\
+0 & a-1 & -1 \\
+0 & 0 & a+1 \\
+0 & 0 & 0
+\end{pmatrix}
+$$
+
+Por lo tanto si $a\neq 1 $ y $a\neq -1$ tendrá rango 3. 
+
+En el caso $a=1$ sustituimos en la última matriz obtenida (que es $\sim_f A$) 
+
+$$
+A\sim_f \begin{pmatrix}
+1 & 1 & -1\\
+0 & 0 & -1 \\
+0 & 0 & 2\\
+0 & 0 & 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 & 1 & 0\\
+0 & 0 & 1 \\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}
+$$
+
+Por lo tanto, cuando $a=1$ $A$ tiene rango 2.
+Lo mismo para $a=-1$
+
+$$
+A\sim_f \begin{pmatrix}
+1 & -1 & -1\\
+0 & -2 & -1 \\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 & 0 & -\frac{1}{2}\\
+0 & 1 & \frac{1}{2} \\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}
+$$
+
+Por lo tanto, cuando $a=-1$ $A$ tiene rango 2.
+
+En resumen: 
+<ul type="disc">
+<li>Si $a\neq 1$, $a\neq -1$, el rango de $A$ es 3.</li>
+<li>Si $a=1$ o $a=-1$ el rango de $A$ es 2.</li>
+</ul>
+
+Comprobemos el resultado obtenido con <code>sage</code>.
+
+::: {.sage}
+<script type="text/x-sage">
+A=matrix([[1,-1],[1,-1]])
+show(A,A^2)
+</script>
+:::
+</li>
+
+<li>En los casos $a=1$ y $a=-1$ la hemos obtenido en el apartado anterior. 
+En el caso en el que $rg(A)=3$, como hay 4 filas y 3 pivotes necesariamente una fila es de ceros y la única posición posible para los pivotes es
+
+$$ 
+\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{pmatrix}
+$$
+
+Quedando entonces que:
+<ul type="disc">
+<li>Si $a\neq 1$ y $a\neq -1$, la forma de Hermite por filas  de $A$ es  $\begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & 0 & 0
+\end{pmatrix}$</li>
+
+<li>Si $a=1$, la forma de Hermite por filas de $A$ es $\begin{pmatrix}
+1 & 1 & 0\\
+0 & 0 & 1 \\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}$</li>
+
+<li>Si $a=-1$, la forma de Hermite por filas de $A$ es $\begin{pmatrix}
+1 & 0 & -\frac{1}{2}\\
+0 & 1 & \frac{1}{2} \\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}$</li>
+</ul>
+
+</li>
+
+<li>
+La matriz $C$ está en forma de Hermite por columnas y tiene dos pivotes, por lo que su rango es 2.  $A$ será equivalente por columnas a $C$ sólo en los casos en los que tenga rango 2, esto es, cuando $a=1$ o cuando $a=-1$. 
+Veamos cómo es la forma de Hermite por columnas de $A$ en esos casos.
+
+<ul type="disc">
+<li>$a=1$ 
+  
+$$
+A=\begin{pmatrix}
+1 & 1 & -1\\
+0 & 0 & -1 \\
+1 & 1 & 2 \\
+2 & 2 & 1
+\end{pmatrix} \sim_c \begin{pmatrix}
+1 & 0 & 0\\
+0 & 0 & -1 \\
+1 & 0&3 \\
+2 & 0 & 3
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+1 & -3 & 0\\
+2 & -3 & 0
+\end{pmatrix}
+$$
+
+</li>
+<li>$a=-1$
+
+$$
+A=\begin{pmatrix}
+1 & -1 & -1\\
+0 & -2 & -1 \\
+1 & 1 & 0 \\
+2 & 0 & -1
+\end{pmatrix} \sim_c \begin{pmatrix}
+1 & 0 & 0\\
+0 & -2 & -1 \\
+1 & 2&1 \\
+2 & 2 & 1
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+1 & -1 & 0\\
+2 & -1 & 0
+\end{pmatrix}
+$$
+
+</li>
+</ul>
+Por lo que $A$ es equivalente por columnas con $C$ cuando $a=1$
+</li>
+
+<li>
+Para discutir el sistema usaremos el <b>Teorema de Rouché-Frobenius</b>.  Como ya conocemos el rango de la matriz de coeficientes, bastará con estudiar el rango de la matriz ampliada. Empezamos por calcular el determinante de la matriz ampliada:
+
+$$
+\left|  \begin{array}{cccc}
+            1 & a & -1 & a-1 \\
+            0 & a-1 & -1 & 0 \\
+            1 & 1 & a+1 & a-1 \\
+            2 & a+1 & a &3a-1
+          \end{array}
+\right|=\left|  \begin{array}{cccc}
+            1 & a & -1 & a-1 \\
+            0 & a-1 & -1 & 0 \\
+           0 & 1-a & a+2 & 0 \\
+            0 & 1-a & a+2 &a+1
+          \end{array}
+\right|=
+$$ 
+$$\left|  \begin{array}{ccc}
+             a-1 & -1 & 0 \\
+            1-a & a+2 & 0 \\
+             1-a & a+2 &a+1
+          \end{array}
+\right|=(a+1)\left|\begin{array}{cc}
+             a-1 & -1 \\
+            1-a & a+2  
+          \end{array}
+\right| =(a+1)^2 (a-1)
+$$
+
+Si $a\neq 1$ y $a\neq -1$ , el rango de la matriz ampliada es 4, mientras que el rango de la matriz de coeficientes es 3, por lo tanto el sistema es incompatible.
+
+<ul type="disc">
+<li>$a=1$
+
+$$
+A=\begin{pmatrix}
+1 & 1 & -1&0\\
+0 & 0 & -1&0 \\
+1 & 1 & 2 &0\\
+2 & 2 & 1&2
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 & 1 & 0&0\\
+0 & 0 & 1&0 \\
+1 & 1 & 0 &0\\
+2 & 2 & 0&2
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 & 1 & 0&0\\
+0 & 0 & 1&0 \\
+0 & 0 & 0 &1\\
+0 & 0 & 0&0
+\end{pmatrix}
+$$
+
+La matriz ampliada en estre caso tiene rango 3, mientras que la de coeficientes tiene rango 2, el sistema es incompatible.
+</li>
+<li>$a=-1$
+
+$$
+A=\begin{pmatrix}
+1 & -1 & -1&-2\\
+0 & -2 & -1 &0\\
+1 & 1 & 0 &-2\\
+2 & 0 & -1&-4
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 & -1 & -1&-2\\
+0 & -2 & -1 &0\\
+0 & 2 & 1 &0\\
+0 & 2 & 1&0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 & -1 & -1&-2\\
+0 & -2 & -1 &0\\
+0 & 0 & 0 &0\\
+0 &0& 0&0
+\end{pmatrix}
+$$
+
+La matriz ampliada tiene rango 2, al igual que la de coeficentes y menor que el número de incógnitas, por lo tanto el sistema es compatible indeterminado.
+</li>
+</ul>
+
+Luego el sistema es compatible indeterminado cuando $a=-1$ e incompatible en el resto de los casos.
+</li>
+</ol>
+::::
+:::::
+
+::::: {#exr-24 .medio-examen}
+
+Dada la matriz:
+
+$$
+A= \left(\begin{array}{cccc}
+1-a & 1 & 1 & 1\\
+1 & 1-a & -1 & -1\\
+1 & -1 & 1-a& -1\\
+1 & -1 & -1 & 1-a
+\end{array}\right)
+$$
+
+<ol type="a">
+<li>Calcula el determinante de $A$.</li>
+<li>Estudia el rango de $A$ para todos los valores reales de $a$.</li>
+<li>Determina la forma de Hermite por filas de $A$ para todos los valores de $a$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Realizamos en primer lugar las operaciones por filas: $F_4-F_3\rightarrow F_4; F_3-F_2\rightarrow F_3; F_2+F_1\rightarrow F_2$: 
+
+$$
+|A|= \left|\begin{array}{cccc}
+1-a & 1 & 1 & 1\\
+1 & 1-a & -1 & -1\\
+1 & -1 & 1-a& -1\\
+1 & -1 & -1 & 1-a
+\end{array}\right|= \left|\begin{array}{cccc}
+1-a & 1 & 1 & 1\\
+2-a & 2-a & 0 & 0\\
+0 & -2+a & 2-a& 0\\
+0 & 0 & -2+a & 2-a
+\end{array}\right|
+$$
+
+y desarrollamos por la primera fila, aunque aparecen 4 menores de orden 3 son muy sencillos (se ha tenido en cuenta que $-2+a=-(2-a)$)
+$$
+|A|=(1-a)\left|\begin{array}{ccc}
+ 2-a & 0 & 0\\
+ -2+a & 2-a& 0\\
+ 0 & -2+a & 2-a
+\end{array}\right|-\left|\begin{array}{ccc}
+2-a  & 0 & 0\\
+0  & 2-a& 0\\
+0  & -2+a & 2-a
+\end{array}\right|+\left|\begin{array}{ccc}
+2-a & 2-a  & 0\\
+0 & -2+a & 0\\
+0 & 0 &  2-a
+\end{array}\right|-
+$$
+$$
+\left|\begin{array}{ccc}
+2-a & 2-a & 0 \\
+0 & -2+a & 2-a\\
+0 & 0 & -2+a \end{array}\right|=(1-a)(2-a)^3- (2-a)^3-(2-a)^3-(2-a)^3=\boxed{(2-a)^3(-2-a)}
+$$
+
+
+Comprobemos el resultado obtenido con <code>sage</code>.
+
+::: {.sage}
+<script type="text/x-sage">
+var('a');
+A=matrix([[1-a,1,1,1],[1,1-a,-1,-1],[1,-1,1-a,-1],[1,-1,-1,1-a]])
+show(det(A))
+</script>
+:::
+
+</li>
+
+<li>
+<ul type="disc">
+<li>Para $\boxed{a\not = 2, -2}$ la matriz $A$ es regular y por tanto su rango es 4.</li>
+
+<li>Para $\boxed{a=2}$ calculamos su forma de Hermite por filas y así tendremos también parte de la respuesta del siguiente apartado.
+
+$$
+A= \left(\begin{array}{cccc}
+-1 & 1 & 1 & 1\\
+1 & -1 & -1 & -1\\
+1 & -1 & -1& -1\\
+1 & -1 & -1 & -1
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+\boxed{1} & -1 & -1 & -1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0& 0\\
+0 & 0 & 0 & 0
+\end{array}\right)=H_{a=2}
+$$
+
+luego $rango(A)=1$.</li>
+
+<li>Para $\boxed{a=-2}$ calculamos también su forma de Hermite por filas 
+
+$$
+A= \left(\begin{array}{cccc}
+3 & 1 & 1 & 1\\
+1 & 3 & -1 & -1\\
+1 & -1 & 3 & -1\\
+1 & -1 & -1 & 3
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+1 & -1 & -1 & 3\\
+0 & 4 & 0 & -4\\
+0 & 0 & 4& -4\\
+0 & 4 & 4 & -8
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+\boxed{1} & 0 & 0 & 1\\
+0 & \boxed{1} & 0 & -1\\
+0 & 0 & \boxed{1}& -1\\
+0 & 0 & 0 & 0
+\end{array}\right)=H_{a=-2}
+$$
+
+luego $rango(A)=3$.</li>
+</ul>
+</li>
+
+<li>Para $\boxed{a\not = 2, a\not = -2}$ como la matriz tiene rango 4 su forma de Hermite por filas es $I_4$. Para los casos $\boxed{a=2}$ y $\boxed{a=-2}$  se han calculado en el apartado anterior.</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-25 .basico-cuestion}
+
+¿Es verdadero o falso el siguiente enunciado? Si los sistemas de ecuaciones $AX=0$ y $BX=0$ son equivalentes, entonces las matrices $A$ y $B$ son equivalentes.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Es falso porque los sistemas pueden tener distinto número de ecuaciones, y en ese caso no podrían ser matrices equivalentes.
+Ejemplo:
+
+$$
+A=\begin{pmatrix}
+1 & 1 \\
+1 & 0 \\
+2 & 3
+\end{pmatrix}; \hspace{1cm}  B=\begin{pmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{pmatrix}
+$$
+
+::::
+:::::
+
+::::: {#exr-26 .medio-examen}
+
+Dadas las matrices 
+$$
+A= \left(\begin{array}{ccc}
+1 & 0 & -1\\
+1 & a & a-1 \\
+1 & 0 & a-2\\
+0 & a & a-1 
+\end{array}\right)\hspace{1cm} B= \left(\begin{array}{ccc}
+1 & 1 & 0\\
+0 & 1 & 1 \\
+1 & 2 & 1\\
+1 & 0 & 1 
+\end{array}\right)
+$$
+
+<ol type="a">
+<li>Determina los valores de $a$ para los que existe una matriz regular $P$ tal que $PA=B$.</li>
+<li>Determina los valores de $a$ para los que existe una matriz regular $Q$ tal que $AQ=B$.</li>
+<li>Determina los valores de $a$ para los que existen matrices regulares $P$ y $Q$ tales que $PAQ=B$.</li>
+<li>Para uno de los casos afirmativos del apartado (a) realiza el cálculo de la matriz regular. (Solo para 1 valor de $a$)</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+Los valores que verifican cada uno de los 3 primeros apartados son, respectivamente,
+<ol type="a">
+<li>aquellos para los que $A$ y $B$ son equivalentes por filas, es decir, tienen la misma forma de Hermite por filas;</li>
+<li>aquellos para los que $A$ y $B$ son equivalentes por columnas, es decir, tienen la misma forma de Hermite por columnas;</li>
+<li>aquellos para los que $A$ y $B$ son equivalentes, es decir, tienen el mismo rango.</li>
+</ol>
+
+Para ello comenzamos calculando las formas de Hermite por filas y por columnas de $B$:
+$$
+B= \left(\begin{array}{ccc}
+\boxed{1} & 1 & 0\\
+0 & 1 & 1 \\
+1 & 2 & 1\\
+1 & 0 & 1 
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} & 1 & 0\\
+0 & \boxed{1} & 1 \\
+0 & 1 & 1\\
+0 & -1 & 1 
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} & 0 & -1\\
+0 & \boxed{1} & 1 \\
+0 & 0 & 0\\
+0 & 0 & 2 
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} & 0 & 0\\
+0 & \boxed{1} & 0 \\
+0 & 0 &\boxed{1}\\
+0 & 0 & 0 
+\end{array}\right)
+$$
+
+Esto nos indica que el rango de $B$ es 3.
+$$
+B= \left(\begin{array}{ccc}
+\boxed{1} & 1 & 0\\
+0 & 1 & 1 \\
+1 & 2 & 1\\
+1 & 0 & 1 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1} & 0 & 0\\
+0 & \boxed{1} & 1 \\
+1 & 1 & 1\\
+1 & -1 & 1 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1} & 0 & 0\\
+0 & \boxed{1} & 0 \\
+1 & 1 & 0\\
+1 & -1 & \boxed{1} 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1} & 0 & 0\\
+0 & \boxed{1} & 0 \\
+1 & 1 & 0\\
+0 & 0 & \boxed{1} 
+\end{array}\right)
+$$
+
+<ol type="a">
+
+<li>
+
+$$
+A= \left(\begin{array}{ccc}
+\boxed{1}  & 0 & -1\\
+1 & a & a-1 \\
+1 & 0 & a-2\\
+0 & a & a-1 
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} & 0 & -1\\
+0 & a & a \\
+0 & 0 & a-1\\
+0 & a & a-1 
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} & 0 & -1\\
+0 & a & a \\
+0 & 0 & a-1\\
+0 & 0 & -1 
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} & 0 & 0\\
+0 & a & 0 \\
+0 & 0 & \boxed{1}\\
+0 & 0 & 0
+\end{array}\right)
+$$
+
+En la segunda fila hay pivote siempre que $a\not = 0$ y la forma de Hermite coincidiría con la de $B$. Luego la solución es que existe $P$ si, y solo si, $a\not =0$.</li>
+
+<li>Para que $A$ tenga 3 pivotes es necesario que $a\not=0$, en estos casos calculamos la forma de Hermite por columnas de $A$ (observamos que podemos multiplicar la 2ª columna por $1/a$):
+
+$$
+A= \left(\begin{array}{ccc}
+\boxed{1}  & 0 & -1\\
+1 & a & a-1 \\
+1 & 0 & a-2\\
+0 & a & a-1 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1}  & 0 & 0\\
+1 & \boxed{1} & a \\
+1 & 0 & a-1\\
+0 & 1 & a-1 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1}  & 0 & 0\\
+0 & \boxed{1} & 0 \\
+1 & 0 & a-1\\
+-1 & 1 & -1 
+\end{array}\right)
+$$
+
+Si $a\not =1$ el pivote de la tercera columna estaría en la tercera fila, y la forma de Hermite no coincide con la de $B$. Si $a=1$ nos quedaría
+$$
+\sim_c \left(\begin{array}{ccc}
+\boxed{1}  & 0 & 0\\
+0 & \boxed{1} & 0 \\
+1 & 0 & 0\\
+-1 & 1 & -1 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1}  & 0 & 0\\
+0 & \boxed{1} & 0 \\
+1 & 0 & 0\\
+0 & 0 & \boxed{1} 
+\end{array}\right)
+$$
+
+y tampoco coincide con la de $B$. La solución es que $Q$ no existe en ningún caso.</li>
+
+<li>Como resultado de los apartados anteriores, $rg(A)=3$ si, y solo si, $a\not =0$. </li>
+
+<li>Puede elegirse cualquier valor de $a$ que no sea $0$.
+Una resolución puede ser:
+<ol type="i">
+<li>Calcular una matriz $P_1$ tal que $P_1A=H$ siendo $H$ la forma de Hermite por filas de $A$ (y de $B$, claro) haciendo
+
+$$
+[A|I_4] \sim_f [H|P_1]
+$$
+</li>
+<li>Calcular una matriz $P_2$ tal que $P_2B=H$ siendo $H$ la forma de Hermite por filas de $B$ (y de $A$, claro) haciendo
+
+$$
+[B|I_4] \sim_f [H|P_2]
+$$
+</li>
+<li>Igualar $P_1A=P_2B$ y despejando $P=P_2^{-1}P_1$.</li>
+</ol>
+
+Por ejemplo, para $a=1$:
+$$
+[A|I]= \left(\begin{array}{ccr|rrrr}
+\boxed{1} & 0 & -1 &1 & 0 & 0 & 0\\
+1 & 1 & 0 & 0 & 1 & 0 & 0\\
+1 & 0 & -1& 0 & 0 & 1& 0\\
+0 & 1 & 0 & 0 & 0 & 0 &1
+\end{array}\right)\sim_f
+\left(\begin{array}{ccr|rrrr}
+\boxed{1} & 0 & 0 &0 & 1 & 0 & -1\\
+0 & \boxed{1} & 0 & 0 & 0 & 0 &1\\
+0 & 0 &\boxed{1} & -1 & 1 & 0 & -1\\
+0 & 0 & 0& -1 & 0 & 1& 0\\
+\end{array}\right)=[H|P_1]
+$$
+$$
+[B|I]= \left(\begin{array}{ccr|rrrr}
+\boxed{1} & 1 & 0 &1 & 0 & 0 & 0\\
+0 & 1 & 1 & 0 & 1 & 0 & 0\\
+1 & 2 & 1& 0 & 0 & 1& 0\\
+1 & 0 & 1 & 0 & 0 & 0 &1
+\end{array}\right)\sim_f
+ \left(\begin{array}{ccr|rrrr}
+\boxed{1} & 0 & 0 & 0 & -1 & 1/2 & 1/2\\
+0 & \boxed{1} & 0 & 0 & 0 & 1/2 & -1/2\\
+0 & 0 & \boxed{1} & 0 & 1 & -1/2& 1/2\\
+0 & 0 & 0 & 1 & 1 & -1 &0
+\end{array}\right)=[H|P_2]
+$$
+
+Luego, para $a=1$ una posible matriz $P$ es
+$$
+P_2^{-1}P_1=\left(\begin{array}{rrrr}
+-1 & 1 & 1 & 0\\
+ -1 & 1 & 0 &1\\
+ -1 & 2 & 0 & 1\\
+ -1 & 2 & 0& 1\\
+\end{array}\right)
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-27 .basico-cuestion}
+
+¿Es verdadero o falso el siguiente enunciado? Si dos matrices son equivalentes, entonces o bien son equivalentes por filas o bien lo son por columnas.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Es falso, , como ejemplo podemos tomar a las matrices 
+$$
+A=\left(\begin{array}{rr}
+1 & 0 \\
+0 & 0\\
+\end{array}\right)   \mbox{ y } B=\left(\begin{array}{rrr}
+1 & 1 \\
+1 & 1\\
+\end{array}\right)
+$$
+
+que son equivalentes porque tienen el mismo rango, pero no son equivalentes por filas y tampoco equivalentes por columnas.
+
+::::
+:::::
+
+::::: {#exr-28 .basico-cuestion}
+
+¿Para qué valores de $a$ el sistema 
+$$
+\left\{\begin{array}{rl}
+x+y+z&=1\\
+x+2y+az&=1\\
+x+4y+a^2z&=1
+\end{array}\right.
+$$
+es incompatible?
+
+:::: {.callout collapse="true" title="Solución"}
+
+<b>Nunca</b> es incompatible, siempre tiene la solución $x=1, y=0,z=0$. 
+
+::::
+:::::
+
+::::: {#exr-29 .basico-cuestion}
+
+¿Para qué valores de $a$ la forma de Hermite por filas de la matriz  
+$$
+A=\left(\begin{array}{rrr}
+1  & 1 & 1\\
+1 & 2 & a\\
+1 & 4 & a^2
+\end{array}\right)
+$$
+
+es $I_3$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+Como es cuadrada, por el <b>teorema de las matrices regulares</b>, la forma de Hermite por filas es $I_3$ cuando el determinante sea distinto de $0$.
+$$
+|A|=\left|\begin{array}{rrr}
+1  & 1 & 1\\
+1 & 2 & a\\
+1 & 4 & a^2
+\end{array}\right|=\left|\begin{array}{rrr}
+1  & 1 & 1\\
+0 & 1 & a-1\\
+0 & 3 & a^2-1
+\end{array}\right|=(a^2-1)-3(a-1)=a^2-3a+2
+$$
+
+que se hace cero para $a=\frac{3\pm \sqrt{9-8}}{2}=2,1$.
+Así que es $I_3$ para todo valor distinto de $1$ y $2$.
+
 ::::
 :::::
