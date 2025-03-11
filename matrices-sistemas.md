@@ -3064,7 +3064,7 @@ Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.
 $$
 
 Igualando y despejando $B$ sería $Q=Q_{2}^{-1}Q_{1}$. 
-Para calcular $Q_1$ y $Q_2$ realizamos o.e. por filas sobre $(A|I_4)$ y $(B|I_4)$ y cuando en la parte izquierda aparezca $H$ tendremos en la parte derecha $Q_1$ y $Q_2$ respectivamente. 
+Para calcular $Q_1$ y $Q_2$ realizamos operaciones elementales por filas sobre $(A|I_4)$ y $(B|I_4)$ y cuando en la parte izquierda aparezca $H$ tendremos en la parte derecha $Q_1$ y $Q_2$ respectivamente. 
 Hay muchas soluciones correctas, por ejemplo
 $$Q_1=\left(\begin{array}{rrrr}
 1/2 & 1/2 & 1/2 & 0\\  
@@ -3579,7 +3579,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-26 .media-examen}
+::::: {#exr-26 .medio-examen}
 
 Dadas las matrices 
 $$
