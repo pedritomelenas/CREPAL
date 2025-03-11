@@ -3004,7 +3004,7 @@ Solución
 </div>
 </div>
 </div>
-<div id="exr-21" class="medio theorem exercise">
+<div id="exr-21" class="medio-examen theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 21</strong></span> Dadas las matrices <span class="math display">\[
 A=\left(\begin{array}{rrr}
    1 &amp; a &amp; -1\\
@@ -3012,7 +3012,7 @@ A=\left(\begin{array}{rrr}
    1 &amp; -1 &amp; a\\
   0 &amp; 0 &amp; a
   \end{array}
-\right),\,\,\,\,
+\right),\quad
 B=\left(\begin{array}{rrr}
    1 &amp; -1 &amp; 1\\
    1 &amp; 1 &amp; 0\\
@@ -3187,9 +3187,830 @@ puesto que cada uno de los tres pivotes tienen que estar en columnas distintas. 
 <p><span class="math display">\[
 Q_{1}A=H,  \hspace{2cm} Q_{2}B=H.
 \]</span></p>
-Igualando y despejando <span class="math inline">\(B\)</span> sería <span class="math inline">\(Q=Q_{2}^{-1}Q_{1}\)</span>.
+Igualando y despejando <span class="math inline">\(B\)</span> sería <span class="math inline">\(Q=Q_{2}^{-1}Q_{1}\)</span>. Para calcular <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_2\)</span> realizamos operaciones elementales por filas sobre <span class="math inline">\((A|I_4)\)</span> y <span class="math inline">\((B|I_4)\)</span> y cuando en la parte izquierda aparezca <span class="math inline">\(H\)</span> tendremos en la parte derecha <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_2\)</span> respectivamente. Hay muchas soluciones correctas, por ejemplo <span class="math display">\[Q_1=\left(\begin{array}{rrrr}
+1/2 &amp; 1/2 &amp; 1/2 &amp; 0\\  
+1/2 &amp; 1/2 &amp; -1/2 &amp; 0\\  
+-1/2 &amp; 1/2 &amp; 1/2 &amp; 0\\  
+  0 &amp; 0 &amp; 0 &amp; 1
+  \end{array}
+\right); \hspace{1cm} Q_2=\left(\begin{array}{rrrr}
+1 &amp; 0 &amp; -1 &amp; 0\\  
+-1 &amp; 1 &amp; 1 &amp; 0\\  
+-1 &amp; 1 &amp; 2 &amp; 0\\  
+  0 &amp; -1 &amp; 0 &amp; 1
+  \end{array}
+\right)\]</span> <span class="math display">\[ Q=Q_2^{-1}Q_1=\left(\begin{array}{rrrr}
+-1/2 &amp; 1/2 &amp; 3/2 &amp; 0\\  
+1 &amp; 1 &amp; 0 &amp; 0\\  
+-1 &amp; 0 &amp; 1 &amp; 0\\  
+  1 &amp; 1 &amp; 0 &amp; 1
+  \end{array}
+\right)\]</span>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-22" class="basico-cuestion theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22</strong></span> Si <span class="math inline">\(A\)</span> es una matriz cuadrada y <span class="math inline">\(P\)</span> es una matriz regular que se puede multiplicar de forma adecuada por <span class="math inline">\(A\)</span>, ¿cuáles de las siguientes matrices tienen el mismo rango que <span class="math inline">\(A\)</span>? <span class="math display">\[A^2, \hspace{0.5cm} PA,\hspace{0.5cm} AP,\hspace{0.5cm} P^{-1}AP\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como <span class="math inline">\(P\)</span> es regular <span class="math inline">\(PA\)</span>, <span class="math inline">\(AP\)</span> y <span class="math inline">\(P^{-1}AP\)</span> son matrices que se obtienen de <span class="math inline">\(A\)</span> realizando o.e. por filas, por columnas y por filas y columnas respectivamente; por tanto todas son equivalentes con <span class="math inline">\(A\)</span> y tienen el mismo rango que <span class="math inline">\(A\)</span>. Por el contrario <span class="math inline">\(A^2\)</span> puede no tener el mismo rango. Ejemplo: <span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; -1\\
+1 &amp; -1\\
+\end{pmatrix};   A^2=\begin{pmatrix}
+0 &amp; 0\\
+0 &amp; 0\\
+\end{pmatrix}
+\]</span></p>
+<p><span class="math inline">\(A\)</span> tiene rango 1 y <span class="math inline">\(A^2\)</span> tiene rango 0.</p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,-1],[1,-1]])
+show(A,A^2)
+</script>
+</div>
+<p>Por tanto, concluimos que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b=0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b\neq0\)</span>, son equivalentes mientras que si <span class="math inline">\(a=-1\)</span> y <span class="math inline">\(b\neq0\)</span>, o bien, <span class="math inline">\(a\neq-1\)</span> y <span class="math inline">\(b=0\)</span>, no son equivalentes.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-23" class="medio-examen theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 23</strong></span> Se considera la matriz:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; a &amp; -1\\
+0 &amp; a-1 &amp; -1 \\
+1 &amp; 1 &amp; a+1 \\
+2 &amp; a+1 &amp; a
+\end{pmatrix}
+\]</span></p>
+<ol type="a">
+<li>
+Calcula el rango de <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Calcula la forma de Hermite por filas de <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+<p>Determina los valores de <span class="math inline">\(a\)</span> para los que <span class="math inline">\(A\)</span> es equivalente por columnas con</p>
+<p><span class="math display">\[
+C=\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+1 &amp; -3 &amp; 0\\
+2 &amp; -3 &amp; 0
+\end{pmatrix}
+\]</span></p>
+</li>
+<li>
+<p>Discute, según los valores de <span class="math inline">\(a\)</span> el sistema de ecuaciones lineales que tiene matriz de coeficientes <span class="math inline">\(A\)</span> y columna de términos independientes</p>
+<p><span class="math display">\[
+B=\begin{pmatrix}
+a-1\\
+0 \\
+a-1 \\
+3a-1
+\end{pmatrix}
+\]</span></p>
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Para calcular el rango de <span class="math inline">\(A\)</span> hacemos algunos ceros por filas:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; a &amp; -1\\
+0 &amp; a-1 &amp; -1 \\
+1 &amp; 1 &amp; a+1 \\
+2 &amp; a+1 &amp; a
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; a &amp; -1\\
+0 &amp; a-1 &amp; -1 \\
+0 &amp; 1-a &amp; a+2 \\
+0 &amp; 1-a &amp; a+2
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; a &amp; -1\\
+0 &amp; a-1 &amp; -1 \\
+0 &amp; 1-a &amp; a+2 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; a &amp; -1\\
+0 &amp; a-1 &amp; -1 \\
+0 &amp; 0 &amp; a+1 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Por lo tanto si $a $ y <span class="math inline">\(a\neq -1\)</span> tendrá rango 3.</p>
+<p>En el caso <span class="math inline">\(a=1\)</span> sustituimos en la última matriz obtenida (que es <span class="math inline">\(\sim_f A\)</span>)</p>
+<p><span class="math display">\[
+A\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; -1\\
+0 &amp; 0 &amp; -1 \\
+0 &amp; 0 &amp; 2\\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Por lo tanto, cuando <span class="math inline">\(a=1\)</span> <span class="math inline">\(A\)</span> tiene rango 2. Lo mismo para <span class="math inline">\(a=-1\)</span></p>
+<p><span class="math display">\[
+A\sim_f \begin{pmatrix}
+1 &amp; -1 &amp; -1\\
+0 &amp; -2 &amp; -1 \\
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 0 &amp; -\frac{1}{2}\\
+0 &amp; 1 &amp; \frac{1}{2} \\
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Por lo tanto, cuando <span class="math inline">\(a=-1\)</span> <span class="math inline">\(A\)</span> tiene rango 2.</p>
+En resumen:
+<ul type="disc">
+<li>
+Si <span class="math inline">\(a\neq 1\)</span>, <span class="math inline">\(a\neq -1\)</span>, el rango de <span class="math inline">\(A\)</span> es 3.
+</li>
+<li>
+Si <span class="math inline">\(a=1\)</span> o <span class="math inline">\(a=-1\)</span> el rango de <span class="math inline">\(A\)</span> es 2.
+</li>
+</ul>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[1,-1],[1,-1]])
+show(A,A^2)
+</script>
+</div>
+</li>
+<li>
+<p>En los casos <span class="math inline">\(a=1\)</span> y <span class="math inline">\(a=-1\)</span> la hemos obtenido en el apartado anterior. En el caso en el que <span class="math inline">\(rg(A)=3\)</span>, como hay 4 filas y 3 pivotes necesariamente una fila es de ceros y la única posición posible para los pivotes es</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+Quedando entonces que:
+<ul type="disc">
+<li>
+Si <span class="math inline">\(a\neq 1\)</span> y <span class="math inline">\(a\neq -1\)</span>, la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\)</span>
+</li>
+<li>
+Si <span class="math inline">\(a=1\)</span>, la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(\begin{pmatrix}
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\)</span>
+</li>
+<li>
+Si <span class="math inline">\(a=-1\)</span>, la forma de Hermite por filas de <span class="math inline">\(A\)</span> es <span class="math inline">\(\begin{pmatrix}
+1 &amp; 0 &amp; -\frac{1}{2}\\
+0 &amp; 1 &amp; \frac{1}{2} \\
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\)</span>
+</li>
+</ul>
+</li>
+<li>
+<p>La matriz <span class="math inline">\(C\)</span> está en forma de Hermite por columnas y tiene dos pivotes, por lo que su rango es 2. <span class="math inline">\(A\)</span> será equivalente por columnas a <span class="math inline">\(C\)</span> sólo en los casos en los que tenga rango 2, esto es, cuando <span class="math inline">\(a=1\)</span> o cuando <span class="math inline">\(a=-1\)</span>. Veamos cómo es la forma de Hermite por columnas de <span class="math inline">\(A\)</span> en esos casos.</p>
+<ul type="disc">
+<li>
+<p><span class="math inline">\(a=1\)</span></p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; 1 &amp; -1\\
+0 &amp; 0 &amp; -1 \\
+1 &amp; 1 &amp; 2 \\
+2 &amp; 2 &amp; 1
+\end{pmatrix} \sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; -1 \\
+1 &amp; 0&amp;3 \\
+2 &amp; 0 &amp; 3
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+1 &amp; -3 &amp; 0\\
+2 &amp; -3 &amp; 0
+\end{pmatrix}
+\]</span></p>
+</li>
+<li>
+<p><span class="math inline">\(a=-1\)</span></p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; -1 &amp; -1\\
+0 &amp; -2 &amp; -1 \\
+1 &amp; 1 &amp; 0 \\
+2 &amp; 0 &amp; -1
+\end{pmatrix} \sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; -2 &amp; -1 \\
+1 &amp; 2&amp;1 \\
+2 &amp; 2 &amp; 1
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+1 &amp; -1 &amp; 0\\
+2 &amp; -1 &amp; 0
+\end{pmatrix}
+\]</span></p>
+</li>
+</ul>
+Por lo que <span class="math inline">\(A\)</span> es equivalente por columnas con <span class="math inline">\(C\)</span> cuando <span class="math inline">\(a=1\)</span>
+</li>
+<li>
+<p>Para discutir el sistema usaremos el <b>Teorema de Rouché-Frobenius</b>. Como ya conocemos el rango de la matriz de coeficientes, bastará con estudiar el rango de la matriz ampliada. Empezamos por calcular el determinante de la matriz ampliada:</p>
+<p><span class="math display">\[
+\left|  \begin{array}{cccc}
+            1 &amp; a &amp; -1 &amp; a-1 \\
+            0 &amp; a-1 &amp; -1 &amp; 0 \\
+            1 &amp; 1 &amp; a+1 &amp; a-1 \\
+            2 &amp; a+1 &amp; a &amp;3a-1
+          \end{array}
+\right|=\left|  \begin{array}{cccc}
+            1 &amp; a &amp; -1 &amp; a-1 \\
+            0 &amp; a-1 &amp; -1 &amp; 0 \\
+           0 &amp; 1-a &amp; a+2 &amp; 0 \\
+            0 &amp; 1-a &amp; a+2 &amp;a+1
+          \end{array}
+\right|=
+\]</span> <span class="math display">\[\left|  \begin{array}{ccc}
+             a-1 &amp; -1 &amp; 0 \\
+            1-a &amp; a+2 &amp; 0 \\
+             1-a &amp; a+2 &amp;a+1
+          \end{array}
+\right|=(a+1)\left|\begin{array}{cc}
+             a-1 &amp; -1 \\
+            1-a &amp; a+2  
+          \end{array}
+\right| =(a+1)^2 (a-1)
+\]</span></p>
+<p>Si <span class="math inline">\(a\neq 1\)</span> y <span class="math inline">\(a\neq -1\)</span> , el rango de la matriz ampliada es 4, mientras que el rango de la matriz de coeficientes es 3, por lo tanto el sistema es incompatible.</p>
+<ul type="disc">
+<li>
+<p><span class="math inline">\(a=1\)</span></p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; 1 &amp; -1&amp;0\\
+0 &amp; 0 &amp; -1&amp;0 \\
+1 &amp; 1 &amp; 2 &amp;0\\
+2 &amp; 2 &amp; 1&amp;2
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 0&amp;0\\
+0 &amp; 0 &amp; 1&amp;0 \\
+1 &amp; 1 &amp; 0 &amp;0\\
+2 &amp; 2 &amp; 0&amp;2
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; 1 &amp; 0&amp;0\\
+0 &amp; 0 &amp; 1&amp;0 \\
+0 &amp; 0 &amp; 0 &amp;1\\
+0 &amp; 0 &amp; 0&amp;0
+\end{pmatrix}
+\]</span></p>
+La matriz ampliada en estre caso tiene rango 3, mientras que la de coeficientes tiene rango 2, el sistema es incompatible.
+</li>
+<li>
+<p><span class="math inline">\(a=-1\)</span></p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; -1 &amp; -1&amp;-2\\
+0 &amp; -2 &amp; -1 &amp;0\\
+1 &amp; 1 &amp; 0 &amp;-2\\
+2 &amp; 0 &amp; -1&amp;-4
+\end{pmatrix} \sim_f \begin{pmatrix}
+1 &amp; -1 &amp; -1&amp;-2\\
+0 &amp; -2 &amp; -1 &amp;0\\
+0 &amp; 2 &amp; 1 &amp;0\\
+0 &amp; 2 &amp; 1&amp;0
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; -1 &amp; -1&amp;-2\\
+0 &amp; -2 &amp; -1 &amp;0\\
+0 &amp; 0 &amp; 0 &amp;0\\
+0 &amp;0&amp; 0&amp;0
+\end{pmatrix}
+\]</span></p>
+La matriz ampliada tiene rango 2, al igual que la de coeficentes y menor que el número de incógnitas, por lo tanto el sistema es compatible indeterminado.
+</li>
+</ul>
+Luego el sistema es compatible indeterminado cuando <span class="math inline">\(a=-1\)</span> e incompatible en el resto de los casos.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-24" class="medio-examen theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 24</strong></span> Dada la matriz:</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{cccc}
+1-a &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 1-a &amp; -1 &amp; -1\\
+1 &amp; -1 &amp; 1-a&amp; -1\\
+1 &amp; -1 &amp; -1 &amp; 1-a
+\end{array}\right)
+\]</span></p>
+<ol type="a">
+<li>
+Calcula el determinante de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Estudia el rango de <span class="math inline">\(A\)</span> para todos los valores reales de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Determina la forma de Hermite por filas de <span class="math inline">\(A\)</span> para todos los valores de <span class="math inline">\(a\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Realizamos en primer lugar las operaciones por filas: <span class="math inline">\(F_4-F_3\rightarrow F_4; F_3-F_2\rightarrow F_3; F_2+F_1\rightarrow F_2\)</span>:</p>
+<p><span class="math display">\[
+|A|= \left|\begin{array}{cccc}
+1-a &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 1-a &amp; -1 &amp; -1\\
+1 &amp; -1 &amp; 1-a&amp; -1\\
+1 &amp; -1 &amp; -1 &amp; 1-a
+\end{array}\right|= \left|\begin{array}{cccc}
+1-a &amp; 1 &amp; 1 &amp; 1\\
+2-a &amp; 2-a &amp; 0 &amp; 0\\
+0 &amp; -2+a &amp; 2-a&amp; 0\\
+0 &amp; 0 &amp; -2+a &amp; 2-a
+\end{array}\right|
+\]</span></p>
+<p>y desarrollamos por la primera fila, aunque aparecen 4 menores de orden 3 son muy sencillos (se ha tenido en cuenta que <span class="math inline">\(-2+a=-(2-a)\)</span>) <span class="math display">\[
+|A|=(1-a)\left|\begin{array}{ccc}
+2-a &amp; 0 &amp; 0\\
+-2+a &amp; 2-a&amp; 0\\
+0 &amp; -2+a &amp; 2-a
+\end{array}\right|-\left|\begin{array}{ccc}
+2-a  &amp; 0 &amp; 0\\
+0  &amp; 2-a&amp; 0\\
+0  &amp; -2+a &amp; 2-a
+\end{array}\right|+\left|\begin{array}{ccc}
+2-a &amp; 2-a  &amp; 0\\
+0 &amp; -2+a &amp; 0\\
+0 &amp; 0 &amp;  2-a
+\end{array}\right|-
+\]</span> <span class="math display">\[
+\left|\begin{array}{ccc}
+2-a &amp; 2-a &amp; 0 \\
+0 &amp; -2+a &amp; 2-a\\
+0 &amp; 0 &amp; -2+a \end{array}\right|=(1-a)(2-a)^3- (2-a)^3-(2-a)^3-(2-a)^3=\boxed{(2-a)^3(-2-a)}
+\]</span></p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+var('a');
+A=matrix([[1-a,1,1,1],[1,1-a,-1,-1],[1,-1,1-a,-1],[1,-1,-1,1-a]])
+show(det(A))
+</script>
+</div>
+</li>
+<li>
+<ul type="disc">
+<li>
+Para <span class="math inline">\(\boxed{a\not = 2, -2}\)</span> la matriz <span class="math inline">\(A\)</span> es regular y por tanto su rango es 4.
+</li>
+<li>
+<p>Para <span class="math inline">\(\boxed{a=2}\)</span> calculamos su forma de Hermite por filas y así tendremos también parte de la respuesta del siguiente apartado.</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{cccc}
+-1 &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; -1 &amp; -1 &amp; -1\\
+1 &amp; -1 &amp; -1&amp; -1\\
+1 &amp; -1 &amp; -1 &amp; -1
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+\boxed{1} &amp; -1 &amp; -1 &amp; -1\\
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0&amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)=H_{a=2}
+\]</span></p>
+luego <span class="math inline">\(rango(A)=1\)</span>.
+</li>
+<li>
+<p>Para <span class="math inline">\(\boxed{a=-2}\)</span> calculamos también su forma de Hermite por filas</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{cccc}
+3 &amp; 1 &amp; 1 &amp; 1\\
+1 &amp; 3 &amp; -1 &amp; -1\\
+1 &amp; -1 &amp; 3 &amp; -1\\
+1 &amp; -1 &amp; -1 &amp; 3
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+1 &amp; -1 &amp; -1 &amp; 3\\
+0 &amp; 4 &amp; 0 &amp; -4\\
+0 &amp; 0 &amp; 4&amp; -4\\
+0 &amp; 4 &amp; 4 &amp; -8
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+\boxed{1} &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; \boxed{1} &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; \boxed{1}&amp; -1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)=H_{a=-2}
+\]</span></p>
+luego <span class="math inline">\(rango(A)=3\)</span>.
+</li>
+</ul>
+</li>
+<li>
+Para <span class="math inline">\(\boxed{a\not = 2, a\not = -2}\)</span> como la matriz tiene rango 4 su forma de Hermite por filas es <span class="math inline">\(I_4\)</span>. Para los casos <span class="math inline">\(\boxed{a=2}\)</span> y <span class="math inline">\(\boxed{a=-2}\)</span> se han calculado en el apartado anterior.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-25" class="basico-cuestion theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 25</strong></span> ¿Es verdadero o falso el siguiente enunciado? Si los sistemas de ecuaciones <span class="math inline">\(AX=0\)</span> y <span class="math inline">\(BX=0\)</span> son equivalentes, entonces las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Es falso porque los sistemas pueden tener distinto número de ecuaciones, y en ese caso no podrían ser matrices equivalentes. Ejemplo:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 0 \\
+2 &amp; 3
+\end{pmatrix}; \hspace{1cm}  B=\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{pmatrix}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-26" class="medio-examen theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 26</strong></span> Dadas las matrices <span class="math display">\[
+A= \left(\begin{array}{ccc}
+1 &amp; 0 &amp; -1\\
+1 &amp; a &amp; a-1 \\
+1 &amp; 0 &amp; a-2\\
+0 &amp; a &amp; a-1
+\end{array}\right)\hspace{1cm} B= \left(\begin{array}{ccc}
+1 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1 \\
+1 &amp; 2 &amp; 1\\
+1 &amp; 0 &amp; 1
+\end{array}\right)
+\]</span></p>
+<ol type="a">
+<li>
+Determina los valores de <span class="math inline">\(a\)</span> para los que existe una matriz regular <span class="math inline">\(P\)</span> tal que <span class="math inline">\(PA=B\)</span>.
+</li>
+<li>
+Determina los valores de <span class="math inline">\(a\)</span> para los que existe una matriz regular <span class="math inline">\(Q\)</span> tal que <span class="math inline">\(AQ=B\)</span>.
+</li>
+<li>
+Determina los valores de <span class="math inline">\(a\)</span> para los que existen matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> tales que <span class="math inline">\(PAQ=B\)</span>.
+</li>
+<li>
+Para uno de los casos afirmativos del apartado (a) realiza el cálculo de la matriz regular. (Solo para 1 valor de <span class="math inline">\(a\)</span>)
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+Los valores que verifican cada uno de los 3 primeros apartados son, respectivamente,
+<ol type="a">
+<li>
+aquellos para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes por filas, es decir, tienen la misma forma de Hermite por filas;
+</li>
+<li>
+aquellos para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes por columnas, es decir, tienen la misma forma de Hermite por columnas;
+</li>
+<li>
+aquellos para los que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son equivalentes, es decir, tienen el mismo rango.
+</li>
+</ol>
+<p>Para ello comenzamos calculando las formas de Hermite por filas y por columnas de <span class="math inline">\(B\)</span>: <span class="math display">\[
+B= \left(\begin{array}{ccc}
+\boxed{1} &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1 \\
+1 &amp; 2 &amp; 1\\
+1 &amp; 0 &amp; 1
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} &amp; 1 &amp; 0\\
+0 &amp; \boxed{1} &amp; 1 \\
+0 &amp; 1 &amp; 1\\
+0 &amp; -1 &amp; 1
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; -1\\
+0 &amp; \boxed{1} &amp; 1 \\
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 2
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 \\
+0 &amp; 0 &amp;\boxed{1}\\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>Esto nos indica que el rango de <span class="math inline">\(B\)</span> es 3. <span class="math display">\[
+B= \left(\begin{array}{ccc}
+\boxed{1} &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 1 \\
+1 &amp; 2 &amp; 1\\
+1 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 1 \\
+1 &amp; 1 &amp; 1\\
+1 &amp; -1 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 \\
+1 &amp; 1 &amp; 0\\
+1 &amp; -1 &amp; \boxed{1}
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 \\
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1}
+\end{array}\right)
+\]</span></p>
+<ol type="a">
+<li>
+<p><span class="math display">\[
+A= \left(\begin{array}{ccc}
+\boxed{1}  &amp; 0 &amp; -1\\
+1 &amp; a &amp; a-1 \\
+1 &amp; 0 &amp; a-2\\
+0 &amp; a &amp; a-1
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; -1\\
+0 &amp; a &amp; a \\
+0 &amp; 0 &amp; a-1\\
+0 &amp; a &amp; a-1
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; -1\\
+0 &amp; a &amp; a \\
+0 &amp; 0 &amp; a-1\\
+0 &amp; 0 &amp; -1
+\end{array}\right)\sim_f \left(\begin{array}{ccc}
+\boxed{1} &amp; 0 &amp; 0\\
+0 &amp; a &amp; 0 \\
+0 &amp; 0 &amp; \boxed{1}\\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+En la segunda fila hay pivote siempre que <span class="math inline">\(a\not = 0\)</span> y la forma de Hermite coincidiría con la de <span class="math inline">\(B\)</span>. Luego la solución es que existe <span class="math inline">\(P\)</span> si, y solo si, <span class="math inline">\(a\not =0\)</span>.
+</li>
+<li>
+<p>Para que <span class="math inline">\(A\)</span> tenga 3 pivotes es necesario que <span class="math inline">\(a\not=0\)</span>, en estos casos calculamos la forma de Hermite por columnas de <span class="math inline">\(A\)</span> (observamos que podemos multiplicar la 2ª columna por <span class="math inline">\(1/a\)</span>):</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{ccc}
+\boxed{1}  &amp; 0 &amp; -1\\
+1 &amp; a &amp; a-1 \\
+1 &amp; 0 &amp; a-2\\
+0 &amp; a &amp; a-1
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1}  &amp; 0 &amp; 0\\
+1 &amp; \boxed{1} &amp; a \\
+1 &amp; 0 &amp; a-1\\
+0 &amp; 1 &amp; a-1
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1}  &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 \\
+1 &amp; 0 &amp; a-1\\
+-1 &amp; 1 &amp; -1
+\end{array}\right)
+\]</span></p>
+<p>Si <span class="math inline">\(a\not =1\)</span> el pivote de la tercera columna estaría en la tercera fila, y la forma de Hermite no coincide con la de <span class="math inline">\(B\)</span>. Si <span class="math inline">\(a=1\)</span> nos quedaría <span class="math display">\[
+\sim_c \left(\begin{array}{ccc}
+\boxed{1}  &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 \\
+1 &amp; 0 &amp; 0\\
+-1 &amp; 1 &amp; -1
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+\boxed{1}  &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 \\
+1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1}
+\end{array}\right)
+\]</span></p>
+y tampoco coincide con la de <span class="math inline">\(B\)</span>. La solución es que <span class="math inline">\(Q\)</span> no existe en ningún caso.
+</li>
+<li>
+Como resultado de los apartados anteriores, <span class="math inline">\(rg(A)=3\)</span> si, y solo si, <span class="math inline">\(a\not =0\)</span>.
+</li>
+<li>
+Puede elegirse cualquier valor de <span class="math inline">\(a\)</span> que no sea <span class="math inline">\(0\)</span>. Una resolución puede ser:
+<ol type="i">
+<li>
+<p>Calcular una matriz <span class="math inline">\(P_1\)</span> tal que <span class="math inline">\(P_1A=H\)</span> siendo <span class="math inline">\(H\)</span> la forma de Hermite por filas de <span class="math inline">\(A\)</span> (y de <span class="math inline">\(B\)</span>, claro) haciendo</p>
+<span class="math display">\[
+[A|I_4] \sim_f [H|P_1]
+\]</span>
+</li>
+<li>
+<p>Calcular una matriz <span class="math inline">\(P_2\)</span> tal que <span class="math inline">\(P_2B=H\)</span> siendo <span class="math inline">\(H\)</span> la forma de Hermite por filas de <span class="math inline">\(B\)</span> (y de <span class="math inline">\(A\)</span>, claro) haciendo</p>
+<span class="math display">\[
+[B|I_4] \sim_f [H|P_2]
+\]</span>
+</li>
+<li>
+Igualar <span class="math inline">\(P_1A=P_2B\)</span> y despejando <span class="math inline">\(P=P_2^{-1}P_1\)</span>.
+</li>
+</ol>
+<p>Por ejemplo, para <span class="math inline">\(a=1\)</span>: <span class="math display">\[
+[A|I]= \left(\begin{array}{ccr|rrrr}
+\boxed{1} &amp; 0 &amp; -1 &amp;1 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; -1&amp; 0 &amp; 0 &amp; 1&amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;1
+\end{array}\right)\sim_f
+\left(\begin{array}{ccr|rrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp;0 &amp; 1 &amp; 0 &amp; -1\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;1\\
+0 &amp; 0 &amp;\boxed{1} &amp; -1 &amp; 1 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; 0&amp; -1 &amp; 0 &amp; 1&amp; 0\\
+\end{array}\right)=[H|P_1]
+\]</span> <span class="math display">\[
+[B|I]= \left(\begin{array}{ccr|rrrr}
+\boxed{1} &amp; 1 &amp; 0 &amp;1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 2 &amp; 1&amp; 0 &amp; 0 &amp; 1&amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp;1
+\end{array}\right)\sim_f
+\left(\begin{array}{ccr|rrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 1/2 &amp; 1/2\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 1/2 &amp; -1/2\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0 &amp; 1 &amp; -1/2&amp; 1/2\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp;0
+\end{array}\right)=[H|P_2]
+\]</span></p>
+<p>Luego, para <span class="math inline">\(a=1\)</span> una posible matriz <span class="math inline">\(P\)</span> es <span class="math display">\[
+P_2^{-1}P_1=\left(\begin{array}{rrrr}
+-1 &amp; 1 &amp; 1 &amp; 0\\
+-1 &amp; 1 &amp; 0 &amp;1\\
+-1 &amp; 2 &amp; 0 &amp; 1\\
+-1 &amp; 2 &amp; 0&amp; 1\\
+\end{array}\right)
+\]</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-27" class="basico-cuestion theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 27</strong></span> ¿Es verdadero o falso el siguiente enunciado? Si dos matrices son equivalentes, entonces o bien son equivalentes por filas o bien lo son por columnas.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Es falso, , como ejemplo podemos tomar a las matrices <span class="math display">\[
+A=\left(\begin{array}{rr}
+1 &amp; 0 \\
+0 &amp; 0\\
+\end{array}\right)   \mbox{ y } B=\left(\begin{array}{rrr}
+1 &amp; 1 \\
+1 &amp; 1\\
+\end{array}\right)
+\]</span></p>
+<p>que son equivalentes porque tienen el mismo rango, pero no son equivalentes por filas y tampoco equivalentes por columnas.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-28" class="basico-cuestion theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 28</strong></span> ¿Para qué valores de <span class="math inline">\(a\)</span> el sistema <span class="math display">\[
+\left\{\begin{array}{rl}
+x+y+z&amp;=1\\
+x+2y+az&amp;=1\\
+x+4y+a^2z&amp;=1
+\end{array}\right.
+\]</span> es incompatible?</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><b>Nunca</b> es incompatible, siempre tiene la solución <span class="math inline">\(x=1, y=0,z=0\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-29" class="basico-cuestion theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 29</strong></span> ¿Para qué valores de <span class="math inline">\(a\)</span> la forma de Hermite por filas de la matriz<br>
+<span class="math display">\[
+A=\left(\begin{array}{rrr}
+1  &amp; 1 &amp; 1\\
+1 &amp; 2 &amp; a\\
+1 &amp; 4 &amp; a^2
+\end{array}\right)
+\]</span></p>
+<p>es <span class="math inline">\(I_3\)</span>?</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como es cuadrada, por el <b>teorema de las matrices regulares</b>, la forma de Hermite por filas es <span class="math inline">\(I_3\)</span> cuando el determinante sea distinto de <span class="math inline">\(0\)</span>. <span class="math display">\[
+|A|=\left|\begin{array}{rrr}
+1  &amp; 1 &amp; 1\\
+1 &amp; 2 &amp; a\\
+1 &amp; 4 &amp; a^2
+\end{array}\right|=\left|\begin{array}{rrr}
+1  &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; a-1\\
+0 &amp; 3 &amp; a^2-1
+\end{array}\right|=(a^2-1)-3(a-1)=a^2-3a+2
+\]</span></p>
+<p>que se hace cero para <span class="math inline">\(a=\frac{3\pm \sqrt{9-8}}{2}=2,1\)</span>. Así que es <span class="math inline">\(I_3\)</span> para todo valor distinto de <span class="math inline">\(1\)</span> y <span class="math inline">\(2\)</span>.</p>
 </div>
 </div>
 </div>
