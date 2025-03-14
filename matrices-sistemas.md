@@ -3098,7 +3098,7 @@ Si $A$ es una matriz cuadrada y $P$ es una matriz regular que se puede multiplic
 
 :::: {.callout collapse="true" title="Solución"}
 
-Como $P$ es regular $PA$, $AP$ y $P^{-1}AP$ son matrices que se obtienen de $A$ realizando o.e. por filas, por columnas y por filas y columnas respectivamente; por tanto todas son equivalentes con $A$ y tienen el mismo rango que $A$.
+Como $P$ es regular $PA$, $AP$ y $P^{-1}AP$ son matrices que se obtienen de $A$ realizando operaciones elementales por filas, por columnas y por filas y columnas respectivamente; por tanto todas son equivalentes con $A$ y tienen el mismo rango que $A$.
 Por el contrario $A^2$ puede no tener el mismo rango. Ejemplo:
 $$
 A=\begin{pmatrix}
@@ -3198,7 +3198,7 @@ A=\begin{pmatrix}
 \end{pmatrix}
 $$
 
-Por lo tanto si $a\neq 1 $ y $a\neq -1$ tendrá rango 3. 
+Por lo tanto si $a\neq 1$ y $a\neq -1$ tendrá rango 3. 
 
 En el caso $a=1$ sustituimos en la última matriz obtenida (que es $\sim_f A$) 
 
@@ -3550,7 +3550,7 @@ luego $rango(A)=3$.</li>
 </ul>
 </li>
 
-<li>Para $\boxed{a\not = 2, a\not = -2}$ como la matriz tiene rango 4 su forma de Hermite por filas es $I_4$. Para los casos $\boxed{a=2}$ y $\boxed{a=-2}$  se han calculado en el apartado anterior.</li>
+<li>Para $\boxed{a\not = 2, -2}$ como la matriz tiene rango 4 su forma de Hermite por filas es $I_4$. Para los casos $\boxed{a=2}$ y $\boxed{a=-2}$  se han calculado en el apartado anterior.</li>
 </ol>
 
 ::::
@@ -3802,7 +3802,7 @@ $$
 
 :::: {.callout collapse="true" title="Solución"}
 
-Es falso, , como ejemplo podemos tomar a las matrices 
+Es falso, como ejemplo podemos tomar a las matrices 
 $$
 A=\left(\begin{array}{rr}
 1 & 0 \\
@@ -3852,7 +3852,7 @@ es $I_3$?
 
 :::: {.callout collapse="true" title="Solución"}
 
-Como es cuadrada, por el <b>teorema de las matrices regulares</b>, la forma de Hermite por filas es $I_3$ cuando el determinante sea distinto de $0$.
+Como es cuadrada, por el <b>teorema de las matrices regulares</b>, la forma de Hermite por filas es $I_3$ exactamente cuando el determinante sea distinto de $0$.
 $$
 |A|=\left|\begin{array}{rrr}
 1  & 1 & 1\\
@@ -3867,6 +3867,320 @@ $$
 
 que se hace cero para $a=\frac{3\pm \sqrt{9-8}}{2}=2,1$.
 Así que es $I_3$ para todo valor distinto de $1$ y $2$.
+
+::::
+:::::
+
+::::: {#exr-30 .basico}
+
+Dadas las matrices
+$$
+A= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+0 & 0 & 0\\
+0 & 1 & 0
+\end{array}\right)\hspace{2cm}  B= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+1 & 0 & 0\\
+1 & 1 & 0
+\end{array}\right)
+$$
+
+¿Existe $P$ regular tal que $AP=B$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+Nos preguntan si son equivalentes por columnas lo cual es cierto si, y solo si, tienen la misma forma de Hermite por columnas. Calculamos la forma de Hermite por columnas de ambas:
+
+$$
+A= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+0 & 0 & 0\\
+0 & 1 & 0
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 0 & 0\\
+0 & 1 & 0
+\end{array}\right)
+$$
+$$
+B= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+1 & 0 & 0\\
+1 & 1 & 0
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0\\
+1 & 0 & 0
+\end{array}\right)
+$$
+
+y como no son iguales la respuesta es negativa.
+
+::::
+:::::
+
+::::: {#exr-31 .basico}
+
+Dadas las matrices
+$$
+A= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+0 & 0 & 0\\
+0 & 1 & 0
+\end{array}\right)\hspace{2cm}  B= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+1 & 0 & 0\\
+1 & 1 & 0
+\end{array}\right)
+$$
+
+¿Existe $P$ regular tal que $PA=B$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+Nos preguntan si son equivalentes por filas para lo que calculamos sus formas de Hermite por filas y las comparamos:
+
+$$
+A= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+0 & 0 & 0\\
+0 & 1 & 0
+\end{array}\right)\sim_f \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 0
+\end{array}\right)
+$$
+$$
+B= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+1 & 0 & 0\\
+1 & 1 & 0
+\end{array}\right)\sim_f \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 0
+\end{array}\right)
+$$
+
+y como son iguales entonces la respuesta es afirmativa.
+
+::::
+:::::
+
+::::: {#exr-32 .basico}
+
+Discutir, según los valores de $a$, el sistema de ecuaciones:
+
+$$
+\begin{array}{rl}
+x-y= & 1 \\
+x+2y= & 4 \\
+x+ay= & a^ 2
+\end{array}
+$$
+
+¿Existe $P$ regular tal que $PA=B$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+La matriz ampliada del sistema es
+$$
+\begin{pmatrix}
+1 & (-1) & (-1)^ 2 \\
+1 & 2 & 2^ 2 \\
+1 & a & a^ 2 \\
+\end{pmatrix}
+$$
+
+cuyo determinante es un ejemplo de determinante de Vandermonde: 
+$$
+\left| \begin{array}{ccc}
+1 & (-1) & (-1)^ 2 \\
+1 & 2 & 2^ 2 \\
+1 & a & a^ 2  
+\end{array}\right|=\left| \begin{array}{ccc}
+1 & (-1) & 0 \\
+1 & 2 & 2^ 2 + 2 \\
+1 & a & a^ 2 + a 
+\end{array}\right|=\left| \begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 2 + 1 & 2^ 2 + 2 \\
+1 & a + 1 & a^ 2 + a  
+\end{array}\right|=(2+1)(a+1)\left| \begin{array}{cc}
+1 & 2 \\
+1 & a \\  
+\end{array}\right|
+$$
+
+
+ Por lo que el determinante vale $3(a-2)(a+1)$. 
+
+<!-- AÑADIR el cálculo del determinante; quizás el determianate de Vandermonde de orden 3. Me lo apunto de tarea. -->
+
+Entonces, como el rango de la matriz ampliada es $3$ para todos los valores $a\not = 2$ y $a \not = -1$, y el de la matriz de coeficientes no puede ser mayor que $2$ (tiene $2$ columnas), el sistema es Incompatible en estos casos.
+Para $a=2$ y $a=-1$ el sistema es Compatible Determinado (una de las filas de la matriz ampliada se repite y por tanto $rg(A)=rg(A|B)=2$).
+
+::::
+:::::
+
+::::: {#exr-33 .basico}
+
+Dada la matriz 
+$$
+A=\left(\begin{array}{rrr}
+1 & 1 & -1\\
+0 & 1 & -1
+\end{array} \right)
+$$
+
+razonar si es posible encontrar una matriz regular $Q$ tal que 
+
+$$
+QA=\left( \begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & -1
+\end{array} \right)
+$$
+
+y en caso afirmativo encontrarla.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Una tal matriz $Q$ existe exactamente cuando $A$ sea equivalente por filas con la matriz que nos dan, es decir, 
+cuando se pueda pasar de una a la otra por operaciones elementales de filas.
+Ampliamos la matriz $A$ con una identidad con el mismo número de filas y realizamos operaciones elementales de filas:
+
+$$
+\left(\begin{array}{rrr|rr}
+1 & 1 & -1& 1 &0\\
+0 & 1 & -1& 0 &1
+\end{array} \right)  \sim_f \left( \begin{array}{rrr|rr}
+1 & 0 & 0& 1 &-1\\
+0 & 1 & -1& 0 &1
+\end{array} \right) 
+$$
+
+luego una matriz $Q$ que verifica la condición es 
+$$
+Q=\left( \begin{array}{rr}
+1 &-1\\
+0 &1
+\end{array} \right)
+$$
+
+
+::::
+:::::
+
+::::: {#exr-34 .basico}
+
+Para la matriz 
+$$
+A=\left( \begin{array}{rrr}
+1 & 1 & -1\\
+0 & 1 & -1
+\end{array} \right)
+$$
+
+razonar si es posible encontrar una matriz regular $P$ tal que 
+
+$$
+AP=\left( \begin{array}{rrr}
+1 & 1 & -1\\
+0 & 0 & 0
+\end{array} \right)
+$$
+
+y en caso afirmativo encontrarla.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Es fácil comprobar que $A$ tiene rango 2 y por tanto no puede ser equivalente con una matriz de rango 1 como la que nos dan.
+Como consecuencia no pueden ser equivalentes por columnas.
+
+::::
+:::::
+
+::::: {#exr-35 .basico}
+
+Dadas las matrices $A=\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$ y 
+$B=\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$, dar matrices regulares $P$ y $Q$ de forma que $Q\cdot A \cdot P = B$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+$$
+\left(\begin{array}{rcl}
+A&|&I\\
+\hline
+I &| \\ \end{array} \right)=\left(\begin{array}{ll|ll}
+1 & 0 & 1 & 0\\ 
+0 & 0 & 0 & 1\\
+\hline
+1 & 0 & & \\
+0 & 1 & & \\
+\end{array}\right)\sim_f \left(\begin{array}{ll|ll}
+1 & 0 & 1 & 0\\ 
+1 & 0 & 1 & 1\\
+\hline
+1 & 0 & & \\
+0 & 1 & & \\
+\end{array}\right)\sim_c \left(\begin{array}{ll|ll}
+1 & 1 & 1 & 0\\ 
+1 & 1 & 1 & 1\\
+\hline
+1 & 1 & & \\
+0 & 1 & & \\
+\end{array}\right)
+$$
+
+Luego 
+$$
+Q=\begin{pmatrix} 
+1 & 0 \\ 
+1 & 1 
+\end{pmatrix} \mbox{ y } 
+P=\begin{pmatrix} 
+1 & 1 \\ 
+0 & 1 
+\end{pmatrix} 
+$$
+
+::::
+:::::
+
+::::: {#exr-36 .basico}
+
+Dada la matriz
+$$
+A= \left(\begin{array}{rrr}
+2 & 0 & 2\\
+0 & 1 & 0\\
+2 & 0 & -1
+\end{array}\right)
+$$
+
+¿Existen $P, Q$ matrices regulares tales que $Q^{-1}AP=I_3$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+Existen $Q , P$ regulares si, y solo si, $A$ e $I$ son equivalentes, esto es, si, y solo si, tienen el mismo rango. Calculamos el rango de $A$.
+Calculamos el determinante de $A$ desarrolando por el elemento en la posición 2 2,
+$$
+det(A)=
+\left|\begin{array}{ccc}
+2 & 0 & 2 \\
+0 & 1 & 0 \\
+2 & 0 & -1 \\
+\end{array}\right|=
+\left|\begin{array}{cc}
+2 & 2 \\
+2 & -1 \\
+\end{array}\right|=
+-6\neq 0.  
+$$
+Por lo tanto el rango es 3, al igual que el de $I_3$. Las matrices son equivalentes y por lo tanto <b>sí</b>  existen $P$ y $Q$ regulares tales que $Q^{-1}AP=I_3$.
 
 ::::
 :::::
