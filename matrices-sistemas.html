@@ -3226,7 +3226,7 @@ Solución
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Como <span class="math inline">\(P\)</span> es regular <span class="math inline">\(PA\)</span>, <span class="math inline">\(AP\)</span> y <span class="math inline">\(P^{-1}AP\)</span> son matrices que se obtienen de <span class="math inline">\(A\)</span> realizando o.e. por filas, por columnas y por filas y columnas respectivamente; por tanto todas son equivalentes con <span class="math inline">\(A\)</span> y tienen el mismo rango que <span class="math inline">\(A\)</span>. Por el contrario <span class="math inline">\(A^2\)</span> puede no tener el mismo rango. Ejemplo: <span class="math display">\[
+<p>Como <span class="math inline">\(P\)</span> es regular <span class="math inline">\(PA\)</span>, <span class="math inline">\(AP\)</span> y <span class="math inline">\(P^{-1}AP\)</span> son matrices que se obtienen de <span class="math inline">\(A\)</span> realizando operaciones elementales por filas, por columnas y por filas y columnas respectivamente; por tanto todas son equivalentes con <span class="math inline">\(A\)</span> y tienen el mismo rango que <span class="math inline">\(A\)</span>. Por el contrario <span class="math inline">\(A^2\)</span> puede no tener el mismo rango. Ejemplo: <span class="math display">\[
 A=\begin{pmatrix}
 1 &amp; -1\\
 1 &amp; -1\\
@@ -3326,7 +3326,7 @@ A=\begin{pmatrix}
 0 &amp; 0 &amp; 0
 \end{pmatrix}
 \]</span></p>
-<p>Por lo tanto si $a $ y <span class="math inline">\(a\neq -1\)</span> tendrá rango 3.</p>
+<p>Por lo tanto si <span class="math inline">\(a\neq 1\)</span> y <span class="math inline">\(a\neq -1\)</span> tendrá rango 3.</p>
 <p>En el caso <span class="math inline">\(a=1\)</span> sustituimos en la última matriz obtenida (que es <span class="math inline">\(\sim_f A\)</span>)</p>
 <p><span class="math display">\[
 A\sim_f \begin{pmatrix}
@@ -3665,7 +3665,7 @@ luego <span class="math inline">\(rango(A)=3\)</span>.
 </ul>
 </li>
 <li>
-Para <span class="math inline">\(\boxed{a\not = 2, a\not = -2}\)</span> como la matriz tiene rango 4 su forma de Hermite por filas es <span class="math inline">\(I_4\)</span>. Para los casos <span class="math inline">\(\boxed{a=2}\)</span> y <span class="math inline">\(\boxed{a=-2}\)</span> se han calculado en el apartado anterior.
+Para <span class="math inline">\(\boxed{a\not = 2, -2}\)</span> como la matriz tiene rango 4 su forma de Hermite por filas es <span class="math inline">\(I_4\)</span>. Para los casos <span class="math inline">\(\boxed{a=2}\)</span> y <span class="math inline">\(\boxed{a=-2}\)</span> se han calculado en el apartado anterior.
 </li>
 </ol>
 </div>
@@ -3938,7 +3938,7 @@ Solución
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Es falso, , como ejemplo podemos tomar a las matrices <span class="math display">\[
+<p>Es falso, como ejemplo podemos tomar a las matrices <span class="math display">\[
 A=\left(\begin{array}{rr}
 1 &amp; 0 \\
 0 &amp; 0\\
@@ -3999,7 +3999,7 @@ Solución
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Como es cuadrada, por el <b>teorema de las matrices regulares</b>, la forma de Hermite por filas es <span class="math inline">\(I_3\)</span> cuando el determinante sea distinto de <span class="math inline">\(0\)</span>. <span class="math display">\[
+<p>Como es cuadrada, por el <b>teorema de las matrices regulares</b>, la forma de Hermite por filas es <span class="math inline">\(I_3\)</span> exactamente cuando el determinante sea distinto de <span class="math inline">\(0\)</span>. <span class="math display">\[
 |A|=\left|\begin{array}{rrr}
 1  &amp; 1 &amp; 1\\
 1 &amp; 2 &amp; a\\
@@ -4011,6 +4011,333 @@ Solución
 \end{array}\right|=(a^2-1)-3(a-1)=a^2-3a+2
 \]</span></p>
 <p>que se hace cero para <span class="math inline">\(a=\frac{3\pm \sqrt{9-8}}{2}=2,1\)</span>. Así que es <span class="math inline">\(I_3\)</span> para todo valor distinto de <span class="math inline">\(1\)</span> y <span class="math inline">\(2\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-30" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 30</strong></span> Dadas las matrices <span class="math display">\[
+A= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0
+\end{array}\right)\hspace{2cm}  B= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(AP=B\)</span>?</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nos preguntan si son equivalentes por columnas lo cual es cierto si, y solo si, tienen la misma forma de Hermite por columnas. Calculamos la forma de Hermite por columnas de ambas:</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0
+\end{array}\right)
+\]</span> <span class="math display">\[
+B= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>y como no son iguales la respuesta es negativa.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-31" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 31</strong></span> Dadas las matrices <span class="math display">\[
+A= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0
+\end{array}\right)\hspace{2cm}  B= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(PA=B\)</span>?</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nos preguntan si son equivalentes por filas para lo que calculamos sus formas de Hermite por filas y las comparamos:</p>
+<p><span class="math display">\[
+A= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0
+\end{array}\right)\sim_f \left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> <span class="math display">\[
+B= \left(\begin{array}{rrr}
+1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 0
+\end{array}\right)\sim_f \left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>y como son iguales entonces la respuesta es afirmativa.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-32" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 32</strong></span> Discutir, según los valores de <span class="math inline">\(a\)</span>, el sistema de ecuaciones:</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+x-y= &amp; 1 \\
+x+2y= &amp; 4 \\
+x+ay= &amp; a^ 2
+\end{array}
+\]</span></p>
+<p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(PA=B\)</span>?</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La matriz ampliada del sistema es <span class="math display">\[
+\begin{pmatrix}
+1 &amp; (-1) &amp; (-1)^ 2 \\
+1 &amp; 2 &amp; 2^ 2 \\
+1 &amp; a &amp; a^ 2 \\
+\end{pmatrix}
+\]</span></p>
+<p>cuyo determinante es un ejemplo de determinante de Vandermonde: <span class="math display">\[
+\left| \begin{array}{ccc}
+1 &amp; (-1) &amp; (-1)^ 2 \\
+1 &amp; 2 &amp; 2^ 2 \\
+1 &amp; a &amp; a^ 2  
+\end{array}\right|=\left| \begin{array}{ccc}
+1 &amp; (-1) &amp; 0 \\
+1 &amp; 2 &amp; 2^ 2 + 2 \\
+1 &amp; a &amp; a^ 2 + a
+\end{array}\right|=\left| \begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+1 &amp; 2 + 1 &amp; 2^ 2 + 2 \\
+1 &amp; a + 1 &amp; a^ 2 + a  
+\end{array}\right|=(2+1)(a+1)\left| \begin{array}{cc}
+1 &amp; 2 \\
+1 &amp; a \\  
+\end{array}\right|
+\]</span></p>
+<p>Por lo que el determinante vale <span class="math inline">\(3(a-2)(a+1)\)</span>.</p>
+<!-- AÑADIR el cálculo del determinante; quizás el determianate de Vandermonde de orden 3. Me lo apunto de tarea. -->
+<p>Entonces, como el rango de la matriz ampliada es <span class="math inline">\(3\)</span> para todos los valores <span class="math inline">\(a\not = 2\)</span> y <span class="math inline">\(a \not = -1\)</span>, y el de la matriz de coeficientes no puede ser mayor que <span class="math inline">\(2\)</span> (tiene <span class="math inline">\(2\)</span> columnas), el sistema es Incompatible en estos casos. Para <span class="math inline">\(a=2\)</span> y <span class="math inline">\(a=-1\)</span> el sistema es Compatible Determinado (una de las filas de la matriz ampliada se repite y por tanto <span class="math inline">\(rg(A)=rg(A|B)=2\)</span>).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-33" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 33</strong></span> Dada la matriz <span class="math display">\[
+A=\left(\begin{array}{rrr}
+1 &amp; 1 &amp; -1\\
+0 &amp; 1 &amp; -1
+\end{array} \right)
+\]</span></p>
+<p>razonar si es posible encontrar una matriz regular <span class="math inline">\(Q\)</span> tal que</p>
+<p><span class="math display">\[
+QA=\left( \begin{array}{rrr}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; -1
+\end{array} \right)
+\]</span></p>
+<p>y en caso afirmativo encontrarla.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Una tal matriz <span class="math inline">\(Q\)</span> existe exactamente cuando <span class="math inline">\(A\)</span> sea equivalente por filas con la matriz que nos dan, es decir, cuando se pueda pasar de una a la otra por operaciones elementales de filas. Ampliamos la matriz <span class="math inline">\(A\)</span> con una identidad con el mismo número de filas y realizamos operaciones elementales de filas:</p>
+<p><span class="math display">\[
+\left(\begin{array}{rrr|rr}
+1 &amp; 1 &amp; -1&amp; 1 &amp;0\\
+0 &amp; 1 &amp; -1&amp; 0 &amp;1
+\end{array} \right)  \sim_f \left( \begin{array}{rrr|rr}
+1 &amp; 0 &amp; 0&amp; 1 &amp;-1\\
+0 &amp; 1 &amp; -1&amp; 0 &amp;1
+\end{array} \right)
+\]</span></p>
+<p>luego una matriz <span class="math inline">\(Q\)</span> que verifica la condición es <span class="math display">\[
+Q=\left( \begin{array}{rr}
+1 &amp;-1\\
+0 &amp;1
+\end{array} \right)
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-34" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 34</strong></span> Para la matriz <span class="math display">\[
+A=\left( \begin{array}{rrr}
+1 &amp; 1 &amp; -1\\
+0 &amp; 1 &amp; -1
+\end{array} \right)
+\]</span></p>
+<p>razonar si es posible encontrar una matriz regular <span class="math inline">\(P\)</span> tal que</p>
+<p><span class="math display">\[
+AP=\left( \begin{array}{rrr}
+1 &amp; 1 &amp; -1\\
+0 &amp; 0 &amp; 0
+\end{array} \right)
+\]</span></p>
+<p>y en caso afirmativo encontrarla.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Es fácil comprobar que <span class="math inline">\(A\)</span> tiene rango 2 y por tanto no puede ser equivalente con una matriz de rango 1 como la que nos dan. Como consecuencia no pueden ser equivalentes por columnas.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-35" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 35</strong></span> Dadas las matrices <span class="math inline">\(A=\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix}\)</span> y <span class="math inline">\(B=\begin{pmatrix} 1 &amp; 1 \\ 1 &amp; 1 \end{pmatrix}\)</span>, dar matrices regulares <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> de forma que <span class="math inline">\(Q\cdot A \cdot P = B\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\left(\begin{array}{rcl}
+A&amp;|&amp;I\\
+\hline
+I &amp;| \\ \end{array} \right)=\left(\begin{array}{ll|ll}
+1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\hline
+1 &amp; 0 &amp; &amp; \\
+0 &amp; 1 &amp; &amp; \\
+\end{array}\right)\sim_f \left(\begin{array}{ll|ll}
+1 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 1\\
+\hline
+1 &amp; 0 &amp; &amp; \\
+0 &amp; 1 &amp; &amp; \\
+\end{array}\right)\sim_c \left(\begin{array}{ll|ll}
+1 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp; 1 &amp; 1 &amp; 1\\
+\hline
+1 &amp; 1 &amp; &amp; \\
+0 &amp; 1 &amp; &amp; \\
+\end{array}\right)
+\]</span></p>
+<p>Luego <span class="math display">\[
+Q=\begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 1
+\end{pmatrix} \mbox{ y }
+P=\begin{pmatrix}
+1 &amp; 1 \\
+0 &amp; 1
+\end{pmatrix}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-36" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 36</strong></span> Dada la matriz <span class="math display">\[
+A= \left(\begin{array}{rrr}
+2 &amp; 0 &amp; 2\\
+0 &amp; 1 &amp; 0\\
+2 &amp; 0 &amp; -1
+\end{array}\right)
+\]</span></p>
+<p>¿Existen <span class="math inline">\(P, Q\)</span> matrices regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>?</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Existen <span class="math inline">\(Q , P\)</span> regulares si, y solo si, <span class="math inline">\(A\)</span> e <span class="math inline">\(I\)</span> son equivalentes, esto es, si, y solo si, tienen el mismo rango. Calculamos el rango de <span class="math inline">\(A\)</span>. Calculamos el determinante de <span class="math inline">\(A\)</span> desarrolando por el elemento en la posición 2 2, <span class="math display">\[
+det(A)=
+\left|\begin{array}{ccc}
+2 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 0 \\
+2 &amp; 0 &amp; -1 \\
+\end{array}\right|=
+\left|\begin{array}{cc}
+2 &amp; 2 \\
+2 &amp; -1 \\
+\end{array}\right|=
+-6\neq 0.  
+\]</span> Por lo tanto el rango es 3, al igual que el de <span class="math inline">\(I_3\)</span>. Las matrices son equivalentes y por lo tanto <b>sí</b> existen <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>.</p>
 </div>
 </div>
 </div>
