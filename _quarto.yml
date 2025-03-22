@@ -29,5 +29,8 @@ website:
 
 format:
   html:
-    theme: flatly
+    theme: 
+      light: flatly
+      dark: darkly 
     lang: es
+
