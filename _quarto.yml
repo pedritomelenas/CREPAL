@@ -5,12 +5,17 @@ website:
   search: false
   site-url: https://pedritomelenas.github.io/CREPAL
   repo-url: https://github.com/pedritomelenas/CREPAL
-  issue-url: https://github.com/pedritomelenas/CREPAL/issues
   navbar:
     right:
-      - icon: github
-        href: https://github.com/pedritomelenas/CREPAL
-        aria-label: GitHub
+        - icon: github
+          menu:
+            - text: "Contribuir (código fuente)"
+              href: https://github.com/pedritomelenas/CREPAL
+              target: _blank
+            - text: "Informar de un problema"
+              href: https://github.com/pedritomelenas/CREPAL/issues
+              target: _blank
+
 
   sidebar: 
     style: "docked"
