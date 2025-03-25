@@ -21,7 +21,7 @@ website:
     style: "docked"
     footer: Hecho con [Quarto](https://quarto.org/)
     contents:
-      - text: "Matrices y sistemas de ecuaciones"
+      - text: "Sistemas de ecuaciones, matrices y determinantes"
         href: "matrices-sistemas.md"
       - text: "Espacios vectoriales"
         href: "espacios-vectoriales.md"
