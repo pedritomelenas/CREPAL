@@ -67,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- selector cuerpos finitos -->
 <script type="text/javascript" language="javascript">
 
+
 //difference of two arrays
 Array.prototype.diff = function(arr2) { 
   return this.filter(x => !arr2.includes(x)); 
@@ -84,6 +85,7 @@ function ocultar_todo(){
   } 
 }
 
+
 //mostrar los ejercicios con las casillas seleccionadas
 function mostrar(){
   var xs=[]; 
@@ -91,7 +93,19 @@ function mostrar(){
   //console.log(xs);
   
   ocultar_todo();
-  
+
+  //ver parámetros de la URL
+  const querystring = window.location.search;
+  const params = new URLSearchParams(querystring);
+  console.log(params);
+  if (params.get("asignatura") == "estadistica"){
+    console.log("estadistica");
+    casilla_cf.checked = false;
+    casilla_cf.disabled = true;
+    document.getElementById("opcion_cf").style.display = "none";
+  }
+
+
   if (casilla_basico.checked){
     xsbasico=document.querySelectorAll("[class*='basico']");
     //console.log(xsbasico);
@@ -144,6 +158,7 @@ function CF() {
       } 
     }  
 }
+
 
 </script>
   
@@ -323,7 +338,8 @@ window.Quarto = {
 
 <!-- LTeX: language=es-ES --->
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
-<p><input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked="" onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp; <input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Básicos. &nbsp; <input type="checkbox" id="casilla_medio" value="medioon" checked="" onclick="mostrar();"> Dificultad media. &nbsp; <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Avanzados.</p>
+<p><span id="opcion_cf"> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked="" onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp;</span> <input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Básicos. &nbsp; <input type="checkbox" id="casilla_medio" value="medioon" checked="" onclick="mostrar();"> Dificultad media. &nbsp; <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Avanzados.</p>
+<script>mostrar();</script>
 <div id="exr-1" class="basico theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>.</p>
 <p><span class="math display">\[\left\{\begin{aligned} x_{2}-2x_{3}&amp;= -4,\\ x_{1}+x_{2}-x_{3}&amp;=0,\\ 2x_{1}-x_{2}+x_{3}&amp;=3. \end{aligned}\right.\]</span></p>
