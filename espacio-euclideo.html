@@ -86,24 +86,25 @@ function ocultar_todo(){
 }
 
 
-//mostrar los ejercicios con las casillas seleccionadas
-function mostrar(){
-  var xs=[]; 
-  var i, xsbasico, xsmedio, xsavanzado, xscf, x;
-  //console.log(xs);
-  
-  ocultar_todo();
-
-  //ver parámetros de la URL
+//ver parámetros de la URL
+function comprueba_asignatura(){  
   const querystring = window.location.search;
   const params = new URLSearchParams(querystring);
   console.log(params);
   if (params.get("asignatura") == "estadistica"){
     console.log("estadistica");
     casilla_cf.checked = false;
-    casilla_cf.disabled = true;
-    document.getElementById("opcion_cf").style.display = "none";
   }
+}
+
+//mostrar los ejercicios con las casillas seleccionadas
+function mostrar(){
+  var xs=[]; 
+  var i, xsbasico, xsmedio, xsavanzado, xscf, x;
+  //console.log(xs);
+  
+
+  ocultar_todo();
 
 
   if (casilla_basico.checked){
