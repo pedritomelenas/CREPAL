@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Matrices y sistemas de ecuaciones – Problemas resueltos de Álgebra Lineal</title>
+<title>Sistemas de ecuaciones, matrices y determinantes – Problemas resueltos de Álgebra Lineal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -265,7 +265,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matrices-sistemas.html">Matrices y sistemas de ecuaciones</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./matrices-sistemas.html">Sistemas de ecuaciones, matrices y determinantes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -280,7 +280,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./matrices-sistemas.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Matrices y sistemas de ecuaciones</span></a>
+ <span class="menu-text">Sistemas de ecuaciones, matrices y determinantes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -320,7 +320,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Matrices y sistemas de ecuaciones</h1>
+<h1 class="title">Sistemas de ecuaciones, matrices y determinantes</h1>
 </div>
 
 
@@ -339,12 +339,47 @@ window.Quarto = {
 
 <!-- LTeX: language=es-ES --->
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
+<div id="titulacion" class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Titulación </button>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" data-titulo="fisica" href="#">Física</a>
+</li>
+<li>
+<a class="dropdown-item" data-titulo="estadistica" href="#">Estadística</a>
+</li>
+<li>
+<a class="dropdown-item" data-titulo="informatica" href="#">Informática</a>
+</li>
+<li>
+<a class="dropdown-item" data-titulo="matematicas" href="#">Matemáticas</a>
+</li>
+<li>
+<a class="dropdown-item" data-titulo="telecomunicaciones" href="#">Telecomunicaciones</a>
+</li>
+</ul>
+</div>
+<div>
 <p><span id="opcion_cf"> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked="" onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp;</span> <input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Básicos. &nbsp; <input type="checkbox" id="casilla_medio" value="medioon" checked="" onclick="mostrar();"> Dificultad media. &nbsp; <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Avanzados.</p>
+</div>
 <script>
 comprueba_asignatura();
 window.addEventListener("load", function(){
    mostrar();
 });
+
+$('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
+  if (clickEvent?.target) {
+    if (['fisica','matematicas','telecomunicaciones','estadistica'].includes($(clickEvent.target).data('titulo'))){
+      casilla_cf.checked = false;
+    }else{
+      casilla_cf.checked = true;
+    }
+    mostrar();
+  }
+})
+
+
 </script>
 <div id="exr-1" class="basico theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Resuelve el siguiente sistema de ecuaciones lineales considerado en <span class="math inline">\(\mathbb{Q}\)</span>.</p>
