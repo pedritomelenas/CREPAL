@@ -2982,3 +2982,514 @@ $$
 
 ::::
 :::::
+
+::::: {#exr-24 .medio}
+En $\mathcal{P}^2(\mathbb{R})$, el espacio de los polinomios de grado menos o igual que 2 con coeficientes reales, se consideran los subespacios
+
+$$
+U_1=\{ p(x)\in \mathcal{P}^2(\mathbb{R}) / xp'(x)=p(x)\}
+$$
+
+$$
+U_2=\{ p(x)\in \mathcal{P}^2(\mathbb{R}) / p(x)=p(-x)\}
+$$
+
+Calcula dimensión, base y unas cartesianas (respecto de la base estándar $B_s=\{1,x,x^2\}$) de cada uno de ellos. Prueba que $U_1$ y $U_2$ son complementarios.  
+
+:::: {.callout collapse="true" title="Solución"}
+
+Como $p(x)=a_0+a_1x+a_2x^2=(a_0,a_1,a_2)_{B_s}$
+
+y $xp'(x)=x(a_1+2a_2x)=a_1x+2a_2x^2=(0,a_1,2a_2)_{B_s}$
+Entonces unas cartesianas de $U_1$ son:
+
+$$
+\left\{ \begin{array}{l} 
+a_0=0\\
+a_1=a_1\\
+a_2=2a_2
+\end{array}\right. \sim \left\{ \begin{array}{l} 
+a_0=0\\
+a_2=0
+\end{array}\right.
+$$
+
+y tiene $dim\, U_1=3-\mbox{ nº cart.}=3-2=1$.
+
+Ahora $p(-x)=a_0-a_1x+a_2x^2=(a_0,-a_1,a_2)_{B_s}$
+luego unas cartesianas de $U_2$ son:
+
+$$
+\left\{ \begin{array}{l} 
+a_0=a_0\\
+a_1=-a_1\\
+a_2=a_2
+\end{array}\right. \sim \left\{ 
+\begin{array}{l} 
+a_1=0\\
+\end{array}\right.
+$$
+
+y tiene $dim\, U_2=3-\mbox{ nº cart.}=3-1=2$
+Para ver que son complementarios calculamos su intersección, reuniendo cartesianas:
+
+$$
+U_1 \cap U_2\equiv
+\left\{ \begin{array}{l} 
+a_0=0\\
+a_2=0\\
+a_1=0
+\end{array}\right.
+$$
+
+y por tanto $U_1\cap U_2=\{0\}$.
+Ahora, para probar que $U_1+U_2=\mathbb{R}^{3}$ basta usar la fórmula de las dimensiones:
+
+$$
+dim\, U_1\, +\, dim\, U_2 \,=\, dim\, (U_1\cap U_2)\, +\, dim\, (U_1+U_2)
+$$
+
+nos queda que $dim\, U_1+U_2=3$. Así que son complementarios.
+
+::::
+:::::
+
+::::: {#exr-25 .avanzado}
+En $\mathbb{R}^4$ se consideran los subespacios
+
+$$
+U\equiv \left\{ \begin{array}{l} 
+x+y+z=0\\
+(a+1)y+(a+1)t=0\\
+-x+ay+(a-1)z+at=0
+\end{array}\right.
+$$
+
+$$
+W=\mathcal{L}((1,1,1,0),(0,a+1,0,a+1),(-1,a,a-1,a))
+$$
+
+<ol type='a'> 
+
+<li> Calcula las dimensiones de $U$ y de $W$ según los valores $a$.</li>
+
+<li> Calcula la base más sencilla de $W$ según los valores de $a$. </li>
+
+<li> Para $a=1$ calcula $U+W$ y $U\cap W$. </li>
+
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+<ol type='a'> 
+<li> 
+Como de $U$ tenemos unas ec. cartesianas, utilizamos la fórmula $dim\, U=dim\ \mathbb{R}^4 -\mbox{\it nº cart}$ por lo que necesitamos determinar el nº de cartesianas, es decir, el rango de la matriz de coeficientes del sistema:
+
+$$
+\left(\begin{array}{cccc}
+1 & 1 & 1 & 0\\
+0 & a+1 & 0 & a+1\\
+-1 & a & a-1 & a
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+1 & 1 & 1 & 0\\
+0 & a+1 & 0 & a+1\\
+0 & a+1 & a & a
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+1 & 1 & 1 & 0\\
+0 & a+1 & 0 & a+1\\
+0 & 0 & a & -1
+\end{array}\right)\sim_f
+$$
+
+que tiene rango 3 si $a\not = -1$ y rango 2 si $a=-1$. 
+Para $W$ estudiamos cuántos vectores del sistema de generadores son linealmente independientes, para lo que hay que calcular el rango de la matriz:
+
+$$
+\left(\begin{array}{ccc}
+1 & 0 & -1 \\
+1 & a+1 & a\\
+1 & 0 & a-1\\
+0 & a+1 & a 
+\end{array}\right)
+$$
+
+que es la traspuesta de la anterior. Por tanto se tiene
+
+<ul>
+  <li> Si $\boxed{a=-1}$ $dim\, U= 2$ y $dim\, W=2$. </li>
+
+  <li> Si $\boxed{a\not=-1}$ $dim\, U= 1$ y $dim\, W=3$. </li>
+</ul>
+
+</li>
+<li>
+Realmente hay que calcular la forma de Hermite por columnas de la matriz formada por el sistema de generadores.
+Aprovechamos las operaciones elementales que hicimos en el apartado anterior:
+
+$$
+\left(\begin{array}{ccc}
+1 & 0 & -1 \\
+1 & a+1 & a\\
+1 & 0 & a-1\\
+0 & a+1 & a 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & a+1 & 0\\
+1 & 0 & a\\
+0 & a+1 & -1 
+\end{array}\right)
+$$
+
+Cuando $a=-1$ 
+
+$$
+\left(\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 0 & 0\\
+1 & 0 & -1\\
+0 & 0 & -1 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 0 & 0\\
+0 & 1 & 0\\
+-1 & 1 & 0 
+\end{array}\right)
+$$
+
+luego la base más sencilla es $\{(1,1,0,-1), (0,0,1,1) \}$.
+Si $a\not = -1$ 
+
+$$
+\sim_c \left(\begin{array}{ccc}
+1 & 0 & 0 \\
+1 & 1 & 0\\
+1 & 0 & a\\
+0 & 1 & -1 
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0\\
+1 & 0 & a\\
+-1 & 1 & -1 
+\end{array}\right)
+$$
+
+y hay que distinguir dos casos: 
+
+<ul>
+  <li> Si $\boxed{a=0}$ la base más sencilla es $\{(1,0,1,0), (0,1,0,0),(0,0,0,1)\}$; </li>
+
+  <li> Si $\boxed{a\not =-1,0}$ la base más sencilla es $\{(1,0,0,(1-a)/a),(0,1,0,1),(0,0,1,-1/a)\}$.  </li>
+</ul>
+
+</li>
+<li>
+Para $a=1$ ya tenemos la base más sencilla de $W$: $\{(1,0,0,0),(0,1,0,1),(0,0,1,-1)\}$. Podemos calcular unas cartesianas escribiendo primero unas paramétricas:
+
+$$
+W=\left\{ \begin{array}{ll}
+x= & \lambda_1\\
+y= & \lambda_2\\
+z= & \lambda_3\\
+t= &  \lambda_2-\lambda_3\\
+\end{array}\right.
+$$
+
+que nos da la cartesiana $y-z-t=0$. Reuniendo las cartesianas de ambos subespacios:
+
+$$
+U\cap W\equiv \left\{ \begin{array}{l} 
+x+y+z=0\\
+2y+2t=0\\
+z-t=0\\
+y-z-t=0
+\end{array}\right. \sim \left\{ \begin{array}{l} 
+x+y+z=0\\
+y+t=0\\
+z-t=0\\
+y-2t=0
+\end{array}\right.\sim \left\{ \begin{array}{l} 
+x=0\\
+y=0\\
+z=0\\
+t=0
+\end{array}\right.
+$$
+
+con lo que $U\cap W=\{0\}$. 
+
+Ahora, usando la fórmula de las dimensiones
+
+$$
+dim\, U+dim\, W= dim\, U+W \,+ dim\, U\cap W
+$$
+
+obtenemos que $dim\, U+W=4$ y, por tanto, $U+W= \mathbb{R}^4$.
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-26 .cuerpo_finito-medio}
+En el espacio vectorial $(\mathbb{Z}_5)^4$ se consideran los subespacios:
+
+$$
+U=\mathcal{L}((1,1,2,0), (2,1,1,0))
+$$
+
+$$
+W=\mathcal{L}((2,a,2,0), (0,0,0,1))
+$$
+
+siendo $a$ un parámetro.  
+En función de $a$ determinar la dimensión y bases escalonadas de los subespacios $U$, $W$, $U+W$ y $U\cap W$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Para obtener una base escalonada de $U$ escalonamos por columnas a partir del sistema de generadores dado:
+
+$$
+\begin{pmatrix}
+1 & 2 \\
+1 & 1 \\
+2 & 1 \\
+0 & 0
+\end{pmatrix}
+\sim_c 
+\begin{pmatrix}
+1 & 0 \\
+1 & 4 \\
+2 & 2 \\
+0 & 0
+\end{pmatrix}
+\sim_c 
+\begin{pmatrix}
+1 & 0 \\
+1 & 1 \\
+2 & 3 \\
+0 & 0
+\end{pmatrix}
+\sim_c 
+\begin{pmatrix}
+1 & 0 \\
+0 & 1 \\
+4 & 3 \\
+0 & 0
+\end{pmatrix}
+$$
+
+Y obtenemos la base $\{ (1,0,4,0), (0,1,3,0)\}$ y $dim(U)=2$.
+
+De igual manera, para $W$:
+
+$$
+\begin{pmatrix}
+2 & 0 \\
+a & 0 \\
+2 & 0 \\
+0 & 1
+\end{pmatrix}
+\sim_c 
+\begin{pmatrix}
+1 & 0 \\
+3a & 0 \\
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+$$
+
+obtenemos la base escalonada $\{ (1,3a,1,0), (0,0,0,1)\}$ y $dim(W)=2$.
+
+Un sistema de generadores de $U+W$ se obtiene uniendo las bases de $U$ y $W$:  
+$\{ (1,0,4,0), (0,1,3,0), (1,3a,1,0), (0,0,0,1)\}$.
+
+y se tiene que la dimensión de $U+W$ coincide con el rango de la matriz:
+
+$$
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 3a & 0 \\
+4 & 3 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+$$
+
+cuyo determinante es:
+
+$$
+\left| 
+\begin{array}{cccc}
+1 & 0 & 1 & 0 \\
+0 & 1 & 3a & 0 \\
+4 & 3 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right|
+=
+\left| 
+\begin{array}{ccc}
+1 & 0 & 1  \\
+0 & 1 & 3a \\
+4 & 3 & 1  \\
+\end{array}\right|
+= 1-4-9a = a+2
+$$
+
+Luego tenemos dos casos:
+<ul> 
+<li> 
+<b>Caso 1. </b>Si $a\neq3$ entonces $dim(U+W)=4$ y en consecuencia $U+W=(\mathbb{Z}_5)^4$ y una base escalonada es la canónica: $\{(1,0,0,0), (0,1,0,0), (0,0,1,0), (0,0,0,1)\}$  
+Además, en este caso, usando la fórmula de las dimensiones: $dim(U\cap W)= dim(U)+dim(W)-dim(U+W)=2+2-4=0$, luego $U\cap W=0$ y no tiene base (o tiene como base al conjunto vacío $\emptyset$).
+
+</li>
+<li> 
+<b>Caso 2. </b>Si $a=3$, entonces obtenemos una base escalonada de $U+W$:
+
+$$
+\begin{pmatrix}
+1 & 0 & 1 & 0 \\
+0 & 1 & 4 & 0 \\
+4 & 3 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 4 & 0 \\
+4 & 3 & 2 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+4 & 3 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix} 
+\sim_c
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+4 & 3 & 0 & 0 \\
+0 & 0 & 1 & 0
+\end{pmatrix} 
+$$
+
+que es $\{ (1,0,4,0), (0,1,3,0), (0,0,0,1)\}$ y $dim(U+W)=3$.
+
+Usando la fórmula de las dimensiones, en este caso se tiene $dim(U\cap W)= dim(U)+dim(W)-dim(U+W)=2+2-3=1$.
+
+Para determinar la intersección, hemos de obtener unas ecuaciones cartesianas de $U$ y
+de $W$:
+
+de la base escalonada de $U$ obtenemos las ecuaciones paramétricas
+$$
+\left\{
+\begin{array}{rcl}
+x & = & \l \\
+y & = & \mu \\ 
+z & = & 4\l+3\mu\\
+t & = & 0\\
+\end{array}
+\right.
+$$ 
+y de aqui, por eliminación de parámetros, las ecuaciones cartesinas:
+
+$$
+\left\{
+\begin{array}{rcl}
+x +2y+z& = & 0 \\
+t & = & 0\\
+\end{array}
+\right.
+$$ 
+De igual manera, para $W$:
+$$
+\left\{
+\begin{array}{rcl}
+x & = & \l \\
+y & = & 4\l \\ 
+z & = & \l\\
+t & = & \mu\\
+\end{array}
+\right.
+$$ 
+
+$$
+\left\{
+\begin{array}{rcl}
+x +4z& = & 0 \\
+y+z & = & 0\\
+\end{array}
+\right.
+$$ 
+Unimos ambas cartesianas y escalonamos el sistema resultante:
+
+$$
+\left\{
+\begin{array}{rcl}
+x +2y+z& = & 0 \\
+t & = & 0\\
+x +4z& = & 0 \\
+y+z & = & 0\\
+\end{array}
+\right.
+$$ 
+
+$$
+\left(  \begin{array}{cccc|c}
+1 & 2 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+1 & 0 & 4 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 & 2 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 3 & 3 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 & 2 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 & 0 & 4 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{array} \right)
+$$
+
+Unas ecuaciones cartesianas de $U\cap W$ son:
+$$
+\left\{
+\begin{array}{rcl}
+x +4z& = & 0 \\
+y+z & = & 0\\
+t & = & 0\\
+\end{array}
+\right.
+$$ 
+
+Pasamos a paramétricas resolviendo el sistema:
+
+$$
+\left\{
+\begin{array}{rcl}
+x & = & \l \\
+y & = & 4\l\\
+z & = & \l\\
+t & = & 0\\
+\end{array}
+\right.
+$$ 
+y finalmente, obtenemos la base de $U\cap W$: $\{ (1,4,1,0)\}$
+</li>
+</ul>
+
+::::
+:::::
