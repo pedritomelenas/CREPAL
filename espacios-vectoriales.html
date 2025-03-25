@@ -338,7 +338,7 @@ window.Quarto = {
 
 <!-- LTeX: language=es-ES --->
 <p><input type="checkbox" id="casilla_cf" value="cfon" checked="" onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos.</p>
-<div id="exr-1" class="theorem exercise">
+<div id="exr-1" class="avanzado theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 1</strong></span> En <span class="math inline">\(\mathbb{R}^4\)</span> se considera el conjunto</p>
 <p><span class="math display">\[
 \{(b,0,a,b),(0,a,1+a,0),(0,1,1+a,0),(0,1+a,2+2a,1-a)\}.
@@ -356,7 +356,7 @@ Solución
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Para determinar si los vectores son linealmente independientes o linealmente dependientes construimos la matriz cuyas columnas son esos vectores, a continuación calculamos su rango y lo comparamos con el número de vectores. Se tiene que los vectores son linealmente independientes si y sólo si <span class="math inline">\(\operatorname{rg}(A)\)</span> es máximo (coincide con el número de vectores) y en otro caso son linealmente dependientes.</p>
+<p>Para determinar si los vectores son linealmente independientes o linealmente dependientes construimos la matriz cuyas columnas son esos vectores, a continuación calculamos su rango y lo comparamos con el número de vectores. Se tiene que los vectores son linealmente independientes si y sólo si <span class="math inline">\(\operatorname{rg}(A)\)</span> coincide con el número de vectores (o de columnas) y en otro caso son linealmente dependientes.</p>
 <p>La matriz que se forma es:</p>
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
@@ -425,50 +425,151 @@ rango 4
 </td>
 </tr>
 </tbody></table>
-<p>Veamos por ejemplo el caso <span class="math inline">\(b\not = 0, a=1\)</span>:</p>
+<p>Veamos el caso <span class="math inline">\(b\not = 0,\, a=1\)</span>:</p>
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
 b &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 1 &amp; 2\\
-1 &amp; 2&amp; 2 &amp; 4\\
+1 &amp; 2 &amp; 2 &amp; 4\\
 b &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)\sim_c \left( \begin{array}{cccc}
 b &amp; 0 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 0 &amp; 0\\
-1 &amp; 2&amp; 0 &amp; 0\\
+1 &amp; 2 &amp; 0 &amp; 0\\
 b &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
 \]</span></p>
 <p>y es inmediato que el rango es dos.</p>
+<p>Para el caso <span class="math inline">\(b\not = 0,\, a=-1\)</span>:</p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+b &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 1 &amp; 0\\
+-1 &amp; 0 &amp; 0 &amp; 0\\
+b &amp; 0 &amp; 0 &amp; 2
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; -1 &amp; 1 &amp; 0\\
+-1 &amp; 0 &amp; 0 &amp; 0\\
+b &amp; 0 &amp; 0 &amp; 2
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; -1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; 0 &amp; 0 &amp; 2+2b
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; -2\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>y por tanto el rango es 3.</p>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+var('b')
+A=matrix([[b,0,0,0],[0,-1,1,0],[-1,0,0,0],[b,0,0,2]])
+A.echelon_form()
+</script>
+</div>
+Para el caso <span class="math inline">\(b=0,\, a\not =-1,1\)</span> distinguimos dos posibilidades:
+<ul>
+<p><span class="math inline">\(a=0\)</span>:</p>
+<span class="math display">\[
+A=\left( \begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 2\\
+0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+0 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> que tiene rango 3.
+</ul>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[0,0,0,0],[0,0,1,1],[0,1,1,2],[0,0,0,1]])
+A.echelon_form()
+</script>
+</div>
+<ul>
+<p><span class="math inline">\(a\not =0\)</span>:</p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; a &amp; 1 &amp; 1+a\\
+a &amp; 1+a &amp; 1+a &amp; 2+2a\\
+0 &amp; 0 &amp; 0 &amp; 1-a
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+a &amp; 1+a &amp; 1+a &amp; 2+2a\\
+0 &amp; a &amp; 1 &amp; 1+a\\
+0 &amp; 0 &amp; 0 &amp; 1-a\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+1 &amp; \frac{1+a}{a} &amp; \frac{1+a}{a} &amp; \frac{2+2a}{a}\\
+0 &amp; 1 &amp; \frac{1}{a} &amp; \frac{1+a}{a}\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_f \left( \begin{array}{cccc}
+1 &amp; 0 &amp; \frac{1+a}{a}-\frac{1+a}{a^2} &amp; 0\\
+0 &amp; 1 &amp; \frac{1}{a} &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+que de nuevo tiene rango 3.
+</ul>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
+<div class="sage">
+<script type="text/x-sage">
+var('a')
+A=matrix([[0,0,0,0],[0,a,1,1+a],[a,1+a,1+a,2+2*a],[0,0,0,1-a]])
+A.echelon_form()
+</script>
+</div>
+<p>Para los casos restantes, podemos utilizar directamente <code>sage</code> para calcular el rango:</p>
+<ul>
+<span class="math inline">\(a=1, \; b=0\)</span>
+</ul>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[0,0,0,0],[0,1,1,2],[1,2, 2,4],[0,0,0,0]])
+show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
+</script>
+</div>
+<ul>
+<span class="math inline">\(a=-1, \; b=0\)</span>
+</ul>
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[0,0,0,0],[0,-1,1,0],[-1,0,0,0],[0,0,0,2]])
+show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
+</script>
 </div>
 </div>
 </div>
 </div>
-<div id="exr-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Estudia si los siguientes conjuntos de vectores son linealmente independientes o linealmente dependientes (se recomienda usar coordenadas en las bases más adecuadas).</p>
-<ol type="a">
-<li>
-<p>En el conjunto de polinomios de <span class="math inline">\(\mathbb{R}[x]\)</span> con grado menor o igual que dos:</p>
+</div>
+<div id="exr-2" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> En el conjunto de polinomios de <span class="math inline">\(\mathbb{R}[x]\)</span> con grado menor o igual que dos, estudia si el siguiente conjunto de vectores es linealmente independiente o linealmente dependiente (se recomienda usar coordenadas en las bases más adecuadas).</p>
 <p><span class="math display">\[
 \{ 1+2x+3x^{2},\; 1-x+x^{2},\; 1+x-x^{2},\; x+2x^{2} \}.
 \]</span></p>
-</li>
-<li class="cuerpo_finito">
-<p>En el conjunto de polinomios de <span class="math inline">\(\mathbb{Z}_3[x]\)</span> con grado menor o igual que tres:</p>
-<p><span class="math display">\[
-\{2x, x^3-3, 1+x -4x^3, x^3 + 18x -9\}.
-\]</span></p>
-</li>
-<li class="cuerpo_finito">
-<p>En <span class="math inline">\(\mathcal{M}_{2}(\mathbb{Z}_7)\)</span>:</p>
-<p><span class="math display">\[
-\left\{ \begin{pmatrix} 1 &amp; -1 \\ 0 &amp; 6
-\end{pmatrix}, \begin{pmatrix} -1 &amp; 0 \\ 3 &amp; 1 \end{pmatrix},
-\begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix}, \begin{pmatrix}
-0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\right\}.
-\]</span></p>
-</li>
-</ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -481,9 +582,7 @@ Solución
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>En cada caso utilizaremos la base más sencilla que conozcamos del espacio vectorial para obtener coordenadas de los vectores y aplicar el criterio conocido.</p>
-<ol type="a">
-<li>
+<p>Utilizaremos la base más sencilla que conozcamos del espacio vectorial para obtener coordenadas de los vectores y aplicar el criterio conocido.</p>
 <p>Podemos utilizar la base <span class="math inline">\(B=\{1,x,x^2\}\)</span> en la que resulta muy sencillo escribir las coordenadas de los vectores:</p>
 <p><span class="math display">\[
 \begin{array}{rl}
@@ -511,15 +610,51 @@ x+2x^{2}&amp;=(0,1,2)_B.
 \]</span></p>
 <p>que tiene rango tres (las tres primeras columnas forman una submatriz con determinante distinto de cero). Los cuatro vectores son linealmente dependientes.</p>
 <p>Realmente no era necesario el cálculo del rango, puesto que no podía ser en ningún caso mayor que tres. Podíamos haber utilizado que como la dimensión del espacio es tres, el máximo número de vectores linealmente independientes en este espacio vectorial es también tres.</p>
-Comprobemos el resultado obtenido con <code>sage</code>.
-</li>
+<p>Comprobemos el resultado obtenido con <code>sage</code>.</p>
 <div class="sage">
 <script type="text/x-sage">
 A=matrix([[1,2,3],[1,-1,1],[1,1,-1],[0,1,2]])
 show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
 </script>
 </div>
-<li class="cuerpo_finito">
+</div>
+</div>
+</div>
+</div>
+<div id="exr-3" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Estudia si los siguientes conjuntos de vectores son linealmente independientes o linealmente dependientes (se recomienda usar coordenadas en las bases más adecuadas).</p>
+<ol type="a">
+<li>
+<p>En el conjunto de polinomios de <span class="math inline">\(\mathbb{Z}_3[x]\)</span> con grado menor o igual que tres:</p>
+<p><span class="math display">\[
+\{2x, x^3-3, 1+x -4x^3, x^3 + 18x -9\}.
+\]</span></p>
+</li>
+<li>
+<p>En <span class="math inline">\(\mathcal{M}_{2}(\mathbb{Z}_7)\)</span>:</p>
+<p><span class="math display">\[
+\left\{ \begin{pmatrix} 1 &amp; -1 \\ 0 &amp; 6
+\end{pmatrix}, \begin{pmatrix} -1 &amp; 0 \\ 3 &amp; 1 \end{pmatrix},
+\begin{pmatrix} 1 &amp; 1 \\ -1 &amp; 2 \end{pmatrix}, \begin{pmatrix}
+0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\right\}.
+\]</span></p>
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En cada caso utilizaremos la base más sencilla que conozcamos del espacio vectorial para obtener coordenadas de los vectores y aplicar el criterio conocido.</p>
+<ol type="a">
+<li>
 <p>En este caso, utilizamos la base <span class="math inline">\(B=\{1,x,x^2,x^3\}\)</span> y de nuevo escribimos los vectores por sus coordenadas:</p>
 <p><span class="math display">\[
 \begin{array}{rl}
@@ -545,7 +680,7 @@ x^{3}+18x-9&amp;=(0,0,0,1)_B.
 \]</span></p>
 que tiene rango tres y los tres vectores son linealmente independientes.
 </li>
-<li class="cuerpo_finito">
+<li>
 <p>En <span class="math inline">\(\mathcal{M}_{2}(\mathbb{Z}_7)\)</span> una base sencilla es</p>
 <p><span class="math display">\[
 \left\{ \begin{pmatrix}
@@ -606,13 +741,13 @@ show(html(f"${latex(A.T)}$ tiene rango ${A.rank()}$"))
 </div>
 </div>
 </div>
-<div id="exr-3" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Calcula las matrices de cambio de base para las bases de <span class="math inline">\(\mathbb{R}^{3}\)</span>:</p>
+<div id="exr-4" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> Calcula las matrices de cambio de base para las bases de <span class="math inline">\(\mathbb{R}^{3}\)</span>:</p>
 <p><span class="math display">\[
 B=\{(4,0,7);\ (2,1,1);\ (3,1,3)\},\quad B'=\{(1,0,2);\ (4,1,5);\ (1,0,3)\}.
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -621,7 +756,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Este ejercicio puede realizarse por varios métodos. Explicaremos dos de ellos.</p>
 <p><strong>Método 1</strong></p>
@@ -702,31 +837,35 @@ QX'=PX
 </div>
 </div>
 </div>
-<div id="exr-4" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> En un espacio vectorial sobre <span class="math inline">\(\mathbb{R}\)</span>, tenemos unos vectores <span class="math inline">\(e_{1},e_{2},\dots ,e_{n},\, x\)</span> cuyas coordenadas en una cierta base vienen dadas a continuación. Comprueba que <span class="math inline">\(\{e_{1},e_{2},\dots,e_{n}\}\)</span> es una base en cada uno de los casos, y halla las coordenadas del vector <span class="math inline">\(x\)</span> en dicha base.</p>
+<div id="exr-5" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> En un espacio vectorial sobre <span class="math inline">\(\mathbb{R}\)</span>, tenemos unos vectores <span class="math inline">\(e_{1},e_{2},\dots ,e_{n},\, x\)</span> cuyas coordenadas en una cierta base vienen dadas a continuación. Comprueba que <span class="math inline">\(\{e_{1},e_{2},\dots,e_{n}\}\)</span> es una base en cada uno de los casos, y halla las coordenadas del vector <span class="math inline">\(x\)</span> en dicha base.</p>
 <ol type="a">
 <li>
-<span class="math inline">\(\left.
+<span class="math display">\[
+\left.
 \begin{array}{c}
 e_{1}=(1,0,1)\\
 e_{2}=(1,2,2)\\
 e_{3}=(0,1,1)
 \end{array}
-\right\} x=(1,0,2).\)</span>
+\right\}\quad x=(1,0,2).
+\]</span>
 </li>
 <li>
-<span class="math inline">\(\left.
+<span class="math display">\[
+\left.
 \begin{array}{l}
 e_{1}=(1,1,1,1)\\
 e_{2}=(0,1,1,1)\\
 e_{3}=(0,0,1,1)\\
 e_{4}=(0,0,0,1)
 \end{array}
-\right\} x=(1,0,1,0).\)</span>
+\right\}\quad x=(1,0,1,0).
+\]</span>
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -735,7 +874,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -841,10 +980,10 @@ show(Ab,"~",Ab.rref())
 </div>
 </div>
 </div>
-<div id="exr-5" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Completa <span class="math inline">\(\{(1,1,0),(2,1,1)\}\)</span> a una base de <span class="math inline">\(\mathbb{Q}^3\)</span>.</p>
+<div id="exr-6" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Completa <span class="math inline">\(\{(1,1,0),(2,1,1)\}\)</span> a una base de <span class="math inline">\(\mathbb{Q}^3\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -853,7 +992,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Comenzamos observando que los dos vectores son linealmente independientes (no son múltiplo uno del otro). Se trata de añadir vectores a los dados hasta obtener una base de <span class="math inline">\(\mathbb{Q}^3\)</span>, como <span class="math inline">\(\dim(\mathbb{Q}^3)=3\)</span> en cualquier base debe haber tres vectores, con lo que en este caso habrá que añadir un vector. Se puede realizar de infinitas formas, la única condición es que los tres vectores sean linealmente independientes; se aconseja hacerlo de modo que esta condición sea fácil de comprobar. Partimos de la matriz</p>
 <p><span class="math display">\[
@@ -883,8 +1022,8 @@ Solución
 </div>
 </div>
 </div>
-<div id="exr-6" class="cuerpo_finito theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Determina si los siguientes conjuntos de vectores generan al espacio vectorial dado.</p>
+<div id="exr-7" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Determina si los siguientes conjuntos de vectores generan al espacio vectorial dado.</p>
 <ol type="a">
 <li>
 En el conjunto de polinomios de <span class="math inline">\(\mathbb{Z}_5[x]\)</span> de grado menor o igual a dos: <span class="math inline">\(\{1+4x, 3+4x^2\}\)</span>.
@@ -900,7 +1039,7 @@ En <span class="math inline">\(\mathcal{M}_{2}(\mathbb{Z}_7)\)</span>: <span cla
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -909,7 +1048,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -976,8 +1115,8 @@ que como tiene una fila entera de ceros tiene rango menor que cuatro, luego no s
 </div>
 </div>
 </div>
-<div id="exr-7" class="cuerpo_finito theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Sea <span class="math inline">\(V = \mathbb{Z}_3^4\)</span> y sean los subespacios vectoriales</p>
+<div id="exr-8" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> Sea <span class="math inline">\(V = \mathbb{Z}_3^4\)</span> y sean los subespacios vectoriales</p>
 <p><span class="math display">\[
 U = \left\{(x,y,z,t) \in V ~\left|~
 \begin{aligned}
@@ -995,7 +1134,7 @@ Calcula unas ecuaciones paramétricas de <span class="math inline">\(U\)</span> 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1004,7 +1143,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1081,8 +1220,8 @@ e imponiendo que su rango debe ser dos, con lo que hay que elegir dos menores de
 </div>
 </div>
 </div>
-<div id="exr-8" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> Para cada uno de los siguientes subespacios de <span class="math inline">\(\mathbb{R}^{4}\)</span> calcula unas ecuaciones paramétricas y unas cartesianas.</p>
+<div id="exr-9" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 9</strong></span> Para cada uno de los siguientes subespacios de <span class="math inline">\(\mathbb{R}^{4}\)</span> calcula unas ecuaciones paramétricas y unas cartesianas.</p>
 <ol type="a">
 <li>
 <span class="math inline">\(U=\{(a,b,-b,a) : a,b\in \mathbb{R} \}\)</span>, <span class="math inline">\(W=\{(a,b,0,c) : a,b,c\in \mathbb{R}\}\)</span>.
@@ -1115,7 +1254,7 @@ x_{1}&amp;-x_{2}&amp;-x_{3}&amp;-x_{4}&amp;=0.\\
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1124,7 +1263,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1240,8 +1379,8 @@ son unas ecuaciones paramétricas de <span class="math inline">\(W\)</span>.
 </div>
 </div>
 </div>
-<div id="exr-9" class="cuerpo_finito theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 9</strong></span> &nbsp;</p>
+<div id="exr-10" class="cuerpo_finito-basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 10</strong></span> &nbsp;</p>
 <ol type="a">
 <li>
 Calcula las coordenadas del vector <span class="math inline">\(v=(1,1)_B\)</span> respecto de <span class="math inline">\(B'\)</span> siendo <span class="math inline">\(B=\{(1,1),(1,2)\}\)</span> y <span class="math inline">\(B'=\{(2,1),(0,1)\}\)</span>, en el espacio vectorial <span class="math inline">\(\mathbb{Z}_3^2\)</span>.
@@ -1251,7 +1390,7 @@ En el espacio vectorial <span class="math inline">\(\mathbb{Z}_3^3\)</span> se c
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1260,7 +1399,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1332,8 +1471,8 @@ Eliminando los dos parámetros nos queda <span class="math display">\[
 </div>
 </div>
 </div>
-<div id="exr-10" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 10</strong></span> En <span class="math inline">\(\mathbb{R}^4\)</span> consideramos los subespacios</p>
+<div id="exr-11" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 11</strong></span> En <span class="math inline">\(\mathbb{R}^4\)</span> consideramos los subespacios</p>
 <p><span class="math display">\[
 U\equiv \left\{ \begin{array}{l}
 x+y+z=0,\\
@@ -1342,7 +1481,7 @@ t=0.\\
 \]</span></p>
 <p>Calcula la base más sencilla de <span class="math inline">\(U\)</span> y unas cartesianas de <span class="math inline">\(W\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1351,7 +1490,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Para calcular la base más sencilla de <span class="math inline">\(U\)</span>, de las ecuaciones cartesianas obtendremos unas paramétricas resolviendo el sistema. De estas paramétricas obtenemos una base desde la que calcular la base más sencilla.</p>
 <p>Resolver las cartesianas es inmediato puesto que ya es un sistema escalonado reducido, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> actúan como parámetros, luego nos queda:</p>
@@ -1430,8 +1569,8 @@ W\equiv x+2y-2t=0.
 </div>
 </div>
 </div>
-<div id="exr-11" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 11</strong></span> Para los subespacios de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> siguientes:</p>
+<div id="exr-12" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 12</strong></span> Para los subespacios de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> siguientes:</p>
 <p><span class="math display">\[
 U=\left\{ A\in  \mathcal{M}_2(\mathbb{R}) \mbox{ tal que } A=A^t\right\},
 \]</span></p>
@@ -1466,7 +1605,7 @@ Prueba que <span class="math inline">\(\mathcal{M}_2(\mathbb{R})=U\oplus W\)</sp
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1475,7 +1614,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1582,8 +1721,8 @@ deducimos que <span class="math inline">\(\dim(U+W)=4=\dim(\mathcal{M}_2(\mathbb
 </div>
 </div>
 </div>
-<div id="exr-12" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 12</strong></span> En el espacio <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> se consideran los subespacios</p>
+<div id="exr-13" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13</strong></span> En el espacio <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> se consideran los subespacios</p>
 <p><span class="math display">\[
 U=\mathcal{L}\Biggl(\biggl\{\begin{pmatrix}
 1 &amp; 2 \\ 0 &amp; 0
@@ -1612,7 +1751,7 @@ Calcular unas ecuaciones cartesianas de <span class="math inline">\(U \cap W\)</
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1621,7 +1760,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1697,7 +1836,14 @@ así que si <span class="math inline">\(a\not = 2\)</span> el rango es tres y <s
 </li>
 <li>
 <p>Probar que cuando <span class="math inline">\(a=2\)</span> se tiene que <span class="math inline">\(U \subseteq W\)</span>.</p>
-Hemos visto que para <span class="math inline">\(a=2\)</span> la dimensión de <span class="math inline">\(U\)</span> es dos y por tanto los dos primeros vectores son base de <span class="math inline">\(U\)</span>, además cada uno de ellos verifica la ecuación de <span class="math inline">\(W\)</span> (<span class="math inline">\(2\cdot 1-2-0=0; \, 2\cdot 1-0-2=0\)</span>), así que <span class="math inline">\(U\subseteq W\)</span>.
+<p>Hemos visto que para <span class="math inline">\(a=2\)</span> la dimensión de <span class="math inline">\(U\)</span> es dos y por tanto los dos primeros vectores son base de <span class="math inline">\(U\)</span>, además cada uno de ellos verifica la ecuación de <span class="math inline">\(W\)</span>:</p>
+<p><span class="math display">\[
+2\cdot 1-2-0=0
+\]</span></p>
+<p><span class="math display">\[
+2\cdot 1-0-2=0,
+\]</span></p>
+así que <span class="math inline">\(U\subseteq W\)</span>.
 </li>
 <li>
 <p>Calcular unas ecuaciones cartesianas de <span class="math inline">\(U \cap W\)</span> para <span class="math inline">\(a\not = 2\)</span>.</p>
@@ -1724,8 +1870,8 @@ z=0.
 </div>
 </div>
 </div>
-<div id="exr-13" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 13</strong></span> Dada la matriz</p>
+<div id="exr-14" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14</strong></span> Dada la matriz</p>
 <p><span class="math display">\[
 A= \left(\begin{array}{rrrr}
 a &amp; -1 &amp; 1 &amp; 0\\
@@ -1746,7 +1892,7 @@ Calcula las dimensiones de <span class="math inline">\(U\cap W\)</span> y <span 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1755,7 +1901,7 @@ Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1943,6 +2089,1613 @@ a &amp; 0 &amp; 1 &amp; 0\\
 Si <span class="math inline">\(a\not =0,-1\)</span>, <span class="math inline">\(\dim(U)=1\)</span>, <span class="math inline">\(\dim(W)=3\)</span>, <span class="math inline">\(\dim(U+W)=4\)</span> y <span class="math inline">\(\dim(U\cap W)=0\)</span>.
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-15" class="basico-cuestion theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 15</strong></span> ¿Para qué valores de <span class="math inline">\(a\)</span> son linealmente independientes los vectores <span class="math inline">\(\{ (1,1,1), (-1,2,a), (1, 4, a^2)\}?\)</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Serán linealmente independientes cuando el rango de la matriz que forman sea 3, lo que ocurre en este caso cuando el determinante de la matriz que forman sea distinto de <span class="math inline">\(0\)</span>:</p>
+<p><span class="math display">\[
+\left| \begin{array}{rrr}
+1 &amp; -1 &amp; 1\\
+1 &amp; 2 &amp; 4\\
+1 &amp; a &amp; a^2
+\end{array}\right|=\left| \begin{array}{rrr}
+1 &amp; 0 &amp; 0\\
+1 &amp; 3 &amp; 3\\
+1 &amp; a+1 &amp; a^2-1
+\end{array}\right|= \left| \begin{array}{rr}
+3 &amp; 3\\
+a+1 &amp; a^2-1
+\end{array}\right|=3(a^2-1-a-1)=3(a-2)(a+1)
+\]</span></p>
+<p>Así que son linealmente independientes para todos los valores reales excepto para <span class="math inline">\(a=2\)</span> y <span class="math inline">\(a=-1\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-16" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 16</strong></span> En <span class="math inline">\(\mathbb{R}^{2}\)</span> conocemos la base <span class="math inline">\(B=\{ (1,1),(2,-1)\}\)</span> y que la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> es <span class="math inline">\(P=\begin{pmatrix}
+1 &amp;  2\\
+2/3  &amp; 1/3\\
+\end{pmatrix}\)</span>. Calcula <span class="math inline">\(B'\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Los vectores de <span class="math inline">\(B'\)</span> escritos en la base canónica forman (por columnas) la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B_c\)</span>, así que calcularemos esta matriz para obtenerlos. Como la matriz de cambio de base de <span class="math inline">\(B'\)</span> a <span class="math inline">\(B\)</span> es la inversa de <span class="math inline">\(P\)</span> y la de <span class="math inline">\(B\)</span> a <span class="math inline">\(B_c\)</span> es <span class="math inline">\(Q=\begin{pmatrix}
+1 &amp; 2\\ 1 &amp;-1\\
+\end{pmatrix}\)</span>, entonces la matriz que buscamos es <span class="math inline">\(Q\cdot P^{-1}\)</span>. Calculamos <span class="math inline">\(P^{-1}\)</span>:</p>
+<p><span class="math display">\[
+\left| \begin{array}{rrr}
+1 &amp; -1 &amp; 1\\
+1 &amp; 2 &amp; 4\\
+1 &amp; a &amp; a^2
+\end{array}\right|=\left| \begin{array}{rrr}
+1 &amp; 0 &amp; 0\\
+1 &amp; 3 &amp; 3\\
+1 &amp; a+1 &amp; a^2-1
+\end{array}\right|= \left| \begin{array}{rr}
+3 &amp; 3\\
+a+1 &amp; a^2-1
+\end{array}\right|=3(a^2-1-a-1)=3(a-2)(a+1)
+\]</span></p>
+<p><span class="math display">\[
+Q\cdot P^{-1}=\begin{pmatrix}
+1 &amp; 2\\ 1 &amp; -1
+\end{pmatrix}\begin{pmatrix}
+-1/3 &amp; 2\\
+2/3 &amp; -1
+\end{pmatrix}=\begin{pmatrix}
+1 &amp; 0\\ -1 &amp; 3
+\end{pmatrix}
+\]</span></p>
+<p>luego <span class="math inline">\(B'=\{ (1,-1), (0,3)\}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-17" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 17</strong></span> En el espacio vectorial <span class="math inline">\(V\)</span>, <span class="math inline">\(B=\{ e_1,e_2\}\)</span> es una base. Calcula las coordenadas respecto de la base <span class="math inline">\(B'=\{e_1+e_2, 2e_1-e_2\}\)</span> del vector <span class="math inline">\(v=(1,-1)_{B}\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como <span class="math inline">\(B'=\{(1,1)_B, (2,-1)_B\}\)</span>, planteamos</p>
+<p><span class="math display">\[
+(1,-1)_B=a(1,1)_B+b(2,-1)_B
+\]</span></p>
+<p>y resolvemos</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
+a+2b=1\\
+a-b=-1
+\end{array}\right.\sim_f  \left\{ \begin{array}{l}
+a=-1/3\\
+b=2/3
+\end{array}\right.
+\]</span></p>
+<p>luego <span class="math inline">\(v=(-1/3,2/3)_{B'}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-18" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 18</strong></span> Calcular la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> siendo</p>
+<p><span class="math display">\[
+B=\{ (1,1), (-1,1)\}
+\]</span></p>
+<p><span class="math display">\[
+B'=\{ (1,2), (-1,2)\}
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>LLamemos <span class="math inline">\(P=\left( \begin{array}{rr}
+1 &amp; -1 \\
+1 &amp; 1 \\
+\end{array} \right)\)</span> a la matriz de cambio de base de <span class="math inline">\(B\)</span> a la base canónica, y <span class="math inline">\(Q=\left( \begin{array}{rr}
+1 &amp; -1 \\
+2 &amp; 2 \\
+\end{array} \right)\)</span> a la matriz de cambio de base de <span class="math inline">\(B'\)</span> a la canónica. <span class="math display">\[
+B \longrightarrow^{P}  B_c \longleftarrow^{Q} B'
+\]</span> entonces la matriz de cambio de base de <span class="math inline">\(B\)</span> a <span class="math inline">\(B'\)</span> será <span class="math inline">\(Q^{-1}\cdot P\)</span>.</p>
+<p>Calculamos <span class="math inline">\(Q^{-1}\)</span>:</p>
+<p><span class="math display">\[
+\left( \begin{array}{rr|rr}
+1 &amp; -1&amp; 1 &amp; 0 \\
+2 &amp; 2 &amp; 0 &amp; 1\\
+\end{array} \right)\sim_{f} \left( \begin{array}{rr|rr}
+1 &amp; -1&amp; 1 &amp; 0 \\
+0 &amp; 4 &amp; -2 &amp; 1\\
+\end{array} \right)\sim_{f}
+\]</span></p>
+<p><span class="math display">\[
+\left( \begin{array}{rr|rr}
+1 &amp; -1&amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; -2/4 &amp; 1/4\\
+\end{array} \right)
+\sim_{f} \left( \begin{array}{rr|rr}
+1 &amp; 0&amp; 1/2 &amp; 1/4 \\
+0 &amp; 1 &amp; -1/2 &amp; 1/4\\
+\end{array} \right)
+\]</span></p>
+<p>Así</p>
+<p><span class="math display">\[
+Q^{-1} \cdot P= \left( \begin{array}{rr}
+1/2 &amp; 1/4 \\
+-1/2 &amp; 1/4\\
+\end{array} \right)\left( \begin{array}{rr}
+1 &amp; -1 \\
+1 &amp; 1 \\
+\end{array} \right)=\left( \begin{array}{rr}
+3/4 &amp; -1/4 \\
+-1/4 &amp; 3/4 \\
+\end{array} \right)
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-19" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 19</strong></span> Calcular las cartesianas más sencillas del subespacio de <span class="math inline">\(\mathbb{R}^4\)</span> generado por los vectores</p>
+<p><span class="math display">\[
+\{(1,1,1,0),(1,-2,1,0),(2,-1,2,0)\}
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En primer lugar calculamos la base m'{a}s sencilla a partir del sistema de generadores dado:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 1 &amp; 2 \\
+1 &amp; -2 &amp; -1 \\
+1 &amp; 1 &amp; 2 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\sim_{c} \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+1 &amp; -3 &amp; -3 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\sim_{c}
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}\sim_{c}
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Así que la base más sencilla es <span class="math inline">\(\{ (1,0,1,0),(0,1,0,0)\}\)</span> a partir de la que escribimos las ecuaciones paramétricas:</p>
+<p><span class="math display">\[
+\begin{array}{rll}
+x= 1\cdot \lambda + 0 \cdot \mu\\
+y= 0\cdot \lambda + 1 \cdot \mu\\
+z= 1\cdot \lambda + 0 \cdot \mu\\
+t= 0\cdot \lambda + 0 \cdot \mu\\
+\end{array}
+\]</span></p>
+<p>que nos permite obtener las cartesianas</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+x -z =0\\
+t= 0\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-20" class="cuerpo-finito-avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 20</strong></span> En el espacio vectorial <span class="math inline">\((\mathbb{Z}_5)^4\)</span> se consideran los subespacios:</p>
+<p><span class="math display">\[
+U=\mathcal{L}((1,1,2,0), (2,1,1,0))
+\]</span></p>
+<p><span class="math display">\[
+W=\mathcal{L}((2,a,2,0), (0,0,0,1))
+\]</span></p>
+<p>siendo <span class="math inline">\(a\)</span> un parámetro. En función de <span class="math inline">\(a\)</span> determinar la dimensión y bases escalonadas de los subespacios <span class="math inline">\(U\)</span>, <span class="math inline">\(W\)</span>, <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U\cap W\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Para obtener una base escalonada de <span class="math inline">\(U\)</span> escalonamos por columnas a partir del sistema de generadores dado:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 2 \\
+1 &amp; 1 \\
+2 &amp; 1 \\
+0 &amp; 0
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 4 \\
+2 &amp; 2 \\
+0 &amp; 0
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 1 \\
+2 &amp; 3 \\
+0 &amp; 0
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+4 &amp; 3 \\
+0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Y obtenemos la base <span class="math inline">\(\{ (1,0,4,0), (0,1,3,0)\}\)</span> y <span class="math inline">\(dim(U)=2\)</span>.</p>
+<p>De igual manera, para <span class="math inline">\(W\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+2 &amp; 0 \\
+a &amp; 0 \\
+2 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+3a &amp; 0 \\
+1 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p>obtenemos la base escalonada <span class="math inline">\(\{ (1,3a,1,0), (0,0,0,1)\}\)</span> y <span class="math inline">\(dim(W)=2\)</span>.</p>
+<p>Un sistema de generadores de <span class="math inline">\(U+W\)</span> se obtiene uniendo las bases de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>:<br>
+<span class="math inline">\(\mathcal{L}((1,0,4,0), (0,1,3,0), (1,3a,1,0), (0,0,0,1))\)</span>.</p>
+<p>y se tiene que la dimensión de <span class="math inline">\(U+W\)</span> coincide con el rango de la matriz:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 3a &amp; 0 \\
+4 &amp; 3 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p>cuyo determinante es:</p>
+<p><span class="math display">\[
+\left|
+\begin{array}{cccc}
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 3a &amp; 0 \\
+4 &amp; 3 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right|
+=
+\left|
+\begin{array}{ccc}
+1 &amp; 0 &amp; 1  \\
+0 &amp; 1 &amp; 3a \\
+4 &amp; 3 &amp; 1  \\
+\end{array}\right|
+= 1-4-9a = a+2
+\]</span></p>
+Luego tenemos dos casos:
+<ol type="i">
+<li>
+<p>Si <span class="math inline">\(a\not = 3\)</span> entonces <span class="math inline">\(dim(U+W)=4\)</span> y en consecuencia <span class="math inline">\(U+W=(\mathbb{Z}_5)^4\)</span> y una base escalonada es la canónica: <span class="math inline">\(\{(1,0,0,0), (0,1,0,0), (0,0,1,0), (0,0,0,1)\}\)</span></p>
+Además, en este caso, usando la fórmula de las dimensiones: <span class="math inline">\(dim(U\cap W)= dim(U)+dim(W)-dim(U+W)=2+2-4=0\)</span>, luego <span class="math inline">\(U\cap W=0\)</span> y no tiene base (o tiene como base al conjunto vacío <span class="math inline">\(\emptyset\)</span>).
+</li>
+<li>
+<p>Si <span class="math inline">\(a=3\)</span>, entonces obtenemos una base escalonada de <span class="math inline">\(U+W\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 4 &amp; 0 \\
+4 &amp; 3 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}\sim_c\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 4 &amp; 0 \\
+4 &amp; 3 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}\sim_c\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+4 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}\sim_c\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+4 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>que es <span class="math inline">\(\{ (1,0,4,0), (0,1,3,0), (0,0,0,1)\}\)</span> y <span class="math inline">\(dim(U+W)=3\)</span>.</p>
+<p>Usando la fórmula de las dimensiones, en este caso se tiene <span class="math inline">\(dim(U\cap W)= dim(U)+dim(W)-dim(U+W)=2+2-3=1\)</span>.</p>
+<p>Para determinar la intersección, hemos de obtener unas ecuaciones cartesianas de <span class="math inline">\(U\)</span> y de <span class="math inline">\(W\)</span>:</p>
+<p>De la base escalonada de <span class="math inline">\(U\)</span> obtenemos las ecuaciones paramétricas</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x &amp; = &amp; \l \\
+y &amp; = &amp; \mu \\
+z &amp; = &amp; 4\l+3\mu\\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p>y de aquí, por eliminación de parámetros, las ecuaciones cartesianas:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +2y+z&amp; = &amp; 0 \\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p>De igual manera, para <span class="math inline">\(W\)</span>:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x &amp; = &amp; \l \\
+y &amp; = &amp; 4\l \\
+z &amp; = &amp; \l\\
+t &amp; = &amp; \mu\\
+\end{array}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +4z&amp; = &amp; 0 \\
+y+z &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p>Unimos ambas cartesianas y escalonamos el sistema resultante:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +2y+z&amp; = &amp; 0 \\
+t &amp; = &amp; 0\\
+x +4z&amp; = &amp; 0 \\
+y+z &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+\left(  \begin{array}{cccc|c}
+1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 4 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 3 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 &amp; 0 &amp; 4 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\]</span></p>
+<p>Unas ecuaciones cartesianas de <span class="math inline">\(U\cap W\)</span> son:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +4z&amp; = &amp; 0 \\
+y+z &amp; = &amp; 0\\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p>Pasamos a paramétricas resolviendo el sistema:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x &amp; = &amp; \l \\
+y &amp; = &amp; 4\l\\
+z &amp; = &amp; \l\\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p>y finalmente, obtenemos la base de <span class="math inline">\(U\cap W\)</span>: <span class="math inline">\(\{ (1,4,1,0)\}\)</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-21" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 21</strong></span> Dada la matriz:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; a &amp; -1&amp;a-1\\
+0 &amp; a-1 &amp; -1&amp; 0\\
+1 &amp; 1 &amp; a+1&amp; a-1\\
+2 &amp; a+1 &amp; a&amp; 3a-1
+\end{pmatrix}
+\]</span></p>
+se consideran los subespacios <span class="math inline">\(U\subseteq\mathbb{R}^4\)</span> generado por las columnas de <span class="math inline">\(A\)</span> y <span class="math inline">\(W\subseteq\mathbb{R}^4\)</span> cuyas ecuaciones cartesianas son <span class="math inline">\(AX=0\)</span>.
+<ol type="a">
+<li>
+Calcula las dimensiones de <span class="math inline">\(U\)</span> y de <span class="math inline">\(W\)</span> según los valores <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Calcula unas ecuaciones cartesianas de <span class="math inline">\(U\)</span> según los valores de <span class="math inline">\(a\)</span>. Calcula las dimensiones de <span class="math inline">\(U\cap W\)</span> y <span class="math inline">\(U+W\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Puesto que <span class="math inline">\(U\)</span> está generado por las columnas de <span class="math inline">\(A\)</span>, <span class="math inline">\(dim \, U=rg(A)\)</span>; y como las cartesianas de <span class="math inline">\(W\)</span> vienen dadas por las filas de <span class="math inline">\(A\)</span> entonces <span class="math inline">\(dim\, W=dim \, \mathbb{R}^4-\mbox{'nº cartesianas'}= 4-rg(A)\)</span> es claro que tenemos que calcular <span class="math inline">\(rg(A)\)</span> según los valores de <span class="math inline">\(a\)</span>. Para ello, como es cuadrada, calculamos en primer lugar el determinante:</p>
+<p><span class="math display">\[
+|A|= \left|\begin{array}{cccc}
+1 &amp; a &amp; -1&amp;a-1\\
+0 &amp; a-1 &amp; -1&amp; 0\\
+1 &amp; 1 &amp; a+1&amp; a-1\\
+2 &amp; a+1 &amp; a&amp; 3a-1
+\end{array}\right|=\left|\begin{array}{cccc}
+1 &amp; a &amp; -1&amp;a-1\\
+0 &amp; a-1 &amp; -1&amp; 0\\
+0 &amp; 1-a &amp; a+2&amp; 0\\
+2 &amp; a+1 &amp; a&amp; 3a-1
+\end{array}\right|=\left|\begin{array}{cccc}
+1 &amp; a &amp; -1&amp;a-1\\
+0 &amp; a-1 &amp; -1&amp; 0\\
+0 &amp; 0 &amp; a+1&amp; 0\\
+2 &amp; a+1 &amp; a&amp; 3a-1 \end{array}\right|
+\]</span></p>
+<p>para lo que hemos realizado operaciones elementales por filas de tipo 3 (<span class="math inline">\(F_3-F_1\rightarrow F_3\)</span> y <span class="math inline">\(F_3-F_2\rightarrow F_3\)</span>). Ahora desarrollamos por la tercera fila:</p>
+<p><span class="math display">\[
+|A|= (a+1)\left|\begin{array}{ccc}
+1 &amp; a &amp; a-1\\
+0 &amp; a-1 &amp;  0\\
+2 &amp; a+1 &amp; 3a-1 \end{array}\right|=(a+1)(a-1)\left|\begin{array}{cc}
+1 &amp;  a-1\\
+2 &amp;  3a-1 \end{array}\right|=(a+1)^2(a-1)
+\]</span></p>
+<p>Así que para <span class="math inline">\(a\not = 1,-1\)</span>, <span class="math inline">\(rg(A)=4\)</span>. Veamos qué ocurre para los casos particulares:</p>
+<p>Si <span class="math inline">\(a=1\)</span> (sustituyendo en la matriz) calculamos la forma de Hermite por columnas (lo que nos dará la base más sencilla de <span class="math inline">\(U\)</span>):</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; 1 &amp; -1&amp;0\\
+0 &amp; 0 &amp; -1&amp; 0\\
+1 &amp; 1 &amp; 2&amp; 0\\
+2 &amp; 2 &amp; 1&amp; 2
+\end{pmatrix}\sim_c  \begin{pmatrix}
+1 &amp; 0 &amp; 0&amp;0\\
+0 &amp; 0 &amp; -1&amp; 0\\
+1 &amp; 0 &amp; 3&amp; 0\\
+0 &amp; 0 &amp; 0&amp; 1
+\end{pmatrix}\sim_c  \begin{pmatrix}
+1 &amp; 0 &amp; 0&amp;0\\
+0 &amp; 1 &amp; 0&amp; 0\\
+1 &amp; -3 &amp; 0&amp; 0\\
+0 &amp; 0 &amp; 1&amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Así que <span class="math inline">\(rg(A)=3\)</span> y la base más sencilla de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{ (1,0,1,0),(0,1,-3,0),(0,0,0,1)\}\)</span>.</p>
+<p>Lo mismo para <span class="math inline">\(a=-1\)</span>:</p>
+<p><span class="math display">\[
+A=\begin{pmatrix}
+1 &amp; -1 &amp; -1&amp;-2\\
+0 &amp; -2 &amp; -1&amp; 0\\
+1 &amp; 1 &amp; 0&amp; -2\\
+2 &amp; 0 &amp; -1&amp; -4
+\end{pmatrix} \sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0&amp;0\\
+0 &amp; -2 &amp; -1&amp; 0\\
+1 &amp; 2 &amp; 1&amp; 0\\
+2 &amp; 2 &amp; 1&amp; 0
+\end{pmatrix}\sim_c \begin{pmatrix}
+1 &amp; 0 &amp; 0&amp;0\\
+0 &amp; 1 &amp; 0&amp; 0\\
+1 &amp; -1 &amp; 0&amp; 0\\
+2 &amp; -1 &amp; 0&amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Así que <span class="math inline">\(rg(A)=2\)</span> y la base más sencilla de <span class="math inline">\(U\)</span> es <span class="math inline">\(\{ (1,0,1,2),(0,1,-1,-1)\}\)</span>.</p>
+<center>
+<table border="">
+<tbody><tr>
+<td>
+</td><th>
+<span class="math inline">\(rg(A)\)</span>
+</th>
+<th>
+<span class="math inline">\(dim U\)</span>
+</th>
+<th>
+<span class="math inline">\(dim W\)</span>
+</th>
+
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a\not = 1,-1\)</span>
+</th>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+0
+</td>
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a = 1\)</span>
+</th>
+<td>
+3
+</td>
+<td>
+3
+</td>
+<td>
+1
+</td>
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a = -1\)</span>
+</th>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+</tr>
+</tbody></table>
+</center>
+</li>
+<li>
+Calculamos las cartesianas de <span class="math inline">\(U\)</span> en cada caso:
+<ul>
+<li>
+<span class="math inline">\(\boxed{a\not = 1,-1}\)</span>: Como <span class="math inline">\(dim \, U=4\)</span> entonces <span class="math inline">\(U=\mathbb{R}^{4}\)</span> y no hay cartesianas (los vectores de <span class="math inline">\(\mathbb{R}^{4}\)</span> no tienen que cumplir ninguna condición extra para pertenecer a <span class="math inline">\(U\)</span>).
+</li>
+<li>
+<p><span class="math inline">\(\boxed{a=1}\)</span> Tenemos la base más sencilla que hemos calculado antes y, por tanto, unas paramétricas:</p>
+<p><span class="math display">\[
+U\equiv \left\{ \begin{array}{l}
+x=\lambda_1\\
+y=\lambda_2\\
+z=\lambda_1-3\lambda_2\\
+t=\lambda_3
+\end{array}\right.
+\]</span></p>
+de las que obtenemos, eliminando parámetros, la cartesiana <span class="math inline">\(U\equiv \boxed{ x-3y-z=0}\)</span>
+</li>
+<li>
+<p><span class="math inline">\(\boxed{a=-1}\)</span> Tenemos la base más sencilla que hemos calculado antes y, por tanto, unas paramétricas:</p>
+<p><span class="math display">\[
+U\equiv \left\{ \begin{array}{l}
+x=\lambda_1\\
+y=\lambda_2\\
+z=\lambda_1-\lambda_2\\
+t=2\lambda_1-\lambda_2
+\end{array}\right.
+\]</span></p>
+de las que obtenemos, eliminando parámetros, las cartesianas <span class="math inline">\(U\equiv \boxed{ \begin{array}{r} x-y-z=0\\ 2x-y-t=0\end{array} }\)</span>
+</li>
+</ul>
+<p>Para calcular <span class="math inline">\(dim\, U+W\)</span> y <span class="math inline">\(dim\, U\cap W\)</span> calularemos <span class="math inline">\(U\cap W\)</span> (porque ya tenemos las cartesianas de <span class="math inline">\(U\)</span> y las de <span class="math inline">\(W\)</span>, aunque estas últimas sin simplificar) y después usaremos la fórmula de las dimensiones.</p>
+<p><span class="math inline">\(\boxed{a\not = 1,-1}\)</span> Como <span class="math inline">\(U=\mathbb{R}^4\)</span> y <span class="math inline">\(W=\{0\}\)</span>, entonces <span class="math inline">\(U\cap W=\{0\}\)</span>.</p>
+<p><span class="math inline">\(\boxed{a = 1}\)</span> Las filas de <span class="math inline">\(A\)</span> son los coeficientes de las cartesianas de <span class="math inline">\(W\)</span>, le añadimos la fila de la cartesiana de <span class="math inline">\(U\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 1 &amp; -1&amp;0\\
+0 &amp; 0 &amp; -1&amp; 0\\
+1 &amp; 1 &amp; 2&amp; 0\\
+2 &amp; 2 &amp; 1&amp; 2\\
+\hline
+1 &amp; -3 &amp; -1 &amp; 0
+\end{pmatrix}\sim_f  \begin{pmatrix}
+1 &amp; 1 &amp; 0&amp;0\\
+0 &amp; 0 &amp; 1&amp; 0\\
+1 &amp; 1 &amp; 0&amp; 0\\
+2 &amp; 2 &amp; 0&amp; 2\\
+1 &amp; -3 &amp; 0 &amp; 0
+\end{pmatrix}\sim_f  \begin{pmatrix}
+1 &amp; 1 &amp; 0&amp;0\\
+0 &amp; 0 &amp; 1&amp; 0\\
+0 &amp; 0 &amp; 0&amp; 0\\
+0 &amp; 0 &amp; 0&amp; 1\\
+0 &amp; -4 &amp; 0 &amp; 0
+\end{pmatrix}\sim_f \sim_f  \begin{pmatrix}
+1 &amp; 0 &amp; 0&amp;0\\
+0 &amp; 1 &amp; 0&amp; 0\\
+0 &amp; 0 &amp; 1&amp; 0\\
+0 &amp; 0 &amp; 0&amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Luego las cartesianas de <span class="math inline">\(U\cap W\)</span> son</p>
+<p><span class="math inline">\(U\cap W\equiv \boxed{ \begin{array}{r} x=0\\ y=0 \\ z=0 \\ t=0\end{array} }\)</span></p>
+<p>y por tanto <span class="math inline">\(U\cap W=\{0\}\)</span> con lo que <span class="math inline">\(dim\, U\cap W=0\)</span>.</p>
+<p><span class="math inline">\(\boxed{a = -1}\)</span> Las filas de <span class="math inline">\(A\)</span> son los coeficientes de las cartesianas de <span class="math inline">\(W\)</span>, le añadimos las dos filas de las cartesianas de <span class="math inline">\(U\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; -1 &amp; -1&amp;-2\\
+0 &amp; -2 &amp; -1&amp; 0\\
+1 &amp; 1 &amp; 0&amp; -2\\
+2 &amp; 0 &amp; -1&amp; -4\\
+1 &amp; -1 &amp; -1&amp; 0\\
+2 &amp; -1 &amp; 0 &amp; -1
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; -1 &amp; -1&amp;-2\\
+0 &amp; -2 &amp; -1&amp; 0\\
+0 &amp; 2 &amp; 1&amp; 0\\
+0 &amp; 2 &amp; 1&amp; 4\\
+0 &amp; 0 &amp; 0&amp; 2\\
+0 &amp; 1 &amp; 2 &amp; 4
+\end{pmatrix}\sim_f \begin{pmatrix}
+1 &amp; -1 &amp; -1&amp;0\\
+0 &amp; 0 &amp; 0&amp; 0\\
+0 &amp; 2 &amp; 1&amp; 0\\
+0 &amp; 0 &amp; 0&amp; 0\\
+0 &amp; 0 &amp; 0&amp; 1\\
+0 &amp; 1 &amp; 2 &amp; 0
+\end{pmatrix}\sim_f\begin{pmatrix}
+1 &amp; 0 &amp; -1/2&amp;0\\
+0 &amp; 1 &amp; 1/2&amp; 0\\
+0 &amp; 0 &amp; 3/2 &amp; 0\\
+0 &amp; 0 &amp; 0&amp; 1\\
+0 &amp; 0 &amp; 0&amp; 0\\
+0 &amp; 0 &amp; 0&amp; 0\\
+\end{pmatrix}
+\]</span></p>
+<p>que tiene 4 pivotes y por tanto de nuevo <span class="math inline">\(U\cap W=\{0\}\)</span>.</p>
+<p>Ahora resumimos y aplicamos la fórmula de las dimensiones para calcular las dimensiones que faltan:</p>
+<p><span class="math display">\[
+\boxed{dim\, U +dim\, W= dim\, U\cap W + dim\, U+W}
+\]</span></p>
+<center>
+<table border="">
+<tbody><tr>
+<td>
+</td><th>
+<span class="math inline">\(dim U\)</span>
+</th>
+<th>
+<span class="math inline">\(dim W\)</span>
+</th>
+<th>
+<span class="math inline">\(dim U\cap W\)</span>
+</th>
+<th>
+<span class="math inline">\(dim U+W\)</span>
+</th>
+
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a\not = 1,-1\)</span>
+</th>
+<td>
+4
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+4
+</td>
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a = 1\)</span>
+</th>
+<td>
+3
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+4
+</td>
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a = -1\)</span>
+</th>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+4
+</td>
+</tr>
+</tbody></table>
+</center>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-22" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22</strong></span> En <span class="math inline">\(\mathbb{R}^4\)</span> se consideran los subespacios</p>
+<p><span class="math display">\[
+U\equiv x+y+z=0\; \mbox{ y } W\equiv \left\{ \begin{array}{l}
+x=0\\
+y-z=0
+\end{array}\right.
+\]</span></p>
+<ol type="a">
+<li>
+Calcula las bases más sencillas de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>.
+</li>
+<li>
+Calcula <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U\cap W\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p><span class="math inline">\(dim\, U= dim \mathbb{R}^4-\mbox{'nº cartesianas'}=4-1=3\)</span>, así que una base está formada por 3 soluciones de la ecuación (en <span class="math inline">\(\mathbb{R}^4\)</span>, por tanto hay 4 incógnitas) que sean linealmente independientes, por ejemplo:</p>
+<p><span class="math display">\[
+\{(1,-1,0,0),(1,0,-1,0),(0,0,0,1)\}
+\]</span></p>
+<p>Para calcular la base más sencilla reducimos por columnas la matriz que forman estos vectores:</p>
+<p><span class="math display">\[
+\left(\begin{array}{rrr}
+\boxed{1} &amp; 1 &amp; 0 \\
+-1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+\boxed{1} &amp; 0 &amp; 0 \\
+-1 &amp; \boxed{1} &amp; 0\\
+0 &amp; -1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+\boxed{1} &amp; 0 &amp; 0 \\
+0 &amp; \boxed{1} &amp; 0\\
+-1 &amp; -1 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1}
+\end{array}\right)
+\]</span></p>
+<p>luego la base más sencilla para <span class="math inline">\(U\)</span> es</p>
+<p><span class="math display">\[
+\{(1,0,-1,0),(0,1,-1,0),(0,0,0,1)\}
+\]</span></p>
+<p>Del mismo modo procedemos para <span class="math inline">\(W\)</span> que tiene <span class="math inline">\(dim \, W=4-2=2\)</span>; una base es</p>
+<span class="math display">\[
+\{(0,1,1,0),(0,0,0,1)\}
+\]</span> que ya es la base más sencilla.
+</li>
+<li>
+<p>Para calcular una base de <span class="math inline">\(U+W\)</span> reunimos bases de ambos y reducimos para obtener la base más sencilla:</p>
+<p><span class="math display">\[
+\left(\begin{array}{rrr|rr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 1 &amp; 0\\
+-1 &amp; -1 &amp; 0&amp; 1 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left(\begin{array}{rrrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; 0\\
+-1 &amp; -1 &amp; 0&amp; 2 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 0 &amp; 0
+\end{array}\right)\sim_c \left(\begin{array}{rrrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1}&amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; \boxed{1} &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>Así que <span class="math inline">\(U+W=\mathbb{R}^4\)</span>. Para obtener unas ecuaciones cartesianas de <span class="math inline">\(U\cap W\)</span> reunimos las de ambos y reducimos el sistema:</p>
+<p><span class="math display">\[
+U\cap W\equiv \left\{ \begin{array}{l}
+x+y+z=0\\
+x=0\\
+y-z=0
+\end{array}\right. \sim_f  \left\{ \begin{array}{l}
+x=0\\
+y=0\\
+z=0
+\end{array}\right.
+\]</span></p>
+que tiene por tanto dimensión 1.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-23" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 23</strong></span> Se consideran los subespacios vectoriales de <span class="math inline">\(\mathbb{R}^4\)</span>, que dependen del parámetro <span class="math inline">\(a \in \mathbb{R}\)</span>:</p>
+<p><span class="math display">\[
+U=\mathcal{L}\{ (1,0,1,1),(0,a,1,2),(a,0,1,-3)\}
+\]</span></p>
+<p><span class="math display">\[
+W=\{(x,y,z,t)\in \mathbb{R}^4 / x+ay-z-t=0; x+ay-z+t=0\}
+\]</span></p>
+<p>Se pide:</p>
+<ol type="a">
+<li>
+Hallar, en función de <span class="math inline">\(a\)</span>, una base y la dimensión de <span class="math inline">\(U\)</span> y de <span class="math inline">\(W\)</span>.
+</li>
+<li>
+Calcular, en función de <span class="math inline">\(a\)</span>, la dimensión de <span class="math inline">\(U+W\)</span> y la de <span class="math inline">\(U\cap W\)</span>.
+</li>
+<li>
+Para <span class="math inline">\(a=1\)</span> calcula una base de <span class="math inline">\(W\cap U\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Para <span class="math inline">\(U\)</span> observamos si el sistema de generadores proporcionado es base:</p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
+1 &amp; 0 &amp; a\\  
+0 &amp; a &amp;  0\\  
+1 &amp; 1 &amp; 1\\  
+1 &amp; 2 &amp; -3
+  \end{array}
+\right)\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\  
+0 &amp; a &amp; 0\\  
+1 &amp; 1 &amp; 1-a\\  
+1 &amp; 2 &amp; -3-a
+  \end{array}
+\right)
+\]</span></p>
+<p>Si <span class="math inline">\(a\not= 0,1\)</span> entonces aparecen 3 pivotes y por tanto los 3 vectores son linealmente independientes y <span class="math inline">\(dim\, U=3\)</span>. Estudiamos los casos particulares:</p>
+<p><span class="math inline">\(\boxed{a=0}\)</span></p>
+<p><span class="math inline">\(\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+1 &amp; 1 &amp; 1\\
+1 &amp; 2 &amp; -3
+\end{array}
+\right)\sim_c  \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+-1 &amp; 2 &amp; -5
+\end{array}
+\right)\sim_c  \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{array}
+\right)\)</span> también son linealmente independientes y <span class="math inline">\(dim\, U=3\)</span>.</p>
+<p><span class="math inline">\(\boxed{a=1}\)</span></p>
+<p><span class="math inline">\(\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+1 &amp; 1 &amp; 0\\
+1 &amp; 2 &amp; -4
+\end{array}
+\right)\sim_c\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1
+\end{array}
+\right)\)</span> también son linealmente independientes y <span class="math inline">\(dim\, U=3\)</span>.</p>
+<p>Así que para todo valor de <span class="math inline">\(a\)</span> el sistema generador dado es base de <span class="math inline">\(U\)</span>. Para <span class="math inline">\(W\)</span> observamos sus ecuaciones cartesianas y utilizamos que <span class="math display">\[dim\, W= dim\, \mathbb{R}^4 -\mbox{nº cartesianas}\]</span> pero observando que sea el número mínimo de cartesianas, así que reducimos la matriz de coeficientes del sistema:</p>
+<p><span class="math display">\[
+\left( \begin{array}{rrrr}
+1 &amp; a &amp; -1 &amp; -1\\
+1 &amp; a &amp; -1 &amp; 1
+\end{array}\right) \sim_f \left( \begin{array}{rrrr}
+1 &amp; a &amp; -1 &amp; -1\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_f \left( \begin{array}{rrrr}
+1 &amp; a &amp; -1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)
+\]</span></p>
+que tiene rango 2 independientemente del valor de <span class="math inline">\(a\)</span>, así que <span class="math inline">\(dim\, W= dim\, \mathbb{R}^4 -2=2\)</span>. Además, de las cartesianas <span class="math inline">\(W\equiv \left\{ \begin{array}{rr}
+x+ay-z&amp;=0\\
+&amp;t=0
+\end{array}\right.\)</span> obtenemos unas paramétricas: <span class="math inline">\(W\equiv \left\{ \begin{array}{rl}
+x=&amp;-a\lambda_1+\lambda_2\\
+y=&amp;\lambda_1\\
+z=&amp;\lambda_2\\
+t=&amp;0\\
+\end{array}\right.\)</span> y una base de <span class="math inline">\(W\)</span> es <span class="math inline">\(\{(-a,1,0,0),(1,0,1,0)\}\)</span>.
+</li>
+<li>
+<p>Como tenemos bases de ambos subespacios es más fácil calcular <span class="math inline">\(U+W\)</span> para el que un sistema de generadores se obtiene reuniendo bases de ambos subespacios:</p>
+<p><span class="math display">\[
+\left(\begin{array}{rrr|rr}
+1 &amp; 0 &amp; 0 &amp; -a &amp; 1\\  
+0 &amp; a &amp; 0 &amp; 1 &amp; 0\\  
+1 &amp; 1 &amp; 1-a &amp; 0 &amp; 1\\  
+1 &amp; 2 &amp; -3-a &amp; 0 &amp; 0
+\end{array}
+\right) \sim_c \left(\begin{array}{rrrrr}
+1 &amp; 0 &amp; 0 &amp; -a &amp; 0\\  
+0 &amp; a &amp; 0 &amp; 1 &amp; 0\\  
+1 &amp; 1 &amp; 1-a &amp; 0 &amp; 0\\  
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \boxed{1}
+\end{array}
+\right)\sim_c \left(\begin{array}{rrrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\  
+0 &amp; a &amp; 0 &amp; \boxed{1} &amp; 0\\  
+1 &amp; 1 &amp; 1-a &amp; a &amp; 0\\  
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \boxed{1}
+\end{array}
+\right)
+\]</span></p>
+<p>Observamos que si <span class="math inline">\(a\not = 1\)</span> hay 4 pivotes y entonces <span class="math inline">\(dim\, U+W=4\)</span>, es decir, <span class="math inline">\(U+W=\mathbb{R}^4\)</span>. Veamos qué ocurre en el caso <span class="math inline">\(a=1\)</span>:</p>
+<p><span class="math display">\[
+\sim_c \left(\begin{array}{rrrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\  
+0 &amp; \boxed{1} &amp; 0 &amp; 1 &amp; 0\\  
+1 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\  
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \boxed{1}
+\end{array}
+\right)\sim_c \left(\begin{array}{rrrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; 0 &amp; 0\\  
+0 &amp; \boxed{1} &amp; 0 &amp; 0 &amp; 0\\  
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\  
+0 &amp; 0 &amp; \boxed{1}&amp; 0 &amp; 0
+\end{array}
+\right)
+\]</span></p>
+En este caso <span class="math inline">\(dim\, U+W=3\)</span>, y por tanto, como <span class="math inline">\(U\subseteq U+W\)</span> y tienen la misma dimensión <span class="math inline">\(U+W=U\)</span>. Para calcular la <span class="math inline">\(dim\, U \cap W\)</span> usamos la fórmula de las dimensiones y los resultados obtenidos:
+<center>
+<table border="">
+<tbody><tr>
+<td>
+</td><th>
+<span class="math inline">\(dim U\)</span>
+</th>
+<th>
+<span class="math inline">\(dim W\)</span>
+</th>
+<th>
+<span class="math inline">\(dim U+W\)</span>
+</th>
+<th>
+<span class="math inline">\(dim U\cap W\)</span>
+</th>
+
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a\not = 1\)</span>
+</th>
+<td>
+3
+</td>
+<td>
+2
+</td>
+<td>
+4
+</td>
+<td>
+<span class="math inline">\(\boxed{1}\)</span>
+</td>
+</tr>
+<tr align="CENTER">
+<th>
+<span class="math inline">\(a = 1\)</span>
+</th>
+<td>
+3
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+<span class="math inline">\(\boxed{2}\)</span>
+</td>
+</tr>
+</tbody></table>
+</center>
+</li>
+<li>
+<p>Para <span class="math inline">\(a=1\)</span> como <span class="math inline">\(U+W=U\)</span> entonces <span class="math inline">\(U\cap W=W\)</span> y una base ha sido obtenida en el primer apartado:</p>
+<span class="math display">\[
+\{ (-1,1,0,0),(1,0,1,0)\}
+\]</span>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-24" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 24</strong></span> En <span class="math inline">\(\mathcal{P}^2(\mathbb{R})\)</span>, el espacio de los polinomios de grado menos o igual que 2 con coeficientes reales, se consideran los subespacios</p>
+<p><span class="math display">\[
+U_1=\{ p(x)\in \mathcal{P}^2(\mathbb{R}) / xp'(x)=p(x)\}
+\]</span></p>
+<p><span class="math display">\[
+U_2=\{ p(x)\in \mathcal{P}^2(\mathbb{R}) / p(x)=p(-x)\}
+\]</span></p>
+<p>Calcula dimensión, base y unas cartesianas (respecto de la base estándar <span class="math inline">\(B_s=\{1,x,x^2\}\)</span>) de cada uno de ellos. Prueba que <span class="math inline">\(U_1\)</span> y <span class="math inline">\(U_2\)</span> son complementarios.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como <span class="math inline">\(p(x)=a_0+a_1x+a_2x^2=(a_0,a_1,a_2)_{B_s}\)</span></p>
+<p>y <span class="math inline">\(xp'(x)=x(a_1+2a_2x)=a_1x+2a_2x^2=(0,a_1,2a_2)_{B_s}\)</span> Entonces unas cartesianas de <span class="math inline">\(U_1\)</span> son:</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
+a_0=0\\
+a_1=a_1\\
+a_2=2a_2
+\end{array}\right. \sim \left\{ \begin{array}{l}
+a_0=0\\
+a_2=0
+\end{array}\right.
+\]</span></p>
+<p>y tiene <span class="math inline">\(dim\, U_1=3-\mbox{ nº cart.}=3-2=1\)</span>.</p>
+<p>Ahora <span class="math inline">\(p(-x)=a_0-a_1x+a_2x^2=(a_0,-a_1,a_2)_{B_s}\)</span> luego unas cartesianas de <span class="math inline">\(U_2\)</span> son:</p>
+<p><span class="math display">\[
+\left\{ \begin{array}{l}
+a_0=a_0\\
+a_1=-a_1\\
+a_2=a_2
+\end{array}\right. \sim \left\{
+\begin{array}{l}
+a_1=0\\
+\end{array}\right.
+\]</span></p>
+<p>y tiene <span class="math inline">\(dim\, U_2=3-\mbox{ nº cart.}=3-1=2\)</span> Para ver que son complementarios calculamos su intersección, reuniendo cartesianas:</p>
+<p><span class="math display">\[
+U_1 \cap U_2\equiv
+\left\{ \begin{array}{l}
+a_0=0\\
+a_2=0\\
+a_1=0
+\end{array}\right.
+\]</span></p>
+<p>y por tanto <span class="math inline">\(U_1\cap U_2=\{0\}\)</span>. Ahora, para probar que <span class="math inline">\(U_1+U_2=\mathbb{R}^{3}\)</span> basta usar la fórmula de las dimensiones:</p>
+<p><span class="math display">\[
+dim\, U_1\, +\, dim\, U_2 \,=\, dim\, (U_1\cap U_2)\, +\, dim\, (U_1+U_2)
+\]</span></p>
+<p>nos queda que <span class="math inline">\(dim\, U_1+U_2=3\)</span>. Así que son complementarios.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-25" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 25</strong></span> En <span class="math inline">\(\mathbb{R}^4\)</span> se consideran los subespacios</p>
+<p><span class="math display">\[
+U\equiv \left\{ \begin{array}{l}
+x+y+z=0\\
+(a+1)y+(a+1)t=0\\
+-x+ay+(a-1)z+at=0
+\end{array}\right.
+\]</span></p>
+<p><span class="math display">\[
+W=\mathcal{L}((1,1,1,0),(0,a+1,0,a+1),(-1,a,a-1,a))
+\]</span></p>
+<ol type="a">
+<li>
+Calcula las dimensiones de <span class="math inline">\(U\)</span> y de <span class="math inline">\(W\)</span> según los valores <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Calcula la base más sencilla de <span class="math inline">\(W\)</span> según los valores de <span class="math inline">\(a\)</span>.
+</li>
+<li>
+Para <span class="math inline">\(a=1\)</span> calcula <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U\cap W\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Como de <span class="math inline">\(U\)</span> tenemos unas ec. cartesianas, utilizamos la fórmula <span class="math inline">\(dim\, U=dim\ \mathbb{R}^4 -\mbox{\it nº cart}\)</span> por lo que necesitamos determinar el nº de cartesianas, es decir, el rango de la matriz de coeficientes del sistema:</p>
+<p><span class="math display">\[
+\left(\begin{array}{cccc}
+1 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; a+1 &amp; 0 &amp; a+1\\
+-1 &amp; a &amp; a-1 &amp; a
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+1 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; a+1 &amp; 0 &amp; a+1\\
+0 &amp; a+1 &amp; a &amp; a
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+1 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; a+1 &amp; 0 &amp; a+1\\
+0 &amp; 0 &amp; a &amp; -1
+\end{array}\right)\sim_f
+\]</span></p>
+<p>que tiene rango 3 si <span class="math inline">\(a\not = -1\)</span> y rango 2 si <span class="math inline">\(a=-1\)</span>. Para <span class="math inline">\(W\)</span> estudiamos cuántos vectores del sistema de generadores son linealmente independientes, para lo que hay que calcular el rango de la matriz:</p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
+1 &amp; 0 &amp; -1 \\
+1 &amp; a+1 &amp; a\\
+1 &amp; 0 &amp; a-1\\
+0 &amp; a+1 &amp; a
+\end{array}\right)
+\]</span></p>
+<p>que es la traspuesta de la anterior. Por tanto se tiene</p>
+<ul>
+<li>
+Si <span class="math inline">\(\boxed{a=-1}\)</span> <span class="math inline">\(dim\, U= 2\)</span> y <span class="math inline">\(dim\, W=2\)</span>.
+</li>
+<li>
+Si <span class="math inline">\(\boxed{a\not=-1}\)</span> <span class="math inline">\(dim\, U= 1\)</span> y <span class="math inline">\(dim\, W=3\)</span>.
+</li>
+</ul>
+</li>
+<li>
+<p>Realmente hay que calcular la forma de Hermite por columnas de la matriz formada por el sistema de generadores. Aprovechamos las operaciones elementales que hicimos en el apartado anterior:</p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
+1 &amp; 0 &amp; -1 \\
+1 &amp; a+1 &amp; a\\
+1 &amp; 0 &amp; a-1\\
+0 &amp; a+1 &amp; a
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+1 &amp; a+1 &amp; 0\\
+1 &amp; 0 &amp; a\\
+0 &amp; a+1 &amp; -1
+\end{array}\right)
+\]</span></p>
+<p>Cuando <span class="math inline">\(a=-1\)</span></p>
+<p><span class="math display">\[
+\left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; -1\\
+0 &amp; 0 &amp; -1
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0\\
+-1 &amp; 1 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>luego la base más sencilla es <span class="math inline">\(\{(1,1,0,-1), (0,0,1,1) \}\)</span>. Si <span class="math inline">\(a\not = -1\)</span></p>
+<p><span class="math display">\[
+\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; a\\
+0 &amp; 1 &amp; -1
+\end{array}\right)\sim_c \left(\begin{array}{ccc}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; a\\
+-1 &amp; 1 &amp; -1
+\end{array}\right)
+\]</span></p>
+<p>y hay que distinguir dos casos:</p>
+<ul>
+<li>
+Si <span class="math inline">\(\boxed{a=0}\)</span> la base más sencilla es <span class="math inline">\(\{(1,0,1,0), (0,1,0,0),(0,0,0,1)\}\)</span>;
+</li>
+<li>
+Si <span class="math inline">\(\boxed{a\not =-1,0}\)</span> la base más sencilla es <span class="math inline">\(\{(1,0,0,(1-a)/a),(0,1,0,1),(0,0,1,-1/a)\}\)</span>.
+</li>
+</ul>
+</li>
+<li>
+<p>Para <span class="math inline">\(a=1\)</span> ya tenemos la base más sencilla de <span class="math inline">\(W\)</span>: <span class="math inline">\(\{(1,0,0,0),(0,1,0,1),(0,0,1,-1)\}\)</span>. Podemos calcular unas cartesianas escribiendo primero unas paramétricas:</p>
+<p><span class="math display">\[
+W=\left\{ \begin{array}{ll}
+x= &amp; \lambda_1\\
+y= &amp; \lambda_2\\
+z= &amp; \lambda_3\\
+t= &amp;  \lambda_2-\lambda_3\\
+\end{array}\right.
+\]</span></p>
+<p>que nos da la cartesiana <span class="math inline">\(y-z-t=0\)</span>. Reuniendo las cartesianas de ambos subespacios:</p>
+<p><span class="math display">\[
+U\cap W\equiv \left\{ \begin{array}{l}
+x+y+z=0\\
+2y+2t=0\\
+z-t=0\\
+y-z-t=0
+\end{array}\right. \sim \left\{ \begin{array}{l}
+x+y+z=0\\
+y+t=0\\
+z-t=0\\
+y-2t=0
+\end{array}\right.\sim \left\{ \begin{array}{l}
+x=0\\
+y=0\\
+z=0\\
+t=0
+\end{array}\right.
+\]</span></p>
+<p>con lo que <span class="math inline">\(U\cap W=\{0\}\)</span>.</p>
+<p>Ahora, usando la fórmula de las dimensiones</p>
+<p><span class="math display">\[
+dim\, U+dim\, W= dim\, U+W \,+ dim\, U\cap W
+\]</span></p>
+obtenemos que <span class="math inline">\(dim\, U+W=4\)</span> y, por tanto, <span class="math inline">\(U+W= \mathbb{R}^4\)</span>.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-26" class="cuerpo_finito-medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 26</strong></span> En el espacio vectorial <span class="math inline">\((\mathbb{Z}_5)^4\)</span> se consideran los subespacios:</p>
+<p><span class="math display">\[
+U=\mathcal{L}((1,1,2,0), (2,1,1,0))
+\]</span></p>
+<p><span class="math display">\[
+W=\mathcal{L}((2,a,2,0), (0,0,0,1))
+\]</span></p>
+<p>siendo <span class="math inline">\(a\)</span> un parámetro.<br>
+En función de <span class="math inline">\(a\)</span> determinar la dimensión y bases escalonadas de los subespacios <span class="math inline">\(U\)</span>, <span class="math inline">\(W\)</span>, <span class="math inline">\(U+W\)</span> y <span class="math inline">\(U\cap W\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Para obtener una base escalonada de <span class="math inline">\(U\)</span> escalonamos por columnas a partir del sistema de generadores dado:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 2 \\
+1 &amp; 1 \\
+2 &amp; 1 \\
+0 &amp; 0
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 4 \\
+2 &amp; 2 \\
+0 &amp; 0
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 1 \\
+2 &amp; 3 \\
+0 &amp; 0
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+4 &amp; 3 \\
+0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>Y obtenemos la base <span class="math inline">\(\{ (1,0,4,0), (0,1,3,0)\}\)</span> y <span class="math inline">\(dim(U)=2\)</span>.</p>
+<p>De igual manera, para <span class="math inline">\(W\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+2 &amp; 0 \\
+a &amp; 0 \\
+2 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 \\
+3a &amp; 0 \\
+1 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p>obtenemos la base escalonada <span class="math inline">\(\{ (1,3a,1,0), (0,0,0,1)\}\)</span> y <span class="math inline">\(dim(W)=2\)</span>.</p>
+<p>Un sistema de generadores de <span class="math inline">\(U+W\)</span> se obtiene uniendo las bases de <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>:<br>
+<span class="math inline">\(\{ (1,0,4,0), (0,1,3,0), (1,3a,1,0), (0,0,0,1)\}\)</span>.</p>
+<p>y se tiene que la dimensión de <span class="math inline">\(U+W\)</span> coincide con el rango de la matriz:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 3a &amp; 0 \\
+4 &amp; 3 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p>cuyo determinante es:</p>
+<p><span class="math display">\[
+\left|
+\begin{array}{cccc}
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 3a &amp; 0 \\
+4 &amp; 3 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right|
+=
+\left|
+\begin{array}{ccc}
+1 &amp; 0 &amp; 1  \\
+0 &amp; 1 &amp; 3a \\
+4 &amp; 3 &amp; 1  \\
+\end{array}\right|
+= 1-4-9a = a+2
+\]</span></p>
+Luego tenemos dos casos:
+<ul>
+<li>
+<p><b>Caso 1. </b>Si <span class="math inline">\(a\neq3\)</span> entonces <span class="math inline">\(dim(U+W)=4\)</span> y en consecuencia <span class="math inline">\(U+W=(\mathbb{Z}_5)^4\)</span> y una base escalonada es la canónica: <span class="math inline">\(\{(1,0,0,0), (0,1,0,0), (0,0,1,0), (0,0,0,1)\}\)</span><br>
+Además, en este caso, usando la fórmula de las dimensiones: <span class="math inline">\(dim(U\cap W)= dim(U)+dim(W)-dim(U+W)=2+2-4=0\)</span>, luego <span class="math inline">\(U\cap W=0\)</span> y no tiene base (o tiene como base al conjunto vacío <span class="math inline">\(\emptyset\)</span>).</p>
+</li>
+<li>
+<p><b>Caso 2. </b>Si <span class="math inline">\(a=3\)</span>, entonces obtenemos una base escalonada de <span class="math inline">\(U+W\)</span>:</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 4 &amp; 0 \\
+4 &amp; 3 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 4 &amp; 0 \\
+4 &amp; 3 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+4 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}
+\sim_c
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+4 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>que es <span class="math inline">\(\{ (1,0,4,0), (0,1,3,0), (0,0,0,1)\}\)</span> y <span class="math inline">\(dim(U+W)=3\)</span>.</p>
+<p>Usando la fórmula de las dimensiones, en este caso se tiene <span class="math inline">\(dim(U\cap W)= dim(U)+dim(W)-dim(U+W)=2+2-3=1\)</span>.</p>
+<p>Para determinar la intersección, hemos de obtener unas ecuaciones cartesianas de <span class="math inline">\(U\)</span> y de <span class="math inline">\(W\)</span>:</p>
+<p>de la base escalonada de <span class="math inline">\(U\)</span> obtenemos las ecuaciones paramétricas <span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x &amp; = &amp; \l \\
+y &amp; = &amp; \mu \\
+z &amp; = &amp; 4\l+3\mu\\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span> y de aqui, por eliminación de parámetros, las ecuaciones cartesinas:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +2y+z&amp; = &amp; 0 \\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span> De igual manera, para <span class="math inline">\(W\)</span>: <span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x &amp; = &amp; \l \\
+y &amp; = &amp; 4\l \\
+z &amp; = &amp; \l\\
+t &amp; = &amp; \mu\\
+\end{array}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +4z&amp; = &amp; 0 \\
+y+z &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span> Unimos ambas cartesianas y escalonamos el sistema resultante:</p>
+<p><span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +2y+z&amp; = &amp; 0 \\
+t &amp; = &amp; 0\\
+x +4z&amp; = &amp; 0 \\
+y+z &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p><span class="math display">\[
+\left(  \begin{array}{cccc|c}
+1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 4 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 3 &amp; 3 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 &amp; 2 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\sim_f
+\left(  \begin{array}{cccc|c}
+1 &amp; 0 &amp; 4 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{array} \right)
+\]</span></p>
+<p>Unas ecuaciones cartesianas de <span class="math inline">\(U\cap W\)</span> son: <span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x +4z&amp; = &amp; 0 \\
+y+z &amp; = &amp; 0\\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span></p>
+<p>Pasamos a paramétricas resolviendo el sistema:</p>
+<span class="math display">\[
+\left\{
+\begin{array}{rcl}
+x &amp; = &amp; \l \\
+y &amp; = &amp; 4\l\\
+z &amp; = &amp; \l\\
+t &amp; = &amp; 0\\
+\end{array}
+\right.
+\]</span> y finalmente, obtenemos la base de <span class="math inline">\(U\cap W\)</span>: <span class="math inline">\(\{ (1,4,1,0)\}\)</span>
+</li>
+</ul>
 </div>
 </div>
 </div>
