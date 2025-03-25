@@ -13,11 +13,12 @@ format:
 <!-- LTeX: language=es-ES --->
 
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
-<input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp;
+<span id="opcion_cf"> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp;</span>
 <input type="checkbox" id="casilla_basico" value="basicoon" checked onclick="mostrar();"> Básicos. &nbsp;
 <input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media. &nbsp; 
 <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. 
 
+<script>mostrar();</script>
 
 ::::: {#exr-1 .basico}
 Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$.

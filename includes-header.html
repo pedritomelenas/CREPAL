@@ -13,6 +13,7 @@
 <!-- selector cuerpos finitos -->
 <script type="text/javascript" language="javascript">
 
+
 //difference of two arrays
 Array.prototype.diff = function(arr2) { 
   return this.filter(x => !arr2.includes(x)); 
@@ -30,6 +31,7 @@ function ocultar_todo(){
   } 
 }
 
+
 //mostrar los ejercicios con las casillas seleccionadas
 function mostrar(){
   var xs=[]; 
@@ -37,7 +39,19 @@ function mostrar(){
   //console.log(xs);
   
   ocultar_todo();
-  
+
+  //ver parámetros de la URL
+  const querystring = window.location.search;
+  const params = new URLSearchParams(querystring);
+  console.log(params);
+  if (params.get("asignatura") == "estadistica"){
+    console.log("estadistica");
+    casilla_cf.checked = false;
+    casilla_cf.disabled = true;
+    document.getElementById("opcion_cf").style.display = "none";
+  }
+
+
   if (casilla_basico.checked){
     xsbasico=document.querySelectorAll("[class*='basico']");
     //console.log(xsbasico);
@@ -90,6 +104,7 @@ function CF() {
       } 
     }  
 }
+
 
 </script>
   
