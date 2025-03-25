@@ -18,7 +18,13 @@ format:
 <input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media. &nbsp; 
 <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. 
 
-<script>mostrar();</script>
+<script>
+comprueba_asignatura();
+window.addEventListener("load", function(){
+   mostrar();
+});
+</script>
+
 
 ::::: {#exr-1 .basico}
 Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$.
@@ -1781,7 +1787,12 @@ y de nuevo aparece la ecuación $0=1$ con lo que en este caso es incompatible.</
 
 ::::: {#exr-13 .cuerpo_finito-medio}
 
-Sea $$A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).$$
+Sea 
+
+$$
+A=\left( \begin{array}{cccc} 3-\lambda & 1 & 1 & 0\\ 5 &-\lambda & 0 & 0\\ 0 & -\lambda & -\lambda & 1\\ 0 & -1 & -1 & 2-\lambda \end{array}\right).
+$$
+
 <ol type="a">
 <li>Calcula el determinante de la matriz $A$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
 <li>Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
