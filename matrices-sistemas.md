@@ -15,12 +15,12 @@ format:
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 
 <div class="dropdown" id="titulacion">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Titulación
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" data-titulo="fisica" href="#">Física</a></li>
     <li><a class="dropdown-item" data-titulo="estadistica" href="#">Estadística</a></li>
+    <li><a class="dropdown-item" data-titulo="fisica" href="#">Física</a></li>
     <li><a class="dropdown-item" data-titulo="informatica" href="#">Informática</a></li>
     <li><a class="dropdown-item" data-titulo="matematicas" href="#">Matemáticas</a></li>
     <li><a class="dropdown-item" data-titulo="telecomunicaciones" href="#">Telecomunicaciones</a></li>
