@@ -14,25 +14,21 @@ format:
 
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 
-<div class="dropdown" id="titulacion">
-  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Titulación
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" data-titulo="estadistica" href="#">Estadística</a></li>
-    <li><a class="dropdown-item" data-titulo="fisica" href="#">Física</a></li>
-    <li><a class="dropdown-item" data-titulo="informatica" href="#">Informática</a></li>
-    <li><a class="dropdown-item" data-titulo="matematicas" href="#">Matemáticas</a></li>
-    <li><a class="dropdown-item" data-titulo="telecomunicaciones" href="#">Telecomunicaciones</a></li>
-  </ul>
-</div>
+<button class="btn btn-outline-secondary btn-sm dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="titulacion">
+  Titulación
+</button>
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" data-titulo="estadistica" href="#">Estadística</a></li>
+  <li><a class="dropdown-item" data-titulo="fisica" href="#">Física</a></li>
+  <li><a class="dropdown-item" data-titulo="informatica" href="#">Informática</a></li>
+  <li><a class="dropdown-item" data-titulo="matematicas" href="#">Matemáticas</a></li>
+  <li><a class="dropdown-item" data-titulo="telecomunicaciones" href="#">Telecomunicaciones</a></li>
+</ul>
 
-<div>
-  <span id="opcion_cf"> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked onclick="mostrar();"> Mostrar ejercicios sobre cuerpos finitos. &nbsp;</span>
-  <input type="checkbox" id="casilla_basico" value="basicoon" checked onclick="mostrar();"> Básicos. &nbsp;
-  <input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media. &nbsp; 
-  <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. 
-</div>
+<button id="opcion_cf" class="btn btn-outline-secondary btn-sm mb-2"> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked onclick="mostrar();"> Cuerpos finitos </button>
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_basico" value="basicoon" checked onclick="mostrar();"> Básicos </button> 
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media </button>
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
 
 
 <script>
