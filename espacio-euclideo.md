@@ -16,7 +16,7 @@ format:
 <!--<input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. -->
 
 
-::::: {#exr-1}
+::::: {#exr-1 .medio}
 
 En $\mathbb{R}^4$ con el producto escalar usual se consideran los subespacios:
 
@@ -164,40 +164,20 @@ p_U(1,-1,1,1)=(0,-1,1,0); \, \, p_{U^{\perp}}(1,-1,1,1)=(1,0,0,1).
 $$ 
 
 </li>
-
 </ol>
+
 ::::
 :::::
 
-::::: {#exr-2}
+::::: {#exr-2 .basico}
 
-<ol type="a">
-<li>En $\mathbb{R}^{3}$, dado el subespacio $U\equiv \left\{ \begin{array}{l}
+En $\mathbb{R}^{3}$, dado el subespacio $U\equiv \left\{ \begin{array}{l}
 x+y=0,\\
 x+z=0.
-\end{array}\right.$ y considerando el producto escalar usual, calcula $p_{U^{\perp}}(0,1,2)$. </li>
+\end{array}\right.$ y considerando el producto escalar usual, calcula $p_{U^{\perp}}(0,1,2)$. 
 
-<li>En el espacio vectorial $V$, $B=\{ e_1,e_2\}$ es una base. Calcula las coordenadas respecto de la base  $B'=\{e_1+e_2, 2e_1-e_2\}$ del vector $v=(1,-1)_{B}$.</li>
-
-<li>Consideramos en $\mathbb{R}^{2}$ el producto escalar que tiene, respecto de la base canónica, matriz de Gram (o matriz métrica)
-$\begin{pmatrix}
-1 & 1 \\
-1 & 2
-\end{pmatrix}$. Calcula una base de $\mathbb{R}^{2}$ respecto de la cual la matriz de Gram de este producto escalar sea $I_2$.</li>
-
-<li>Determina, en función de  $b$, la signatura de la forma cuadrática $\phi:\mathbb{R}^{2} \to \mathbb{R}$ dada por 
-
-$$
-\phi(x,y)= bxy.
-$$
-
-</li>
-</ol>
 
 :::: {.callout collapse="true" title="Solución"}
-
-<ol type="a">
-<li>Calcular $p_{U^{\perp}}(0,1,2)$.
 
 Una base de $U$ es $\{(1,-1,-1)\}$ y por tanto $U^{\perp}\equiv x-y-z=0$, descomponemos
 
@@ -224,34 +204,22 @@ c=1.
 $$
 
 Así $p_{U^{\perp}}(0,1,2)=(1,0,1)$.
-</li>
 
-<li>Calcular las coordenadas respecto de la base  $B'$ del vector $v$.
+::::
+:::::
 
-Como $B'=\{(1,1)_B, (2,-1)_B\}$, planteamos 
 
-$$
-(1,-1)_B=a(1,1)_B+b(2,-1)_B
-$$
+::::: {#exr-3 .medio}
 
-y resolvemos 
+Consideramos en $\mathbb{R}^{2}$ el producto escalar que tiene, respecto de la base canónica, matriz de Gram (o matriz métrica)
+$\begin{pmatrix}
+1 & 1 \\
+1 & 2
+\end{pmatrix}$. Calcula una base de $\mathbb{R}^{2}$ respecto de la cual la matriz de Gram de este producto escalar sea $I_2$.
 
-$$
-\left\{ \begin{array}{l}
-a+2b=1,\\
-a-b=-1.
-\end{array}\right.\sim_f  \left\{ \begin{array}{l}
-a=-1/3,\\
-b=2/3.
-\end{array}\right.
-$$
+:::: {.callout collapse="true" title="Solución"}
 
-Luego $v=(-1/3,2/3)_{B'}$.
-</li>
-
-<li>Calcular una base de $\mathbb{R}^{2}$ respecto de la cual la matriz de Gram sea $I_2$.
-
-Que la matriz de Gram sea la identidad significa que la base sea ortonormal. En primer lugar, aplicamos Gram-Schmidt para calcular una base ortogonal. Partimos por ejemplo de la base canónica:
+Que la matriz de Gram sea la identidad significa que la base es ortonormal. En primer lugar, aplicamos Gram-Schmidt para calcular una base ortogonal. Partimos por ejemplo de la base canónica:
 
 $$
 u_1=(1,0), u_2=(0,1).
@@ -283,54 +251,12 @@ $$
 \end{pmatrix}=1.
 $$
 
-Así que esta base es ortonormal. 
-</li>
+Así que esta base es ortonormal.
 
-<li>Determinar, en función de  $b$, la signatura de la forma cuadrática $\phi$.
-
-La matriz asociada a la forma cuadrática es 
-
-$$
-\begin{pmatrix}
-0 & b/2\\
-b/2 & 0
-\end{pmatrix}
-$$
-
-que podemos diagonalizar por congruencia
-
-$$
-\begin{pmatrix}
-0 & b/2\\
-b/2 & 0
-\end{pmatrix}\sim_f \begin{pmatrix}
-b/2 & b/2\\
-b/2 & 0
-\end{pmatrix}\sim_c\begin{pmatrix}
-b & b/2\\
-b/2 & 0
-\end{pmatrix}\sim_f \begin{pmatrix}
-b & b/2\\
-0 & -b/4
-\end{pmatrix}\sim_c\begin{pmatrix}
-b & 0\\
-0 & -b/4
-\end{pmatrix}.
-$$
-
-Si $b=0$ la signatura es $(0,0)$; si $b\not = 0$ la signatura es $(1,1)$.
-
-También pueden calcularse los valores propios que son 
-
-$$
-\lambda= \pm (b/4)
-$$ 
-y queda el mismo resultado, por supuesto.</li>
-</ol>
 ::::
 :::::
 
-::::: {#exr-3}
+::::: {#exr-4 .avanzado}
 
 En el espacio vectorial $\mathcal{P}_3(\mathbb{R})$ de los polinomios de grado menor o igual que tres se considera  el subespacio $U$ generado por $x$ y $x^3$ y el producto escalar dado por:
 
@@ -383,11 +309,12 @@ $$
 
 </li>
 </ol>
+
 ::::
 :::::
 
 
-::::: {#exr-4}
+::::: {#exr-5 .medio}
 
 En $\mathbb{R}^{3}$ se consideran el producto escalar cuya matriz de Gram respecto de la base canónica es 
 
@@ -494,119 +421,11 @@ $$
 
 </li>
 </ol>
-::::
-:::::
-
-::::: {#exr-5}
-
-Dada la matriz:
-
-$$A=
-\begin{pmatrix}
-2 & 0 & 0 & -1\\
-0 & 2 & -1 & 0 \\
-0 & -1 & 2 & 0 \\
--1 & 0 & 0 & 2
-\end{pmatrix}
-$$
-
-Razonar que es diagonalizable y determinar su forma diagonal y una matriz de paso, $P$, verificando que $P^{-1}=P^t$. ¿Cuál es la signatura de $A$?
-
-:::: {.callout collapse="true" title="Solución"}
-
-La matriz $A$ es simétrica y el Teorema espectral afirma que toda matriz simétrica y real es diagonalizable, por tanto $A$ lo es.
-Nos piden una diagonalización por semejanza ortogonal, aí que tenemos que calcular en primer lugar los valores propios: 
-
-$$
-\begin{align*}
-|A-\lambda I| & =\left|
-\begin{array}{rrrr}
-2-\lambda & 0 & 0 & -1\\
-0 & 2-\lambda & -1 & 0 \\
-0 & -1 & 2-\lambda & 0 \\
--1 & 0 & 0 & 2-\lambda
-\end{array}\right|=(F_4+F_1\rightarrow F_4)=
-\left|
-\begin{array}{rrrr}
-2-\lambda & 0 & 0 & -1\\
-0 & 2-\lambda & -1 & 0 \\
-0 & -1 & 2-\lambda & 0 \\
-1-\lambda & 0 & 0 & 1-\lambda
-\end{array}\right|\\
-& =(C_1-C_4 \rightarrow C_1)= 
-\left|\begin{array}{rrrr}
-3-\lambda & 0 & 0 & -1\\
-0 & 2-\lambda & -1 & 0 \\
-0 & -1 & 2-\lambda & 0 \\
-0 & 0 & 0 & 1-\lambda
-\end{array}\right|=(3-\lambda)(1-\lambda)[(2-\lambda)^2-1]=(3-\lambda)^2(1-\lambda)^2.
-\end{align*}
-$$
-
-Tenemos entonces los valores propios $\lambda=1$ y $\lambda=3$ ambos con multiplicidad algebraica dos. Tenemos entonces que la matriz diagonal semejante y congruente con $A$ es 
-
-$$
-D=\begin{pmatrix}
-1 & 0 & 0 & 0\\
-0 & 1& 0 & 0\\
-0 & 0 & 3 & 0\\
-0 & 0 & 0 & 3
-\end{pmatrix},
-$$
-
-y por tanto la signatura de $A$ es $(4,0)$, por tanto definida positiva.
-
-Calculamos ahora los subespacios propios y elegimos una base ortonormal de cada uno.
-
-
-**$V_{\lambda=1}$**
-
-$$
-(A-1\cdot I)=\begin{pmatrix}
-1 & 0 & 0 & -1\\
-0 & 1 & -1 & 0 \\
-0 & -1 & 1 & 0 \\
--1 & 0 & 0 & 1
-\end{pmatrix},
-$$  
-
-nos da como cartesianas $\left\{\begin{array}{l}
-x-t=0\\
-y-z=0
-\end{array}\right.$  y una base ortogonal es $\{(1,0,0,1),(0,1,1,0)\}$.
-
-
-**$V_{\lambda=3}$**
-
-$$
-(A-1\cdot I)=\begin{pmatrix}
--1 & 0 & 0 & -1\\
-0 & -1 & -1 & 0 \\
-0 & -1 & -1 & 0 \\
--1 & 0 & 0 & -1
-\end{pmatrix},
-$$  
-
-nos da como cartesianas $\left\{\begin{array}{l}
-x+t=0\\
-y+z=0
-\end{array}\right.$  y una base ortogonal es $\{(1,0,0,-1),(0,1,-1,0)\}$.
-
-Dividiendo cada vector por su norma obtenemos una base ortonormal de vectores propios, lo que nos da la matriz ortogonal $P$:
-
-$$
-P=\begin{pmatrix}
-1/\sqrt{2} & 0 & 0 & 1/\sqrt{2}\\
-0 & 1/\sqrt{2} & 1/\sqrt{2} & 0\\
-0 & 1/\sqrt{2} & -1/\sqrt{2} & 0\\
-1/\sqrt{2} & 0 & 0 & -1/\sqrt{2}\\
-\end{pmatrix}.
-$$
 
 ::::
 :::::
 
-::::: {#exr-6}
+::::: {#exr-6 .medio}
 
 En $\mathbb{R}^3$ consideramos el producto escalar que, respecto de la base canónica, tiene matriz de Gram
 
@@ -633,13 +452,6 @@ $$
 </li>
 
 <li>Calcula $p_U(1,1,1)$ y $p_{U^{\perp}}(1,1,1)$.</li>
-<li>Determina para qué valores de $a$ la fórmula
-
-$$
-f(x,y,z)=x^2+2axy+2xz+2ay^2+(a+1)z^2,
-$$
-
-define una forma cuadrática definida positiva.</li>
 </ol>
 
 :::: {.callout collapse="true" title="Solución"}
@@ -761,60 +573,12 @@ p_{U^{\perp}}(1,1,1)=(1,1,1)-(-2/13, 4/13, -2/13)=(15/13, 9/13, 15/13).
 $$
 
 </li>
-
-<li>Determina para qué valores de $a$ $f$ es una forma cuadrática definida positiva.
-
-Calculamos la matriz simétrica asociada a esta forma cuadrática y la diagonalizamos por congruencia para obtener su signatura:
-
-$$\left(\begin{array}{ccc}
-1 & a & 1\\
-a & 2a & 0\\
-1 & 0 & a+1
-\end{array}\right)\sim_f \left(\begin{array}{ccc}
-1 & a & 1\\
-0 & 2a-a^2 & -a\\
-0 & -a & a
-\end{array}\right)\sim_c \left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & 2a-a^2 & -a\\
-0 & -a & a
-\end{array}\right)
-$$
-
-Ahora intercambiamos las filas segunda y tercera y también las columnas segunda y tercera:
-
-$$
-\left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & 2a-a^2 & -a\\
-0 & -a & a
-\end{array}\right)
-\sim_f \left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & -a  & a\\
-0 & 2a-a^2 & -a
-\end{array}\right)\sim_c \left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & a  & -a\\
-0 & -a & 2a-a^2
-\end{array}\right)\sim_f \left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & a  & -a\\
-0 & 0 & a-a^2
-\end{array}\right)\sim_c \left(\begin{array}{ccc}
-1 & 0 & 0\\
-0 & a  & 0\\
-0 & 0 & a-a^2
-\end{array}\right).
-$$
-
-Luego será definida positiva cuando los tres elementos de la diagonal lo sean, es decir $a>0$ y $a(1-a)>0$ luego debe ser $0<a<1$.
-</li>
 </ol>
+
 ::::
 :::::
 
-::::: {#exr-7}
+::::: {#exr-7 .avanzado}
 
 En $\mathcal{P}_2(\mathbb{R})$ consideramos el producto escalar dado por 
 
@@ -1003,11 +767,12 @@ $$
 
 </li>
 </ol>
+
 ::::
 :::::
 
 
-::::: {#exr-8}
+::::: {#exr-8 .avanzado}
 
 En $\mathcal{P}_3(\mathbb{R})$ se consideran los subespacios vectoriales:
 
@@ -1016,7 +781,6 @@ U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}
 $$
 
 <ol type="a">
-<li>Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.</li>
 <li>Descomponer el vector $3x^3+x-2$ como suma de un vector en $U$ y otro en $W$.</li>
 <li>Para el producto escalar dado por 
 
@@ -1032,43 +796,6 @@ calcular una base ortogonal de $U$.</li>
 :::: {.callout collapse="true" title="Solución"}
 
 <ol type="a">
-<li>Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
-
-Los polinomios que cumplen la condición de $U$ son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a $W$ son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar $B_s=\{1,x,x^2,x^3\}$:
-
-$$
-p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(a_0,-a_1,a_2,-a_3)_{B_s}=p(-x).
-$$
-
-Así las cartesianas de $U$ son
-$\left\{\begin{array}{l}
-a_1=0,\\
-a_3=0.
-\end{array}\right.$ Y una base $\{1,x^2\}$.
-
-$$
-p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(-a_0,a_1,-a_2,a_3)_{B_s}=-p(-x),
-$$
-
-nos da que las cartesianas de $W$ son $\left\{\begin{array}{l}
-a_0=0,\\
-a_2=0.
-\end{array}\right.$  Y una base $\{x,x^3\}$.
-
-Así que un sistema de generadores de $U+W$ es $\{1,x,x^2,x^3\}$ con lo que $U+W=\mathcal{P}_3(\mathbb{R})$, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que $U\cap W=0$, con lo que se obtiene $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
-</li>
-
-<li>Descomponer el vector $3x^3+x-2$ como suma de un vector en $U$ y otro en $W$.
-
-Es inmediato que 
-
-$$
-3x^3+x-2= (-2) + (x+3x^3)
-$$
-
-y el primer polinomio está en $U$ y el segundo en $W$.
-</li>
-
 <li>Para el producto escalar dado calcular una base ortogonal de $U$.
 
 Partimos de la base de $U$ obtenida $\{1,x^2\}$ y aplicamos Gram-Schimdt:
@@ -1110,11 +837,12 @@ $$
 Así que $U=\mathcal{L}(1,x^2)$ es el subespacio ortogonal a $W$.
 </li>
 </ol>
+
 ::::
 :::::
 
 
-::::: {#exr-9}
+::::: {#exr-9 .avanzado}
 
 En el espacio $\mathcal{P}_3(\mathbb{R})$ de los polinomios de grado menor o igual que tres, se consideran los subespacios
 
@@ -1253,10 +981,11 @@ Como el primer vector debe estar en $P$ se tiene $b=0$ y $d=0$. Como el segundo 
 Entonces se tiene que la proyección sobre $P$ es $(a_0,0,a_2,0)$ o bien $a_0+a_2x^2$.
 </li>
 </ol>
+
 ::::
 :::::
 
-::::: {#exr-10}
+::::: {#exr-10 .medio}
 
 En $\mathbb{R}^{4}$ con el producto escalar usual se considera el subespacio
 
@@ -1264,27 +993,10 @@ $$
 U= \mathcal{L} ((1,1,0,1)),
 $$
 
-y el endomorfismo $f:\mathbb{R}^{4} \to \mathbb{R}^{4}$ dado por 
-
-$$
-\begin{array}{rl}
-f(1,-1,0,0)&=(1,-1,0,0),\\
-f(1,0,0,-1)&=(1,0,0,-1),\\
-f(0,0,1,0)&=(0,0,1,0),\\
-f(1,1,0,1)&=(0,0,0,0).\\
-\end{array}
-$$
-
 <ol type="a">
 <li>Calcula la proyección ortogonal sobre $U$ de cada uno de los vectores de la base canónica.</li>
 
 <li>Calcula la proyección ortogonal sobre $U^{\perp}$ de cada uno de los vectores de la base canónica.</li>
-
-<li>Calcula la matriz asociada a $f$ respecto de la base $\overline{B}=\{(1,-1,0,0),(1,0,0,-1),(0,0,1,0),(1,1,0,1)\}$.</li>
-
-<li>Calcula la matriz asociada al endomorfismo respecto de la base canónica.</li>
-
-<li>Calcula bases del núcleo y la imagen de $f$.</li>
 </ol>
 
 :::: {.callout collapse="true" title="Solución"}
@@ -1319,53 +1031,699 @@ p_{U^{\perp}}(0,0,0,1)&=(0,0,0,1)-(1/3,1/3,0,1/3)=(-1/3, -1/3,0, 2/3).\\
 $$
 
 </li>
+</ol>
 
-<li>Calcular la matriz asociada a $f$ respecto de la base $\overline{B}$.
+::::
+:::::
 
-Tenemos calculadas las imágenes de los vectores de $\overline{B}$, así que sólo tenemos que calcular sus coordenadas respecto de $\overline{B}$, que son inmediatas
+::::: {#exr-11 .basico}
+
+Para el producto escalar en $\mathcal{P}^2(\mathbb{R})$ dado por 
+$$
+\langle p(x),q(x)\rangle =p(-2)q(-2)+p(0)q(0)+p(2)q(2)
+$$
+
+calcula la matriz de Gram respecto de la base $B=\{1,x,x^2\}$.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+La matriz de Gram contiene todos los productos de todos los vectores de la base dos a dos. Por ejemplo en la posición 11 está $\langle 1,1\rangle =1\cdot 1+1\cdot 1+1\cdot 1=3$, en la 12
+$\langle 1,x\rangle =1\cdot (-2)+1\cdot 0+ 1\cdot 2=0$ y así hasta obtener todos los productos (solo hay que calcular 6 por ser la matriz de Gram simétrica)
 
 $$
-\begin{array}{rll}
-f(1,-1,0,0)&=(1,-1,0,0)&=(1,0,0,0)_{\overline{B}},\\
-f(1,0,0,-1)&=(1,0,0,-1)&=(0,1,0,0)_{\overline{B}},\\
-f(0,0,1,0)&=(0,0,1,0)&=(0,0,1,0)_{\overline{B}},\\
-f(1,1,0,1)&=(0,0,0,0)&=(0,0,0,0)_{\overline{B}}.\\
+G=\left(\begin{array}{rrr}
+3 & 0 & 8\\
+0 & 8 & 0\\
+8 & 0 & 32
+\end{array}\right)
+$$
+
+::::
+:::::
+
+::::: {#exr-12 .basico}
+
+Calcula la matriz de Gram del producto escalar en el espacio de las matrices simétricas de orden 2 dado por la fórmula:
+$$
+\langle A,B\rangle =traza(AB)
+$$
+
+respecto de la base $B= \left\{ \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}; \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix};\begin{pmatrix}
+0 & 0 \\
+0 & 1
+\end{pmatrix}\right\}$. 
+
+:::: {.callout collapse="true" title="Solución"}
+
+Para obtener la matriz de Gram calculamos el producto de cada dos matrices de la base:
+
+$$\biggl \langle  \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix} ,\begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}\biggr\rangle =traza\left(  \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}\begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}\right)=traza\left(  \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix} \right)=1
+$$
+
+$$
+\biggl\langle  \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix} ,\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}\biggr\rangle =traza\left(  \begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix}\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}\right)=traza\left(  \begin{pmatrix}
+0 & 1 \\
+0 & 0
+\end{pmatrix} \right)=0
+$$
+
+del mismo modo se calculan los productos restantes y se obtiene
+
+$$
+G=\begin{pmatrix}
+1 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 1\end{pmatrix}
+$$
+
+::::
+:::::
+
+::::: {#exr-13 .medio}
+
+Consideramos en $\mathbb{R}^{2}$ el producto escalar que tiene, respecto de la base canónica, matriz de Gram (o matriz métrica)
+$\begin{pmatrix}
+1 & 1 \\
+1 & 2
+\end{pmatrix}$. Calcula una base de $\mathbb{R}^{2}$ respecto de la cual la matriz de Gram de este producto escalar sea $I_2$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Que la matriz de Gram sea la identidad significa que la base sea {\bf ortonormal}. En primer lugar aplicamos Gram-Schmidt para calcular una base ortogonal; partimos por ejemplo de la base canónica:
+$$u_1=(1,0); u_2=(0,1)$$
+Entonces $e_1=(1,0)$ y $e_2=(0,1)+\lambda_{21}(1,0)$ donde 
+
+$\lambda_{21}= \frac{\langle u_2,e_1 \rangle}{\langle e_1,e_1\rangle}  =- \frac{1}{1} =-1$
+
+donde los datos se han recogido de la matriz de Gram respecto de $B_c$. 
+Por tanto una base ortogonal es $\{(1,0),(-1,1)\}$, el primero tiene norma 1, calculamos la del segundo:
+
+$$
+\begin{pmatrix}
+1 & 1
+\end{pmatrix}\begin{pmatrix}
+1 & 1 \\
+1 & 2
+\end{pmatrix}\begin{pmatrix}
+-1\\
+1
+\end{pmatrix}=\begin{pmatrix}
+0 & 1
+\end{pmatrix} \begin{pmatrix}
+-1\\
+1
+\end{pmatrix}=1
+$$
+
+Así que esta base es ortonormal.
+
+::::
+:::::
+
+::::: {#exr-14 .basico}
+
+En $\mathbb{R}^{3}$, dado el subespacio $U\equiv \left\{ \begin{array}{l}
+x+y=0\\
+x+z=0
+\end{array}\right.$ y considerando el producto escalar usual, calcula $p_{U^{\perp}}(0,1,2)$. 
+
+:::: {.callout collapse="true" title="Solución"}
+
+Una base de $U$ es $\{(1,-1,-1)\}$ y por tanto $U^{\perp}\equiv x-y-z=0$, descomponemos
+$$
+(0,1,2)=(a,b,c)+(-a,1-b,2-c)
+$$
+
+e imponemos al primer vector que esté en $U$ y al segundo que esté en $W$:
+
+$$
+\left\{ \begin{array}{l}
+a+b=0\\
+a+c=0\\
+-a-1+b-2+c=0
+\end{array}\right. \sim_f \left\{ \begin{array}{l}
+b=-a\\
+c=-a\\
+-3a-3=0
+\end{array}\right. \sim_f \left\{ \begin{array}{l}
+a=-1\\
+b=1\\
+c=1
+\end{array}\right. 
+$$
+
+luego $p_{U^{\perp}}(0,1,2)=(1,0,1)$.
+
+::::
+:::::
+
+::::: {#exr-15 .medio}
+
+Calcular una base ortogonal de $\mathbb{R}^2$ para el producto escalar que, respecto de la base canónica, tiene como matriz de Gram 
+$$
+G= \begin{pmatrix}
+2 & -1 \\
+-1 & 2
+\end{pmatrix}
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Partimos de la base canónica $B_c= \{ v_1=(1,0),(0,1)\}$ y aplicamos Gram-Schmidt:
+$$
+\begin{array}{l}
+u_1=v_1=(1,0)\\
+u_2=v_2+\lambda_{21} u_1=(0,1)+\lambda_{21}(1,0)\\
 \end{array}
 $$
 
-Así que 
+Calulamos $\lambda_{21}$ usando la matriz de Gram dada:
 
 $$
-\mathcal{M}(f,\overline{B})=\begin{pmatrix}
-1 & 0 & 0 & 0\\
-0 & 1 &  0 & 0\\
-0 & 0 & 1 & 0\\
-0 & 0 & 0 & 0 
-\end{pmatrix}.
+\lambda_{21}=-\frac{\langle (1,0),(0,1)\rangle }{\langle (1,0),(1,0)\rangle } = -(-1/2) =1/2
 $$
 
+y obtenemos
+$$
+\begin{array}{l}
+u_2=(0,1)+\frac{1}{2}(1,0)=(\frac{1}{2},1)\\
+\end{array}
+$$
+
+Luego una base ortogonal es $\{(1,0),(\frac{1}{2},1)\}$.
+
+::::
+:::::
+
+::::: {#exr-16 .basico}
+
+En $\mathbb{R}^4$ con el producto escalar usual se consideran los subespacios 
+
+$$
+U\equiv x+y+z=0\; \mbox{ y } W\equiv \left\{ \begin{array}{l} 
+x=0\\
+y-z=0
+\end{array}\right.
+$$
+
+<ol type="a">
+<li>Calcula unas cartesianas de los subespacios $U^{\perp}$ y $W^{\perp}$. </li>
+
+<li>Calcula una base ortogonal de $U$. </li>
+
+<li>Calcula $p_U(0,0,1,1)$ y $p_W(0,0,1,1)$. </li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Puesto que el producto escalar es el usual, de las ecuaciones cartesianas obtenemos directamente  bases de los subespacios ortogonales cuyos vectores son los coeficientes de cada ecuación:
+
+Base de $U^{\perp}=\{(1,1,1,0)\}$ 
+
+Base de $W^{\perp}=\{ (1,0,0,0),(0,1,-1,0)\}$.
+
+Pero también podemos proceder de este otro modo (que es general y puede usarse con cualquier producto escalar): 
+<ul>
+<li> calcular una base de $U$:
+
+como $dim\, U= 4-\mbox{nº cart.}=4-1=3$, así que una base está formada por 3 soluciones de la ecuación (en $\mathbb{R}^4$, por tanto hay 4 incógnitas) que sean linealmente independientes, por ejemplo:
+$$
+\{(1,-1,0,0),(1,0,-1,0),(0,0,0,1)\}
+$$
+
+Para calcular la base más sencilla reducimos por columnas la matriz que forman estos vectores:
+$$\left(\begin{array}{rrr}
+\boxed{1} & 1 & 0 \\
+-1 & 0 & 0\\
+0 & -1 & 0\\
+0 & 0 & 1 
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+\boxed{1} & 0 & 0 \\
+-1 & \boxed{1} & 0\\
+0 & -1 & 0\\
+0 & 0 & 1 
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+\boxed{1} & 0 & 0 \\
+0 & \boxed{1} & 0\\
+-1 & -1 & 0\\
+0 & 0 & \boxed{1} 
+\end{array}\right)
+$$
+
+luego la base más sencilla para $U$ es  
+
+$$
+\{(1,0,-1,0),(0,1,-1,0),(0,0,0,1)\}
+$$ 
+</li>
+<li> para cada uno de los vectores de una base de $U$ imponemos la condición:  
+$\langle u,\overrightarrow{x}\rangle =0$ y así obtenemos las cartesianas de $U^{\perp}$: para $u_1=(1,0,-1,0)$  se obtiene $x-z=0$;
+
+para $u_2=(0,1,-1,0)$  el resultado es  $y-z=0$;
+y para $u_3=(0,0,0,1)$ aparece $t=0$.
+Por tanto 
+
+$$
+U^{\perp} \equiv \left\{ \begin{array}{l} 
+x-z=0\\
+y-z=0\\
+t=0
+\end{array}\right. 
+$$
+
+Procediendo del mismo modo para $W$ obtenemos
+$$
+W^{\perp} \equiv \left\{ \begin{array}{l} 
+y+z=0\\
+t=0
+\end{array}\right. 
+$$
+</li></ul>
 </li>
 
-<li>Calcular la matriz asociada al endomorfismo respecto de la base canónica.
-
-$f$ es la proyección ortogonal sobre $U^{\perp}$, por lo que 
-
+<li>
+Partimos de la base más sencilla (aunque se puede hacer desde una base cualquiera de $U$) y aplicamos Gram-Schmidt:
 $$
-\mathcal{M}(f,B_c)=\begin{pmatrix}
-2/3 & -1/3 & 0 & -1/3\\
--1/3 & 2/3 &  0 & -1/3\\
-0 & 0 & 1 & 0\\
--1/3 & -1/3 & 0 & 2/3 
-\end{pmatrix}.
+\{u_1=(1,0,-1,0),u_2=(0,1,-1,0),u_3=(0,0,0,1)\}
 $$
 
+$e_1=(1,0,-1,0)$
+ 
+$e_2=(0,1,-1,0)+\lambda_{21}(1,0,-1,0)=(0,1,-1,0)-\frac{1}{2}(1,0,-1,0)=(-1/2,1,-1/2,0)$
+
+donde hemos calculado 
+
+$$ 
+\lambda_{21}= \frac{-\langle (0,1,-1,0),(1,0,-1,0)\rangle }{\langle (1,0,-1,0),(1,0,-1,0)\rangle }=\frac{-1}{2}
+$$
+
+
+Por último como $\langle (u_3,e_1\rangle =0$ y $\langle u_3,e_2\rangle =0$ entonces 
+$e_3=(0,0,0,1)$. 
+Una base ortogonal de $U$ es
+$$  
+\{(1,0,-1,0),(-1/2,1,-1/2,0),(0,0,0,1)\}
+$$
 </li>
 
-<li>Calcular bases del núcleo y la imagen de $f$.
+<li>
+$p_U(0,0,1,1)=(0,0,1,1)-p_{U^{\perp}}(0,0,1,1)$ puesto que $dim \, U^{\perp}=1$ y por tanto una base ortogonal de $U^{\perp}$ es $\{(1,1,1,0)\}$. Usando coeficientes de Fourier:
 
-Como $\operatorname{dim}(\operatorname{Im}(f))=\operatorname{rg}(\mathcal{M}(f,\overline{B}))=3$ entonces una base de la imagen son los tres primeros vectores de la base $\overline{B}$, es decir, $\operatorname{Im}(f)=U^{\perp}$.
-Así $\operatorname{dim}(\operatorname{ker}(f))=1$ y como $f(1,1,0,1)=(0,0,0,0)$, entonces una base de $\operatorname{ker}(f)$ es $\{(1,1,0,1)\}$, con lo que $\operatorname{ker}(f)=U$. 
+$$
+p_{U^{\perp}}(0,0,1,1)=\frac{\langle (0,0,1,1),(1,1,1,0)\rangle }{\langle (1,1,1,0),(1,1,1,0)\rangle }(1,1,1,0)=\frac{1}{3}(1,1,1,0)
+$$
+
+por tanto 
+$$
+p_U(0,0,1,1)=(-1/3,-1/3,2/3,1)
+$$
+
+Usaremos cartesianas de $W$ y de $W^{\perp}$ para calcular 
+$$
+p_W (0,0,1,1)=(\alpha,\beta, \gamma,\delta)+(-\alpha,-\beta, 1-\gamma,1-\delta)
+$$
+imponemos que el primer vector esté en $W$ y que el segundo esté en $W^{\perp}$ y resolvemos el sistema:
+$$
+\left. \begin{array}{l}
+\alpha=0\\
+\beta- \gamma=0\\ 
+-\beta+1-\gamma=0\\
+1-\delta=0
+\end{array}\right\} \sim_f \left. \begin{array}{l}
+\alpha=0\\
+\beta=1/2\\ 
+\gamma=1/2\\
+\delta=1
+\end{array}\right\}
+$$
+
+luego $p_W(0,0,1,1)=(0,1/2,1/2,1)$.
 </li>
 </ol>
+
+::::
+:::::
+
+::::: {#exr-17 .avanzado}
+
+En $\mathbb{R}^3$ se considera el producto escalar dado por la fórmula:
+
+$$
+\langle(x_1,x_2,x_3),(y_1,y_2,y_3)\rangle = 
+2x_1y_1-x_1y_2-x_1y_3-x_2y_1+2x_2y_2+x_2y_3-x_3y_1+x_3y_2+1x_3y_3
+$$
+
+<ol type="a">
+
+<li>Calcula el coseno  del  ángulo entre los vectores $(1,0,0)$ y $(0,1,0)$. </li>
+<li>Determina la matriz de Gram de este producto escalar respecto de la base canónica de $\mathbb{R}^3$. </li>
+<li>Encuentra una base ortonormal de este espacio vectorial euclídeo. </li>
+<li>Dado el subespacio $U\equiv \left\{ \begin{array}{c} x=0\\ y=0 \end{array}\right.$ determina $U^{\perp}$. </li>
+<li>Calcula la proyección del vector $v=(1,0,0)$ sobre $U$. </li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+
+<li>
+
+$$
+cos\, \alpha =\frac{\langle (1,0,0),(0,1,0)\rangle }{||(1,0,0)||\cdot ||(0,1,0)||}=\frac{-1}{\sqrt{2}\sqrt{2}}=-1/2
+$$
+
+(estos productos escalares pueden calcularse directamente usando la fórmula proporcionada o bien después del apartado b)
+</li>
+<li>
+
+$$
+G=\left(\begin{array}{rrr}
+2 & -1 & -1\\
+-1& 2 & 1\\
+-1 & 1 & 1
+\end{array}\right)
+$$
+</li>
+<li>
+Puesto que la matriz de Gram respecto de $B_c$ no es la identidad, $B_c$ no es una base ortonormal, así que empleamos el método de Gram-Schmidt partiendo de $B_c$ para calcular una base ortogonal.
+
+$e_1=(1,0,0)$
+
+$e_2=(0,1,0)+\lambda_{21}(1,0,0)$ y calculamos  
+
+$$
+\lambda_{21}
+=-\frac{ \langle (0,1,0),(1,0,0)\rangle  }{ \langle (1,0,0),(1,0,0)\rangle  } = - \frac{-1}{2}=\frac{1}{2}
+$$
+
+por tanto
+
+$e_2=(1/2,1,0)$
+
+$e_3=(0,0,1)+\lambda_{31}(1,0,0)+\lambda_{32}(1/2,1,0) =(1/3. -1/3,1)$
+
+$$
+\lambda_{31}
+=-\frac{ \langle (0,0,1),(1,0,0)\rangle  }{ \langle (1,0,0),(1,0,0)\rangle } = 
+-\frac{-1}{2}=\frac{1}{2}
+$$
+
+$$
+\lambda_{32}
+=-\frac{\langle (0,0,1),(1/2,1,0)\rangle }{\langle (1/2,1,0),(1/2,1,0)\rangle }=-\frac{1/2}{3/2}=-\frac{1}{3}
+$$
+
+Todos estos productos escalares se han calculado usando la matriz de Gram, por ejemplo:
+
+$$
+\langle (1/2,1,0),(1/2,1,0)\rangle =\begin{pmatrix}
+1/2 & 1 & 0 
+\end{pmatrix}\left(\begin{array}{rrr}
+2 & -1 & -1\\
+-1& 2 & 1\\
+-1 & 1 & 1
+\end{array}\right)\begin{pmatrix}
+1/2\\
+1\\
+0
+\end{pmatrix}= \begin{pmatrix}
+0 & 3/2 & 1/2\\
+\end{pmatrix}\begin{pmatrix}
+1/2\\
+1\\
+0
+\end{pmatrix}=3/2
+$$
+
+Una vez obtenida esta base ortogonal dividiendo cada vector por su norma tendremos la base ortonormal.
+Tenemos calculadas $||e_1||=\sqrt{2}; ||e_2||=\sqrt{3/2}$ y calculamos $||e_3||$:
+
+$$
+||(1/3,-1/3,1)||^2=\begin{pmatrix}
+1/3 & -1/3 & 1 
+\end{pmatrix}\left(\begin{array}{rrr}
+2 & -1 & -1\\
+-1& 2 & 1\\
+-1 & 1 & 1
+\end{array}\right)\begin{pmatrix}
+1/3\\
+-1/3\\
+1
+\end{pmatrix}= \begin{pmatrix}
+0 & 0 & 1/3\\
+\end{pmatrix}\begin{pmatrix}
+1/3\\
+-1/3\\
+1
+\end{pmatrix}=1/3
+$$
+
+Así que una solución es
+
+$$
+B=\Bigl\{ \frac{1}{\sqrt{2}}(1,0,0), \frac{\sqrt{2}}{\sqrt{3}}(1/2, 1,0), \sqrt{3}(1/3,-1/3,1)\Bigr\}
+$$
+</li>
+<li>
+Una base de $U$ es $\{(0,0,1)\}$, luego $U^{\perp}$ tiene de ecuación cartesiana
+
+$$
+\langle (0,0,1),(x,y,z)\rangle =0
+$$
+
+usando la matriz de Gram para calcular el producto escalar nos queda:
+
+$$
+U^{\perp}\equiv \boxed{-x+y+z=0}
+$$
+</li>
+<li>
+Como $dim \, U =1$ la base que usamos en el apartado anterior es ortogonal y podemos usar la fórmula de los coeficientes de Fourier:
+
+$$
+p_U(1,0,0)=\frac{(1,0,0),(0,0,1)}{||(0,0,1)||^2}(0,0,1)=\frac{-1}{1}(0,0,1)=\boxed{(0,0,-1)}
+$$
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-18 .basico}
+
+En $\boxed{\mathbb{R}^4}$ calcula una base ortogonal de 
+
+$$
+W\equiv \left\{ \begin{array}{l} 
+x+y-z=0
+\end{array}\right.
+$$
+
+Obtén también $p_W(0,0,1,1)$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Calculamos $dim\, W= 4- \mbox{ nº cart.}=4-1=3$, así que una base de $W$ tiene 3 vectores. Calculamos una (puede hacerse calculando unas paramétricas, o bien eligiéndolos de un modo adecuado para que cumplan las ecuaciones y sean linealmente independientes):
+
+$$
+\{ u_1=(1,-1,0,0),u_2=(1,0,1,0),u_3=(0,0,0,1)\}
+$$
+
+Aplicamos Gram-Schmidt:
+
+$$
+e_1=(1,-1,0,0)
+$$
+
+$$
+e_2=(1,0,1,0)+\lambda_{21}(1,-1,0,0)
+$$
+
+calculamos 
+
+$$
+\lambda_{21}=\frac{-\langle u_2,e_1\rangle }{\langle e_1,e_1\rangle }=\frac{-1}{2}
+$$
+
+luego 
+
+$$
+e_2=(1/2,1/2,1,0)
+$$
+
+Ahora, como $u_3$ ya es perpendicular con ambos, entonces es $e_3=u_3$ (si se hacen los cálculos $\lambda_{31}=0$ y $\lambda_{32}=0$).
+Una base ortogonal es
+
+$$
+\{ e_1=(1,-1,0,0),e_2=(1/2,1/2,1,0),e_3=(0,0,0,1)\}
+$$
+
+Para calcular la proyección ortogonal podemos utilizar la fórmula con los coeficientes de Fourier respecto de la base ortogonal que acabamos de calcular. Llamamos $v=(0,0,1,1)$:
+
+$$
+p_W(v)=\frac{\langle v,e_1\rangle }{\langle e_1,e_1\rangle }e_1+\frac{\langle v,e_2\rangle }{\langle e_2,e_2\rangle }e_2+\frac{\langle v,e_3\rangle }{\langle e_3,e_3\rangle }e_3
+$$
+
+y haciendo los cálculos de los coeficientes:
+
+$$
+\frac{\langle v,e_1\rangle }{\langle e_1,e_1\rangle }=0;\,  \frac{\langle v,e_2\rangle }{\langle e_2,e_2\rangle }=\frac{1}{3/2}=2/3;\, \frac{\langle v,e_3\rangle }{\langle e_3,e_3\rangle }=\frac{1}{1}=1
+$$
+
+Luego
+
+$$
+p_W(0,0,1,1)=\frac{2}{3}(1/2,1/2,1,0)+1\cdot (0,0,0,1)=\boxed{(1/3,1/3,2/3,1)}
+$$
+
+::::
+:::::
+
+::::: {#exr-19 .medio}
+
+En $\mathcal{P}^2(\mathbb{R})$, el espacio de los polinomios de grado menor o igual que 2 con coeficientes reales, se considera el producto escalar 
+
+$$
+\langle p(x),q(x)\rangle =p(-1)q(-1)+p(0)q(0)+p(1)q(1)
+$$
+
+<ol type="a">
+<li>Calcula la matriz de Gram de este producto escalar respecto de la base $B_S=\{1,x,x^2\}$ </li>
+<li>Calcula el subespacio ortogonal a
+
+$$
+U=\{ p(x)\in \mathcal{P}^2(\mathbb{R}) / p(0)=0\}
+$$ 
+</li>
+<li>Calcula la proyección ortogonal del polinomio $1+x-x^2$ sobre $U$. </li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>
+Calculamos los productos escalares de todas las parejas de polinomios de $B_s$:
+
+$\langle 1,1\rangle =1^2+1^2+1^2= 3; \,\langle 1,x\rangle =1\cdot(-1)+ 1\cdot 0 + 1\cdot 1=0;$
+
+$\langle 1,x^2\rangle = 1\cdot (-1)^2+1\cdot 0^2+1\cdot 1^2=2; \, \langle x,x\rangle = (-1)^2+0^2+1^2=2;$
+
+$ \langle x,x^2\rangle = (-1)\cdot(-1)^2+ 0\cdot 0^2 + 1\cdot 1^2=0; \, \langle x^2,x^2\rangle =((-1)^2)^2+ (0^2)^2+(1^2)^2=2$
+ 
+con lo que la matriz de Gram queda:
+
+$$
+G= \left(\begin{array}{ccc}
+3 & 0 & 2 \\
+0 & 2 & 0\\
+2 & 0 & 2\\
+\end{array}\right)
+$$
+</li>
+<li>
+En primer lugar calculamos unas cartesianas de $U$:  
+
+dado $p(x)=a_0+a_1x+a_2x^2=(a_0,a_1,a_2)_{B_s}$ que $p(0)=0$ significa que $a_0=0$.
+Ahora una base de este subespacio es $\{(0,1,0)_{B_s}, (0,0,1)_{B_s}\}$ (o bien $\{x,x^2\}$).
+Para obtener el ortogonal a $U$ imponemos que un vector genérico $(a_0,a_1,a_2)_{B_s}$ sea perpendicular a ambos vectores de la base:
+$\langle (0,1,0)_{B_s}, (a_0,a_1,a_2)_{B_s}\rangle =0$  y $ \langle (0,0,1)_{B_s}, (a_0,a_1,a_2)_{B_s}\rangle =0$.
+Calculamos los productos usando la matriz de Gram del apartado anterior:
+
+$$
+\left(\begin{array}{ccc}
+0 & 1 & 0 \\
+\end{array}\right)\left(\begin{array}{ccc}
+3 & 0 & 2 \\
+0 & 2 & 0\\
+2 & 0 & 2\\
+\end{array}\right)\left(\begin{array}{c}
+a_0\\
+a_1 \\
+a_2 \\
+\end{array}\right)= \left(\begin{array}{ccc}
+0 & 2 & 0 \\
+\end{array}\right)\left(\begin{array}{c}
+a_0\\
+a_1 \\
+a_2 \\
+\end{array}\right)=2a_1=0
+$$
+
+$$
+\left(\begin{array}{ccc}
+0 & 0 & 1 \\
+\end{array}\right)\left(\begin{array}{ccc}
+3 & 0 & 2 \\
+0 & 2 & 0\\
+2 & 0 & 2\\
+\end{array}\right)\left(\begin{array}{c}
+a_0\\
+a_1 \\
+a_2 \\
+\end{array}\right)= \left(\begin{array}{ccc}
+2 & 0 & 2 \\
+\end{array}\right)\left(\begin{array}{c}
+a_0\\
+a_1 \\
+a_2 \\
+\end{array}\right)=2a_0+2a_2=0
+$$
+
+Con lo que unas cartesianas de $U^{\perp}$ son 
+
+$$
+U^{\perp}\equiv \left\{ \begin{array}{l} 
+a_1=0\\
+a_0+a_2=0
+\end{array}\right.
+$$
+</li>
+<li>
+Puesto que tenemos cartesianas de $U$ y de $U^{\perp}$ podemos utilizar el método de escribir el vector como suma de 2:
+
+$$
+(1,1,-1)_{B_s}=(\alpha, \beta, \gamma)_{B_s}+(1-\alpha, 1-\beta, -1-\gamma)_{B_s}
+$$
+
+ahora $\alpha=0$ para que el primer vector esté en $U$ y $1-\beta=0; 1-\alpha-1-\gamma=0$ para que el segundo esté en $U^{\perp}$; resolviendo
+$\alpha=0;\,  \beta=1; \, \gamma=0$  con lo que $p_U(1+x-x^2)=x$ 
+</li>
+</ol>
+
 ::::
 :::::
