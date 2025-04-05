@@ -2524,7 +2524,7 @@ Así que $rg(A)=2$ y la base más sencilla de $U$ es $\{ (1,0,1,2),(0,1,-1,-1)\}
 <CENTER>
 <TABLE BORDER>       
 <TR>
-<TD><TH>$rg(A)$</TH><TH>$dim U$</TH><TH>$dim W$</TH></TD>
+<TD><TH>$rg(A)$</TH><TH>$dim\; U$</TH><TH>$dim\; W$</TH></TD>
 </TR>
 
 <TR ALIGN=CENTER>    
@@ -2668,7 +2668,7 @@ $$
 <CENTER>
 <TABLE BORDER>       
 <TR>
-<TD><TH>$dim U$</TH><TH>$dim W$</TH><TH>$dim U\cap W$</TH><TH>$dim U+W$</TH></TD>
+<TD><TH>$dim\; U$</TH><TH>$dim\; W$</TH><TH>$dim\; U\cap W$</TH><TH>$dim\; U+W$</TH></TD>
 </TR>
 
 <TR ALIGN=CENTER>    
@@ -2957,7 +2957,7 @@ usamos la fórmula de las dimensiones y los resultados obtenidos:
 <CENTER>
 <TABLE BORDER>       
 <TR>
-<TD><TH>$dim U$</TH><TH>$dim W$</TH><TH>$dim U+W$</TH><TH>$dim U\cap W$</TH></TD>
+<TD><TH>$dim\; U$</TH><TH>$dim\; W$</TH><TH>$dim\; U+W$</TH><TH>$dim\; U\cap W$</TH></TD>
 </TR>
 
 <TR ALIGN=CENTER>    
@@ -3082,7 +3082,7 @@ $$
 :::: {.callout collapse="true" title="Solución"}
 <ol type='a'> 
 <li> 
-Como de $U$ tenemos unas ec. cartesianas, utilizamos la fórmula $dim\, U=dim\ \mathbb{R}^4 -\mbox{\it nº cart}$ por lo que necesitamos determinar el nº de cartesianas, es decir, el rango de la matriz de coeficientes del sistema:
+Como de $U$ tenemos unas ecuaciones cartesianas, utilizamos la fórmula $dim\, U=dim\ \mathbb{R}^4 -\mbox{\it nº cart}$ por lo que necesitamos determinar el nº de cartesianas, es decir, el rango de la matriz de coeficientes del sistema:
 
 $$
 \left(\begin{array}{cccc}
@@ -3490,6 +3490,85 @@ $$
 y finalmente, obtenemos la base de $U\cap W$: $\{ (1,4,1,0)\}$
 </li>
 </ul>
+
+::::
+:::::
+
+::::: {#exr-27 .basico} 
+
+En el espacio vectorial $V$, $B=\{ e_1,e_2\}$ es una base. Calcula las coordenadas respecto de la base  $B'=\{e_1+e_2, 2e_1-e_2\}$ del vector $v=(1,-1)_{B}$.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Como $B'=\{(1,1)_B, (2,-1)_B\}$, planteamos 
+
+$$
+(1,-1)_B=a(1,1)_B+b(2,-1)_B
+$$
+
+y resolvemos 
+
+$$
+\left\{ \begin{array}{l}
+a+2b=1,\\
+a-b=-1.
+\end{array}\right.\sim_f  \left\{ \begin{array}{l}
+a=-1/3,\\
+b=2/3.
+\end{array}\right.
+$$
+
+Luego $v=(-1/3,2/3)_{B'}$.
+
+::::
+:::::
+
+::::: {#exr-28 .medio} 
+
+En $\mathcal{P}_3(\mathbb{R})$ se consideran los subespacios vectoriales:
+
+$$
+U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=-p(x) \}.
+$$
+
+Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Los polinomios que cumplen la condición de $U$ son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a $W$ son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar $B_s=\{1,x,x^2,x^3\}$:
+
+$$
+p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(a_0,-a_1,a_2,-a_3)_{B_s}=p(-x).
+$$
+
+Así las cartesianas de $U$ son
+$\left\{\begin{array}{l}
+a_1=0,\\
+a_3=0.
+\end{array}\right.$ Y una base $\{1,x^2\}$.
+
+$$
+p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(-a_0,a_1,-a_2,a_3)_{B_s}=-p(-x),
+$$
+
+nos da que las cartesianas de $W$ son $\left\{\begin{array}{l}
+a_0=0,\\
+a_2=0.
+\end{array}\right.$  Y una base $\{x,x^3\}$.
+
+Así que un sistema de generadores de $U+W$ es $\{1,x,x^2,x^3\}$ con lo que $U+W=\mathcal{P}_3(\mathbb{R})$, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que $U\cap W=0$, con lo que se obtiene $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
+</li>
+
+<li>Descomponer el vector $3x^3+x-2$ como suma de un vector en $U$ y otro en $W$.
+
+Es inmediato que 
+
+$$
+3x^3+x-2= (-2) + (x+3x^3)
+$$
+
+y el primer polinomio está en $U$ y el segundo en $W$.
 
 ::::
 :::::
