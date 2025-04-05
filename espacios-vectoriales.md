@@ -3565,9 +3565,15 @@ $$
 U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=-p(x) \}.
 $$
 
-Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
+<ol type='a'>
+<li>Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.</li>
+<li>Descomponer el vector $3x^3+x-2$ como suma de un vector en $U$ y otro en $W$.</li>
+</ol>
 
 :::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
 
 Los polinomios que cumplen la condición de $U$ son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a $W$ son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar $B_s=\{1,x,x^2,x^3\}$:
 
@@ -3577,8 +3583,8 @@ $$
 
 Así las cartesianas de $U$ son
 $\left\{\begin{array}{l}
-a_1=0\\
-a_3=0
+a_1=0,\\
+a_3=0.
 \end{array}\right.$ Y una base $\{1,x^2\}$.
 
 $$
@@ -3586,11 +3592,23 @@ p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(-a_0,a_1,-a_2,a_3)_{B_s}=-p(-x),
 $$
 
 nos da que las cartesianas de $W$ son $\left\{\begin{array}{l}
-a_0=0\\
-a_2=0
+a_0=0,\\
+a_2=0.
 \end{array}\right.$ Y una base $\{x,x^3\}$.
 
 Así que un sistema de generadores de $U+W$ es $\{1,x,x^2,x^3\}$ con lo que $U+W=\mathcal{P}_3(\mathbb{R})$, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que $U\cap W=0$, con lo que se obtiene $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
+</li>
+<li>Descomponer el vector $3x^3+x-2$ como suma de un vector en $U$ y otro en $W$.
+
+Es inmediato que 
+
+$$
+3x^3+x-2= (-2) + (x+3x^3)
+$$
+
+y el primer polinomio está en $U$ y el segundo en $W$.
+</li>
+</ol>
 
 ::::
 :::::
