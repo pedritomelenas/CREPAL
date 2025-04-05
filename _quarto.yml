@@ -27,12 +27,12 @@ website:
         href: "espacios-vectoriales.md"
       - text: "Aplicaciones lineales"
         href: "aplicaciones-lineales.md"
-      # - text: "Diagonalización por semejanza"  #Eva quiere añadir estas dos nuevas secciones, lo dejo preparado para solo descomentarlo si te parece bien así y aquí
-      #   href: "diagonalizacion-semejanza.md"
-      # - text: "Formas cuadráticas y diagonalización por congruencia"
-      #   href: "formas-cuadraticas.md"
       - text: "Espacio euclídeo"
         href: "espacio-euclideo.md"
+      - text: "Diagonalización por semejanza"  
+        href: "diagonalizacion-semejanza.md"
+      - text: "Formas cuadráticas y diagonalización por congruencia"
+        href: "formas-cuadraticas.md"
       - text: "Otros"
         href: "resueltos-examenes.md"
 

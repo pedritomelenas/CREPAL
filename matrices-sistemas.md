@@ -47,8 +47,6 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
     mostrar();
   }
 })
-
-
 </script>
 
 

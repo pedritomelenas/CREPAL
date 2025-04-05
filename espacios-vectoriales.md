@@ -13,7 +13,41 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
-<input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. 
+
+<button class="btn btn-outline-secondary btn-sm dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="titulacion">
+  Titulación
+</button>
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" data-titulo="estadistica" href="#">Estadística</a></li>
+  <li><a class="dropdown-item" data-titulo="fisica" href="#">Física</a></li>
+  <li><a class="dropdown-item" data-titulo="informatica" href="#">Informática</a></li>
+  <li><a class="dropdown-item" data-titulo="matematicas" href="#">Matemáticas</a></li>
+  <li><a class="dropdown-item" data-titulo="telecomunicaciones" href="#">Telecomunicaciones</a></li>
+</ul>
+
+<button id="opcion_cf" class="btn btn-outline-secondary btn-sm mb-2"> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked onclick="mostrar();"> Cuerpos finitos </button>
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_basico" value="basicoon" checked onclick="mostrar();"> Básicos </button> 
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media </button>
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
+
+
+<script>
+comprueba_asignatura();
+window.addEventListener("load", function(){
+   mostrar();
+});
+
+$('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
+  if (clickEvent?.target) {
+    if (['fisica','matematicas','telecomunicaciones','estadistica'].includes($(clickEvent.target).data('titulo'))){
+      casilla_cf.checked = false;
+    }else{
+      casilla_cf.checked = true;
+    }
+    mostrar();
+  }
+})
+</script>
 
 ::::: {#exr-1 .avanzado}
 
