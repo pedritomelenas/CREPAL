@@ -2332,9 +2332,9 @@ De la base escalonada de $U$ obtenemos las ecuaciones paramétricas
 $$
 \left\{
 \begin{array}{rcl}
-x & = & \l \\
+x & = & \lambda \\
 y & = & \mu \\ 
-z & = & 4\l+3\mu\\
+z & = & 4\lambda+3\mu\\
 t & = & 0\\
 \end{array}
 \right.
@@ -2356,9 +2356,9 @@ De igual manera, para $W$:
 $$
 \left\{
 \begin{array}{rcl}
-x & = & \l \\
-y & = & 4\l \\ 
-z & = & \l\\
+x & = & \lambda \\
+y & = & 4\lambda \\ 
+z & = & \lambda\\
 t & = & \mu\\
 \end{array}
 \right.
@@ -2433,9 +2433,9 @@ Pasamos a paramétricas resolviendo el sistema:
 $$
 \left\{
 \begin{array}{rcl}
-x & = & \l \\
-y & = & 4\l\\
-z & = & \l\\
+x & = & \lambda \\
+y & = & 4\lambda\\
+z & = & \lambda\\
 t & = & 0\\
 \end{array}
 \right.
@@ -3418,9 +3418,9 @@ de la base escalonada de $U$ obtenemos las ecuaciones paramétricas
 $$
 \left\{
 \begin{array}{rcl}
-x & = & \l \\
+x & = & \lambda \\
 y & = & \mu \\ 
-z & = & 4\l+3\mu\\
+z & = & 4\lambda +3\mu\\
 t & = & 0\\
 \end{array}
 \right.
@@ -3439,9 +3439,9 @@ De igual manera, para $W$:
 $$
 \left\{
 \begin{array}{rcl}
-x & = & \l \\
-y & = & 4\l \\ 
-z & = & \l\\
+x & = & \lambda \\
+y & = & 4\lambda \\ 
+z & = & \lambda\\
 t & = & \mu\\
 \end{array}
 \right.
@@ -3514,9 +3514,9 @@ Pasamos a paramétricas resolviendo el sistema:
 $$
 \left\{
 \begin{array}{rcl}
-x & = & \l \\
-y & = & 4\l\\
-z & = & \l\\
+x & = & \lambda \\
+y & = & 4\lambda\\
+z & = & \lambda\\
 t & = & 0\\
 \end{array}
 \right.
