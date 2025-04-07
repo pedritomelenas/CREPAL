@@ -3784,7 +3784,7 @@ Solución
 \left\{ \begin{array}{l}
 a+2b=1,\\
 a-b=-1.
-\end{array}\right.\sim_f  \left\{ \begin{array}{l}
+\end{array}\right.\sim_f \left\{ \begin{array}{l}
 a=-1/3,\\
 b=2/3.
 \end{array}\right.
@@ -3799,7 +3799,14 @@ b=2/3.
 <p><span class="math display">\[
 U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=-p(x) \}.
 \]</span></p>
-<p>Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.</p>
+<ol type="a">
+<li>
+Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.
+</li>
+<li>
+Descomponer el vector <span class="math inline">\(3x^3+x-2\)</span> como suma de un vector en <span class="math inline">\(U\)</span> y otro en <span class="math inline">\(W\)</span>.
+</li>
+</ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -3812,6 +3819,9 @@ Solución
 </div>
 <div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Comprobar que <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.</p>
 <p>Los polinomios que cumplen la condición de <span class="math inline">\(U\)</span> son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a <span class="math inline">\(W\)</span> son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar <span class="math inline">\(B_s=\{1,x,x^2,x^3\}\)</span>:</p>
 <p><span class="math display">\[
 p(x)=(a_0,a_1,a_2,a_3)_{B_s}=(a_0,-a_1,a_2,-a_3)_{B_s}=p(-x).
@@ -3828,22 +3838,22 @@ a_0=0,\\
 a_2=0.
 \end{array}\right.\)</span> Y una base <span class="math inline">\(\{x,x^3\}\)</span>.</p>
 Así que un sistema de generadores de <span class="math inline">\(U+W\)</span> es <span class="math inline">\(\{1,x,x^2,x^3\}\)</span> con lo que <span class="math inline">\(U+W=\mathcal{P}_3(\mathbb{R})\)</span>, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que <span class="math inline">\(U\cap W=0\)</span>, con lo que se obtiene <span class="math inline">\(\mathcal{P}_3(\mathbb{R})= U\oplus W\)</span>.
-
+</li>
 <li>
 <p>Descomponer el vector <span class="math inline">\(3x^3+x-2\)</span> como suma de un vector en <span class="math inline">\(U\)</span> y otro en <span class="math inline">\(W\)</span>.</p>
 <p>Es inmediato que</p>
 <p><span class="math display">\[
 3x^3+x-2= (-2) + (x+3x^3)
 \]</span></p>
-<p>y el primer polinomio está en <span class="math inline">\(U\)</span> y el segundo en <span class="math inline">\(W\)</span>.</p>
-<p>::::</p>
-<p>:::::</p>
+y el primer polinomio está en <span class="math inline">\(U\)</span> y el segundo en <span class="math inline">\(W\)</span>.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 
 
-</li></div>
-</div>
-</div>
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
