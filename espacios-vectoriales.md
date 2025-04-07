@@ -3532,7 +3532,6 @@ y finalmente, obtenemos la base de $U\cap W$: $\{ (1,4,1,0)\}$
 
 En el espacio vectorial $V$, $B=\{ e_1,e_2\}$ es una base. Calcula las coordenadas respecto de la base  $B'=\{e_1+e_2, 2e_1-e_2\}$ del vector $v=(1,-1)_{B}$.
 
-
 :::: {.callout collapse="true" title="Solución"}
 
 Como $B'=\{(1,1)_B, (2,-1)_B\}$, planteamos 
@@ -3547,7 +3546,7 @@ $$
 \left\{ \begin{array}{l}
 a+2b=1,\\
 a-b=-1.
-\end{array}\right.\sim_f  \left\{ \begin{array}{l}
+\end{array}\right.\sim_f \left\{ \begin{array}{l}
 a=-1/3,\\
 b=2/3.
 \end{array}\right.
@@ -3566,9 +3565,15 @@ $$
 U=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=p(x) \}, W=\{p(x) \in \mathcal{P}_3(\mathbb{R}) | p(-x)=-p(x) \}.
 $$
 
-Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
+<ol type='a'>
+<li>Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.</li>
+<li>Descomponer el vector $3x^3+x-2$ como suma de un vector en $U$ y otro en $W$.</li>
+</ol>
 
 :::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Comprobar que $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
 
 Los polinomios que cumplen la condición de $U$ son los polinomios pares, es decir, aquellos en los que solo aparecen las potencias pares de la indeterminada, y los que pertenecen a $W$ son los impares. Podemos realizar estas operaciones sin más que usar las coordenadas respecto de la base estándar $B_s=\{1,x,x^2,x^3\}$:
 
@@ -3589,11 +3594,10 @@ $$
 nos da que las cartesianas de $W$ son $\left\{\begin{array}{l}
 a_0=0,\\
 a_2=0.
-\end{array}\right.$  Y una base $\{x,x^3\}$.
+\end{array}\right.$ Y una base $\{x,x^3\}$.
 
 Así que un sistema de generadores de $U+W$ es $\{1,x,x^2,x^3\}$ con lo que $U+W=\mathcal{P}_3(\mathbb{R})$, y además de que porque estos polinomios son linealmente independientes, se puede razonar con la fórmula de las dimensiones que $U\cap W=0$, con lo que se obtiene $\mathcal{P}_3(\mathbb{R})= U\oplus W$.
 </li>
-
 <li>Descomponer el vector $3x^3+x-2$ como suma de un vector en $U$ y otro en $W$.
 
 Es inmediato que 
@@ -3603,6 +3607,8 @@ $$
 $$
 
 y el primer polinomio está en $U$ y el segundo en $W$.
+</li>
+</ol>
 
 ::::
 :::::
