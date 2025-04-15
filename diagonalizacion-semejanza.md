@@ -1284,3 +1284,925 @@ $$
 
 ::::
 :::::
+
+:::::{#exr-9 .basico}
+
+Dadas las matrices
+
+$$
+A= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+0 & 0 & 0\\
+0 & 1 & 0
+\end{array}\right)\hspace{2cm}  B= \left(\begin{array}{rrr}
+1 & 1 & 0\\
+1 & 0 & 0\\
+1 & 1 & 0
+\end{array}\right)
+$$
+
+¿Existe $P$ regular tal que $P^{-1}AP=B$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+Si calculamos los valores propios de ambas:
+
+$$
+|A-\lambda I|= \left|\begin{array}{rrr}
+1- \lambda & 1 & 0\\
+0 & -\lambda & 0\\
+0 & 1 & -\lambda
+\end{array}\right|=(1-\lambda)(-\lambda)^2
+$$
+
+$$
+|B-\lambda I|= \left|\begin{array}{rrr}
+1-\lambda & 1 & 0\\
+1 & -\lambda & 0\\
+1 & 1 & -\lambda
+\end{array}\right|=(-\lambda)(\lambda^2-\lambda-1)
+$$
+
+Como los conjuntos de valores propios de ambas son distintos, entonces no pueden ser semejantes.
+
+::::
+:::::
+
+:::::{#exr-11 .basico}
+
+Dada la matriz
+
+$$
+A= \left(\begin{array}{rrr}
+2 & 0 & 2\\
+0 & 1 & 0\\
+2 & 0 & -1
+\end{array}\right)
+$$
+
+¿Existe $P$ regular tal que $P^{-1}AP=I_3$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+Que exista la matriz $P$ regular tal que $P^{-1}AP=I_3$ equivale a decir que $A$ es diagonalizable por semejanza y su forma diagonal es $I_3$. 
+Calculamos los valores propios de $A$:
+
+$$
+\left|
+\begin{array}{ccc}
+2-\lambda & 0 & 2 \\
+0 & 1-\lambda & 0 \\
+2 & 0 & -1-\lambda \\
+\end{array}
+\right|= (1-\lambda) \left|
+\begin{array}{cc}
+2 -\lambda& 2 \\
+2 & -1-\lambda \\
+\end{array}
+\right|= 
+$$
+
+$$
+=(1-\lambda)(-(2-\lambda)(1+\lambda)-4)=(1-\lambda)(2+\lambda)(3-\lambda)
+$$
+
+Como los valores propios de $A$ son 1, -2 y 3, su forma diagonal (si fuera diagonalizable) no puede ser $I_3$, por lo tanto, {\bf no } existe $P$ regular tal que  $P^{-1}AP=I_3$
+
+::::
+:::::
+
+:::::{#exr-12 .medio}
+
+Dada la matriz
+
+$$
+A= \left(\begin{array}{rrrr}
+1 & 1 & 1 & 1\\
+1 & 1 & -1 & -1\\
+1 & -1 & 1 & -1\\
+1 & -1 & -1 & 1
+\end{array}\right)
+$$
+
+<ol type='a'>
+<li>Demuestra que es diagonalizable por semejanza.</li>
+<li>Calcula una matriz diagonal $D$ y una matriz regular $P$ tales que $D=P^{-1}AP$. </li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+
+<li> Puesto que esta matriz es simétrica podemos utilizar el resultado que dice que toda matriz simétrica y real es diagonalizable por semejanza ortogonal (Teorema Espectral). En cualquier caso tenemos que calcular los valores propios y los subespacios propios en el siguiente apartado, que también se pueden utilizar para justificar este. 
+
+</li>
+<li> Para obtener los valores propios tenemos que resolver $|A-\lambda I|=0$.  
+
+$$
+|A-\lambda I|=\left|\begin{array}{cccc}
+1-\lambda& 1 & 1 & 1\\
+1 & 1-\lambda& -1 & -1\\
+1 & -1 & 1-\lambda& -1\\
+1 & -1 & -1 & 1-\lambda
+\end{array}\right|= \left|\begin{array}{cccc}
+1-\lambda& 1 & 1 & 1\\
+2-\lambda& 2-\lambda& 0 & 0\\
+0 & -2+\lambda& 2-\lambda & 0\\
+0 & 0 & -2+\lambda& 2-\lambda
+\end{array}\right|
+$$
+
+ahora desarrollamos por la primera fila, aunque aparecen 4 menores de orden 3 son muy sencillos (se ha tenido en cuenta que $-2+\lambda=-(2-\lambda)$)
+$$
+|A|=(1-a)\left|\begin{array}{ccc}
+2-\lambda& 0 & 0\\
+-2+\lambda& 2-\lambda & 0\\
+0 & -2+\lambda& 2-\lambda
+\end{array}\right|-\left|\begin{array}{ccc}
+2-\lambda & 0 & 0\\
+0  & 2-\lambda & 0\\
+0  & -2+\lambda& 2-\lambda
+\end{array}\right|+\left|\begin{array}{ccc}
+2-\lambda& 2-\lambda & 0\\
+0 & -2+\lambda& 0\\
+0 & 0 &  2-\lambda
+\end{array}\right|-
+$$
+
+$$
+\left|\begin{array}{ccc}
+2-\lambda& 2-\lambda& 0 \\
+0 & -2+\lambda& 2-a\\
+0 & 0 & -2+\lambda\end{array}\right|=(1-\lambda)(2-\lambda)^3- (2-\lambda)^3-(2-\lambda)^3-(2-\lambda)^3=\boxed{(2-\lambda)^3(-2-\lambda)}
+$$
+
+$$
+|A-\lambda I|=(2-\lambda)^3(-2-\lambda)
+$$
+
+que tiene por raíces a $\lambda =2$ con multiplicidad algebraica 3 y $\lambda=-2$ con multiplicidad algebraica 1.
+
+$\boxed{V_{\lambda=2}}$ tiene por cartesianas
+$(A-2I)X=0$, realizamos operaciones elementales por filas en la matriz de coeficientes para obtener un sistema equivalente
+
+$$
+A-2I =\left(\begin{array}{cccc}
+-1 & 1 & 1 & 1\\
+1 & -1 & -1 & -1\\
+1 & -1 & -1& -1\\
+1 & -1 & -1 & -1
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+\boxed{1} & -1 & -1 & -1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0& 0\\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$ 
+
+y por tanto $V_{\lambda=2}\equiv \boxed{x-y-z-t=0}$ que tiene $m.g.= dim\, V_{\lambda=2}=4-1=3$. Una base de este subespacio es
+
+$$
+\{(1,1,0,0),(1,0,1,0),(1,0,0,1)\}
+$$
+
+$\boxed{V_{\lambda=-2}}$ tiene por cartesianas
+$(A+2I)X=0$, y calculando la forma escalonada reducida por filas de $A+2I$:
+ 
+
+$$
+A+2I=
+\left(\begin{array}{cccc}
+3 & 1 & 1 & 1\\
+1 & 3 & -1 & -1\\
+1 & -1 & 3 & -1\\
+1 & -1 & -1 & 3
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+1 & -1 & -1 & 3\\
+0 & 4 & 0 & -4\\
+0 & 0 & 4& -4\\
+0 & 4 & 4 & -8
+\end{array}\right)\sim_f \left(\begin{array}{cccc}
+\boxed{1} & 0 & 0 & 1\\
+0 & \boxed{1} & 0 & -1\\
+0 & 0 & \boxed{1}& -1\\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$ 
+
+y por tanto
+
+$$
+V_{\lambda=-2}\equiv  \left\{ \begin{array}{l} 
+x+t=0\\
+y-t=0\\
+z-t=0
+\end{array}\right. 
+$$ 
+
+que tiene $m.g.= dim\, V_{\lambda=-2}=4-3=1$. Una base de este subespacio es 
+
+$$ 
+\{(-1,1,1,1)\}
+$$
+
+Así que 
+
+$$
+D=\left(\begin{array}{cccr}
+\boxed{2} & 0 & 0 & 0\\
+0 & \boxed{2} & 0 & 0\\
+0 & 0 & \boxed{2}& 0\\
+0 & 0 & 0 & \boxed{-2}
+\end{array}\right) \hspace{2cm}  P=\left(\begin{array}{rrrr}
+1 & 1 & 1 & -1\\
+1 & 0 & 0 & 1\\
+0 & 1 & 0& 1\\
+0 & 0 & 1 & 1
+\end{array}\right)
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+:::::{#exr-13 .medio}
+
+En $\mathbb{R}^{4}$ se considera el endomorfismo dado por
+$$
+f(x,y,z,t)=(3x-y,-x+3y,3z+t,z+3t)
+$$
+
+¿Es diagonalizable por semejanza este endomorfismo?
+
+:::: {.callout collapse="true" title="Solución"}
+
+Calculamos la matriz asociada respecto de la base canónica:
+$$
+\begin{array}{l}
+f(1,0,0,0)=(3,-1,0,0)\\
+f(0,1,0,0)=(-1, 3, 0,0)\\
+f(0,0,1,0)=(0,0,3,1)\\
+f(0,0,0,1)=(0,0,1,3)
+\end{array}
+$$
+
+por lo que 
+
+$$
+M(f,B_c)=\begin{pmatrix}
+3 & -1 & 0 & 0\\
+-1 & 3 & 0 & 0\\
+0 & 0 & 3 & 1\\
+0 & 0 & 1 & 3
+\end{pmatrix}
+$$
+
+Como la matriz es simétrica y real, por el Teorema Espectral, es diagonalizable por semejanza (por semejanza ortogonal).
+También pueden calcularse los valores propios y sus multipliciades algebraica y geométrica, se obtiene:
+
+(llamaremos $A$ a la matriz para simplificar la notación)
+
+$$
+|A-\lambda I|=\left|\begin{array}{cccc}
+3-\lambda & -1 & 0 & 0\\
+-1 & 3-\lambda & 0 & 0\\
+0 & 0 & 3-\lambda & 1\\
+0 & 0 & 1 & 3-\lambda
+\end{array}\right|=
+$$
+
+(desarrollando por la primera columna)
+
+$$
+=(3-\lambda)\left|\begin{array}{ccc}
+3-\lambda & 0 & 0\\
+0 & 3-\lambda & 1\\
+0 & 1 & 3-\lambda
+\end{array}\right|+ (-1)^{2+1}(-1)\left|\begin{array}{ccc}
+-1 & 0 & 0\\
+0 & 3-\lambda & 1\\
+0 & 1 & 3-\lambda
+\end{array}\right|=
+$$
+
+$$= (3-\lambda)^2\left|\begin{array}{cc}
+3-\lambda & 1\\
+1 & 3-\lambda
+\end{array}\right|+ (-1)\left|\begin{array}{cc}
+3-\lambda & 1\\
+1 & 3-\lambda
+\end{array}\right|=
+$$
+
+$$
+= ((3-\lambda)^2 -1)^2 = (\lambda^2-6\lambda+8)^2=(\lambda-4)^2(\lambda-2)^2 
+$$
+
+Para calcular las multiplicidades geométricas de cada valor propio utilizamos la fórmula  
+$$
+m.g. (\lambda)= dim \, \mathbb{R}^4 - rg(A-\lambda I)
+$$
+
+Calculamos $rg(A-\lambda I)$ para $\lambda=2$ y $\lambda=4$
+
+$$
+rg(A-2I)=rg\begin{pmatrix}
+1 & -1 & 0 & 0\\
+-1 & 1 & 0 & 0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & 1
+\end{pmatrix}=2
+$$
+
+$$
+rg(A-4I)=rg\begin{pmatrix}
+-1 & -1 & 0 & 0\\
+-1 & -1 & 0 & 0\\
+0 & 0 & -1 & 1\\
+0 & 0 & 1 & -1
+\end{pmatrix}=2
+$$
+
+<CENTER>
+<TABLE BORDER>       
+<TR>
+<TD><TH>$m.a.$</TH><TH>$m.g.$</TH></TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = 2$</TH><TD>2</TD><TD>2</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = 4$</TH><TD>2</TD><TD>2</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+Como la suma de las multiplicidades algebraicas es 4 y cada una coincide con la correspondiente geométrica, la matriz es diagonalizable por semejanza.
+
+::::
+:::::
+
+:::::{#exr-14 .medio}
+
+Dada la matriz
+
+$$
+A= \left(\begin{array}{rrrr}
+3 & 1 & -3 & 3\\
+1 & 3 & -3 & 3\\
+1 & 1 & -1 & 3\\
+1 & 1 & 1 & 1
+\end{array}\right)
+$$
+
+<ol type='a'>
+<li>Demuestra que es diagonalizable por semejanza.</li>
+<li>Calcula una matriz diagonal $D$ y una matriz regular $P$ tales que $D=P^{-1}AP$. </li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li> Calculamos los valores propios y sus multiplicidades algebraicas:
+
+$$
+|A-\lambda I|= \left|\begin{array}{cccc}
+3-\lambda  & 1 & -3 & 3\\
+1 & 3-\lambda  & -3 & 3\\
+1 & 1 & -1-\lambda  & 3\\
+1 & 1 & 1 & 1-\lambda 
+\end{array}\right|= (C_4+C_3\rightarrow C_4)=  \left|\begin{array}{cccc}
+3-\lambda  & 1 & -3 & 0\\
+1 & 3-\lambda  & -3 & 0\\
+1 & 1 & -1-\lambda  & 2-\lambda\\
+1 & 1 & 1 & 2-\lambda 
+\end{array}\right|=
+$$
+
+$$
+=(F_3-F_4\rightarrow F_3)=\left|\begin{array}{cccc}
+3-\lambda  & 1 & -3 & 0\\
+1 & 3-\lambda  & -3 & 0\\
+0 & 0 & -2-\lambda  & 0\\
+1 & 1 & 1 & 2-\lambda 
+\end{array}\right|=(2-\lambda)(-2-\lambda)\left|\begin{array}{cc}
+3-\lambda  & 1 \\
+1 & 3-\lambda \\
+\end{array}\right|=
+$$
+
+$$
+=(2-\lambda)(-2-\lambda)(\lambda^2-6\lambda+8)=(2-\lambda)^2(-2-\lambda)(4-\lambda)=0
+$$
+
+Luego tenemos la tabla
+
+<CENTER>
+<TABLE BORDER>       
+<TR>
+<TD><TH>$m.a.$</TH><TH>$m.g.$</TH></TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = 2$</TH><TD>2</TD><TD>?</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = -2$</TH><TD>1</TD><TD>1</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = 4$</TH><TD>1</TD><TD>1</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+Así que para comprobar que es diagonalizable debemos calcular la multiplicidad geométrica para $\lambda=2$.
+$\boxed{V_{\lambda=2}}$
+
+$$
+A-2I= \left(\begin{array}{rrrr}
+1 & 1 & -3 & 3\\
+1 & 1 & -3 & 3\\
+1 & 1 & -3 & 3\\
+1 & 1 & 1 & -1
+\end{array}\right)
+$$
+
+como las tres primeras filas son iguales, es inmediato que tiene rango 2, luego tiene 2 ecuaciones cartesianas y, por tanto, dimensión 2. Así que, en efecto, es diagonalizable.
+También podemos hacer operaciones elementales por filas:
+
+$$
+A-2\lambda= \left(\begin{array}{rrrr}
+1 & 1 & -3 & 3\\
+1 & 1 & -3 & 3\\
+1 & 1 & -3 & 3\\
+1 & 1 & 1 & -1
+\end{array}\right)\sim_f   \left(\begin{array}{rrrr}
+1 & 1 & 0 & 0\\
+0 & 0 & 1 & -1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+\end{array}\right)
+$$
+
+para obtener las ecuaciones cartesianas que vamos a usar en el siguiente apartado: 
+
+$$
+V_{\lambda=2}\equiv \left\{ \begin{array}{l} 
+x+y=0\\
+z-t=0
+\end{array}\right.
+$$
+
+</li>
+<li> La matriz diagonal está formada por los valores propios, cada uno tantas veces como indica su multiplicidad aritmética. Vamos a calcular una base de cada uno de los subespacios propios:
+
+Para 
+$$
+V_{\lambda=2}\equiv \left\{ \begin{array}{l} 
+x+y=0\\
+z-t=0
+\end{array}\right.
+$$
+
+una base puede ser $\{(1,-1,0,0),(0,0,1,1)\}$.
+Calculamos $\boxed{V_{\lambda=-2}}$:
+
+$$
+A+2I= \left(\begin{array}{rrrr}
+5 & 1 & -3 & 3\\
+1 & 5 & -3 & 3\\
+1 & 1 & 1 & 3\\
+1 & 1 & 1 & 3
+\end{array}\right)\sim_f \left(\begin{array}{rrrr}
+1 & 1 & 1 & 3\\
+0 & -4 & -8 & -12\\
+0 & 4 & -4 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right)\sim_f \left(\begin{array}{rrrr}
+1 & 0 & 0 & 1\\
+0 & 1 & 0 & 1\\
+0 & 0 & 1 & 1\\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+luego unas ecuaciones cartesianas son:
+
+$$
+V_{\lambda=-2}\equiv \left\{ \begin{array}{l} 
+x+t=0\\
+y+t=0\\
+z+t=0
+\end{array}\right.
+$$
+
+y una base $\{(1,1,1,-1)\}$.
+Calculamos $\boxed{V_{\lambda=4}}$:
+
+$$
+A-4I= \left(\begin{array}{rrrr}
+-1 & 1 & -3 & 3\\
+1 & -1 & -3 & 3\\
+1 & 1 & -5 & 3\\
+1 & 1 & 1 & -3
+\end{array}\right)\sim_f \left(\begin{array}{rrrr}
+1 & 0 & 0 & -1\\
+0 & 1 & 0 & -1\\
+0 & 0 & 1 & -1\\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+luego unas ecuaciones cartesianas son:
+
+$$
+V_{\lambda=4}\equiv \left\{ \begin{array}{l} 
+x-t=0\\
+y-t=0\\
+z-t=0
+\end{array}\right.
+$$
+
+y una base $\{(1,1,1,1)\}$.
+Así que 
+
+$$
+D=\left(\begin{array}{rrrr}
+2 & 0 & 0 & 0\\
+0 & 2 & 0 & 0\\
+0 & 0 & -2 & 0\\
+0 & 0 & 0 & 4
+\end{array}\right); \hspace{1cm}  P=\left(\begin{array}{rrrr}
+1 & 0 & 1 & 1\\
+-1 & 0 & 1 & 1\\
+0 & 1 & 1 & 1\\
+0 & 1 & -1 & 1
+\end{array}\right)
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+:::::{#exr-15 .medio}
+
+Dada la matriz
+
+$$
+A= \left(\begin{array}{rrrr}
+0 & 0 & 1 & 0\\
+0 & 2 & 0 & -1\\
+1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{array}\right)
+$$
+
+<ol type='a'>
+<li>Demuestra que es diagonalizable por semejanza.</li>
+<li>Calcula una matriz diagonal $D$ y una matriz regular $P$ tales que $D=P^{-1}AP$. </li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li> En primer lugar calculamos los valores propios y sus multiplicidades algebraicas:
+
+$$
+|A-\lambda I|= \left|\begin{array}{rrrr}
+-\lambda & 0 & 1 & 0\\
+0 & 2-\lambda & 0 & -1\\
+1 & 0 & -\lambda & 0\\
+0 & 0 & 0 & 1-\lambda
+\end{array}\right|=(1-\lambda)\left|\begin{array}{rrrr}
+-\lambda & 0 & 1 \\
+0 & 2-\lambda & 0 \\
+1 & 0 & -\lambda \\
+\end{array}\right|=(1-\lambda)(2-\lambda)\left|\begin{array}{rrrr}
+-\lambda & 1 \\
+1 & -\lambda \\
+\end{array}\right|=
+$$
+
+$$
+=(1-\lambda)(2-\lambda)(\lambda^2-1)=-(1-\lambda)^2(2-\lambda)(1+\lambda)
+$$
+
+<CENTER>
+<TABLE BORDER>       
+<TR>
+<TD><TH>$m.a.$</TH><TH>$m.g.$</TH></TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = 1$</TH><TD>2</TD><TD>?</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = 2$</TH><TD>1</TD><TD>1</TD>
+</TR>
+
+<TR ALIGN=CENTER>    
+<TH>$\lambda = -1$</TH><TD>1</TD><TD>1</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+donde se ha usado $1\leq m.g.\leq m.a.$; nos queda comprobar la multiplicidad geométrica de $\lambda=1$.
+
+$\boxed{V_{\lambda=1}}$
+$$
+A-I= \left(\begin{array}{rrrr}
+-1 & 0 & 1 & 0\\
+0 & 1 & 0 & -1\\
+1 & 0 & -1 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right)\sim_f  \left(\begin{array}{rrrr}
+1 & 0 & -1 & 0\\
+0 & 1 & 0 & -1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+Por tanto $V_{\lambda=1}\equiv \left\{ \begin{array}{l}
+x-z=0\\
+y-t=0
+\end{array}\right.$ y por tanto la dimensión es $4-nº catesianas= 2=m.g.$, con lo que la matriz es diagonalizable.
+
+</li>
+<li> Necesitamos calcular bases de cada subespacio propio para obtener la matriz $P$:
+
+$\boxed{V_{\lambda=1}}$ tiene base $\{(1,0,1,0),(0,1,0,1)\}$ (que se obtiene de las ecuaciones cartesianas ya calculadas)
+
+
+$\boxed{V_{\lambda=2}}$
+
+$$
+A-2I= \left(\begin{array}{rrrr}
+-2 & 0 & 1 & 0\\
+0 & 0 & 0 & -1\\
+1 & 0 & -2 & 0\\
+0 & 0 & 0 & -1
+\end{array}\right)\sim_f  \left(\begin{array}{rrrr}
+1 & 0 & -2 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & -3 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right)\sim_f  \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0\\
+0 & 0 &1 & 0\\
+0 & 0 & 0& 1\\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+$V_{\lambda=2}\equiv \left\{ \begin{array}{l}
+x=0\\
+z=0\\
+t=0\end{array}\right.$ y una base es $\{(0,1,0,0)\}$.
+
+$\boxed{V_{\lambda=-1}}$
+$$
+A-2I= \left(\begin{array}{rrrr}
+1 & 0 & 1 & 0\\
+0 & 3 & 0 & -1\\
+1 & 0 & 1 & 0\\
+0 & 0 & 0 & 2
+\end{array}\right)\sim_f  \left(\begin{array}{rrrr}
+1 & 0 & 1 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+$V_{\lambda=-1}\equiv \left\{ \begin{array}{l}
+x+z=0\\
+y=0\\
+t=0\end{array}\right.$ y una base es $\{(1,0,-1,0)\}$.
+
+Luego
+$$
+D=\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 2 & 0\\
+0 & 0 & 0 & -1
+\end{array}\right)\hspace{2cm}  P=\left(\begin{array}{rrrr}
+1 & 0 & 0  & 1\\
+0 & 1 & 1 & 0\\
+1 & 0 & 0 & -1\\
+0 & 1 & 0 & 0
+\end{array}\right)
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+:::::{#exr-16 .medio}
+
+Se considera la matriz:
+$$
+A=\begin{pmatrix}
+2 & 1 & 0 & 0 \\
+0 & 2 & 1 & 0\\
+0 & 1 & 2 & 0 \\
+0 & 0 & 1 & 2\\
+\end{pmatrix}
+\in \mathfrak{M}_4(\mathbb{R})
+$$
+
+Probar que $A$ es diagonalizable y determinar $D$ diagonal y $P$ invertible de forma que $D=P^{-1}·A·P$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Calculamos el polinomio característico de $A$:
+$$
+p(\lambda)= det(A-\lambda I)= 
+\left| 
+\begin{array}{cccc}
+2-\lambda & 1 & 0 & 0 \\
+0 & 2-\lambda  & 1 & 0\\
+0 & 1 & 2-\lambda & 0\\
+0 & 0 & 1 & 2-\lambda  
+\end{array}\right|
+=
+(2-\lambda)\cdot\left| 
+\begin{array}{cccc}
+2-\lambda  & 1 & 0\\
+1 & 2-\lambda & 0\\
+ 0 & 1 & 2-\lambda 
+\end{array}\right|
+=
+$$
+
+$$
+=(2-\lambda)^2\cdot\left| 
+\begin{array}{cccc}
+2-\lambda & 1 \\
+1 & 2-\lambda \\
+\end{array}\right|=(2-\lambda)^2\cdot [(2-\lambda)^2-1]=
+(2-\lambda)^2\cdot [\lambda^2-4\lambda+3]=
+(2-\lambda)^2\cdot (1-\lambda)\cdot (3-\lambda)
+$$
+
+Así pues los autovalores de $A$ y sus multiplicidades algebraicas son:
+
+<div class="table_2col">
+<CENTER>
+<table>
+    <thead>
+        <tr>
+            <td>$\lambda_1= 1$</td>
+            <td>$\alpha_1=1$</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$\lambda_1= 2$</td>
+            <td>$\alpha_1=2$</td>
+        </tr>
+        <tr>
+            <td>$\lambda_1= 3$</td>
+            <td>$\alpha_1=1$</td>
+        </tr>
+    </tbody>
+</table>
+</CENTER>
+</div>
+
+Calculemos las multiplicidades geométricas. Puesto que para cada $i$ se verifica $1\leq d_i \leq \alpha_i$, se deduce que $d_1=1$ y $d_3=1$. 
+
+$$
+d_2= 4 -rg(A-2\cdot I)=
+4-rg\begin{pmatrix}
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{pmatrix}
+= 4-2=2
+$$
+
+Así pues, tenemos:
+
+<div class="table_3col">
+<CENTER>
+<table>
+    <thead>
+        <tr>
+            <td>$\lambda_1= 1$</td>
+            <td>$\alpha_1=1$</td>
+            <td>$d_1=1$</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>$\lambda_1= 2$</td>
+            <td>$\alpha_1=2$</td>
+            <td>$d_2=2$</td>
+        </tr>
+        <tr>
+            <td>$\lambda_1= 3$</td>
+            <td>$\alpha_1=1$</td>
+            <td>$d_3=1$</td>
+        </tr>
+    </tbody>
+</table>
+</CENTER>
+</div>
+
+y la matriz es diagonalizable, ya que coinciden las multiplicidades geométricas con las algebraicas y la forma diagonal de $A$ es la matriz: 
+$$
+D=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 2 & 0 & 0\\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 3
+\end{pmatrix}
+$$
+
+Calculemos ahora bases de los subespacios propios:
+
+$$
+V_{\lambda_1}=Ker(A-I)=
+Ker\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+\end{pmatrix}
+$$
+$$
+\left(\begin{array}{cccc}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1 \\  \hline
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{array}\right)
+\sim_c
+\left(\begin{array}{ccc|c}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\ \hline
+1 & -1 & 1 & 1 \\
+0 & 1 & -1 & -1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & -1 \\
+\end{array}\right)
+$$
+y una base de $V_{\lambda_1}$ es $\{(1,-1,1,-1)\}$
+
+De igual manera:
+$$
+V_{\lambda_2}=Ker(A-2\cdot I)=
+Ker\begin{pmatrix}
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{pmatrix}
+$$
+y una base de $V_{\lambda_2}$ es $\{(1,0,0,0),(0,0,0,1)\}$
+
+$$
+V_{\lambda_3}=Ker(A-3\cdot I)=
+Ker\begin{pmatrix}
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 1 & -1 & 0 \\
+0 & 0 & 1 & -1 \\
+\end{pmatrix}
+$$
+y una base de $V_{\lambda_3}$ es $\{(1,1,1,1)\}$
+
+Y la matriz de paso $P$ es la matriz de cambio de base de la base de vectores propios obtenida: 
+$\overline{B}=\{(1,-1,1,-1), (1,0,0,0),(0,0,0,1),(1,1,1,1)\}$ a la canónica. 
+
+$$
+P=\begin{pmatrix}
+1  & 1 & 0 & 1 \\
+-1 & 0 & 0 & 1\\
+1  & 0 & 0 & 1 \\
+-1 & 0 & 1 & 1
+\end{pmatrix}
+$$
+
+::::
+:::::
