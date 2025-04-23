@@ -127,3 +127,112 @@ Luego será definida positiva cuando los tres elementos de la diagonal lo sean, 
 
 ::::
 :::::
+
+::::: {#exr-semejanza_ortogonal .medio}
+
+Dada la matriz:
+
+$$A=
+\begin{pmatrix}
+2 & 0 & 0 & -1\\
+0 & 2 & -1 & 0 \\
+0 & -1 & 2 & 0 \\
+-1 & 0 & 0 & 2
+\end{pmatrix}
+$$
+
+Razonar que es diagonalizable y determinar su forma diagonal y una matriz de paso, $P$, verificando que $P^{-1}=P^t$. ¿Cuál es la signatura de $A$?
+
+:::: {.callout collapse="true" title="Solución"}
+
+La matriz $A$ es simétrica y el Teorema espectral afirma que toda matriz simétrica y real es diagonalizable, por tanto $A$ lo es.
+Nos piden una diagonalización por semejanza ortogonal, aí que tenemos que calcular en primer lugar los valores propios: 
+
+$$
+\begin{align*}
+|A-\lambda I| & =\left|
+\begin{array}{rrrr}
+2-\lambda & 0 & 0 & -1\\
+0 & 2-\lambda & -1 & 0 \\
+0 & -1 & 2-\lambda & 0 \\
+-1 & 0 & 0 & 2-\lambda
+\end{array}\right|=(F_4+F_1\rightarrow F_4)=
+\left|
+\begin{array}{rrrr}
+2-\lambda & 0 & 0 & -1\\
+0 & 2-\lambda & -1 & 0 \\
+0 & -1 & 2-\lambda & 0 \\
+1-\lambda & 0 & 0 & 1-\lambda
+\end{array}\right|\\
+& =(C_1-C_4 \rightarrow C_1)= 
+\left|\begin{array}{rrrr}
+3-\lambda & 0 & 0 & -1\\
+0 & 2-\lambda & -1 & 0 \\
+0 & -1 & 2-\lambda & 0 \\
+0 & 0 & 0 & 1-\lambda
+\end{array}\right|=(3-\lambda)(1-\lambda)[(2-\lambda)^2-1]=(3-\lambda)^2(1-\lambda)^2.
+\end{align*}
+$$
+
+Tenemos entonces los valores propios $\lambda=1$ y $\lambda=3$ ambos con multiplicidad algebraica dos. Tenemos entonces que la matriz diagonal semejante y congruente con $A$ es 
+
+$$
+D=\begin{pmatrix}
+1 & 0 & 0 & 0\\
+0 & 1& 0 & 0\\
+0 & 0 & 3 & 0\\
+0 & 0 & 0 & 3
+\end{pmatrix},
+$$
+
+y por tanto la signatura de $A$ es $(4,0)$, por tanto definida positiva.
+
+Calculamos ahora los subespacios propios y elegimos una base ortonormal de cada uno.
+
+
+**$V_{\lambda=1}$**
+
+$$
+(A-1\cdot I)=\begin{pmatrix}
+1 & 0 & 0 & -1\\
+0 & 1 & -1 & 0 \\
+0 & -1 & 1 & 0 \\
+-1 & 0 & 0 & 1
+\end{pmatrix},
+$$  
+
+nos da como cartesianas $\left\{\begin{array}{l}
+x-t=0\\
+y-z=0
+\end{array}\right.$  y una base ortogonal es $\{(1,0,0,1),(0,1,1,0)\}$.
+
+
+**$V_{\lambda=3}$**
+
+$$
+(A-1\cdot I)=\begin{pmatrix}
+-1 & 0 & 0 & -1\\
+0 & -1 & -1 & 0 \\
+0 & -1 & -1 & 0 \\
+-1 & 0 & 0 & -1
+\end{pmatrix},
+$$  
+
+nos da como cartesianas $\left\{\begin{array}{l}
+x+t=0\\
+y+z=0
+\end{array}\right.$  y una base ortogonal es $\{(1,0,0,-1),(0,1,-1,0)\}$.
+
+Dividiendo cada vector por su norma obtenemos una base ortonormal de vectores propios, lo que nos da la matriz ortogonal $P$:
+
+$$
+P=\begin{pmatrix}
+1/\sqrt{2} & 0 & 0 & 1/\sqrt{2}\\
+0 & 1/\sqrt{2} & 1/\sqrt{2} & 0\\
+0 & 1/\sqrt{2} & -1/\sqrt{2} & 0\\
+1/\sqrt{2} & 0 & 0 & -1/\sqrt{2}\\
+\end{pmatrix}.
+$$
+
+::::
+:::::
