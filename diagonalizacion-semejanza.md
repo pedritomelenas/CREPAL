@@ -20,116 +20,7 @@ format:
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
 -->
 
-::::: {#exr-1 .medio}
-
-Dada la matriz:
-
-$$A=
-\begin{pmatrix}
-2 & 0 & 0 & -1\\
-0 & 2 & -1 & 0 \\
-0 & -1 & 2 & 0 \\
--1 & 0 & 0 & 2
-\end{pmatrix}
-$$
-
-Razonar que es diagonalizable y determinar su forma diagonal y una matriz de paso, $P$, verificando que $P^{-1}=P^t$. ¿Cuál es la signatura de $A$?
-
-:::: {.callout collapse="true" title="Solución"}
-
-La matriz $A$ es simétrica y el Teorema espectral afirma que toda matriz simétrica y real es diagonalizable, por tanto $A$ lo es.
-Nos piden una diagonalización por semejanza ortogonal, aí que tenemos que calcular en primer lugar los valores propios: 
-
-$$
-\begin{align*}
-|A-\lambda I| & =\left|
-\begin{array}{rrrr}
-2-\lambda & 0 & 0 & -1\\
-0 & 2-\lambda & -1 & 0 \\
-0 & -1 & 2-\lambda & 0 \\
--1 & 0 & 0 & 2-\lambda
-\end{array}\right|=(F_4+F_1\rightarrow F_4)=
-\left|
-\begin{array}{rrrr}
-2-\lambda & 0 & 0 & -1\\
-0 & 2-\lambda & -1 & 0 \\
-0 & -1 & 2-\lambda & 0 \\
-1-\lambda & 0 & 0 & 1-\lambda
-\end{array}\right|\\
-& =(C_1-C_4 \rightarrow C_1)= 
-\left|\begin{array}{rrrr}
-3-\lambda & 0 & 0 & -1\\
-0 & 2-\lambda & -1 & 0 \\
-0 & -1 & 2-\lambda & 0 \\
-0 & 0 & 0 & 1-\lambda
-\end{array}\right|=(3-\lambda)(1-\lambda)[(2-\lambda)^2-1]=(3-\lambda)^2(1-\lambda)^2.
-\end{align*}
-$$
-
-Tenemos entonces los valores propios $\lambda=1$ y $\lambda=3$ ambos con multiplicidad algebraica dos. Tenemos entonces que la matriz diagonal semejante y congruente con $A$ es 
-
-$$
-D=\begin{pmatrix}
-1 & 0 & 0 & 0\\
-0 & 1& 0 & 0\\
-0 & 0 & 3 & 0\\
-0 & 0 & 0 & 3
-\end{pmatrix},
-$$
-
-y por tanto la signatura de $A$ es $(4,0)$, por tanto definida positiva.
-
-Calculamos ahora los subespacios propios y elegimos una base ortonormal de cada uno.
-
-
-**$V_{\lambda=1}$**
-
-$$
-(A-1\cdot I)=\begin{pmatrix}
-1 & 0 & 0 & -1\\
-0 & 1 & -1 & 0 \\
-0 & -1 & 1 & 0 \\
--1 & 0 & 0 & 1
-\end{pmatrix},
-$$  
-
-nos da como cartesianas $\left\{\begin{array}{l}
-x-t=0\\
-y-z=0
-\end{array}\right.$  y una base ortogonal es $\{(1,0,0,1),(0,1,1,0)\}$.
-
-
-**$V_{\lambda=3}$**
-
-$$
-(A-1\cdot I)=\begin{pmatrix}
--1 & 0 & 0 & -1\\
-0 & -1 & -1 & 0 \\
-0 & -1 & -1 & 0 \\
--1 & 0 & 0 & -1
-\end{pmatrix},
-$$  
-
-nos da como cartesianas $\left\{\begin{array}{l}
-x+t=0\\
-y+z=0
-\end{array}\right.$  y una base ortogonal es $\{(1,0,0,-1),(0,1,-1,0)\}$.
-
-Dividiendo cada vector por su norma obtenemos una base ortonormal de vectores propios, lo que nos da la matriz ortogonal $P$:
-
-$$
-P=\begin{pmatrix}
-1/\sqrt{2} & 0 & 0 & 1/\sqrt{2}\\
-0 & 1/\sqrt{2} & 1/\sqrt{2} & 0\\
-0 & 1/\sqrt{2} & -1/\sqrt{2} & 0\\
-1/\sqrt{2} & 0 & 0 & -1/\sqrt{2}\\
-\end{pmatrix}.
-$$
-
-::::
-:::::
-
-::::: {#exr-2 .cuerpo_finito-medio}
+::::: {#exr-1 .cuerpo_finito-medio}
 
 Se considera la matriz sobre $\mathbb{Z}_5$: 
 
@@ -422,7 +313,7 @@ y la matriz de paso es la misma, $P$.
 ::::
 :::::
 
-::::: {#exr-3 .medio}
+::::: {#exr-2 .medio}
 
 Sea la matriz 
 $$
@@ -487,7 +378,7 @@ Concluimos que solo es diagonalizable en el caso $a=b=0.$
 ::::
 :::::
 
-::::: {#exr-4 .cuerpo_finito}
+::::: {#exr-3 .cuerpo_finito}
 
 Sea $f:(\mathbb{Z}_{13})^3 \longrightarrow  (\mathbb{Z}_{13})^3$ la aplicación lineal dada
 por:
@@ -715,7 +606,7 @@ Basta realizar la operación $f^{2432}(1,2,3)=A^{2432}(1,2,3)^T=A^{2431}A(1,2,3)
 :::::
 
 
-::::: {#exr-5 .cuerpo_finito-medio}
+::::: {#exr-4 .cuerpo_finito-medio}
 
 Sea $f:(\mathbb{Z}_{5})^3\longrightarrow (\mathbb{Z}_{5})^3$ la
 aplicación lineal dada por:
@@ -941,7 +832,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-6 .medio}
+::::: {#exr-5 .medio}
 
 Se considera la matriz:
 
@@ -1071,7 +962,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-7 .medio}
+::::: {#exr-6 .medio}
 Se considera la matriz:
 
 $$
@@ -1199,7 +1090,7 @@ $$
 ::::
 :::::
 
-:::::{#exr-8 .medio}
+:::::{#exr-7 .medio}
 
 Dada la matriz 
 
@@ -1285,7 +1176,7 @@ $$
 ::::
 :::::
 
-:::::{#exr-9 .basico}
+:::::{#exr-8 .basico}
 
 Dadas las matrices
 
@@ -1328,7 +1219,7 @@ Como los conjuntos de valores propios de ambas son distintos, entonces no pueden
 ::::
 :::::
 
-:::::{#exr-11 .basico}
+:::::{#exr-9 .basico}
 
 Dada la matriz
 
@@ -1371,7 +1262,7 @@ Como los valores propios de $A$ son 1, -2 y 3, su forma diagonal (si fuera diago
 ::::
 :::::
 
-:::::{#exr-12 .medio}
+:::::{#exr-10 .medio}
 
 Dada la matriz
 
@@ -1527,7 +1418,7 @@ $$
 ::::
 :::::
 
-:::::{#exr-13 .medio}
+:::::{#exr-11 .medio}
 
 En $\mathbb{R}^{4}$ se considera el endomorfismo dado por
 $$
@@ -1646,7 +1537,7 @@ Como la suma de las multiplicidades algebraicas es 4 y cada una coincide con la 
 ::::
 :::::
 
-:::::{#exr-14 .medio}
+:::::{#exr-12 .medio}
 
 Dada la matriz
 
@@ -1852,7 +1743,7 @@ $$
 ::::
 :::::
 
-:::::{#exr-15 .medio}
+:::::{#exr-13 .medio}
 
 Dada la matriz
 
@@ -2010,7 +1901,7 @@ $$
 ::::
 :::::
 
-:::::{#exr-16 .medio}
+:::::{#exr-14 .medio}
 
 Se considera la matriz:
 $$
