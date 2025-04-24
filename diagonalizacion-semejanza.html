@@ -2368,6 +2368,108 @@ P=\begin{pmatrix}
 </div>
 </div>
 </div>
+<div id="exr-15" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 15</strong></span> Para la matriz simétrica <span class="math display">\[
+\begin{pmatrix}
+2 &amp; 1 \\ 1 &amp; 2
+\end{pmatrix}
+\]</span></p>
+<p>determinar su forma diagonal y una matriz de paso <span class="math inline">\(P\)</span> tal que <span class="math inline">\(D=P^{-1}AP=P^tAP\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculamos su polinomio característico, que nos permitirá obtener los valores propios</p>
+<p><span class="math display">\[
+\begin{vmatrix}
+2-\lambda &amp; 1 \\ 1 &amp; 2-\lambda
+\end{vmatrix}= (2-\lambda)^2-1= \lambda^2-4\lambda+3= (\lambda-3)(\lambda-1)
+\]</span></p>
+<p>Calculamos cada uno de los subespacios propios:</p>
+<p><span class="math inline">\(\boxed{V_{\lambda=3}}\)</span></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+2-3 &amp; 1 \\ 1 &amp; 2-3
+\end{pmatrix}=
+\begin{pmatrix}
+-1 &amp; 1 \\ 1 &amp; -1
+\end{pmatrix}
+\sim_f \begin{pmatrix}
+1 &amp; -1 \\ 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>así que la ecuación cartesiana es <span class="math inline">\(x-y=0\)</span> y una base, por ejemplo, el vector <span class="math inline">\(\{(1,1)\}\)</span>.</p>
+<p><span class="math inline">\(\boxed{V_{\lambda=1}}\)</span></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+2-1 &amp; 1 \\ 1 &amp; 2-1
+\end{pmatrix}=
+\begin{pmatrix}
+1 &amp; 1 \\ 1 &amp; 1
+\end{pmatrix}
+\sim_f \begin{pmatrix}
+1 &amp; 1 \\ 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>así que la ecuación cartesiana es <span class="math inline">\(x+y=0\)</span> y una base, por ejemplo, el vector <span class="math inline">\(\{(1,-1)\}\)</span>. Por tanto</p>
+<p><span class="math display">\[
+D=\begin{pmatrix}
+3 &amp; 0 \\ 0 &amp; 1
+\end{pmatrix}  \hspace{2cm} P=\begin{pmatrix}
+1 &amp; 1 \\ -1 &amp; 1
+\end{pmatrix}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-16" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 16</strong></span> Determinar para qué valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> es diagonalizable por semejanza la matriz <span class="math display">\[
+\begin{pmatrix}
+a &amp; 1 \\ 0 &amp; b
+\end{pmatrix}
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculamos el polinomio característico que nos permite obtener los valores propios:</p>
+<p><span class="math display">\[
+\begin{vmatrix}
+a-\lambda &amp; 1 \\ 0 &amp; b-\lambda
+\end{vmatrix}= (a-\lambda)(b-\lambda)
+\]</span></p>
+<p>Cuando <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son <b>distintos</b>, entonces cada uno de ellos tiene multiplicidad algeraica 1 y, por tanto, también multiplicidad geométrica 1. Eso nos asegura que la matriz es diagonalizable por semejanza. En el caso <span class="math inline">\(a=b\)</span>, entonces tenemos un único valor propio con multiplicidad algebraica 2, calculamos su multiplicidad geométrica, que es la dimensión del subespacio propio. Calculamos las ecuaciones cartesianas de <span class="math inline">\(V_{\lambda=a}\)</span></p>
+<p><span class="math display">\[
+A-aI=
+\begin{pmatrix}
+a-a &amp; 1 \\ 0 &amp; a-a
+\end{pmatrix}=
+\begin{pmatrix}
+0 &amp; 1 \\ 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>luego obtenemos la ecuación <span class="math inline">\(y=0\)</span>, por tanto <span class="math inline">\(dim \, V_{\lambda=a}=dim\, \mathbb{R}^2 - \mbox{ nº mínimo de ecuaciones} =1\)</span> con lo que no coincide con la algebraica y por tanto la matriz <b>no</b> es diagonalizable por semejanza.</p>
+</div>
+</div>
+</div>
+</div>
 
 
 

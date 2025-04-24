@@ -1794,64 +1794,70 @@ Solución
 \]</span></p>
 <p>Al estar trabajando en <span class="math inline">\(\mathbb{Z}_3\)</span>, <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> pueden tomar solo 3 valores posibles.</p>
 <p>Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo, si <span class="math inline">\(a=0\)</span>, entonces <span class="math inline">\(|A|= b\)</span>; si <span class="math inline">\(a=1\)</span>, <span class="math inline">\(|A|= 2b+2\)</span>; si <span class="math inline">\(a=2\)</span>, <span class="math inline">\(|A|= 1\)</span>.</p>
-<table class="default">
-<tbody><tr>
+<div class="table_d_4x4">
+<table>
+<thead>
+<tr>
+<th>
+<span class="math inline">\(b\setminus a\)</span>
+</th>
+<th>
+<span class="math inline">\(0\)</span>
+</th>
+<th>
+<span class="math inline">\(1\)</span>
+</th>
+<th>
+<span class="math inline">\(2\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+<span class="math inline">\(0\)</span>
+</th>
 <td>
-<span class="math inline">\(_b \setminus  ^a\)</span>
+<span class="math inline">\(0\)</span>
 </td>
 <td>
-0
+<span class="math inline">\(2\)</span>
 </td>
 <td>
-1
-</td>
-<td>
-2
+<span class="math inline">\(1\)</span>
 </td>
 </tr>
 <tr>
+<th>
+<span class="math inline">\(1\)</span>
+</th>
 <td>
-0
+<span class="math inline">\(1\)</span>
 </td>
 <td>
-0
+<span class="math inline">\(1\)</span>
 </td>
 <td>
-2
-</td>
-<td>
-1
-</td>
-</tr>
-<tr>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
+<span class="math inline">\(1\)</span>
 </td>
 </tr>
 <tr>
+<th>
+<span class="math inline">\(2\)</span>
+</th>
 <td>
-2
+<span class="math inline">\(2\)</span>
 </td>
 <td>
-2
+<span class="math inline">\(0\)</span>
 </td>
 <td>
-0
-</td>
-<td>
-1
+<span class="math inline">\(1\)</span>
 </td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>De la observación de la tabla anterior deducimos que <span class="math inline">\(\operatorname{rg}(A)=3\)</span> para 7 de los 9 casos, siempre que el determinante es distinto de <span class="math inline">\(0\)</span>. Ahora, estudiamos los dos casos particulares que nos faltan.</p>
 <p>Para <span class="math inline">\(a=0=b\)</span>:</p>
 <p><span class="math display">\[
@@ -1928,28 +1934,36 @@ Solución
 <p>Rango. Por el cálculo del determinante, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda\in \{0,1,3\}\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales.</p>
 <p>Para <span class="math inline">\(\lambda=0\)</span>:</p>
 <p><span class="math display">\[
-A=\left( \begin{array}{cccc}
+A=\left(\begin{array}{cccc}
 3 &amp; 1 &amp; 1 &amp; 0\\
 5 &amp;0 &amp; 0 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; -1 &amp; -1 &amp; 2
-\end{array}\right)\sim_{c}\left( \begin{array}{cccc}
-3 &amp; 1 &amp; 0 &amp; 0\\
+\end{array}\right)\sim_{f}\left(\begin{array}{cccc}
 5 &amp;0 &amp; 0 &amp; 0\\
+3 &amp; 1 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
-0 &amp; -1 &amp; 0 &amp; 2
-\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-5 &amp; 0 &amp; 0 &amp; 0\\
-3 &amp;1 &amp; 0 &amp; 0\\
-0 &amp; -1 &amp; 0 &amp; 2\\
-0 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-5 &amp; 0 &amp; 0 &amp; 0\\
-3 &amp;1 &amp; 0 &amp; 0\\
-0 &amp; -1 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 1
+0 &amp; -1 &amp; -1 &amp; 2
+\end{array}\right)\sim_{f}\left(\begin{array}{cccc}
+1 &amp;0 &amp; 0 &amp; 0\\
+3 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2
 \end{array}\right)
-\]</span> luego el rango es 3.</p>
+\]</span> <span class="math display">\[
+\sim_{f}\left(\begin{array}{cccc}
+1 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2
+\end{array}\right)\sim_{f}\left(\begin{array}{cccc}
+1 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0  
+\end{array}\right)
+\]</span></p>
+<p>luego el rango es 3.</p>
 <p>Para <span class="math inline">\(\lambda=1\)</span>:</p>
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
@@ -1958,17 +1972,30 @@ A=\left( \begin{array}{cccc}
 0 &amp; -1 &amp; -1 &amp; 1\\
 0 &amp; -1 &amp; -1 &amp; 1
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+5 &amp;-1 &amp; 0 &amp; 0\\
 2 &amp; 1 &amp; 1 &amp; 0\\
-5 &amp; -1 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; -1 &amp; -1 &amp; 1
+0 &amp; -1 &amp; -1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-0 &amp; 0 &amp; 0 &amp; 0\\
-5 &amp; -1 &amp; 0 &amp; 0\\
-2 &amp; 1 &amp; 1 &amp; 0\\
-0 &amp; -1 &amp; -1 &amp; 1
+1 &amp; -1/5 &amp; 0 &amp; 0\\
+0 &amp; 7/5 &amp; 1 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_{f}
+\]</span> <span class="math display">\[
+\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 1/7 &amp; 0\\
+0 &amp; 1 &amp; 5/7 &amp; 0\\
+0 &amp; 0 &amp; -2/7 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 1/2\\
+0 &amp; 1 &amp; 0 &amp; 5/2\\
+0 &amp; 0 &amp; 1 &amp; -7/2\\
+0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
-\]</span> que tiene rango 3.</p>
+\]</span></p>
+<p>que tiene rango 3.</p>
 <p>Para <span class="math inline">\(\lambda=3\)</span>:</p>
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
@@ -1980,19 +2007,28 @@ A=\left( \begin{array}{cccc}
 0 &amp; 1 &amp; 1 &amp; 0\\
 5 &amp; -3 &amp; 0 &amp; 0\\
 0 &amp; -3 &amp; -3 &amp; 1\\
-0 &amp; -4 &amp; -4 &amp; 0
+0 &amp; 2 &amp; 2 &amp; 0
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
 5 &amp; -3 &amp; 0 &amp; 0\\
 0 &amp; 1 &amp; 1 &amp; 0\\
 0 &amp; -3 &amp; -3 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p><span class="math display">\[
+\sim_{f}\left( \begin{array}{cccc}
+1 &amp; -3/5 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-5 &amp; -3 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; 3/5 &amp; 0\\
 0 &amp; 1 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
-\]</span> que tiene rango 3.</p>
+\]</span></p>
+<p>que tiene rango 3.</p>
 </li>
 <li>
 <p>Sistema de ecuaciones.</p>
@@ -2013,9 +2049,9 @@ A=\left( \begin{array}{cccc}
 0 &amp; -1 &amp; -1 &amp; 1\\
 0 &amp; -1 &amp; -1 &amp; 1
 \end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 &amp; 0 &amp; 0 &amp; 1\\
-5 &amp; -1 &amp; 0 &amp; 0\\
-0 &amp; -1 &amp; -1 &amp; 1\\
+1 &amp; 0 &amp; 0 &amp; 1/2\\
+0 &amp; 1 &amp; 0 &amp; 5/2\\
+0 &amp; 0 &amp; 1 &amp; -7/2\\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right)
 \]</span></p>
@@ -2028,10 +2064,10 @@ A=\left( \begin{array}{cccc}
 0 &amp; -3 &amp; -3 &amp; 1\\
 0 &amp; -1 &amp; -1 &amp; -1
 \end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+1 &amp; 0 &amp; 3/5 &amp; 0\\
 0 &amp; 1 &amp; 1 &amp; 0\\
-5 &amp; -3 &amp; 0 &amp; 0\\
-0 &amp; -3 &amp; -3 &amp; 1\\
-0 &amp; 0 &amp; 0 &amp; -1
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right).
 \]</span></p>
 y de nuevo aparece la ecuación <span class="math inline">\(0=1\)</span> con lo que en este caso es incompatible.
@@ -2103,8 +2139,8 @@ A=\left( \begin{array}{cccc}
 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 2 &amp; 2 &amp; 2
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-0 &amp; 1 &amp; 1 &amp; 0\\
 1 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1 &amp; 0\\
 0 &amp; 0 &amp; 0 &amp; 1\\
 0 &amp; 0 &amp; 0 &amp; 2
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
@@ -2118,14 +2154,29 @@ A=\left( \begin{array}{cccc}
 <p><span class="math display">\[
 A=\left( \begin{array}{cccc}
 2 &amp; 1 &amp; 1 &amp; 0\\
-2 &amp;2 &amp; 0 &amp; 0\\
+2 &amp; 2 &amp; 0 &amp; 0\\
 0 &amp; 2 &amp; 2 &amp; 1\\
 0 &amp; 2 &amp; 2 &amp; 1
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-2 &amp; 1 &amp; 1 &amp; 0\\
-0 &amp;1 &amp; 2 &amp; 0\\
+1 &amp; 2 &amp; 2 &amp; 0\\
+0 &amp; 1 &amp; 2 &amp; 0\\
 0 &amp; 2 &amp; 2 &amp; 1\\
-0 &amp; 0 &amp; 0 &amp; 0
+0 &amp; 2 &amp; 2 &amp; 1  
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 1 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 2\\
+0 &amp; 1 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 1 &amp; 1
+\end{array}\right)\sim_{c}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0
 \end{array}\right)
 \]</span> que tiene rango 3.</p>
 </li>
@@ -2141,29 +2192,22 @@ A=\left( \begin{array}{cccc}
 \end{array}\right)
 \]</span></p>
 <p>Como aparece la ecuación <span class="math inline">\(2=0\)</span>, el sistema es entonces también incompatible.</p>
-<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[
-\left( \begin{array}{ccc|c}
+Para <span class="math inline">\(\lambda=1\)</span>: $$ A=(
+<span class="math display">\[\begin{array}{ccc|c}
 2 &amp; 1 &amp; 1 &amp; 0\\
 2 &amp; 2 &amp; 0 &amp; 0\\
 0 &amp; 2 &amp; 2 &amp; 1\\
 0 &amp; 2 &amp; 2 &amp; 1
-\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 &amp; 1 &amp; 1 &amp; 0\\
-2 &amp; 2 &amp; 0 &amp; 0\\
-0 &amp; 2 &amp; 2 &amp; 1\\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 &amp; 1 &amp; 1 &amp; 0\\
-0 &amp; 1 &amp; 2 &amp; 0\\
-0 &amp; 2 &amp; 2 &amp; 1\\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 &amp; 1 &amp; 1 &amp; 0\\
-0 &amp; 1 &amp; 2 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 1\\
-0 &amp; 0 &amp; 0 &amp; 0
-\end{array}\right)
-\]</span></p>
+
+\end{array}\]</span>
+)_{c}(
+<span class="math display">\[\begin{array}{ccc|c}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{array}\]</span>
+<p>) $$</p>
 en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es compatible determinado.
 </li>
 </ol>
@@ -4431,6 +4475,574 @@ det(A)=
 \end{array}\right|=
 -6\neq 0.  
 \]</span> Por lo tanto el rango es 3, al igual que el de <span class="math inline">\(I_3\)</span>. Las matrices son equivalentes y por lo tanto <b>sí</b> existen <span class="math inline">\(P\)</span> y <span class="math inline">\(Q\)</span> regulares tales que <span class="math inline">\(Q^{-1}AP=I_3\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-37" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 37</strong></span> Calcula el determinante</p>
+<p><span class="math display">\[
+\begin{vmatrix}
+1 &amp; 12 &amp; 123 &amp; 1234 \\
+2 &amp; 23 &amp; 234 &amp; 2341 \\
+3 &amp; 34 &amp; 341 &amp; 3412 \\
+4 &amp; 41 &amp; 412 &amp; 4123
+\end{vmatrix}
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A cada columna le restamos la anterior multiplicada por <span class="math inline">\(10\)</span> <span class="math display">\[
+\begin{vmatrix}
+1 &amp; 12 &amp; 123 &amp; 1234 \\
+2 &amp; 23 &amp; 234 &amp; 2341 \\
+3 &amp; 34 &amp; 341 &amp; 3412 \\
+4 &amp; 41 &amp; 412 &amp; 4123
+\end{vmatrix}=
+\begin{vmatrix}
+1 &amp; 12 &amp; 123 &amp; 4 \\
+2 &amp; 23 &amp; 234 &amp; 1 \\
+3 &amp; 34 &amp; 341 &amp; 2 \\
+4 &amp; 41 &amp; 412 &amp; 3
+\end{vmatrix}=
+\]</span></p>
+<p><span class="math display">\[
+=\begin{vmatrix}
+1 &amp; 2 &amp; 3 &amp; 4 \\
+2 &amp; 3 &amp; 4 &amp; 1 \\
+3 &amp; 4 &amp; 1 &amp; 2 \\
+4 &amp; 1 &amp; 2 &amp; 3
+\end{vmatrix}=\begin{vmatrix}
+1 &amp; 2 &amp; 3 &amp; 4 \\
+0 &amp; -1 &amp; -2 &amp; -7 \\
+0 &amp; -2 &amp; -8 &amp; -10 \\
+0 &amp; -7 &amp; -10 &amp; -13
+\end{vmatrix}=160
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-38" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 38</strong></span> Calcula el determinante <span class="math display">\[
+\left|
+\begin{array}{rrrr}
+1 &amp; 1/2 &amp; 1/3 &amp; 1/5\\
+-1 &amp; 1/2 &amp; -1/3 &amp; -1/5\\
+1 &amp; 1/2 &amp; 4/3 &amp; 1/5\\
+2 &amp; 1 &amp; 2/3 &amp; 11/5\\
+\end{array}
+\right|=
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Utilizamos la propiedad que asegura que al multiplicar una fila o columna por un número el determinante queda multiplicado por ese número: <span class="math display">\[
+\left|
+\begin{array}{rrrr}
+1 &amp; 1/2 &amp; 1/3 &amp; 1/5\\
+-1 &amp; 1/2 &amp; -1/3 &amp; -1/5\\
+1 &amp; 1/2 &amp; 4/3 &amp; 1/5\\
+2 &amp; 1 &amp; 2/3 &amp; 11/5\\
+\end{array}
+\right|=
+\]</span></p>
+<p><span class="math display">\[
+=(\frac{1}{2})(\frac{1}{3})(\frac{1}{5})\left|
+\begin{array}{rrrr}
+1 &amp; 1 &amp; 1 &amp; 1\\
+-1 &amp; 1 &amp; -1 &amp; -1\\
+1 &amp; 1 &amp; 4 &amp; 1\\
+2 &amp; 2 &amp; 2 &amp; 11\\
+\end{array}
+\right|=\frac{1}{2\cdot 3\cdot 5}\left|
+\begin{array}{rrrr}
+1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 3 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 9\\
+\end{array}
+\right|=\frac{9}{5}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-39" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 39</strong></span> Calcula el determinante <span class="math display">\[
+\left|
+\begin{array}{rrrr}
+25 &amp; 31 &amp; 17 &amp; 43\\
+75 &amp; 94 &amp; 53 &amp; 132\\
+75 &amp; 94 &amp; 54 &amp; 134 \\
+25 &amp; 32 &amp; 20 &amp; 48
+\end{array}
+\right|
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\left|
+\begin{array}{rrrr}
+25 &amp; 31 &amp; 17 &amp; 43\\
+75 &amp; 94 &amp; 53 &amp; 132\\
+75 &amp; 94 &amp; 54 &amp; 134 \\
+25 &amp; 32 &amp; 20 &amp; 48
+\end{array}
+\right|=
+\left|
+\begin{array}{rrrr}
+25 &amp; 31 &amp; 17 &amp; 43\\
+0 &amp; 1 &amp; 2 &amp; 3\\
+0 &amp; 1 &amp; 3 &amp; 5 \\
+0 &amp; 1 &amp; 3 &amp; 5
+\end{array}
+\right|=
+\]</span> <span class="math display">\[=\left|
+\begin{array}{rrrr}
+25 &amp; 31 &amp; 17 &amp; 43\\
+0 &amp; 1 &amp; 2 &amp; 3\\
+0 &amp; 1 &amp; 3 &amp; 5 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right|=0
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-40" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 40</strong></span> Calcula el determinante <span class="math display">\[
+\begin{vmatrix}
+1 &amp; x &amp; x &amp; x\\
+1 &amp; a &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; b &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; c
+\end{vmatrix}
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Desarrollamos el determinante por la primera fila</p>
+<p><span class="math display">\[
+\begin{vmatrix}
+1 &amp; x &amp; x &amp; x\\
+1 &amp; a &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; b &amp; 0\\
+1 &amp; 0 &amp; 0 &amp; c
+\end{vmatrix}=\begin{vmatrix}
+a &amp; 0 &amp; 0\\
+0 &amp; b &amp; 0\\
+0 &amp; 0 &amp; c
+\end{vmatrix}-x\begin{vmatrix}
+1 &amp; 0 &amp; 0\\
+1 &amp; b &amp; 0\\
+1 &amp; 0 &amp; c
+\end{vmatrix}+
+\]</span></p>
+<p><span class="math display">\[
++x\begin{vmatrix}
+1 &amp; a &amp; 0\\
+1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; c
+\end{vmatrix}-x\begin{vmatrix}
+1 &amp; a &amp; 0\\
+1 &amp; 0 &amp; b\\
+1 &amp; 0 &amp; 0
+\end{vmatrix}=
+\]</span> <span class="math display">\[
+=abc-x(ab+ac+bc)
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-41" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 41</strong></span> Calcula el determinante <span class="math display">\[
+\begin{vmatrix}
+-4 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; -4 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; -4 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; -4 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; -4
+\end{vmatrix}
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{vmatrix}
+-4 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; -4 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; -4 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; -4 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; -4
+\end{vmatrix}=\mbox{ (sumando a la última fila cada una de las anteriores) } =
+\]</span> <span class="math display">\[
+=\begin{vmatrix}
+-4 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; -4 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; -4 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; -4 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{vmatrix}=0
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-42" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 42</strong></span> Calcula el valor del Determinante de Vandermonde de orden 3.</p>
+<p><b>Determinante de Vandermonde</b></p>
+<p>Dados <span class="math inline">\(n\)</span> números <span class="math inline">\(a_1,a_2,\dots ,a_n\in \mathbb{K}\)</span>, se define la Matriz de Vandermonde</p>
+<p><span class="math display">\[
+V(a_1,\dots ,a_n)=\begin{pmatrix}
+1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp;a_1^{n-1}\\
+1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp;a_2^{n-1}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; a_n &amp; a_n^2 &amp; \cdots &amp;a_n^{n-1}\\
+\end{pmatrix}
+\]</span></p>
+<p><b>Observación</b> A veces encontramos que la matriz de Vandermonde es la traspuesta de la que hemos definido. El determinante será, en cualquier caso, el mismo puesto que para cualquier matriz cuadrada <span class="math inline">\(det(A)=det(A^t)\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dados 3 números cualesquiera <span class="math inline">\(a,b,c\)</span> tendríamos que calcular</p>
+<p><span class="math display">\[
+|V(a,b,c)|=\begin{vmatrix}
+1 &amp; a &amp; a^2\\
+1 &amp; b &amp; b^2\\
+1 &amp; c &amp; c^2
+\end{vmatrix}
+\]</span></p>
+<p>Para ello realizaremos las operaciones elementales adecuadas que nos permitan facilitar el cálculo.</p>
+<p><span class="math display">\[
+|V(a,b,c)|=\begin{vmatrix}
+1 &amp; a &amp; a^2\\
+1 &amp; b &amp; b^2\\
+1 &amp; c &amp; c^2
+\end{vmatrix}= \begin{vmatrix}
+1 &amp; a &amp; a^2\\
+0 &amp; b-a &amp; b^2-a^2\\
+0 &amp; c-a &amp; c^2-a^2
+\end{vmatrix}=
+\]</span></p>
+<p>desarrollando por la primera columna:</p>
+<p><span class="math display">\[
+\begin{vmatrix}
+b-a &amp; b^2-a^2\\
+c-a &amp; c^2-a^2
+\end{vmatrix}=
+\]</span></p>
+<p>y ahora observamos que en la primera fila todos los elementos son múltiplos de <span class="math inline">\((b-a)\)</span>, ya que <span class="math inline">\(b^2-a^2=(b-a)(b+a)\)</span>, así que usando las propiedades de los determinantes</p>
+<p><span class="math display">\[
+=(b-a)(c-a)\begin{vmatrix}
+1 &amp; b+a\\
+1 &amp; c+a
+\end{vmatrix}=(b-a)(c-a)(c+a-(b+a))=
+\]</span> <span class="math display">\[
+=(b-a)(c-a)(c-b)
+\]</span></p>
+<p>Así que <span class="math display">\[
+|V(a,b,c)|=(b-a)(c-a)(c-b)
+\]</span></p>
+<p><b> El determinante de Vandermonde de orden 3 es distinto de cero si, y solo si, los tres elementos que lo definen son distintos entre sí. </b></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-43" class="avanzado theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 43</strong></span> Calcula el valor del Determinante de Vandermonde de orden 4.</p>
+<p><b>Determinante de Vandermonde</b></p>
+<p>Dados <span class="math inline">\(n\)</span> números <span class="math inline">\(a_1,a_2,\dots ,a_n\in \mathbb{K}\)</span>, se define la Matriz de Vandermonde</p>
+<p><span class="math display">\[
+V(a_1,\dots ,a_n)=\begin{pmatrix}
+1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp;a_1^{n-1}\\
+1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp;a_2^{n-1}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; a_n &amp; a_n^2 &amp; \cdots &amp;a_n^{n-1}\\
+\end{pmatrix}
+\]</span></p>
+<p><b>Observación</b> A veces encontramos que la matriz de Vandermonde es la traspuesta de la que hemos definido. El determinante será, en cualquier caso, el mismo.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><b>Orden 4</b></p>
+<p>Dados <span class="math inline">\(a,b,c,d\)</span> tenemos que calcular <span class="math display">\[
+|V(a,b,c,d)|=\begin{vmatrix}
+1 &amp; a &amp; a^2 &amp; a^3\\
+1 &amp; b &amp; b^2 &amp; b^3\\
+1 &amp; c &amp; c^2 &amp; c^3\\
+1 &amp; d &amp; d^2 &amp; d^3\\
+\end{vmatrix}
+\]</span></p>
+<p>Realizaremos operaciones elementales adecuadas que nos permitan facilitar el cálculo.</p>
+<p><span class="math display">\[
+|V(a,b,c,d)|=\begin{vmatrix}
+1 &amp; a &amp; a^2 &amp; a^3\\
+1 &amp; b &amp; b^2 &amp; b^3\\
+1 &amp; c &amp; c^2 &amp; c^3\\
+1 &amp; d &amp; d^2 &amp; d^3\\
+\end{vmatrix}=\begin{vmatrix}
+1 &amp; a &amp; a^2 &amp; a^3\\
+0 &amp; b-a &amp; b^2-a^2 &amp; b^3-a^3\\
+0 &amp; c-a &amp; c^2-c^2 &amp; c^3-a^3\\
+0 &amp; d-a &amp; d^2-a^2 &amp; d^3-a^3\\
+\end{vmatrix}
+\]</span></p>
+<p>donde a cada fila hemos restado la primera y ahora desarrollamos por la primera columna.</p>
+<p><span class="math display">\[
+|V|=\begin{vmatrix}
+b-a &amp; b^2-a^2 &amp; b^3-a^3\\
+c-a &amp; c^2-c^2 &amp; c^3-a^3\\
+d-a &amp; d^2-a^2 &amp; d^3-a^3\\
+\end{vmatrix}
+\]</span></p>
+<p>Observamos que en la primera fila todos los elementos son múltiplos de <span class="math inline">\((b-a)\)</span>, ya que <span class="math inline">\(b^2-a^2=(b-a)(b+a)\)</span> y <span class="math inline">\(b^3-a^3=(b-a)(b^2+ab+a^2)\)</span>, y lo mismo podemos razonar en las filas siguientes, así que usando las propiedades de los determinantes <span class="math display">\[
+|V|=(b-a)(c-a)(d-a)\begin{vmatrix}
+1 &amp; b+a &amp; b^2+ab+a^2\\
+1 &amp; c+a &amp; c^2+ac+a^2\\
+1 &amp; d+a &amp; d^2+ad+a^2\\
+\end{vmatrix}
+\]</span></p>
+<p>De nuevo realizamos operaciones elementales por filas para conseguir ceros en la primera columna.</p>
+<p><span class="math display">\[
+|V|=(b-a)(c-a)(d-a)\begin{vmatrix}
+1 &amp; b+a &amp; b^2+ab+a^2\\
+0 &amp; c-b &amp; (c-b)(c+b+a)\\
+0 &amp; d-b &amp; (d-b)(d+b+a)\\
+\end{vmatrix}
+\]</span></p>
+<p>donde hemos usado <span class="math display">\[
+c^2+ac+a^2 - (b^2+ab+a^2)=c^2-b^2+a(c-b)=(c-b)(c+b+a)
+\]</span></p>
+<p>y de nuevo desarrollando por la primera columna: <span class="math display">\[
+|V|=(b-a)(c-a)(d-a)\begin{vmatrix}
+c-b &amp; (c-b)(c+b+a)\\
+d-b &amp; (d-b)(d+b+a)\\
+\end{vmatrix}
+\]</span></p>
+<p>Observamos que también podemos extraer los términos <span class="math inline">\((c-b)\)</span> y <span class="math inline">\((d-b)\)</span></p>
+<p><span class="math display">\[
+|V|=(b-a)(c-a)(d-a)(c-b)(d-b)\begin{vmatrix}
+1 &amp; (c+b+a)\\
+1 &amp; (d+b+a)\\
+\end{vmatrix}=
+\]</span> <span class="math display">\[
+=(b-a)(c-a)(d-a)(c-b)(d-b)\begin{vmatrix}
+1 &amp; (c+b+a)\\
+0 &amp; (d-c)\\
+\end{vmatrix}
+\]</span></p>
+<p>Así que</p>
+<p><span class="math display">\[
+|V(a,b,c,d)|=(b-a)(c-a)(d-a)(c-b)(d-b)(d-c)
+\]</span></p>
+<p><b>El determinante de Vandermonde de orden 4 es distinto de cero si, y solo si, los 4 elementos que lo definen son distintos entre sí.</b></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-44" class="medio-cuerpos_finitos theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 44</strong></span> &nbsp;</p>
+<ol type="a">
+<li>
+<p>Calcula el determinante de la matriz con coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>:</p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+3-\lambda &amp; 1 &amp; 1 &amp; 0\\
+5 &amp;-\lambda &amp; 0 &amp; 0\\
+0 &amp; -\lambda &amp; -\lambda &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2-\lambda
+\end{array}\right)
+\]</span></p>
+</li>
+<li>
+Calcula el rango de la matriz <span class="math inline">\(A\)</span> según los valores de <span class="math inline">\(\lambda\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Z}_3\)</span>.
+</li>
+<li>
+Discute el sistema de ecuaciones con matriz ampliada <span class="math inline">\(A\)</span> considerando sus coeficientes en <span class="math inline">\(\mathbb{Q}\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Para calcular el determinante más fácilmente realizamos una operación elemental de tipo 3: a la segunda columna le restamos la tercera</p>
+<p><span class="math display">\[
+|A|=\left| \begin{array}{cccc}
+3-\lambda &amp; 1 &amp; 1 &amp; 0\\
+5 &amp;-\lambda &amp; 0 &amp; 0\\
+0 &amp; -\lambda &amp; -\lambda &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2-\lambda
+\end{array}\right|=\left| \begin{array}{cccc}
+3-\lambda &amp; 0 &amp; 1 &amp; 0\\
+5 &amp;-\lambda &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; -\lambda &amp; 1\\
+0 &amp; 0 &amp; -1 &amp; 2-\lambda
+\end{array}\right|=(-\lambda)\left| \begin{array}{ccc}
+3-\lambda &amp;  1 &amp; 0\\
+0 &amp;  -\lambda &amp; 1\\
+0 &amp;  -1 &amp; 2-\lambda
+\end{array}\right|
+\]</span></p>
+<p>donde hemos desarrollado por la segunda columna, y desarrollando ahora por la primera columna <span class="math display">\[
+|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
+\]</span></p>
+<p>y este resultado es válido en cualquier cuerpo.</p>
+</li>
+<li>
+<p>Puesto que el cálculo del determinante es válido en <span class="math inline">\(\mathbb{Z}_3\)</span>, cuando <span class="math inline">\(\lambda=2\)</span> la matriz tiene rango 4 (observamos que <span class="math inline">\(2\)</span> no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de <span class="math inline">\(0\)</span>); en cambio, para los casos <span class="math inline">\(\lambda=0,1\)</span> (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales:</p>
+<p><span class="math inline">\(\boxed{\lambda=0}\)</span></p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 2
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp;0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 2
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp;1 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span> luego el rango es 3.</p>
+<p><span class="math inline">\(\boxed{\lambda=1}\)</span></p>
+<p><span class="math display">\[
+A=\left( \begin{array}{cccc}
+2 &amp; 1 &amp; 1 &amp; 0\\
+2 &amp;2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 2 &amp; 2 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+2 &amp; 1 &amp; 1 &amp; 0\\
+0 &amp;1 &amp; 2 &amp; 0\\
+0 &amp; 2 &amp; 2 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+que tiene rango 3.
+</li>
+<li>
+<p>Como la matriz ampliada tiene rango 4 para <span class="math inline">\(\lambda\not = 0,1,3\)</span>, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es <b>incompatible</b>. Nos queda estudiar los casos particulares <span class="math inline">\(\lambda=0,1,3\)</span>:</p>
+<p><span class="math inline">\(\boxed{\lambda=0}\)</span> <span class="math display">\[
+\left( \begin{array}{ccc|c}
+3 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 2
+\end{array}\right)
+\]</span></p>
+<p>Como aparece la ecuación <span class="math inline">\(0=1\)</span> entonces también es <b>incompatible</b>.</p>
+<p><span class="math inline">\(\boxed{\lambda=1}\)</span> <span class="math display">\[
+\left( \begin{array}{ccc|c}
+2 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; 1
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 &amp; 0 &amp; 0 &amp; 1\\
+5 &amp; -1 &amp; 0 &amp; 0\\
+0 &amp; -1 &amp; -1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es <b>compatible determinado</b>.</p>
+<p><span class="math inline">\(\boxed{\lambda=3}\)</span> <span class="math display">\[
+\left( \begin{array}{ccc|c}
+0 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -3 &amp; 1\\
+0 &amp; -1 &amp; -1 &amp; -1
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+0 &amp; 1 &amp; 1 &amp; 0\\
+5 &amp; -3 &amp; 0 &amp; 0\\
+0 &amp; -3 &amp; -3 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{array}\right)
+\]</span></p>
+y de nuevo aparece la ecuación <span class="math inline">\(0=1\)</span> con lo que en este caso es <b>incompatible</b>.
+</li>
+</ol>
 </div>
 </div>
 </div>
