@@ -1682,28 +1682,37 @@ Para $\lambda=0$:
 
 
 $$
-A=\left( \begin{array}{cccc}
+A=\left(\begin{array}{cccc}
 3 & 1 & 1 & 0\\
 5 &0 & 0 & 0\\
 0 & 0 & 0 & 1\\
 0 & -1 & -1 & 2 
-\end{array}\right)\sim_{c}\left( \begin{array}{cccc}
-3 & 1 & 0 & 0\\
+\end{array}\right)\sim_{f}\left(\begin{array}{cccc}
 5 &0 & 0 & 0\\
+3 & 1 & 1 & 0\\
 0 & 0 & 0 & 1\\
-0 & -1 & 0 & 2 
-\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-5 & 0 & 0 & 0\\
-3 &1 & 0 & 0\\
-0 & -1 & 0 & 2\\
-0 & 0 & 0 & 1 
-\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-5 & 0 & 0 & 0\\
-3 &1 & 0 & 0\\
-0 & -1 & 0 & 0\\
-0 & 0 & 0 & 1 
+0 & -1 & -1 & 2 
+\end{array}\right)\sim_{f}\left(\begin{array}{cccc}
+1 &0 & 0 & 0\\
+3 & 1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & -1 & -1 & 2 
 \end{array}\right)
-$$ 
+$$
+$$
+\sim_{f}\left(\begin{array}{cccc}
+1 &0 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & -1 & -1 & 2 
+\end{array}\right)\sim_{f}\left(\begin{array}{cccc}
+1 &0 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0  
+\end{array}\right)
+$$
+
 luego el rango es 3. 
 
 
@@ -1716,17 +1725,31 @@ A=\left( \begin{array}{cccc}
 0 & -1 & -1 & 1\\
 0 & -1 & -1 & 1 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+5 &-1 & 0 & 0\\
 2 & 1 & 1 & 0\\
-5 & -1 & 0 & 0\\
-0 & 0 & 0 & 0\\
-0 & -1 & -1 & 1 
+0 & -1 & -1 & 1\\
+0 & 0 & 0 & 0 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-0 & 0 & 0 & 0\\
-5 & -1 & 0 & 0\\
-2 & 1 & 1 & 0\\
-0 & -1 & -1 & 1 
+1 & -1/5 & 0 & 0\\
+0 & 7/5 & 1 & 0\\
+0 & -1 & -1 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)\sim_{f}
+$$
+$$
+\left( \begin{array}{cccc}
+1 & 0 & 1/7 & 0\\
+0 & 1 & 5/7 & 0\\
+0 & 0 & -2/7 & 1\\
+0 & 0 & 0 & 0
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 & 0 & 0 & 1/2\\
+0 & 1 & 0 & 5/2\\
+0 & 0 & 1 & -7/2\\
+0 & 0 & 0 & 0
 \end{array}\right)
 $$
+
 que tiene rango 3.
 
 Para $\lambda=3$:
@@ -1741,19 +1764,29 @@ A=\left( \begin{array}{cccc}
 0 & 1 & 1 & 0\\
 5 & -3 & 0 & 0\\
 0 & -3 & -3 & 1\\
-0 & -4 & -4 & 0 
+0 & 2 & 2 & 0 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
 5 & -3 & 0 & 0\\
 0 & 1 & 1 & 0\\
 0 & -3 & -3 & 1\\
 0 & 0 & 0 & 0 
+\end{array}\right)
+$$
+
+$$
+\sim_{f}\left( \begin{array}{cccc}
+1 & -3/5 & 0 & 0\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-5 & -3 & 0 & 0\\
+1 & 0 & 3/5 & 0\\
 0 & 1 & 1 & 0\\
 0 & 0 & 0 & 1\\
 0 & 0 & 0 & 0 
 \end{array}\right)
 $$
+
 que tiene rango 3.
 
 </li>
@@ -1784,10 +1817,10 @@ $$
 0 & -1 & -1 & 1\\
 0 & -1 & -1 & 1 
 \end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 & 0 & 0 & 1\\
-5 & -1 & 0 & 0\\
-0 & -1 & -1 & 1\\
-0 & 0 & 0 & 0 
+1 & 0 & 0 & 1/2\\
+0 & 1 & 0 & 5/2\\
+0 & 0 & 1 & -7/2\\
+0 & 0 & 0 & 0
 \end{array}\right)
 $$
 
@@ -1803,10 +1836,10 @@ $$
 0 & -3 & -3 & 1\\
 0 & -1 & -1 & -1 
 \end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+1 & 0 & 3/5 & 0\\
 0 & 1 & 1 & 0\\
-5 & -3 & 0 & 0\\
-0 & -3 & -3 & 1\\
-0 & 0 & 0 & -1 
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 
 \end{array}\right).
 $$
 
@@ -1874,8 +1907,8 @@ A=\left( \begin{array}{cccc}
 0 & 0 & 0 & 1\\
 0 & 2 & 2 & 2 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-0 & 1 & 1 & 0\\
 1 &0 & 0 & 0\\
+0 & 1 & 1 & 0\\
 0 & 0 & 0 & 1\\
 0 & 0 & 0 & 2 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
@@ -1893,14 +1926,29 @@ Para $\lambda=1$:
 $$
 A=\left( \begin{array}{cccc}
 2 & 1 & 1 & 0\\
-2 &2 & 0 & 0\\
+2 & 2 & 0 & 0\\
 0 & 2 & 2 & 1\\
 0 & 2 & 2 & 1 
 \end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-2 & 1 & 1 & 0\\
-0 &1 & 2 & 0\\
+1 & 2 & 2 & 0\\
+0 & 1 & 2 & 0\\
 0 & 2 & 2 & 1\\
-0 & 0 & 0 & 0 
+0 & 2 & 2 & 1  
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 & 0 & 1 & 0\\
+0 & 1 & 2 & 0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & 1
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 & 0 & 0 & 2\\
+0 & 1 & 0 & 1\\
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & 1
+\end{array}\right)\sim_{c}\left( \begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 1 & 0 
 \end{array}\right)
 $$
 que tiene rango 3.
@@ -1927,26 +1975,17 @@ Como aparece la ecuación $2=0$, el sistema es entonces también incompatible.
 
 Para $\lambda=1$:
 $$
-\left( \begin{array}{ccc|c}
+A=\left( \begin{array}{ccc|c}
 2 & 1 & 1 & 0\\
 2 & 2 & 0 & 0\\
 0 & 2 & 2 & 1\\
 0 & 2 & 2 & 1 
-\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 & 1 & 1 & 0\\
-2 & 2 & 0 & 0\\
-0 & 2 & 2 & 1\\
-0 & 0 & 0 & 0 
-\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 & 1 & 1 & 0\\
-0 & 1 & 2 & 0\\
-0 & 2 & 2 & 1\\
-0 & 0 & 0 & 0 
-\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
-2 & 1 & 1 & 0\\
-0 & 1 & 2 & 0\\
-0 & 0 & 1 & 1\\
-0 & 0 & 0 & 0 
+
+\end{array}\right)\sim_{c}\left( \begin{array}{ccc|c}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 1 & 0 
 \end{array}\right)
 $$
 
@@ -1954,9 +1993,6 @@ en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es 
 </ol>
 ::::
 :::::
-
-
-
 
 ::::: {#exr-14 .medio}
 
