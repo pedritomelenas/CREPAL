@@ -236,3 +236,215 @@ $$
 
 ::::
 :::::
+
+::::: {#exr-3 .basico}
+
+Calcula la signatura de la forma cuadrática definida por la matriz
+
+$$
+C=\left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 0 & -1\\
+0 & -1 & -5
+\end{array}\right)
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Diagonalizamos por congruencia (realizando las mismas operaciones por filas que por columnas), por lo que necesitamos un pivote en la segunda fila
+
+$$
+C=\left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 0 & -1\\
+0 & -1 & -5
+\end{array}\right)\sim_f (F_2\leftrightarrow F_3) \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & -1 & -5\\
+0 & 0 & -1
+\end{array}\right)\sim_c (C_2\leftrightarrow C_3) \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & -5 & -1\\
+0 & -1 & 0
+\end{array}\right)
+$$
+
+y ahora usamos el $-5 $ para hacer cero en la posición 32:
+
+$$
+\sim_f \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & -5 & -1\\
+0 & 0 & 1/5
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & -5 & 0\\
+0 & 0 & 1/5
+\end{array}\right)
+$$
+
+por tanto la signatura es $\boxed{(2,1)}$.
+
+::::
+:::::
+
+::::: {#exr-4 .medio}
+
+Clasifica, según los valores reales de $a$, la forma cuadrática definida por la matriz
+
+$$
+C=\left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & a\\
+0 & a & -4
+\end{array}\right)
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Diagonalizamos por congruencia (con la única regla de usar las mismas operaciones elementales por filas que por columnas)
+
+$$
+C=\left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & a\\
+0 & a & -4
+\end{array}\right)\sim_f \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & a\\
+0 & 0 & -4-a^2
+\end{array}\right)\sim_c \left(\begin{array}{rrr}
+1 & 0 & 0\\
+0 & 1 & 0a\\
+0 & 0 & -4-a^2
+\end{array}\right)
+$$
+
+Puesto que $-4-a^2$ es negativo para cualquier valor real de $a$, la signatura de la matriz es $(2,1)$ y por tanto es <b> no definida </b>.
+
+::::
+:::::
+
+::::: {#exr-5 .medio}
+
+Dada la matriz
+
+$$
+A= \left(\begin{array}{rrrr}
+1 & 1 & 1 & 1\\
+1 & 1 & -1 & -1\\
+1 & -1 & 1 & -1\\
+1 & -1 & -1 & 1
+\end{array}\right)
+$$
+
+Calcula la signatura de la forma cuadrática definida por $A$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Diagonalizamos por congruencia:
+
+$$
+A= \left(\begin{array}{rrrr}
+1 & 1 & 1 & 1\\
+1 & 1 & -1 & -1\\
+1 & -1 & 1 & -1\\
+1 & -1 & -1 & 1
+\end{array}\right)\sim_f  \left(\begin{array}{rrrr}
+1 & 1 & 1 & 1\\
+0 & 0 & -2 & -2\\
+0 & -2 & 0 & -2\\
+0 & -2 & -2 & 0
+\end{array}\right)\sim_c  \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0\\
+0 & 0 & -2 & -2\\
+0 & -2 & 0 & -2\\
+0 & -2 & -2 & 0
+\end{array}\right)
+$$
+
+$$
+\sim_f  \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0\\
+0 & -2 & -2 & -4\\
+0 & -2 & 0 & -2\\
+0 & -2 & -2 & 0
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0\\
+0 & -4 & -2 & -4\\
+0 & -2 & 0 & -2\\
+0 & -4 & -2 & 0
+\end{array}\right)
+$$
+
+$$
+\sim_f \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0\\
+0 & -4 & -2 & -4\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 4
+\end{array}\right)\sim_c \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0\\
+0 & -4 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 4
+\end{array}\right)
+$$
+
+y se obtiene que los signos de los elementos de la matriz diagonal son 3 positivos y 1 negativo. Entonces $sig(A)=(3,1)$.
+
+::::
+:::::
+
+::::: {#exr-6 .basico}
+
+Calcula la signatura de la forma cuadr{\'a}tica $\Phi: \mathbb{R}^3 \longrightarrow \mathbb{R}$ definida por:
+
+$$
+\Phi (x,y,z)= 5 x^2 + 3 y^2 + 2 z^2 - 2xy -4 xz
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Escribimos la matriz simétrica asociada y la diagonalizamos por congruencia
+
+$$
+\begin{pmatrix}
+5 & -1 & -2 \\
+-1 & 3 & 0\\
+-2 & 0 & 2\\
+\end{pmatrix}\sim_f \begin{pmatrix}
+-2 & 0 & 2\\
+-1 & 3 & 0\\
+5 & -1 & -2 \\
+\end{pmatrix}\sim_c \begin{pmatrix}
+2 & 0 & -2\\
+0 & 3 & -1 \\
+-2 & -1 & 5\\
+\end{pmatrix}\sim_f \begin{pmatrix}
+2 & 0 & -2\\
+0 & 3 & -1 \\
+0 & -1 & 3\\
+\end{pmatrix}
+$$
+
+$$
+\sim_c \begin{pmatrix}
+2 & 0 & 0\\
+0 & 3 & -1 \\
+0 & -1 & 3\\
+\end{pmatrix}\sim_f \begin{pmatrix}
+2 & 0 & 0\\
+0 & 3 & -1 \\
+0 & 0 & 3-1/3\\
+\end{pmatrix}\sim_c \begin{pmatrix}
+2 & 0 & 0\\
+0 & 3 & 0 \\
+0 & 0 & 8/3\\
+\end{pmatrix}
+$$
+
+luego $sig(A)=(3,0)$.
+
+::::
+:::::
