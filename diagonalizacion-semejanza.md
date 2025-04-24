@@ -2097,3 +2097,107 @@ $$
 
 ::::
 :::::
+
+:::::{#exr-15 .basico}
+
+Para la matriz simétrica
+$$
+\begin{pmatrix}
+2 & 1 \\ 1 & 2
+\end{pmatrix}
+$$
+
+determinar su forma diagonal y una matriz de paso $P$ tal que $D=P^{-1}AP=P^tAP$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Calculamos su polinomio característico, que nos permitirá obtener los valores propios
+
+$$
+\begin{vmatrix}
+2-\lambda & 1 \\ 1 & 2-\lambda
+\end{vmatrix}= (2-\lambda)^2-1= \lambda^2-4\lambda+3= (\lambda-3)(\lambda-1)
+$$
+
+Calculamos cada uno de los subespacios propios:
+
+$\boxed{V_{\lambda=3}}$
+
+$$
+\begin{pmatrix}
+2-3 & 1 \\ 1 & 2-3
+\end{pmatrix}=
+\begin{pmatrix}
+-1 & 1 \\ 1 & -1
+\end{pmatrix}
+\sim_f \begin{pmatrix}
+1 & -1 \\ 0 & 0
+\end{pmatrix}
+$$
+
+así que la ecuación cartesiana es $x-y=0$ y una base, por ejemplo, el vector $\{(1,1)\}$.
+
+$\boxed{V_{\lambda=1}}$
+
+$$
+\begin{pmatrix}
+2-1 & 1 \\ 1 & 2-1
+\end{pmatrix}=
+\begin{pmatrix}
+1 & 1 \\ 1 & 1
+\end{pmatrix}
+\sim_f \begin{pmatrix}
+1 & 1 \\ 0 & 0
+\end{pmatrix}
+$$
+
+así que la ecuación cartesiana es $x+y=0$ y una base, por ejemplo, el vector $\{(1,-1)\}$.
+Por tanto 
+
+$$
+D=\begin{pmatrix}
+3 & 0 \\ 0 & 1
+\end{pmatrix}  \hspace{2cm} P=\begin{pmatrix}
+1 & 1 \\ -1 & 1
+\end{pmatrix}
+$$
+
+::::
+:::::
+
+:::::{#exr-16 .basico}
+
+Determinar para qué valores de $a$ y $b$ es diagonalizable por semejanza la matriz
+$$
+\begin{pmatrix}
+a & 1 \\ 0 & b
+\end{pmatrix}
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Calculamos el polinomio característico que nos permite obtener los valores propios:
+
+$$
+\begin{vmatrix}
+a-\lambda & 1 \\ 0 & b-\lambda
+\end{vmatrix}= (a-\lambda)(b-\lambda)
+$$
+
+Cuando $a$ y $b$ son <b>distintos</b>, entonces cada uno de ellos tiene multiplicidad algeraica 1 y, por tanto, también multiplicidad geométrica 1. Eso nos asegura que la matriz es diagonalizable por semejanza.
+En el caso $a=b$, entonces tenemos un único valor propio con multiplicidad algebraica 2, calculamos su multiplicidad geométrica, que es la dimensión del subespacio propio. Calculamos las ecuaciones cartesianas de $V_{\lambda=a}$ 
+
+$$
+A-aI=
+\begin{pmatrix}
+a-a & 1 \\ 0 & a-a
+\end{pmatrix}=
+\begin{pmatrix}
+0 & 1 \\ 0 & 0
+\end{pmatrix}
+$$
+
+luego obtenemos la ecuación $y=0$, por tanto $dim \, V_{\lambda=a}=dim\, \mathbb{R}^2 - \mbox{ nº mínimo de ecuaciones} =1$ con lo que no coincide con la algebraica y por tanto la matriz <b>no</b> es diagonalizable por semejanza.
+
+::::
+:::::

@@ -1566,33 +1566,39 @@ Al estar trabajando en $\mathbb{Z}_3$, $a$ y $b$ pueden tomar solo 3 valores pos
 Podemos examinar todos los casos en una tabla de doble entrada, donde en cada casillero escribiremos el valor del determinante. Por ejemplo,
 si $a=0$, entonces $|A|= b$; si $a=1$, $|A|= 2b+2$; si $a=2$, $|A|= 1$.
 
-
-<table class="default">
-  <tr>
-    <td>$_b \setminus  ^a$</td>
-    <td>0</td>
-    <td>1</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>0</td>
-    <td>0</td>
-    <td>2</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>2</td>
-    <td>0</td>
-    <td>1</td>
-  </tr>
+<div class="table_d_4x4">
+<table>
+    <thead>
+        <tr>
+            <th>$b\setminus a$</th>
+            <th>$0$</th>
+            <th>$1$</th>
+            <th>$2$</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>$0$</th>
+            <td>$0$</td>
+            <td>$2$</td>
+            <td>$1$</td>
+        </tr>
+        <tr>
+            <th>$1$</th>
+            <td>$1$</td>
+            <td>$1$</td>
+            <td>$1$</td>
+        </tr>
+        <tr>
+            <th>$2$</th>
+            <td>$2$</td>
+            <td>$0$</td>
+            <td>$1$</td>
+        </tr>
+    </tbody>
 </table>
+</div>
+
 
 De la observación de la tabla anterior deducimos que $\operatorname{rg}(A)=3$ para 7 de los 9 casos, siempre que el determinante es distinto de $0$.
 Ahora, estudiamos los dos casos particulares que nos faltan.
@@ -4217,6 +4223,585 @@ det(A)=
 -6\neq 0.  
 $$
 Por lo tanto el rango es 3, al igual que el de $I_3$. Las matrices son equivalentes y por lo tanto <b>sí</b>  existen $P$ y $Q$ regulares tales que $Q^{-1}AP=I_3$.
+
+::::
+:::::
+
+::::: {#exr-37 .basico}
+
+Calcula el determinante
+
+$$
+\begin{vmatrix}
+1 & 12 & 123 & 1234 \\
+2 & 23 & 234 & 2341 \\
+3 & 34 & 341 & 3412 \\
+4 & 41 & 412 & 4123
+\end{vmatrix}
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+A cada columna le restamos la anterior multiplicada por $10$
+$$
+\begin{vmatrix}
+1 & 12 & 123 & 1234 \\
+2 & 23 & 234 & 2341 \\
+3 & 34 & 341 & 3412 \\
+4 & 41 & 412 & 4123
+\end{vmatrix}=
+\begin{vmatrix}
+1 & 12 & 123 & 4 \\
+2 & 23 & 234 & 1 \\
+3 & 34 & 341 & 2 \\
+4 & 41 & 412 & 3
+\end{vmatrix}=
+$$
+
+$$
+=\begin{vmatrix}
+1 & 2 & 3 & 4 \\
+2 & 3 & 4 & 1 \\
+3 & 4 & 1 & 2 \\
+4 & 1 & 2 & 3
+\end{vmatrix}=\begin{vmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -7 \\
+0 & -2 & -8 & -10 \\
+0 & -7 & -10 & -13
+\end{vmatrix}=160
+$$
+
+::::
+:::::
+
+::::: {#exr-38 .basico}
+
+Calcula el determinante
+$$
+\left|
+\begin{array}{rrrr}
+1 & 1/2 & 1/3 & 1/5\\
+-1 & 1/2 & -1/3 & -1/5\\
+1 & 1/2 & 4/3 & 1/5\\
+2 & 1 & 2/3 & 11/5\\
+\end{array}
+\right|=
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Utilizamos la propiedad que asegura que al multiplicar una fila o columna por un número el determinante queda multiplicado por ese número:
+$$
+\left|
+\begin{array}{rrrr}
+1 & 1/2 & 1/3 & 1/5\\
+-1 & 1/2 & -1/3 & -1/5\\
+1 & 1/2 & 4/3 & 1/5\\
+2 & 1 & 2/3 & 11/5\\
+\end{array}
+\right|=
+$$
+
+$$
+=(\frac{1}{2})(\frac{1}{3})(\frac{1}{5})\left|
+\begin{array}{rrrr}
+1 & 1 & 1 & 1\\
+-1 & 1 & -1 & -1\\
+1 & 1 & 4 & 1\\
+2 & 2 & 2 & 11\\
+\end{array}
+\right|=\frac{1}{2\cdot 3\cdot 5}\left|
+\begin{array}{rrrr}
+1 & 1 & 1 & 1\\
+0 & 2 & 0 & 0\\
+0 & 0 & 3 & 0\\
+0 & 0 & 0 & 9\\
+\end{array}
+\right|=\frac{9}{5}
+$$
+
+::::
+:::::
+
+::::: {#exr-39 .basico}
+
+Calcula el determinante
+$$
+\left|
+\begin{array}{rrrr}
+25 & 31 & 17 & 43\\
+75 & 94 & 53 & 132\\
+75 & 94 & 54 & 134 \\
+25 & 32 & 20 & 48
+\end{array}
+\right|
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+$$
+\left|
+\begin{array}{rrrr}
+25 & 31 & 17 & 43\\
+75 & 94 & 53 & 132\\
+75 & 94 & 54 & 134 \\
+25 & 32 & 20 & 48
+\end{array}
+\right|=
+\left|
+\begin{array}{rrrr}
+25 & 31 & 17 & 43\\
+0 & 1 & 2 & 3\\
+0 & 1 & 3 & 5 \\
+0 & 1 & 3 & 5
+\end{array}
+\right|=
+$$
+$$=\left|
+\begin{array}{rrrr}
+25 & 31 & 17 & 43\\
+0 & 1 & 2 & 3\\
+0 & 1 & 3 & 5 \\
+0 & 0 & 0 & 0
+\end{array}
+\right|=0
+$$
+
+::::
+:::::
+
+::::: {#exr-40 .medio}
+
+Calcula el determinante
+$$
+\begin{vmatrix}
+1 & x & x & x\\
+1 & a & 0 & 0\\
+1 & 0 & b & 0\\
+1 & 0 & 0 & c
+\end{vmatrix}
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Desarrollamos el determinante por la primera fila
+
+$$
+\begin{vmatrix}
+1 & x & x & x\\
+1 & a & 0 & 0\\
+1 & 0 & b & 0\\
+1 & 0 & 0 & c
+\end{vmatrix}=\begin{vmatrix}
+ a & 0 & 0\\
+ 0 & b & 0\\
+ 0 & 0 & c
+\end{vmatrix}-x\begin{vmatrix}
+ 1 & 0 & 0\\
+ 1 & b & 0\\
+ 1 & 0 & c
+\end{vmatrix}+
+$$
+
+$$
++x\begin{vmatrix}
+ 1 & a & 0\\
+ 1 & 0 & 0\\
+ 1 & 0 & c
+\end{vmatrix}-x\begin{vmatrix}
+ 1 & a & 0\\
+ 1 & 0 & b\\
+ 1 & 0 & 0
+\end{vmatrix}=
+$$
+$$
+=abc-x(ab+ac+bc)
+$$
+
+::::
+:::::
+
+::::: {#exr-41 .medio}
+
+Calcula el determinante
+$$
+\begin{vmatrix}
+-4 & 1 & 1 & 1 & 1 \\
+1 & -4 & 1 & 1 & 1 \\
+1 & 1 & -4 & 1 & 1 \\
+1 & 1 & 1 & -4 & 1 \\
+1 & 1 & 1 & 1 & -4
+\end{vmatrix}
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+$$
+\begin{vmatrix}
+-4 & 1 & 1 & 1 & 1 \\
+1 & -4 & 1 & 1 & 1 \\
+1 & 1 & -4 & 1 & 1 \\
+1 & 1 & 1 & -4 & 1 \\
+1 & 1 & 1 & 1 & -4
+\end{vmatrix}=\mbox{ (sumando a la última fila cada una de las anteriores) } =
+$$
+$$
+=\begin{vmatrix}
+-4 & 1 & 1 & 1 & 1 \\
+1 & -4 & 1 & 1 & 1 \\
+1 & 1 & -4 & 1 & 1 \\
+1 & 1 & 1 & -4 & 1 \\
+0 & 0 & 0 & 0 & 0
+\end{vmatrix}=0
+$$
+
+::::
+:::::
+
+::::: {#exr-42 .medio}
+
+Calcula el valor del Determinante de Vandermonde de orden 3.
+
+
+<b>Determinante de Vandermonde</b>
+
+Dados $n$ números $a_1,a_2,\dots ,a_n\in \mathbb{K}$, se define la Matriz de Vandermonde  
+
+$$
+V(a_1,\dots ,a_n)=\begin{pmatrix}
+1 & a_1 & a_1^2 & \cdots &a_1^{n-1}\\
+1 & a_2 & a_2^2 & \cdots &a_2^{n-1}\\
+\vdots & \vdots & \ddots & \vdots \\
+1 & a_n & a_n^2 & \cdots &a_n^{n-1}\\
+\end{pmatrix}
+$$
+
+<b>Observación</b>
+A veces encontramos que la matriz de Vandermonde es la traspuesta de la que hemos definido. El determinante será, en cualquier caso, el mismo puesto que para cualquier matriz cuadrada $det(A)=det(A^t)$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Dados 3 números cualesquiera $a,b,c$ tendríamos que calcular
+
+$$
+|V(a,b,c)|=\begin{vmatrix}
+1 & a & a^2\\
+1 & b & b^2\\
+1 & c & c^2
+\end{vmatrix}
+$$
+
+Para ello realizaremos las operaciones elementales adecuadas que nos permitan facilitar el cálculo.
+
+$$
+|V(a,b,c)|=\begin{vmatrix}
+1 & a & a^2\\
+1 & b & b^2\\
+1 & c & c^2
+\end{vmatrix}= \begin{vmatrix}
+1 & a & a^2\\
+0 & b-a & b^2-a^2\\
+0 & c-a & c^2-a^2
+\end{vmatrix}=
+$$
+
+desarrollando por la primera columna:
+
+$$
+\begin{vmatrix}
+b-a & b^2-a^2\\
+c-a & c^2-a^2
+\end{vmatrix}=
+$$
+
+y ahora observamos que en la primera fila todos los elementos son múltiplos de $(b-a)$, ya que $b^2-a^2=(b-a)(b+a)$, así que usando las propiedades de los determinantes 
+
+$$
+=(b-a)(c-a)\begin{vmatrix}
+1 & b+a\\
+1 & c+a
+\end{vmatrix}=(b-a)(c-a)(c+a-(b+a))=
+$$
+$$
+=(b-a)(c-a)(c-b)
+$$
+
+Así que 
+$$
+|V(a,b,c)|=(b-a)(c-a)(c-b)
+$$
+
+<b> El determinante de Vandermonde de orden 3 es distinto de cero si, y solo si, los tres elementos que lo definen son distintos entre sí. </b>
+
+::::
+:::::
+
+::::: {#exr-43 .avanzado}
+
+Calcula el valor del Determinante de Vandermonde de orden 4.
+
+<b>Determinante de Vandermonde</b>
+
+Dados $n$ números $a_1,a_2,\dots ,a_n\in \mathbb{K}$, se define la Matriz de Vandermonde  
+
+$$
+V(a_1,\dots ,a_n)=\begin{pmatrix}
+1 & a_1 & a_1^2 & \cdots &a_1^{n-1}\\
+1 & a_2 & a_2^2 & \cdots &a_2^{n-1}\\
+\vdots & \vdots & \ddots & \vdots \\
+1 & a_n & a_n^2 & \cdots &a_n^{n-1}\\
+\end{pmatrix}
+$$
+
+<b>Observación</b>
+A veces encontramos que la matriz de Vandermonde es la traspuesta de la que hemos definido. El determinante será, en cualquier caso, el mismo.
+
+:::: {.callout collapse="true" title="Solución"}
+
+<b>Orden 4</b>
+
+Dados $a,b,c,d$ tenemos que calcular
+$$
+|V(a,b,c,d)|=\begin{vmatrix}
+1 & a & a^2 & a^3\\
+1 & b & b^2 & b^3\\
+1 & c & c^2 & c^3\\
+1 & d & d^2 & d^3\\
+\end{vmatrix}
+$$
+
+Realizaremos operaciones elementales adecuadas que nos permitan facilitar el cálculo.
+
+$$
+|V(a,b,c,d)|=\begin{vmatrix}
+1 & a & a^2 & a^3\\
+1 & b & b^2 & b^3\\
+1 & c & c^2 & c^3\\
+1 & d & d^2 & d^3\\
+\end{vmatrix}=\begin{vmatrix}
+1 & a & a^2 & a^3\\
+0 & b-a & b^2-a^2 & b^3-a^3\\
+0 & c-a & c^2-c^2 & c^3-a^3\\
+0 & d-a & d^2-a^2 & d^3-a^3\\
+\end{vmatrix}
+$$
+
+donde a cada fila hemos restado la primera y ahora desarrollamos por la primera columna.
+
+$$
+|V|=\begin{vmatrix}
+ b-a & b^2-a^2 & b^3-a^3\\
+ c-a & c^2-c^2 & c^3-a^3\\
+ d-a & d^2-a^2 & d^3-a^3\\
+\end{vmatrix}
+$$
+
+Observamos que en la primera fila todos los elementos son múltiplos de $(b-a)$, ya que $b^2-a^2=(b-a)(b+a)$ y $b^3-a^3=(b-a)(b^2+ab+a^2)$, y lo mismo podemos razonar en las filas siguientes,
+así que usando las propiedades de los determinantes 
+$$
+|V|=(b-a)(c-a)(d-a)\begin{vmatrix}
+1 & b+a & b^2+ab+a^2\\
+1 & c+a & c^2+ac+a^2\\
+1 & d+a & d^2+ad+a^2\\
+\end{vmatrix}
+$$
+
+De nuevo realizamos operaciones elementales por filas para conseguir ceros en la primera columna.
+
+$$
+|V|=(b-a)(c-a)(d-a)\begin{vmatrix}
+ 1 & b+a & b^2+ab+a^2\\
+ 0 & c-b & (c-b)(c+b+a)\\
+ 0 & d-b & (d-b)(d+b+a)\\
+\end{vmatrix}
+$$
+
+donde hemos usado 
+$$
+c^2+ac+a^2 - (b^2+ab+a^2)=c^2-b^2+a(c-b)=(c-b)(c+b+a)
+$$
+
+y de nuevo desarrollando por la primera columna:
+$$
+|V|=(b-a)(c-a)(d-a)\begin{vmatrix}
+c-b & (c-b)(c+b+a)\\
+d-b & (d-b)(d+b+a)\\
+\end{vmatrix}
+$$
+
+Observamos que también podemos extraer los términos $(c-b)$ y $(d-b)$ 
+
+$$
+|V|=(b-a)(c-a)(d-a)(c-b)(d-b)\begin{vmatrix}
+1 & (c+b+a)\\
+1 & (d+b+a)\\
+\end{vmatrix}=
+$$
+$$
+=(b-a)(c-a)(d-a)(c-b)(d-b)\begin{vmatrix}
+1 & (c+b+a)\\
+0 & (d-c)\\
+\end{vmatrix} 
+$$ 
+
+Así que 
+
+$$
+|V(a,b,c,d)|=(b-a)(c-a)(d-a)(c-b)(d-b)(d-c)
+$$
+
+<b>El determinante de Vandermonde de orden 4 es distinto de cero si, y solo si, los 4 elementos que lo definen son distintos entre sí.</b>
+
+::::
+:::::
+
+::::: {#exr-44 .medio-cuerpos_finitos}
+
+<ol type='a'>
+<li>Calcula el determinante de la matriz con coeficientes en $\mathbb{Q}$:
+
+$$
+A=\left( \begin{array}{cccc}
+3-\lambda & 1 & 1 & 0\\
+5 &-\lambda & 0 & 0\\
+0 & -\lambda & -\lambda & 1\\
+0 & -1 & -1 & 2-\lambda 
+\end{array}\right)
+$$
+
+</li>
+<li>Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
+<li>Discute el sistema de ecuaciones con matriz ampliada $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Para calcular el determinante más fácilmente realizamos una operación elemental de tipo 3: a la segunda columna le restamos la tercera 
+
+$$
+|A|=\left| \begin{array}{cccc}
+3-\lambda & 1 & 1 & 0\\
+5 &-\lambda & 0 & 0\\
+0 & -\lambda & -\lambda & 1\\
+0 & -1 & -1 & 2-\lambda 
+\end{array}\right|=\left| \begin{array}{cccc}
+3-\lambda & 0 & 1 & 0\\
+5 &-\lambda & 0 & 0\\
+0 & 0 & -\lambda & 1\\
+0 & 0 & -1 & 2-\lambda 
+\end{array}\right|=(-\lambda)\left| \begin{array}{ccc}
+3-\lambda &  1 & 0\\
+0 &  -\lambda & 1\\
+0 &  -1 & 2-\lambda 
+\end{array}\right|
+$$
+
+donde hemos desarrollado por la segunda columna, y desarrollando ahora por la primera columna
+$$
+|A|=(-\lambda)(3-\lambda)[(-\lambda)(2-\lambda)+1]=(-\lambda)(3-\lambda)(\lambda -1)^2
+$$
+
+y este resultado es válido en cualquier cuerpo.
+
+</li>
+<li>
+
+Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda=0,1$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales:
+
+$\boxed{\lambda=0}$
+
+
+$$
+A=\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+2 &0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 2 & 2 & 2 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+1 &0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 2 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 &1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$ 
+luego el rango es 3.
+
+$\boxed{\lambda=1}$
+
+$$
+A=\left( \begin{array}{cccc}
+2 & 1 & 1 & 0\\
+2 &2 & 0 & 0\\
+0 & 2 & 2 & 1\\
+0 & 2 & 2 & 1 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+2 & 1 & 1 & 0\\
+0 &1 & 2 & 0\\
+0 & 2 & 2 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$
+
+que tiene rango 3.
+</li>
+<li>
+
+Como la matriz ampliada tiene rango 4 para $\lambda\not = 0,1,3$, y la de coeficientes solo tiene tres columnas y por tanto el rango máximo es 3, en estos casos el sistema es <b>incompatible</b>. Nos queda estudiar los casos particulares $\lambda=0,1,3$:
+
+$\boxed{\lambda=0}$
+$$
+\left( \begin{array}{ccc|c}
+3 & 1 & 1 & 0\\
+5 & 0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & -1 & -1 & 2 
+\end{array}\right)
+$$
+
+Como aparece la ecuación $0=1$ entonces también es <b>incompatible</b>.
+
+$\boxed{\lambda=1}$
+$$
+\left( \begin{array}{ccc|c}
+2 & 1 & 1 & 0\\
+5 & -1 & 0 & 0\\
+0 & -1 & -1 & 1\\
+0 & -1 & -1 & 1 
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+2 & 0 & 0 & 1\\
+5 & -1 & 0 & 0\\
+0 & -1 & -1 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$
+
+en este caso la matriz de coeficientes tiene rango 3, y por tanto el sistema es <b>compatible determinado</b>.
+
+$\boxed{\lambda=3}$
+$$
+\left( \begin{array}{ccc|c}
+0 & 1 & 1 & 0\\
+5 & -3 & 0 & 0\\
+0 & -3 & -3 & 1\\
+0 & -1 & -1 & -1 
+\end{array}\right)\sim_{f}\left( \begin{array}{ccc|c}
+0 & 1 & 1 & 0\\
+5 & -3 & 0 & 0\\
+0 & -3 & -3 & 1\\
+0 & 0 & 0 & -1 
+\end{array}\right)
+$$
+
+y de nuevo aparece la ecuación $0=1$ con lo que en este caso es <b>incompatible</b>.
+</li>
+</ol>
 
 ::::
 :::::
