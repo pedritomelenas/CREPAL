@@ -12,6 +12,9 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
+*Diagonalización por semejanza. Valores y vectores propios (autovalores, autovectores). Ecuación característica de una matriz/endomorfismo. Cálculo de los valores propios. Cálculo de los subespacios propios. Matriz diagonal y matriz de paso.*
+
+
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 
 <!-- por ahora todos medios, cambiar luego
