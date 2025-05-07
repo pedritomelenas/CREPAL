@@ -13,6 +13,8 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
+*Espacios vectoriales. Dependencia e independencia lineal. Bases y coordenadas. Cambio de base. Subespacios vectoriales: bases, dimensión, ecuaciones paramétricas y cartesianas.  Operaciones con subespacios: suma, intersección. Fórmula de las dimensiones. Suma directa, subespacios complementarios.* 
+
 
 <button class="btn btn-outline-secondary btn-sm dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="titulacion">
   Titulación

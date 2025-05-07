@@ -12,6 +12,7 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
+*Espacios vectoriales euclídeos. Productos escalares. Matriz de Gram respecto de una base.  Norma y ángulo. Bases ortogonales. Método de Gram-Schmidt. Subespacio ortogonal a uno dado. Coeficientes de Fourier. Proyección ortogonal de un vector sobre un subespacio. Teorema espectral. Diagonalización por semejanza ortogonal de matrices simétricas reales.*
 
 <!--<input type="checkbox" id="casilla_cf" value="cfon" checked onclick="CF();"> Mostrar ejercicios sobre cuerpos finitos. -->
 

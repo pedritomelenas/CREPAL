@@ -12,6 +12,8 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
+*Aplicaciones lineales. Matriz asociada a una aplicación lineal respecto de dos bases. Núcleo e imagen. Cálculo del núcleo y la imagen, fórmula de las dimensiones. Matriz asociada a una aplicación lineal y su transformación por cambios de base. El caso particular del cambio de base en la matriz asociada a un endomorfismo.*
+
 
 <button class="btn btn-outline-secondary btn-sm dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="titulacion">
   Titulación

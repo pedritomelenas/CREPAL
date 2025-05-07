@@ -12,6 +12,9 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
+*Diagonalización por semejanza. Valores y vectores propios (autovalores, autovectores). Ecuación característica de una matriz/endomorfismo. Cálculo de los valores propios. Cálculo de los subespacios propios. Matriz diagonal y matriz de paso.*
+
+
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 
 <!-- por ahora todos medios, cambiar luego
@@ -19,6 +22,41 @@ format:
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media </button>
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
 -->
+
+<button class="btn btn-outline-secondary btn-sm dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="titulacion">
+  Titulación
+</button>
+<ul class="dropdown-menu">
+  <li><a class="dropdown-item" data-titulo="estadistica" href="#">Estadística</a></li>
+  <li><a class="dropdown-item" data-titulo="fisica" href="#">Física</a></li>
+  <li><a class="dropdown-item" data-titulo="informatica" href="#">Informática</a></li>
+  <li><a class="dropdown-item" data-titulo="matematicas" href="#">Matemáticas</a></li>
+  <li><a class="dropdown-item" data-titulo="telecomunicaciones" href="#">Telecomunicaciones</a></li>
+</ul>
+
+<button id="opcion_cf" class="btn btn-outline-secondary btn-sm mb-2"> <input type="checkbox" id="casilla_cf" value="cuerpo_finitoon" checked onclick="mostrar();"> Cuerpos finitos </button>
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_basico" value="basicoon" checked onclick="mostrar();"> Básicos </button> 
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media </button>
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
+
+
+<script>
+comprueba_asignatura();
+window.addEventListener("load", function(){
+   mostrar();
+});
+
+$('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
+  if (clickEvent?.target) {
+    if (['fisica','matematicas','telecomunicaciones','estadistica'].includes($(clickEvent.target).data('titulo'))){
+      casilla_cf.checked = false;
+    }else{
+      casilla_cf.checked = true;
+    }
+    mostrar();
+  }
+})
+</script>
 
 ::::: {#exr-1 .cuerpo_finito-medio}
 

@@ -14,6 +14,9 @@ format:
 
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 
+*Sistemas de ecuaciones lineales. Método de Gauss-Jordan. Matrices escalonadas reducidas (por filas o por columnas). Rango. Matrices y operaciones elementales. Matrices regulares. Matriz de paso a forma escalonada reducida. Inversa de una matriz. Determinantes. Aplicaciones de los determinantes en problemas dependiendo de parámetros.*
+
+
 <button class="btn btn-outline-secondary btn-sm dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="titulacion">
   Titulación
 </button>
