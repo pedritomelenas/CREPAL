@@ -870,7 +870,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-5 .medio}
+::::: {#exr-5 .avanzado}
 
 Se considera la matriz:
 
@@ -1000,7 +1000,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-6 .medio}
+::::: {#exr-6 .avanzado}
 Se considera la matriz:
 
 $$
@@ -2145,7 +2145,7 @@ $$
 \end{pmatrix}
 $$
 
-determinar su forma diagonal y una matriz de paso $P$ tal que $D=P^{-1}AP=P^tAP$.
+determinar su forma diagonal y una matriz de paso $P$ tal que $D=P^{-1}AP$.
 
 :::: {.callout collapse="true" title="Solución"}
 
