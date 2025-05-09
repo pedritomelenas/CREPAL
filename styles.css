@@ -16,6 +16,11 @@
   overflow-y: hidden;
 }
 
+iframe {
+  border: 1px solid black;
+  width: 100%;
+}
+
 /* Formatos de tabla */
 
 /* Tabla simple de 2 columnas */
