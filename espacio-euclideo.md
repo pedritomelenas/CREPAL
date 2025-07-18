@@ -1732,3 +1732,5 @@ $\alpha=0;\,  \beta=1; \, \gamma=0$  con lo que $p_U(1+x-x^2)=x$
 
 ::::
 :::::
+
+<iframe src="/assets/autoevaluacion/AutoevaluacionEVE.html" style="border:none;" height="800" width="100%" title="Autoevaluación"></iframe>
