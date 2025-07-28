@@ -4845,4 +4845,10 @@ y de nuevo aparece la ecuación $0=1$ con lo que en este caso es <b>incompatible
 ::::
 :::::
 
+::::: {.test}
 <iframe src="/assets/autoevaluacion/AutoevaluacionMSE.html" style="border:none;" height="1000" width="100%" title="Autoevaluación"></iframe>
+:::::
+
+::::: {.test-cuerpo_finito}
+<iframe src="/assets/autoevaluacion/AutoevaluacionMSE-CF.html" style="border:none;" height="1000" width="100%" title="Autoevaluación CF"></iframe> 
+:::::
