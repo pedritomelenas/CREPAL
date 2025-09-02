@@ -2747,4 +2747,10 @@ luego un tal vector es $(0,1,-1)$.
 ::::
 :::::
 
+::::: {.test}
 <iframe src="/assets/autoevaluacion/AutoevaluacionAL.html" style="border:none;" height="1000" width="100%" title="Autoevaluación"></iframe>
+:::::
+
+<!-- ::::: {.test-cuerpo_finito}
+<iframe src="/assets/autoevaluacion/AutoevaluacionAL-CF.html" style="border:none;" height="1000" width="100%" title="Autoevaluación CF"></iframe> 
+::::: -->
