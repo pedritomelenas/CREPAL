@@ -2239,3 +2239,11 @@ luego obtenemos la ecuación $y=0$, por tanto $dim \, V_{\lambda=a}=dim\, \mathb
 
 ::::
 :::::
+
+<!-- ::::: {.test}
+<iframe src="/assets/autoevaluacion/AutoevaluacionDS.html" style="border:none;" height="1000" width="100%" title="Autoevaluación"></iframe>
+::::: -->
+
+::::: {.test-cuerpo_finito}
+<iframe src="/assets/autoevaluacion/AutoevaluacionDS-CF.html" style="border:none;" height="765" width="100%" title="Autoevaluación CF"></iframe> 
+:::::
