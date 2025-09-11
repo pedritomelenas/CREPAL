@@ -53,6 +53,67 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
 </script>
 
 
+::: {.callout-tip collapse="true" title="GLOSARIO" icon="false" .table_glossary}
+
+<table>
+    <thead>
+        <tr>
+            <th>Término</th>
+            <th>Sinónimos</th>
+            <th>Definición / Referencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Operaciones elementales</td>
+            <td>Transformaciones elementales</td>
+            <td><a href="https://www.ugr.es/~lmerino/1-1.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Método de Gauss-Jordan</td>
+            <td>Eliminación de Gauss-Jordan</td>
+            <td><a href="https://es.wikipedia.org/wiki/Eliminaci%C3%B3n_de_Gauss-Jordan">Wikipedia: Gauss-Jordan</a></td>
+        </tr>
+        <tr>
+            <td>Sistemas equivalentes</td>
+            <td><br></td>
+            <td>Tienen el mismo conjunto de soluciones.</td>
+        </tr>
+        <tr>
+            <td>Forma escalonada reducida <br> (por filas/por columnas)</td>
+            <td>Forma de Hermite <br>Forma normal</td>
+            <td><a href="https://www.ugr.es/~lmerino/1-1.html">Apuntes del profesor Luis Merino</a> <br> <a href="https://es.wikipedia.org/wiki/Eliminaci%C3%B3n_de_Gauss-Jordan#Forma_escalonada_y_escalonada_reducida">Wikipedia: Forma escalonada</a></td>
+        </tr>
+        <tr>
+            <td>Rango de una matriz</td>
+            <td></td>
+            <td>Número de pivotes en una forma escalonada reducida.</td>
+        </tr>
+        <tr>
+            <td>Matriz ampliada de un sistema</td>
+            <td></td>
+            <td>Resulta de añadir a la matriz de coeficientes la columna de términos independientes.</td>
+        </tr>
+        <tr>
+            <td>Matrices equivalentes <br> (por filas/ por columnas)</td>
+            <td></td>
+            <td>Tienen la misma forma escalonada reducida (por filas/ por columnas). <br> <a href="https://pedritomelenas.github.io/Algebra-Lineal/1-matrices-sistemas/">Web del profesor Pedro García</a> <br> <a href="https://www.ugr.es/~lmerino/1-6.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Matrices equivalentes</td>
+            <td></td>
+            <td>Tienen el mismo orden y el mismo rango. <br> <a href="https://pedritomelenas.github.io/Algebra-Lineal/1-matrices-sistemas/">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Matriz regular</td>
+            <td>Matriz invertible</td>
+            <td>Matriz que tiene inversa.</td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
 ::::: {#exr-1 .basico}
 Resuelve el siguiente sistema de ecuaciones lineales considerado en $\mathbb{Q}$.
 

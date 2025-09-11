@@ -33,6 +33,8 @@ website:
         href: "espacio-euclideo.md"
       - text: "Formas cuadráticas y diagonalización por congruencia"
         href: "formas-cuadraticas.md"
+      - text: "Inversas generalizadas"
+        href: "inversas-generalizadas.md"
       - text: "Otros"
         href: "resueltos-examenes.md"
 
