@@ -16,6 +16,10 @@ format:
 
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_basico" value="basicoon" checked onclick="mostrar();"> Básicos </button> 
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media </button>
+<button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
+
 ::::: {#exr-1 .medio}
 
 Determina, en función de  $b$, la signatura de la forma cuadrática $\phi:\mathbb{R}^{2} \to \mathbb{R}$ dada por 
@@ -271,7 +275,7 @@ C=\left(\begin{array}{rrr}
 \end{array}\right)
 $$
 
-y ahora usamos el $-5 $ para hacer cero en la posición 32:
+y ahora usamos el $-5$ para hacer cero en la posición 32:
 
 $$
 \sim_f \left(\begin{array}{rrr}
@@ -400,7 +404,7 @@ y se obtiene que los signos de los elementos de la matriz diagonal son 3 positiv
 
 ::::: {#exr-6 .basico}
 
-Calcula la signatura de la forma cuadr{\'a}tica $\Phi: \mathbb{R}^3 \longrightarrow \mathbb{R}$ definida por:
+Calcula la signatura de la forma cuadrática $\Phi: \mathbb{R}^3 \longrightarrow \mathbb{R}$ definida por:
 
 $$
 \Phi (x,y,z)= 5 x^2 + 3 y^2 + 2 z^2 - 2xy -4 xz
