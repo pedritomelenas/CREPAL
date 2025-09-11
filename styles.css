@@ -130,3 +130,57 @@ iframe {
     color: #000000;
     padding: 1px;
 }
+
+/* Tabla glosario */
+
+.table_glossary {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_glossary table {
+    border: 1px solid #000000;
+    height: 45%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+}
+
+.table_glossary caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_glossary th {
+    border: 1px solid #000000;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1px;
+    text-align: center;
+}
+
+.table_glossary td {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1px;
+    text-align: left;
+}
+
+  /* Ajuste de anchos de columnas */
+
+.table_glossary th:nth-child(1),
+.table_glossary td:nth-child(1) {
+    width: 20%;
+}
+
+.table_glossary th:nth-child(2),
+.table_glossary td:nth-child(2) {
+    width: 20%;
+}
+
+.table_glossary th:nth-child(3),
+.table_glossary td:nth-child(3) {
+    width: 60%;
+}

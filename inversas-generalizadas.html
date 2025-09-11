@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Formas cuadráticas y diagonalización por congruencia – Problemas resueltos de Álgebra Lineal</title>
+<title>Inversas generalizadas – Problemas resueltos de Álgebra Lineal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -430,7 +430,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./formas-cuadraticas.html">Formas cuadráticas y diagonalización por congruencia</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inversas-generalizadas.html">Inversas generalizadas</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -474,13 +474,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formas-cuadraticas.html" class="sidebar-item-text sidebar-link active">
+  <a href="./formas-cuadraticas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Formas cuadráticas y diagonalización por congruencia</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inversas-generalizadas.html" class="sidebar-item-text sidebar-link">
+  <a href="./inversas-generalizadas.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Inversas generalizadas</span></a>
   </div>
 </li>
@@ -504,7 +504,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Formas cuadráticas y diagonalización por congruencia</h1>
+<h1 class="title">Inversas generalizadas</h1>
 </div>
 
 
@@ -522,8 +522,8 @@ window.Quarto = {
 
 
 <!-- LTeX: language=es-ES --->
-<p><em>Formas bilineales y cuadráticas. Matriz asociada a una forma cuadrática. Diagonalización por congruencia de una matriz simétrica (mediante operaciones elementales). Clasificación de formas cuadráticas/matrices simétricas reales. Signatura de una forma cuadrática.</em></p>
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
+<!--*PALABRAS CLAVE EN CABECERA.*-->
 <button class="btn btn-outline-secondary btn-sm mb-2">
 <input type="checkbox" id="casilla_basico" value="basicoon" checked="" onclick="mostrar();"> Básicos
 </button>
@@ -533,10 +533,39 @@ window.Quarto = {
 <button class="btn btn-outline-secondary btn-sm mb-2">
 <input type="checkbox" id="casilla_avanzado" value="avanzadon" checked="" onclick="mostrar();"> Avanzados.
 </button>
-<div id="exr-1" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Determina, en función de <span class="math inline">\(b\)</span>, la signatura de la forma cuadrática <span class="math inline">\(\phi:\mathbb{R}^{2} \to \mathbb{R}\)</span> dada por</p>
-<p><span class="math display">\[
-\phi(x,y)= bxy.
+<script>
+comprueba_asignatura();
+window.addEventListener("load", function(){
+   mostrar();
+});
+
+$('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
+  if (clickEvent?.target) {
+    if (['fisica','matematicas','telecomunicaciones','estadistica'].includes($(clickEvent.target).data('titulo'))){
+      casilla_cf.checked = false;
+    }else{
+      casilla_cf.checked = true;
+    }
+    mostrar();
+  }
+})
+</script>
+<div id="exr-1" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Estudia si estas matrices tienen inversa a izquierda o a derecha o ninguna de ellas. <span class="math display">\[A_1=\left( \begin{array}{rrr}
+1 &amp; 2 &amp; 3\\
+2 &amp; 1 &amp; 0\\
+0 &amp; 3 &amp; 6
+\end{array}\right);  \hspace{1cm}
+A_2= \left( \begin{array}{rr}
+1 &amp; 2 \\
+2 &amp; 1 \\
+3 &amp; 3
+\end{array}\right);  \hspace{1cm}
+A_3=\left( \begin{array}{rrrrr}
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\\
+5 &amp; 4 &amp; 3 &amp; 2 &amp; 1\\
+2 &amp; 4 &amp; 6 &amp; 8 &amp; 10
+\end{array}\right)
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -550,47 +579,69 @@ Solución
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>La matriz asociada a la forma cuadrática es</p>
+<p>Una matriz tiene inversa a izquierda si, y solo si, es de rango pleno por columnas (es decir, su rango coincide con el número de columnas) y tiene inversa a derecha si, y solo si, es de rango pleno por filas. Calculamos los rangos de cada una de las matrices:</p>
 <p><span class="math display">\[
-\begin{pmatrix}
-0 &amp; b/2\\
-b/2 &amp; 0
-\end{pmatrix}
+A_1=\left( \begin{array}{rrr}
+1 &amp; 2 &amp; 3\\
+2 &amp; 1 &amp; 0\\
+0 &amp; 3 &amp; 6
+\end{array}\right)\sim_f \left( \begin{array}{rrr}
+\boxed{1} &amp; 2 &amp; 3\\
+0 &amp; -3 &amp; -6\\
+0 &amp; 3 &amp; 6
+\end{array}\right)\sim_f \left( \begin{array}{rrr}
+\boxed{1} &amp; 2 &amp; 3\\
+0 &amp;\boxed{1} &amp; 2\\
+0 &amp; 0 &amp; 0
+\end{array}\right)
 \]</span></p>
-<p>que podemos diagonalizar por congruencia</p>
+<p>y obtenemos que <span class="math inline">\(rg(A_1)=2\)</span> luego <span class="math inline">\(A_1\)</span> no tiene ni inversa a izquierda ni a derecha.</p>
 <p><span class="math display">\[
-\begin{pmatrix}
-0 &amp; b/2\\
-b/2 &amp; 0
-\end{pmatrix}\sim_f \begin{pmatrix}
-b/2 &amp; b/2\\
-b/2 &amp; 0
-\end{pmatrix}\sim_c\begin{pmatrix}
-b &amp; b/2\\
-b/2 &amp; 0
-\end{pmatrix}\sim_f \begin{pmatrix}
-b &amp; b/2\\
-0 &amp; -b/4
-\end{pmatrix}\sim_c\begin{pmatrix}
-b &amp; 0\\
-0 &amp; -b/4
-\end{pmatrix}.
+A_2= \left( \begin{array}{rr}
+1 &amp; 2 \\
+2 &amp; 1 \\
+3 &amp; 3
+\end{array}\right)\sim_c \left( \begin{array}{rr}
+\boxed{1} &amp; 0 \\
+2 &amp; -3 \\
+3 &amp; -3
+\end{array}\right)\sim_c \left( \begin{array}{rr}
+\boxed{1} &amp; 0 \\
+2 &amp; \boxed{1} \\
+3 &amp; 1
+\end{array}\right)
 \]</span></p>
-<p>Si <span class="math inline">\(b=0\)</span> la signatura es <span class="math inline">\((0,0)\)</span>; si <span class="math inline">\(b\not = 0\)</span> la signatura es <span class="math inline">\((1,1)\)</span>.</p>
-<p>También pueden calcularse los valores propios que son</p>
+<p>y como <span class="math inline">\(rg(A_2)=2=\mbox{ nº de columnas}\)</span>, entonces <span class="math inline">\(A_2\)</span> es de rango pleno por columnas y, por tanto, tiene inversa a izquierda.</p>
 <p><span class="math display">\[
-\lambda= \pm (b/4)
-\]</span> y queda el mismo resultado, por supuesto.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="exr-2" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Determina para qué valores de <span class="math inline">\(a\)</span> la fórmula</p>
-<p><span class="math display">\[
-f(x,y,z)=x^2+2axy+2xz+2ay^2+(a+1)z^2,
+A_3=\left( \begin{array}{rrrrr}
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\\
+5 &amp; 4 &amp; 3 &amp; 2 &amp; 1\\
+2 &amp; 4 &amp; 6 &amp; 8 &amp; 11
+\end{array}\right)\sim_f \left( \begin{array}{rrrrr}
+\boxed{1} &amp; 2 &amp; 3 &amp; 4 &amp; 5\\
+0 &amp; -6 &amp; -12 &amp; -18 &amp; -24\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \boxed{1}
+\end{array}\right)\sim_f \left( \begin{array}{rrrrr}
+\boxed{1} &amp; 2 &amp; 3 &amp; 4 &amp; 5\\
+0 &amp; \boxed{1} &amp; 2 &amp; 3 &amp; 4\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \boxed{1}
+\end{array}\right)
 \]</span></p>
-<p>define una forma cuadrática definida positiva.</p>
+<p>y obtenemos que <span class="math inline">\(rg(A_3)=3=\mbox{ nº de filas}\)</span>, así que <span class="math inline">\(A_3\)</span> es de rango pleno por filas y, por tanto, tiene inversa a derecha.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-2" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Calcula una inversa a izquierda de la matriz</p>
+<p><span class="math display">\[
+\left( \begin{array}{rrr}
+1 &amp; 2 &amp; 3 \\
+5 &amp; 4 &amp; 0 \\
+2 &amp; 4 &amp; 1 \\
+1 &amp; 0 &amp; 1
+\end{array}\right)
+\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -603,62 +654,180 @@ Solución
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Calculamos la matriz simétrica asociada a esta forma cuadrática y la diagonalizamos por congruencia para obtener su signatura:</p>
-<p><span class="math display">\[\left(\begin{array}{ccc}
-1 &amp; a &amp; 1\\
-a &amp; 2a &amp; 0\\
-1 &amp; 0 &amp; a+1
-\end{array}\right)\sim_f \left(\begin{array}{ccc}
-1 &amp; a &amp; 1\\
-0 &amp; 2a-a^2 &amp; -a\\
-0 &amp; -a &amp; a
-\end{array}\right)\sim_c \left(\begin{array}{ccc}
-1 &amp; 0 &amp; 0\\
-0 &amp; 2a-a^2 &amp; -a\\
-0 &amp; -a &amp; a
-\end{array}\right)
-\]</span></p>
-<p>Ahora intercambiamos las filas segunda y tercera y también las columnas segunda y tercera:</p>
+<p>En primer lugar comprobamos que existe, calculando el rango de la matriz:</p>
 <p><span class="math display">\[
-\left(\begin{array}{ccc}
-1 &amp; 0 &amp; 0\\
-0 &amp; 2a-a^2 &amp; -a\\
-0 &amp; -a &amp; a
+\left( \begin{array}{rrr}
+1 &amp; 2 &amp; 3 \\
+5 &amp; 4 &amp; 0 \\
+2 &amp; 4 &amp; 1 \\
+1 &amp; 0 &amp; 1
+\end{array}\right)\sim_c \left( \begin{array}{rrr}
+\boxed{1} &amp; 0 &amp; 0 \\
+5 &amp; -6 &amp; -15 \\
+2 &amp; 0 &amp; -5 \\
+1 &amp; -2 &amp; -2
+\end{array}\right)\sim_f \left( \begin{array}{rrr}
+\boxed{1} &amp; 0 &amp; 0 \\
+0 &amp; -6 &amp; -15 \\
+0 &amp; 0 &amp; \boxed{1} \\
+0 &amp; -2 &amp; -2
+\end{array}\right)\sim_f \left( \begin{array}{rrr}
+\boxed{1} &amp; 0 &amp; 0 \\
+0 &amp; \boxed{1} &amp; 0 \\
+0 &amp; 0 &amp; \boxed{1} \\
+0 &amp; 0 &amp; 0
 \end{array}\right)
-\sim_f \left(\begin{array}{ccc}
-1 &amp; 0 &amp; 0\\
-0 &amp; -a  &amp; a\\
-0 &amp; 2a-a^2 &amp; -a
-\end{array}\right)\sim_c \left(\begin{array}{ccc}
-1 &amp; 0 &amp; 0\\
-0 &amp; a  &amp; -a\\
-0 &amp; -a &amp; 2a-a^2
-\end{array}\right)\sim_f \left(\begin{array}{ccc}
-1 &amp; 0 &amp; 0\\
-0 &amp; a  &amp; -a\\
-0 &amp; 0 &amp; a-a^2
-\end{array}\right)\sim_c \left(\begin{array}{ccc}
-1 &amp; 0 &amp; 0\\
-0 &amp; a  &amp; 0\\
-0 &amp; 0 &amp; a-a^2
-\end{array}\right).
 \]</span></p>
-<p>Luego será definida positiva cuando los tres elementos de la diagonal lo sean, es decir <span class="math inline">\(a&gt;0\)</span> y <span class="math inline">\(a(1-a)&gt;0\)</span> luego debe ser <span class="math inline">\(0&lt;a&lt;1\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="exr-semejanza_ortogonal" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Dada la matriz:</p>
-<p><span class="math display">\[A=
-\begin{pmatrix}
-2 &amp; 0 &amp; 0 &amp; -1\\
-0 &amp; 2 &amp; -1 &amp; 0 \\
-0 &amp; -1 &amp; 2 &amp; 0 \\
--1 &amp; 0 &amp; 0 &amp; 2
-\end{pmatrix}
+<p><b>Observación:</b> hemos utilizado tanto operaciones por columnas como por filas, para obtener los pivotes rápidamente.</p>
+<p>Como en efecto el rango coincide con el número de columnas la matriz tiene inversa a izquierda. Para calcularla se puede proceder de dos formas distintas:</p>
+<ol type="1">
+<li>
+<p>Calculando una matriz de paso a forma escalonada reducida por filas de la que extraeremos una inversa a izquierda. En este caso se obtiene una inversa a izquierda que no necesariamente cumple las condiciones de Moore-Penrose:</p>
+<p><span class="math display">\[
+\left( \begin{array}{rrr|cccc}
+1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+5 &amp; 4 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+2 &amp; 4 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_f
+\left( \begin{array}{rrr|rrrr}
+\boxed{1} &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -6 &amp; -15 &amp; -5 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; -5 &amp; -2 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; -2 &amp; -2 &amp; -1 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)
+\sim_f
 \]</span></p>
-<p>Razonar que es diagonalizable y determinar su forma diagonal y una matriz de paso, <span class="math inline">\(P\)</span>, verificando que <span class="math inline">\(P^{-1}=P^t\)</span>. ¿Cuál es la signatura de <span class="math inline">\(A\)</span>?</p>
+<p><span class="math display">\[
+\left( \begin{array}{rrr|rrrr}
+\boxed{1} &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -6 &amp; -15 &amp; -5 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 2/5 &amp; 0 &amp; -1/5 &amp; 0\\
+0 &amp; -2 &amp; 0 &amp; -1/5 &amp; 0 &amp; -2/5 &amp; 1
+\end{array}\right)\sim_f
+\left( \begin{array}{rrr|rrrr}
+\boxed{1} &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -6 &amp; -15 &amp; -5 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \boxed{1} &amp; 2/5 &amp; 0 &amp; -1/5 &amp; 0\\
+0 &amp; \boxed{1} &amp; 0 &amp; 1/10 &amp; 0 &amp; 1/5 &amp; -1/2
+\end{array}\right)
+\sim_f
+\]</span></p>
+<p><span class="math display">\[
+\left( \begin{array}{rrr|rrrr}
+\boxed{1} &amp; 0 &amp; 3 &amp; 4/5 &amp; 0 &amp; -2/5 &amp; 1\\
+0 &amp; \boxed{1} &amp; 0 &amp; 1/10 &amp; 0 &amp; 1/5 &amp; -1/2\\
+0 &amp; 0 &amp; \boxed{1} &amp; 2/5 &amp; 0 &amp; -1/5 &amp; 0\\
+0 &amp; -6 &amp; -15 &amp; -5 &amp; 1 &amp; 0 &amp; 0\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rrr|rrrr}
+\boxed{1} &amp; 0 &amp; 0 &amp; -2/5 &amp; 0 &amp; 1/5 &amp; 1\\
+0 &amp; \boxed{1} &amp; 0 &amp; 1/10 &amp; 0 &amp; 1/5 &amp; -1/2\\
+0 &amp; 0 &amp; \boxed{1} &amp; 2/5 &amp; 0 &amp; -1/5 &amp; 0\\
+0 &amp; -6 &amp; -15 &amp; -5 &amp; 1 &amp; 0 &amp; 0\\
+\end{array}\right)=(F|Q)
+\]</span></p>
+<p><b> Observación:</b> aunque no hemos terminado el proceso tenemos una matriz <span class="math inline">\(Q\)</span> tal que <span class="math display">\[QA=F\]</span> y como las 3 primeras filas de <span class="math inline">\(F\)</span> forman una matriz identidad entonces las 3 primeras filas de <span class="math inline">\(Q\)</span> forman una inversa a izquierda de <span class="math inline">\(A\)</span>. Comprobamos el resultado:</p>
+<span class="math display">\[
+\left( \begin{array}{rrrr}
+-2/5 &amp; 0 &amp; 1/5 &amp; 1\\
+1/10 &amp; 0 &amp; 1/5 &amp; -1/2\\
+2/5 &amp; 0 &amp; -1/5 &amp; 0\\
+\end{array}\right)\left( \begin{array}{rrr}
+1 &amp; 2 &amp; 3 \\
+5 &amp; 4 &amp; 0 \\
+2 &amp; 4 &amp; 1 \\
+1 &amp; 0 &amp; 1
+\end{array}\right)=
+\left( \begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+\end{array}\right)
+\]</span>
+</li>
+<li>
+<p>Utilizando que la inversa a izquierda que cumple las condiciones de Moore-Penrose viene dada por la fórmula:</p>
+<p><span class="math display">\[A^L = (A^t A)^{-1}A^t\]</span></p>
+<p>En primer lugar calculamos la inversa de <span class="math inline">\(A^tA\)</span>:</p>
+<p><span class="math display">\[
+\left(\begin{array}{rrr|rrr}
+30 &amp;  30  &amp;  5 &amp; 1 &amp; 0 &amp; 0\\
+30 &amp;  36  &amp; 10 &amp; 0 &amp; 1 &amp; 0\\
+5 &amp;  10  &amp; 10 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right) \sim_f
+\left(\begin{array}{rrr|rrr}
+6 &amp;  6  &amp;  1 &amp; 1/5 &amp; 0 &amp; 0\\
+0 &amp;  6  &amp; 5 &amp; -1 &amp; 1 &amp; 0\\
+5 &amp;  10  &amp; 10 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)
+\]</span></p>
+<p><span class="math display">\[\sim_f \left(\begin{array}{rrr|rrr}
+1 &amp;  -4  &amp;  -9 &amp; 1/5 &amp; 0 &amp; -1\\
+0 &amp;  6  &amp; 5 &amp; -1 &amp; 1 &amp; 0\\
+5 &amp;  10  &amp; 10 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_f
+\left(\begin{array}{rrr|rrr}
+1 &amp;  -4  &amp;  -9 &amp; 1/5 &amp; 0 &amp; -1\\
+0 &amp;  6  &amp; 5 &amp; -1 &amp; 1 &amp; 0\\
+0 &amp;  30  &amp; 55 &amp; -1 &amp; 0 &amp; 6
+\end{array}\right)
+\]</span></p>
+<p><span class="math display">\[
+\sim_f \left(\begin{array}{rrr|rrr}
+1 &amp;  -4  &amp;  -9 &amp; 1/5 &amp; 0 &amp; -1\\
+0 &amp;  6  &amp; 5 &amp; -1 &amp; 1 &amp; 0\\
+0 &amp;  0  &amp; 30 &amp; 4 &amp; -5 &amp; 6
+\end{array}\right) \sim_f \left(\begin{array}{rrr|rrr}
+1 &amp;  -4  &amp;  -9 &amp; 1/5 &amp; 0 &amp; -1\\
+0 &amp;  1  &amp; 5/6 &amp; -1/6 &amp; 1/6 &amp; 0\\
+0 &amp;  0  &amp; 1 &amp; 2/15 &amp; -1/6 &amp; 1/5
+\end{array}\right)
+\]</span></p>
+<p><span class="math display">\[
+\sim_f \left(\begin{array}{rrr|rrr}
+1 &amp;  0  &amp;   -17/3 &amp; -7/15 &amp;  2/3 &amp; -1\\
+0 &amp;  1  &amp; 5/6 &amp; -1/6 &amp; 1/6 &amp; 0\\
+0 &amp;  0  &amp; 1 &amp; 4/25 &amp; -1/5 &amp; 6/25
+\end{array}\right)
+\sim_f \left(\begin{array}{rrr|rrr}
+1 &amp;  0  &amp;   0 &amp;   13/45  &amp; -5/18 &amp; 2/15\\
+0 &amp;  1  &amp;  0 &amp;   -5/18   &amp;   11/36 &amp; -1/6\\
+0 &amp;  0  &amp; 1 &amp; 4/25 &amp; -1/5 &amp; 6/25
+\end{array}\right)
+\]</span></p>
+<p>Luego</p>
+<p><span class="math display">\[
+(A^tA)^{-1}=  \left(\begin{array}{rrr}
+13/45  &amp; -5/18 &amp; 2/15\\
+-5/18   &amp;   11/36 &amp; -1/6\\
+4/25 &amp; -1/5 &amp; 6/25
+\end{array}\right)
+\]</span></p>
+<p>y nos queda multiplicar por <span class="math inline">\(A^t\)</span> a la derecha:</p>
+<span class="math display">\[
+A^L = \left(\begin{array}{rrr}
+2/15 &amp; 1/3 &amp;  -2/5\\
+-1/6  &amp;  -1/6 &amp;  1/2\\
+2/5  &amp;    0  &amp;  -1/5
+\end{array}\right)
+\]</span>
+</li>
+</ol>
+<p><b>Observación:</b> ambos resultados son diferentes debido a la no unicidad para la existencia de inversa a izquierda.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-3" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Calcula una inversa a derecha de la matriz</p>
+<p><span class="math display">\[
+\left( \begin{array}{rrrr}
+1 &amp; 2 &amp; 3 &amp; 4 \\
+5 &amp; 4 &amp; 3 &amp; 2 \\
+2 &amp; 4 &amp; 6 &amp; 1
+\end{array}\right)
+\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -671,89 +840,55 @@ Solución
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>La matriz <span class="math inline">\(A\)</span> es simétrica y el Teorema espectral afirma que toda matriz simétrica y real es diagonalizable, por tanto <span class="math inline">\(A\)</span> lo es. Nos piden una diagonalización por semejanza ortogonal, aí que tenemos que calcular en primer lugar los valores propios:</p>
+<p>Si calculamos la forma escalonada reducida por columnas de esta matriz (en este caso mediante un software adecuado) junto con una matriz de paso obtenemos</p>
 <p><span class="math display">\[
-\begin{align*}
-|A-\lambda I| &amp; =\left|
-\begin{array}{rrrr}
-2-\lambda &amp; 0 &amp; 0 &amp; -1\\
-0 &amp; 2-\lambda &amp; -1 &amp; 0 \\
-0 &amp; -1 &amp; 2-\lambda &amp; 0 \\
--1 &amp; 0 &amp; 0 &amp; 2-\lambda
-\end{array}\right|=(F_4+F_1\rightarrow F_4)=
-\left|
-\begin{array}{rrrr}
-2-\lambda &amp; 0 &amp; 0 &amp; -1\\
-0 &amp; 2-\lambda &amp; -1 &amp; 0 \\
-0 &amp; -1 &amp; 2-\lambda &amp; 0 \\
-1-\lambda &amp; 0 &amp; 0 &amp; 1-\lambda
-\end{array}\right|\\
-&amp; =(C_1-C_4 \rightarrow C_1)=
-\left|\begin{array}{rrrr}
-3-\lambda &amp; 0 &amp; 0 &amp; -1\\
-0 &amp; 2-\lambda &amp; -1 &amp; 0 \\
-0 &amp; -1 &amp; 2-\lambda &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1-\lambda
-\end{array}\right|=(3-\lambda)(1-\lambda)[(2-\lambda)^2-1]=(3-\lambda)^2(1-\lambda)^2.
-\end{align*}
-\]</span></p>
-<p>Tenemos entonces los valores propios <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=3\)</span> ambos con multiplicidad algebraica dos. Tenemos entonces que la matriz diagonal semejante y congruente con <span class="math inline">\(A\)</span> es</p>
-<p><span class="math display">\[
-D=\begin{pmatrix}
+\left( \begin{array}{rrrr}
+1 &amp; 2 &amp; 3 &amp; 4 \\
+5 &amp; 4 &amp; 3 &amp; 2 \\
+2 &amp; 4 &amp; 6 &amp; 1 \\
+\hline
 1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1&amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 3 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 3
-\end{pmatrix},
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_c
+\left( \begin{array}{rrrr}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+\hline
+0 &amp; 0 &amp; 0 &amp; 1\\
+-3/14 &amp; 1/2 &amp; -1/7 &amp; -2\\
+2/21 &amp;-1/3 &amp;  2/7 &amp;  1\\
+  2/7 &amp;   0 &amp; -1/7 &amp;0
+\end{array}\right)
 \]</span></p>
-<p>y por tanto la signatura de <span class="math inline">\(A\)</span> es <span class="math inline">\((4,0)\)</span>, por tanto definida positiva.</p>
-<p>Calculamos ahora los subespacios propios y elegimos una base ortonormal de cada uno.</p>
-<p><strong><span class="math inline">\(V_{\lambda=1}\)</span></strong></p>
+<p>De donde una inversa a derecha es</p>
 <p><span class="math display">\[
-(A-1\cdot I)=\begin{pmatrix}
-1 &amp; 0 &amp; 0 &amp; -1\\
-0 &amp; 1 &amp; -1 &amp; 0 \\
-0 &amp; -1 &amp; 1 &amp; 0 \\
--1 &amp; 0 &amp; 0 &amp; 1
-\end{pmatrix},
+A^{R}=
+\left( \begin{array}{rrr}
+0 &amp; 0 &amp; 0 \\
+-3/14 &amp; 1/2 &amp; -1/7 \\
+2/21 &amp;-1/3 &amp;  2/7 \\
+2/7 &amp;   0 &amp; -1/7  
+\end{array}\right)
 \]</span></p>
-<p>nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
-x-t=0\\
-y-z=0
-\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,1),(0,1,1,0)\}\)</span>.</p>
-<p><strong><span class="math inline">\(V_{\lambda=3}\)</span></strong></p>
-<p><span class="math display">\[
-(A-1\cdot I)=\begin{pmatrix}
--1 &amp; 0 &amp; 0 &amp; -1\\
-0 &amp; -1 &amp; -1 &amp; 0 \\
-0 &amp; -1 &amp; -1 &amp; 0 \\
--1 &amp; 0 &amp; 0 &amp; -1
-\end{pmatrix},
-\]</span></p>
-<p>nos da como cartesianas <span class="math inline">\(\left\{\begin{array}{l}
-x+t=0\\
-y+z=0
-\end{array}\right.\)</span> y una base ortogonal es <span class="math inline">\(\{(1,0,0,-1),(0,1,-1,0)\}\)</span>.</p>
-<p>Dividiendo cada vector por su norma obtenemos una base ortonormal de vectores propios, lo que nos da la matriz ortogonal <span class="math inline">\(P\)</span>:</p>
-<p><span class="math display">\[
-P=\begin{pmatrix}
-1/\sqrt{2} &amp; 0 &amp; 0 &amp; 1/\sqrt{2}\\
-0 &amp; 1/\sqrt{2} &amp; 1/\sqrt{2} &amp; 0\\
-0 &amp; 1/\sqrt{2} &amp; -1/\sqrt{2} &amp; 0\\
-1/\sqrt{2} &amp; 0 &amp; 0 &amp; -1/\sqrt{2}\\
-\end{pmatrix}.
-\]</span></p>
+<p>También puede calcularse una mediante la fórmula</p>
+<p><span class="math display">\[A^R= A^{t}(AA^{t})^{-1}\]</span></p>
+<p>que es además la inversa de Moore-Penrose de la matriz <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="exr-3" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> Calcula la signatura de la forma cuadrática definida por la matriz</p>
-<p><span class="math display">\[
-C=\left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; -1\\
-0 &amp; -1 &amp; -5
+<div id="exr-4" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> Calcula una factorización de rango pleno de las matrices <span class="math display">\[
+A=\left( \begin{array}{rr}
+6 &amp; 9 \\
+10 &amp; 15 \\
+\end{array}\right); \hspace{1cm}
+B=\left( \begin{array}{rrr}
+2 &amp; 1 &amp; 5 \\
+-1 &amp; 1 &amp; 3 \\
 \end{array}\right)
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
@@ -768,48 +903,148 @@ Solución
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Diagonalizamos por congruencia (realizando las mismas operaciones por filas que por columnas), por lo que necesitamos un pivote en la segunda fila</p>
-<p><span class="math display">\[
-C=\left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; -1\\
-0 &amp; -1 &amp; -5
-\end{array}\right)\sim_f (F_2\leftrightarrow F_3) \left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; -1 &amp; -5\\
-0 &amp; 0 &amp; -1
-\end{array}\right)\sim_c (C_2\leftrightarrow C_3) \left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; -5 &amp; -1\\
-0 &amp; -1 &amp; 0
+<p>Comenzamos calculando la forma escalonada reducida por filas de <span class="math inline">\(A\)</span> y una matriz de paso <span class="math inline">\(Q\)</span>: <span class="math display">\[
+\left( \begin{array}{rr|rr}
+6 &amp; 9 &amp; 1 &amp; 0\\
+10 &amp; 15 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rr|rr}
+2 &amp; 3 &amp; 1/3 &amp; 0\\
+2 &amp; 3 &amp; 0 &amp; 1/5\\
+\end{array}\right)
+\sim_f
+\left( \begin{array}{rr|rr}
+2 &amp; 3 &amp; 1/3 &amp; 0\\
+0 &amp; 0 &amp; -1/3 &amp; 1/5\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rr|rr}
+1 &amp; 3/2 &amp; 1/6 &amp; 0\\
+0 &amp; 0 &amp; -1/3 &amp; 1/5\\
 \end{array}\right)
 \]</span></p>
-<p>y ahora usamos el <span class="math inline">\(-5\)</span> para hacer cero en la posición 32:</p>
-<p><span class="math display">\[
-\sim_f \left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; -5 &amp; -1\\
-0 &amp; 0 &amp; 1/5
-\end{array}\right)\sim_c \left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; -5 &amp; 0\\
-0 &amp; 0 &amp; 1/5
+<p>Calculamos la inversa de la matriz de paso: <span class="math display">\[\left( \begin{array}{rr|rr}
+1/6 &amp; 0 &amp; 1 &amp; 0\\
+-1/3 &amp; 1/5 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rr|rr}
+1 &amp; 0 &amp; 6 &amp; 0\\
+-1 &amp; 3/5 &amp; 0 &amp; 3\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rr|rr}
+1 &amp; 0 &amp; 6 &amp; 0\\
+0 &amp; 1 &amp; 10 &amp; 5\\
 \end{array}\right)
 \]</span></p>
-<p>por tanto la signatura es <span class="math inline">\(\boxed{(2,1)}\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="exr-4" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Clasifica, según los valores reales de <span class="math inline">\(a\)</span>, la forma cuadrática definida por la matriz</p>
-<p><span class="math display">\[
-C=\left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; a\\
-0 &amp; a &amp; -4
+<p>Tenemos que <span class="math display">\[
+\left( \begin{array}{rr}
+6 &amp; 9\\
+10 &amp; 15\\
+\end{array}\right)=Q^{-1}H=\left( \begin{array}{r|r}
+6 &amp; 0\\
+10 &amp; 5\\
+\end{array}\right)
+\left( \begin{array}{rr}
+1 &amp; 3/2 \\
+\hline
+0 &amp; 0  \\
 \end{array}\right)
 \]</span></p>
+<p>De donde obtenemos que una descomposición de rango pleno es: <span class="math display">\[
+\left( \begin{array}{rr}
+6 &amp; 9\\
+10 &amp; 15\\
+\end{array}\right)=\left( \begin{array}{r}
+6 \\
+10 \\
+\end{array}\right)
+\left( \begin{array}{rr}
+1 &amp; 3/2 \\
+\end{array}\right)
+\]</span></p>
+<p>Procedemos del mismo modo para <span class="math inline">\(B\)</span>: <span class="math display">\[
+\left( \begin{array}{rrr|rr}
+2 &amp; 1 &amp; 5 &amp; 1&amp; 0\\
+-1 &amp; 1 &amp; 3 &amp; 0 &amp; 1\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rrr|rr}
+\boxed{1} &amp; -1 &amp; -3 &amp; 0 &amp; -1\\
+2 &amp; 1 &amp; 5 &amp; 1&amp; 0\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rrr|rr}
+\boxed{1} &amp; -1 &amp; -3 &amp; 0 &amp; -1\\
+0 &amp; 3 &amp; 11 &amp; 1 &amp; 2\\
+\end{array}\right)
+\]</span></p>
+<p><span class="math display">\[
+\sim_f
+\left( \begin{array}{rrr|rr}
+\boxed{1} &amp; -1 &amp; -3 &amp; 0 &amp; -1\\
+0 &amp; 3 &amp; 11 &amp; 1 &amp; 2\\
+\end{array}\right)\sim_f
+\left( \begin{array}{rrr|rr}
+\boxed{1} &amp; -1 &amp; -3 &amp; 0 &amp; -1\\
+0 &amp; \boxed{1}&amp; 11/3 &amp; 1/3 &amp; 2/3\\
+\end{array}\right)
+\sim_f
+\left( \begin{array}{rrr|rr}
+\boxed{1} &amp; 0 &amp; 2/3 &amp; 1/3 &amp; -1/3\\
+0 &amp; \boxed{1}&amp; 11/3 &amp; 1/3 &amp; 2/3\\
+\end{array}\right)
+\]</span></p>
+<p>Calculamos ahora la inversa de la matriz de paso (se omite el proceso):</p>
+<p><span class="math display">\[
+Q^{-1}= \left( \begin{array}{rr}
+1/3 &amp; 1/3\\
+-1/3 &amp; 2/3\\
+\end{array}\right)
+\]</span></p>
+<p>y obtenemos que</p>
+<p><span class="math display">\[
+A=\left( \begin{array}{rrr}
+2 &amp; 1 &amp; 5 \\
+-1 &amp; 1 &amp; 3 \\
+\end{array}\right)=Q^{-1}H= \left( \begin{array}{rr}
+1/3 &amp; 1/3\\
+-1/3 &amp; 2/3\\
+\end{array}\right)\left( \begin{array}{rrr}
+1 &amp; 0 &amp; 2/3 \\
+0 &amp; 1 &amp; 11/3 \\
+\end{array}\right)
+\]</span></p>
+<p>que es una descomposición de rango pleno.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-5" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Sea el sistema de ecuaciones lineales <span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0\\
+1 &amp; 1\\
+1 &amp; 2\\
+1 &amp; 3
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}=
+\left(
+\begin{array}{rr}
+2\\
+-1\\
+1\\
+-2
+\end{array}
+\right)
+\]</span></p>
+<ol type="a">
+<li>
+Prueba que <span class="math inline">\(A\)</span> es de rango pleno por columnas.
+</li>
+<li>
+Encuentra la única solución mínimo-cuadrática del sistema.
+</li>
+</ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -822,38 +1057,102 @@ Solución
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Diagonalizamos por congruencia (con la única regla de usar las mismas operaciones elementales por filas que por columnas)</p>
-<p><span class="math display">\[
-C=\left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; a\\
-0 &amp; a &amp; -4
-\end{array}\right)\sim_f \left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; a\\
-0 &amp; 0 &amp; -4-a^2
-\end{array}\right)\sim_c \left(\begin{array}{rrr}
-1 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0a\\
-0 &amp; 0 &amp; -4-a^2
-\end{array}\right)
+<ol type="a">
+<li>
+<p>Observando la matriz <span class="math inline">\(A\)</span> obtenemos que tiene dos pivotes <span class="math display">\[
+\begin{pmatrix}
+\boxed{1} &amp; 0\\
+1 &amp;     \boxed{1}\\
+1 &amp; 2\\
+1 &amp; 3
+\end{pmatrix}
 \]</span></p>
-<p>Puesto que <span class="math inline">\(-4-a^2\)</span> es negativo para cualquier valor real de <span class="math inline">\(a\)</span>, la signatura de la matriz es <span class="math inline">\((2,1)\)</span> y por tanto es <b> no definida </b>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="exr-5" class="medio theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Dada la matriz</p>
+así que su rango es 2 que coincide con el número de columnas, por tanto es de rango pleno por columnas.
+</li>
+<li>
+<p>Puesto que <span class="math inline">\(A\)</span> es de rango pleno por columnas existe una única solución mínimo-cuadrática. Para calcularla podemos usar la fórmula <span class="math display">\[
+X=A^{L}B\quad   \mbox{con } A^{L}=(A^tA)^{-1}A^t
+\]</span></p>
+<p>(o bien resolver el sistema compatible <span class="math inline">\(A^tAX=A^tB\)</span>). <b> Observación:</b> en este caso no es válida una inversa por la izquierda cualquiera, debe cumplir las condiciones de la inversa de Moore-Penrose.</p>
 <p><span class="math display">\[
-A= \left(\begin{array}{rrrr}
+A^tA= \begin{pmatrix}
 1 &amp; 1 &amp; 1 &amp; 1\\
-1 &amp; 1 &amp; -1 &amp; -1\\
-1 &amp; -1 &amp; 1 &amp; -1\\
-1 &amp; -1 &amp; -1 &amp; 1
+0 &amp; 1 &amp; 2 &amp; 3\\
+\end{pmatrix} \begin{pmatrix}
+1 &amp; 0\\
+1 &amp; 1\\
+1 &amp; 2\\
+1 &amp; 3
+\end{pmatrix}= \begin{pmatrix}
+4 &amp; 6\\
+6 &amp; 14\\
+\end{pmatrix}
+\]</span></p>
+<p>que tiene por inversa</p>
+<p><span class="math display">\[
+(A^tA)^{-1}= \left( \begin{array}{rrrr}
+7/10 &amp; -3/10\\
+-3/10 &amp; 1/5\\
 \end{array}\right)
 \]</span></p>
-<p>Calcula la signatura de la forma cuadrática definida por <span class="math inline">\(A\)</span>.</p>
+<p>Por tanto</p>
+<p><span class="math display">\[
+A^{L}= (A^tA)^{-1}A^t=  \left( \begin{array}{rrrr}
+7/10 &amp; -3/10\\
+-3/10 &amp; 1/5\\
+\end{array}\right) \begin{pmatrix}
+1 &amp; 1 &amp; 1 &amp; 1\\
+0 &amp; 1 &amp; 2 &amp; 3\\
+\end{pmatrix}=   \left( \begin{array}{rrrr}
+7/10 &amp; 2/5 &amp; 1/10 &amp; -1/5\\
+-3/10 &amp; -1/10 &amp; 1/10 &amp; 3/10\\
+\end{array}\right)
+\]</span></p>
+<p>Luego la solución mínimo cuadrática es <span class="math display">\[
+X=A^{L}B= \left( \begin{array}{rrrr}
+7/10 &amp; 2/5 &amp; 1/10 &amp; -1/5\\
+-3/10 &amp; -1/10 &amp; 1/10 &amp; 3/10\\
+\end{array}\right) \left(\begin{array}{rr}
+2\\
+-1\\
+1\\
+-2
+\end{array}\right)
+= \left(\begin{array}{rr}
+3/2\\
+-1\\
+\end{array}
+\right)
+\]</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-6" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Sea el sistema de ecuaciones lineales <span class="math display">\[
+\begin{pmatrix}0 &amp; 1 &amp; 2\\1 &amp; 1 &amp; 1\end{pmatrix}    
+\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}=
+\left(
+\begin{array}{rr}
+2\\
+-1
+\end{array}
+\right).
+\]</span></p>
+<ol type="a">
+<li>
+Demuestra que <span class="math inline">\(A\)</span> es de rango pleno for filas.
+</li>
+<li>
+Encuentra la solución de norma mínima del sistema.
+</li>
+</ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -866,61 +1165,73 @@ Solución
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Diagonalizamos por congruencia:</p>
+<ol type="a">
+<li>
+<p>Para comprobar que la matriz de coeficientes es de rango pleno por filas observamos que el menor de orden 2 formado por las dos primeras columnas es distinto de 0, con lo que el rango es 2 y coincide con el número de filas.</p>
+</li>
+<li>
+<p>Como la matriz de coeficientes es de rango pleno por filas (y por tanto el sistema de ecuaciones es compatible) la solución de norma mínima viene dado por: <span class="math display">\[X=A^{R}B\]</span></p>
+<p>Calculamos entonces la inversa a derecha de <span class="math inline">\(A\)</span> que es también su inversa de Moore-Penrose (no es válida cualquier otra inversa a derecha) <span class="math inline">\(A^R=A^t (AA^t)^{-1}\)</span>:</p>
 <p><span class="math display">\[
-A= \left(\begin{array}{rrrr}
-1 &amp; 1 &amp; 1 &amp; 1\\
-1 &amp; 1 &amp; -1 &amp; -1\\
-1 &amp; -1 &amp; 1 &amp; -1\\
-1 &amp; -1 &amp; -1 &amp; 1
-\end{array}\right)\sim_f  \left(\begin{array}{rrrr}
-1 &amp; 1 &amp; 1 &amp; 1\\
-0 &amp; 0 &amp; -2 &amp; -2\\
-0 &amp; -2 &amp; 0 &amp; -2\\
-0 &amp; -2 &amp; -2 &amp; 0
-\end{array}\right)\sim_c  \left(\begin{array}{rrrr}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; -2 &amp; -2\\
-0 &amp; -2 &amp; 0 &amp; -2\\
-0 &amp; -2 &amp; -2 &amp; 0
+AA^t=\begin{pmatrix}0 &amp; 1 &amp; 2\\1 &amp; 1 &amp; 1\end{pmatrix}
+\begin{pmatrix}0 &amp; 1 \\1 &amp; 1 \\ 2 &amp; 1\end{pmatrix}= \left( \begin{array}{rr}
+5&amp; 3 \\
+3 &amp; 3 \\
+\end{array}\right)\, (AA^t)^{-1}= \left( \begin{array}{rr}
+1/2 &amp; -1/2 \\
+-1/2 &amp; 5/6 \\
 \end{array}\right)
 \]</span></p>
 <p><span class="math display">\[
-\sim_f  \left(\begin{array}{rrrr}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; -2 &amp; -2 &amp; -4\\
-0 &amp; -2 &amp; 0 &amp; -2\\
-0 &amp; -2 &amp; -2 &amp; 0
-\end{array}\right)\sim_c \left(\begin{array}{rrrr}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; -4 &amp; -2 &amp; -4\\
-0 &amp; -2 &amp; 0 &amp; -2\\
-0 &amp; -4 &amp; -2 &amp; 0
+A^{R}= \begin{pmatrix}0 &amp; 1 \\1 &amp; 1 \\ 2 &amp; 1\end{pmatrix}\left( \begin{array}{rr}
+1/2 &amp; -1/2 \\
+-1/2 &amp; 5/6 \\
+\end{array}\right)= \left( \begin{array}{rr}
+-1/2 &amp; 5/6 \\
+0 &amp; 1/3\\
+1/2 &amp; -1/6 \\
 \end{array}\right)
 \]</span></p>
+<p>Por último, para calcular la solución de norma mínima multiplicamos por la columna de términos independientes:</p>
 <p><span class="math display">\[
-\sim_f \left(\begin{array}{rrrr}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; -4 &amp; -2 &amp; -4\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 4
-\end{array}\right)\sim_c \left(\begin{array}{rrrr}
-1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; -4 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 4
+X= A^{R}B=\left( \begin{array}{rr}
+-1 &amp; 1 \\
+1 &amp; 0 \\
+0 &amp; 0
+\end{array}\right)\left( \begin{array}{r}
+2\\
+-1\\
+\end{array}\right)=  \left( \begin{array}{r}
+-11/6\\
+-1/3\\
+7/6
 \end{array}\right)
 \]</span></p>
-<p>y se obtiene que los signos de los elementos de la matriz diagonal son 3 positivos y 1 negativo. Entonces <span class="math inline">\(sig(A)=(3,1)\)</span>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
-<div id="exr-6" class="basico theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Calcula la signatura de la forma cuadrática <span class="math inline">\(\Phi: \mathbb{R}^3 \longrightarrow \mathbb{R}\)</span> definida por:</p>
-<p><span class="math display">\[
-\Phi (x,y,z)= 5 x^2 + 3 y^2 + 2 z^2 - 2xy -4 xz
+<div id="exr-7" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Sea <span class="math inline">\(A\in \mathcal{M}_{4\times 3}(\mathbb{R})\)</span> la matriz <span class="math display">\[
+A=\left(
+\begin{array}{rrr}
+-1 &amp; 0 &amp; 1\\-1 &amp; 1 &amp; 1\\-1 &amp; 3 &amp; 1\\1 &amp; -2 &amp; -1
+\end{array}
+\right).
 \]</span></p>
+<ol type="a">
+<li>
+Encuentra una descomposición de rango pleno de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Calcula <span class="math inline">\(A^\dagger\)</span>, la inversa generalizada de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Para <span class="math inline">\(b=(1,1,1,1)\)</span>, calcula la solución mínimo cuadrática de norma mínima del sistema <span class="math inline">\(Ax=b\)</span>.
+</li>
+</ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -933,42 +1244,203 @@ Solución
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Escribimos la matriz simétrica asociada y la diagonalizamos por congruencia</p>
-<p><span class="math display">\[
-\begin{pmatrix}
-5 &amp; -1 &amp; -2 \\
--1 &amp; 3 &amp; 0\\
--2 &amp; 0 &amp; 2\\
-\end{pmatrix}\sim_f \begin{pmatrix}
--2 &amp; 0 &amp; 2\\
--1 &amp; 3 &amp; 0\\
-5 &amp; -1 &amp; -2 \\
-\end{pmatrix}\sim_c \begin{pmatrix}
-2 &amp; 0 &amp; -2\\
-0 &amp; 3 &amp; -1 \\
--2 &amp; -1 &amp; 5\\
-\end{pmatrix}\sim_f \begin{pmatrix}
-2 &amp; 0 &amp; -2\\
-0 &amp; 3 &amp; -1 \\
-0 &amp; -1 &amp; 3\\
-\end{pmatrix}
+<ol type="a">
+<li>
+<p>Para calcular la descomposición de rango pleno de <span class="math inline">\(A\)</span>, calculamos su forma escalonada por filas <span class="math inline">\(H\)</span> y una matriz de paso <span class="math inline">\(P\)</span> tales que <span class="math inline">\(PA=H\)</span>. Para ello, le añadimos a <span class="math inline">\(A\)</span> a la derecha la matriz identidad y calculamos una forma escalonada de esa matriz: <span class="math display">\[
+\left(\begin{array}{rrr|rrrr}
+-1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+-1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+-1 &amp; 3 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+1 &amp; -2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right) \sim_f
+\left(\begin{array}{rrr|rrrr}
+1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 2 &amp; 3\\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 2 &amp; 3\\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 2
+\end{array}\right).
 \]</span></p>
-<p><span class="math display">\[
-\sim_c \begin{pmatrix}
-2 &amp; 0 &amp; 0\\
-0 &amp; 3 &amp; -1 \\
-0 &amp; -1 &amp; 3\\
-\end{pmatrix}\sim_f \begin{pmatrix}
-2 &amp; 0 &amp; 0\\
-0 &amp; 3 &amp; -1 \\
-0 &amp; 0 &amp; 3-1/3\\
-\end{pmatrix}\sim_c \begin{pmatrix}
-2 &amp; 0 &amp; 0\\
-0 &amp; 3 &amp; 0 \\
-0 &amp; 0 &amp; 8/3\\
-\end{pmatrix}
+<p>Tenemos por tanto que <span class="math display">\[
+H=\left(\begin{array}{rrr}
+1 &amp; 0 &amp; -1\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0
+\end{array}\right), \hspace{1cm}
+P=\left(\begin{matrix}0 &amp; 0 &amp; 2 &amp; 3\\0 &amp; 0 &amp; 1 &amp; 1\\1 &amp; 0 &amp; 2 &amp; 3\\0 &amp; 1 &amp; 1 &amp; 2\end{matrix}\right).
 \]</span></p>
-<p>luego <span class="math inline">\(sig(A)=(3,0)\)</span>.</p>
+<p>Tomamos como <span class="math inline">\(F\)</span> la matriz formada por las dos filas no nulas de <span class="math inline">\(H\)</span>, y por tanto es la matriz compuesta por las dos primeras columnas de <span class="math inline">\(P^{-1}\)</span>: <span class="math display">\[
+P^{-1}=\left(\begin{array}{rrrr}-1 &amp; 0 &amp; 1 &amp; 0\\-1 &amp; 1 &amp; 0 &amp; 1\\-1 &amp; 3 &amp; 0 &amp; 0\\1 &amp; -2 &amp; 0 &amp; 0\end{array}\right),
+\ F=\left(\begin{array}{rrr} 1 &amp; 0 &amp; -1 \\0 &amp; 1 &amp; 0 \end{array}\right),\
+C=\left(\begin{array}{rr}-1 &amp; 0\\-1 &amp; 1\\-1 &amp; 3\\1 &amp; -2\end{array}\right)
+\]</span></p>
+<p>De esta forma tenemos <span class="math inline">\(A=CF\)</span>, con <span class="math inline">\(C\)</span> de rango pleno por columnas y <span class="math inline">\(F\)</span> de rango pleno por filas.</p>
+</li>
+<li>
+<p>Sabemos que <span class="math inline">\(A^\dagger=F^D C^I\)</span>, con <span class="math inline">\(F^D= F^t(F F^t)^{-1}\)</span> y <span class="math inline">\(C^I=(C^tC)^{-1}C^t\)</span>:</p>
+<p><span class="math display">\[
+F^D=\left(\begin{array}{rr}\frac{1}{2} &amp; 0\\0 &amp; 1\\- \frac{1}{2} &amp; 0\end{array}\right),
+\ C^I=\left(\begin{array}{rrrr}- \frac{7}{10} &amp; - \frac{2}{5} &amp; \frac{1}{5} &amp; \frac{1}{10}\\- \frac{3}{10} &amp; - \frac{1}{10} &amp; \frac{3}{10} &amp; - \frac{1}{10}\end{array}\right),
+\ A^\dagger= \left(\begin{array}{rrrr}- \frac{7}{20} &amp; - \frac{1}{5} &amp; \frac{1}{10} &amp; \frac{1}{20}\\- \frac{3}{10} &amp; - \frac{1}{10} &amp; \frac{3}{10} &amp; - \frac{1}{10}\\\frac{7}{20} &amp; \frac{1}{5} &amp; - \frac{1}{10} &amp; - \frac{1}{20}\end{array}\right)
+\]</span></p>
+</li>
+<li>
+La solución mínimo cuadrática de norma mínima de <span class="math inline">\(AX=b\)</span> viene dada por <span class="math inline">\(A^\dagger b=(-2/5,-1/5,2/5)\)</span>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-8" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> Sea <span class="math inline">\(A\in \mathcal{M}_{4\times 3}(\mathbb{R})\)</span> la matriz <span class="math display">\[
+A=\left(
+\begin{array}{rrr}
+1 &amp; 1 &amp; -1\\1 &amp; 3 &amp; -1\\1 &amp; 0 &amp; -1\\-1 &amp; -2 &amp; 1
+\end{array}
+\right).
+\]</span></p>
+<ol type="a">
+<li>
+Encuentra los valores singulares de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Encuentra una descomposición de rango pleno de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Calcula <span class="math inline">\(A^\dagger\)</span>, la inversa generalizada de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Para <span class="math inline">\(b=(1,2,3,4)^t\)</span>, calcula la solución mínimo cuadrática de norma mínima del sistema <span class="math inline">\(Ax=b\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Los valores singulares son las raíces cuadradas de los valores propios de la matriz <span class="math inline">\(AA^t\)</span> (o de su traspuesta, <span class="math inline">\(A^tA\)</span>). <span class="math display">\[
+AA^{t}= \left( \begin{array}{rrrr}
+3 &amp; 5 &amp; 2  &amp; -4\\
+5 &amp; 11&amp; 2  &amp; -8\\
+2 &amp;  2&amp; 2  &amp; -2\\
+-4&amp; -8&amp; -2 &amp; 6
+\end{array}\right)
+\]</span></p>
+<p>El cálculo de los valores propios es laborioso, así que puede realizarse usando un software adecuado, de esta forma hemos obtenido que son <span class="math inline">\(20\)</span>, <span class="math inline">\(2\)</span> (ambos con multiplicidad algebraica 1) y <span class="math inline">\(0\)</span> con multiplicidad algebraica 2 (pueden comprobarse estos resultados mediante el cálculo del rango de <span class="math inline">\(AA^t-\lambda I\)</span> para cada uno de los valores propios). Por tanto los valores singulares son <span class="math inline">\(2\sqrt{5}\)</span>, <span class="math inline">\(\sqrt{2}\)</span> y <span class="math inline">\(0\)</span>.</p>
+</li>
+<li>
+<p>Para la descomposición de rango pleno calculamos <span class="math inline">\(H\)</span> la forma escalonada reducida de <span class="math inline">\(A\)</span> y una matriz de paso <span class="math inline">\(P\)</span> de forma que <span class="math inline">\(AP=H\)</span>:</p>
+<p><span class="math display">\[
+\left(
+\begin{array}{rrr|rrrr}
+1 &amp; 1 &amp; -1&amp; 1 &amp; 0 &amp; 0&amp; 0\\
+1 &amp; 3 &amp; -1&amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+1 &amp; 0 &amp; -1&amp; 0 &amp; 0 &amp; 1&amp; 0\\
+-1 &amp; -2 &amp; 1&amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right)\sim_f
+\left(
+\begin{array}{rrr|rrrr}
+1 &amp; 0 &amp; -1&amp; 0 &amp; 0 &amp; 1&amp; 0\\
+0 &amp; 1 &amp; 0&amp; 0 &amp; 0 &amp; -1/2 &amp; -1/2\\
+0 &amp; 0 &amp; 0&amp; 1 &amp; 0 &amp; -1/2&amp; 1/2\\
+0 &amp; 0 &amp; 0&amp; 0 &amp; 1 &amp; 1/2 &amp; 3/2
+\end{array}\right)
+\]</span></p>
+<p>Tomamos como <span class="math inline">\(F\)</span> (de rango pleno por filas) las dos primeras filas de <span class="math inline">\(H\)</span> y como <span class="math inline">\(C\)</span> las 2 primeras columnas de <span class="math inline">\(P^{-1}\)</span> (que es de rango pleno por columnas). Así tendremos que <span class="math inline">\(A=CF\)</span>:</p>
+<p><span class="math display">\[
+P^{-1}=  \left( \begin{array}{rrrr}
+1 &amp; 1 &amp; 1 &amp; 0\\
+1 &amp; 3 &amp; 0 &amp; 1\\
+1 &amp; 0 &amp; 0 &amp; 0\\
+-1 &amp;-2 &amp; 0 &amp; 0
+\end{array}\right)\,
+F= \left( \begin{array}{rrr}
+1 &amp; 0 &amp; -1\\
+0 &amp; 1 &amp; 0 \\
+\end{array}\right)\,
+C= \left( \begin{array}{rr}
+1 &amp; 1 \\
+1 &amp; 3 \\
+1 &amp; 0 \\
+-1 &amp;-2
+\end{array}\right)\,
+\]</span></p>
+</li>
+<li>
+<p>Sabemos que <span class="math inline">\(A^\dagger=F^R C^L\)</span>. Realizamos el cálculo de <span class="math inline">\(F^R=F^t(FF^t)^{-1}\)</span> y obtenemos:</p>
+<p><span class="math display">\[F^D=\left(\begin{array}{rr}\frac{1}{2} &amp; 0\\0 &amp; 1\\- \frac{1}{2} &amp; 0\end{array}\right)\]</span></p>
+<p>Procedemos al cálculo de <span class="math inline">\(C^L=(C^tC)^{-1}C^t\)</span>:</p>
+<p><span class="math display">\[
+C^tC=\left( \begin{array}{rrrr}
+1 &amp; 1 &amp;  1 &amp; -1 \\
+1 &amp; 3 &amp; 0 &amp; -2 \\
+\end{array}\right) \left( \begin{array}{rr}
+1 &amp; 1 \\
+1 &amp; 3 \\
+1 &amp; 0 \\
+-1 &amp;-2
+\end{array}\right)
+=\left( \begin{array}{rr}
+4 &amp; 6\\
+6 &amp; 14
+\end{array}\right);\,  (C^tC)^{-1}= \left( \begin{array}{rr}
+-7/10 &amp; -3/10\\
+-3/10 &amp; 1/5
+\end{array}\right)
+\]</span></p>
+<p>luego</p>
+<p><span class="math display">\[
+C^L= \left( \begin{array}{rr}
+-7/10 &amp; -3/10\\
+-3/10 &amp; 1/5
+\end{array}\right)\left( \begin{array}{rrrr}
+1 &amp; 1 &amp;  1 &amp; -1 \\
+1 &amp; 3 &amp; 0 &amp; -2 \\
+\end{array}\right) = \left( \begin{array}{rrrr}
+2/5    &amp;   -1/5  &amp;     7/10   &amp;   -1/10\\
+-1/10  &amp;     3/10  &amp;   -3/10  &amp;    -1/10
+\end{array}\right)
+\]</span></p>
+<p>Por último calculamos <span class="math inline">\(A^\dagger=F^R C^L\)</span> y obtenemos</p>
+<p><span class="math display">\[
+A^\dagger=\left(\begin{array}{rr}\frac{1}{2} &amp; 0\\0 &amp; 1\\- \frac{1}{2} &amp; 0\end{array}\right)
+\left( \begin{array}{rrrr}
+2/5    &amp;   -1/5  &amp;     7/10   &amp;   -1/10\\
+-1/10  &amp;     3/10  &amp;   -3/10  &amp;    -1/10
+\end{array}\right) = \left( \begin{array}{rrrr}
+1/5  &amp;    -1/10  &amp;     7/20    &amp;  -1/20\\
+-1/10  &amp;     3/10  &amp;    -3/10    &amp;  -1/10\\
+-1/5  &amp;     1/10  &amp;    -7/20    &amp;   1/20
+\end{array}\right)
+\]</span></p>
+</li>
+<li>
+<p>La solución mínimo cuadrática de norma mínima del sistema viene dada por <span class="math inline">\(X=A^\dagger b\)</span>:</p>
+<p><span class="math display">\[
+X= \left( \begin{array}{rrrr}
+1/5  &amp;    -1/10  &amp;     7/20    &amp;  -1/20\\
+-1/10  &amp;     3/10  &amp;    -3/10    &amp;  -1/10\\
+-1/5  &amp;     1/10  &amp;    -7/20    &amp;   1/20
+\end{array}\right)\begin{pmatrix}
+1\\
+2\\
+3\\
+4
+\end{pmatrix}= \left( \begin{array}{r}
+17/20\\
+-4/5\\
+-17/20
+\end{array}\right)
+\]</span></p>
+</li>
+</ol>
 </div>
 </div>
 </div>
