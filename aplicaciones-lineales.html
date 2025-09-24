@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -28,21 +28,22 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0eed61f2e31f6b76d04148bb74fa71d2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0bbb9d88478d102033c37fea9a42c307.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0eed61f2e31f6b76d04148bb74fa71d2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-450d2a4178d7391a0812bc8d63b1a3da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a3b89e660445efaee61f23d5f61c68a7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-450d2a4178d7391a0812bc8d63b1a3da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
-    "search-no-results-text": "Sin resultados",
+    "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -204,7 +205,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -392,6 +393,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Problemas resueltos de Álgebra Lineal</span>
     </a>
@@ -440,6 +443,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -487,7 +494,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resueltos-examenes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Otros</span></a>
+ <span class="menu-text">Miscelánea</span></a>
   </div>
 </li>
     </ul>
@@ -589,12 +596,12 @@ La aplicación <span class="math inline">\(f:(\mathbb{Z}_7)^3 \rightarrow (\math
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -640,12 +647,12 @@ Es aplicación lineal. Cada componente de la imagen se calcula como una combinac
 <div id="exr-2" class="medio theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Prueba que la siguiente aplicación es lineal y calcula la matriz asociada considerando las bases estándar en cada espacio vectorial. <span class="math display">\[D:\mathbb{R}_3[x] \to \mathbb{R}_3[x] \text{ dada por } D(p(x))=p'(x).\]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -717,12 +724,12 @@ Determina para qué valores de <span class="math inline">\(a\)</span> el vector 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -857,12 +864,12 @@ Decide de qué tipo es <span class="math inline">\(f\)</span> (inyectiva, sobrey
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -969,12 +976,12 @@ B'=\{(1,0,1,1),(0,1,-1,0),(0,0,1,1),(0,0,0,1)\}.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1156,12 +1163,12 @@ Calcula la matriz asociada a <span class="math inline">\(f\)</span> respecto de 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1328,12 +1335,12 @@ Determinar bases del núcleo y la imagen de <span class="math inline">\(F\)</spa
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1493,12 +1500,12 @@ f(-1,1,1)&amp;=(1,0,0).
 \]</span></p>
 <p>Calcula la matriz asociada a <span class="math inline">\(f\)</span> respecto de la base <span class="math inline">\(B'=\{(1,1,-1),(1,-1,1),(-1,1,1)\}\)</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1604,12 +1611,12 @@ B= \{ (1,0,-1), (1,1,-1),(0,1,-1)\}.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1779,12 +1786,12 @@ H=\begin{pmatrix}
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1920,12 +1927,12 @@ M_{BB'}(D)=\begin{pmatrix}
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2006,12 +2013,12 @@ f\left( \begin{pmatrix} a &amp; b \\ c &amp; d\end{pmatrix}\right) =
 \]</span></p>
 <p>Determinar la matriz asociada a <span class="math inline">\(f\)</span> respecto a la base estándard de <span class="math inline">\(\mathcal{M}_2(\mathbb{R})\)</span> y determinar bases de <span class="math inline">\(\operatorname{ker}(f)\)</span> e <span class="math inline">\(\operatorname{Im}(f)\)</span>. ¿Es <span class="math inline">\(f\)</span> inyectiva? ¿Es <span class="math inline">\(f\)</span> sobreyectiva?</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2141,12 +2148,12 @@ Calcula bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2198,12 +2205,12 @@ Como <span class="math inline">\(\operatorname{dim}(\operatorname{Im}(f))=\opera
 <div id="exr-14" class="cuerpo-finito-medio theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 14</strong></span> De una aplicación lineal <span class="math inline">\(f:(\mathbb{Z}_5)^2 \longrightarrow (\mathbb{Z}_5)^3\)</span> se sabe que <span class="math inline">\(f(1,2)=(1,0,1)\)</span> y <span class="math inline">\(f(2,1)=(0,1,0)\)</span> Determinar razonadamente el valor de <span class="math inline">\(f(x,y)\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2301,12 +2308,12 @@ A=\left(\begin{array}{rrr}
 \end{array}\right)
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2338,12 +2345,12 @@ y+2z=0\\
 <div id="exr-16" class="basico theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 16</strong></span> Dada la aplicación lineal <span class="math inline">\(f:\mathbb{R}^3\longrightarrow \mathbb{R}^4\)</span> definida por <span class="math display">\[f(x,y,z)=(x+y,x+y+z, y+z, x+z)\]</span> determina si es inyectiva, sobreyectiva, biyectiva o ninguna de ellas.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2393,12 +2400,12 @@ f(x,y,z,t)=(x+y+z+t,y+z+t,z+t)
 \]</span></p>
 <p>determina si es inyectiva, sobreyectiva, biyectiva o ninguna de ellas.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2412,7 +2419,7 @@ Solución
 0 &amp; 0 &amp; 1 &amp; 1
 \end{array}\right)
 \]</span></p>
-<p>y como su rango es <span class="math inline">\(3\)</span> entonces <span class="math inline">\(dim\, Im(f)=3=dim\, \mathbb{R}^3\)</span> y por tanto {}. Como <span class="math inline">\(dim\, N(f)+ dim\, Im(f)=dim \, \mathbb{R}^4\)</span> entonces <span class="math inline">\(dim\, N(f)=1\)</span> así que <b>f no es inyectiva</b>. Por tanto <b>f no es biyectiva</b>.</p>
+<p>y como su rango es <span class="math inline">\(3\)</span> entonces <span class="math inline">\(dim\, Im(f)=3=dim\, \mathbb{R}^3\)</span> y por tanto <b> es sobreyectiva</b>. Como <span class="math inline">\(dim\, N(f)+ dim\, Im(f)=dim \, \mathbb{R}^4\)</span> entonces <span class="math inline">\(dim\, N(f)=1\)</span> así que <b>f no es inyectiva</b>. Por tanto <b>f no es biyectiva</b>.</p>
 </div>
 </div>
 </div>
@@ -2420,12 +2427,12 @@ Solución
 <div id="exr-18" class="medio theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 18</strong></span> De una aplicación lineal <span class="math inline">\(f:\mathbb{R}^{3}\longrightarrow \mathbb{R}^{4}\)</span> se sabe que <span class="math inline">\(f(5,1,1)=f(1,5,1)=f(1,1,5)=(5,5,5,5)\)</span>. Determinar bases del núcleo y la imagen de <span class="math inline">\(f\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2440,12 +2447,12 @@ Solución
 <div id="exr-19" class="basico theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 19</strong></span> De un endomorfismo <span class="math inline">\(f:\mathbb{R}^3 \longrightarrow \mathbb{R}^3\)</span> se sabe que <span class="math inline">\(f(1,2,3)=(1,2,3)\)</span>, <span class="math inline">\(f(0,1,2)=(1,2,3)\)</span> y <span class="math inline">\(dim(Im(f))=2\)</span>. Determinar una base de <span class="math inline">\(Ker(f)\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2467,12 +2474,12 @@ G\biggl(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\biggr)=\begin{pmatr
 \]</span></p>
 <p>no es lineal.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2528,12 +2535,12 @@ Calcula la matriz asociada a <span class="math inline">\(f\)</span> respecto de 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2610,12 +2617,12 @@ B=\{(1,0,1),(1,1,1),(0,1,1)\}
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2788,12 +2795,12 @@ E= \left(\begin{array}{ccc}
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -3034,12 +3041,12 @@ Calcula un vector cuya imagen por <span class="math inline">\(f\)</span> sea <sp
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -3185,6 +3192,711 @@ luego un tal vector es <span class="math inline">\((0,1,-1)\)</span>.
 </div>
 </div>
 </div>
+<div id="exr-25" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 25</strong></span> Sea <span class="math inline">\(f : (\mathbb{Z}_2)^3 \to (\mathbb{Z}_2)^2\)</span> la aplicación lineal dada por <span class="math display">\[
+f(x,y,z) = (x+z,\; y+z).
+\]</span></p>
+<ol type="a">
+<li>
+Calcula una base del núcleo de <span class="math inline">\(f\)</span>.
+</li>
+<li>
+Sean <span class="math inline">\(B_1 = \{(1,1,0), (1,0,1), (0,0,1)\}\)</span> y <span class="math inline">\(B_2 = \{(0,1), (1,1)\}\)</span>. Calcula <span class="math inline">\(M_{B_1,B_2}(f)\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>El núcleo de <span class="math inline">\(f\)</span> es:</p>
+<p><span class="math display">\[
+N(f) = \{(x,y,z) \in (\mathbb{Z}_2)^3 : f(x,y,z)=(0,0)\}.
+\]</span></p>
+<p>Esto equivale al sistema:</p>
+<p><span class="math display">\[
+\begin{cases}
+x+z=0 \\
+y+z=0
+\end{cases}
+\]</span></p>
+<p>De aquí se obtiene <span class="math inline">\(x=z\)</span>, <span class="math inline">\(y=z\)</span>. Por tanto:</p>
+<p><span class="math display">\[
+N(f) = \{(z,z,z) : z \in \mathbb{Z}_2\}, \quad \dim N(f)=1.
+\]</span></p>
+<p>Una base es:</p>
+<p><span class="math display">\[
+B_{N(f)} = \{(1,1,1)\}.
+\]</span></p>
+</li>
+<li>
+<p>Calculamos la matriz de <span class="math inline">\(f\)</span> en las bases <span class="math inline">\(B_1, B_2\)</span>.</p>
+<p><span class="math display">\[
+f(1,1,0) = (1,1) = 0\cdot (0,1) + 1\cdot (1,1) \quad \Rightarrow \ (0,1).
+\]</span></p>
+<p><span class="math display">\[
+f(1,0,1) = (0,1) = 1\cdot (0,1) + 0\cdot (1,1) \quad \Rightarrow \ (1,0).
+\]</span></p>
+<p><span class="math display">\[
+f(0,0,1) = (1,1) = 0\cdot (0,1) + 1\cdot (1,1) \quad \Rightarrow \ (0,1).
+\]</span></p>
+<p>Por tanto:</p>
+<p><span class="math display">\[
+M_{B_1,B_2}(f) =
+\begin{pmatrix}
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1
+\end{pmatrix}.
+\]</span></p>
+</li>
+</ol>
+<p><b> Verificación con fórmula:</b></p>
+<p>Sabemos que: <span class="math display">\[
+M_{B_1,B_2}(f) = M_{B'_c \to B_2} \cdot M_{B_c,B'_c}(f) \cdot M_{B_1 \to B_c}.
+\]</span></p>
+<p>Donde: <span class="math display">\[
+M_{B_c,B'_c}(f) =
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1
+\end{pmatrix}, \quad
+M_{B_1 \to B_c} =
+\begin{pmatrix}
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1
+\end{pmatrix},
+\]</span></p>
+<p><span class="math display">\[
+M_{B'_c \to B_2} = (M_{B_2 \to B'_c})^{-1} =
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 1
+\end{pmatrix}^{-1}
+=
+\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+<p>Así: <span class="math display">\[
+M_{B_1,B_2}(f) =
+\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1
+\end{pmatrix}.
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-26" class="medio-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 26</strong></span> Halla una aplicación lineal <span class="math display">\[
+f : (\mathbb{Z}_5)^3 \to (\mathbb{Z}_5)^3
+\]</span></p>
+<p>tal que: <span class="math display">\[
+N(f) = \{(x,y,z) \in (\mathbb{Z}_5)^3 : x+y+z=0\}, \quad
+\operatorname{Im}(f) = \{(x,y,z) \in (\mathbb{Z}_5)^3 : x+y-z=0, \; x-y=0\}.
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Puesto que <span class="math inline">\(N(f)\)</span> viene dado por una ecuación, tenemos que <span class="math inline">\(\dim(N(f)) = 3-1 = 2\)</span>. Una base podría ser <span class="math display">\[
+B_{N(f)} = \{(1,0,4), (0,1,4)\}.
+\]</span></p>
+<p>Ampliamos esta base a una base de <span class="math inline">\((\mathbb{Z}_5)^3\)</span>: <span class="math display">\[
+B = \{(1,0,4), (0,1,4), (0,0,1)\}.
+\]</span></p>
+<p>Por otra parte, <span class="math inline">\(\dim(\operatorname{Im}(f)) = 1\)</span> y una base es <span class="math display">\[
+B_{\operatorname{Im}(f)} = \{(1,1,2)\}.
+\]</span></p>
+<p>Vamos a ver cómo actúa <span class="math inline">\(f\)</span> sobre los vectores de la base <span class="math inline">\(B\)</span>: <span class="math display">\[
+f(1,0,4) = (0,0,0) \quad \text{pues } (1,0,4) \in N(f),
+\]</span></p>
+<p><span class="math display">\[
+f(0,1,4) = (0,0,0) \quad \text{pues } (0,1,4) \in N(f).
+\]</span></p>
+<p>Sobre <span class="math inline">\(f(0,0,1)\)</span> sabemos que es distinto de <span class="math inline">\((0,0,0)\)</span> (pues <span class="math inline">\((0,0,1) \notin N(f)\)</span>) y que pertenece a <span class="math inline">\(\operatorname{Im}(f)\)</span>. Podría ser cualquiera de los otros cuatro vectores de <span class="math inline">\(\operatorname{Im}(f)\)</span>. Elegimos <span class="math inline">\((1,1,2)\)</span> como imagen para <span class="math inline">\((0,0,1)\)</span>.</p>
+<p>Con estos datos calculamos la imagen de los vectores de la base canónica: <span class="math display">\[
+f(1,0,0) = f\big((1,0,4)+(0,0,1)\big) = f(1,0,4) + f(0,0,1) = (0,0,0) + (1,1,2) = (1,1,2),
+\]</span></p>
+<p><span class="math display">\[
+f(0,1,0) = f\big((0,1,4)+(0,0,1)\big) = f(0,1,4) + f(0,0,1) = (0,0,0) + (1,1,2) = (1,1,2),
+\]</span></p>
+<p><span class="math display">\[
+f(0,0,1) = (1,1,2).
+\]</span></p>
+<p>Luego: <span class="math display">\[
+f(x,y,z) = x f(1,0,0) + y f(0,1,0) + z f(0,0,1)
+= (x,x,2x) + (y,y,2y) + (z,z,2z).
+\]</span></p>
+<p>Por tanto: <span class="math display">\[
+f(x,y,z) = (x+y+z, \; x+y+z, \; 2x+2y+2z).
+\]</span></p>
+<p>Y ya tenemos la aplicación lineal <span class="math inline">\(f\)</span>. Si hubiéramos elegido otro valor para <span class="math inline">\(f(0,0,1)\)</span> tendríamos otra aplicación diferente. En total hay cuatro soluciones distintas.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-27" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 27</strong></span> Sea <span class="math inline">\(V=\left(\mathbb{Z}_{7}\right)^{3}\)</span> y las aplicaciones lineales <span class="math inline">\(f, g: V \longrightarrow V\)</span> definidas por las siguientes igualdades:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; f(x, y, z)=(3 x+4 y+2 z, 5 x+y+3 z, 4 y+6 z) \\
+&amp; g(x, y, z)=(2 x+y, x+z, 6 y+2 z)
+\end{aligned}
+\]</span></p>
+<p>Sea <span class="math inline">\(\mathrm{U}=\mathrm{N}(\mathrm{g})\)</span> y <span class="math inline">\(W=\operatorname{Im}(\mathrm{f})\)</span>. Entonces:</p>
+<ol type="a">
+<li>
+Calcula una base de <span class="math inline">\(\mathrm{U}+\mathrm{W}\)</span>. ¿Es dicha suma directa?
+</li>
+<li>
+¿Cuál es la dimensión de <span class="math inline">\(\operatorname{Im}(\mathrm{g})\)</span> ?
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Dado que nos están pidiendo la suma de los subespacios <span class="math inline">\(U\)</span> y <span class="math inline">\(W\)</span>, necesitamos un sistema de generadores de <span class="math inline">\(u\)</span> y otro de <span class="math inline">\(W\)</span>, y después unirlos. Dividimos el problema entonces en varias subetapas.</p>
+<ol type="i">
+<li>
+<p>Cálculo de un sistema de generadores de <span class="math inline">\(U\)</span>. Puesto que <span class="math inline">\(\mathrm{U}=\mathrm{N}(\mathrm{g})\)</span>, tenemos las ecuaciones de U (pues <span class="math inline">\(\mathrm{U}=\{(x, y, z) \in \mathrm{V}: g(x, y, z)= (0,0,0)\})\)</span>. Resolvemos este sistema de ecuaciones para obtener una base. Para esto, escribimos la matriz de coeficientes del sistema (que no es sino la matriz de <span class="math inline">\(g\)</span> en las bases canónicas) y obtenemos su forma normal de Hermite.</p>
+<p><span class="math display">\[
+\left(\begin{array}{lll}
+2 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 \\
+0 &amp; 6 &amp; 2
+\end{array}\right) \xrightarrow{E_{12}}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 1 \\
+2 &amp; 1 &amp; 0 \\
+0 &amp; 6 &amp; 2
+\end{array}\right) \xrightarrow{E_{21(5)}}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 5 \\
+0 &amp; 6 &amp; 2
+\end{array}\right) \xrightarrow{E_{32(6)}}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 5 \\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>Vemos entonces que <span class="math inline">\(U\)</span> viene dado por 2 ecuaciones, luego <span class="math inline">\(\operatorname{dim}(U)=3-2=1\)</span>. Para obtener una base despejamos las incógnitas <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> y le damos a <span class="math inline">\(z\)</span> el valor <span class="math inline">\(z=1\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{rlrl}
+x+z &amp; =0 &amp; x &amp; =6 z \\
+y+5 z &amp; =0 &amp; y &amp; =2 z
+\end{array}
+\]</span></p>
+<p>Lo que nos da la siguiente base de <span class="math inline">\(\mathrm{U}: \mathrm{B}_{\mathrm{U}}=\{(6,2,1)\}\)</span>.</p>
+</li>
+<li>
+<p>Cálculo de un sistema de generadores de W. Esto es más fácil, pues al ser <span class="math inline">\(W=\operatorname{Im}(f)\)</span>, un sistema de generadores de este subespacio es <span class="math inline">\(\{f(1,0,0), f(0,1,0), f(0,0,1)\}\)</span>. Por tanto, un sistema de generadores de <span class="math inline">\(W\)</span> es <span class="math inline">\(\{(3,5,0),(4,1,4),(2,3,6)\}\)</span>.\ Aunque no es necesario para calcular <span class="math inline">\(\mathrm{U}+\mathrm{W}\)</span> vamos a obtener una base de <span class="math inline">\(W\)</span>. Para esto realizamos transformaciones en estos tres vectores.</p>
+<p><span class="math display">\[
+\left(\begin{array}{lll}
+3 &amp; 5 &amp; 0 \\
+4 &amp; 1 &amp; 4 \\
+2 &amp; 3 &amp; 6
+\end{array}\right) \xrightarrow{E_{1}(5)}\left(\begin{array}{lll}
+1 &amp; 4 &amp; 0 \\
+4 &amp; 1 &amp; 4 \\
+2 &amp; 3 &amp; 6
+\end{array}\right) \xrightarrow{E_{21}(3)}\left(\begin{array}{lll}
+1 &amp; 4 &amp; 0 \\
+0 &amp; 6 &amp; 4 \\
+0 &amp; 2 &amp; 6
+\end{array}\right) \xrightarrow{E_{31}(5)}\left(\begin{array}{lll}
+1 &amp; 4 &amp; 0 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 2 &amp; 6
+\end{array}\right) \xrightarrow{E_{212}(3)}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p><span class="math inline">\(Y\)</span> con esto, tenemos una base de <span class="math inline">\(W: B_{W}=\{(1,0,2),(0,1,3)\}\)</span>. Vemos entonces que</p>
+<p><span class="math display">\[\operatorname{dim}(W)= 2\]</span></p>
+</li>
+<li>
+<p>Cálculo de una base de <span class="math inline">\(U+W\)</span>. En primer lugar, lo que podemos conseguir es un sistema de generadores de <span class="math inline">\(\mathrm{U}+\mathrm{W}\)</span>. Y esto se consigue uniendo un sistema de generadores de <span class="math inline">\(U\)</span> y uno de <span class="math inline">\(W\)</span>. Por tanto, un sistema de generadores de <span class="math inline">\(U+W\)</span> es:</p>
+<p><span class="math display">\[
+\{(1,0,2),(0,1,3),(6,2,1)\}
+\]</span></p>
+<p>Comprobamos si son linealmente independientes:</p>
+<p><span class="math display">\[
+\left(\begin{array}{lll}
+1 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 3 \\
+6 &amp; 2 &amp; 1
+\end{array}\right) \xrightarrow{E_{31}(1)}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 2 &amp; 3
+\end{array}\right) \xrightarrow{E_{32}(5)}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 4
+\end{array}\right) \xrightarrow{E_{3(2)}}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 1
+\end{array}\right) \xrightarrow{E_{13}(5)} \xrightarrow{E_{23(4)}}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}\right)
+\]</span></p>
+<p><span class="math inline">\(Y\)</span> de esta forma hemos obtenido una base de <span class="math inline">\(U+W\)</span>. Esta base es <span class="math inline">\(\{(1,0,0),(0,1,0),(0,0,1)\}\)</span>. Puesto que esto es una base de V concluimos que <span class="math inline">\(\mathrm{V}=\mathrm{U}+\mathrm{W}\)</span>.</p>
+<p>Para responder a la pregunta de si la suma es directa, hemos de calcular <span class="math inline">\(\mathrm{U} \cap \mathrm{W}\)</span>. Puesto que</p>
+<p><span class="math display">\[
+\operatorname{dim}(U \cap W)=\operatorname{dim}(U)+\operatorname{dim}(W)-\operatorname{dim}(U+W)=1+2-3=0  \\
+\]</span></p>
+<p>tenemos que <span class="math inline">\(U \cap W=\{(0,0,0)\}\)</span>. Esto nos dice que la suma es directa.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Sabemos que</p>
+<p><span class="math display">\[
+\operatorname{dim}(\operatorname{Im}(g))=\operatorname{dim}(V)-\operatorname{dim}(N(g))=3-1=2
+\]</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-28" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 28</strong></span> Sea <span class="math inline">\(f : \mathbb{R}^3 \to \mathbb{R}^3\)</span> la aplicación lineal dada por <span class="math display">\[
+f(x,y,z) = (y-z,\,-x+y,\,x+y-2z).
+\]</span></p>
+<ol type="a">
+<li>
+Calcula una base de <span class="math inline">\(N(f)\)</span>.
+</li>
+<li>
+Calcula las ecuaciones cartesianas de <span class="math inline">\(\operatorname{Im}(f)\)</span>.
+</li>
+<li>
+Calcula una base de <span class="math inline">\(N(f) \cap \operatorname{Im}(f)\)</span>.
+</li>
+<li>
+Sea <span class="math inline">\(B = \{(1,0,1),\,(0,1,1),\,(1,1,1)\}\)</span>. Calcula <span class="math inline">\(M_B(f)\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Sabemos que <span class="math inline">\(N(f) = \{(x,y,z)\in \mathbb{R}^3 : f(x,y,z)=0\}\)</span>. El sistema es: <span class="math display">\[
+\begin{cases}
+y-z = 0, \\
+-x+y = 0, \\
+x+y-2z = 0.
+\end{cases}
+\]</span></p>
+<p>La matriz de coeficientes es <span class="math display">\[
+\begin{pmatrix}
+0 &amp; 1 &amp; -1 \\
+-1 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; -2
+\end{pmatrix}
+\]</span></p>
+<p>Mediante operaciones elementales se llega a <span class="math display">\[
+\begin{pmatrix}
+1 &amp; 0 &amp; -1 \\
+0 &amp; 1 &amp; -1 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+<p>Así, <span class="math inline">\(N(f) \equiv \{x-z=0,\,y-z=0\}\)</span>, con <span class="math inline">\(\dim N(f)=1\)</span>.<br>
+Una base es <span class="math display">\[
+B_{N(f)} = \{(1,1,1)\}.
+\]</span></p>
+</li>
+<li>
+<p>Sabemos que <span class="math display">\[
+\operatorname{Im}(f) = L[f(1,0,0),\, f(0,1,0),\, f(0,0,1)].
+\]</span></p>
+<p>Como <span class="math inline">\(\dim(\operatorname{Im}(f)) = 3 - 1 = 2\)</span>, basta con dos vectores independientes.<br>
+Tenemos <span class="math display">\[
+f(1,0,0)=(0,-1,1), \quad f(0,1,0)=(1,1,1).
+\]</span></p>
+<p>Por tanto, <span class="math display">\[
+B_{\operatorname{Im}(f)} = \{(0,-1,1),\,(1,1,1)\}.
+\]</span></p>
+<p>La ecuación cartesiana de <span class="math inline">\(\operatorname{Im}(f)\)</span> se obtiene con el determinante: <span class="math display">\[
+\det\begin{pmatrix}
+0 &amp; -1 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+x &amp; y &amp; z
+\end{pmatrix} = 0 \quad \Rightarrow \quad -2x+y+z=0.
+\]</span></p>
+<p>Alternativamente, con generadores y reducción: <span class="math display">\[
+\begin{pmatrix}
+0 &amp; -1 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+-1 &amp; 0 &amp; -2
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; -1 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+<p>Esto da ecuaciones paramétricas <span class="math display">\[
+x=a,\quad y=b,\quad z=2a-b,
+\]</span></p>
+<p>equivalente a <span class="math inline">\(z=2x-y\)</span>, la misma ecuación anterior.</p>
+</li>
+<li>
+<p>Una base de <span class="math inline">\(N(f)\)</span> es <span class="math inline">\(\{(1,1,1)\}\)</span>.<br>
+Además, <span class="math inline">\((1,1,1)\in \operatorname{Im}(f)\)</span> porque <span class="math inline">\((1,1,1)=f(0,1,0)\)</span>.<br>
+Por tanto <span class="math inline">\(N(f)\subseteq \operatorname{Im}(f)\)</span> y <span class="math display">\[
+N(f)\cap \operatorname{Im}(f) = N(f), \quad \text{con base } \{(1,1,1)\}.
+\]</span></p>
+</li>
+<li>
+<p>Sea <span class="math inline">\(B=\{(1,0,1),\,(0,1,1),\,(1,1,1)\}\)</span>.</p>
+<p><span class="math display">\[
+f(1,0,1)=(-1,-1,-1)=0\cdot(1,0,1)+0\cdot(0,1,1)-1\cdot(1,1,1),
+\]</span></p>
+<p><span class="math display">\[
+f(0,1,1)=(0,1,-1)=-2\cdot(1,0,1)-1\cdot(0,1,1)+2\cdot(1,1,1),
+\]</span></p>
+<p><span class="math display">\[
+f(1,1,1)=(0,0,0)=0\cdot(1,0,1)+0\cdot(0,1,1)+0\cdot(1,1,1).
+\]</span></p>
+<p>Por tanto: <span class="math display">\[
+M_B(f)=
+\begin{pmatrix}
+0 &amp; -2 &amp; 0 \\
+0 &amp; -1 &amp; 0 \\
+-1 &amp; 2 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-29" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 29</strong></span> Sea <span class="math inline">\(f:(\mathbb{Z}_5)^3\rightarrow (\mathbb{Z}_5)^4\)</span> la aplicación lineal definida por <span class="math display">\[
+f(x,y,z)=(x+y+z,x+2y+z,4y,2x + 3y + 2z).
+\]</span></p>
+<ol type="a">
+<li>
+Calcula una base y las ecuaciones cartesianas de <span class="math inline">\(\text{Im}(f)\)</span>.
+</li>
+<li>
+Calcula una base del núcleo de <span class="math inline">\(f\)</span>.
+</li>
+<li>
+¿Es <span class="math inline">\(f\)</span> inyectiva? ¿Y sobreyectiva?
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Para calcular el subespacio <span class="math inline">\(\text{Im}(f)\)</span> vamos a tomar los vectores de una base de <span class="math inline">\(({\mathbb Z}_5)^3\)</span> (la base canónica) y a calcular sus imágenes por <span class="math inline">\(f\)</span>. Los vectores que nos resulten formarán un sistema de generadores de <span class="math inline">\(\text{Im}(f)\)</span>. Formaremos una matriz con esos vectores, y los reduciremos, para obtener una base.</p>
+<p>A partir de esta base, escribiremos las ecuaciones cartesianas y a continuación calcularemos las ecuaciones cartesianas o implícitas.</p>
+<p>Tenemos que <span class="math inline">\(\text{Im}(f) = L[(f(1,0,0),\ f(0,1,0),\ f(0,0,1)] = L[(1,1,0,2),\ (1,2,4,3),\ (1,1,0,2)]\)</span>.</p>
+<p>Obtenemos una base a partir de este sistema de generadores:</p>
+<p><span class="math display">\[
+\left (\begin{array}{rrrr} 1 &amp; 1 &amp; 0 &amp; 2 \\ 1 &amp; 2 &amp; 4 &amp; 3 \\ 1 &amp; 1 &amp; 0 &amp; 2 \end{array}\right )
+\stackrel{E_{21}(4)}{\stackrel{E_{31}(4)}{\longrightarrow}}
+\left (\begin{array}{rrrr} 1 &amp; 1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 4 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right )
+\stackrel{E_{12}(4)}{\longrightarrow}
+\left (\begin{array}{rrrr} 1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 4 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right )
+\]</span></p>
+<p>Así que tenemos la siguiente base del subespacio imagen: <span class="math inline">\(B_{\text{Im}(f)} = \{(1,0,1,1),\ (0,1,4,1)\}\)</span>.</p>
+<p>De esta forma, los vectores de <span class="math inline">\(\text{Im}(f)\)</span> son de la forma <span class="math inline">\((x,y,z,t)= a(1,0,1,1) + b(0,1,4,1)\)</span> (combinaciones lineales de los vectores de la base), así que:</p>
+<p><span class="math display">\[
+\text{Im}(f) \equiv \left\{ \begin{array}{rrrrr}
+x &amp; = &amp; a &amp; &amp; \\ y &amp; = &amp; &amp; &amp; b \\ z &amp; = &amp; a &amp; + &amp; 4b \\ t &amp; = &amp; a &amp; + &amp; b \end{array}\right. \Longrightarrow \text{Im}(f) \equiv \left\{ \begin{array}{r} z = x + 4y \\ t = x + \ \, y \end{array}\right. \Longrightarrow \text{Im}(f) \equiv \left\{ \begin{array}{rrrrrrrrr} x &amp; + &amp; 4y &amp; + &amp; 4z &amp; &amp; &amp; = &amp; 0 \\ x &amp; + &amp; y &amp; &amp; &amp; + &amp; 4 t&amp; = &amp; 0 \end{array}\right.
+\]</span></p>
+</li>
+<li>
+<p>Ya hemos visto que <span class="math inline">\(\text{dim}(\text{Im}(f)) = 2\)</span>. Además, tenemos que <span class="math inline">\(\text{dim}(\text{N}(f)) + \text{dim}(\text{Im}(f)) = \text{dim}\big (({\mathbb Z}_5)^3\big ) = 3\)</span>. Por tanto, <span class="math inline">\(\text{dim}(\text{N}(f)) = 1\)</span>.</p>
+<p>Por otra parte, el núcleo de <span class="math inline">\(f\)</span> viene dado por <span class="math inline">\(\text{N}(f) = \{(x,y,z)\in ({\mathbb Z}_5)^3 : f(x,y,z) = (0,0,0,0)\}\)</span>, por lo que viene dado por un sistema de tres ecuaciones y cuatro incógnitas.</p>
+<p>Para resolver el sistema, escribimos su matriz de coeficientes y realizamos operaciones elementales por filas:</p>
+<p><span class="math inline">\(\left (\begin{array}{rrr} 1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 \\ 0 &amp; 4 &amp; 0 \\ 2 &amp; 3 &amp; 2 \end{array}\right )
+\stackrel{E_{21}(4)}{\stackrel{E_{41}(3)}{\longrightarrow}}
+\left (\begin{array}{rrr} 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 4 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right )
+\stackrel{E_{12}(4)}{\stackrel{E_{32}(1)}{\stackrel{E_{42}(4)}{\longrightarrow}}}
+\left (\begin{array}{rrr} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array}\right ) \Longrightarrow \text{N}(f) \equiv \left\{ \begin{array}{rrrrrrr} x &amp; &amp; &amp; + &amp; z &amp; = &amp; 0 \\ &amp; &amp; y &amp; &amp; &amp; = &amp; 0 \end{array}\right.\)</span></p>
+<p>Puesto que <span class="math inline">\(\text{dim}(\text{N}(f)) = 1\)</span>, para dar una base nos basta un vector (no nulo). Tenemos, por ejemplo, <span class="math inline">\(B_{\text{N}(f)} = \{(1,0,4)\}\)</span>.</p>
+</li>
+<li>
+<p>Tenemos que <span class="math inline">\(f\)</span> no es inyectiva, pues para serlo, el núcleo de <span class="math inline">\(f\)</span> tendría que contener únicamente al vector <span class="math inline">\((0,0,0)\)</span>, y no es así.</p>
+<p>Tampoco es sobreyectiva, pues <span class="math inline">\(\text{Im}(f) \neq ({\mathbb Z}_5)^4\)</span>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-30" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 30</strong></span> Dar la expresión de una aplicación lineal <span class="math inline">\(f:{\mathbb R}^3 \rightarrow {\mathbb R}^4\)</span> (respecto de las bases canónicas) para la que:</p>
+<p><span class="math display">\[
+N(f)\equiv \left\{ \begin{array}{rcl} x - 2y + z &amp; = &amp; 0 \\ y - z &amp; = &amp; 0 \end{array} \right. \qquad Im(f) \equiv \left\{ \begin{array}{l} x+y+z+t=0 \\ x-y+z-t=0.\end{array}  \right.
+\]</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Notemos en primer lugar que <span class="math inline">\(\text{dim}(N(f)) = 3-2 = 1\)</span> y <span class="math inline">\(\text{dim}(Im(f)) = 4-2=2\)</span>. Puesto que <span class="math inline">\(\text{dim}(N(f)) + \text{dim}(Im(f)) = \text{dim}({\mathbb R}^3)\)</span>, es posible dar una aplicación lineal con estas condiciones.</p>
+<p>Calculamos bases de los subespacios vectoriales <span class="math inline">\(N(f)\)</span> e <span class="math inline">\(Im(f)\)</span>. Comenzamos por <span class="math inline">\(N(f)\)</span>.</p>
+<p><span class="math display">\[
+\left (\begin{array}{rrr} 1 &amp; -2 &amp; 1 \\ 0 &amp; 1 &amp; -1 \end{array} \right ) \stackrel{E_{12}(2)}{\longrightarrow} \left (\begin{array}{rrr} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; -1 \end{array} \right ).\]</span></p>
+<p>Por lo que <span class="math inline">\(N(f)\equiv \left\{ \begin{array}{rrrrrrr} x &amp; &amp; &amp; - &amp; z &amp; = &amp; 0 \\ &amp; &amp; y &amp; - &amp; z &amp; = &amp; 0 \end{array}\right.\)</span> Dándole a <span class="math inline">\(z\)</span> el valor <span class="math inline">\(1\)</span> obtenemos <span class="math inline">\(B_{N(f)} = \{(1,1,1)\}\)</span>.</p>
+<p>Procedemos igual para <span class="math inline">\(Im(f)\)</span>.</p>
+<p><span class="math display">\[
+\left (\begin{array}{rrrr} 1 &amp; 1 &amp; 1 &amp; 1\\ 1 &amp; -1 &amp; 1 &amp; -1 \end{array} \right ) \stackrel{E_{21}(-1)}{\longrightarrow} \left (\begin{array}{rrrr} 1 &amp; 1 &amp; 1  &amp; 1 \\ 0 &amp; -2 &amp; 0 &amp; -2  \end{array} \right )\stackrel{E_2\left (\frac{-1}{2}\right )}{\longrightarrow} . \left (\begin{array}{rrrr} 1 &amp; 1 &amp; 1  &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1  \end{array} \right ) \stackrel{E_{12}(-1)}{\longrightarrow} \left (\begin{array}{rrrr} 1 &amp; 0 &amp; 1  &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 1  \end{array} \right )\]</span></p>
+<p>Así que tenemos <span class="math inline">\(Im(f)\equiv \left \{ \begin{array}{r} x + z = 0 \\ y + t = 0\end{array}\right.\)</span>, o <span class="math inline">\(Im(f)\equiv \left\{ \begin{array}{r} x = -z \\ y = -t \end{array}\right.\)</span></p>
+<p>Dándole a <span class="math inline">\(z\)</span> y <span class="math inline">\(t\)</span> los valores <span class="math inline">\(z=-1\)</span>, <span class="math inline">\(t=0\)</span> y <span class="math inline">\(z=0\)</span>, <span class="math inline">\(t=-1\)</span> tenemos la base <span class="math inline">\(B_{Im(f)} = \{(1,0,-1,0),\ (0,1,0,-1)\}\)</span>.</p>
+<p>Una vez calculadas las bases, ampliamos la base de <span class="math inline">\(N(f)\)</span> a una base de <span class="math inline">\({\mathbb R}^3\)</span>:</p>
+<p><span class="math display">\[B_{{\mathbb R}^3} = \{(1,1,1),\ (0,1,0),\ (0,0,1)\}.\]</span></p>
+<p>Y ahora, para dar una aplicación lineal <span class="math inline">\(f:{\mathbb R}^3 \rightarrow {\mathbb R}^4\)</span> elegimos las imágenes de los vectores de la base <span class="math inline">\(B_{{\mathbb R}^3}\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{lcl} f(1,1,1) = (0,0,0,0) &amp; \ &amp; \text{para que } (1,1,1) \text{ perteneza al núcleo de } f. \\ f(0,1,0) = (1,0,-1,0) &amp; &amp; \text{y así } (1,0,-1,0) \text{ pertenece a la imagen de } f. \\ f(0,0,1) = (0,1,0,-1) &amp; &amp; \text{y así } (0,1,0,-1) \text{ pertenece a la imagen de } f.\end{array}
+\]</span></p>
+<p>Lo siguiente, una vez definida <span class="math inline">\(f\)</span>, es calcular la imagen de los vectores de la base canónica de <span class="math inline">\({\mathbb R}^3\)</span>. La conocemos de dos de ellos. Nos falta conocer cuánto vale <span class="math inline">\(f(1,0,0)\)</span>. Pero esto se puede calcular fácilmente pues <span class="math inline">\((1,0,0) = (1,1,1) - (0,1,0) - (0,0,1)\)</span>, por lo que:</p>
+<p><span class="math inline">\(f(1,0,0) = f(1,1,1)-f(0,1,0)-f(0,0,1) = (0,0,0,0) - (1,0,-1,0) - (0,1,0,-1) = (-1,-1,1,1)\)</span>.</p>
+<p>Y con esto, ya tenemos la expresión para <span class="math inline">\(f(x,y,z)\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{rcl} f(x,y,z) &amp; = &amp; x\cdot f(1,0,0) + y\cdot f(0,1,0) + z\cdot f(0,0,1) \\
+                            &amp; = &amp; (-x,-x,x,x) + (y,0,-y,0) + (0,z,0,-z) \\
+                            &amp; = &amp; (-x+y,-x+z,x-y,x-z). \end{array}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-31" class="medio-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 31</strong></span> Sea <span class="math inline">\(f: ({\mathbb Z}_3)^3 \rightarrow ({\mathbb Z}_3)^3\)</span> la aplicación lineal cuya matriz asociada en las bases</p>
+<p><span class="math inline">\(B=\{(0,0,1),\ (2,0,1),\ (2,1,1)\}\)</span> y <span class="math inline">\(B^{\prime} = \{(1,2,2),\ (2,2,1),\ (1,1,1)\}\)</span> es <span class="math inline">\(\begin{pmatrix} 2 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 2 \\ 0 &amp; 2 &amp; 2 \end{pmatrix}\)</span>.</p>
+<p>Calcula <span class="math inline">\(f(1,2,1)\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vamos a interpretar los datos que nos dan:</p>
+<p>En primer lugar, llamemos <span class="math inline">\({\mathbf{u_1}},\ {\mathbf{u_2}},\ \mathbf{u_3}\)</span> a los tres vectores de <span class="math inline">\(B\)</span> y <span class="math inline">\(\mathbf{v_1},\ \mathbf{v_2},\ \mathbf{v_3}\)</span> a los tres vectores de <span class="math inline">\(B^{\prime}\)</span>.</p>
+<p>Lo que nos están diciendo es que:</p>
+<p><span class="math display">\[f(\mathbf{u_1}) = 2\cdot \mathbf{v_1} + 1\cdot \mathbf{v_2} + 0\cdot \mathbf{v_3}\]</span></p>
+<p><span class="math display">\[f(\mathbf{u_2}) = 0\cdot \mathbf{v_1} + 1\cdot \mathbf{v_2} + 2\cdot \mathbf{v_3}\]</span></p>
+<p><span class="math display">\[f(\mathbf{u_3}) = 1\cdot \mathbf{v_1} + 2\cdot \mathbf{v_2} + 2\cdot \mathbf{v_3}\]</span></p>
+<p>Es decir:</p>
+<p><span class="math display">\[f(0,0,1) = 2\cdot (1,2,2) + 1\cdot (2,2,1) + 0\cdot (1,1,1) = (2,1,1) + (2,2,1) = (1,0,2)\]</span></p>
+<p><span class="math display">\[f(2,0,1) = 0\cdot (1,2,2) + 1\cdot (2,2,1) + 2\cdot (1,1,1) = (2,2,1) + (2,2,2) = (1,1,0)\]</span></p>
+<p><span class="math display">\[f(2,1,1) = 1\cdot (1,2,2) + 2\cdot (2,2,1) + 2\cdot (1,1,1) = (1,2,2) + (1,1,2)  + (2,2,2) = (1,2,0)\]</span></p>
+<p>Ahora escribimos <span class="math inline">\((1,2,1)\)</span> como combinación lineal de los vectores de <span class="math inline">\(B\)</span>: <span class="math inline">\((1,2,1) = a\cdot \mathbf{u_1} + b\cdot \mathbf{u_2} + c\cdot \mathbf{u_3}\)</span>. Esto da lugar al siguiente sistema de ecuaciones:</p>
+<p><span class="math display">\[\begin{array}{rrrrrrr} &amp; &amp; 2b &amp; + &amp; 2c &amp; = &amp; 1 \\ &amp; &amp; &amp; &amp; c &amp; = &amp; 2 \\ a &amp; + &amp; b &amp; + &amp; c &amp; = &amp; 1 \end{array}\]</span></p>
+<p>que tiene como solución <span class="math inline">\(a=2\)</span>, <span class="math inline">\(b=0\)</span>, <span class="math inline">\(c=2\)</span>.</p>
+<p>Así que <span class="math inline">\(f(1,2,1) = 2\cdot f(\mathbf{u_1}) + 2\cdot f(\mathbf{u_3}) = 2\cdot (1,0,2) + 2\cdot (1,2,0) = (1,1,1)\)</span>.</p>
+<p>También puede resolverse como sigue:</p>
+<p>Tenemos que:</p>
+<p><span class="math inline">\(M_{B\rightarrow B_c} = \left (\begin{array}{rrr} 0 &amp; 2 &amp; 2 \\ 0 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 1 \end{array}\right )\)</span>, luego <span class="math inline">\(M_{B_c\rightarrow B} = \left (\begin{array}{rrr} 0 &amp; 2 &amp; 2 \\ 0 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 1 \end{array}\right )^{-1} = \left (\begin{array}{rrr} 1 &amp; 0 &amp; 1 \\ 2 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right )\)</span>.</p>
+<p>y <span class="math inline">\(M_{B_c,B_c}(f) = M_{B^{\prime}\rightarrow B_c}\cdot M_{B,B^{\prime}}(f) \cdot M_{B_c\rightarrow B}\)</span></p>
+<p>Multiplicamos estas matrices:</p>
+<p><span class="math display">\[
+\left (\begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 2 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; 1 \end{array}\right ) \left (\begin{array}{ccc} 2 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 2 \\ 0 &amp; 2 &amp; 2 \end{array}\right ) \left (\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 2 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right ) = \left (\begin{array}{ccc} 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 2 \\ 2 &amp; 0 &amp; 0 \end{array}\right ) \left (\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 2 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{array}\right ) = \left (\begin{array}{ccc} 0 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 0 \\ 2 &amp; 0 &amp; 2 \end{array}\right )
+\]</span></p>
+<p>Y se tiene que</p>
+<p><span class="math display">\[
+\left (\begin{array}{ccc} 0 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 0 \\ 2 &amp; 0 &amp; 2 \end{array}\right )\cdot \left (\begin{array}{c} x\\y\\z\end{array}\right )
+\]</span></p>
+<p>nos da una expresión para <span class="math inline">\(f(x,y,z)\)</span>.</p>
+<p><span class="math display">\[
+f(x,y,z) = (z,2x+y,2x+2z).
+\]</span></p>
+<p>Por consiguiente, <span class="math inline">\(f(1,2,1) = (1,2\cdot 1 + 2,2\cdot 1 + 2\cdot 1) = (1,1,1)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-32" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 32</strong></span> Sea <span class="math inline">\(V=({\mathbb Z}_5)^3\)</span>, y sean <span class="math inline">\(f,g:V\rightarrow V\)</span> las aplicaciones lineales: <span class="math display">\[
+\begin{array}{ll}
+f(x,y,z) = (x+2y+z, 3x+3y+2z, 4x+2y+2z) \\
+g(x,y,z) = (x+3z,2x+y+4z,x+4y) \end{array}
+\]</span></p>
+<p>Sean <span class="math inline">\(U=N(f)\)</span> y <span class="math inline">\(W=\text{Im}(g)\)</span>.</p>
+<ol type="a">
+<li>
+Calcula una base de <span class="math inline">\(U\)</span> y las ecuaciones cartesianas de <span class="math inline">\(W\)</span>.
+</li>
+<li>
+Calcula la dimensión del subespacio <span class="math inline">\(\text{Im}(f)\)</span>.
+</li>
+<li>
+Calcula una base de <span class="math inline">\(U+W\)</span>. ¿Es dicha suma directa?
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Tenemos que:</p>
+<p><span class="math display">\[
+\begin{array}{lllll} U &amp; = &amp; N(f) &amp; = &amp; \{(x,y,z)\in ({\mathbb Z}_5)^3: f(x,y,z) = (0,0,0)\} \\ &amp; &amp; &amp; = &amp; \{(x,y,z)\in ({\mathbb Z}_5)^3: x+2y+z=0;\ 3x+3y+2z=0;\ 4x+2y+2z=0\}. \end{array}
+\]</span></p>
+<p>Tenemos entonces que los vectores de <span class="math inline">\(U\)</span> vienen dados como las soluciones de un sistema de ecuaciones. Resolvemos el sistema, para lo cual calculamos la forma escalonada reducida de la matriz de coeficientes:</p>
+<p><span class="math display">\[
+\left (\begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 3 &amp; 3 &amp; 2 \\ 4 &amp; 2 &amp; 2 \end{array}\right )
+\stackrel{\stackrel{E_{21}(2)}{\stackrel{E_{31}(1)}{}}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 0 &amp; 2 &amp; 4 \\ 0 &amp; 4 &amp; 3 \end{array}\right )
+\stackrel{\stackrel{E_2(3)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 4 &amp; 3 \end{array}\right )
+\stackrel{\stackrel{E_{12}(3)}{\stackrel{E_{32}(1)}{}}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \end{array}\right )
+\]</span></p>
+<p>Es decir:</p>
+<p><span class="math display">\[
+U\equiv\left\{ \begin{array}{rrrrrrr} x &amp; &amp; &amp; + &amp; 2z &amp; = &amp; 0 \\ &amp; &amp; y &amp; + &amp; 2z &amp; = &amp; 0 \end{array}\right. \quad \text{ o, si preferimos, } \quad U \equiv \left\{ \begin{array}{rrr} x &amp; = &amp; 3z \\ y &amp; = &amp; 3z \end{array}\right.
+\]</span></p>
+<p>Tenemos que <span class="math inline">\(U\)</span> viene dado por dos ecuaciones, luego <span class="math inline">\(\text{dim}(U) = 3-2=1\)</span>. Una base la obtenemos dándole a <span class="math inline">\(z\)</span> un valor no nulo, por ejemplo, <span class="math inline">\(z=2\)</span>. Una base de <span class="math inline">\(U\)</span> es entonces <span class="math inline">\(B_U=\{(1,1,2)\}\)</span>.</p>
+<p>Vamos ahora a obtener las ecuaciones cartesianas de <span class="math inline">\(W=\text{Im}(g)\)</span>. Calculamos las imágenes de los vectores de una base (la canónica) de <span class="math inline">\(({\mathbb Z}_5)^3\)</span>:</p>
+<ul>
+<li>
+<span class="math inline">\(g(1,0,0) = (1,2,1)\)</span>.
+</li>
+<li>
+<span class="math inline">\(g(0,1,0) = (0,1,4)\)</span>.
+</li>
+<li>
+<span class="math inline">\(g(0,0,1) = (3,4,0)\)</span>.
+</li>
+</ul>
+<p>Estos tres vectores forman un sistema de generadores de <span class="math inline">\(W\)</span>. A partir de ellos obtenemos una base: <span class="math display">\[
+\left (\begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 4 \\ 3 &amp; 4 &amp; 0 \end{array}\right )
+\stackrel{\stackrel{E_{31}(2)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 4 \\ 0 &amp; 3 &amp; 2 \end{array}\right )
+\stackrel{\stackrel{E_{12}(3)}{\stackrel{E_{32}(2)}{}}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 &amp; 0 &amp; 3 \\ 0 &amp; 1 &amp; 4 \\ 0 &amp; 0 &amp; 0 \end{array}\right )
+\]</span></p>
+<p>Una base de <span class="math inline">\(W\)</span> es <span class="math inline">\(B_W=\{(1,0,3),\ (0,1,4)\}\)</span>. A partir de la base escribimos las ecuaciones paramétricas, y una vez obtenidas eliminamos los parámetros para obtener las ecuaciones cartesianas de <span class="math inline">\(W\)</span> (en este caso será una ecuación cartesiana).</p>
+<p><span class="math inline">\((x,y,z)\in W \text{ si, y solo si, } (x,y,z) = a(1,0,3) + b(0,1,4) \text{ para algunos elementos a,b}\in {\mathbb Z}_5.\)</span></p>
+<p><span class="math display">\[
+\begin{array}{rrrrr}
+x &amp; = &amp; a &amp; &amp; \\ y &amp; = &amp; &amp; &amp; b \\ z &amp; = &amp; 3a &amp; + &amp; 4b \end{array}
+\]</span></p>
+<p>Lo que nos da la ecuación <span class="math inline">\(z=3x+4y\)</span>, o <span class="math inline">\(2x+y+z=0\)</span>. Podemos comprobar fácilmente que los tres vectores <span class="math inline">\((1,2,1)\)</span>, <span class="math inline">\((0,1,4)\)</span> y <span class="math inline">\((3,4,0)\)</span> satisfacen esta ecuación.</p>
+</li>
+<li>
+<p>Sabemos que <span class="math inline">\(\text{dim}(\text{N}(f)) + \text{dim}(\text{Im}(f)) = \text{dim}(V) = 3\)</span>. Como sabemos que <span class="math inline">\(\text{dim}(\text{N}(f)) = 1\)</span> vemos que <span class="math inline">\(\text{dim}(\text{Im}(f)) = 2\)</span>.</p>
+</li>
+<li>
+<p>Formamos un sistema de generadores de <span class="math inline">\(U+W\)</span> uniendo una base de <span class="math inline">\(U\)</span> y una base de <span class="math inline">\(W\)</span> (que hemos calculado en apartados anteriores). El sistema de generadores es <span class="math inline">\(\{(1,0,3),\ (0,1,4),\ (1,1,2)\}\)</span>. A partir de él obtenemos una base: <span class="math display">\[
+\left (\begin{array}{ccc} 1 &amp; 0 &amp; 3 \\ 0 &amp; 1 &amp; 4 \\ 1 &amp; 1 &amp; 2 \end{array}\right )
+\stackrel{\stackrel{E_{31}(4)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 &amp; 0 &amp; 3 \\ 0 &amp; 1 &amp; 4 \\ 0 &amp; 1 &amp; 4 \end{array}\right )
+\stackrel{\stackrel{E_{32}(4)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 &amp; 0 &amp; 3 \\ 0 &amp; 1 &amp; 4 \\ 0 &amp; 0 &amp; 0 \end{array}\right )
+\]</span></p>
+<p>Y por tanto, una base de <span class="math inline">\(U+W\)</span> es <span class="math inline">\(B=\{(1,0,3),\ (0,1,4)\}\)</span>.</p>
+<p>Vemos que <span class="math inline">\(\text{dim}(U+W) = 2\)</span>. Puesto que <span class="math inline">\(\text{dim}(U\cap W) = \text{dim}(U)+\text{dim}(W)-\text{dim}(U+W)\)</span> la dimensión del subespacio <span class="math inline">\(U\cap W\)</span> vale <span class="math inline">\(1\)</span>. Por tanto, la suma no es directa (tendría que valer cero para que sí lo fuera).</p>
+<p>Este apartado se podría haber simplificado si nos percatamos de que el vector <span class="math inline">\((1,1,2)\)</span>, que forma una base de <span class="math inline">\(U\)</span>, pertenece a <span class="math inline">\(W\)</span>, pues cumple la ecuación de <span class="math inline">\(W\)</span>. Esto significa que <span class="math inline">\(U\subseteq W\)</span>, luego <span class="math inline">\(U+W=W\)</span> y <span class="math inline">\(U\cap W=U\)</span>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="test">
 <iframe src="./assets/autoevaluacion/AutoevaluacionAL.html" style="border:none;" height="1000" width="100%" title="Autoevaluación">
 </iframe>
@@ -3260,13 +3972,14 @@ luego un tal vector es <span class="math inline">\((0,1,-1)\)</span>.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

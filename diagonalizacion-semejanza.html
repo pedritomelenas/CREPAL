@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -28,21 +28,22 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0eed61f2e31f6b76d04148bb74fa71d2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0bbb9d88478d102033c37fea9a42c307.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0eed61f2e31f6b76d04148bb74fa71d2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-450d2a4178d7391a0812bc8d63b1a3da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-a3b89e660445efaee61f23d5f61c68a7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-450d2a4178d7391a0812bc8d63b1a3da.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
-    "search-no-results-text": "Sin resultados",
+    "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -204,7 +205,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -392,6 +393,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Problemas resueltos de Álgebra Lineal</span>
     </a>
@@ -440,6 +443,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -487,7 +494,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resueltos-examenes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Otros</span></a>
+ <span class="menu-text">Miscelánea</span></a>
   </div>
 </li>
     </ul>
@@ -599,12 +606,12 @@ Diagonaliza la matriz <span class="math inline">\(A^{-1}\)</span>.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -841,12 +848,12 @@ A=\left(\begin{array}{cccc}
 \]</span></p>
 <p>Estudiar para qué valores de los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> es diagonalizable.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -910,12 +917,12 @@ Calcula <span class="math inline">\(f^{2432}(1,2,3)\)</span>.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1114,12 +1121,12 @@ Halla <span class="math inline">\(f^{704}(1,2,3)\)</span>.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1318,12 +1325,12 @@ Para los valores <span class="math inline">\(a=1\)</span>, <span class="math inl
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1437,12 +1444,12 @@ Para el valor <span class="math inline">\(a=0\)</span> determinar su forma diago
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1550,12 +1557,12 @@ A=\left(
 \]</span></p>
 <p>Estudia para qué valores de <span class="math inline">\(a\in\mathbb{R}\)</span> es diagonalizable y para aquellos que lo sea obtén <span class="math inline">\(D\)</span> diagonal y <span class="math inline">\(P\)</span> regular tales que <span class="math inline">\(D=P^{-1}AP\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1635,12 +1642,12 @@ A= \left(\begin{array}{rrr}
 \]</span></p>
 <p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=B\)</span>?</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1677,12 +1684,12 @@ A= \left(\begin{array}{rrr}
 \]</span></p>
 <p>¿Existe <span class="math inline">\(P\)</span> regular tal que <span class="math inline">\(P^{-1}AP=I_3\)</span>?</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1730,12 +1737,12 @@ Calcula una matriz diagonal <span class="math inline">\(D\)</span> y una matriz 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1861,12 +1868,12 @@ f(x,y,z,t)=(3x-y,-x+3y,3z+t,z+3t)
 \]</span></p>
 <p>¿Es diagonalizable por semejanza este endomorfismo?</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2003,12 +2010,12 @@ Calcula una matriz diagonal <span class="math inline">\(D\)</span> y una matriz 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2219,12 +2226,12 @@ Calcula una matriz diagonal <span class="math inline">\(D\)</span> y una matriz 
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2391,12 +2398,12 @@ A=\begin{pmatrix}
 \]</span></p>
 <p>Probar que <span class="math inline">\(A\)</span> es diagonalizable y determinar <span class="math inline">\(D\)</span> diagonal y <span class="math inline">\(P\)</span> invertible de forma que <span class="math inline">\(D=P^{-1}·A·P\)</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2598,12 +2605,12 @@ P=\begin{pmatrix}
 \]</span></p>
 <p>determinar su forma diagonal y una matriz de paso <span class="math inline">\(P\)</span> tal que <span class="math inline">\(D=P^{-1}AP\)</span>.</p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2660,12 +2667,12 @@ a &amp; 1 \\ 0 &amp; b
 \end{pmatrix}
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solución
+<span class="screen-reader-only">None</span>Solución
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2688,6 +2695,1202 @@ a-a &amp; 1 \\ 0 &amp; a-a
 \end{pmatrix}
 \]</span></p>
 <p>luego obtenemos la ecuación <span class="math inline">\(y=0\)</span>, por tanto <span class="math inline">\(dim \, V_{\lambda=a}=dim\, \mathbb{R}^2 - \mbox{ nº mínimo de ecuaciones} =1\)</span> con lo que no coincide con la algebraica y por tanto la matriz <b>no</b> es diagonalizable por semejanza.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-17" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 17</strong></span> Sea <span class="math display">\[
+A =
+\begin{pmatrix}
+3 &amp; 5 \\
+9 &amp; 0
+\end{pmatrix} \in M_2(\mathbb{Z}_{47}).
+\]</span></p>
+<ol type="a">
+<li>
+Estudia si <span class="math inline">\(A\)</span> es diagonalizable, y en caso afirmativo, encuentra <span class="math inline">\(P \in M_2(\mathbb{Z}_{47})\)</span>, regular, tal que <span class="math inline">\(P^{-1}AP\)</span> sea una matriz diagonal.
+</li>
+<li>
+Calcula <span class="math inline">\(A^{48}\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p><b>Polinomio característico</b>: <span class="math display">\[
+p_A(\lambda) = \lambda^2 - \text{tr}(A)\lambda + \det(A)
+= \lambda^2 - 3\lambda - 45
+= \lambda^2 + 44\lambda + 2 \quad (\text{en } \mathbb{Z}_{47}).
+\]</span></p>
+<p>Comprobamos que <span class="math inline">\(p_A(1)=0\)</span>, por lo que <span class="math inline">\(\lambda=1\)</span> es raíz. Dividiendo, obtenemos: <span class="math display">\[
+p_A(\lambda) = (\lambda-1)(\lambda-2).
+\]</span> Por tanto, los valores propios son <span class="math inline">\(\lambda_1=1\)</span>, <span class="math inline">\(\lambda_2=2\)</span>, ambos con multiplicidad algebraica <span class="math inline">\(1\)</span>.</p>
+<p>La tabla queda: <span class="math display">\[
+\begin{array}{c|c|c}
+\text{Valor propio} &amp; \alpha &amp; d \\ \hline
+\lambda_1=1 &amp; 1 &amp; 1 \\
+\lambda_2=2 &amp; 1 &amp; 1
+\end{array}
+\]</span> Como <span class="math inline">\(d_1+d_2=2\)</span>, <span class="math inline">\(A\)</span> es diagonalizable.</p>
+<p><b>Vectores propios</b>:</p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[
+A-I =
+\begin{pmatrix}
+2 &amp; 5 \\
+9 &amp; 46
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 &amp; 26 \\
+0 &amp; 0
+\end{pmatrix}.
+\]</span> Ecuación: <span class="math inline">\(x+26y=0\)</span>. Una base es: <span class="math display">\[
+B_{V_1} = \{(21,1)\}.
+\]</span></p>
+<p>Para <span class="math inline">\(\lambda=2\)</span>: <span class="math display">\[
+A-2I =
+\begin{pmatrix}
+1 &amp; 5 \\
+9 &amp; 45
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 &amp; 5 \\
+0 &amp; 0
+\end{pmatrix}.
+\]</span> Ecuación: <span class="math inline">\(x+5y=0\)</span>. Una base es: <span class="math display">\[
+B_{V_2} = \{(42,1)\}.
+\]</span></p>
+<p>Por tanto, tomando: <span class="math display">\[
+P =
+\begin{pmatrix}
+21 &amp; 42 \\
+1 &amp; 1
+\end{pmatrix}, \quad
+P^{-1}AP =
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 2
+\end{pmatrix} = D.
+\]</span></p>
+</li>
+<li>
+<p><b>Potencia de la matriz.</b></p>
+<p>Dado que <span class="math inline">\(A=PDP^{-1}\)</span>, tenemos: <span class="math display">\[
+A^{48} = P D^{48} P^{-1}, \quad D^{48} =
+\begin{pmatrix}
+1^{48} &amp; 0 \\
+0 &amp; 2^{48}
+\end{pmatrix}.
+\]</span></p>
+<p>En <span class="math inline">\(\mathbb{Z}_{47}\)</span>, por el pequeño teorema de Fermat: <span class="math display">\[
+2^{46} \equiv 1 \ (\text{mod } 47).
+\]</span></p>
+<p>Así: <span class="math display">\[
+2^{48} = 2^{46}\cdot 2^2 \equiv 1\cdot 4 = 4.
+\]</span></p>
+<p>Por tanto: <span class="math display">\[
+D^{48} =
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 4
+\end{pmatrix}.
+\]</span></p>
+<p>Finalmente: <span class="math display">\[
+A^{48} = P D^{48} P^{-1}.
+\]</span></p>
+<p>También, como <span class="math inline">\(A^{46}=I\)</span>, se cumple: <span class="math display">\[
+A^{48} = A^{46}A^2 = A^2.
+\]</span></p>
+<p>Calculamos: <span class="math display">\[
+A^2 =
+\begin{pmatrix}
+3 &amp; 5 \\
+9 &amp; 0
+\end{pmatrix}
+\begin{pmatrix}
+3 &amp; 5 \\
+9 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+7 &amp; 15 \\
+27 &amp; 45
+\end{pmatrix}.
+\]</span></p>
+<p><span class="math display">\[
+\boxed{A^{48} =
+\begin{pmatrix}
+7 &amp; 15 \\
+27 &amp; 45
+\end{pmatrix}}
+\]</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-18" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 18</strong></span> Dada la matriz <span class="math display">\[
+A =
+\begin{pmatrix}
+2 &amp; 1 &amp; 1 \\
+2 &amp; 0 &amp; 2 \\
+1 &amp; 1 &amp; 2
+\end{pmatrix} \in M_3(\mathbb{Z}_5),
+\]</span></p>
+<p>estudia si <span class="math inline">\(A\)</span> es o no diagonalizable y, en caso afirmativo, encuentra una matriz regular <span class="math inline">\(P\)</span> tal que <span class="math inline">\(P^{-1}AP\)</span> sea una matriz diagonal <span class="math inline">\(D\)</span>. Di cuál es la matriz <span class="math inline">\(D\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Polinomio característico. Sabemos: <span class="math display">\[
+\text{tr}(A) = 2+0+2=4=1 \ (\text{en } \mathbb{Z}_5),
+\]</span></p>
+<p><span class="math display">\[
+\det(A)=2\cdot 0\cdot 2 + 1\cdot 2\cdot 1 + 1\cdot 2\cdot 1 - 1\cdot 0\cdot 1 - 1\cdot 2\cdot 2 - 2\cdot 2\cdot 1 = 2.
+\]</span></p>
+<p>De aquí: <span class="math display">\[
+p_A(\lambda) = -\lambda^3 + \text{tr}(A)\lambda^2 - \text{tr}(\text{Adj}(A))\lambda + \det(A) = 2\lambda^3 + \lambda^2 + \lambda + 2.
+\]</span></p>
+<p>También puede calcularse como el determinante de <span class="math inline">\(|A-\lambda I|\)</span>.</p>
+</li>
+<li>
+<p>Valores propios.</p>
+<p>Resolviendo en <span class="math inline">\(\mathbb{Z}_5\)</span>, obtenemos: <span class="math display">\[
+\lambda_1 = 1 \ (\alpha_1=2), \quad \lambda_2 = 2 \ (\alpha_2=1).
+\]</span></p>
+</li>
+<li>
+<p>Multiplicidades geométricas.</p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[
+A-I =
+\begin{pmatrix}
+1 &amp; 1 &amp; 1 \\
+2 &amp; 2 &amp; 2 \\
+1 &amp; 1 &amp; 1
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\]</span> Así, <span class="math inline">\(rg(A-I)=1\)</span>, por tanto <span class="math inline">\(\dim V_1 = 2\)</span>.</p>
+<p>Para <span class="math inline">\(\lambda=2\)</span>: <span class="math display">\[
+A-2I =
+\begin{pmatrix}
+0 &amp; 1 &amp; 1 \\
+2 &amp; 1 &amp; 2 \\
+1 &amp; 1 &amp; 0
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 &amp; 0 &amp; 2 \\
+0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\]</span> Así, <span class="math inline">\(rg(A-2I)=2\)</span>, luego <span class="math inline">\(\dim V_2=1\)</span>.</p>
+<p>En resumen: <span class="math display">\[
+\lambda=1, \ \alpha_1=2, \ d_1=2;
+\quad
+\lambda=2, \ \alpha_2=1, \ d_2=1.
+\]</span> Dado que <span class="math inline">\(d_1+d_2=3\)</span>, la matriz es diagonalizable.</p>
+</li>
+<li>
+<p>Subespacios propios.</p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>: <span class="math display">\[
+V_1 \equiv \{x+y+z=0\}, \quad \mbox{Base }V_1 = \{(1,0,2), (0,1,2)\}.
+\]</span></p>
+<p>Para <span class="math inline">\(\lambda=2\)</span>: <span class="math display">\[
+V_2 \equiv \{x+2z=0, \ y+z=0\}, \quad \mbox{Base }V_2 = \{(1,2,1)\}.
+\]</span></p>
+</li>
+<li>
+<p>Matrices <span class="math inline">\(P\)</span> y <span class="math inline">\(D\)</span>.</p>
+<p>Tomamos como columnas de <span class="math inline">\(P\)</span> las bases de <span class="math inline">\(V_1\)</span> y <span class="math inline">\(V_2\)</span>: <span class="math display">\[
+P =
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 2 \\
+2 &amp; 2 &amp; 1
+\end{pmatrix}, \quad
+D =
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 2
+\end{pmatrix}.
+\]</span></p>
+<p>Así, <span class="math inline">\(P^{-1}AP = D\)</span>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-19" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 19</strong></span> Dada la matriz <span class="math display">\[
+A =
+\begin{pmatrix}
+0 &amp; 2 &amp; 2 &amp; 2 \\
+1 &amp; 2 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 2 &amp; 0 \\
+1 &amp; 1 &amp; 0 &amp; 2
+\end{pmatrix} \in M_4(\mathbb{Z}_3),
+\]</span></p>
+<p>estudia si <span class="math inline">\(A\)</span> es o no diagonalizable, y en caso afirmativo, encuentra una matriz regular <span class="math inline">\(P\)</span> tal que <span class="math inline">\(P^{-1}AP\)</span> sea una matriz diagonal <span class="math inline">\(D\)</span> e indica cuál es la matriz <span class="math inline">\(D\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dividimos la resolución en pasos:</p>
+<ol type="i">
+<li>
+<p>Cálculo del polinomio característico <span class="math display">\[
+p_A(\lambda) = \det(A-\lambda I)
+=
+\begin{vmatrix}
+-\lambda &amp; 2 &amp; 2 &amp; 2 \\
+1 &amp; 2-\lambda &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 2-\lambda &amp; 0 \\
+1 &amp; 1 &amp; 0 &amp; 2-\lambda
+\end{vmatrix}
+\]</span></p>
+<p><span class="math display">\[
+= (2-\lambda)\cdot
+\begin{vmatrix}
+-\lambda &amp; 2 &amp; 2 \\
+1 &amp; 2-\lambda &amp; 1 \\
+1 &amp; 1 &amp; 2-\lambda
+\end{vmatrix}.
+\]</span></p>
+<p>Tras desarrollar y simplificar en <span class="math inline">\(\mathbb{Z}_3\)</span>, se obtiene: <span class="math display">\[
+p_A(\lambda) = (2-\lambda)(2\lambda^3 + \lambda^2 + \lambda + 2).
+\]</span></p>
+<p>De aquí se deduce que los valores propios son <span class="math inline">\(\lambda=1\)</span> y <span class="math inline">\(\lambda=2\)</span>, ambos con multiplicidad algebraica <span class="math inline">\(2\)</span>.</p>
+</li>
+<li>
+<p>Multiplicidades geométricas</p>
+<p>Para <span class="math inline">\(\lambda=1\)</span>: Se resuelve <span class="math inline">\((A-I)x=0\)</span>: <span class="math display">\[
+A-I =
+\begin{pmatrix}
+2 &amp; 2 &amp; 2 &amp; 2 \\
+1 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; 0 &amp; 1
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+<p>Así, <span class="math display">\[
+V_1 \equiv \{x+y+t=0, \ z=0\}, \quad \dim V_1 = 2.
+\]</span></p>
+<p>Para <span class="math inline">\(\lambda=2\)</span>: Se resuelve <span class="math inline">\((A-2I)x=0\)</span>: <span class="math display">\[
+A-2I =
+\begin{pmatrix}
+1 &amp; 2 &amp; 2 &amp; 2 \\
+1 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 1 &amp; 0 &amp; 0
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; 2 &amp; 2 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 1 &amp; 1
+\end{pmatrix}.
+\]</span></p>
+<p>Así, <span class="math display">\[
+V_2 \equiv \{x+z+t=0,\ y+2z+2t=0\}, \quad \dim V_2 = 2.
+\]</span></p>
+<p>Por tanto, <span class="math inline">\(A\)</span> es diagonalizable.</p>
+</li>
+<li>
+<p>Bases de cada subespacio propios</p>
+<p>De <span class="math inline">\(V_1\)</span>: <span class="math display">\[
+\{(2,1,0,0), (2,0,0,1)\}.
+\]</span></p>
+<p>De <span class="math inline">\(V_2\)</span>: <span class="math display">\[
+\{(2,1,1,0), (2,1,0,1)\}.
+\]</span></p>
+</li>
+<li>
+<p>Matriz de paso y diagonalización</p>
+<p>Tomando como <span class="math inline">\(P\)</span> la matriz con estas columnas: <span class="math display">\[
+P =
+\begin{pmatrix}
+2 &amp; 2 &amp; 2 &amp; 2 \\
+1 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 1
+\end{pmatrix},
+\]</span> tenemos que <span class="math inline">\(P\)</span> es regular y <span class="math display">\[
+P^{-1}AP =
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 2
+\end{pmatrix}
+= D.
+\]</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-20" class="basico-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 20</strong></span> Dada la matriz</p>
+<p><span class="math display">\[
+A=\left(\begin{array}{lll}
+5 &amp; 1 &amp; 1 \\
+6 &amp; 4 &amp; 2 \\
+5 &amp; 4 &amp; 6
+\end{array}\right) \in \mathcal{M}_{3}\left(\mathbb{Z}_{7}\right)
+\]</span></p>
+<p>calcula, si es posible, matrices <span class="math inline">\(P, D \in \mathcal{M}_{3}\left(\mathbb{Z}_{7}\right)\)</span> tales que <span class="math inline">\(D\)</span> es diagonal y <span class="math inline">\(A=P D P^{-1}\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Notemos que nos piden es encontrar una matriz regular <span class="math inline">\(P\)</span> tal que <span class="math inline">\(P^{-1} \cdot A \cdot P\)</span> sea una matriz diagonal.\ De existir esta matriz <span class="math inline">\(P\)</span>, sus columnas serían vectores propios de <span class="math inline">\(A\)</span>. Por tanto hemos de ver si la matriz <span class="math inline">\(A\)</span> tiene una base de vectores propios, o lo que es lo mismo si <span class="math inline">\(A\)</span> es diagonalizable.</p>
+<p>Comenzamos entonces calculando el polinomio característico de <span class="math inline">\(A\)</span>, que es igual al determinante de la matriz <span class="math inline">\(A-\lambda I d\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left|\begin{array}{ccc}
+5-\lambda &amp; 1 &amp; 1 \\
+6 &amp; 4-\lambda &amp; 2 \\
+5 &amp; 4 &amp; 6-\lambda
+\end{array}\right| &amp; =(5-\lambda)(4-\lambda)(6-\lambda)+6 \cdot 4 \cdot 1+1 \cdot 2 \cdot 5-(1 \cdot 5(4-\lambda)+1 \cdot 6(6-\lambda)+2 \cdot 4(5-\lambda)) \\
+&amp; =\left(20-5 \lambda-4 \lambda+\lambda^{2}\right)(6-\lambda)+24+10-(20-5 \lambda+36-6 \lambda+40-8 \lambda) \\
+&amp; =\left(\lambda^{2}-9 \lambda+20\right)(6-\lambda)+34-(96-19 \lambda) \\
+&amp; =\left(6 \lambda^{2}-\lambda^{3}-54 \lambda+9 \lambda^{2}+120-20 \lambda\right)+34-96+19 \lambda \\
+&amp; =-\lambda^{3}+15 \lambda^{2}-55 \lambda+58 \\
+&amp; =6 \lambda^{3}+\lambda^{2}+\lambda+2
+\end{aligned}
+\]</span></p>
+<p>Continuamos calculando los valores propios, es decir, las raíces de este polinomio (usando la división por Ruffini y probando con valores sencillos). Calculamos también sus multiplicidades algebraicas.</p>
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+<tbody><tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+2
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+0
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+0
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+3
+</td>
+</tr>
+</tbody></table>
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+<tbody><tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+2
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+2
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+2
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+5
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+5
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+5
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+0
+</td>
+</tr>
+</tbody></table>
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+<tbody><tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+2
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+5
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+4
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+0
+</td>
+</tr>
+</tbody></table>
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+<tbody><tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+4
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+2
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+5
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+2
+</td>
+</tr>
+</tbody></table>
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+<tbody><tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+3
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+4
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+4
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+1
+</td>
+</tr>
+</tbody></table>
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+<tbody><tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+4
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+4
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+4
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+3
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+6
+</td>
+<td style="padding-right: 3pt; padding-left: 3pt;">
+0
+</td>
+</tr>
+</tbody></table>
+<p>Y vemos que tiene dos valores propios: <span class="math inline">\(\lambda_{1}=2\)</span> con multiplicidad algebraica <span class="math inline">\(m_{2}=2\)</span> y <span class="math inline">\(\lambda_{2}=4\)</span> con multiplicidad algebraica <span class="math inline">\(m_{4}=1\)</span>.</p>
+<p>Vamos con la multiplicidad geométrica. Puesto que si <span class="math inline">\(\lambda\)</span> es un valor propio su multiplicdad geométrica <span class="math inline">\(d_{\lambda}\)</span> verifica que <span class="math inline">\(1 \leq d_{\lambda} \leq m_{\lambda}\)</span> sabemos que la multiplicidad geométrica del valor propio 4 vale 1 mientras que la del valor propio 2 puede valer 1 ó 2 .</p>
+<p>Lo siguiente es calcular los subespacios propios y de esta forma tendremos <span class="math inline">\(d_{2}\)</span> y <span class="math inline">\(d_{4}\)</span>.\ Primero calculamos <span class="math inline">\(V_{2}\)</span>. Este subespacio viene dado por unas ecuaciones cuya matriz de coeficientes es <span class="math inline">\(A-2 I d\)</span>. Es decir,</p>
+<p><span class="math display">\[
+V_{2} \equiv\left\{\begin{array}{l}
+3 x+y+z=0 \\
+6 x+2 y+2 z=0 \\
+5 x+4 y+4 z=0
+\end{array}\right.
+\]</span></p>
+<p>Calculamos la forma normal de Hermite de su matriz de coeficientes:</p>
+<p><span class="math display">\[
+\left(\begin{array}{lll}
+3 &amp; 1 &amp; 1 \\
+6 &amp; 2 &amp; 2 \\
+5 &amp; 4 &amp; 4
+\end{array}\right) \xrightarrow{E_{1}(15)}\left(\begin{array}{lll}
+1 &amp; 5 &amp; 5 \\
+6 &amp; 2 &amp; 2 \\
+5 &amp; 4 &amp; 4
+\end{array}\right) \xrightarrow{E_{21}(1)}\left(\begin{array}{lll}
+1 &amp; 5 &amp; 5 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>Luego <span class="math inline">\(V_{2} \equiv x+5 y+5 z=0\)</span> de donde <span class="math inline">\(d_{2}=\operatorname{dim}\left(V_{2}\right)=2\)</span>.\ Una base de <span class="math inline">\(V_{2}\)</span> es <span class="math inline">\(B_{V_{2}}=\{(2,1,0) ;(2,0,1)\}\)</span>.\ Para calcular <span class="math inline">\(V_{4}\)</span> repetimos lo mismo. Calculamos la forma normal de Hermite de <span class="math inline">\(A-4 / d\)</span>.</p>
+<p><span class="math display">\[
+\left(\begin{array}{lll}
+1 &amp; 1 &amp; 1 \\
+6 &amp; 0 &amp; 2 \\
+5 &amp; 4 &amp; 2
+\end{array}\right) \xrightarrow{E_{21}(1)}\left(\begin{array}{lll}
+1 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 6 &amp; 4
+\end{array}\right) \xrightarrow{E_{31}(2)}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 5 \\
+0 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 0
+\end{array}\right)
+\]</span></p>
+<p>Luego <span class="math inline">\(V_{4}\)</span> viene dado por las ecuaciones <span class="math inline">\(\left\{\begin{aligned} x \quad &amp; \begin{array}{rl}x &amp; =0 \\ &amp; y\end{array}=3 z=0\end{aligned}\right.\)</span>. La dimensión es entonces 1 y una base es <span class="math inline">\(B_{V_{4}}\{(2,4,1)\}\)</span>.</p>
+<p>Con lo que hemos hecho hasta ahora podemos saber que la matriz <span class="math inline">\(A\)</span> es diagonalizable, y una base de vectores propios es <span class="math inline">\(B=\{(2,1,0) ;(2,0,1) ;(2,4,1)\}\)</span>. Los dos primeros son vectores propios de valor propio 2 y el tercero es un vector propio de valor propio 4.</p>
+<p>Si tomamos como <span class="math inline">\(P\)</span> a la matriz cuyas columnas son estos tres vectores, es decir, <span class="math inline">\(P=\left(\begin{array}{lll}2 &amp; 2 &amp; 2 \\ 1 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; 1\end{array}\right)\)</span> entonces <span class="math inline">\(P^{-1} \cdot A \cdot P=\left(\begin{array}{lll}2 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 4\end{array}\right)\)</span> que es una matriz diagonal.</p>
+<p>Tenemos entonces las matrices <span class="math inline">\(D\)</span> y <span class="math inline">\(P\)</span> que nos pedía el enundiado.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-21" class="medio-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 21</strong></span> Sea <span class="math inline">\(f:\left(\mathbb{Z}_{7}\right)^{3} \rightarrow\left(\mathbb{Z}_{7}\right)^{3}\)</span> la única aplicación lineal tal que</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{ker}(f) &amp; =N(f) \equiv\left\{\begin{array}{r}
+x+4 y+6 z=0 \\
+3 x+3 y=0
+\end{array}\right. \\
+V_{2} &amp; =\langle(1,0,1),(1,1,0)\rangle=L[(1,0,1),(1,1,0)]
+\end{aligned}
+\]</span></p>
+<p>donde <span class="math inline">\(V_{2}\)</span> denota el subespacio propio de valor propio 2. Calcula <span class="math inline">\(M_{B_{c}}(f)=A\left(f ; B_{c}, B_{c}\right)\)</span> donde <span class="math inline">\(B_{c}\)</span> es la base canónica de <span class="math inline">\(\left(\mathbb{Z}_{7}\right)^{3}\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Recordemos que el subespacio propio de valor propio 2 está formado por todos los vectores <span class="math inline">\(u \in\left(\mathbb{Z}_{7}\right)^{3}\)</span> tales que <span class="math inline">\(f(u)=2 \cdot u\)</span>.</p>
+<p>Calculamos ahora una base del núcleo de <span class="math inline">\(f\)</span>. Como tenemos las ecuaciones de dicho subespacio, resolvemos el sistema:</p>
+<p><span class="math display">\[
+\left(\begin{array}{lll}
+1 &amp; 4 &amp; 6 \\
+3 &amp; 3 &amp; 0
+\end{array}\right) \xrightarrow{E_{21}(4)}\left(\begin{array}{lll}
+1 &amp; 4 &amp; 6 \\
+0 &amp; 5 &amp; 3
+\end{array}\right) \xrightarrow{E_{2}(3)}\left(\begin{array}{lll}
+1 &amp; 4 &amp; 6 \\
+0 &amp; 1 &amp; 2
+\end{array}\right) \xrightarrow{E_{12}(3)}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 5 \\
+0 &amp; 1 &amp; 2
+\end{array}\right)
+\]</span></p>
+<p>Luego <span class="math inline">\(N(f) \equiv\left\{\begin{aligned} x &amp; +5 z=0 \\ &amp; y+2 z=0,\end{aligned}\right.\)</span> es decir, <span class="math inline">\(N(f) \equiv \begin{cases}x &amp; =2 z \\ y &amp; =5 z\end{cases}\)</span>\ Teniendo esto en cuenta, los distintos datos que nos dan sobre la aplicación <span class="math inline">\(f\)</span> nos dicen:</p>
+<ul>
+<li>
+<span class="math inline">\((2,5,1) \in N(f)\)</span>, es decir, <span class="math inline">\(f(2,5,1)=(0,0,0)\)</span>.
+</li>
+<li>
+<span class="math inline">\((1,0,1)\)</span> es un vector de valor propio 2 , es decir, <span class="math inline">\(f(1,0,1)=(2,0,2)\)</span>.
+</li>
+<li>
+<span class="math inline">\((1,1,0)\)</span> es un vector de valor propio 2 , es decir, <span class="math inline">\(f(1,1,0)=(2,2,0)\)</span>.
+</li>
+</ul>
+<p>Y puesto que <span class="math inline">\(B=\{(2,5,1) ;(1,0,1) ;(1,1,0)\}\)</span> forma una base de <span class="math inline">\(\left(\mathbb{Z}_{7}\right)^{3}\)</span> tenemos todo lo necesario para determinar la aplicación lineal <span class="math inline">\(f\)</span>.</p>
+<p>Notemos que las columnas de la matriz <span class="math inline">\(A=\left(\begin{array}{lll}0 &amp; 2 &amp; 2 \\ 0 &amp; 0 &amp; 2 \\ 0 &amp; 2 &amp; 0\end{array}\right)\)</span> son las coordenadas de los vectores <span class="math inline">\(f(2,5,1)\)</span>, <span class="math inline">\(f(1,0,1)\)</span> y <span class="math inline">\(f(1,1,0)\)</span> en la base canónica. Por tanto, tenemos que <span class="math inline">\(A=M_{B, B_{c}}(f)\)</span>.</p>
+<p>Para calcular la matriz de <span class="math inline">\(f\)</span> en la base canónica tenemos en cuenta que <span class="math inline">\(M_{B_{c}}(f)=M_{B, B_{c}}(f) \cdot M_{B_{c} \rightarrow B}\)</span> y que</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_{B_{c} \rightarrow B}=\left(M_{B \rightarrow B_{c}}\right)^{-1} &amp; =\left(\begin{array}{lll}
+2 &amp; 1 &amp; 1 \\
+5 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0
+\end{array}\right)^{-1}=\left(\begin{array}{lll}
+5 &amp; 2 &amp; 2 \\
+2 &amp; 5 &amp; 6 \\
+3 &amp; 5 &amp; 4
+\end{array}\right) . \\
+M_{B_{c}}(f) &amp; =M_{B, B_{c}}(f) \cdot M_{B_{c} \rightarrow B}=\left(\begin{array}{lll}
+0 &amp; 2 &amp; 2 \\
+0 &amp; 0 &amp; 2 \\
+0 &amp; 2 &amp; 0
+\end{array}\right) \cdot\left(\begin{array}{lll}
+5 &amp; 2 &amp; 2 \\
+2 &amp; 5 &amp; 6 \\
+3 &amp; 5 &amp; 4
+\end{array}\right)=\left(\begin{array}{lll}
+3 &amp; 6 &amp; 6 \\
+6 &amp; 3 &amp; 1 \\
+4 &amp; 3 &amp; 5
+\end{array}\right)
+\end{aligned}
+\]</span></p>
+<p>De aquí podemos calcular una expresión explícita para <span class="math inline">\(f: f(x, y, z)=(3 x+6 y+6 z, 6 x+3 y+z, 4 x+3 y+5 z)\)</span>. Es fácil comprobar, con esta expresión, que <span class="math inline">\(f(2,5,1)=(0,0,0), f(1,0,1)=(2,0,2)\)</span> y <span class="math inline">\(f(1,1,0)=(2,2,0)\)</span>.</p>
+<p>Otra forma de resolver este ejercicio sería la siguiente:\ Conocemos cuanto vale <span class="math inline">\(f(2,5,1), f(1,0,1)\)</span> y <span class="math inline">\(f(1,1,0)\)</span>. Necesitamos calcular <span class="math inline">\(f(1,0,0), f(0,1,0)\)</span> y <span class="math inline">\(f(0,0,1)\)</span>. Para esto, escribimos estos tres vectores como combinación lineal de los vectores de la base <span class="math inline">\(B\)</span>.</p>
+<ul>
+<li>
+<span class="math inline">\((1,0,0)=a(2,5,1)+b(1,0,1)+c(1,1,0)\)</span>. Esto nos da lugar al sistema
+</li>
+</ul>
+<p><span class="math display">\[
+\left\{\begin{array}{rl}
+2 a+b+c &amp; =1 \\
+5 a +c &amp;=0\\
+a+b &amp; =0
+\end{array}
+\right.
+\]</span></p>
+<p>que resolvemos a continuación:</p>
+<p><span class="math display">\[
+\left(\begin{array}{llll}
+2 &amp; 1 &amp; 1 &amp; 1 \\
+5 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 1 &amp; 0 &amp; 0
+\end{array}\right) \xrightarrow{E_{13}}\left(\begin{array}{llll}
+1 &amp; 1 &amp; 0 &amp; 0 \\
+5 &amp; 0 &amp; 1 &amp; 0 \\
+2 &amp; 1 &amp; 1 &amp; 1
+\end{array}\right) \xrightarrow{E_{21}(2)}\left(\begin{array}{llll}
+1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 1 &amp; 0 \\
+0 &amp; 6 &amp; 1 &amp; 1
+\end{array}\right) \xrightarrow{E_{31}(5)}\left(\begin{array}{llll}
+1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 4 &amp; 0 \\
+0 &amp; 6 &amp; 1 &amp; 1
+\end{array}\right) \xrightarrow{E_{12}(6)}
+\]</span> <span class="math display">\[\left(\begin{array}{llll}
+1 &amp; 0 &amp; 3 &amp; 0 \\
+0 &amp; 1 &amp; 4 &amp; 0 \\
+0 &amp; 0 &amp; 5 &amp; 1
+\end{array}\right) \xrightarrow{E_{32}(5)}\left(\begin{array}{llll}
+1 &amp; 0 &amp; 3 &amp; 0 \\
+0 &amp; 1 &amp; 4 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 3
+\end{array}\right) \xrightarrow{E_{13}(4)}\left(\begin{array}{lll}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{array}\right)
+\]</span></p>
+<p>Y que nos da la solución <span class="math inline">\(a=5, b=2, c=3\)</span>. Notemos que estos valores coinciden con los de la primera columna de la matriz <span class="math inline">\(M_{B_{c} \rightarrow B}\)</span>. A partir de aquí calculamos <span class="math inline">\(f(1,0,0)\)</span>.</p>
+<p><span class="math display">\[
+f(1,0,0)=f(5(2,5,1)+2(1,0,1)+3(1,1,0))=5 f(2,5,1)+2 f(1,0,1)+3(1,1,0)=5(0,0,0)+2(2,0,2)+3(2,2,0)=(3,6,4)
+\]</span></p>
+<p>Y esto nos da la primera columna de la matriz <span class="math inline">\(M_{B_{c}}(f)\)</span>.</p>
+<ul>
+<li>
+<span class="math inline">\((0,1,0)=a^{\prime}(2,5,1)+b^{\prime}(1,0,1)+c^{\prime}(1,1,0)\)</span>. El sistema que resulta tiene como solución <span class="math inline">\(a^{\prime}=2\)</span>, <span class="math inline">\(b^{\prime}=5, c^{\prime}=5\)</span>. <span class="math inline">\(f(0,1,0)=f(2(2,5,1)+5(1,0,1)+5(1,1,0))=2 f(2,5,1)+5 f(1,0,1)+5(1,1,0)=2(0,0,0)+5(2,0,2)+5(2,2,0)=(6,3,3)\)</span> <span class="math inline">\(Y\)</span> ya tenemos la segunda columna de <span class="math inline">\(M_{B_{c}}(f)\)</span>.
+</li>
+<li>
+<span class="math inline">\((0,0,1)=a^{\prime \prime}(2,5,1)+b^{\prime \prime}(1,0,1)+c^{\prime \prime}(1,1,0)\)</span>. El sistema que resulta tiene como solución <span class="math inline">\(a^{\prime \prime}=2\)</span>, <span class="math inline">\(b^{\prime \prime}=6, c^{\prime \prime}=4\)</span> <span class="math inline">\(f(0,0,1)=f(2(2,5,1)+6(1,0,1)+4(1,1,0))=2 f(2,5,1)+6 f(1,0,1)+4(1,1,0)=2(0,0,0)+6(2,0,2)+4(2,2,0)=(6,1,5)\)</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-22" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22</strong></span> Sea <span class="math inline">\(A=\left (\begin{array}{ccc} 2 &amp; -1 &amp; 1 \\ 0 &amp; 0 &amp; 2 \\ 0 &amp; -1 &amp; 3 \end{array}\right )\in M_{3\times 3}({\mathbb R})\)</span>.</p>
+<ol type="a">
+<li>
+Estudia si <span class="math inline">\(A\)</span> es o no diagonalizable (por semejanza). En caso afirmativo, encuentra una matriz regular <span class="math inline">\(P\)</span> y una matriz diagonal <span class="math inline">\(D\)</span> tal que <span class="math inline">\(P^{-1}\cdot A \cdot P = D\)</span>.
+</li>
+<li>
+Utiliza lo obtenido en el apartado anterior para calcular <span class="math inline">\(A^{10}\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Comenzamos calculando el polinomio característico:</p>
+<p><span class="math inline">\(\begin{array}{rcl}
+p_A(\lambda) &amp; = &amp; \left | \begin{array}{ccc} 2-\lambda &amp; -1 &amp; 1 \\ 0 &amp; -\lambda &amp; 2 \\ 0 &amp; -1 &amp; 3-\lambda \end{array}\right | \\ \\
+&amp; = &amp; (2-\lambda) \cdot \left | \begin{array}{cc} -\lambda &amp; 2 \\ -1 &amp; 3-\lambda \end{array}\right | \\ \\
+&amp; = &amp; (2-\lambda) \cdot (-\lambda (3-\lambda) - (-2)) \\ \\
+&amp; = &amp; (2-\lambda)(-3\lambda + \lambda^2 + 2 ) \\ \\
+&amp; = &amp; (2-\lambda)(\lambda^2 - 3\lambda + 2). \end{array}\)</span></p>
+<p>También se puede calcular sabiendo que <span class="math inline">\(p_A(\lambda) = -\lambda^3 + \text{tr}(A) \lambda ^2 - \text{tr}(\text{Adj}(A)) \lambda + \text{det}(A)\)</span>.</p>
+<ul>
+<li>
+<span class="math inline">\(\text{tr}(A) = 2 + 0 + 3 = 5\)</span>
+</li>
+<li>
+<span class="math inline">\(\text{tr}(\text{Adj}(A)) = \left | \begin{array}{rr} 0 &amp; 2 \\ -1 &amp; 3 \end{array}\right | + \left | \begin{array}{rr} 2 &amp; 1 \\ 0 &amp; 3 \end{array}\right | + \left | \begin{array}{rr} 2 &amp; -1 \\ 0 &amp; 0 \end{array}\right | = 2 + 6 + 0 = 8\)</span>.
+</li>
+<li>
+<span class="math inline">\(\text{det}(A) = 0 + 0 + 0 - (0 + 0 - 4) = 4\)</span>.
+</li>
+</ul>
+<p>Con esto tenemos que <span class="math inline">\(p_A(\lambda) = -\lambda^3 + 5\lambda^2 - 8 \lambda + 4\)</span>.</p>
+<p>Calculamos ahora las raíces, con sus multiplicidades.</p>
+<p>Si partimos de la primera expresión, <span class="math inline">\(p_A(\lambda) = (2-\lambda)(\lambda^2-3\lambda + 2)\)</span>, ya tenemos que <span class="math inline">\(\lambda=2\)</span> es raíz, y nos falta calcular las raíces de <span class="math inline">\(\lambda^2 - 3\lambda + 2\)</span>. Las calculamos usando la fórmula de la ecuación de segundo grado: <span class="math inline">\(\lambda = \frac{3 \pm \sqrt{3^2 - 4\cdot 1 \cdot 2}}{2} = \frac{3 \pm \sqrt{1}}{2} = \frac{3\pm 1}{2}\)</span>, que nos da como raíces <span class="math inline">\(\lambda=2\)</span> y <span class="math inline">\(\lambda=1\)</span>.</p>
+<p>Así que <span class="math inline">\(p_A(\lambda)\)</span> tiene dos raíces, que son <span class="math inline">\(\lambda = 2\)</span> (doble) y <span class="math inline">\(\lambda = 1\)</span> (simple).</p>
+<p>También las podíamos haber obtenido a partir de la expresión <span class="math inline">\(p_A(\lambda) = -\lambda^3 + 5\lambda^2 - 8 \lambda + 4\)</span>.</p>
+<p><span class="math inline">\(\hspace{2cm} \begin{array}{r|rrrr}
+&amp; -1 &amp; 5 &amp; 8 &amp; 4 \\ 1 &amp; &amp; -1 &amp; 4 &amp; -4 \\ \hline
+&amp; -1 &amp; 4 &amp; -4 &amp; 0 \\ 2 &amp; &amp; -2 &amp; 4 &amp; \\ \hline
+&amp; -1 &amp; 2 &amp; 0 &amp; \\ 2 &amp; &amp; -2 &amp; &amp; \\ \hline
+&amp; -1 &amp; 0 &amp; &amp; \end{array}\)</span></p>
+<p>Y tenemos el mismo resultado. Las raíces son <span class="math inline">\(\lambda = 1\)</span> (simple) y <span class="math inline">\(\lambda=2\)</span> (doble).</p>
+<p>Calculamos ahora las multiplicidades geométricas. Tenemos el siguiente cuadro:</p>
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+<tbody><tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: right; padding-right: 3pt; padding-left: 3pt;">
+</td>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+Multiplicidad algebraica
+</td>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+Multiplicidad geométrica
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: right; padding-right: 3pt; padding-left: 3pt;">
+<span class="math display">\[\lambda = 1\]</span>
+</td>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+<span class="math display">\[\alpha_1 = 1\]</span>
+</td>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+<span class="math display">\[d_1 = 1\]</span>
+</td>
+</tr>
+<tr>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: right; padding-right: 3pt; padding-left: 3pt;">
+<span class="math display">\[\lambda = 2\]</span>
+</td>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+<span class="math display">\[\alpha_2 = 2\]</span>
+</td>
+<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+<span class="math display">\[d_2 = 1\]</span> o <span class="math display">\[d_2 = 2\]</span>
+</td>
+</tr>
+</tbody></table>
+<p>Nos falta calcular <span class="math inline">\(d_2\)</span>, y sabemos que <span class="math inline">\(d_2 = 3 - \text{rg}(A - 2Id)\)</span>. Tenemos que <span class="math inline">\(A - 2Id = \left ( \begin{array}{rrr} 0 &amp; -1 &amp; 1 \\ 0 &amp; -2 &amp; 2 \\ 0 &amp; -1 &amp; 1 \end{array}\right )\)</span>, y su rango es igual a <span class="math inline">\(1\)</span>. Por consiguiente, <span class="math inline">\(d_2=2\)</span>.</p>
+<p>Y puesto que la suma de las multiplicidades geométricas es <span class="math inline">\(3\)</span>, que es igual al número de filas (o columas) de la matriz <span class="math inline">\(A\)</span>, la matriz es diagonalizable.</p>
+<p>Una vez comprobado que <span class="math inline">\(A\)</span> es diagonalizable, tenemos que calcular la matriz <span class="math inline">\(P\)</span>. Las columnas de esta matriz forman una base de vectores propios de <span class="math inline">\(A\)</span>, por lo que lo vamos a calcular una base de cada uno de los subespacios propios.</p>
+<p>Comenzamos con el subespacio de valor propio <span class="math inline">\(1\)</span>, que viene dado como la solución de un sistema de ecuaciones homogéneo cuya matriz de coeficientes es <span class="math inline">\(A - 1\cdot Id\)</span>.</p>
+<p><span class="math inline">\(\left (\begin{array}{rrr} 1 &amp; -1 &amp; 1 \\ 0 &amp; -1 &amp; 2 \\ 0 &amp; -1 &amp; 2 \end{array}\right ) \stackrel{E_{2}(-1)}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &amp; -1 &amp; 1 \\ 0 &amp; 1 &amp; -2 \\ 0 &amp; -1 &amp; 2 \end{array}\right ) \stackrel{E_{12}(1)}{\stackrel{E_{32}(1)}{\longrightarrow}}
+\left (\begin{array}{rrr} 1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; -2 \\ 0 &amp; 0 &amp; 0 \end{array}\right )\)</span></p>
+<p>Tenemos que <span class="math inline">\(V_1 \equiv \left \{ \begin{array}{rrrrrrr} x &amp; &amp; &amp; - &amp; z &amp; = &amp; 0\ \\ &amp; &amp; y &amp; - &amp; 2z &amp; = &amp; 0. \end{array}\right.\)</span> Una base de este subespacio es <span class="math inline">\(B_{V_1} = \{(1,2,1)\}\)</span>.</p>
+<p>Seguimos con <span class="math inline">\(V_2\)</span>. A partir de la matriz <span class="math inline">\(A - 2Id\)</span> vemos que este subespacio viene dado por una ecuación, que es <span class="math inline">\(-y+z=0\)</span>. Una base de este subespacio es <span class="math inline">\(B_{V_2} = \{(1,0,0),\ (0,1,1)\}\)</span>.</p>
+<p>Y ya tenemos las dos matrices que nos pide: la matriz <span class="math inline">\(P\)</span> cuyas columnas son los vectores propios que hemos obtenido, y la matriz <span class="math inline">\(D\)</span> que es una matriz diagonal y que en la diagonal tiene los valores propios (en el mismo orden en que colocamos los vectores en la matriz <span class="math inline">\(P\)</span>). Es decir:</p>
+<p><span class="math display">\[
+P = \left (\begin{array}{rrr} 1 &amp; 1 &amp; 0 \\ 2 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 1 \end{array} \right );\qquad D = \left (\begin{array}{rrr} 1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 2 \end{array} \right ).
+\]</span></p>
+</li>
+<li>
+<p>Tenemos que <span class="math inline">\(P^{-1}A P = D\)</span>, luego <span class="math inline">\(A = PDP^{-1}\)</span>. Entonces <span class="math inline">\(A^{10} = PD^{10}P^{-1}\)</span>. Necesitamos calcular <span class="math inline">\(P^{-1}\)</span> y <span class="math inline">\(D^{10}\)</span>.</p>
+<p><span class="math display">\[
+\left (\begin{array}{rrrrrr} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 2 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \end{array} \right ) \stackrel{E_{21}(-2)}{\stackrel{E_{31}(-1)}{\longrightarrow}}
+\left (\begin{array}{rrrrrr} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; -2 &amp; 1 &amp; -2 &amp; 1 &amp; 0 \\ 0 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 \end{array} \right ) \stackrel{E_{23}}{\longrightarrow}
+\left (\begin{array}{rrrrrr} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1  \\ 0 &amp; -2 &amp; 1 &amp; -2 &amp; 1 &amp; 0 \end{array} \right )
+\stackrel{E_{12}(1)}{\stackrel{E_{32}(-2)}{\longrightarrow}}
+\]</span></p>
+<p><span class="math display">\[
+\left (\begin{array}{rrrrrr} 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1  \\ 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; -2 \end{array} \right )
+\stackrel{E_{13}(1)}{\stackrel{E_{23}(1)}{\longrightarrow}}
+\left (\begin{array}{rrrrrr} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; -1 &amp; 0 &amp; -1 &amp; 1 &amp; -1  \\ 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; -2 \end{array} \right )
+\stackrel{E_{2}(-1)}{\stackrel{E_{3}(-1)}{\longrightarrow}}
+\left (\begin{array}{rrrrrr} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 1 &amp; 0 &amp; 1 &amp; -1 &amp; 1  \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 &amp; 2 \end{array} \right )
+\]</span></p>
+<p>Ya tenemos <span class="math inline">\(P^{-1}\)</span>. En cuanto a <span class="math inline">\(D^{10}\)</span> se tiene que</p>
+<p><span class="math display">\[D^{10} = \left (\begin{array}{rrr} 1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 2 \end{array} \right )^{10} = \left (\begin{array}{ccc} 1^{10} &amp; 0 &amp; 0 \\ 0 &amp; 2^{10} &amp; 0 \\ 0 &amp; 0 &amp; 2^{10} \end{array} \right ) = \left (\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1024 &amp; 0 \\ 0 &amp; 0 &amp; 1024 \end{array} \right )
+\]</span></p>
+<p>Finalmente:</p>
+<p><span class="math display">\[
+A^{10} = \left (\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\ 2 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 1 \end{array}\right )
+\left (\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1024 &amp; 0 \\ 0 &amp; 0 &amp; 1024 \end{array}\right )
+\left  (\begin{array}{ccc} 0 &amp; 1 &amp; -1 \\ 1 &amp; -1 &amp; 1 \\ 0 &amp; -1 &amp; 2 \end{array}\right )=
+\left (\begin{array}{ccc} 1 &amp; 1 &amp; 0 \\ 2 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 1 \end{array}\right ) \left  (\begin{array}{ccc} 0 &amp; 1 &amp; -1 \\ 1024 &amp; -1024 &amp; 1024 \\ 0 &amp; -1024 &amp; 2048 \end{array}\right)
+\]</span></p>
+<span class="math display">\[
+A^{10} = \left  (\begin{array}{ccc} 1024 &amp; -1023 &amp; 1023 \\ 0 &amp; -1022 &amp; 2046 \\ 0 &amp; -1023 &amp; 2047 \end{array}\right)
+\]</span>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-23" class="medio-cuerpo_finito theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 23</strong></span> Sea <span class="math inline">\(V_2\)</span> el subespacio de <span class="math inline">\(({\mathbb Z}_7)^3\)</span> generado por <span class="math inline">\((1,1,0)\)</span> y <span class="math inline">\(V_3\)</span> el subespacio de <span class="math inline">\(({\mathbb Z}_7)^3\)</span> de ecuación <span class="math inline">\(y+z=0\)</span>.</p>
+<p>Sea <span class="math inline">\(A\in M_3({\mathbb Z}_7)\)</span> la matriz cuyos valores propios son <span class="math inline">\(2\)</span> y <span class="math inline">\(3\)</span> y cuyos subespacios propios son <span class="math inline">\(V_2\)</span> y <span class="math inline">\(V_3\)</span> respectivamente.</p>
+<p>Calcula las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(A^{96}\)</span>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Para resolver este ejercicio necesitamos una base de cada uno de los subespacios propios. Como base de <span class="math inline">\(V_2\)</span> tenemos <span class="math inline">\(B_{V_2}=\{(1,1,0)\}\)</span>. En cuanto a <span class="math inline">\(V_3\)</span>, puesto que viene dado por una ecuación, su dimensión es igual a <span class="math inline">\(3-1=2\)</span>. Una base estará formada por dos vectores linealmente independientes que satisfagan la ecuación. Tomamos la siguiente base: <span class="math inline">\(B_{V_3} = \{(1,0,0),\ (0,1,6)\}\)</span>.</p>
+<p>Por otra parte, la matriz <span class="math inline">\(A\)</span> tiene dos valores propios <span class="math inline">\(\lambda=2\)</span> y <span class="math inline">\(\lambda = 3\)</span>. Sus mulitplicidades geométricas son <span class="math inline">\(d_2 = \text{dim}(V_2) = 1\)</span> y <span class="math inline">\(d_3 = \text{dim}(V_3) = 2\)</span>. Al ser la suma de las multiplicidades geométricas igual al número de filas (o columnas) de la matriz <span class="math inline">\(A\)</span>, la matriz <span class="math inline">\(A\)</span> es diagonalizable.</p>
+<p>Esto significa que existe una matriz <span class="math inline">\(P\in M_3({\mathbb Z}_7)\)</span>, regular, para la que <span class="math inline">\(P^{-1}\cdot A\cdot P\)</span> es una matriz diagonal (y en la diagonal están los valores propios de <span class="math inline">\(A\)</span>, tantas veces como nos indica su multiplicidad).</p>
+<p>La matriz <span class="math inline">\(P\)</span> tienen como columnas una base de vectores propios de <span class="math inline">\(A\)</span>, por lo que <span class="math inline">\(P = \left (\begin{array}{rrr} 1 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 6 \end{array}\right )\)</span>, mientras que la matriz <span class="math inline">\(D\)</span> es igual a <span class="math inline">\(\left (\begin{array}{rrr} 2 &amp; 0 &amp; 0 \\ 0 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 3 \end{array}\right )\)</span>.</p>
+<p>Y tenemos ahora: <span class="math inline">\(P^{-1}\cdot A\cdot P = D \Longrightarrow P\cdot P^{-1}\cdot A \cdot P \cdot P^{-1}= P\cdot D\cdot P^{-1} \Longrightarrow A = P\cdot D \cdot P^{-1}\)</span>.</p>
+<p>Calculamos <span class="math inline">\(P^{-1}\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{l}
+\quad \left ( \begin{array}{rrrrrr} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 6 &amp; 0 &amp; 0 &amp; 1 \end{array}\right ) \stackrel{E_{12}}{\longrightarrow}\left ( \begin{array}{rrrrrr} 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 6 &amp; 0 &amp; 0 &amp; 1 \end{array}\right ) \\
+\stackrel{E_{21}(6)}{\stackrel{E_{3}(6)}{\longrightarrow}} \left ( \begin{array}{rrrrrr} 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 6 &amp; 1 &amp; 6 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 6 \end{array}\right ) \stackrel{E_{13}(6)}{\stackrel{E_{23}(1)}{\longrightarrow}}  \left ( \begin{array}{rrrrrr} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1 &amp; 6 &amp; 6 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 6 \end{array}\right )
+\end{array}
+\]</span></p>
+<p>Y multiplicamos:</p>
+<p><span class="math inline">\(P\cdot D =  \left (\begin{array}{rrr} 1 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 6 \end{array}\right )\cdot \left (\begin{array}{rrr} 2 &amp; 0 &amp; 0 \\ 0 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 3 \end{array}\right ) = \left (\begin{array}{rrr} 2 &amp; 3 &amp; 0 \\ 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 4 \end{array}\right )\)</span></p>
+<p><span class="math inline">\(A = P\cdot D \cdot P^{-1} = \left (\begin{array}{rrr} 2 &amp; 3 &amp; 0 \\ 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 4 \end{array}\right )\cdot \left (\begin{array}{rrr} 0 &amp; 1 &amp; 1 \\ 1 &amp; 6 &amp; 6 \\ 0 &amp; 0 &amp; 6 \end{array}\right ) = \left (\begin{array}{rrr} 3 &amp; 6 &amp; 6 \\ 0 &amp; 2 &amp; 6 \\ 0 &amp; 0 &amp; 3 \end{array}\right )\)</span></p>
+<p>Por último, calculamos <span class="math inline">\(A^{96}\)</span>. Antes, calculamos la matriz <span class="math inline">\(D^{96}\)</span>. Al ser una matriz diagonal, para calcularla hay que elevar cada uno de sus coeficientes al exponente <span class="math inline">\(96\)</span>.</p>
+<p>Por otra parte, <span class="math inline">\(2^6 = 1\)</span> y <span class="math inline">\(3^6=1\)</span>, ya que <span class="math inline">\(\varphi(7) = 6\)</span>, así que <span class="math inline">\(2^{96} = (2^6)^{16} = 1^{16} = 1\)</span>, e igual para <span class="math inline">\(3^{96}\)</span>.</p>
+<p><span class="math inline">\(D^{96} = \left (\begin{array}{rrr} 2^{96} &amp; 0 &amp; 0 \\ 0 &amp; 3^{96} &amp; 0 \\ 0 &amp; 0 &amp; 3^{96} \end{array}\right ) = \left (\begin{array}{rrr} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right ) = Id\)</span>.</p>
+<p>Tenemos entonces:</p>
+<p><span class="math inline">\(A^{96} = (P\cdot D\cdot P^{-1})^{96} = P \cdot D^{96} \cdot P^{-1} = P\cdot Id \cdot P^{-1} = Id\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-24" class="medio theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 24</strong></span> Encuentra todos los valores <span class="math inline">\(a\in {\mathbb R}\)</span> para los que la matriz <span class="math inline">\(A=\begin{pmatrix} 2 &amp; 0 &amp; 0 \\3 &amp; 4 &amp; a \\ a &amp; 0 &amp; 4 \end{pmatrix}\in\mathcal{M}_{3\times 3}({\mathbb R})\)</span> es diagonalizable. Para aquellos valores de <span class="math inline">\(a\)</span> en que la matriz <span class="math inline">\(A\)</span> sea diagonalizable, calcula una matriz regular <span class="math inline">\(P\)</span> y una matriz diagonal <span class="math inline">\(D\)</span> tales que <span class="math inline">\(P^{-1}\cdot A\cdot P = D.\)</span></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En primer lugar calculamos los valores propios con sus multiplicidades algebraicas. Para eso, calculamos el polinomio característico:</p>
+<p><span class="math display">\[p_A(\lambda) = \left | \begin{array}{ccc} 2-\lambda &amp; 0 &amp; 0 \\3 &amp; 4-\lambda &amp; a \\ a &amp; 0 &amp; 4-\lambda\end{array}\right | = (2-\lambda) \cdot \left | \begin{array}{cc} 4-\lambda &amp; a \\ 0 &amp; 4-\lambda \end{array}\right | = (2-\lambda)\cdot (4-\lambda)^2.\]</span></p>
+<p>Vemos que <span class="math inline">\(A\)</span> tiene dos valorer propios: <span class="math inline">\(\lambda_1=2\)</span>, cuya multiplicidad algebraica es <span class="math inline">\(1\)</span> y <span class="math inline">\(\lambda_2=4\)</span> cuya multiplicidad algebraica es <span class="math inline">\(2\)</span>. Tenemos entonces:</p>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|}
+  \text{Valor propio} &amp; \text{Multiplicidad algebraica} &amp; \text{Multiplicidad geométrica} \\ \hline
+  \lambda_1 = 2 &amp; \alpha_2=1 &amp; d_2 = 1 \\ \hline \lambda_2 = 4 &amp; \alpha_4 = 2 &amp; d_4 = 1 \text{ ó } 2 \\ \hline \end{array}\]</span></p>
+<p>La matriz <span class="math inline">\(A\)</span> es entonces diagonalizable si <span class="math inline">\(d_4=2\)</span>. Puesto que <span class="math inline">\(d_4 = 3 - \text{rg}(A-4\cdot Id)\)</span>, estudiamos esta matriz.</p>
+<p><span class="math display">\[
+A - 4\cdot Id = \left (\begin{array}{rrr}  -2 &amp; 0 &amp; 0 \\3 &amp; 0 &amp; a \\ a &amp; 0 &amp; 0 \end{array}\right ).\]</span></p>
+<p>Si <span class="math inline">\(a=0\)</span> la matriz <span class="math inline">\(A-4\cdot Id\)</span> tiene solo una columna distinta de cero, luego <span class="math inline">\(\text{rg}(A-4\cdot Id)=1\)</span>, mientras que si <span class="math inline">\(a\neq 0\)</span> encontramos una submatriz <span class="math inline">\(2\times 2\)</span> (la formada por las filas primera y segunda, y columnas primera y tercera) cuyo determinante es <span class="math inline">\(-2a \neq 0\)</span>, por lo que <span class="math inline">\(\text{rg}(A-4\cdot Id) = 2\)</span>. En resumen, tenemos:</p>
+<ul>
+<li>
+Si <span class="math inline">\(a=0\)</span>, <span class="math inline">\(d_4 = 3-\text{rg}(A-4\cdot Id) = 3-1=2\)</span>, por lo que <span class="math inline">\(A\)</span> es diaogonalizable.
+</li>
+<li>
+Si <span class="math inline">\(a\neq 0\)</span>, <span class="math inline">\(d_4=3-\text{rg}(A-4\cdot Id) = 3-2=1\)</span>, por lo que <span class="math inline">\(A\)</span> no es diagonalizable.
+</li>
+</ul>
+<p>En conclusión, <span class="math inline">\(A\)</span> es diagonalizable si, y solo si, <span class="math inline">\(a=0\)</span>. Vamos en este caso a calcular los vectores propios.</p>
+<ul>
+<li>
+<p>Para el valor propio <span class="math inline">\(2\)</span>, y puesto que <span class="math inline">\(A-2\cdot Id = \left (\begin{array}{rrr}  0 &amp; 0 &amp; 0 \\3 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 2 \end{array}\right )\)</span>, el subespacio <span class="math inline">\(V_2\)</span> tiene ecuaciones:</p>
+<p><span class="math display">\[
+  V_2 \equiv \left\{ \begin{array}{rrrrrr} 3x &amp; + &amp; 2y &amp; &amp; = &amp; 0 \\ &amp; &amp;  &amp; 2z &amp; = &amp; 0 \end{array}\right.
+  \]</span></p>
+<p>Y una base de <span class="math inline">\(V_2\)</span> es <span class="math inline">\(B_{V_2} = \{(2,-3,0)\}\)</span>.</p>
+</li>
+<li>
+Para el valor propio <span class="math inline">\(4\)</span>, y puesto que <span class="math inline">\(A-4\cdot Id = \left (\begin{array}{rrr}  -2 &amp; 0 &amp; 0 \\3 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array}\right )\)</span>, el subespacio <span class="math inline">\(V_4\)</span> tiene ecuación <span class="math inline">\(V_4 \equiv x = 0\)</span>. Una base es <span class="math inline">\(B_{V_4} = \{(0,1,0),\ (0,0,1)\}\)</span>.
+</li>
+</ul>
+<p>Con estas bases formamos la matriz <span class="math inline">\(P=\left (\begin{array}{rrr} 2 &amp; 0 &amp; 0 \\ -3 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array} \right )\)</span> (sus columnas son los vectores propios que hemos encontrado). Se tiene que:</p>
+<p><span class="math display">\[
+P^{-1}\cdot A \cdot P = \left (\begin{array}{ccc} 2&amp; 0 &amp; 0 \\ 0 &amp; 4 &amp; 0 \\ 0 &amp; 0 &amp; 4 \end{array}\right ).
+\]</span></p>
+<p>Y esta última es la matriz <span class="math inline">\(D\)</span> que nos piden.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-25" class="basico theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 25</strong></span> Sea <span class="math inline">\(f:{\mathbb R}^3\rightarrow {\mathbb R}^3\)</span> la aplicación lineal dada por <span class="math display">\[
+f(x,y,z) = (-2x+z,-x-y+z,-2x+z).
+\]</span></p>
+<p>Y sea <span class="math inline">\(A=M_{B_c}(f)\)</span>.</p>
+<ol type="a">
+<li>
+Halla la matriz <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Calcula los valores propios de <span class="math inline">\(A\)</span>.
+</li>
+<li>
+Calcula una base de vectores propios de <span class="math inline">\(A\)</span>. Llama a esta base <span class="math inline">\(B\)</span>.
+</li>
+<li>
+Calcula <span class="math inline">\(M_{B}(f)\)</span>.
+</li>
+<li>
+Calcula las ecuaciones cartesianas de <span class="math inline">\(\text{Im}(f)\)</span>.
+</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>
+<p>Tenemos que <span class="math inline">\(f(1,0,0) = (-2,-1,-2)\)</span>, <span class="math inline">\(f(0,1,0) = (0,-1,0)\)</span> y <span class="math inline">\(f(0,0,1) = (1,1,1)\)</span>. Por tanto:</p>
+<p><span class="math display">\[
+A = M_B(f) = \left (\begin{array}{rrr} -2 &amp; 0 &amp; 1 \\ -1 &amp; -1 &amp; 1 \\ -2 &amp; 0 &amp; 1 \end{array}\right ).
+\]</span></p>
+</li>
+<li>
+<p>Calculamos el polinomio característico de <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+p_A(\lambda) &amp; = &amp; \left | \begin{array}{ccc} -2-\lambda &amp; 0 &amp; 1 \\ -1 &amp; -1-\lambda &amp; 1 \\ -2 &amp; 0 &amp; 1-\lambda  \end{array}\right | \\ &amp; &amp; \\
+&amp; = &amp; (-1-\lambda)\left | \begin{array}{cc} -2-\lambda &amp; 1 \\ -2 &amp; 1-\lambda  \end{array}\right | \\ &amp; &amp; \\
+&amp; = &amp; (-1-\lambda) ((-2-\lambda)(1-\lambda) - (-2)) \\ &amp; &amp; \\
+&amp; = &amp; (-1-\lambda)(-2+2\lambda-\lambda+\lambda^2+2) \\ &amp; &amp; \\
+&amp; = &amp; (-1-\lambda)(\lambda^2+\lambda) \\ &amp; &amp; \\
+&amp; = &amp; (-1-\lambda)\lambda (\lambda+1) \\ &amp; &amp; \\
+&amp; = &amp; -\lambda(\lambda+1)^2\end{array}
+\]</span></p>
+La matriz <span class="math inline">\(A\)</span> tiene dos valores propios: <span class="math inline">\(\lambda=0\)</span>, con multiplicidad algebraica <span class="math inline">\(1\)</span> y <span class="math inline">\(\lambda=-1\)</span> con multiplicidad algebraica <span class="math inline">\(2\)</span>.
+</li>
+<li>
+Calculamos una base de cada uno de los subespacios propios, y las unimos:
+<ul>
+<li>
+<p>Subespacio <span class="math inline">\(V_0\)</span>. Este subespacio viene definido por un sistema de ecuaciones cuya matriz de coeficientes es <span class="math inline">\(A-0Id = A\)</span>. Resolvemos el sistema: <span class="math display">\[
+\begin{array}{c}
+\left (\begin{array}{rrr} -2 &amp; 0 &amp; 1 \\ -1 &amp; -1 &amp; 1 \\ -2 &amp; 0 &amp; 1 \end{array}\right )
+  \stackrel{\stackrel{E_{12}(-3)}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &amp; 3 &amp; -2 \\ -1 &amp; -1 &amp; 1 \\ -2 &amp; 0 &amp; 1 \end{array}\right )
+  \stackrel{\stackrel{E_{21}(1)}{\stackrel{E_{31}(2)}{}}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &amp; 3 &amp; -2 \\ 0 &amp; 2 &amp; -1 \\ 0 &amp; 6 &amp; -3 \end{array}\right ) \\ \\
+\stackrel{\stackrel{E_{12}\left (\frac{1}{2}\right )}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &amp; 3 &amp; -2 \\ &amp; &amp; \\ 0 &amp; 1 &amp; \frac{-1}{2} \\ &amp; &amp; \\ 0 &amp; 6 &amp; -3 \end{array}\right )
+  \stackrel{\stackrel{E_{12}(-3)}{\stackrel{E_{32}(-6)}{}}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &amp; 0 &amp; \frac{-1}{2} \\ &amp; &amp; \\ 0 &amp; 1 &amp; \frac{-1}{2} \\ &amp; &amp; \\ 0 &amp; 0 &amp; 0 \end{array}\right ) \end{array}
+\]</span></p>
+<p>Luego <span class="math inline">\(V_0\equiv \left\{ \begin{array}{rrrrrrr} x &amp; &amp; &amp; - &amp; \frac{1}{2} z &amp; = &amp; 0 \\ &amp;&amp;&amp;&amp;&amp;&amp; \\ &amp; &amp; y &amp; - &amp; \frac{1}{2}z &amp; = &amp; 0 \end{array}\right.\)</span>, es decir, <span class="math inline">\(V_0\equiv \left\{ \begin{array}{rrr} x &amp; = &amp; \frac{z}{2}  \\ &amp; &amp; \\ y &amp; = &amp; \frac{z}{2} \end{array}\right.\)</span></p>
+<p>Una base de <span class="math inline">\(V_0\)</span> la obtenemos dándole a <span class="math inline">\(z\)</span> el valor <span class="math inline">\(2\)</span>, y nos queda <span class="math inline">\(B_{V_0}=\{(1,1,2)\}\)</span>.</p>
+</li>
+<li>
+<p>Subespacio <span class="math inline">\(V_{-1}\)</span>. Repetimos lo el apartado anterior pero con la matriz <span class="math inline">\(A-(-Id) = A+Id\)</span>. <span class="math display">\[
+\left (\begin{array}{rrr} -1 &amp;0 &amp; 1 \\ 0 &amp; 0 &amp; 0 \\ -2 &amp; 0 &amp; 2 \end{array}\right )
+  \stackrel{\stackrel{E_{1}(-1)}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &amp;0 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ -2 &amp; 0 &amp; 2 \end{array}\right )
+  \stackrel{\stackrel{E_{31}(2)}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &amp;0 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array}\right )
+\]</span></p>
+<p><span class="math inline">\(V_{-1}\equiv x-z=0\)</span>, luego <span class="math inline">\(\text{dim}(V_{-1}) = 2\)</span> y una base es <span class="math inline">\(B_{V_{1}}=\{(1,0,1),\ (0,1,0)\}\)</span>.</p>
+</li>
+</ul>
+<p>La base <span class="math inline">\(B\)</span> se obtiene uniendo ambas bases: <span class="math inline">\(B=\{(1,1,2),\ (1,0,1),\ (0,1,0)\}\)</span>.</p>
+</li>
+<li>
+Calculamos la imagen de los tres vectores de <span class="math inline">\(B\)</span>:
+<ul>
+<li>
+<span class="math inline">\(f(1,1,2) = (0,0,0)\)</span>.
+</li>
+<li>
+<span class="math inline">\(f(1,0,1) = (-2+1,-1+1,-2+1) = (-1,0,-1) = 0\cdot (1,1,2) -1\cdot (1,0,1) + 0\cdot (0,1,0)\)</span>.
+</li>
+<li>
+<span class="math inline">\(f(0,1,0) = (0,-1,0) = 0\cdot (1,1,2) + 0\cdot (1,0,1) -1\cdot (0,1,0)\)</span>.
+</li>
+</ul>
+<p>Luego <span class="math inline">\(M_B(f) = \left (\begin{array}{rrr} 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; -1 \end{array}\right )\)</span>.</p>
+</li>
+<li>
+<p>Sabemos que <span class="math inline">\(\text{dim}(Im(f)) = 2\)</span> (pues <span class="math inline">\(\text{rg}(A)=2\)</span>). Además, los vectores de <span class="math inline">\(V_{-1}\)</span> pertenecen a <span class="math inline">\(\text{Im}(f)\)</span>. Por tanto, tenemos que <span class="math inline">\(\text{Im}(f)=V_{-1}\)</span>. Las ecuaciones están calculadas más arriba: <span class="math inline">\(\text{Im}(f) \equiv x-z=0\)</span>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2767,13 +3970,14 @@ a-a &amp; 1 \\ 0 &amp; a-a
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
