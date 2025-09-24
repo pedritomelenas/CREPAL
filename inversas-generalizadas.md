@@ -14,7 +14,7 @@ format:
 
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 
-<!--*PALABRAS CLAVE EN CABECERA.*-->
+*Matrices de rango pleno por filas por columnas. Inversas por la izquierda/ por la derecha de una matriz. Cálculo de inversas por la izquierda/ por la derecha. Factorización de rango pleno de una matriz. Cálculo de la inversa de Moore-Penrose de una matriz (o inversa generalizada). Solución de norma mínima de un sistema compatible indeterminado. Solución mínimo-cuadrática de un sistema. Valores singulares.*
 
 
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_basico" value="basicoon" checked onclick="mostrar();"> Básicos </button> 

@@ -1005,6 +1005,7 @@ $$
 
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1061,6 +1062,7 @@ $$
 Así los valores propios son $1, a, -a$ y la signatura es $(1,0)$ si $a=0$ y $(2,1)$ si $a\not =0$.
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1210,6 +1212,7 @@ $$
 
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1296,6 +1299,7 @@ $$
 Así que en la diagonal hay dos elementos positivos y uno negativo, es decir, $\operatorname{sig}(A)=(2,1)$.
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1460,6 +1464,7 @@ $$
 que nos da como valores propios $\lambda=1$ y $\lambda=-1$, con lo que se tiene de nuevo $\operatorname{sig}(A)=(1,1)$.
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1876,5 +1881,109 @@ $$
 También puede emplearse cualquier otro método (descomponer en dos vectores uno de $W$ y otro de $W^{\perp}$, o usar coeficientes de Fourier).
 </li>
 </ol>
+
+::::
+:::::
+
+::::: {#exr-o14 medio-cuerpo_finito}
+
+De una aplicación lineal $f : (\mathbb{Z}_5)^3 \to (\mathbb{Z}_5)^3$ sabemos que:
+
+$$
+(2,3,1) \in N(f), \quad (1,2,4) \text{ es vector propio de valor propio } 2, \quad f(1,1,1)=(4,0,3).
+$$
+
+<ol type="a">
+<li> Calcula la matriz de $f$ en la base canónica.</li>
+<li> Calcula las ecuaciones cartesianas del subespacio $\mathrm{Im}(f)$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li> Sabemos que:
+$$
+f(2,3,1)=(0,0,0), \quad f(1,2,4)=(2,4,3), \quad f(1,1,1)=(4,0,3).
+$$
+
+La base
+$$
+B=\{(2,3,1), (1,2,4), (1,1,1)\}
+$$
+es una base de $(\mathbb{Z}_5)^3$, y queda totalmente determinada la aplicación $f$.
+
+Así:
+$$
+M_{B,B_c}(f) =
+\begin{pmatrix}
+0 & 2 & 4 \\
+0 & 4 & 0 \\
+0 & 3 & 3
+\end{pmatrix}.
+$$
+
+Para obtener $M_{B_c}(f)$ usamos:
+$$
+M_{B_c}(f) = M_{B,B_c}(f)\cdot M_{B_c \to B}.
+$$
+
+Calculando $M_{B_c \to B}=(M_{B \to B_c})^{-1}$, llegamos a:
+$$
+M_{B_c \to B} =
+\begin{pmatrix}
+2 & 2 & 1 \\
+2 & 4 & 4 \\
+0 & 2 & 4
+\end{pmatrix}.
+$$
+
+Entonces:
+$$
+M_{B_c}(f) =
+\begin{pmatrix}
+0 & 2 & 4 \\
+0 & 4 & 0 \\
+0 & 3 & 3
+\end{pmatrix}
+\begin{pmatrix}
+2 & 2 & 1 \\
+2 & 4 & 4 \\
+0 & 2 & 4
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 & 1 & 4 \\
+3 & 1 & 1 \\
+1 & 3 & 4
+\end{pmatrix}.
+$$
+
+</li>
+<li>Partimos de un sistema de generadores con las imágenes de los vectores de $B$:
+$$
+\{(2,4,3),(4,0,3)\}.
+$$
+
+Tras reducción:
+$$
+\begin{pmatrix}
+1 & 0 & 2 \\
+0 & 1 & 1
+\end{pmatrix},
+$$
+
+las ecuaciones paramétricas son:
+$$
+x=a, \quad y=b, \quad z=2a+b.
+$$
+
+De aquí obtenemos la ecuación cartesiana:
+$$
+z=2x+y \quad \Longleftrightarrow \quad 2x+y+4z=0 \ \ (\text{en } \mathbb{Z}_5).
+$$
+
+</li>
+</ol>
+
 ::::
 :::::
