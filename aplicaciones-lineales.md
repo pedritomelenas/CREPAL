@@ -1465,6 +1465,7 @@ $$
 
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1986,7 +1987,7 @@ $$
 \end{array}\right)
 $$
 
-y como su rango es $3$ entonces $dim\, Im(f)=3=dim\, \mathbb{R}^3$ y por tanto {\bf es sobreyectiva}. Como $dim\, N(f)+ dim\, Im(f)=dim \, \mathbb{R}^4$ entonces $dim\, N(f)=1$ así que <b>f no es inyectiva</b>. Por tanto <b>f no es biyectiva</b>. 
+y como su rango es $3$ entonces $dim\, Im(f)=3=dim\, \mathbb{R}^3$ y por tanto <b> es sobreyectiva</b>. Como $dim\, N(f)+ dim\, Im(f)=dim \, \mathbb{R}^4$ entonces $dim\, N(f)=1$ así que <b>f no es inyectiva</b>. Por tanto <b>f no es biyectiva</b>. 
 
 ::::
 :::::
@@ -2746,6 +2747,799 @@ luego un tal vector es $(0,1,-1)$.
 
 ::::
 :::::
+
+::::: {#exr-25 .basico-cuerpo_finito}
+
+Sea $f : (\mathbb{Z}_2)^3 \to (\mathbb{Z}_2)^2$ la aplicación lineal dada por
+$$
+f(x,y,z) = (x+z,\; y+z).
+$$
+
+<ol type="a">
+<li> Calcula una base del núcleo de $f$. </li>
+<li> Sean $B_1 = \{(1,1,0), (1,0,1), (0,0,1)\}$ y $B_2 = \{(0,1), (1,1)\}$. Calcula $M_{B_1,B_2}(f)$. </li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>El núcleo de $f$ es:
+
+$$
+N(f) = \{(x,y,z) \in (\mathbb{Z}_2)^3 : f(x,y,z)=(0,0)\}.
+$$
+
+Esto equivale al sistema:
+
+$$
+\begin{cases}
+x+z=0 \\
+y+z=0
+\end{cases}
+$$
+
+De aquí se obtiene $x=z$, $y=z$. Por tanto:
+
+$$
+N(f) = \{(z,z,z) : z \in \mathbb{Z}_2\}, \quad \dim N(f)=1.
+$$
+
+Una base es:
+
+$$
+B_{N(f)} = \{(1,1,1)\}.
+$$
+
+</li>
+<li>Calculamos la matriz de $f$ en las bases $B_1, B_2$.
+
+$$
+f(1,1,0) = (1,1) = 0\cdot (0,1) + 1\cdot (1,1) \quad \Rightarrow \ (0,1).
+$$
+
+$$
+f(1,0,1) = (0,1) = 1\cdot (0,1) + 0\cdot (1,1) \quad \Rightarrow \ (1,0).
+$$
+
+$$
+f(0,0,1) = (1,1) = 0\cdot (0,1) + 1\cdot (1,1) \quad \Rightarrow \ (0,1).
+$$
+
+Por tanto:
+
+$$
+M_{B_1,B_2}(f) =
+\begin{pmatrix}
+0 & 1 & 0 \\
+1 & 0 & 1
+\end{pmatrix}.
+$$
+
+</li>
+</ol>
+
+<b> Verificación con fórmula:</b>
+
+Sabemos que:
+$$
+M_{B_1,B_2}(f) = M_{B'_c \to B_2} \cdot M_{B_c,B'_c}(f) \cdot M_{B_1 \to B_c}.
+$$
+
+Donde:
+$$
+M_{B_c,B'_c}(f) =
+\begin{pmatrix}
+1 & 0 & 1 \\
+0 & 1 & 1
+\end{pmatrix}, \quad
+M_{B_1 \to B_c} =
+\begin{pmatrix}
+1 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 1 & 1
+\end{pmatrix},
+$$
+
+$$
+M_{B'_c \to B_2} = (M_{B_2 \to B'_c})^{-1} =
+\begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix}^{-1}
+=
+\begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}.
+$$
+
+Así:
+$$
+M_{B_1,B_2}(f) =
+\begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 & 1 \\
+0 & 1 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 1 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & 1 & 0 \\
+1 & 0 & 1
+\end{pmatrix}.
+$$
+
+
+::::
+:::::
+
+::::: {#exr-26 .medio-cuerpo_finito}
+
+Halla una aplicación lineal 
+$$
+f : (\mathbb{Z}_5)^3 \to (\mathbb{Z}_5)^3
+$$
+
+tal que:
+$$
+N(f) = \{(x,y,z) \in (\mathbb{Z}_5)^3 : x+y+z=0\}, \quad 
+\operatorname{Im}(f) = \{(x,y,z) \in (\mathbb{Z}_5)^3 : x+y-z=0, \; x-y=0\}.
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Puesto que $N(f)$ viene dado por una ecuación, tenemos que
+$\dim(N(f)) = 3-1 = 2$.
+Una base podría ser
+$$
+B_{N(f)} = \{(1,0,4), (0,1,4)\}.
+$$
+
+Ampliamos esta base a una base de $(\mathbb{Z}_5)^3$:
+$$
+B = \{(1,0,4), (0,1,4), (0,0,1)\}.
+$$
+
+Por otra parte, $\dim(\operatorname{Im}(f)) = 1$ y una base es
+$$
+B_{\operatorname{Im}(f)} = \{(1,1,2)\}.
+$$
+
+Vamos a ver cómo actúa $f$ sobre los vectores de la base $B$:
+$$
+f(1,0,4) = (0,0,0) \quad \text{pues } (1,0,4) \in N(f),
+$$
+
+$$
+f(0,1,4) = (0,0,0) \quad \text{pues } (0,1,4) \in N(f).
+$$
+
+Sobre $f(0,0,1)$ sabemos que es distinto de $(0,0,0)$ (pues $(0,0,1) \notin N(f)$) y que pertenece a $\operatorname{Im}(f)$.
+Podría ser cualquiera de los otros cuatro vectores de $\operatorname{Im}(f)$. 
+Elegimos $(1,1,2)$ como imagen para $(0,0,1)$.
+
+Con estos datos calculamos la imagen de los vectores de la base canónica:
+$$
+f(1,0,0) = f\big((1,0,4)+(0,0,1)\big) = f(1,0,4) + f(0,0,1) = (0,0,0) + (1,1,2) = (1,1,2),
+$$
+
+$$
+f(0,1,0) = f\big((0,1,4)+(0,0,1)\big) = f(0,1,4) + f(0,0,1) = (0,0,0) + (1,1,2) = (1,1,2),
+$$
+
+$$
+f(0,0,1) = (1,1,2).
+$$
+
+Luego:
+$$
+f(x,y,z) = x f(1,0,0) + y f(0,1,0) + z f(0,0,1)
+= (x,x,2x) + (y,y,2y) + (z,z,2z).
+$$
+
+Por tanto:
+$$
+f(x,y,z) = (x+y+z, \; x+y+z, \; 2x+2y+2z).
+$$
+
+Y ya tenemos la aplicación lineal $f$.
+Si hubiéramos elegido otro valor para $f(0,0,1)$ tendríamos otra aplicación diferente.
+En total hay cuatro soluciones distintas.
+
+::::
+:::::
+
+::::: {#exr-27 .basico-cuerpo_finito}
+
+Sea $V=\left(\mathbb{Z}_{7}\right)^{3}$ y las aplicaciones lineales $f, g: V \longrightarrow V$ definidas por las siguientes igualdades:
+
+
+$$
+\begin{aligned}
+& f(x, y, z)=(3 x+4 y+2 z, 5 x+y+3 z, 4 y+6 z) \\
+& g(x, y, z)=(2 x+y, x+z, 6 y+2 z)
+\end{aligned}
+$$
+
+Sea $\mathrm{U}=\mathrm{N}(\mathrm{g})$ y $W=\operatorname{Im}(\mathrm{f})$. Entonces:
+
+<ol type="a">
+<li> Calcula una base de $\mathrm{U}+\mathrm{W}$. ¿Es dicha suma directa?</li>
+<li> ¿Cuál es la dimensión de $\operatorname{Im}(\mathrm{g})$ ?</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Dado que nos están pidiendo la suma de los subespacios $U$ y $W$, necesitamos un sistema de generadores de $u$ y otro de $W$, y después unirlos. Dividimos el problema entonces en varias subetapas.
+
+<ol type="i">
+<li>Cálculo de un sistema de generadores de $U$.
+Puesto que $\mathrm{U}=\mathrm{N}(\mathrm{g})$, tenemos las ecuaciones de U (pues $\mathrm{U}=\{(x, y, z) \in \mathrm{V}: g(x, y, z)= (0,0,0)\})$. Resolvemos este sistema de ecuaciones para obtener una base. Para esto, escribimos la matriz de coeficientes del sistema (que no es sino la matriz de $g$ en las bases canónicas) y obtenemos su forma normal de Hermite.
+
+$$
+\left(\begin{array}{lll}
+2 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 6 & 2
+\end{array}\right) \xrightarrow{E_{12}}\left(\begin{array}{lll}
+1 & 0 & 1 \\
+2 & 1 & 0 \\
+0 & 6 & 2
+\end{array}\right) \xrightarrow{E_{21(5)}}\left(\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 1 & 5 \\
+0 & 6 & 2
+\end{array}\right) \xrightarrow{E_{32(6)}}\left(\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 1 & 5 \\
+0 & 0 & 0
+\end{array}\right)
+$$
+
+Vemos entonces que $U$ viene dado por 2 ecuaciones, luego $\operatorname{dim}(U)=3-2=1$. Para obtener una base despejamos las incógnitas $x$ e $y$ y le damos a $z$ el valor $z=1$.
+
+$$
+\begin{array}{rlrl}
+x+z & =0 & x & =6 z \\
+y+5 z & =0 & y & =2 z
+\end{array}
+$$
+
+Lo que nos da la siguiente base de $\mathrm{U}: \mathrm{B}_{\mathrm{U}}=\{(6,2,1)\}$.
+
+</li>
+
+<li>Cálculo de un sistema de generadores de W.
+Esto es más fácil, pues al ser $W=\operatorname{Im}(f)$, un sistema de generadores de este subespacio es $\{f(1,0,0), f(0,1,0), f(0,0,1)\}$. Por tanto, un sistema de generadores de $W$ es $\{(3,5,0),(4,1,4),(2,3,6)\}$.\\
+Aunque no es necesario para calcular $\mathrm{U}+\mathrm{W}$ vamos a obtener una base de $W$. Para esto realizamos transformaciones en estos tres vectores.
+
+$$
+\left(\begin{array}{lll}
+3 & 5 & 0 \\
+4 & 1 & 4 \\
+2 & 3 & 6
+\end{array}\right) \xrightarrow{E_{1}(5)}\left(\begin{array}{lll}
+1 & 4 & 0 \\
+4 & 1 & 4 \\
+2 & 3 & 6
+\end{array}\right) \xrightarrow{E_{21}(3)}\left(\begin{array}{lll}
+1 & 4 & 0 \\
+0 & 6 & 4 \\
+0 & 2 & 6
+\end{array}\right) \xrightarrow{E_{31}(5)}\left(\begin{array}{lll}
+1 & 4 & 0 \\
+0 & 1 & 3 \\
+0 & 2 & 6
+\end{array}\right) \xrightarrow{E_{212}(3)}\left(\begin{array}{lll}
+1 & 0 & 2 \\
+0 & 1 & 3 \\
+0 & 0 & 0
+\end{array}\right)
+$$
+
+$Y$ con esto, tenemos una base de $W: B_{W}=\{(1,0,2),(0,1,3)\}$. Vemos entonces que 
+
+$$\operatorname{dim}(W)= 2$$
+
+</li>
+
+<li> Cálculo de una base de $U+W$.
+En primer lugar, lo que podemos conseguir es un sistema de generadores de $\mathrm{U}+\mathrm{W}$. Y esto se consigue uniendo un sistema de generadores de $U$ y uno de $W$. Por tanto, un sistema de generadores de $U+W$ es:
+
+$$
+\{(1,0,2),(0,1,3),(6,2,1)\}
+$$
+
+Comprobamos si son linealmente independientes:
+
+$$
+\left(\begin{array}{lll}
+1 & 0 & 2 \\
+0 & 1 & 3 \\
+6 & 2 & 1
+\end{array}\right) \xrightarrow{E_{31}(1)}\left(\begin{array}{lll}
+1 & 0 & 2 \\
+0 & 1 & 3 \\
+0 & 2 & 3
+\end{array}\right) \xrightarrow{E_{32}(5)}\left(\begin{array}{lll}
+1 & 0 & 2 \\
+0 & 1 & 3 \\
+0 & 0 & 4
+\end{array}\right) \xrightarrow{E_{3(2)}}\left(\begin{array}{lll}
+1 & 0 & 2 \\
+0 & 1 & 3 \\
+0 & 0 & 1
+\end{array}\right) \xrightarrow{E_{13}(5)} \xrightarrow{E_{23(4)}}\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right)
+$$
+
+$Y$ de esta forma hemos obtenido una base de $U+W$. Esta base es $\{(1,0,0),(0,1,0),(0,0,1)\}$. Puesto que esto es una base de V concluimos que $\mathrm{V}=\mathrm{U}+\mathrm{W}$.
+
+Para responder a la pregunta de si la suma es directa, hemos de calcular $\mathrm{U} \cap \mathrm{W}$. Puesto que
+
+$$
+\operatorname{dim}(U \cap W)=\operatorname{dim}(U)+\operatorname{dim}(W)-\operatorname{dim}(U+W)=1+2-3=0  \\
+$$
+
+tenemos que  $U \cap W=\{(0,0,0)\}$. Esto nos dice que la suma es directa. 
+
+</li>
+</ol>
+
+</li>
+<li>Sabemos que  
+
+$$
+\operatorname{dim}(\operatorname{Im}(g))=\operatorname{dim}(V)-\operatorname{dim}(N(g))=3-1=2
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-28 .medio}
+
+Sea $f : \mathbb{R}^3 \to \mathbb{R}^3$ la aplicación lineal dada por
+$$
+f(x,y,z) = (y-z,\,-x+y,\,x+y-2z).
+$$
+
+<ol type="a">
+<li> Calcula una base de $N(f)$.</li>
+<li> Calcula las ecuaciones cartesianas de $\operatorname{Im}(f)$.</li>
+<li> Calcula una base de $N(f) \cap \operatorname{Im}(f)$.</li>
+<li> Sea $B = \{(1,0,1),\,(0,1,1),\,(1,1,1)\}$. Calcula $M_B(f)$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Sabemos que $N(f) = \{(x,y,z)\in \mathbb{R}^3 : f(x,y,z)=0\}$. El sistema es:
+$$
+\begin{cases}
+y-z = 0, \\
+-x+y = 0, \\
+x+y-2z = 0.
+\end{cases}
+$$
+
+La matriz de coeficientes es
+$$
+\begin{pmatrix}
+0 & 1 & -1 \\
+-1 & 1 & 0 \\
+1 & 1 & -2
+\end{pmatrix}
+$$
+
+Mediante operaciones elementales se llega a
+$$
+\begin{pmatrix}
+1 & 0 & -1 \\
+0 & 1 & -1 \\
+0 & 0 & 0
+\end{pmatrix}.
+$$
+
+Así, $N(f) \equiv \{x-z=0,\,y-z=0\}$, con $\dim N(f)=1$.  
+Una base es
+$$
+B_{N(f)} = \{(1,1,1)\}.
+$$
+
+</li>
+<li>Sabemos que
+$$
+\operatorname{Im}(f) = L[f(1,0,0),\, f(0,1,0),\, f(0,0,1)].
+$$
+
+Como $\dim(\operatorname{Im}(f)) = 3 - 1 = 2$, basta con dos vectores independientes.  
+Tenemos
+$$
+f(1,0,0)=(0,-1,1), \quad f(0,1,0)=(1,1,1).
+$$
+
+Por tanto,
+$$
+B_{\operatorname{Im}(f)} = \{(0,-1,1),\,(1,1,1)\}.
+$$
+
+La ecuación cartesiana de $\operatorname{Im}(f)$ se obtiene con el determinante:
+$$
+\det\begin{pmatrix}
+0 & -1 & 1 \\
+1 & 1 & 1 \\
+x & y & z
+\end{pmatrix} = 0 \quad \Rightarrow \quad -2x+y+z=0.
+$$
+
+Alternativamente, con generadores y reducción:
+$$
+\begin{pmatrix}
+0 & -1 & 1 \\
+1 & 1 & 1 \\
+-1 & 0 & -2
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 2 \\
+0 & 1 & -1 \\
+0 & 0 & 0
+\end{pmatrix}.
+$$
+
+Esto da ecuaciones paramétricas
+$$
+x=a,\quad y=b,\quad z=2a-b,
+$$
+
+equivalente a $z=2x-y$, la misma ecuación anterior.
+
+</li>
+<li>Una base de $N(f)$ es $\{(1,1,1)\}$.  
+Además, $(1,1,1)\in \operatorname{Im}(f)$ porque $(1,1,1)=f(0,1,0)$.  
+Por tanto $N(f)\subseteq \operatorname{Im}(f)$ y
+$$
+N(f)\cap \operatorname{Im}(f) = N(f), \quad \text{con base } \{(1,1,1)\}.
+$$
+
+</li>
+<li>Sea $B=\{(1,0,1),\,(0,1,1),\,(1,1,1)\}$.  
+
+$$
+f(1,0,1)=(-1,-1,-1)=0\cdot(1,0,1)+0\cdot(0,1,1)-1\cdot(1,1,1),
+$$
+
+$$
+f(0,1,1)=(0,1,-1)=-2\cdot(1,0,1)-1\cdot(0,1,1)+2\cdot(1,1,1),
+$$
+
+$$
+f(1,1,1)=(0,0,0)=0\cdot(1,0,1)+0\cdot(0,1,1)+0\cdot(1,1,1).
+$$
+
+Por tanto:
+$$
+M_B(f)=
+\begin{pmatrix}
+0 & -2 & 0 \\
+0 & -1 & 0 \\
+-1 & 2 & 0
+\end{pmatrix}.
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-29 .basico-cuerpo_finito}
+
+Sea $f:(\mathbb{Z}_5)^3\rightarrow (\mathbb{Z}_5)^4$ la aplicación lineal definida por
+$$
+f(x,y,z)=(x+y+z,x+2y+z,4y,2x + 3y + 2z).
+$$
+
+<ol type="a">
+<li> Calcula una base y las ecuaciones cartesianas de $\text{Im}(f)$.</li>
+<li> Calcula una base del núcleo de $f$.</li>
+<li>¿Es $f$ inyectiva? ¿Y sobreyectiva?</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Para calcular el subespacio $\text{Im}(f)$ vamos a tomar los vectores de una base de $({\mathbb Z}_5)^3$ (la base canónica) y a calcular sus imágenes por $f$. Los vectores que  nos resulten formarán un sistema de generadores de $\text{Im}(f)$. Formaremos una matriz con esos vectores, y los reduciremos, para obtener una base.
+
+A partir de esta base, escribiremos las ecuaciones cartesianas y a continuación calcularemos las ecuaciones cartesianas o implícitas.
+
+Tenemos que $\text{Im}(f) = L[(f(1,0,0),\ f(0,1,0),\ f(0,0,1)] = L[(1,1,0,2),\ (1,2,4,3),\ (1,1,0,2)]$.
+
+Obtenemos una base a partir de este sistema de generadores:
+
+$$
+\left (\begin{array}{rrrr} 1 & 1 & 0 & 2 \\ 1 & 2 & 4 & 3 \\ 1 & 1 & 0 & 2 \end{array}\right )
+\stackrel{E_{21}(4)}{\stackrel{E_{31}(4)}{\longrightarrow}}
+\left (\begin{array}{rrrr} 1 & 1 & 0 & 2 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 0 & 0 \end{array}\right )
+\stackrel{E_{12}(4)}{\longrightarrow}
+\left (\begin{array}{rrrr} 1 & 0 & 1 & 1 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 0 & 0 \end{array}\right )
+$$
+
+Así que tenemos la siguiente base del subespacio imagen: $B_{\text{Im}(f)} = \{(1,0,1,1),\ (0,1,4,1)\}$.
+
+De esta forma, los vectores de $\text{Im}(f)$ son de la forma $(x,y,z,t)= a(1,0,1,1) + b(0,1,4,1)$ (combinaciones lineales de los vectores de la base), así que:
+
+$$
+\text{Im}(f) \equiv \left\{ \begin{array}{rrrrr}
+x & = & a & & \\ y & = & & & b \\ z & = & a & + & 4b \\ t & = & a & + & b \end{array}\right. \Longrightarrow \text{Im}(f) \equiv \left\{ \begin{array}{r} z = x + 4y \\ t = x + \ \, y \end{array}\right. \Longrightarrow \text{Im}(f) \equiv \left\{ \begin{array}{rrrrrrrrr} x & + & 4y & + & 4z & & & = & 0 \\ x & + & y & & & + & 4 t& = & 0 \end{array}\right.
+$$
+
+</li>
+<li>Ya hemos visto que $\text{dim}(\text{Im}(f)) = 2$. Además, tenemos que  $\text{dim}(\text{N}(f)) + \text{dim}(\text{Im}(f)) = \text{dim}\big (({\mathbb Z}_5)^3\big ) = 3$. Por tanto, $\text{dim}(\text{N}(f)) = 1$.
+
+Por otra parte, el núcleo de $f$ viene dado por $\text{N}(f) = \{(x,y,z)\in ({\mathbb Z}_5)^3 : f(x,y,z) = (0,0,0,0)\}$, por lo que viene dado por un sistema de tres ecuaciones y cuatro incógnitas.
+
+Para resolver el sistema, escribimos su matriz de coeficientes y realizamos operaciones elementales por filas:
+
+$\left (\begin{array}{rrr} 1 & 1 & 1 \\ 1 & 2 & 1 \\ 0 & 4 & 0 \\ 2 & 3 & 2 \end{array}\right )
+\stackrel{E_{21}(4)}{\stackrel{E_{41}(3)}{\longrightarrow}}
+\left (\begin{array}{rrr} 1 & 1 & 1 \\ 0 & 1 & 0 \\ 0 & 4 & 0 \\ 0 & 1 & 0 \end{array}\right )
+\stackrel{E_{12}(4)}{\stackrel{E_{32}(1)}{\stackrel{E_{42}(4)}{\longrightarrow}}}
+\left (\begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right ) \Longrightarrow \text{N}(f) \equiv \left\{ \begin{array}{rrrrrrr} x & & & + & z & = & 0 \\ & & y & & & = & 0 \end{array}\right.$
+
+Puesto que $\text{dim}(\text{N}(f)) = 1$, para dar una base  nos basta un vector (no nulo). Tenemos, por ejemplo, $B_{\text{N}(f)} = \{(1,0,4)\}$.
+
+</li>
+<li>Tenemos que $f$  no es inyectiva, pues para serlo, el núcleo de $f$ tendría que contener únicamente al vector $(0,0,0)$, y no es así.
+
+Tampoco es sobreyectiva, pues $\text{Im}(f) \neq ({\mathbb Z}_5)^4$.
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-30 .medio}
+
+Dar la expresión de una aplicación lineal $f:{\mathbb R}^3 \rightarrow {\mathbb R}^4$ (respecto de las bases canónicas) para la que:
+
+$$
+N(f)\equiv \left\{ \begin{array}{rcl} x - 2y + z & = & 0 \\ y - z & = & 0 \end{array} \right. \qquad Im(f) \equiv \left\{ \begin{array}{l} x+y+z+t=0 \\ x-y+z-t=0.\end{array}  \right. 
+$$
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Notemos en primer lugar que $\text{dim}(N(f)) = 3-2 = 1$ y $\text{dim}(Im(f)) = 4-2=2$. Puesto que $\text{dim}(N(f)) + \text{dim}(Im(f)) = \text{dim}({\mathbb R}^3)$, es posible dar una aplicación lineal con estas condiciones.
+
+Calculamos bases de los subespacios vectoriales $N(f)$ e $Im(f)$. Comenzamos por $N(f)$.
+
+$$
+\left (\begin{array}{rrr} 1 & -2 & 1 \\ 0 & 1 & -1 \end{array} \right ) \stackrel{E_{12}(2)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 0 & -1 \\ 0 & 1 & -1 \end{array} \right ).$$
+
+Por lo que $N(f)\equiv \left\{ \begin{array}{rrrrrrr} x & & & - & z & = & 0 \\ & & y & - & z & = & 0 \end{array}\right.$ Dándole a $z$ el valor $1$ obtenemos $B_{N(f)} = \{(1,1,1)\}$.
+
+Procedemos igual para $Im(f)$.
+
+$$
+\left (\begin{array}{rrrr} 1 & 1 & 1 & 1\\ 1 & -1 & 1 & -1 \end{array} \right ) \stackrel{E_{21}(-1)}{\longrightarrow} \left (\begin{array}{rrrr} 1 & 1 & 1  & 1 \\ 0 & -2 & 0 & -2  \end{array} \right )\stackrel{E_2\left (\frac{-1}{2}\right )}{\longrightarrow} . \left (\begin{array}{rrrr} 1 & 1 & 1  & 1 \\ 0 & 1 & 0 & 1  \end{array} \right ) \stackrel{E_{12}(-1)}{\longrightarrow} \left (\begin{array}{rrrr} 1 & 0 & 1  & 0 \\ 0 & 1 & 0 & 1  \end{array} \right )$$
+
+Así que tenemos $Im(f)\equiv \left \{ \begin{array}{r} x + z = 0 \\ y + t = 0\end{array}\right.$, o $Im(f)\equiv \left\{ \begin{array}{r} x = -z \\ y = -t \end{array}\right.$
+
+Dándole a $z$ y $t$ los valores $z=-1$, $t=0$ y $z=0$, $t=-1$ tenemos la base $B_{Im(f)} = \{(1,0,-1,0),\ (0,1,0,-1)\}$.
+
+Una vez calculadas las bases, ampliamos la base de $N(f)$ a una base de ${\mathbb R}^3$:
+
+$$B_{{\mathbb R}^3} = \{(1,1,1),\ (0,1,0),\ (0,0,1)\}.$$
+
+Y ahora, para dar una aplicación lineal $f:{\mathbb R}^3 \rightarrow {\mathbb R}^4$ elegimos las imágenes de los vectores de la base $B_{{\mathbb R}^3}$.
+
+$$
+\begin{array}{lcl} f(1,1,1) = (0,0,0,0) & \ & \text{para que } (1,1,1) \text{ perteneza al núcleo de } f. \\ f(0,1,0) = (1,0,-1,0) & & \text{y así } (1,0,-1,0) \text{ pertenece a la imagen de } f. \\ f(0,0,1) = (0,1,0,-1) & & \text{y así } (0,1,0,-1) \text{ pertenece a la imagen de } f.\end{array}
+$$
+
+Lo siguiente, una vez definida $f$, es calcular la imagen de los vectores de la base canónica de ${\mathbb R}^3$. La conocemos de dos de ellos. Nos falta conocer cuánto vale $f(1,0,0)$. Pero esto se puede calcular fácilmente pues $(1,0,0) = (1,1,1) - (0,1,0) - (0,0,1)$, por lo que:
+
+$f(1,0,0) = f(1,1,1)-f(0,1,0)-f(0,0,1) = (0,0,0,0) - (1,0,-1,0) - (0,1,0,-1) = (-1,-1,1,1)$.
+
+Y con esto, ya tenemos la expresión para $f(x,y,z)$:
+
+$$
+\begin{array}{rcl} f(x,y,z) & = & x\cdot f(1,0,0) + y\cdot f(0,1,0) + z\cdot f(0,0,1) \\
+                            & = & (-x,-x,x,x) + (y,0,-y,0) + (0,z,0,-z) \\
+                            & = & (-x+y,-x+z,x-y,x-z). \end{array}
+$$
+
+::::
+:::::
+
+::::: {#exr-31 .medio-cuerpo_finito}
+
+Sea $f: ({\mathbb Z}_3)^3 \rightarrow ({\mathbb Z}_3)^3$ la aplicación lineal cuya matriz asociada en las bases
+
+$B=\{(0,0,1),\ (2,0,1),\ (2,1,1)\}$ y $B^{\prime} = \{(1,2,2),\ (2,2,1),\ (1,1,1)\}$ es $\begin{pmatrix} 2 & 0 & 1 \\ 1 & 1 & 2 \\ 0 & 2 & 2 \end{pmatrix}$.
+
+Calcula $f(1,2,1)$.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Vamos a interpretar los datos que nos dan:
+
+En primer lugar, llamemos ${\mathbf{u_1}},\ {\mathbf{u_2}},\ \mathbf{u_3}$ a los tres vectores de $B$ y $\mathbf{v_1},\ \mathbf{v_2},\ \mathbf{v_3}$ a los tres vectores de $B^{\prime}$.
+
+Lo que nos están diciendo es que:
+
+$$f(\mathbf{u_1}) = 2\cdot \mathbf{v_1} + 1\cdot \mathbf{v_2} + 0\cdot \mathbf{v_3}$$
+
+$$f(\mathbf{u_2}) = 0\cdot \mathbf{v_1} + 1\cdot \mathbf{v_2} + 2\cdot \mathbf{v_3}$$
+
+$$f(\mathbf{u_3}) = 1\cdot \mathbf{v_1} + 2\cdot \mathbf{v_2} + 2\cdot \mathbf{v_3}$$
+
+Es decir:
+
+$$f(0,0,1) = 2\cdot (1,2,2) + 1\cdot (2,2,1) + 0\cdot (1,1,1) = (2,1,1) + (2,2,1) = (1,0,2)$$
+
+$$f(2,0,1) = 0\cdot (1,2,2) + 1\cdot (2,2,1) + 2\cdot (1,1,1) = (2,2,1) + (2,2,2) = (1,1,0)$$
+
+$$f(2,1,1) = 1\cdot (1,2,2) + 2\cdot (2,2,1) + 2\cdot (1,1,1) = (1,2,2) + (1,1,2)  + (2,2,2) = (1,2,0)$$
+
+
+Ahora escribimos $(1,2,1)$ como combinación lineal de los vectores de $B$: $(1,2,1) = a\cdot \mathbf{u_1} + b\cdot \mathbf{u_2} + c\cdot \mathbf{u_3}$. Esto da lugar al siguiente sistema de ecuaciones:
+
+$$\begin{array}{rrrrrrr} & & 2b & + & 2c & = & 1 \\ & & & & c & = & 2 \\ a & + & b & + & c & = & 1 \end{array}$$
+
+que tiene como solución $a=2$, $b=0$, $c=2$.
+
+Así que $f(1,2,1) = 2\cdot f(\mathbf{u_1}) + 2\cdot f(\mathbf{u_3}) = 2\cdot (1,0,2) + 2\cdot (1,2,0) = (1,1,1)$.
+
+También puede resolverse como sigue:
+
+Tenemos que:
+
+$M_{B\rightarrow B_c} = \left (\begin{array}{rrr} 0 & 2 & 2 \\ 0 & 0 & 1 \\ 1 & 1 & 1 \end{array}\right )$, luego $M_{B_c\rightarrow B} = \left (\begin{array}{rrr} 0 & 2 & 2 \\ 0 & 0 & 1 \\ 1 & 1 & 1 \end{array}\right )^{-1} = \left (\begin{array}{rrr} 1 & 0 & 1 \\ 2 & 2 & 0 \\ 0 & 1 & 0 \end{array}\right )$.
+
+y $M_{B_c,B_c}(f) = M_{B^{\prime}\rightarrow B_c}\cdot M_{B,B^{\prime}}(f) \cdot M_{B_c\rightarrow B}$
+
+Multiplicamos estas matrices:
+
+$$
+\left (\begin{array}{ccc} 1 & 2 & 1 \\ 2 & 2 & 1 \\ 2 & 1 & 1 \end{array}\right ) \left (\begin{array}{ccc} 2 & 0 & 1 \\ 1 & 1 & 2 \\ 0 & 2 & 2 \end{array}\right ) \left (\begin{array}{ccc} 1 & 0 & 1 \\ 2 & 2 & 0 \\ 0 & 1 & 0 \end{array}\right ) = \left (\begin{array}{ccc} 1 & 1 & 1 \\ 0 & 1 & 2 \\ 2 & 0 & 0 \end{array}\right ) \left (\begin{array}{ccc} 1 & 0 & 1 \\ 2 & 2 & 0 \\ 0 & 1 & 0 \end{array}\right ) = \left (\begin{array}{ccc} 0 & 0 & 1 \\ 2 & 1 & 0 \\ 2 & 0 & 2 \end{array}\right )
+$$
+
+
+Y se tiene que  
+
+$$
+\left (\begin{array}{ccc} 0 & 0 & 1 \\ 2 & 1 & 0 \\ 2 & 0 & 2 \end{array}\right )\cdot \left (\begin{array}{c} x\\y\\z\end{array}\right )
+$$ 
+
+nos da una expresión para $f(x,y,z)$.
+
+$$
+f(x,y,z) = (z,2x+y,2x+2z).
+$$
+
+Por consiguiente, $f(1,2,1) = (1,2\cdot 1 + 2,2\cdot 1 + 2\cdot 1) = (1,1,1)$.
+
+::::
+:::::
+
+::::: {#exr-32 .basico-cuerpo_finito}
+
+Sea $V=({\mathbb Z}_5)^3$, y sean $f,g:V\rightarrow V$ las aplicaciones lineales:
+$$
+\begin{array}{ll}
+f(x,y,z) = (x+2y+z, 3x+3y+2z, 4x+2y+2z) \\
+g(x,y,z) = (x+3z,2x+y+4z,x+4y) \end{array}
+$$
+
+Sean $U=N(f)$ y $W=\text{Im}(g)$.
+
+<ol type="a">
+<li> Calcula una base de $U$ y las ecuaciones cartesianas de $W$.</li>
+<li> Calcula la dimensión del subespacio $\text{Im}(f)$.</li>
+<li> Calcula una base de $U+W$. ¿Es dicha suma directa?</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li>Tenemos que:
+
+$$
+\begin{array}{lllll} U & = & N(f) & = & \{(x,y,z)\in ({\mathbb Z}_5)^3: f(x,y,z) = (0,0,0)\} \\ & & & = & \{(x,y,z)\in ({\mathbb Z}_5)^3: x+2y+z=0;\ 3x+3y+2z=0;\ 4x+2y+2z=0\}. \end{array}
+$$
+
+Tenemos entonces que los vectores de $U$ vienen dados como las soluciones de un sistema de ecuaciones. Resolvemos el sistema, para lo cual calculamos la forma escalonada reducida de la matriz de coeficientes:
+
+$$
+\left (\begin{array}{ccc} 1 & 2 & 1 \\ 3 & 3 & 2 \\ 4 & 2 & 2 \end{array}\right )
+\stackrel{\stackrel{E_{21}(2)}{\stackrel{E_{31}(1)}{}}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 & 2 & 1 \\ 0 & 2 & 4 \\ 0 & 4 & 3 \end{array}\right )
+\stackrel{\stackrel{E_2(3)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 & 2 & 1 \\ 0 & 1 & 2 \\ 0 & 4 & 3 \end{array}\right )
+\stackrel{\stackrel{E_{12}(3)}{\stackrel{E_{32}(1)}{}}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 & 0 & 2 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{array}\right )
+$$
+
+Es decir:
+
+$$
+U\equiv\left\{ \begin{array}{rrrrrrr} x & & & + & 2z & = & 0 \\ & & y & + & 2z & = & 0 \end{array}\right. \quad \text{ o, si preferimos, } \quad U \equiv \left\{ \begin{array}{rrr} x & = & 3z \\ y & = & 3z \end{array}\right.
+$$
+
+Tenemos que $U$ viene dado por dos ecuaciones, luego $\text{dim}(U) = 3-2=1$. Una base la obtenemos dándole a $z$ un valor no nulo, por ejemplo, $z=2$. Una base de $U$ es entonces $B_U=\{(1,1,2)\}$.
+
+Vamos ahora a obtener las ecuaciones cartesianas de $W=\text{Im}(g)$. Calculamos las imágenes de los vectores de una base (la canónica) de $({\mathbb Z}_5)^3$:
+
+<ul>
+<li> $g(1,0,0) = (1,2,1)$. </li>
+<li> $g(0,1,0) = (0,1,4)$. </li>
+<li> $g(0,0,1) = (3,4,0)$. </li>
+</ul>
+
+Estos tres vectores forman un sistema de generadores de $W$. A partir de ellos obtenemos una base:
+$$
+\left (\begin{array}{ccc} 1 & 2 & 1 \\ 0 & 1 & 4 \\ 3 & 4 & 0 \end{array}\right )
+\stackrel{\stackrel{E_{31}(2)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 & 2 & 1 \\ 0 & 1 & 4 \\ 0 & 3 & 2 \end{array}\right )
+\stackrel{\stackrel{E_{12}(3)}{\stackrel{E_{32}(2)}{}}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 & 0 & 3 \\ 0 & 1 & 4 \\ 0 & 0 & 0 \end{array}\right )
+$$
+
+Una base de $W$ es $B_W=\{(1,0,3),\ (0,1,4)\}$. A partir de la base escribimos las ecuaciones paramétricas, y una vez obtenidas eliminamos los parámetros para obtener las ecuaciones cartesianas de $W$ (en este caso será una ecuación cartesiana).
+
+$(x,y,z)\in W \text{ si, y solo si, } (x,y,z) = a(1,0,3) + b(0,1,4) \text{ para algunos elementos a,b}\in {\mathbb Z}_5.$
+
+$$
+\begin{array}{rrrrr}
+x & = & a & & \\ y & = & & & b \\ z & = & 3a & + & 4b \end{array}
+$$
+
+Lo que  nos da la ecuación $z=3x+4y$, o $2x+y+z=0$. Podemos comprobar fácilmente que los tres vectores $(1,2,1)$, $(0,1,4)$ y $(3,4,0)$ satisfacen esta ecuación.
+
+</li>
+<li>Sabemos que $\text{dim}(\text{N}(f)) + \text{dim}(\text{Im}(f)) = \text{dim}(V) = 3$. Como sabemos que $\text{dim}(\text{N}(f)) = 1$ vemos que $\text{dim}(\text{Im}(f)) = 2$.
+
+</li>
+<li>Formamos un sistema de generadores de $U+W$ uniendo una base de $U$ y una base de $W$ (que hemos calculado en apartados anteriores). El sistema de generadores es $\{(1,0,3),\ (0,1,4),\ (1,1,2)\}$. A partir de él obtenemos una base:
+$$
+\left (\begin{array}{ccc} 1 & 0 & 3 \\ 0 & 1 & 4 \\ 1 & 1 & 2 \end{array}\right )
+\stackrel{\stackrel{E_{31}(4)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 & 0 & 3 \\ 0 & 1 & 4 \\ 0 & 1 & 4 \end{array}\right )
+\stackrel{\stackrel{E_{32}(4)}{}}{\longrightarrow}
+\left (\begin{array}{ccc} 1 & 0 & 3 \\ 0 & 1 & 4 \\ 0 & 0 & 0 \end{array}\right )
+$$
+
+Y por tanto, una base de $U+W$ es $B=\{(1,0,3),\ (0,1,4)\}$.
+
+Vemos que $\text{dim}(U+W) = 2$. Puesto que $\text{dim}(U\cap W) = \text{dim}(U)+\text{dim}(W)-\text{dim}(U+W)$ la dimensión del subespacio $U\cap W$ vale $1$. Por tanto, la suma no es directa (tendría que valer cero para que sí lo fuera).
+
+
+Este apartado se podría haber simplificado si nos percatamos de que el vector $(1,1,2)$, que forma una base de $U$, pertenece a $W$, pues cumple la ecuación de $W$. Esto significa que $U\subseteq W$, luego $U+W=W$ y $U\cap W=U$.
+
+</li>
+</ol>
+
+::::
+:::::
+
 
 ::::: {.test}
 <iframe src="/assets/autoevaluacion/AutoevaluacionAL.html" style="border:none;" height="1000" width="100%" title="Autoevaluación"></iframe>

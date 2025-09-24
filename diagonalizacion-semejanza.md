@@ -2240,6 +2240,1311 @@ luego obtenemos la ecuación $y=0$, por tanto $dim \, V_{\lambda=a}=dim\, \mathb
 ::::
 :::::
 
+:::::{#exr-17 .basico-cuerpo_finito}
+
+Sea 
+$$
+A = 
+\begin{pmatrix}
+3 & 5 \\
+9 & 0
+\end{pmatrix} \in M_2(\mathbb{Z}_{47}).
+$$
+
+<ol type="a">
+<li> Estudia si $A$ es diagonalizable, y en caso afirmativo, encuentra $P \in M_2(\mathbb{Z}_{47})$, regular, tal que $P^{-1}AP$ sea una matriz diagonal.
+</li>
+<li> Calcula $A^{48}$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li> <b>Polinomio característico</b>:
+$$
+p_A(\lambda) = \lambda^2 - \text{tr}(A)\lambda + \det(A) 
+= \lambda^2 - 3\lambda - 45 
+= \lambda^2 + 44\lambda + 2 \quad (\text{en } \mathbb{Z}_{47}).
+$$
+
+Comprobamos que $p_A(1)=0$, por lo que $\lambda=1$ es raíz. Dividiendo, obtenemos:
+$$
+p_A(\lambda) = (\lambda-1)(\lambda-2).
+$$
+Por tanto, los valores propios son $\lambda_1=1$, $\lambda_2=2$, ambos con multiplicidad algebraica $1$.
+
+La tabla queda:
+$$
+\begin{array}{c|c|c}
+\text{Valor propio} & \alpha & d \\ \hline
+\lambda_1=1 & 1 & 1 \\
+\lambda_2=2 & 1 & 1
+\end{array}
+$$
+Como $d_1+d_2=2$, $A$ es diagonalizable.
+
+<b>Vectores propios</b>:
+
+Para $\lambda=1$:
+$$
+A-I =
+\begin{pmatrix}
+2 & 5 \\
+9 & 46
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 & 26 \\
+0 & 0
+\end{pmatrix}.
+$$
+Ecuación: $x+26y=0$. Una base es:
+$$
+B_{V_1} = \{(21,1)\}.
+$$
+
+Para $\lambda=2$:
+$$
+A-2I =
+\begin{pmatrix}
+1 & 5 \\
+9 & 45
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 & 5 \\
+0 & 0
+\end{pmatrix}.
+$$
+Ecuación: $x+5y=0$. Una base es:
+$$
+B_{V_2} = \{(42,1)\}.
+$$
+
+Por tanto, tomando:
+$$
+P =
+\begin{pmatrix}
+21 & 42 \\
+1 & 1
+\end{pmatrix}, \quad
+P^{-1}AP =
+\begin{pmatrix}
+1 & 0 \\
+0 & 2
+\end{pmatrix} = D.
+$$
+
+</li>
+<li> <b>Potencia de la matriz.</b>
+
+Dado que $A=PDP^{-1}$, tenemos:
+$$
+A^{48} = P D^{48} P^{-1}, \quad D^{48} = 
+\begin{pmatrix}
+1^{48} & 0 \\
+0 & 2^{48}
+\end{pmatrix}.
+$$
+
+En $\mathbb{Z}_{47}$, por el pequeño teorema de Fermat:
+$$
+2^{46} \equiv 1 \ (\text{mod } 47).
+$$
+
+Así:
+$$
+2^{48} = 2^{46}\cdot 2^2 \equiv 1\cdot 4 = 4.
+$$
+
+Por tanto:
+$$
+D^{48} =
+\begin{pmatrix}
+1 & 0 \\
+0 & 4
+\end{pmatrix}.
+$$
+
+Finalmente:
+$$
+A^{48} = P D^{48} P^{-1}.
+$$
+
+También, como $A^{46}=I$, se cumple:
+$$
+A^{48} = A^{46}A^2 = A^2.
+$$
+
+Calculamos:
+$$
+A^2 =
+\begin{pmatrix}
+3 & 5 \\
+9 & 0
+\end{pmatrix}
+\begin{pmatrix}
+3 & 5 \\
+9 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+7 & 15 \\
+27 & 45
+\end{pmatrix}.
+$$
+
+$$
+\boxed{A^{48} =
+\begin{pmatrix}
+7 & 15 \\
+27 & 45
+\end{pmatrix}}
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+:::::{#exr-18 .basico-cuerpo_finito}
+
+Dada la matriz
+$$
+A =
+\begin{pmatrix}
+2 & 1 & 1 \\
+2 & 0 & 2 \\
+1 & 1 & 2
+\end{pmatrix} \in M_3(\mathbb{Z}_5),
+$$
+
+estudia si $A$ es o no diagonalizable y, en caso afirmativo, encuentra una matriz regular $P$ tal que $P^{-1}AP$ sea una matriz diagonal $D$. Di cuál es la matriz $D$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li> Polinomio característico.
+Sabemos:
+$$
+\text{tr}(A) = 2+0+2=4=1 \ (\text{en } \mathbb{Z}_5),
+$$
+
+$$
+\det(A)=2\cdot 0\cdot 2 + 1\cdot 2\cdot 1 + 1\cdot 2\cdot 1 - 1\cdot 0\cdot 1 - 1\cdot 2\cdot 2 - 2\cdot 2\cdot 1 = 2.
+$$
+
+De aquí:
+$$
+p_A(\lambda) = -\lambda^3 + \text{tr}(A)\lambda^2 - \text{tr}(\text{Adj}(A))\lambda + \det(A) = 2\lambda^3 + \lambda^2 + \lambda + 2.
+$$
+
+También puede calcularse como el determinante de $|A-\lambda I|$.
+
+</li>
+<li> Valores propios.
+
+Resolviendo en $\mathbb{Z}_5$, obtenemos:
+$$
+\lambda_1 = 1 \ (\alpha_1=2), \quad \lambda_2 = 2 \ (\alpha_2=1).
+$$
+
+</li>
+<li> Multiplicidades geométricas.
+
+Para $\lambda=1$:
+$$
+A-I =
+\begin{pmatrix}
+1 & 1 & 1 \\
+2 & 2 & 2 \\
+1 & 1 & 1
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 & 1 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}.
+$$
+Así, $rg(A-I)=1$, por tanto $\dim V_1 = 2$.
+
+Para $\lambda=2$:
+$$
+A-2I =
+\begin{pmatrix}
+0 & 1 & 1 \\
+2 & 1 & 2 \\
+1 & 1 & 0
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 & 0 & 2 \\
+0 & 1 & 1 \\
+0 & 0 & 0
+\end{pmatrix}.
+$$
+Así, $rg(A-2I)=2$, luego $\dim V_2=1$.
+
+En resumen:
+$$
+\lambda=1, \ \alpha_1=2, \ d_1=2; 
+\quad 
+\lambda=2, \ \alpha_2=1, \ d_2=1.
+$$
+Dado que $d_1+d_2=3$, la matriz es diagonalizable.
+
+</li>
+<li> Subespacios propios.
+
+Para $\lambda=1$:
+$$
+V_1 \equiv \{x+y+z=0\}, \quad \mbox{Base }V_1 = \{(1,0,2), (0,1,2)\}.
+$$
+
+Para $\lambda=2$:
+$$
+V_2 \equiv \{x+2z=0, \ y+z=0\}, \quad \mbox{Base }V_2 = \{(1,2,1)\}.
+$$
+
+</li>
+<li> Matrices $P$ y $D$.
+
+Tomamos como columnas de $P$ las bases de $V_1$ y $V_2$:
+$$
+P =
+\begin{pmatrix}
+1 & 0 & 1 \\
+0 & 1 & 2 \\
+2 & 2 & 1
+\end{pmatrix}, \quad
+D =
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{pmatrix}.
+$$
+
+Así, $P^{-1}AP = D$.
+
+</li>
+</ol>
+
+::::
+:::::
+
+:::::{#exr-19 .basico-cuerpo_finito}
+
+Dada la matriz
+$$
+A =
+\begin{pmatrix}
+0 & 2 & 2 & 2 \\
+1 & 2 & 1 & 1 \\
+0 & 0 & 2 & 0 \\
+1 & 1 & 0 & 2
+\end{pmatrix} \in M_4(\mathbb{Z}_3),
+$$
+
+estudia si $A$ es o no diagonalizable, y en caso afirmativo, encuentra una matriz regular $P$ tal que $P^{-1}AP$ sea una matriz diagonal $D$ e indica cuál es la matriz $D$.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Dividimos la resolución en pasos:
+
+<ol type="i">
+<li> Cálculo del polinomio característico
+$$
+p_A(\lambda) = \det(A-\lambda I) 
+= 
+\begin{vmatrix}
+-\lambda & 2 & 2 & 2 \\
+1 & 2-\lambda & 1 & 1 \\
+0 & 0 & 2-\lambda & 0 \\
+1 & 1 & 0 & 2-\lambda
+\end{vmatrix}
+$$
+
+$$
+= (2-\lambda)\cdot
+\begin{vmatrix}
+-\lambda & 2 & 2 \\
+1 & 2-\lambda & 1 \\
+1 & 1 & 2-\lambda
+\end{vmatrix}.
+$$
+
+Tras desarrollar y simplificar en $\mathbb{Z}_3$, se obtiene:
+$$
+p_A(\lambda) = (2-\lambda)(2\lambda^3 + \lambda^2 + \lambda + 2).
+$$
+
+De aquí se deduce que los valores propios son $\lambda=1$ y $\lambda=2$, ambos con multiplicidad algebraica $2$.
+
+</li>
+<li> Multiplicidades geométricas
+
+Para $\lambda=1$:
+Se resuelve $(A-I)x=0$:
+$$
+A-I =
+\begin{pmatrix}
+2 & 2 & 2 & 2 \\
+1 & 1 & 1 & 1 \\
+0 & 0 & 1 & 0 \\
+1 & 1 & 0 & 1
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}.
+$$
+
+Así,
+$$
+V_1 \equiv \{x+y+t=0, \ z=0\}, \quad \dim V_1 = 2.
+$$
+
+Para $\lambda=2$:
+Se resuelve $(A-2I)x=0$:
+$$
+A-2I =
+\begin{pmatrix}
+1 & 2 & 2 & 2 \\
+1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0
+\end{pmatrix}
+\longrightarrow
+\begin{pmatrix}
+1 & 0 & 1 & 1 \\
+0 & 1 & 2 & 2 \\
+0 & 0 & 0 & 0 \\
+0 & 2 & 1 & 1
+\end{pmatrix}.
+$$
+
+Así,
+$$
+V_2 \equiv \{x+z+t=0,\ y+2z+2t=0\}, \quad \dim V_2 = 2.
+$$
+
+Por tanto, $A$ es diagonalizable.
+
+</li>
+<li> Bases de cada subespacio propios
+
+De $V_1$:
+$$
+\{(2,1,0,0), (2,0,0,1)\}.
+$$
+
+De $V_2$:
+$$
+\{(2,1,1,0), (2,1,0,1)\}.
+$$
+
+</li>
+<li> Matriz de paso y diagonalización
+
+Tomando como $P$ la matriz con estas columnas:
+$$
+P =
+\begin{pmatrix}
+2 & 2 & 2 & 2 \\
+1 & 0 & 1 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1
+\end{pmatrix},
+$$
+tenemos que $P$ es regular y
+$$
+P^{-1}AP =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2
+\end{pmatrix}
+= D.
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+:::::{#exr-20 .basico-cuerpo_finito}
+
+Dada la matriz
+
+$$
+A=\left(\begin{array}{lll}
+5 & 1 & 1 \\
+6 & 4 & 2 \\
+5 & 4 & 6
+\end{array}\right) \in \mathcal{M}_{3}\left(\mathbb{Z}_{7}\right)
+$$
+
+calcula, si es posible, matrices $P, D \in \mathcal{M}_{3}\left(\mathbb{Z}_{7}\right)$ tales que $D$ es diagonal y $A=P D P^{-1}$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Notemos que nos piden es encontrar una matriz regular $P$ tal que $P^{-1} \cdot A \cdot P$ sea una matriz diagonal.\\
+De existir esta matriz $P$, sus columnas serían vectores propios de $A$. Por tanto hemos de ver si la matriz $A$ tiene una base de vectores propios, o lo que es lo mismo si $A$ es diagonalizable.
+
+Comenzamos entonces calculando el polinomio característico de $A$, que es igual al determinante de la matriz $A-\lambda I d$.
+
+$$
+\begin{aligned}
+\left|\begin{array}{ccc}
+5-\lambda & 1 & 1 \\
+6 & 4-\lambda & 2 \\
+5 & 4 & 6-\lambda
+\end{array}\right| & =(5-\lambda)(4-\lambda)(6-\lambda)+6 \cdot 4 \cdot 1+1 \cdot 2 \cdot 5-(1 \cdot 5(4-\lambda)+1 \cdot 6(6-\lambda)+2 \cdot 4(5-\lambda)) \\
+& =\left(20-5 \lambda-4 \lambda+\lambda^{2}\right)(6-\lambda)+24+10-(20-5 \lambda+36-6 \lambda+40-8 \lambda) \\
+& =\left(\lambda^{2}-9 \lambda+20\right)(6-\lambda)+34-(96-19 \lambda) \\
+& =\left(6 \lambda^{2}-\lambda^{3}-54 \lambda+9 \lambda^{2}+120-20 \lambda\right)+34-96+19 \lambda \\
+& =-\lambda^{3}+15 \lambda^{2}-55 \lambda+58 \\
+& =6 \lambda^{3}+\lambda^{2}+\lambda+2
+\end{aligned}
+$$
+
+Continuamos calculando los valores propios, es decir, las raíces de este polinomio (usando la división por Ruffini y probando con valores sencillos). Calculamos también sus multiplicidades algebraicas.
+
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			2
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			0
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			0
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			3
+		</td>
+	</tr>
+</table>
+
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			2
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			2
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			2
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			5
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			5
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			5
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			0
+		</td>
+	</tr>
+</table>
+
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			2
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			5
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			4
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			0
+		</td>
+	</tr>
+</table>
+
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			4
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			2
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			5
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			2
+		</td>
+	</tr>
+</table>
+
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			3
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			4
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			4
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			1
+		</td>
+	</tr>
+</table>
+
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			4
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			4
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			4
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-bottom: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+			3
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			6
+		</td>
+		<td style="padding-right: 3pt; padding-left: 3pt;">
+			0
+		</td>
+	</tr>
+</table>
+
+Y vemos que tiene dos valores propios: $\lambda_{1}=2$ con multiplicidad algebraica $m_{2}=2$ y $\lambda_{2}=4$ con multiplicidad algebraica $m_{4}=1$.
+
+Vamos con la multiplicidad geométrica. Puesto que si $\lambda$ es un valor propio su multiplicdad geométrica $d_{\lambda}$ verifica que $1 \leq d_{\lambda} \leq m_{\lambda}$ sabemos que la multiplicidad geométrica del valor propio 4 vale 1 mientras que la del valor propio 2 puede valer 1 ó 2 .
+
+Lo siguiente es calcular los subespacios propios y de esta forma tendremos $d_{2}$ y $d_{4}$.\\
+Primero calculamos $V_{2}$. Este subespacio viene dado por unas ecuaciones cuya matriz de coeficientes es $A-2 I d$. Es decir,
+
+$$
+V_{2} \equiv\left\{\begin{array}{l}
+3 x+y+z=0 \\
+6 x+2 y+2 z=0 \\
+5 x+4 y+4 z=0
+\end{array}\right.
+$$
+
+Calculamos la forma normal de Hermite de su matriz de coeficientes:
+
+$$
+\left(\begin{array}{lll}
+3 & 1 & 1 \\
+6 & 2 & 2 \\
+5 & 4 & 4
+\end{array}\right) \xrightarrow{E_{1}(15)}\left(\begin{array}{lll}
+1 & 5 & 5 \\
+6 & 2 & 2 \\
+5 & 4 & 4
+\end{array}\right) \xrightarrow{E_{21}(1)}\left(\begin{array}{lll}
+1 & 5 & 5 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right)
+$$
+
+Luego $V_{2} \equiv x+5 y+5 z=0$ de donde $d_{2}=\operatorname{dim}\left(V_{2}\right)=2$.\\
+Una base de $V_{2}$ es $B_{V_{2}}=\{(2,1,0) ;(2,0,1)\}$.\\
+Para calcular $V_{4}$ repetimos lo mismo. Calculamos la forma normal de Hermite de $A-4 / d$.
+
+$$
+\left(\begin{array}{lll}
+1 & 1 & 1 \\
+6 & 0 & 2 \\
+5 & 4 & 2
+\end{array}\right) \xrightarrow{E_{21}(1)}\left(\begin{array}{lll}
+1 & 1 & 1 \\
+0 & 1 & 3 \\
+0 & 6 & 4
+\end{array}\right) \xrightarrow{E_{31}(2)}\left(\begin{array}{lll}
+1 & 0 & 5 \\
+0 & 1 & 3 \\
+0 & 0 & 0
+\end{array}\right)
+$$
+
+Luego $V_{4}$ viene dado por las ecuaciones $\left\{\begin{aligned} x \quad & \begin{array}{rl}x & =0 \\ & y\end{array}=3 z=0\end{aligned}\right.$. La dimensión es entonces 1 y una base es $B_{V_{4}}\{(2,4,1)\}$.
+
+Con lo que hemos hecho hasta ahora podemos saber que la matriz $A$ es diagonalizable, y una base de vectores propios es $B=\{(2,1,0) ;(2,0,1) ;(2,4,1)\}$. Los dos primeros son vectores propios de valor propio 2 y el tercero es un vector propio de valor propio 4.
+
+Si tomamos como $P$ a la matriz cuyas columnas son estos tres vectores, es decir, $P=\left(\begin{array}{lll}2 & 2 & 2 \\ 1 & 0 & 4 \\ 0 & 1 & 1\end{array}\right)$ entonces $P^{-1} \cdot A \cdot P=\left(\begin{array}{lll}2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 4\end{array}\right)$ que es una matriz diagonal.
+
+Tenemos entonces las matrices $D$ y $P$ que nos pedía el enundiado.
+
+
+::::
+:::::
+
+:::::{#exr-21 .medio-cuerpo_finito}
+
+Sea $f:\left(\mathbb{Z}_{7}\right)^{3} \rightarrow\left(\mathbb{Z}_{7}\right)^{3}$ la única aplicación lineal tal que
+
+$$
+\begin{aligned}
+\operatorname{ker}(f) & =N(f) \equiv\left\{\begin{array}{r}
+x+4 y+6 z=0 \\
+3 x+3 y=0
+\end{array}\right. \\
+V_{2} & =\langle(1,0,1),(1,1,0)\rangle=L[(1,0,1),(1,1,0)]
+\end{aligned}
+$$
+
+donde $V_{2}$ denota el subespacio propio de valor propio 2.
+Calcula $M_{B_{c}}(f)=A\left(f ; B_{c}, B_{c}\right)$ donde $B_{c}$ es la base canónica de $\left(\mathbb{Z}_{7}\right)^{3}$.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Recordemos que el subespacio propio de valor propio 2 está formado por todos los vectores $u \in\left(\mathbb{Z}_{7}\right)^{3}$ tales que $f(u)=2 \cdot u$.
+
+Calculamos ahora una base del núcleo de $f$. Como tenemos las ecuaciones de dicho subespacio, resolvemos el sistema:
+
+$$
+\left(\begin{array}{lll}
+1 & 4 & 6 \\
+3 & 3 & 0
+\end{array}\right) \xrightarrow{E_{21}(4)}\left(\begin{array}{lll}
+1 & 4 & 6 \\
+0 & 5 & 3
+\end{array}\right) \xrightarrow{E_{2}(3)}\left(\begin{array}{lll}
+1 & 4 & 6 \\
+0 & 1 & 2
+\end{array}\right) \xrightarrow{E_{12}(3)}\left(\begin{array}{lll}
+1 & 0 & 5 \\
+0 & 1 & 2
+\end{array}\right)
+$$
+
+Luego $N(f) \equiv\left\{\begin{aligned} x & +5 z=0 \\ & y+2 z=0,\end{aligned}\right.$ es decir, $N(f) \equiv \begin{cases}x & =2 z \\ y & =5 z\end{cases}$\\
+Teniendo esto en cuenta, los distintos datos que nos dan sobre la aplicación $f$ nos dicen:
+
+<ul>
+  <li> $(2,5,1) \in N(f)$, es decir, $f(2,5,1)=(0,0,0)$.</li>
+  <li> $(1,0,1)$ es un vector de valor propio 2 , es decir, $f(1,0,1)=(2,0,2)$.</li>
+  <li> $(1,1,0)$ es un vector de valor propio 2 , es decir, $f(1,1,0)=(2,2,0)$.</li>
+</ul>
+
+Y puesto que $B=\{(2,5,1) ;(1,0,1) ;(1,1,0)\}$ forma una base de $\left(\mathbb{Z}_{7}\right)^{3}$ tenemos todo lo necesario para determinar la aplicación lineal $f$.
+
+Notemos que las columnas de la matriz $A=\left(\begin{array}{lll}0 & 2 & 2 \\ 0 & 0 & 2 \\ 0 & 2 & 0\end{array}\right)$ son las coordenadas de los vectores $f(2,5,1)$, $f(1,0,1)$ y $f(1,1,0)$ en la base canónica. Por tanto, tenemos que $A=M_{B, B_{c}}(f)$.
+
+Para calcular la matriz de $f$ en la base canónica tenemos en cuenta que $M_{B_{c}}(f)=M_{B, B_{c}}(f) \cdot M_{B_{c} \rightarrow B}$ y que
+
+$$
+\begin{aligned}
+M_{B_{c} \rightarrow B}=\left(M_{B \rightarrow B_{c}}\right)^{-1} & =\left(\begin{array}{lll}
+2 & 1 & 1 \\
+5 & 0 & 1 \\
+1 & 1 & 0
+\end{array}\right)^{-1}=\left(\begin{array}{lll}
+5 & 2 & 2 \\
+2 & 5 & 6 \\
+3 & 5 & 4
+\end{array}\right) . \\
+M_{B_{c}}(f) & =M_{B, B_{c}}(f) \cdot M_{B_{c} \rightarrow B}=\left(\begin{array}{lll}
+0 & 2 & 2 \\
+0 & 0 & 2 \\
+0 & 2 & 0
+\end{array}\right) \cdot\left(\begin{array}{lll}
+5 & 2 & 2 \\
+2 & 5 & 6 \\
+3 & 5 & 4
+\end{array}\right)=\left(\begin{array}{lll}
+3 & 6 & 6 \\
+6 & 3 & 1 \\
+4 & 3 & 5
+\end{array}\right)
+\end{aligned}
+$$
+
+De aquí podemos calcular una expresión explícita para $f: f(x, y, z)=(3 x+6 y+6 z, 6 x+3 y+z, 4 x+3 y+5 z)$. Es fácil comprobar, con esta expresión, que $f(2,5,1)=(0,0,0), f(1,0,1)=(2,0,2)$ y $f(1,1,0)=(2,2,0)$.
+
+Otra forma de resolver este ejercicio sería la siguiente:\\
+Conocemos cuanto vale $f(2,5,1), f(1,0,1)$ y $f(1,1,0)$. Necesitamos calcular $f(1,0,0), f(0,1,0)$ y $f(0,0,1)$. Para esto, escribimos estos tres vectores como combinación lineal de los vectores de la base $B$.
+
+<ul>
+  <li> $(1,0,0)=a(2,5,1)+b(1,0,1)+c(1,1,0)$. Esto nos da lugar al sistema </li>
+</ul>
+
+$$
+\left\{\begin{array}{rl}
+2 a+b+c & =1 \\
+5 a +c &=0\\
+a+b & =0
+\end{array}
+\right.
+$$
+
+que resolvemos a continuación:
+
+$$
+\left(\begin{array}{llll}
+2 & 1 & 1 & 1 \\
+5 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0
+\end{array}\right) \xrightarrow{E_{13}}\left(\begin{array}{llll}
+1 & 1 & 0 & 0 \\
+5 & 0 & 1 & 0 \\
+2 & 1 & 1 & 1
+\end{array}\right) \xrightarrow{E_{21}(2)}\left(\begin{array}{llll}
+1 & 1 & 0 & 0 \\
+0 & 2 & 1 & 0 \\
+0 & 6 & 1 & 1
+\end{array}\right) \xrightarrow{E_{31}(5)}\left(\begin{array}{llll}
+1 & 1 & 0 & 0 \\
+0 & 1 & 4 & 0 \\
+0 & 6 & 1 & 1
+\end{array}\right) \xrightarrow{E_{12}(6)}
+$$
+$$\left(\begin{array}{llll}
+1 & 0 & 3 & 0 \\
+0 & 1 & 4 & 0 \\
+0 & 0 & 5 & 1
+\end{array}\right) \xrightarrow{E_{32}(5)}\left(\begin{array}{llll}
+1 & 0 & 3 & 0 \\
+0 & 1 & 4 & 0 \\
+0 & 0 & 1 & 3
+\end{array}\right) \xrightarrow{E_{13}(4)}\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right)
+$$
+
+Y que nos da la solución $a=5, b=2, c=3$. Notemos que estos valores coinciden con los de la primera columna de la matriz $M_{B_{c} \rightarrow B}$. A partir de aquí calculamos $f(1,0,0)$.
+
+$$
+f(1,0,0)=f(5(2,5,1)+2(1,0,1)+3(1,1,0))=5 f(2,5,1)+2 f(1,0,1)+3(1,1,0)=5(0,0,0)+2(2,0,2)+3(2,2,0)=(3,6,4)
+$$
+
+Y esto nos da la primera columna de la matriz $M_{B_{c}}(f)$.
+
+<ul>
+<li> $(0,1,0)=a^{\prime}(2,5,1)+b^{\prime}(1,0,1)+c^{\prime}(1,1,0)$. 
+El sistema que resulta tiene como solución $a^{\prime}=2$, $b^{\prime}=5, c^{\prime}=5$.
+$f(0,1,0)=f(2(2,5,1)+5(1,0,1)+5(1,1,0))=2 f(2,5,1)+5 f(1,0,1)+5(1,1,0)=2(0,0,0)+5(2,0,2)+5(2,2,0)=(6,3,3)$
+$Y$ ya tenemos la segunda columna de $M_{B_{c}}(f)$. 
+</li>
+<li> $(0,0,1)=a^{\prime \prime}(2,5,1)+b^{\prime \prime}(1,0,1)+c^{\prime \prime}(1,1,0)$. 
+El sistema que resulta tiene como solución $a^{\prime \prime}=2$, $b^{\prime \prime}=6, c^{\prime \prime}=4$
+$f(0,0,1)=f(2(2,5,1)+6(1,0,1)+4(1,1,0))=2 f(2,5,1)+6 f(1,0,1)+4(1,1,0)=2(0,0,0)+6(2,0,2)+4(2,2,0)=(6,1,5)$ 
+</li>
+</ul>
+
+
+::::
+:::::
+
+:::::{#exr-22 .basico}
+
+Sea $A=\left (\begin{array}{ccc} 2 & -1 & 1 \\ 0 & 0 & 2 \\ 0 & -1 & 3 \end{array}\right )\in M_{3\times 3}({\mathbb R})$.
+
+<ol type="a">
+<li> Estudia si $A$ es o no diagonalizable (por semejanza). En caso afirmativo, encuentra una matriz regular $P$ y una matriz diagonal $D$ tal que $P^{-1}\cdot A \cdot P = D$.</li>
+<li> Utiliza lo obtenido en el apartado anterior para calcular $A^{10}$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li> Comenzamos calculando el polinomio característico:
+
+$\begin{array}{rcl}
+p_A(\lambda) & = & \left | \begin{array}{ccc} 2-\lambda & -1 & 1 \\ 0 & -\lambda & 2 \\ 0 & -1 & 3-\lambda \end{array}\right | \\ \\
+& = & (2-\lambda) \cdot \left | \begin{array}{cc} -\lambda & 2 \\ -1 & 3-\lambda \end{array}\right | \\ \\
+& = & (2-\lambda) \cdot (-\lambda (3-\lambda) - (-2)) \\ \\
+& = & (2-\lambda)(-3\lambda + \lambda^2 + 2 ) \\ \\
+& = & (2-\lambda)(\lambda^2 - 3\lambda + 2). \end{array}$
+
+También se puede calcular sabiendo que $p_A(\lambda) = -\lambda^3 + \text{tr}(A) \lambda ^2 - \text{tr}(\text{Adj}(A)) \lambda + \text{det}(A)$.
+
+<ul>
+  <li> $\text{tr}(A) = 2 + 0 + 3 = 5$</li>
+  <li> $\text{tr}(\text{Adj}(A)) = \left | \begin{array}{rr} 0 & 2 \\ -1 & 3 \end{array}\right | + \left | \begin{array}{rr} 2 & 1 \\ 0 & 3 \end{array}\right | + \left | \begin{array}{rr} 2 & -1 \\ 0 & 0 \end{array}\right | = 2 + 6 + 0 = 8$.</li>
+  <li> $\text{det}(A) = 0 + 0 + 0 - (0 + 0 - 4) = 4$.</li>
+</ul>
+
+Con esto tenemos que $p_A(\lambda) = -\lambda^3 + 5\lambda^2 - 8 \lambda + 4$.
+
+Calculamos ahora las raíces, con sus multiplicidades.
+
+Si partimos de la primera expresión, $p_A(\lambda) = (2-\lambda)(\lambda^2-3\lambda + 2)$, ya tenemos que $\lambda=2$ es raíz, y nos falta calcular las raíces de $\lambda^2 - 3\lambda + 2$. Las calculamos usando la fórmula de la ecuación de segundo grado: $\lambda = \frac{3 \pm \sqrt{3^2 - 4\cdot 1 \cdot 2}}{2} = \frac{3 \pm \sqrt{1}}{2} = \frac{3\pm 1}{2}$, que nos da como raíces $\lambda=2$ y $\lambda=1$.
+
+Así que $p_A(\lambda)$ tiene dos raíces, que son $\lambda = 2$ (doble) y $\lambda = 1$ (simple).
+
+También las podíamos haber obtenido a partir de la expresión $p_A(\lambda) = -\lambda^3 + 5\lambda^2 - 8 \lambda + 4$.
+
+$\hspace{2cm} \begin{array}{r|rrrr}
+& -1 & 5 & 8 & 4 \\ 1 & & -1 & 4 & -4 \\ \hline
+& -1 & 4 & -4 & 0 \\ 2 & & -2 & 4 & \\ \hline
+& -1 & 2 & 0 & \\ 2 & & -2 & & \\ \hline 
+& -1 & 0 & & \end{array}$
+
+Y tenemos el mismo resultado. Las raíces son $\lambda = 1$ (simple) y $\lambda=2$ (doble).
+
+Calculamos ahora las multiplicidades geométricas. Tenemos el siguiente cuadro:
+
+<table align="center" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: right; padding-right: 3pt; padding-left: 3pt;">
+		</td>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Multiplicidad algebraica
+		</td>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			Multiplicidad geométrica
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: right; padding-right: 3pt; padding-left: 3pt;">
+			$$\lambda = 1$$
+		</td>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			$$\alpha_1 = 1$$
+		</td>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			$$d_1 = 1$$
+		</td>
+	</tr>
+	<tr>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: right; padding-right: 3pt; padding-left: 3pt;">
+			$$\lambda = 2$$
+		</td>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			$$\alpha_2 = 2$$
+		</td>
+		<td style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: center; padding-right: 3pt; padding-left: 3pt;">
+			$$d_2 = 1$$ o $$d_2 = 2$$
+		</td>
+	</tr>
+</table>
+
+Nos falta calcular $d_2$, y sabemos que $d_2 = 3 - \text{rg}(A - 2Id)$. Tenemos que $A - 2Id = \left ( \begin{array}{rrr} 0 & -1 & 1 \\ 0 & -2 & 2 \\ 0 & -1 & 1 \end{array}\right )$, y su rango es igual a $1$. Por consiguiente, $d_2=2$.
+
+Y puesto que la suma de las multiplicidades geométricas es $3$, que es igual al número de filas (o columas) de la matriz $A$, la matriz es diagonalizable.
+
+Una vez comprobado que $A$ es diagonalizable, tenemos que calcular la matriz $P$. Las columnas de esta matriz forman una base de vectores propios de $A$, por lo que lo vamos a calcular una base de cada uno de los subespacios propios.
+
+Comenzamos con el subespacio de valor propio $1$, que viene dado como la solución de un sistema de ecuaciones homogéneo cuya matriz de coeficientes es $A - 1\cdot Id$.
+
+$\left (\begin{array}{rrr} 1 & -1 & 1 \\ 0 & -1 & 2 \\ 0 & -1 & 2 \end{array}\right ) \stackrel{E_{2}(-1)}{\longrightarrow}
+\left (\begin{array}{rrr} 1 & -1 & 1 \\ 0 & 1 & -2 \\ 0 & -1 & 2 \end{array}\right ) \stackrel{E_{12}(1)}{\stackrel{E_{32}(1)}{\longrightarrow}}
+\left (\begin{array}{rrr} 1 & 0 & -1 \\ 0 & 1 & -2 \\ 0 & 0 & 0 \end{array}\right )$
+
+Tenemos que $V_1 \equiv \left \{ \begin{array}{rrrrrrr} x & & & - & z & = & 0\ \\ & & y & - & 2z & = & 0. \end{array}\right.$ Una base de este subespacio es $B_{V_1} = \{(1,2,1)\}$.
+
+Seguimos con $V_2$. A partir de la matriz $A - 2Id$ vemos que este subespacio viene dado por una ecuación, que es $-y+z=0$. Una base de este subespacio es $B_{V_2} = \{(1,0,0),\ (0,1,1)\}$.
+
+Y ya tenemos las dos matrices que nos pide: la matriz $P$ cuyas columnas son los vectores propios que hemos obtenido, y la matriz $D$ que es una matriz diagonal y que en la diagonal tiene los valores propios (en el mismo orden en que colocamos los vectores en la matriz $P$). Es decir:
+
+$$
+P = \left (\begin{array}{rrr} 1 & 1 & 0 \\ 2 & 0 & 1 \\ 1 & 0 & 1 \end{array} \right );\qquad D = \left (\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{array} \right ).
+$$
+
+
+</li>
+<li> Tenemos que $P^{-1}A P = D$, luego $A = PDP^{-1}$. Entonces $A^{10} = PD^{10}P^{-1}$. Necesitamos calcular $P^{-1}$ y $D^{10}$. 
+
+$$
+\left (\begin{array}{rrrrrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 2 & 0 & 1 & 0 & 1 & 0 \\ 1 & 0 & 1 & 0 & 0 & 1 \end{array} \right ) \stackrel{E_{21}(-2)}{\stackrel{E_{31}(-1)}{\longrightarrow}}
+\left (\begin{array}{rrrrrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & -2 & 1 & -2 & 1 & 0 \\ 0 & -1 & 1 & -1 & 0 & 1 \end{array} \right ) \stackrel{E_{23}}{\longrightarrow}
+\left (\begin{array}{rrrrrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & -1 & 1 & -1 & 0 & 1  \\ 0 & -2 & 1 & -2 & 1 & 0 \end{array} \right )
+\stackrel{E_{12}(1)}{\stackrel{E_{32}(-2)}{\longrightarrow}}
+$$
+
+$$
+\left (\begin{array}{rrrrrr} 1 & 0 & 1 & 0 & 0 & 1 \\ 0 & -1 & 1 & -1 & 0 & 1  \\ 0 & 0 & -1 & 0 & 1 & -2 \end{array} \right )
+\stackrel{E_{13}(1)}{\stackrel{E_{23}(1)}{\longrightarrow}}
+\left (\begin{array}{rrrrrr} 1 & 0 & 0 & 0 & 1 & -1 \\ 0 & -1 & 0 & -1 & 1 & -1  \\ 0 & 0 & -1 & 0 & 1 & -2 \end{array} \right )
+\stackrel{E_{2}(-1)}{\stackrel{E_{3}(-1)}{\longrightarrow}}
+\left (\begin{array}{rrrrrr} 1 & 0 & 0 & 0 & 1 & -1 \\ 0 & 1 & 0 & 1 & -1 & 1  \\ 0 & 0 & 1 & 0 & -1 & 2 \end{array} \right )
+$$
+
+Ya tenemos $P^{-1}$. En cuanto a $D^{10}$ se tiene que
+
+$$D^{10} = \left (\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{array} \right )^{10} = \left (\begin{array}{ccc} 1^{10} & 0 & 0 \\ 0 & 2^{10} & 0 \\ 0 & 0 & 2^{10} \end{array} \right ) = \left (\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 1024 & 0 \\ 0 & 0 & 1024 \end{array} \right )
+$$
+
+Finalmente:
+
+$$
+A^{10} = \left (\begin{array}{ccc} 1 & 1 & 0 \\ 2 & 0 & 1 \\ 1 & 0 & 1 \end{array}\right )
+\left (\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 1024 & 0 \\ 0 & 0 & 1024 \end{array}\right )
+\left  (\begin{array}{ccc} 0 & 1 & -1 \\ 1 & -1 & 1 \\ 0 & -1 & 2 \end{array}\right )=
+\left (\begin{array}{ccc} 1 & 1 & 0 \\ 2 & 0 & 1 \\ 1 & 0 & 1 \end{array}\right ) \left  (\begin{array}{ccc} 0 & 1 & -1 \\ 1024 & -1024 & 1024 \\ 0 & -1024 & 2048 \end{array}\right)
+$$
+
+$$
+A^{10} = \left  (\begin{array}{ccc} 1024 & -1023 & 1023 \\ 0 & -1022 & 2046 \\ 0 & -1023 & 2047 \end{array}\right)
+$$
+</li>
+</ol>
+
+::::
+:::::
+
+:::::{#exr-23 .medio-cuerpo_finito}
+
+Sea $V_2$ el subespacio de $({\mathbb Z}_7)^3$ generado por $(1,1,0)$ y $V_3$ el subespacio de $({\mathbb Z}_7)^3$ de ecuación $y+z=0$.
+
+Sea $A\in M_3({\mathbb Z}_7)$ la matriz cuyos valores propios son $2$ y $3$ y cuyos subespacios propios son $V_2$ y $V_3$ respectivamente.
+
+Calcula las matrices $A$ y $A^{96}$.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Para resolver este ejercicio necesitamos una base de cada uno de los subespacios propios. Como base de $V_2$ tenemos $B_{V_2}=\{(1,1,0)\}$. En cuanto a $V_3$, puesto que viene dado por una ecuación, su dimensión es igual a $3-1=2$. Una base estará formada por dos vectores linealmente independientes que satisfagan la ecuación. Tomamos la siguiente base: $B_{V_3} = \{(1,0,0),\ (0,1,6)\}$.
+
+Por otra parte, la matriz $A$ tiene dos valores propios $\lambda=2$ y $\lambda = 3$. Sus mulitplicidades geométricas son $d_2 = \text{dim}(V_2) = 1$ y $d_3 = \text{dim}(V_3) = 2$. Al ser la suma de las multiplicidades geométricas igual al número de filas (o columnas) de la matriz $A$, la matriz $A$ es diagonalizable.
+
+Esto significa que existe una matriz $P\in M_3({\mathbb Z}_7)$, regular, para la que $P^{-1}\cdot A\cdot P$ es una matriz diagonal (y en la diagonal están los valores propios de $A$, tantas veces como nos indica su multiplicidad).
+
+La matriz $P$ tienen como columnas una base de vectores propios de $A$, por lo que $P = \left (\begin{array}{rrr} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 0 & 6 \end{array}\right )$,  mientras que la matriz $D$ es igual a $\left (\begin{array}{rrr} 2 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 3 \end{array}\right )$.
+
+Y tenemos ahora: $P^{-1}\cdot A\cdot P = D \Longrightarrow P\cdot P^{-1}\cdot A \cdot P \cdot P^{-1}= P\cdot D\cdot P^{-1} \Longrightarrow A = P\cdot D \cdot P^{-1}$.
+
+Calculamos $P^{-1}$.
+
+$$
+\begin{array}{l}
+\quad \left ( \begin{array}{rrrrrr} 1 & 1 & 0 & 1 & 0 & 0 \\ 1 & 0 & 1 & 0 & 1 & 0 \\ 0 & 0 & 6 & 0 & 0 & 1 \end{array}\right ) \stackrel{E_{12}}{\longrightarrow}\left ( \begin{array}{rrrrrr} 1 & 0 & 1 & 0 & 1 & 0 \\ 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 0 & 6 & 0 & 0 & 1 \end{array}\right ) \\
+\stackrel{E_{21}(6)}{\stackrel{E_{3}(6)}{\longrightarrow}} \left ( \begin{array}{rrrrrr} 1 & 0 & 1 & 0 & 1 & 0 \\ 0 & 1 & 6 & 1 & 6 & 0 \\ 0 & 0 & 1 & 0 & 0 & 6 \end{array}\right ) \stackrel{E_{13}(6)}{\stackrel{E_{23}(1)}{\longrightarrow}}  \left ( \begin{array}{rrrrrr} 1 & 0 & 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 1 & 6 & 6 \\ 0 & 0 & 1 & 0 & 0 & 6 \end{array}\right )
+\end{array}
+$$
+
+Y multiplicamos:
+
+$P\cdot D =  \left (\begin{array}{rrr} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 0 & 6 \end{array}\right )\cdot \left (\begin{array}{rrr} 2 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 3 \end{array}\right ) = \left (\begin{array}{rrr} 2 & 3 & 0 \\ 2 & 0 & 3 \\ 0 & 0 & 4 \end{array}\right )$
+
+$A = P\cdot D \cdot P^{-1} = \left (\begin{array}{rrr} 2 & 3 & 0 \\ 2 & 0 & 3 \\ 0 & 0 & 4 \end{array}\right )\cdot \left (\begin{array}{rrr} 0 & 1 & 1 \\ 1 & 6 & 6 \\ 0 & 0 & 6 \end{array}\right ) = \left (\begin{array}{rrr} 3 & 6 & 6 \\ 0 & 2 & 6 \\ 0 & 0 & 3 \end{array}\right )$
+
+Por último, calculamos $A^{96}$. Antes, calculamos la matriz $D^{96}$. Al ser una matriz diagonal, para calcularla hay que elevar cada uno de sus coeficientes al exponente $96$.
+
+Por otra parte, $2^6 = 1$ y $3^6=1$, ya que $\varphi(7) = 6$, así que  $2^{96} = (2^6)^{16} = 1^{16} = 1$, e igual para $3^{96}$.
+
+$D^{96} = \left (\begin{array}{rrr} 2^{96} & 0 & 0 \\ 0 & 3^{96} & 0 \\ 0 & 0 & 3^{96} \end{array}\right ) = \left (\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array}\right ) = Id$.
+
+Tenemos entonces:
+
+$A^{96} = (P\cdot D\cdot P^{-1})^{96} = P \cdot D^{96} \cdot P^{-1} = P\cdot Id \cdot P^{-1} = Id$.
+
+
+::::
+:::::
+
+:::::{#exr-24 .medio}
+
+Encuentra todos los valores $a\in {\mathbb R}$ para los que la matriz $A=\begin{pmatrix} 2 & 0 & 0 \\3 & 4 & a \\ a & 0 & 4 \end{pmatrix}\in\mathcal{M}_{3\times 3}({\mathbb R})$ es diagonalizable. Para aquellos valores de $a$ en que la matriz $A$ sea diagonalizable, calcula una matriz regular $P$ y una matriz diagonal $D$ tales que $P^{-1}\cdot A\cdot P = D.$
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+En primer lugar calculamos los valores propios con sus multiplicidades algebraicas. Para eso, calculamos el polinomio característico:
+
+$$p_A(\lambda) = \left | \begin{array}{ccc} 2-\lambda & 0 & 0 \\3 & 4-\lambda & a \\ a & 0 & 4-\lambda\end{array}\right | = (2-\lambda) \cdot \left | \begin{array}{cc} 4-\lambda & a \\ 0 & 4-\lambda \end{array}\right | = (2-\lambda)\cdot (4-\lambda)^2.$$
+
+Vemos que $A$ tiene dos valorer propios: $\lambda_1=2$, cuya multiplicidad algebraica es $1$ y $\lambda_2=4$ cuya multiplicidad algebraica es $2$. Tenemos entonces:
+
+$$
+\begin{array}{|c|c|c|}
+  \text{Valor propio} & \text{Multiplicidad algebraica} & \text{Multiplicidad geométrica} \\ \hline
+  \lambda_1 = 2 & \alpha_2=1 & d_2 = 1 \\ \hline \lambda_2 = 4 & \alpha_4 = 2 & d_4 = 1 \text{ ó } 2 \\ \hline \end{array}$$
+
+La matriz $A$ es entonces diagonalizable si $d_4=2$. Puesto que $d_4 = 3 - \text{rg}(A-4\cdot Id)$, estudiamos esta matriz.
+
+$$
+A - 4\cdot Id = \left (\begin{array}{rrr}  -2 & 0 & 0 \\3 & 0 & a \\ a & 0 & 0 \end{array}\right ).$$
+
+Si $a=0$ la matriz $A-4\cdot Id$ tiene solo una columna distinta de cero, luego $\text{rg}(A-4\cdot Id)=1$, mientras que si $a\neq 0$ encontramos una submatriz $2\times 2$ (la formada por las filas primera y segunda, y columnas primera y tercera) cuyo determinante es $-2a \neq 0$, por lo que $\text{rg}(A-4\cdot Id) = 2$. En resumen, tenemos:
+
+<ul>
+  <li> Si $a=0$, $d_4 = 3-\text{rg}(A-4\cdot Id) = 3-1=2$, por lo que $A$ es diaogonalizable. </li>
+  <li> Si $a\neq 0$, $d_4=3-\text{rg}(A-4\cdot Id) = 3-2=1$, por lo que $A$ no es diagonalizable.</li>
+</ul>
+
+En conclusión, $A$ es diagonalizable si, y solo si, $a=0$. Vamos en este caso a calcular los vectores propios.
+
+<ul>
+  <li> Para el valor propio $2$, y puesto que $A-2\cdot Id = \left (\begin{array}{rrr}  0 & 0 & 0 \\3 & 2 & 0 \\ 0 & 0 & 2 \end{array}\right )$, el subespacio $V_2$ tiene ecuaciones:
+
+  $$
+  V_2 \equiv \left\{ \begin{array}{rrrrrr} 3x & + & 2y & & = & 0 \\ & &  & 2z & = & 0 \end{array}\right.
+  $$
+
+  Y una base de $V_2$ es $B_{V_2} = \{(2,-3,0)\}$.
+  
+  </li>
+  <li> Para el valor propio $4$, y puesto que $A-4\cdot Id = \left (\begin{array}{rrr}  -2 & 0 & 0 \\3 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right )$, el subespacio $V_4$ tiene ecuación $V_4 \equiv x = 0$. Una base es $B_{V_4} = \{(0,1,0),\ (0,0,1)\}$.</li>
+</ul>
+
+Con estas bases formamos la matriz $P=\left (\begin{array}{rrr} 2 & 0 & 0 \\ -3 & 1 & 0 \\ 0 & 0 & 1 \end{array} \right )$ (sus columnas son los vectores propios que hemos encontrado). Se tiene que:
+
+$$
+P^{-1}\cdot A \cdot P = \left (\begin{array}{ccc} 2& 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 4 \end{array}\right ).
+$$
+
+Y esta última es la matriz $D$ que  nos piden.
+
+
+::::
+:::::
+
+:::::{#exr-25 .basico}
+
+Sea $f:{\mathbb R}^3\rightarrow {\mathbb R}^3$ la aplicación lineal dada por
+$$
+f(x,y,z) = (-2x+z,-x-y+z,-2x+z).
+$$
+
+Y sea $A=M_{B_c}(f)$.
+
+<ol type="a">
+<li> Halla la matriz $A$.</li>
+<li> Calcula los valores propios de $A$.</li>
+<li> Calcula una base de vectores propios de $A$. Llama a esta base $B$.</li>
+<li> Calcula $M_{B}(f)$.</li>
+<li> Calcula las ecuaciones cartesianas de $\text{Im}(f)$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type="a">
+<li> Tenemos que $f(1,0,0) = (-2,-1,-2)$, $f(0,1,0) = (0,-1,0)$ y $f(0,0,1) = (1,1,1)$. Por tanto:
+
+$$
+A = M_B(f) = \left (\begin{array}{rrr} -2 & 0 & 1 \\ -1 & -1 & 1 \\ -2 & 0 & 1 \end{array}\right ).
+$$
+
+</li>
+<li> Calculamos el polinomio característico de $A$:
+
+$$
+\begin{array}{lll}
+p_A(\lambda) & = & \left | \begin{array}{ccc} -2-\lambda & 0 & 1 \\ -1 & -1-\lambda & 1 \\ -2 & 0 & 1-\lambda  \end{array}\right | \\ & & \\
+& = & (-1-\lambda)\left | \begin{array}{cc} -2-\lambda & 1 \\ -2 & 1-\lambda  \end{array}\right | \\ & & \\
+& = & (-1-\lambda) ((-2-\lambda)(1-\lambda) - (-2)) \\ & & \\
+& = & (-1-\lambda)(-2+2\lambda-\lambda+\lambda^2+2) \\ & & \\
+& = & (-1-\lambda)(\lambda^2+\lambda) \\ & & \\
+& = & (-1-\lambda)\lambda (\lambda+1) \\ & & \\
+& = & -\lambda(\lambda+1)^2\end{array} 
+$$
+
+La matriz $A$ tiene dos valores propios: $\lambda=0$, con multiplicidad algebraica $1$ y $\lambda=-1$ con multiplicidad algebraica $2$.
+</li>
+<li> Calculamos una base de cada uno de los subespacios propios, y las unimos:
+  <ul>
+  <li> Subespacio $V_0$. Este subespacio viene definido por un sistema de ecuaciones cuya matriz de coeficientes es $A-0Id = A$. Resolvemos el sistema:
+$$
+\begin{array}{c}
+\left (\begin{array}{rrr} -2 & 0 & 1 \\ -1 & -1 & 1 \\ -2 & 0 & 1 \end{array}\right )
+  \stackrel{\stackrel{E_{12}(-3)}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 & 3 & -2 \\ -1 & -1 & 1 \\ -2 & 0 & 1 \end{array}\right )
+  \stackrel{\stackrel{E_{21}(1)}{\stackrel{E_{31}(2)}{}}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 & 3 & -2 \\ 0 & 2 & -1 \\ 0 & 6 & -3 \end{array}\right ) \\ \\
+\stackrel{\stackrel{E_{12}\left (\frac{1}{2}\right )}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 & 3 & -2 \\ & & \\ 0 & 1 & \frac{-1}{2} \\ & & \\ 0 & 6 & -3 \end{array}\right )
+  \stackrel{\stackrel{E_{12}(-3)}{\stackrel{E_{32}(-6)}{}}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 & 0 & \frac{-1}{2} \\ & & \\ 0 & 1 & \frac{-1}{2} \\ & & \\ 0 & 0 & 0 \end{array}\right ) \end{array}
+$$
+
+Luego $V_0\equiv \left\{ \begin{array}{rrrrrrr} x & & & - & \frac{1}{2} z & = & 0 \\ &&&&&& \\ & & y & - & \frac{1}{2}z & = & 0 \end{array}\right.$, es decir, $V_0\equiv \left\{ \begin{array}{rrr} x & = & \frac{z}{2}  \\ & & \\ y & = & \frac{z}{2} \end{array}\right.$
+
+Una base de $V_0$ la obtenemos dándole a $z$ el valor $2$, y nos queda $B_{V_0}=\{(1,1,2)\}$. 
+
+  </li>
+  <li> Subespacio $V_{-1}$. Repetimos lo el apartado anterior pero con la matriz $A-(-Id) = A+Id$.
+$$
+\left (\begin{array}{rrr} -1 &0 & 1 \\ 0 & 0 & 0 \\ -2 & 0 & 2 \end{array}\right )
+  \stackrel{\stackrel{E_{1}(-1)}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &0 & -1 \\ 0 & 0 & 0 \\ -2 & 0 & 2 \end{array}\right )
+  \stackrel{\stackrel{E_{31}(2)}{}}{\longrightarrow}
+\left (\begin{array}{rrr} 1 &0 & -1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right )
+$$
+
+$V_{-1}\equiv x-z=0$, luego $\text{dim}(V_{-1}) = 2$ y una base es $B_{V_{1}}=\{(1,0,1),\ (0,1,0)\}$.
+
+  </li>
+  </ul>
+La base $B$ se obtiene uniendo ambas bases: $B=\{(1,1,2),\ (1,0,1),\ (0,1,0)\}$.
+
+</li>
+<li> Calculamos la imagen de los tres vectores de $B$:
+<ul>
+  <li> $f(1,1,2) = (0,0,0)$.</li>
+
+  <li> $f(1,0,1) = (-2+1,-1+1,-2+1) = (-1,0,-1) = 0\cdot (1,1,2) -1\cdot (1,0,1) + 0\cdot (0,1,0)$.</li>
+
+  <li> $f(0,1,0) = (0,-1,0) = 0\cdot (1,1,2) + 0\cdot (1,0,1) -1\cdot (0,1,0)$.</li>
+</ul>
+
+Luego $M_B(f) = \left (\begin{array}{rrr} 0 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{array}\right )$.
+
+</li>
+<li> Sabemos que $\text{dim}(Im(f)) = 2$ (pues $\text{rg}(A)=2$). Además, los vectores de $V_{-1}$ pertenecen a $\text{Im}(f)$. Por tanto, tenemos que  $\text{Im}(f)=V_{-1}$. Las ecuaciones están calculadas más arriba: $\text{Im}(f) \equiv x-z=0$.
+
+</li>
+</ol>
+
+::::
+:::::
+
+
+
 <!-- ::::: {.test}
 <iframe src="/assets/autoevaluacion/AutoevaluacionDS.html" style="border:none;" height="1000" width="100%" title="Autoevaluación"></iframe>
 ::::: -->

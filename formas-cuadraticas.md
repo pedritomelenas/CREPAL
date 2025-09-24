@@ -12,7 +12,7 @@ format:
 
 <!-- LTeX: language=es-ES --->
 
-*Formas bilineales y cuadráticas. Matriz asociada a una forma cuadrática. Diagonalización por congruencia de una matriz simétrica (mediante operaciones elementales). Clasificación de formas cuadráticas/matrices simétricas reales. Signatura de una forma cuadrática.*
+*Formas bilineales y cuadráticas. Matriz asociada a una forma cuadrática. Diagonalización por congruencia de una matriz simétrica (mediante operaciones elementales). Diagonalización por semejanza ortogonal. Clasificación de formas cuadráticas/matrices simétricas reales. Signatura de una forma cuadrática.*
 
 <!--Se muestran ejercicios sobre cuerpos finitos y sobre los racionales y reales. Puedes cambiar esta opción marcando o desmarcando la siguiente casilla.<br>-->
 

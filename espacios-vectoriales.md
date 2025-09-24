@@ -51,6 +51,92 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
 })
 </script>
 
+::: {.callout-tip collapse="true" title="GLOSARIO" icon="false" .table_glossary}
+
+<table>
+    <thead>
+        <tr>
+            <th>Término</th>
+            <th>Sinónimos / Abreviatura</th>
+            <th>Definición / Referencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Combinación lineal de vectores</td>
+            <td>c.l.</td>
+            <td>Vector obtenido del conjunto inicial usando las operaciones del espacio vectorial.</td>
+        </tr>
+        <tr>
+            <td>Vectores linealmente dependientes <br> Vectores linealmente independientes</td>
+            <td>l.d.<br> <br>l.i.</td>
+            <td><a href="https://www.ugr.es/~pedro/alem/vectores.pdf">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/2-1.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Base de un espacio vectorial</td>
+            <td><br></td>
+            <td><a href="https://es.wikipedia.org/wiki/Base_(%C3%A1lgebra)">Wikipedia: Base</a></td>
+        </tr>
+        <tr>
+            <td>Dimensión de un espacio vectorial</td>
+            <td>$dim V$</td>
+            <td>Número de vectores que hay en cualquiera de sus bases (si existe alguna)</td>
+        </tr>
+        <tr>
+            <td>Coordenadas de un vector respecto de una base</td>
+            <td><br></td>
+            <td><a href="https://www.ugr.es/~lmerino/2-1.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Ecuaciones del cambio de base</td>
+            <td><br></td>
+            <td><a href="https://www.ugr.es/~lmerino/2-2.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Subespacio vectorial</td>
+            <td>Variedad lineal</td>
+            <td><a href="https://es.wikipedia.org/wiki/Base_(%C3%A1lgebra)">Wikipedia: Subespacio vectorial</a></td>
+        </tr>
+        <tr>
+            <td>Ecuaciones paramétricas de un subespacio</td>
+            <td><br></td>
+            <td><a href="https://www.ugr.es/~lmerino/2-3.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Ecuaciones cartesianas de un subespacio</td>
+            <td>Ecuaciones implícitas</td>
+            <td><a href="https://www.ugr.es/~lmerino/2-3.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Suma de dos subespacios</td>
+            <td>$U+W$</td>
+            <td>Menor subespacio que contiene a ambos <br> 
+            <a href="https://www.ugr.es/~lmerino/2-4.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Intersección de dos subespacios</td>
+            <td>$U\cap W$</td>
+            <td>Conjunto de vectores que pertenecen simultáneamente a ambos subespacios <br> 
+            <a href="https://www.ugr.es/~lmerino/2-4.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Suma directa de dos subespacios</td>
+            <td>$U\oplus W$</td>
+            <td>Suma de dos subespacios con intersección 0<br> 
+            <a href="https://www.ugr.es/~lmerino/2-5.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Subespacios complementarios</td>
+            <td><br></td>
+            <td>Aquellos que verifican que su suma es el espacio total y su intersección es 0<br> 
+            <a href="https://www.ugr.es/~lmerino/2-4.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
 ::::: {#exr-1 .avanzado}
 
 En $\mathbb{R}^4$ se considera el conjunto 
@@ -598,6 +684,7 @@ e_{3}=(0,1,1)
 \end{array}
 \right\}\quad x=(1,0,2).
 $$
+
 </li>
 <li>
 $$
@@ -610,6 +697,7 @@ e_{4}=(0,0,0,1)
 \end{array}
 \right\}\quad x=(1,0,1,0).
 $$
+
 </li>
 </ol>
 
@@ -724,7 +812,7 @@ luego son base (la matriz de coeficientes tiene rango cuatro) y $x=(1,-1,1,0)_B$
 
 Comprobemos el resultado obtenido con <code>sage</code>.
 
-:::{.sage}
+::: {.sage}
 <script type="text/x-sage">
 A=matrix([[1,1,1,1],[0,1,1,1],[0,0,1,1],[0,0,0,1]])
 b=vector([1,0,1,0]) 
@@ -733,8 +821,8 @@ show(Ab,"~",Ab.rref())
 </script>
 :::
 </li>
-
 </ol>
+
 ::::
 :::::
 
@@ -863,8 +951,8 @@ $$
 $$
 
 que como tiene una fila entera de ceros tiene rango menor que cuatro, luego no son sistema de generadores.</li>
-
 </ol>
+
 ::::
 :::::
 
@@ -976,8 +1064,8 @@ t & 0 & 1
 $$ 
 
 e imponiendo que su rango debe ser dos, con lo que hay que elegir dos menores de orden tres que al igualarlos a cero nos den dos ecuaciones que no sean múltiplo una de la otra. Este procedimiento es en general mucho más laborioso.</li>
-
 </ol>
+
 ::::
 :::::
 
@@ -1156,6 +1244,7 @@ $$
 son unas ecuaciones paramétricas de $W$.</li>
 
 </ol>
+
 ::::
 :::::
 
@@ -1249,6 +1338,7 @@ $$
 $$
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1687,6 +1777,7 @@ z=0.
 $$
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1946,6 +2037,7 @@ Si $a=-1$, $\dim(U)=2$, $\dim(W)=2$, $\dim(U+W)=4$ y $\dim(U\cap W)=0$.
 Si $a\not =0,-1$, $\dim(U)=1$, $\dim(W)=3$, $\dim(U+W)=4$ y $\dim(U\cap W)=0$.
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -1974,6 +2066,7 @@ a+1 & a^2-1
 $$
 
 Así que son linealmente independientes para todos los valores reales excepto para $a=2$ y $a=-1$.
+
 ::::
 :::::
 
@@ -2080,6 +2173,7 @@ $Q=\left( \begin{array}{rr}
 $$
 B \longrightarrow^{P}  B_c \longleftarrow^{Q} B'
 $$
+
 entonces la matriz de cambio de base de $B$ a $B'$ será $Q^{-1}\cdot P$.
 
 Calculamos $Q^{-1}$:
@@ -2447,6 +2541,7 @@ y finalmente, obtenemos la base de $U\cap W$: $\{ (1,4,1,0)\}$
 
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -3112,7 +3207,6 @@ $$
 <li> Calcula la base más sencilla de $W$ según los valores de $a$. </li>
 
 <li> Para $a=1$ calcula $U+W$ y $U\cap W$. </li>
-
 </ol>
 
 :::: {.callout collapse="true" title="Solución"}
@@ -3614,6 +3708,1244 @@ y el primer polinomio está en $U$ y el segundo en $W$.
 
 ::::
 :::::
+
+::::: {#exr-29 .basico-cuerpo_finito} 
+
+Sea $U$ el subespacio de $(\mathbb{Z}_2)^4$ generado por los vectores 
+
+$$
+(1,1,1,0), \quad (0,1,1,1), \quad (1,0,0,1),
+$$
+
+y $W$ el subespacio de $(\mathbb{Z}_2)^4$ definido por las ecuaciones:
+
+$$
+\begin{cases}
+x+y+z=0 \\
+z+t=0
+\end{cases}
+$$
+
+Calcula las ecuaciones cartesianas y una base de $U+W$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+En primer lugar, calculamos una base de $U$ a partir de sus generadores:
+
+$$
+\begin{pmatrix}
+1 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 1
+\end{pmatrix}
+\overset{E_{31}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 1 & 1 & 0 \\
+0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1
+\end{pmatrix}
+\overset{E_{12}(1),\,E_{32}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{pmatrix}.
+$$
+
+De aquí resulta que:
+
+$$
+B_U = \{(1,0,0,1), (0,1,1,1)\}.
+$$
+
+En cuanto a $W$, su dimensión es $4-2=2$. Tomando valores particulares, obtenemos:
+
+$$
+B_W = \{(1,0,1,1), (0,1,1,1)\}.
+$$
+
+Unimos estas bases para formar un sistema de generadores de $U+W$:
+
+$$
+\begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 1
+\end{pmatrix}
+\overset{E_{31}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 1 & 1 & 1
+\end{pmatrix}
+\overset{E_{42}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+\overset{E_{23}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}.
+$$
+
+Así, una base de $U+W$ es:
+
+$$
+B_{U+W} = \{(1,0,0,1), (0,1,0,1), (0,0,1,0)\}.
+$$
+
+A partir de esta base, escribimos las ecuaciones paramétricas:
+
+$$
+x=a, \quad y=b, \quad z=c, \quad t=a+b.
+$$
+
+De aquí resulta la ecuación cartesiana:
+
+$$
+t = x+y \quad \Longleftrightarrow \quad x+y+t=0 \quad \text{en } \mathbb{Z}_2.
+$$
+
+::::
+:::::
+
+::::: {#exr-30 .basico-cuerpo_finito} 
+
+Sean $U$ y $W$ los siguientes subespacios de $(\mathbb{Z}_3)^3$:
+$$
+U = L\{(1,2,1), (1,0,2)\}, 
+\quad
+W \equiv
+\begin{cases}
+2y+z=0 \\
+x+y+2z=0
+\end{cases}
+$$
+
+<ol type='a'>
+<li> Calcula las ecuaciones cartesianas de $U$.</li>
+<li> Calcula las ecuaciones cartesianas de $U+W$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Vamos a obtener una base de $U$ lo más sencilla posible. Partimos de la matriz:
+$$
+\begin{pmatrix}
+1 & 2 & 1 \\
+1 & 0 & 2
+\end{pmatrix}
+\overset{E_{21}(2)}{\longrightarrow}
+\begin{pmatrix}
+1 & 2 & 1 \\
+0 & 1 & 1
+\end{pmatrix}
+\overset{E_{12}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 2 \\
+0 & 1 & 1
+\end{pmatrix}
+$$
+
+De aquí se obtiene que
+$$
+B_U = \{(1,0,2), (0,1,1)\}
+$$
+es una base de $U$. (También lo es $\{(1,2,1), (1,0,2)\}$, pero la elegida simplifica los cálculos).
+
+Un vector $(x,y,z)$ pertenece a $U$ si:
+$$
+(x,y,z) = a(1,0,2) + b(0,1,1) \implies 
+\begin{cases}
+x = a \\
+y = b \\
+z = 2a+b
+\end{cases}
+$$
+Por tanto, $z = 2x+y$. Es decir, $U$ queda definido por la ecuación cartesiana:
+$$
+x + 2y + z = 0 \quad \text{en } \mathbb{Z}_3.
+$$
+
+</li>
+<li>Calculamos $U+W$. Como $W$ está definido por dos ecuaciones, su dimensión es $3-2=1$, por lo que una base de $W$ está formada por un vector.
+
+Resolvemos el sistema:
+$$
+\begin{cases}
+2y+z=0 \\
+x+y+2z=0
+\end{cases}
+\quad \Longleftrightarrow \quad
+\begin{pmatrix}
+0 & 2 & 1 \\
+1 & 1 & 2
+\end{pmatrix}
+\overset{E_{12}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 0 \\
+1 & 1 & 2
+\end{pmatrix}
+\overset{E_{21}(2)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 2
+\end{pmatrix}
+$$
+
+De aquí se deduce:
+$$
+W \equiv \{x=0, \; y+2z=0\}.
+$$
+Tomando $z=1$, se obtiene el vector $(0,1,1)$, por lo que:
+$$
+B_W = \{(0,1,1)\}.
+$$
+
+Como $(0,1,1) \in U$, se concluye que $W \subseteq U$. Entonces:
+$$
+U+W = U,
+$$
+y por tanto,
+$$
+U+W \equiv x+2y+z=0.
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-31 .basico-cuerpo_finito} 
+
+Sean 
+$$
+X_1 = \{(1,3,2), (3,4,3)\}, \quad 
+X_2 = \{(1,1,3), (2,1,2), (3,1,1), (0,1,2)\}
+$$
+dos subconjuntos de $(\mathbb{Z}_5)^3$.
+
+<ol type='a'>
+<li> Comprueba que los vectores de $X_1$ son linealmente independientes y amplía este conjunto a una base de $(\mathbb{Z}_5)^3$ (llámala $B_1$).</li>
+<li> Comprueba que los vectores de $X_2$ forman un sistema de generadores de $(\mathbb{Z}_5)^3$. Toma una base contenida en $X_2$ (llámala $B_2$).</li>
+<li> Calcula la matriz del cambio de base de $B_1$ a $B_2$.</li>
+<li> Sea $u$ el vector cuyas coordenadas en $B_1$ son $(1,1,1)$. ¿Cuál es $u$? ¿Cuáles son sus coordenadas en $B_2$?</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Para comprobar si los vectores de $X_1$ son linealmente independientes, formamos la matriz:
+$$
+\begin{pmatrix}
+1 & 3 & 2 \\
+3 & 4 & 3
+\end{pmatrix}
+$$
+y verificamos que su rango coincide con el número de vectores.
+$$
+\det \begin{pmatrix}
+3 & 2 \\ 4 & 3
+\end{pmatrix}
+= 9 - 8 = 1 \neq 0
+$$
+Por tanto, son linealmente independientes. Ampliamos con $(1,0,0)$:
+$$
+B_1 = \{(1,3,2), (3,4,3), (1,0,0)\}.
+$$
+
+</li>
+<li>Consideramos la matriz con los vectores de $X_2$ como columnas:
+$$
+\begin{pmatrix}
+1 & 2 & 3 & 0 \\
+1 & 1 & 1 & 1 \\
+3 & 2 & 1 & 2
+\end{pmatrix}
+$$
+y tras operaciones elementales se obtiene rango 3. Así, $X_2$ es un sistema de generadores. Eliminando $(3,1,1)$ (que es combinación de los demás), obtenemos:
+$$
+B_2 = \{(1,1,3), (2,1,2), (0,1,2)\}.
+$$
+
+</li>
+<li>La matriz de cambio de base es:
+$$
+M_{B_1 \to B_2} = 
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 4 & 3 \\
+2 & 0 & 2
+\end{pmatrix}.
+$$
+
+</li>
+<li>El vector
+$$
+u = 1(1,3,2) + 1(3,4,3) + 1(1,0,0) = (0,2,0).
+$$
+Sus coordenadas en $B_2$ se obtienen:
+$$
+M_{B_1 \to B_2} \cdot 
+\begin{pmatrix}
+1 \\ 1 \\ 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \\ 2 \\ 4
+\end{pmatrix}.
+$$
+Por tanto, en $B_2$ el vector $u$ tiene coordenadas $(1,2,4)$.
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-32 .basico-cuerpo_finito} 
+
+Sean 
+$$
+B_1 = \{(2,3,4),\,(3,3,0),\,(2,4,0)\}, 
+\quad 
+B_2 = \{(1,1,1),\,(0,2,1),\,(3,1,4)\}
+$$
+dos bases de $(\mathbb{Z}_5)^3$.  
+
+Calcula la matriz del cambio de base de $B_1$ a $B_2$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Sabemos que
+$$
+M_{B_1 \to B_2} = M_{B_c \to B_2}\, M_{B_1 \to B_c}.
+$$
+
+$$
+M_{B_1 \to B_c} =
+\begin{pmatrix}
+2 & 3 & 2 \\
+3 & 3 & 4 \\
+4 & 0 & 0
+\end{pmatrix},
+\qquad
+M_{B_c \to B_2} = (M_{B_2 \to B_c})^{-1} =
+\begin{pmatrix}
+1 & 0 & 3 \\
+1 & 2 & 1 \\
+1 & 1 & 4
+\end{pmatrix}^{-1}
+=
+\begin{pmatrix}
+3 & 2 & 1 \\
+3 & 4 & 3 \\
+1 & 1 & 3
+\end{pmatrix}.
+$$
+
+Por tanto:
+$$
+M_{B_1 \to B_2} =
+\begin{pmatrix}
+3 & 2 & 1 \\
+3 & 4 & 3 \\
+1 & 1 & 3
+\end{pmatrix}
+\begin{pmatrix}
+2 & 3 & 2 \\
+3 & 3 & 4 \\
+4 & 0 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 0 & 4 \\
+0 & 1 & 2 \\
+2 & 1 & 1
+\end{pmatrix}.
+$$
+
+<b> Otra forma de resolverlo</b>
+
+Podemos calcular directamente las coordenadas de los vectores de $B_1$ en la base $B_2$.
+
+$$
+(2,3,4) = a(1,1,1) + b(0,2,1) + c(3,1,4).
+$$
+Resolviendo:
+$$
+\begin{cases}
+a + 3c = 2, \\
+a + 2b + c = 3, \\
+a + b + 4c = 4,
+\end{cases}
+\quad \Rightarrow \quad a=1,\; b=0,\; c=2.
+$$
+
+Así, la primera columna de $M_{B_1 \to B_2}$ es $(1,0,2)^T$.  
+
+De manera análoga, para $(3,3,0)$:
+$$
+(3,3,0) = a'(1,1,1) + b'(0,2,1) + c'(3,1,4),
+$$
+cuyo sistema
+$$
+\begin{cases}
+a' + 3c' = 3, \\
+a' + 2b' + c' = 3, \\
+a' + b' + 4c' = 0
+\end{cases}
+$$
+tiene solución $a'=0,\, b'=1,\, c'=1$.
+
+Para $(2,4,0)$:
+$$
+(2,4,0) = a''(1,1,1) + b''(0,2,1) + c''(3,1,4),
+$$
+cuyo sistema
+$$
+\begin{cases}
+a'' + 3c'' = 2, \\
+a'' + 2b'' + c'' = 4, \\
+a'' + b'' + 4c'' = 0
+\end{cases}
+$$
+tiene solución $a''=4,\, b''=2,\, c''=1$.
+
+Por tanto:
+$$
+M_{B_1 \to B_2} =
+\begin{pmatrix}
+1 & 0 & 4 \\
+0 & 1 & 2 \\
+2 & 1 & 1
+\end{pmatrix}.
+$$
+
+::::
+:::::
+
+::::: {#exr-33 .basico} 
+
+Sea $B=\{(1,1,-2) ;(3,1,2) ;(4,2,-1)\}$ un subconjunto de $\mathbb{Q}^{3}$ y sea $B_{c}$ la base canónica de dicho espacio vectorial.
+
+<ol type='a'>
+<li> Comprueba que B es una base.</li>
+<li> Calcula las matrices del cambio de base de B a $\mathrm{B}_{\mathrm{c}}$ y de $\mathrm{B}_{\mathrm{c}}$ a B .</li>
+<li> Calcula las coordenadas del vector $v=(3,-1,2)$ en la base $B$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Puesto que tenemos tres vectores en un espacio de dimensión 3 , lo que tenemos es que comprobar que estos tres vectores son linealmente independiente. Para esto, formamos una matriz con estos 3 vectores y comprobamos que su rango es igual a 3 . Esto lo comprobaremos calculando su determinante y viendo que es distinto de cero. Escribiremos los vectores por columnas.
+
+$$
+A=\left(\begin{array}{rrr}
+1 & 3 & 4 \\
+1 & 1 & 2 \\
+-2 & 2 & -1
+\end{array}\right)
+$$
+
+Su determinante vale:
+
+$$
+\operatorname{det}(A)=1 \cdot 1 \cdot(-1)+1 \cdot 2 \cdot 4+3 \cdot 2 \cdot(-2)-4 \cdot 1 \cdot(-2)-3 \cdot 1 \cdot(-1)-2 \cdot 2 \cdot 1=-1+8-12+8+3-4=2 \neq 0
+$$
+
+Al ser el determinante distinto de cero, el rango de $A$ vale 3 , luego los vectores de $B$ forman una base de $\mathbb{Q}^{3}$.
+
+</li>
+<li>Comenzamos con la matriz del cambio de base de B a $\mathrm{B}_{\mathrm{c}}$. Esta matriz es fácil de calcular, pues sus columnas son las coordenadas de los vectores de $B$ en la base canónica. Pero eso es justamente la matriz $A$ que hemos estudiado en el apartado anterior. Por tanto:
+
+$$
+M_{B \rightarrow B_{c}}=A
+$$
+
+La otra matriz que nos piden es la del cambio inverso. Esta matriz será entonces la inversa de $A$. Calculamos entonces $A^{-1}$.
+
+$$
+\left(\begin{array}{rrr|rrr}
+1 & 3 & 4 & 1 & 0 & 0 \\
+1 & 1 & 2 & 0 & 1 & 0 \\
+-2 & 2 & -1 & 0 & 0 & 1
+\end{array}\right) \xrightarrow{\mathrm{E}_{21}(-1)} \xrightarrow{\mathrm{E}_{31}(2)}\left(\begin{array}{rrr|rrr}
+1 & 3 & 4 & 1 & 0 & 0 \\
+0 & -2 & -2 & -1 & 1 & 0 \\
+0 & 8 & 7 & 2 & 0 & 1
+\end{array}\right) \xrightarrow{\mathrm{E}_{2}\left(\frac{-1}{2}\right)}\left(\begin{array}{lll|lll}
+1 & 3 & 4 & 1 & 0 & 0 \\
+0 & 1 & 1 & \frac{1}{2} & \frac{-1}{2} & 0 \\
+0 & 8 & 7 & 2 & 0 & 1
+\end{array}\right) \\
+$$
+
+$$
+\xrightarrow{\mathrm{E}_{12}(-3)}\left(\begin{array}{ccc|ccc}
+1 & 0 & 1 & \frac{-1}{2} & \frac{3}{2} & 0 \\
+0 & 1 & 1 & \frac{1}{2} & \frac{-1}{2} & 0 \\
+0 & 0 & -1 & -2 & 4 & 1
+\end{array}\right) \xrightarrow{\mathrm{E}_{3(-1)}}\left(\begin{array}{ccc|ccc}
+1 & 0 & 1 & \frac{-1}{2} & \frac{3}{2} & 0 \\
+0 & 1 & 1 & \frac{1}{2} & \frac{-1}{2} & 0 \\
+0 & 0 & 1 & 2 & -4 & -1
+\end{array}\right) 
+$$
+
+$$
+\xrightarrow{\mathrm{E}_{13}(-1)} \xrightarrow{\mathrm{E}_{23}(-1)}\left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & \frac{-5}{2} & \frac{11}{2} & 1 \\
+0 & 1 & 0 & \frac{-3}{2} & \frac{7}{2} & 1 \\
+0 & 0 & 1 & 2 & -4 & -1
+\end{array}\right)
+$$
+
+Es decir:
+
+$$
+M_{B_{c} \rightarrow B}=A^{-1}=\left(\begin{array}{ccc}
+\frac{-5}{2} & \frac{11}{2} & 1 \\
+\frac{-3}{2} & \frac{7}{2} & 1 \\
+2 & -4 & -1
+\end{array}\right)=\frac{1}{2} \cdot\left(\begin{array}{rrr}
+-5 & 11 & 2 \\
+-3 & 7 & 2 \\
+4 & -8 & -2
+\end{array}\right)
+$$
+
+</li>
+<li>Puesto que las coordenadas de $v$ en la base canónica son ( $3,-1,2$ ), para calcular sus coordenadas en $B$ únicamente hemos de multiplicar estas coordenadas por la matriz del cambio de base:
+
+$$
+(v)_{\mathrm{B}}=\mathrm{M}_{\mathrm{B}_{\mathrm{c}} \rightarrow \mathrm{~B}} \cdot(v)_{\mathrm{B}_{\mathrm{c}}}=\frac{1}{2} \cdot\left(\begin{array}{rrr}
+-5 & 11 & 2 \\
+-3 & 7 & 2 \\
+4 & -8 & -2
+\end{array}\right) \cdot\left(\begin{array}{r}
+3 \\
+-1 \\
+2
+\end{array}\right)=\frac{1}{2}\left(\begin{array}{r}
+-22 \\
+-12 \\
+16
+\end{array}\right)=\left(\begin{array}{r}
+-11 \\
+-6 \\
+8
+\end{array}\right)
+$$
+
+Es decir, las coordenadas de $v$ en la base $B$ son $(-11,-6,8)$, como podemos comprobar fácilmente:
+
+$$
+-11 \cdot(1,1,-2)-6 \cdot(3,1,2)+8 \cdot(4,2,-1)=(-11,-11,22)+(-18,-6,-12)+(32,16,-8)=(3,-1,2)=v
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-34 .medio-cuerpo_finito} 
+
+Sean $B_1 = \{(1,0,-1),\ (2,1,1),\ (0,1,1)\}$ un subconjunto de ${\mathbb Q}^3$ y sea $A = \left (\begin{array}{ccc} 1 & 1 & 1 \\ 1 & 2 & 2 \\ 1 & 2 & 3 \end{array}\right )\in M_3({\mathbb Q})$.
+
+<ol type='a'>
+<li> Comprueba que $B_1$ es una base de ${\mathbb Q}^3$ y que la matriz $A$ es regular.</li>
+<li> Sea $B_2$ la base de ${\mathbb Q}^3$ para la que la matriz del cambio de base $B_1$ a $B_2$ es $A$. Calcula la base $B_2$.</li>
+<li> Sea $u$ el vector cuyas coordenadas en $B_1$ son $(1,1,1)$. Calcula el vector $u$ y sus coordenadas en $B_2$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Para que $B_1$ sea una base, los vectores tienen que ser linealmente independientes, y para ello, el rango de la matriz $C =\left  (\begin{array}{rrr} 1 & 0 & -1 \\ 2 & 1 & 1 \\ 0 & 1 & 1 \end{array}\right )$ debe ser igual a $3$. Calculamos su determinante:
+
+$$
+\text{det}(C) = 1 + (-2) + 0 - 0 - 1 = -2 \neq 0.
+$$
+
+Lo que nos dice que el rango de $C$ es igual a $3$ y por tanto, $B_1$ es una base.
+
+Para ver si la matriz $A$ es regular calculamos su determinante, y este vale $6 + 2 + 2 - 2 - 3 - 4 = 1 \neq 0$, por lo que la matriz $A$ es regular.
+
+</li>
+<li>Vamos a calcular $M_{B_2\rightarrow B_c}$, donde $B_c$ es la base canónica de ${\mathbb Q}^3$. Las columnas de esta matriz serán los vectores de $B_2$ (para ser más precisos, serán las coordenadas de los vectores de $B_2$ en la base canónica).
+
+
+Se tiene que $M_{B_2 \rightarrow B_c} = M_{B_1\rightarrow B_c} \cdot M_{B_2\rightarrow B_1} =  M_{B_1\rightarrow B_c} \cdot
+(M_{B_1\rightarrow B_2})^{-1}$.
+
+
+
+Calculamos entonces $A^{-1}$.
+
+
+$$
+\begin{array}{l}
+\qquad \quad\left (\begin{array}{rrrrrr}
+1 & 1 & 1 & 1 & 0 & 0 \\ 1 & 2 & 2 & 0 & 1 & 0 \\ 1 & 2 & 3 & 0 & 0 & 1 \end{array}\right ) \stackrel{E_{21}(-1)}{\stackrel{E_{31}(-1)}{\longrightarrow}}
+\left (\begin{array}{rrrrrr}
+1 & 1 & 1 & 1 & 0 & 0 \\ 0 & 1 & 1 & -1 & 1 & 0 \\ 0 & 1 & 2 & -1 & 0 & 1 \end{array}\right ) \stackrel{E_{12}(-1)}{\stackrel{E_{32}(-1)}{\longrightarrow}} \\
+\stackrel{E_{12}(-1)}{\stackrel{E_{32}(-1)}{\longrightarrow}} \left (\begin{array}{rrrrrr}
+1 & 0 & 0 & 2 & -1 & 0 \\ 0 & 1 & 1 & -1 & 1 & 0 \\ 0 & 0 & 1 & 0 & -1 & 1 \end{array}\right ) \stackrel{E_{23}(-1)}{\longrightarrow}
+\left (\begin{array}{rrrrrr}
+1 & 0 & 0 & 2 & -1 & 0 \\ 0 & 1 & 0 & -1 & 2 & -1 \\ 0 & 0 & 1 & 0 & -1 & 1 \end{array}\right )
+\end{array}$$
+
+
+Y con esto, ya podemos calcular la matriz que nos piden:
+$$
+M_{B_2\rightarrow B_c} = \left (\begin{array}{rrr} 1 & 2 & 0 \\ 0 & 1 & 1 \\ -1 & 1 & 1 \end{array} \right ) \cdot \left  (\begin{array}{rrr} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 1 \end{array}\right ) = \left (\begin{array}{rrr} 0 & 3 & -2 \\ -1 & 1 & 0 \\ -3 & 2 & 0 \end{array}\right ).$$
+
+
+Por lo que $B_2 = \{(0,-1,-3),\ (3,1,2),\ (-2,0,0)\}$.
+
+
+También se podría haber obtenido $B_2$ de la siguiente forma.
+
+Sean ${\mathbf u}$, ${\mathbf v}$ y ${\mathbf w}$ los vectores de $B_2$. Del hecho de que $M_{B_1 \rightarrow B_2}=A$ sacamos que:
+
+<ul>
+<li> ${\mathbf u} + {\mathbf v} + {\mathbf w} = (1,0,-1)$ (pues las coordenadas del primer vector de $B_1$ en $B_2$ son $(1,1,1)$).</li>
+<li> ${\mathbf u} + 2{\mathbf v} + 2{\mathbf w} = (2,1,1)$ (pues las coordenadas del segundo vector de $B_1$ en $B_2$ son $(1,2,2)$).</li>
+<li> ${\mathbf u} + 2{\mathbf v} + 3{\mathbf w} = (0,1,1)$ (pues las coordenadas del tercer vector de $B_1$ en $B_2$ son $(1,2,3)$). </li>
+</ul>
+
+De aquí obtenemos que ${\mathbf w} = ({\mathbf u} + 2{\mathbf v} + 3{\mathbf w}) - ({\mathbf u} + 2{\mathbf v} + 2{\mathbf w}) = (0,1,1) - (2,1,1) = (-2,0,0)$.
+
+También que ${\mathbf v} + {\mathbf w} = ({\mathbf u} + 2{\mathbf v} + 2{\mathbf w}) - ({\mathbf u} + {\mathbf v} + {\mathbf w}) = (2,1,1) - (1,0,-1) = (1,1,2)$.
+
+Ahora, vemos que ${\mathbf v} = ({\mathbf v} + {\mathbf w}) - {\mathbf w} = (1,1,2) - (-2,0,0) = (3,1,2)$.
+
+Y por último, ${\mathbf u} = ({\mathbf u} + {\mathbf v} + {\mathbf w}) - ({\mathbf v} + {\mathbf w}) = (1,0,-1) - (1,1,2) = (0,-1,-3)$.
+
+</li>
+<li>Dado que $u$ tiene coordenadas $(1,1,1)$ en $B_1$, se tiene que $u$ es la suma de los tres vectores de la base $B_1$, es decir, $u=(3,2,1)$.
+
+Y puesto que tenemos la matriz del cambio de base de $B_1$ a $B_2$ (que es $A$) , solo hay que multiplicar esta matriz por las coordenadas del vector en $B_1$.
+
+$$
+(u)_{B_2} = M_{B_1\rightarrow B_2} \cdot (u)_{B_1} = \left (\begin{array}{rrr} 1 & 1 & 1 \\ 1 & 2 & 2 \\ 1 & 2 & 3 \end{array}\right ) \cdot \left (\begin{array}{r} 1 \\ 1 \\ 1 \end{array}\right ) = \left (\begin{array}{r} 3 \\ 5 \\ 6 \end{array}\right ).
+$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-35 .medio-cuerpo_finito} 
+
+Sea $A=\left (\begin{array}{ccc} 1 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 1 \end{array}\right )\in M_3({\mathbb Z}_2)$ y sea $B_1=\{(1,1,0),\ (0,1,1), (1,1,1)\}$ un subconjunto de $({\mathbb Z}_2)^3$.
+
+
+<ol type='a'>
+<li> Comprueba que $B_1$ es una base de $({\mathbb Z}_2)^3$.</li>
+<li> Sea $B_2$ una base tal que $M_{B_2\rightarrow B_1} = A$. Calcula la base $B_2$.</li>
+<li> Calcula la matriz del cambio de base de $B_c$ a $B_1$, donde $B_c$ es la base canónica de $({\mathbb Z}_2)^3$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Para comprobar que $B_1$ es una base, formamos una matriz cuyas columnas (o filas) son las coordenadas de los vectores de $B_1$ en $B_c$ y calculamos el rango. Si el rango es $3$, $B_1$ será una base.
+
+$$
+C = \left (\begin{array}{ccc} 1 & 0 & 1 \\ 1 & 1 & 1 \\ 0 & 1 & 1 \end{array}\right );\ 
+\text{rg}(C) = 3 \text{ pues } \text{det}(C) = 1 + 1 + 0 - 0 - 0 - 1 = 1\neq 0.
+$$
+
+</li>
+<li>Calculamos $M_{B_2\rightarrow B_c}$. Sabemos que $M_{B_2\rightarrow B_c} = M_{B_1\rightarrow B_c}\cdot M_{B_2\rightarrow B_1} = C\cdot A$. Multiplicamos ambas matrices:
+$$
+M_{B_2\rightarrow B_c} = C\cdot A = \left (\begin{array}{ccc} 1 & 0 & 1 \\ 1 & 1 & 1 \\ 0 & 1 & 1 \end{array}\right )\cdot \left (\begin{array}{ccc} 1 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 1 \end{array}\right ) = \left (\begin{array}{ccc} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 1 & 1 & 1 \end{array}\right ).$$
+
+Los vectores de $B_2$ son las columnas de esta matriz. Es decir:
+$$
+B_2 = \{(1,0,1),\ (1,1,1),\ (0,0,1)\}.$$
+
+También podríamos haber calculado $B_2$ como sigue:
+Supongamos que $B_2=\{v_1,\ v_2,\ v_3\}$, y llamemos $u_1,u_2,u_3$ a los tres vectores de $B_1$. Entonces, el que la matriz de cambio de base de $B_2$ a $B_1$ nos dice que:
+
+<ul>
+<li> $v_1 = 1\cdot u_1 + 1\cdot u_2 + 0\cdot u_3 = (1,1,0) + (0,1,1) = (1,0,1)$. </li>
+<li> $v_2 = 0\cdot u_1 + 0\cdot u_2 + 1\cdot u_3 = (1,1,1)$. </li>
+<li> $v_3 = 1\cdot u_1 + 0\cdot u_2 + 1\cdot u_3 = (1,1,0) + (1,1,1) = (0,0,1)$. </li>
+</ul>
+
+Como vemos, coinciden.
+
+</li>
+<li>Tenemos que $M_{B_c\rightarrow B_1} = (M_{B_1\rightarrow B_c})^{-1} = C^{-1}$. Realizamos el cálculo:
+
+$$\left (\begin{array}{ccc|ccc} 1 & 0 & 1 & 1 & 0 & 0 \\ 1 & 1 & 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 & 0 & 1 \end{array}\right ) \stackrel{E_{21}(1)}{\longrightarrow}
+\left (\begin{array}{ccc|ccc} 1 & 0 & 1 & 1 & 0 & 0 \\ 0 & 1 & 0 & 1 & 1 & 0 \\ 0 & 1 & 1 & 0 & 0 & 1 \end{array}\right ) \stackrel{E_{32}(1)}{\longrightarrow}
+\left (\begin{array}{ccc|ccc} 1 & 0 & 1 & 1 & 0 & 0 \\ 0 & 1 & 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 1 & 1 & 1 \end{array}\right ) \stackrel{E_{13}(1)}{\longrightarrow}
+\left (\begin{array}{ccc|ccc} 1 & 0 & 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 1 & 1 & 1 \end{array}\right )$$
+
+Luego $M_{B_c\rightarrow B_1} = \left (\begin{array}{ccc} 0 & 1 & 1 \\ 1 & 1 & 0 \\ 1 & 1 & 1 \end{array}\right ).$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-36 .basico-cuerpo_finito} 
+
+En el espacio vectorial ( $\left.\mathbb{Z}_{5}\right)^{4}$ consideramos los subespacios vectoriales
+
+$$
+\begin{aligned}
+U & =\langle(0,1,1,1),(2,0,2,0)\rangle=L[(0,1,1,1),(2,0,2,0)] \\
+W & \equiv\left\{\begin{array}{c}
+x+y+z+t=0 \\
+2 x+y+2 t=0
+\end{array}\right.
+\end{aligned}
+$$
+
+Calcula unas ecuaciones cartesianas de $U+W$ y comprueba si $(1,2,2,2) \in U+W$.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Puesto que nos piden calcular la suma de los subespacios necesitamos una base de cada uno de ellos (con un sistema de generadores bastaría). Una base de $U$ la tenemos, pues nos la da el enunciado. Dicha base es $B_{U}=\{(0,1,1,1) ;(2,0,2,0)\}$.
+
+Calculamos entonces una base de $W$. Como tenemos las ecuaciones cartesianas, resolvemos el sistema que nos define $W$ :
+
+$$
+\left(\begin{array}{llll}
+1 & 1 & 1 & 1 \\
+2 & 1 & 0 & 2
+\end{array}\right) \longrightarrow\left(\begin{array}{llll}
+1 & 1 & 1 & 1 \\
+0 & 4 & 3 & 0
+\end{array}\right) \longrightarrow\left(\begin{array}{llll}
+1 & 1 & 1 & 1 \\
+0 & 1 & 2 & 0
+\end{array}\right) \longrightarrow\left(\begin{array}{llll}
+1 & 0 & 4 & 1 \\
+0 & 1 & 2 & 0
+\end{array}\right)
+$$
+
+Es decir,
+
+$$
+W \equiv\left\{\begin{array} { r l } 
+{ x } & { + 4 z + t = 0 } \\
+{ } & { y + 2 z }
+\end{array} \text { es decir, } W \equiv \left\{\begin{array}{rl}
+x & =z+4 t \\
+y & =3 z
+\end{array}\right.\right.
+$$
+
+Dándole a $z$ y a $t$ los valores 10 y 0,1 obtenemos una base de $W: B_{W}=\{(1,3,1,0) ;(4,0,0,1)\}$.\\
+Si ahora unimos las dos bases lo que obtenemos es un sistema de generadores de $U+W$. A partir de ellos vamos a obtener una base:
+
+$$
+\left(\begin{array}{llll}
+0 & 1 & 1 & 1 \\
+2 & 0 & 2 & 0 \\
+1 & 3 & 1 & 0 \\
+4 & 0 & 0 & 1
+\end{array}\right) \xrightarrow{E_{13}}\left(\begin{array}{llll}
+1 & 3 & 1 & 0 \\
+2 & 0 & 2 & 0 \\
+0 & 1 & 1 & 1 \\
+4 & 0 & 0 & 1
+\end{array}\right) \xrightarrow{E_{21}(3)}{ }^{E_{14}(1)}\left(\begin{array}{llll}
+1 & 3 & 1 & 0 \\
+0 & 4 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+0 & 3 & 1 & 1
+\end{array}\right) \xrightarrow{E_{2(4)}}\left(\begin{array}{llll}
+1 & 3 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+0 & 3 & 1 & 1
+\end{array}\right) $$
+$$
+\xrightarrow{\substack{E_{12}(2) \\
+E_{32}(4) \\
+E_{42}(2)}}\left(\begin{array}{llll}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 1 & 1
+\end{array}\right) \xrightarrow{E_{13}(4)}\left(\begin{array}{llll}
+1 & 0 & 0 & 4 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+Y por tanto vemos que una base de $U+W$ es $B_{U+W}=\{(1,0,0,4) ;(0,1,0,0) ;(0,0,1,1)\}$.\\
+Puesto que $\operatorname{dim}(U+W)=3$ y $U+W$ es subespacio de $\left(\mathbb{Z}_{5}\right)^{4}$, el subespacio $U+W$ viene dado por $4-3=1$ ecuación cartesiana. Para calcularla escribimos las ecuaciones paramétricas, y esto lo hacemos teniendo en cuenta que un vector $(x, y, z, t) \in U+W$ si, y sólo si, es combinación lineal de los vectores de la base. Por tanto, deben poder expresarse de la forma:
+
+$$
+(x, y, z, t)=a(1,0,0,4)+b(0,1,0,0)+c(0,0,1,1)
+$$
+
+o lo que es lo mismo:
+
+$$
+\begin{aligned}
+x & =a \\
+y & = b\\
+z & =c \\
+t & =4a+c
+\end{aligned}
+$$
+
+Y aquí vemos que si $(x, y, z, t) \in U+W$ se tiene que $t=4 x+z$. Por tanto, $U+W \equiv x+4 z+t=0$. Y ya tenemos las ecuaciones cartesianas de $U+W$ (en este caso, la ecuación cartesiana).
+
+Para comprobar si $(1,2,2,2) \in U+W$ basta comprobar si satisface la ecuación. Puesto que $1+4 \cdot 2+2=1 \neq 0$ dicho vector no pertenece a $U+W$.
+
+::::
+:::::
+
+::::: {#exr-37 .basico} 
+
+Sean $B_1 = \{(1,0,-1),\ (2,1,1),\ (0,1,1)\}$ y $B_2 = \{(1,0,1),\ (0,1,-1),\ (1,1,1)\}$ dos subconjuntos de ${\mathbb Q}^3$.
+
+
+<ol type='a'>
+<li> Comprueba que $B_1$ y $B_2$ son bases de ${\mathbb Q}^3$.</li>
+<li> Calcula la matriz del cambio de base de $B_1$ a $B_2$.</li>
+<li> Sea $u$ el vector cuyas coordenadas en $B_1$ son $(1,1,1)$. Calcula el vector $u$ y sus coordenadas en $B_2$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Para que $B_1$ sea una base de ${\mathbb Q}^3$ basta con que los tres vectores de $B_1$ sean linealmente independientes. Y para esto, basta ver que el rango de una matriz cuyas filas (o columnas) sean las coordenadas de estos vectores es igual a $3$. Formamos esa matriz
+
+$$
+\left (\begin{array}{rrr} 1 & 0 & -1 \\ 2 & 1 & 1 \\ 0 & 1 & 1 \end{array}\right )$$
+
+Y vemos que su rango es igual a $3$, ya que su determinante es igual a $1-2+0-0-0-1=-2$, que es distitno de cero.
+
+Para $B_2$ procedemos de igual forma:
+
+$\text{det}\left (\begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & -1 \\ 1 & 1 & 1 \end{array}\right ) = \text{det}\left (\begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 1 & 0 \end{array}\right ) = -\text{det}\left (\begin{array}{rr} 1 & 1 \\ 0 & -1 \end{array}\right ) = - (-1) = 1 \neq 0.$
+
+</li>
+<li>La matriz del cambio de base de $B_1$ a $B_2$ la podemos calcular como sigue:
+
+
+
+$M_{B_1\rightarrow B_2} = M_{B_c\rightarrow B_2}\cdot M_{B_1\rightarrow B_c} = \left (M_{B_2\rightarrow B_c}\right )^{-1}\cdot M_{B_1\rightarrow B_c} =\left (\begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 1 & -1 & 1 \end{array}\right )^{-1} \cdot  \left (\begin{array}{rrr} 1 & 2 & 0 \\ 0 & 1 & 1 \\ -1 & 1 & 1 \end{array}\right )$
+
+
+
+Para calcular esta matriz tenemos en cuenta que si $A$ y $C$ son dos matrices (con el mismo número de filas) y $A$ es regular, entonces si partimos de la matriz $(A|C)$, su forma escalonada reducida por filas es $(Id|A^{-1}\cdot C)$.
+
+
+
+$$\begin{array}{l}
+\quad \left ( \begin{array}{rrr|rrr} 1 & 0 & 1 & 1 & 2 & 0 \\ 0 & 1 & 1 & 0 & 1 & 1 \\ 1 & -1 & 1 & -1 & 1 & 1 \end{array}\right ) \stackrel{E_{31}(-1)}{\longrightarrow} \left ( \begin{array}{rrr|rrr} 1 & 0 & 1 & 1 & 2 & 0 \\ 0 & 1 & 1 & 0 & 1 & 1 \\ 0 & -1 & 0 & -2 & -1 & 1 \end{array}\right ) \\
+\ \ \   \stackrel{E_{32}(1)}{\longrightarrow} \left ( \begin{array}{rrr|rrr} 1 & 0 & 1 & 1 & 2 & 0 \\ 0 & 1 & 1 & 0 & 1 & 1 \\ 0 & 0 & 1 & -2 & 0 & 2 \end{array}\right ) \stackrel{E_{13}(-1)}{\stackrel{E_{23}(-1)}{\longrightarrow}} \left ( \begin{array}{rrr|rrr} 1 & 0 & 0 & 3 & 2 & -2 \\ 0 & 1 & 0 & 2 & 1 & -1 \\ 0 & 0 & 1 & -2 & 0 & 2 \end{array}\right )
+\end{array}$$
+
+
+Así que $M_{B_1\rightarrow B_2} = \left (\begin{array}{rrr} 3 & 2 & -2 \\ 2 & 1 & -1 \\ -2 & 0 & 2 \end{array}\right )$.
+
+También se podría haber calculado la inversa de $\left (\begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 1 & -1 & 1 \end{array}\right )$, que es igual a $\left (\begin{array}{rrr} 2 & -1 & -1 \\ 1 & 0 & -1 \\ -1 & 1 & 1 \end{array}\right )$ y multiplicarla por $\left (\begin{array}{rrr} 1 & 2 & 0 \\ 0 & 1 & 1 \\ -1 & 1 & 1 \end{array}\right )$.
+
+
+</li>
+<li>Puesto que el vector $u$ tiene coordenadas $(1,1,1)$ en la base $B_1$ tenemos que
+
+$$u = 1\cdot (1,0,-1) + 1\cdot (2,1,1) + 1\cdot (0,1,1) = (3,2,1).$$
+
+Para calcular sus coordenadas en la base $B_2$ utilizamos la matriz del cambio de base de $B_1$ a $B_2$:
+
+$$
+(u)_{B_2} = M_{B_1\rightarrow B_2}\cdot (u)_{B_1} = \left (\begin{array}{rrr} 3 & 2 & -2 \\ 2 & 1 & -1 \\ -2 & 0 & 2 \end{array}\right ) \cdot \left ( \begin{array}{r} 1 \\ 1 \\ 1 \end{array} \right ) = \left (\begin{array}{r} 3 \\ 2 \\ 0 \end{array}\right ).$$
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-38 .medio} 
+
+Sean $B_1 = \{(1,1),\ (2,1)\}$ y $B_2 = \{(-1,5),\ (0,3)\}$ dos subconjuntos de ${\mathbb R}^2$.
+
+
+<ol type='a'>
+<li> Comprueba que son bases de ${\mathbb R}^2$.</li>
+<li> Sea ${\mathbf u}$ el vector cuyas coordenadas en $B_2$ son $(2,3)$. Di cuál es el vector ${\mathbf u}$ y sus coordenadas en $B_1$.</li>
+<li> Calcula todos los vectores que tienen las mismas coordenadas en $B_1$ y en $B_2$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Puesto que $\text{rg}\left (\begin{array}{rr} 1 & 2 \\ 1 & 1 \end{array}\right )=2$ y $\text{rg}\left (\begin{array}{rr} -1 & 0 \\ 5 & 3 \end{array}\right )=2$ tenemos que cada uno de los conjuntos forman una base de ${\mathbb R}^2$.
+
+</li>
+<li>Puesto que ${\mathbf u}$ tiene coordenadas $(2,3)$ en $B_2$ significa que ${\mathbf u} = 2\cdot (-1,5) + 3\cdot (0,3) = (-2,19)$.
+
+Calculamos ahora las coordendas de ${\mathbf u}$ en $B_1$. Para eso, escribimos $(-2,19) = a\cdot (1,1) + b\cdot (2,1)$, lo que nos da el sistema:
+
+$$\begin{array}{rrrrr} a & + & 2b & = & -2 \\ a & + & b & = & 19 \end{array}$$
+
+Que tiene como solución $a=40$, $b=-21$. Esas son las coordenadas de ${\mathbf u}$ en $B_1$.
+
+Para este último cálculo podemos calcular la matriz del cambio de base de $B_2$ a $B_1$:
+
+$M_{B_2\rightarrow B_1} = M_{B_c \rightarrow B_1}\cdot M_{B_2\rightarrow B_c} = \left (\begin{array}{rr} 1 & 2 \\ 1 & 1 \end{array}\right )^{-1} \left (\begin{array}{rr} -1 & 0 \\ 5 & 3 \end{array}\right ) = \left (\begin{array}{rr} -1 & 2 \\ 1 & -1 \end{array}\right ) \left (\begin{array}{rr} -1 & 0 \\ 5 & 3 \end{array}\right ) =  \left (\begin{array}{rr} 11 & 6 \\ -6 & -3 \end{array}\right )$
+
+Y ahora:
+
+$$({\mathbf u})_{B_1} = M_{B_2\rightarrow B_1} \cdot ({\mathbf u})_{B_2} = \left (\begin{array}{rr} 11 & 6 \\ -6 & -3 \end{array}\right ) \cdot \left (\begin{array}{r} 2  \\ 3 \end{array}\right ) =  \left (\begin{array}{r} 40  \\ -21 \end{array}\right )$$
+
+</li>
+<li>Sea ${\mathbf v}$ un vector que tiene coordenadas $(a,b)$ en la base $B_1$ y las mismas coordenadas en la base $B_2$. Entonces:
+
+$${\mathbf v} = a\cdot (1,1) + b\cdot (2,1) = a \cdot (-1,5) + b\cdot (0,3) \Longrightarrow a \cdot ((1,1)-(-1,5)) + b\cdot ((2,1)-(0,3)) = (0,0) $$
+
+Esto da lugar al siguiente sistema de ecuaciones:
+
+$$\begin{array}{rrrrr} 2a & + & 2b & = & 0 \\ -4a & - & 2b & = & 0 \end{array}$$
+
+cuya única solución es $a=0$, $b=0$.
+
+Por consiguiente, solo hay un vector que tenga las mismas coordenadas en $B_1$ y en $B_2$, y este es el vector $(0,0)$.
+
+También podríamos haber resuelto este punto como sigue:
+
+Si ${\mathbf v}$ es un vector cuyas coordenadas en $B_1$ y en $B_2$ son $(a,b)$, entonces:
+
+$$
+\left (\begin{array}{rr} 11 & 6 \\ -6 & -3 \end{array}\right ) \cdot \left (\begin{array}{r} a  \\ b \end{array}\right ) =  \left (\begin{array}{r} a \\ b \end{array}\right ) \Longrightarrow \left (\begin{array}{rr} 10 & 6 \\ -6 & -4 \end{array}\right ) \cdot \left (\begin{array}{r} a  \\ b \end{array}\right ) =  \left (\begin{array}{r} 0 \\ 0 \end{array}\right )
+$$
+
+Y la única solución de este sistema de ecuaciones es $a=b=0$.
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-39 .basico-cuerpo_finito} 
+
+Sea $U$ el subespacio de $(\mathbb{Z}_5)^4$ generado por los vectores del conjunto $\{(0,3,0,1),(2,3,1,1),(2,1,1,2)\}$ y sea $W$ el subespacio vectorial de $(\mathbb{Z}_5)^4$ de ecuaciones
+
+$$
+W\equiv\left\{\begin{array}{rrrrrrrrr}
+x &+& 3y &+& z & &  &=& 0\\
+x &+ & 4y &+& 4z &+ &t  &=& 0 \\
+3x & &  &+& z &+ &t  &=& 0
+\end{array}\right.
+$$
+
+
+<ol type='a'>
+<li> Calcula unas ecuaciones cartesianas (implícitas) del subespacio $U+W$.</li>
+<li> Calcula una base del subespacio intersección.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Para calcular unas ecuaciones del subespacio suma, vamos, en primer lugar, a calcular una base de este subespacio. Para esto, vamos a tomar un sistema de generadores de $U$ (aunque en el enuciado nos da uno, y ese nos valdría, vamos a reducirlo), un sistema de generadores de $W$ (para lo que tendremos que resolver el sistema de ecuaciones que define a este subespacio), los uniremos (tendremos así un sistema de generadores de $U+W$) y a partir de él calcularemos una base de este subespacio vectorial.
+
+<ol type='i'>
+<li>Comenzamos calculando una base de $U$ (aunque este paso no es necesario).
+
+$$
+{
+\left ( \begin{array}{rrrr} 0 & 3 & 0 & 1 \\ 2 & 3 & 1 & 1 \\ 2 & 1 & 1 & 2 \end{array}\right ) \stackrel{E_{12}(3)}{\longrightarrow} \left ( \begin{array}{rrrr} 1 & 2 & 3 & 4 \\ 2 & 3 & 1 & 1 \\ 2 & 1 & 1 & 2 \end{array}\right ) \stackrel{E_{21}(3)}{\stackrel{E_{31}(3)}{\longrightarrow}}
+\left ( \begin{array}{rrrr} 1 & 2 & 3 & 4 \\ 0 & 4 & 0 & 3 \\ 0 & 2 & 0 & 4 \end{array}\right ) \stackrel{E_{2}(4)}{\longrightarrow}
+\left ( \begin{array}{rrrr} 1 & 2 & 3 & 4 \\ 0 & 1 & 0 & 2 \\ 0 & 2 & 0 & 4 \end{array}\right )}
+$$
+
+$$
+{ 
+\stackrel{E_{12}(3)}{\stackrel{E_{32}(3)}{\longrightarrow}}
+\left ( \begin{array}{rrrr} 1 & 0 & 3 & 0 \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 0 & 0 \end{array}\right )}
+$$
+
+Y tenemos que $B_U = \{(1,0,3,0),\ (0,1,0,2)\}$ es una base del subespacio $U$.
+
+</li>
+<li>Calculamos una base de $W$ (para lo cual resolvemos el sistema de ecuaciones). Escribimos la matriz de coeficientes del sistema y calculamos su forma escalonada reducida:
+
+$\left (\begin{array}{rrrr} 1 & 3 & 1 & 0 \\ 1 & 4 & 4 & 1 \\ 3 & 0 & 1 & 1 \end{array}\right )\stackrel{E_{21}(4)}{\stackrel{E_{31}(2)}{\longrightarrow}}
+\left (\begin{array}{rrrr} 1 & 3 & 1 & 0 \\ 0 & 1 & 3 & 1 \\ 0 & 1 & 3 & 1 \end{array}\right )\stackrel{E_{12}(2)}{\stackrel{E_{32}(4)}{\longrightarrow}}
+\left (\begin{array}{rrrr} 1 & 0 & 2 & 2 \\ 0 & 1 & 3 & 1 \\ 0 & 0 & 0 & 0 \end{array}\right )$
+
+Así que $W\equiv\left\{\begin{array}{rrrrrrrrr}
+x & &  &+& 2z & + & 2t  &=& 0\ \\
+& & y &+& 3z &+ &t  &=& 0. 
+\end{array}\right.$
+Despejamos $x$ e $y$:
+
+$$
+W\equiv\left\{\begin{array}{rrrrr}
+x & = & 3z  &+& 3t \\
+y & = & 2z &+& 4t  
+\end{array}\right.
+$$
+
+Puesto que $W$ viene dado por $2$ ecuaciones tenemos que $\text{dim}(W) = 4 - 2 = 2$, y para obtener una base le damos a $z$ y $t$ los valores $z=1,\ t=0$ y $z=0,\ t=1$. $B_{W} = \{(3,2,1,0),\ (3,4,0,1)\}$.
+
+</li>
+<li> Calculamos una base de $U+W$. Para esto, unimos las bases de $U$ y de $W$ y reducimos:
+
+$U+W = L[(1,0,3,0),\ (0,1,0,2),\ (3,2,1,0),\ (3,4,0,1)]$. Formamos una matriz con estos cuatro vectores y calculamos su forma escalonada reducida.
+
+$\left ( \begin{array}{rrrr} 1 & 0 & 3 & 0 \\ 0 & 1 & 0 & 2 \\ 3 & 4 & 0 & 1 \\ 3 & 2 & 1 & 0 \end{array} \right )
+\stackrel{E_{31}(2)}{\stackrel{E_{41}(2)}{\longrightarrow}}
+\left ( \begin{array}{rrrr} 1 & 0 & 3 & 0 \\ 0 & 1 & 0 & 2 \\ 0 & 4 & 1 & 1 \\ 0 & 2 & 2 & 0 \end{array} \right )
+\stackrel{E_{32}(1)}{\stackrel{E_{42}(3)}{\longrightarrow}}
+\left ( \begin{array}{rrrr} 1 & 0 & 3 & 0 \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 2 & 1 \end{array} \right )
+\stackrel{E_{13}(2)}{\stackrel{E_{43}(3)}{\longrightarrow}}
+\left ( \begin{array}{rrrr} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 0 \end{array} \right )$
+
+Y ya tenemos una base de $U+W$: $B_{U+W} = \{(1,0,0,1),\ (0,1,0,2),\ (0,0,1,3)\}$.
+
+Por consiguiente, $\text{dim}(U+W) = 3$.
+</li>
+<li>A partir de la base obtenida escribimos las ecuaciones paramétricas de $U+W$ y de ahí, las ecuaciones cartesianas. Al ser $U+W$ un subespacio de dimensión $3$ el número de ecuaciones cartesianas es igual a $4-3=1$.
+
+Un vector $(x,y,z,t)$ pertenece a $U+W$ si es combinación lineal de los vectores de $B_{U+W}$, es decir, es de la forma $(x,y,z,t) = a(1,0,0,1) + b(0,1,0,2) + c(0,0,1,3)$.
+
+$\left. \begin{array}{rrrrrrr}
+x & = & a & & & & \\
+y & = & & & b & & \\
+z & = & & & & & c \\
+t & = & a & + & 2b & + & 3c \end{array} \right\} \Longrightarrow U+W \equiv t = x + 2y + 3z  \Longrightarrow U+W \equiv x + 2y + 3z + 4t = 0$
+
+</li>
+</ol>
+Y con esto ya tenemos las ecuaciones cartesianas (en este caso la ecuación cartesiana) del subespacio $U+W$.
+
+</li>
+<li>Vamos ahora con una base del subespacio $U\cap W$. Ya hemos visto que $\text{dim}(U) = 2$, $\text{dim}(W) = 2$ y $\text{dim}(U+W) = 3$, así que $\text{dim}(U\cap W) = \text{dim}(U) + \text{dim}(W) - \text{dim}(U+W) = 2 + 2 - 3 = 1$.
+
+Para calcular una base de este subespacio, vamos a unir las ecuaciones de $U$ y de $W$ y a resolver el sistema que nos resulte. Para eso, previamente calculamos las ecuaciones cartesianas de $U$.
+<ol type='i'>
+<li> Calculamos las ecuaciones cartesianas de $U$. Puesto que $\text{dim}(U) = 2$, el número de ecuaciones cartesianas de $U$ es $4-2=2$.
+
+Partimos de la base que ya hemos calculado ($B_U = \{(1,0,3,0),\ (0,1,0,2)\}$) y con ella escribimos las ecuaciones paramétricas, y de ahí, eliminando los parámetros, obtendremos las ecuaciones cartesianas:
+
+$\left. \begin{array}{rrr}
+x & = & a \\  y & = & b \\ z & = & 3a \\ t & = & 2b \end{array}\right\} \Longrightarrow
+U \equiv \left\{ \begin{array}{r} z = 3x \\ t = 2y \end{array}\right. \Longrightarrow \qquad U \equiv \left\{ \begin{array}{rrrrrrrrr} 2x & & & + & z & & & = & 0 \\ & & 3y & & & + & t & = & 0 \end{array}\right.$ 
+
+</li>
+<li>Juntamos las ecuaciones de $W$ (que ya hemos calculado), y las de $U$ (que acabamos de calcular), y de esta forma, tenemos unas ecuaciones de $U\cap W$. Resolvemos este sistema:
+
+$\left (\begin{array}{rrrr} 1 & 0 & 2 & 2 \\ 0 & 1 & 3 & 1 \\ 2 & 0 & 1 & 0 \\ 0 & 3 & 0 & 1 \end{array}\right )
+\stackrel{E_{32}(1)}{\stackrel{E_{42}(3)}{\longrightarrow}}
+\left (\begin{array}{rrrr} 1 & 0 & 2 & 2 \\ 0 & 1 & 3 & 1 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 1 & 3 \end{array}\right )
+\stackrel{E_{34}}{\longrightarrow}
+\left (\begin{array}{rrrr} 1 & 0 & 2 & 2 \\ 0 & 1 & 3 & 1 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 2 & 1 \end{array}\right )
+\stackrel{E_{13}(3)}{\stackrel{E_{23}(2)}{\stackrel{E_{43}(3)}{\longrightarrow}}}
+\left (\begin{array}{rrrr} 1 & 0 & 0 & 1 \\ 0 & 1 & 0 & 2 \\ 0 & 0 & 1 & 3 \\ 0 & 0 & 0 & 0 \end{array}\right )$
+
+</li>
+</ol>
+Y con esto, tenemos que
+$U\cap W \equiv \left\{ \begin{array}{rrrrrrrrr} x & & & & & + & t & = & 0 \\ & & y & & & + & 2t & = & 0 \\ & & & & z & + & 3t & = & 0 \end{array}\right. \Longrightarrow
+U\cap W \equiv \left\{ \begin{array}{rrr} x & = & 4t \\ y & = & 3t \\ z & = & 2t \end{array}\right.$
+
+Vemos que, puesto que $U\cap W$ viene dado por tres ecuaciones, $\text{dim}(U\cap W) = 4-3=1$, algo que ya sabíamos.
+
+Para obtener una base, le damos a $t$, la incógnita libre un valor (distinto de cero). Nos queda que $B_{U\cap W} = \{(4,3,2,1)\}$.
+</li>
+</ol>
+
+
+::::
+:::::
+
+::::: {#exr-40 .medio-cuerpo_finito} 
+
+Sea $U$ el subespacio de $({\mathbb Z}_5)^3$ generado por los vectores $(3,1,4)$ y $(4,3,2)$, y $W$ el subespacio de $({\mathbb Z}_5)^3$ dado por las ecuaciones $\left\{\begin{array}{l} x + 2y + 3z = 0 \\ x + 3y + 2z = 0 \end{array} \right.$.
+
+Determina para qué valor del parámetro $\alpha$ el vector $(2,1,\alpha)$ pertenece al subespacio $U+W$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+En primer lugar, calculamos una base de $U$.
+
+$$\left (\begin{array}{rrr} 3 & 1 & 4 \\ 4 & 3 & 2 \end{array}\right ) \stackrel{E_1(2)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 2 & 3 \\ 4 & 3 & 2 \end{array}\right ) \stackrel{E_{21}(1)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 2 & 3 \\ 0 & 0 & 0 \end{array}\right )$$
+
+Por lo que $B_U=\{(1,2,3)\}$.
+
+A continuación calculamos una base de $W$.
+
+$$\left (\begin{array}{rrr} 1 & 2 & 3 \\ 1 & 3 & 2 \end{array}\right ) \stackrel{E_{21}(4)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 2 & 3 \\ 0 & 1 & 4 \end{array}\right ) \stackrel{E_{12}(3)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 4 \end{array}\right )$$
+
+Por lo que tenemos $W\equiv \left\{ \begin{array}{rrrrrrr} x & & & & & = & 0 \\ & & y & + & 4z & = & 0 \end{array}\right.$
+
+Vemos entonces que $\text{dim}(W) = 3-2 = 1$ y $B_W = \{(0,1,1)\}$.
+
+Por consiguiente, $U+W = L[(1,2,3),\ (0,1,1)]$ y puesto que estos dos vectores son linealmente independientes, tenemos la siguiente base de $U+W$: $B_{U+W} = \{(1,2,3),\ (0,1,1)\}$.
+
+Así que el vector $(2,1,\alpha) \in U+W$ si, y solo si, los vectores $\{(1,2,3),\ (0,1,1),\ (2,1,\alpha)\}$ son linealmente dependientes, lo que se traduce en que el determinante de la matriz $\left (\begin{array}{rrr} 1 & 2 & 3 \\ 0 & 1 & 1 \\ 2 & 1 & \alpha \end{array}\right )$ es igual a cero.
+
+$$
+\left | \begin{array}{rrr} 1 & 2 & 3 \\ 0 & 1 & 1 \\ 2 & 1 & \alpha \end{array}\right | = 0 \Longleftrightarrow \alpha + 4 -6 -1 = 0 \Longleftrightarrow \alpha - 3 = 0 \Longleftrightarrow \alpha = 3.$$
+
+También podemos calcular las ecuaciones cartesianas (en este caso la ecuación) de $U+W$ y luego estudiar para qué valores de $\alpha$ el vector $(2,1,\alpha)$ satisface esta ecuación.
+
+Para esto, en primer lugar transformamos la base que tenemos de $U+W$:
+
+$$\left (\begin{array}{rrr} 1 & 2 & 3 \\ 0 & 1 & 1 \end{array}\right ) \stackrel{E_{12}(3)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & 1 \end{array}\right ).$$
+
+Con esta base $\{(1,0,1),\ (0,1,1)\}$ escribimos las ecuaciones paramétricas y de ellas deducimos las ecuaciones cartesianas:
+
+
+$$U+W \equiv \left\{ \begin{array}{rrrrr} x & = & a & & \\ y & = & & & b \\ z & = & a & + & b \end{array}\right. \ \ \Longrightarrow \ \ U+W \equiv z = x+y.$$
+
+Y ahora, para que el vector $(2,1,\alpha)$ pertenezca a $U+W$, debe satisfacer esta ecuación, lo que nos dice que $\alpha = 2+1 = 3$.
+
+::::
+:::::
+
+::::: {#exr-41 .basico-cuerpo_finito} 
+
+En el espacio vectorial ( $\left.\mathbb{Z}_{5}\right)^{4}$ consideramos los subespacios vectoriales
+
+$$
+\begin{aligned}
+U & =\langle(0,1,1,1),(2,0,2,0)\rangle=L[(0,1,1,1),(2,0,2,0)] \\
+W & \equiv\left\{\begin{array}{c}
+x+y+z+t=0 \\
+2 x+y+2 t=0
+\end{array}\right.
+\end{aligned}
+$$
+
+Calcula unas ecuaciones cartesianas de $U+W$ y comprueba si $(1,2,2,2) \in U+W$.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Puesto que nos piden calcular la suma de los subespacios necesitamos una base de cada uno de ellos (con un sistema de generadores bastaría). Una base de $U$ la tenemos, pues nos la da el enunciado. Dicha base es $B_{U}=\{(0,1,1,1) ;(2,0,2,0)\}$.
+
+Calculamos entonces una base de $W$. Como tenemos las ecuaciones cartesianas, resolvemos el sistema que nos define $W$ :
+
+$$
+\left(\begin{array}{llll}
+1 & 1 & 1 & 1 \\
+2 & 1 & 0 & 2
+\end{array}\right) \longrightarrow\left(\begin{array}{llll}
+1 & 1 & 1 & 1 \\
+0 & 4 & 3 & 0
+\end{array}\right) \longrightarrow\left(\begin{array}{llll}
+1 & 1 & 1 & 1 \\
+0 & 1 & 2 & 0
+\end{array}\right) \longrightarrow\left(\begin{array}{llll}
+1 & 0 & 4 & 1 \\
+0 & 1 & 2 & 0
+\end{array}\right)
+$$
+
+Es decir,
+
+$$
+W \equiv\left\{\begin{array} { r l } 
+{ x } & { + 4 z + t = 0 } \\
+{ } & { y + 2 z }
+\end{array} \text { es decir, } W \equiv \left\{\begin{array}{rl}
+x & =z+4 t \\
+y & =3 z
+\end{array}\right.\right.
+$$
+
+Dándole a $z$ y a $t$ los valores 10 y 0,1 obtenemos una base de $W: B_{W}=\{(1,3,1,0) ;(4,0,0,1)\}$.\\
+Si ahora unimos las dos bases lo que obtenemos es un sistema de generadores de $U+W$. A partir de ellos vamos a obtener una base:
+
+$$
+\left(\begin{array}{llll}
+0 & 1 & 1 & 1 \\
+2 & 0 & 2 & 0 \\
+1 & 3 & 1 & 0 \\
+4 & 0 & 0 & 1
+\end{array}\right) \xrightarrow{E_{13}}\left(\begin{array}{llll}
+1 & 3 & 1 & 0 \\
+2 & 0 & 2 & 0 \\
+0 & 1 & 1 & 1 \\
+4 & 0 & 0 & 1
+\end{array}\right) \xrightarrow{E_{21}(3)}{ }^{E_{14}(1)}\left(\begin{array}{llll}
+1 & 3 & 1 & 0 \\
+0 & 4 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+0 & 3 & 1 & 1
+\end{array}\right) \xrightarrow{E_{2(4)}}\left(\begin{array}{llll}
+1 & 3 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+0 & 3 & 1 & 1
+\end{array}\right) 
+$$
+$$\xrightarrow{\substack{E_{12}(2) \\
+E_{32}(4) \\
+E_{42}(2)}}\left(\begin{array}{llll}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 1 & 1
+\end{array}\right) \xrightarrow{E_{13}(4)}\left(\begin{array}{llll}
+1 & 0 & 0 & 4 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+Y por tanto vemos que una base de $U+W$ es $B_{U+W}=\{(1,0,0,4) ;(0,1,0,0) ;(0,0,1,1)\}$.\\
+Puesto que $\operatorname{dim}(U+W)=3$ y $U+W$ es subespacio de $\left(\mathbb{Z}_{5}\right)^{4}$, el subespacio $U+W$ viene dado por $4-3=1$ ecuación cartesiana. Para calcularla escribimos las ecuaciones paramétricas, y esto lo hacemos teniendo en cuenta que un vector $(x, y, z, t) \in U+W$ si, y sólo si, es combinación lineal de los vectores de la base. Por tanto, deben poder expresarse de la forma:
+
+$$
+(x, y, z, t)=a(1,0,0,4)+b(0,1,0,0)+c(0,0,1,1)
+$$
+
+o lo que es lo mismo:
+
+$$
+\begin{aligned}
+x & =a \\
+y & = b\\
+z & =c \\
+t & =4a+c
+\end{aligned}
+$$
+
+Y aquí vemos que si $(x, y, z, t) \in U+W$ se tiene que $t=4 x+z$. Por tanto, $U+W \equiv x+4 z+t=0$. Y ya tenemos las ecuaciones cartesianas de $U+W$ (en este caso, la ecuación cartesiana).
+
+Para comprobar si $(1,2,2,2) \in U+W$ basta comprobar si satisface la ecuación. Puesto que $1+4 \cdot 2+2=1 \neq 0$ dicho vector no pertenece a $U+W$.
+
+::::
+:::::
+
+
 
 ::::: {.test}
 <iframe src="/assets/autoevaluacion/AutoevaluacionEV.html" style="border:none;" height="765" width="100%" title="Autoevaluación"></iframe>

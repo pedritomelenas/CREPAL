@@ -168,7 +168,7 @@ iframe {
     text-align: left;
 }
 
-  /* Ajuste de anchos de columnas */
+  /* Ajustes de columnas */
 
 .table_glossary th:nth-child(1),
 .table_glossary td:nth-child(1) {
@@ -178,6 +178,7 @@ iframe {
 .table_glossary th:nth-child(2),
 .table_glossary td:nth-child(2) {
     width: 20%;
+    text-align: center;
 }
 
 .table_glossary th:nth-child(3),
