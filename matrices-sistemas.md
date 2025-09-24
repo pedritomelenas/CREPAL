@@ -1025,8 +1025,8 @@ $$
 \right).
 $$
 </li>
-
 </ol>
+
 ::::
 :::::
 
@@ -1239,6 +1239,7 @@ P*A==B
 
 </li>
 </ol>
+
 ::::
 :::::
 
@@ -4756,7 +4757,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-44 .medio-cuerpos_finitos}
+::::: {#exr-44 .medio-cuerpo_finito}
 
 <ol type='a'>
 <li>Calcula el determinante de la matriz con coeficientes en $\mathbb{Q}$:
@@ -4905,6 +4906,958 @@ y de nuevo aparece la ecuación $0=1$ con lo que en este caso es <b>incompatible
 
 ::::
 :::::
+
+::::: {#exr-45 .basico-cuerpo_finito}
+
+Estudia para qué valores $a\in\mathbb{Z}_{11}$ los dos sistemas de ecuaciones siguientes tienen las mismas soluciones: 
+
+$$
+(1)\left\{\begin{matrix}
+5x +10z + 2t &=& 3 \\
+3x +y + az + 2t &=& 5 \\
+4x +8z + t     &=& 3
+\end{matrix}\right.
+\hspace{1cm}
+(2)\left\{\begin{matrix}
+x + 4y + 8z + 3t &=& 3 \\
+2x + y + t &=& 5 \\
+3x + 6y + 4z + 6t &=& 10
+\end{matrix}\right.
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+En primer lugar, resolvemos el segundo sistema de ecuaciones. Para eso, calculamos la forma escalonada reducida de la matriz ampliada del sistema: 
+$$
+\left(\begin{matrix}
+1 & 4 & 8 & 3 & 3 \\
+2 & 1 & 0 & 1 & 5 \\
+3 & 6 & 4 & 6 & 10
+\end{matrix}\right)
+\xrightarrow{E_{21}(8),E_{31}(8)}
+\left(\begin{matrix}
+1 & 4 & 8 & 3 & 3 \\
+0 & 4 & 6 & 6 & 10 \\
+0 & 5 & 2 & 8 & 1
+\end{matrix}\right)
+\xrightarrow{E_{2}(3)}
+\left(\begin{matrix}
+1 & 4 & 8 & 3 & 3 \\
+0 & 1 & 7 & 7 & 8 \\
+0 & 5 & 2 & 8 & 1
+\end{matrix}\right)
+$$
+$$
+\xrightarrow{E_{12}(7),E_{32}(6)}
+\left(\begin{matrix}
+1 & 0 & 2 & 8 & 4 \\
+0 & 1 & 7 & 7 & 8 \\
+0 & 0 & 0 & 6 & 5
+\end{matrix}\right)
+\xrightarrow{E_{3}(2)}
+\left(\begin{matrix}
+1 & 0 & 2 & 8 & 4 \\
+0 & 1 & 7 & 7 & 8 \\
+0 & 0 & 0 & 1 & 10
+\end{matrix}\right)
+\xrightarrow{E_{13}(3),E_{23}(3)}
+\left(\begin{matrix}
+1 & 0 & 2 & 0 & 1 \\
+0 & 1 & 7 & 0 & 4 \\
+0 & 0 & 0 & 1 & 10
+\end{matrix}\right)
+$$
+
+A partir de aquí vemos que el sistema es <b>compatible indeterminado</b> y las soluciones del sistema son de la forma: 
+$$
+\left\{\begin{matrix}
+x =& 1 + 9\alpha\\
+y =& 4 + 4\alpha\\
+z =& \alpha\\
+t =& 10
+\end{matrix}\right.
+$$
+
+Ahora podemos proceder de varias formas: 
+
+<ol type='i'>
+<li>Puesto que el sistema tiene 11 soluciones, elegimos una de ellas (en la que $z \neq 0$). Por ejemplo, $x=10$, $y=8$, $z=1$, $t=10$ (que se ha elegido tomando $\alpha=1$). Y ahora, calculamos $a$ para que sea solución del primer sistema de ecuaciones. Es decir: 
+$$3 \cdot 10 + 8 + a \cdot 1 + 2 \cdot 10 = 5 \implies 58 + a = 5 \implies 3 + a = 5 \implies a = 2$$
+Esto nos dice que si hay un valor de $a$ para el que ambos sistemas tengan las mismas soluciones, este debe ser $a=2$.
+
+</li>
+<li>Puesto que tenemos las soluciones del segundo sistema, sustituimos en el primero: 
+$$5(1+9\alpha) + 10\alpha + 2 \cdot 10 = 5 + 45\alpha + 10\alpha + 20 = 25 + 55\alpha = 3.$$
+
+$$3(1+9\alpha) + 4 + 4\alpha + a\alpha + 2 \cdot 10 = 3 + 27\alpha + 4 + 4\alpha + a\alpha + 20 = 27 + (31+a)\alpha = 5 + (9+a)\alpha$$
+Y vemos que si $a=2$, entonces todas las soluciones del segundo sistema de ecuaciones son soluciones del primero.
+Resolvemos el primer sistema de ecuaciones.
+
+$$
+\left(\begin{matrix}
+5 & 0 & 10 & 2 & 3 \\
+3 & 1 & a & 2 & 5 \\
+4 & 0 & 8 & 1 & 3
+\end{matrix}\right)
+\xrightarrow{E_{1}(9)}
+\left(\begin{matrix}
+1 & 0 & 2 & 7 & 5 \\
+3 & 1 & a & 2 & 5 \\
+4 & 0 & 8 & 1 & 3
+\end{matrix}\right)
+\xrightarrow{E_{21}(7),E_{31}(7)}
+\left(\begin{matrix}
+1 & 0 & 2 & 7 & 5 \\
+0 & 1 & a+5 & 3 & 1 \\
+0 & 0 & 0 & 6 & 5
+\end{matrix}\right)
+$$
+
+$$
+\xrightarrow{E_{3}(2)}
+\left(\begin{matrix}
+1 & 0 & 2 & 7 & 5 \\
+0 & 1 & a+5 & 3 & 1 \\
+0 & 0 & 0 & 1 & 10
+\end{matrix}\right)
+\xrightarrow{E_{13}(4),E_{23}(4)}
+\left(\begin{matrix}
+1 & 0 & 2 & 0 & 1 \\
+0 & 1 & a+5 & 0 & 4 \\
+0 & 0 & 0 & 1 & 10
+\end{matrix}\right)
+$$
+
+Y vemos que si $a+5=7$, es decir, $a=2$, las matrices ampliadas de ambos sistemas tienen la misma forma escalonada reducida, luego ambos sistemas tienen las mismas soluciones. 
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-46 .basico-cuerpo_finito}
+
+Dado el sistema de ecuaciones con coeficientes en $\mathbb{Z}_5$:
+$$
+\begin{cases}
+2x + ay + z = -1, \\
+-2x + ay + z = 0, \\
+ay + (a+2)z = a+2,
+\end{cases}
+$$
+
+determina, en función del parámetro $a$, cuándo es compatible determinado, compatible indeterminado o incompatible.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Las matrices de coeficientes y ampliada del sistema son, respectivamente:
+$$
+A =
+\begin{pmatrix}
+2 & a & 1 \\
+3 & a & 1 \\
+0 & a & a+2
+\end{pmatrix},
+\qquad
+(A|b) =
+\left(\begin{array}{rrr|r}
+2 & a & 1 & 4 \\
+3 & a & 1 & 0 \\
+0 & a & a+2 & a+2
+\end{array}\right)
+$$
+
+Vamos a calcular el rango de la matriz de coeficientes y de la matriz ampliada en función del parámetro $a$.  
+
+Comenzamos por la matriz de coeficientes. Calculamos el determinante de la submatriz formada por las dos primeras filas y las columnas primera y tercera:
+$$
+\det \begin{pmatrix}
+2 & 1 \\
+3 & 1
+\end{pmatrix} = 2 - 3 = -1 = 4 \neq 0.
+$$
+
+Luego $\operatorname{rg}(A) \geq 2$ (independientemente del valor de $a$).
+
+Ahora calculamos el determinante de $A$:
+$$
+\det
+\begin{pmatrix}
+2 & a & 1 \\
+3 & a & 1 \\
+0 & a & a+2
+\end{pmatrix}
+= a \cdot
+\det \begin{pmatrix}
+2 & 1 & 1 \\
+3 & 1 & 1 \\
+0 & 1 & a+2
+\end{pmatrix}.
+$$
+
+Expandiendo:
+$$
+= a \cdot \big(2(a+2) + 3 + 0 - 0 - 3(a+2) - 2\big)
+= a \cdot (2a+4+3-3a-6-2)
+= a \cdot (-a-1).
+$$
+
+En $\mathbb{Z}_5$:
+$$
+= 4a(a+1).
+$$
+
+Por tanto:
+
+Si $a=0$ o $a=4$, $\operatorname{rg}(A) = 2$. Si $a=1,2,3$, $\operatorname{rg}(A) = 3$.
+
+Ahora consideremos $(A|b)$. Tomamos las columnas 1, 3 y 4 y calculamos:
+$$
+\det
+\begin{pmatrix}
+2 & 1 & 4 \\
+3 & 1 & 0 \\
+0 & a+2 & a+2
+\end{pmatrix}
+= 2(a+2) + 1 \cdot (0-0) + 4(3(a+2)) - (4(a+2)+0).
+$$
+
+Simplificando:
+$$
+= 2(a+2) + 0 + 12(a+2) - (3(a+2)) - 0
+= 2a+4 + 2a+4 - 3a - 6
+= a+2.
+$$
+
+Así:
+
+<ul>
+<li>Si $a=0$ o $a=4$, $\operatorname{rg}(A)=2$ pero $\operatorname{rg}(A|b)=3 \;\Rightarrow$ sistema incompatible.</li>
+<li>Si $a=1,2,3$, $\operatorname{rg}(A)=\operatorname{rg}(A|b)=3 \;\Rightarrow$ sistema compatible determinado.</li>
+</ul>
+
+<b>Conclusión:</b>
+
+$$
+\begin{cases}
+\text{Incompatible} & a=0 \text{ o } a=4, \\
+\text{Compatible determinado} & a=1,2,3.
+\end{cases}
+$$
+
+::::
+:::::
+
+::::: {#exr-47 .basico-cuerpo_finito}
+
+Sea 
+$$
+A = \begin{pmatrix}
+3 & 1 & 1 & 1 \\
+1 & 2 & 4 & 1 \\
+4 & 3 & 2 & 1
+\end{pmatrix} \in M_{3 \times 4}(\mathbb{Z}_5).
+$$
+
+Calcula su forma normal de Hermite $H_A$, y una matriz regular $P$ tal que $P \cdot A = H_A$. 
+Encuentra, si es posible, otra matriz regular $Q$ tal que $Q \cdot A = H_A$. Si no es posible, explica por qué. 
+Resuelve el siguiente sistema de ecuaciones con coeficientes en $\mathbb{Z}_5$:
+\begin{align*}
+3x + y + z &= 1 \\
+x + 2y + 4z &= 1 \\
+4x + 3y + 2z &= 1
+\end{align*}
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Formamos la matriz $(A|\mathrm{Id})$ y realizamos operaciones por filas hasta obtener una matriz 
+escalonada reducida por filas:
+
+\begin{align*}
+\begin{pmatrix}
+3 & 1 & 1 & 1 & 1 & 0 & 0 \\
+1 & 2 & 4 & 1 & 0 & 1 & 0 \\
+4 & 3 & 2 & 1 & 0 & 0 & 1
+\end{pmatrix}
+&\xrightarrow{E_{12}}
+\begin{pmatrix}
+1 & 2 & 4 & 1 & 0 & 1 & 0 \\
+3 & 1 & 1 & 1 & 1 & 0 & 0 \\
+4 & 3 & 2 & 1 & 0 & 0 & 1
+\end{pmatrix}
+\xrightarrow{E_{21}(2),E_{31}(1)}
+\begin{pmatrix}
+1 & 2 & 4 & 1 & 0 & 1 & 0 \\
+0 & 0 & 4 & 3 & 1 & 2 & 0 \\
+0 & 0 & 1 & 2 & 0 & 1 & 1
+\end{pmatrix} \\ [1em]
+&\xrightarrow{E_{23}}
+\begin{pmatrix}
+1 & 2 & 4 & 1 & 0 & 1 & 0 \\
+0 & 0 & 1 & 2 & 0 & 1 & 1 \\
+0 & 0 & 4 & 3 & 1 & 2 & 0
+\end{pmatrix}
+\xrightarrow{E_{12}(1),E_{32}(1)}
+\begin{pmatrix}
+1 & 2 & 0 & 3 & 0 & 2 & 1 \\
+0 & 0 & 1 & 2 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 3 & 1
+\end{pmatrix}.
+\end{align*}
+
+A partir de estos cálculos vemos que
+
+$$
+H_A =
+\begin{pmatrix}
+1 & 2 & 0 & 3 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0
+\end{pmatrix}, \qquad
+P = \begin{pmatrix}
+0 & 2 & 1 \\
+0 & 1 & 1 \\
+1 & 3 & 1
+\end{pmatrix}.
+$$
+
+Puesto que el rango de $A$ vale 2, y es menor que el número de filas, podemos encontrar otra matriz 
+regular $Q$ tal que $Q \cdot A = H_A$. Podemos, para obtenerla, en la matriz resultante de realizar 
+las operaciones elementales, sumarle la tercera fila a la primera:
+
+\begin{align*}
+\begin{pmatrix}
+1 & 2 & 0 & 3 & 0 & 2 & 1 \\
+0 & 0 & 1 & 2 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 3 & 1
+\end{pmatrix}
+&\xrightarrow{E_{13}(1)}
+\begin{pmatrix}
+1 & 2 & 0 & 3 & 1 & 0 & 2 \\
+0 & 0 & 1 & 2 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 3 & 1
+\end{pmatrix}.
+\end{align*}
+
+Y tenemos la matriz
+$$
+Q = \begin{pmatrix}
+1 & 0 & 2 \\
+0 & 1 & 1 \\
+1 & 3 & 1
+\end{pmatrix},
+$$
+
+que es regular, y $Q \cdot A = H_A$.
+
+<b>Resolución del sistema: </b>
+Por último, para resolver el sistema de ecuaciones, como la matriz ampliada es la matriz $A$, 
+el sistema es equivalente a
+
+\begin{align*}
+x + 2y &= 3, \\
+z &= 2.
+\end{align*}
+
+Que podemos escribir como
+
+$$
+x = 3 + 3y, \qquad z = 2.
+$$
+
+El sistema es compatible indeterminado, y las soluciones se obtienen dándole a $y$ los valores 
+$0,1,2,3,4$ en $\mathbb{Z}_5$:
+
+
+::::
+:::::
+
+::::: {#exr-48 .basico-cuerpo_finito}
+
+Calcula el rango de la siguiente matriz en función del parámetro $\lambda$:
+
+$$
+A = \begin{pmatrix}
+2 & 1 & 4 & \lambda \\
+3 & 2 & 3 & 0 \\
+3 & 3 & \lambda & 4
+\end{pmatrix} \in M_{3 \times 4}(\mathbb{Z}_5).
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Para calcular el rango de $A$ realizamos en $A$ operaciones elementales por filas. 
+Esto no cambia el rango de la matriz:
+
+\begin{align*}
+\begin{pmatrix}
+2 & 1 & 4 & \lambda \\
+3 & 2 & 3 & 0 \\
+3 & 3 & \lambda & 4
+\end{pmatrix}
+&\xrightarrow{E_1(3)}
+\begin{pmatrix}
+1 & 3 & 2 & 3\lambda \\
+3 & 2 & 3 & 0 \\
+3 & 3 & \lambda & 4
+\end{pmatrix}
+\xrightarrow{E_{21}(2)}
+\begin{pmatrix}
+1 & 3 & 2 & 3\lambda \\
+0 & 3 & 2 & \lambda \\
+0 & 4 & \lambda+4 & \lambda+4
+\end{pmatrix} \\ [1em]
+&\xrightarrow{E_2(2)}
+\begin{pmatrix}
+1 & 3 & 2 & 3\lambda \\
+0 & 1 & 4 & 2\lambda \\
+0 & 4 & \lambda+4 & \lambda+4
+\end{pmatrix}
+\xrightarrow{E_{12}(2), E_{32}(1)}
+\begin{pmatrix}
+1 & 0 & 0 & 2\lambda \\
+0 & 1 & 4 & 2\lambda \\
+0 & 0 & \lambda+3 & 3\lambda+4
+\end{pmatrix}.
+\end{align*}
+
+Vemos que si $\lambda = 2$, la última fila nos quedaría $(0,0,0,0)$, luego en ese caso el rango de la matriz es $2$. 
+Si $\lambda \neq 2$, entonces $\lambda + 3 \neq 0$, luego el rango de $A$ vale $3$.
+
+<b> Método alternativo con determinantes</b>
+
+También podríamos haber calculado el rango usando determinantes. Veamos cómo:
+
+Puesto que
+
+$$
+\det\begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix} = 1 \neq 0,
+$$
+
+tenemos que $\text{rg}(A) \geq 2$. Calculamos los determinantes de las dos matrices $3 \times 3$ 
+que podemos formar y que contienen como submatriz esta última:
+
+$$
+\det\begin{pmatrix}
+2 & 1 & 4 \\
+3 & 2 & 3 \\
+3 & 3 & \lambda
+\end{pmatrix}
+= \lambda + 3,
+$$
+
+$$
+\det\begin{pmatrix}
+2 & 1 & \lambda \\
+3 & 2 & 0 \\
+3 & 3 & 4
+\end{pmatrix}
+= 3\lambda + 4.
+$$
+
+Ahora resolvemos las ecuaciones $\lambda+3=0$, $3\lambda+4=0$, que en los dos casos 
+tienen como solución $\lambda = 2$.
+
+Entonces:
+
+<ul>
+<li>Si $\lambda = 2$, todas las submatrices $3 \times 3$ tienen determinante igual a cero, luego $\text{rg}(A)=2$.</li>
+<li>Si $\lambda \neq 2$, hay al menos una submatriz $3 \times 3$ cuyo determinante es distinto de cero, luego $\text{rg}(A)=3$.</li>
+</ul>
+
+::::
+:::::
+
+::::: {#exr-49 .basico-cuerpo_finito}
+
+Dado el sistema de ecuaciones con coeficientes en $\mathbb{Z}_3$:
+$$
+\begin{cases}
+x + a z = 2a, \\
+x + y + (a+2)z = a+2, \\
+2y + a z = 2a, \\
+2x + y + (a+1)z = 1,
+\end{cases}
+$$
+
+Estudia para qué valores del parámetro $a$ es compatible determinado, compatible indeterminado o incompatible.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Para responder a esta cuestión calculamos el rango de la matriz de coeficientes y el rango de la matriz ampliada.  
+
+Partimos de:
+
+$$
+\left(\begin{array}{rrr|r}
+1 & 0 & a & 2a \\
+1 & 1 & a+2 & a+2 \\
+0 & 2 & a & 2a \\
+2 & 1 & a+1 & 1
+\end{array}\right)
+$$
+
+Mediante operaciones elementales llegamos a:
+
+$$
+\left(\begin{array}{rrr|r}
+1 & 0 & 0 & 2a^2 + a \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & a+1 \\
+0 & 0 & 0 & 2a^2 + a
+\end{array}\right)
+$$
+
+$$
+\Rightarrow
+\begin{cases}
+a = 0 \text{ o bien } a = 1 \;\;\Rightarrow\;\; \text{compatible determinado, } \operatorname{rg}(A) = \operatorname{rg}(A|b) = 3, \\
+a = 2 \;\;\Rightarrow\;\; \text{incompatible}.
+\end{cases}
+$$
+
+::::
+:::::
+
+::::: {#exr-50 .basico}
+
+Demuestra que si $A$ es una matriz cuadrada tal que $A^2 = 0$, entonces $\operatorname{Id} - A$ es regular.
+
+:::: {.callout collapse="true" title="Solución"}
+
+Como $A^2 = 0$:
+
+$$
+(\operatorname{Id} - A)(\operatorname{Id} + A) = \operatorname{Id}^2 + \operatorname{Id}\,A - A\,\operatorname{Id} - A^2 = \operatorname{Id} + A - A - 0 = \operatorname{Id}.
+$$
+
+Por tanto, $\operatorname{Id} - A$ es regular y su inversa es $\operatorname{Id} + A$.
+
+::::
+:::::
+
+::::: {#exr-51 .basico-cuerpo_finito}
+
+Calcula el rango de la siguiente matriz en función del parámetro $\lambda$:
+
+$$
+A =
+\begin{pmatrix}
+2 & 1 & 4 & \lambda \\
+3 & 2 & 3 & 0 \\
+3 & 3 & \lambda & 4
+\end{pmatrix} \in M_{3 \times 4}(\mathbb{Z}_5).
+$$
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Para calcular el rango de $A$ realizamos operaciones elementales por filas (que no cambian el rango):
+
+$$
+\begin{pmatrix}
+2 & 1 & 4 & \lambda \\
+3 & 2 & 3 & 0 \\
+3 & 3 & \lambda & 4
+\end{pmatrix}
+\overset{E_1(3)}{\longrightarrow}
+\begin{pmatrix}
+1 & 3 & 2 & 3\lambda \\
+3 & 2 & 3 & 0 \\
+3 & 3 & \lambda & 4
+\end{pmatrix}
+$$
+
+$$
+\overset{E_{21}(2)}{\longrightarrow}
+\begin{pmatrix}
+1 & 3 & 2 & 3\lambda \\
+0 & 3 & 2 & \lambda \\
+0 & 4 & \lambda+4 & \lambda+4
+\end{pmatrix}
+\overset{E_2(2)}{\longrightarrow}
+\begin{pmatrix}
+1 & 3 & 2 & 3\lambda \\
+0 & 1 & 4 & 2\lambda \\
+0 & 4 & \lambda+4 & \lambda+4
+\end{pmatrix}
+$$
+
+$$
+\overset{E_{12}(2),\,E_{32}(1)}{\longrightarrow}
+\begin{pmatrix}
+1 & 0 & 0 & 2\lambda \\
+0 & 1 & 4 & 2\lambda \\
+0 & 0 & \lambda+3 & 3\lambda+4
+\end{pmatrix}.
+$$
+
+Vemos que si $\lambda = 2$, la última fila queda nula, luego $\operatorname{rg}(A) = 2$.  
+Si $\lambda \neq 2$, entonces $\lambda + 3 \neq 0$, luego $\operatorname{rg}(A) = 3$.
+
+También puede comprobarse con determinantes. Por ejemplo:
+
+$$
+\det
+\begin{pmatrix}
+2 & 1 & 4 \\
+3 & 2 & 3 \\
+3 & 3 & \lambda
+\end{pmatrix}
+= \lambda + 3,
+\qquad
+\det
+\begin{pmatrix}
+2 & 1 & \lambda \\
+3 & 2 & 0 \\
+3 & 3 & 4
+\end{pmatrix}
+= 3\lambda + 4.
+$$
+
+Ambos se anulan sólo si $\lambda = 2$.  
+
+Por tanto:  
+
+$$
+\operatorname{rg}(A) =
+\begin{cases}
+2 & \text{si } \lambda = 2, \\
+3 & \text{si } \lambda \neq 2.
+\end{cases}
+$$
+
+::::
+:::::
+
+::::: {#exr-52 .basico-cuerpo_finito}
+
+Dado el siguiente sistema de ecuaciones con coeficientes en $\mathbb{Z}_{5}$
+
+$$
+\left\{ \begin{array}{rl}
+2 x+y+3 z & =2 \\
+x+y+z+t & =4 \\
+x+2 y +t &=4 \\
+x+y+z+3 t & =0
+\end{array}\right.
+$$
+
+calcula todas sus soluciones.
+
+
+:::: {.callout collapse="true" title="Solución"}
+
+Para resolver el sistema tomamos la matriz ampliada y calculamos su forma escalonada reducida (forma de Hermite) por filas.
+
+$$
+\begin{aligned}
+&\left(\begin{array}{llll|l}
+2 & 1 & 3 & 0 & 2 \\
+1 & 1 & 1 & 1 & 4 \\
+1 & 2 & 0 & 1 & 4 \\
+1 & 1 & 1 & 3 & 0
+\end{array}\right) \xrightarrow{E_{12}}\left(\begin{array}{llll|l}
+1 & 1 & 1 & 1 & 4 \\
+2 & 1 & 3 & 0 & 2 \\
+1 & 2 & 0 & 1 & 4 \\
+1 & 1 & 1 & 3 & 0
+\end{array}\right) \xrightarrow{\begin{array}{l}
+E_{21(3)} \\
+E_{31(4)} \\
+E_{41(4)}
+\end{array}}\left(\begin{array}{llll|l}
+1 & 1 & 1 & 1 & 4 \\
+0 & 4 & 1 & 3 & 4 \\
+0 & 1 & 4 & 0 & 0 \\
+0 & 0 & 0 & 2 & 1
+\end{array}\right) \xrightarrow{E_{23}}\left(\begin{array}{llll|l}
+1 & 1 & 1 & 1 & 4 \\
+0 & 1 & 4 & 0 & 0 \\
+0 & 4 & 1 & 3 & 4 \\
+0 & 0 & 0 & 2 & 1
+\end{array}\right) \\
+& \stackrel{E_{12}(4)}{E_{32(1)}}\left(\begin{array}{llll|l}
+1 & 0 & 2 & 1 & 4 \\
+0 & 1 & 4 & 0 & 0 \\
+0 & 0 & 0 & 3 & 4 \\
+0 & 0 & 0 & 2 & 1
+\end{array}\right) \xrightarrow{E_{3(2)}}\left(\begin{array}{llll|l}
+1 & 0 & 2 & 1 & 4 \\
+0 & 1 & 4 & 0 & 0 \\
+0 & 0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 2 & 1
+\end{array}\right) \xrightarrow{E_{13}(4)}\left(\begin{array}{llll|l}
+1 & 0 & 2 & 0 & 1 \\
+0 & 1 & 4 & 0 & 0 \\
+0 & 0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right)
+\end{aligned}
+$$
+
+El sistema inicial es entonces equivalente a:
+
+$$
+\begin{aligned}
+x+2 z & =1 \\
+y+4 z & =0 \\
+t & =3
+\end{aligned}
+$$
+
+y despejando las incógnitas principales $x, y, t$ tenemos:
+
+$$
+\begin{aligned}
+& x=1+3 z \\
+& y= \\
+& t=3
+\end{aligned}
+$$
+
+Como la incógnita $z$ queda libre, tenemos 5 soluciones (una para cada valor de $z$ ). Estas soluciones las obtenemos dándole a $z$ los cinco posibles valores de $\mathbb{Z}_{5}$, y son:
+
+<div class="table_3col">
+<CENTER>
+<table>
+    <caption><br></caption>
+    <tbody>
+        <tr>
+            <td>x=1</td>
+            <td>x=4</td>
+            <td>x=2</td>
+            <td>x=0</td>
+            <td>x=3</td>
+        </tr>
+        <tr>
+            <td>y=0</td>
+            <td>y=1</td>
+            <td>y=2</td>
+            <td>y=3</td>
+            <td>y=4</td>
+        </tr>
+        <tr>
+            <td>z=0</td>
+            <td>z=1</td>
+            <td>z=2</td>
+            <td>z=3</td>
+            <td>z=4</td>
+        </tr>
+        <tr>
+            <td>t=3</td>
+            <td>t=3</td>
+            <td>t=3</td>
+            <td>t=3</td>
+            <td>t=3</td>
+        </tr>
+    </tbody>
+</table>
+</CENTER>
+</div>
+
+::::
+:::::
+
+::::: {#exr-53 .medio}
+
+Sean $A=\left (\begin{array}{rrr} -1 & 1 & 2 \\ -2 & 3 & 7 \end{array}\right )$ y $B=\left (\begin{array}{rrr} 1 & 2 & a+6 \\ 0 & -1 & -3 \end{array}\right )$ dos matrices $2\times 3$ con coeficientes en ${\mathbb Q}$.
+
+
+<ol type='a'>
+<li> Calcula la forma escalonada reducida por filas de la matriz $A$.</li>
+<li> Estudia para qué valores del parámetro $a$, existe una matriz regular $P\in M_2({\mathbb Q})$ tal que $P\cdot A = B$.</li>
+</ol>
+
+:::: {.callout collapse="true" title="Solución"}
+
+<ol type='a'>
+<li>Realizamos operaciones elementales en $A$ hasta llegar a una forma escalonada reducida:
+
+$$
+\left ( \begin{array}{rrr} -1 & 1 & 2 \\ -2 & 3 & 7 \end{array} \right ) \stackrel{E_1(-1)}{\longrightarrow} \left ( \begin{array}{rrr} 1 & -1 & -2 \\ -2 & 3 & 7 \end{array} \right ) \stackrel{E_{21}(2)}{\longrightarrow}  \left ( \begin{array}{rrr} 1 & -1 & -2 \\ 0 & 1 & 3 \end{array} \right ) \stackrel{E_{12}(1)}{\longrightarrow} \left ( \begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & 3 \end{array} \right )
+$$
+
+Luego la forma escalonada reducida de $A$ es $H_A=\left (\begin{array}{rrr} 1 & 0 & 1 \\ 0 & 1 & 3 \end{array}\right )$.
+
+</li>
+<li>Para que exista una tal matriz $P$ es necesario (y suficiente) que la forma escalonada reducida de $B$ coincida con la de $A$. Realizamos transformaciones elementales por filas en $B$:
+$$
+\left (\begin{array}{rrr} 1 & 2 & a+6 \\ 0 & -1 & -3 \end{array}\right ) \stackrel{E_2(-1)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 2 & a+6 \\ 0 & 1 & 3 \end{array}\right ) \stackrel{E_{12}(-2)}{\longrightarrow} \left (\begin{array}{rrr} 1 & 0 & a \\ 0 & 1 & 3 \end{array}\right )
+$$
+
+Y vemos que si $a=1$ ambas formas escalonadas coinciden. Por tanto, para $a=1$ existe una matriz regular $P$ tal que $P\cdot A = B$. La matriz $P=\left (\begin{array}{rr} -7 & 3 \\ 2 & -1 \end{array}\right )$ cumple esa condición.
+
+</li>
+</ol>
+
+::::
+:::::
+
+::::: {#exr-54 .medio-cuerpo_finito}
+
+Discute el siguiente sistema de ecuaciones en $\mathbb{Z}_{3}$ en función del valor de $a$ :
+
+$$
+\left\{\begin{array}{rrrrr}
+x  &    &+2 z & +t&=1 \\
+2 x& +y &+z & &=1 \\
+   &    y&  +z &+a t & =1 \\
+x  & & +2 a z& &=2
+\end{array}\right.
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Vamos a tomar la matriz ampliada del sistema y realizar transformaciones elementales por filas hasta llevarla a una forma lo más reducida posible:
+
+$$
+\left(\begin{array}{rrrr|r}
+1 & 0 & 2 & 1 & 1 \\
+2 & 1 & 1 & 0 & 1 \\
+0 & 1 & 1 & a & 1 \\
+1 & 0 & 2 a & 0 & 2
+\end{array}\right) \xrightarrow{E_{21}(1)}\left(\begin{array}{cccc|c}
+1 & 0 & 2 & 1 & 1 \\
+0 & 1 & 0 & 1 & 2 \\
+0 & 1 & 1 & a & 1 \\
+0 & 0 & 2 a+1 & 2 & 1
+\end{array}\right) \xrightarrow{E_{31(2)}}\left(\begin{array}{cccc|c}
+1 & 0 & 2 & 1 & 1 \\
+0 & 1 & 0 & 1 & 2 \\
+0 & 0 & 1 & a+2 & 2 \\
+0 & 0 & 2 a+1 & 2 & 1
+\end{array}\right)
+$$
+$$\xrightarrow{E_{43(a+2)}}\left(\begin{array}{cccc|c}
+1 & 0 & 0 & a & 0 \\
+0 & 1 & 0 & 1 & 2 \\
+0 & 0 & 1 & a+2 & 2 \\
+0 & 0 & 0 & a^{2}+a & 2 a+2
+\end{array}\right)
+$$
+
+Y ahora distinguimos casos:
+
+<ul>
+<li>$\boxed{a=0}$  En este caso, la última fila quedaría $(0\;0\;0\;0\;2)$, que se corresponde con la ecuación $0=2$. El sistema es entonces incompatible (tendríamos que $r g(A)=3$ y $r g(A \mid b)=4$ ).
+
+</li>
+<li>$\boxed{a=1}$. En este caso, la última fila sería $(0\;0\;0\;2\;1)$ que se corresponde con la ecuación $2 t=1$. Podemos ver que en este caso el sistema es compatible determinado $(r g(A)=r g(A \mid b)=4)$, y la solución sería $x=1, y=0, z=2, t=2$.
+
+</li>
+<li>$\boxed{a=2}$. La última fila es $(0\;0\;0\;0\;0)$. Entonces, $r g(A)=r g(A \mid b)=3$ y el sistema es compatible indeterminado. Tiene tres soluciones que son: $x=0, y=2, z=2, t=0 ; x=1, y=1, z=1, t=1$ y $x=2$, $y=0, z=0, t=2$.
+
+</li>
+</ul>
+
+También puede hacerse calculando el rango de la matriz $A$ y el de la ampliada, y para ello nos valemos de los determinates. En primer lugar, tenemos que:
+
+$$
+\left|\begin{array}{lll}
+1 & 0 & 2 \\
+2 & 1 & 1 \\
+0 & 1 & 1
+\end{array}\right|=\left|\begin{array}{lll}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 1 & 1
+\end{array}\right|=\left|\begin{array}{ll}
+1 & 0 \\
+1 & 1
+\end{array}\right|=1 \neq 0
+$$
+
+Luego $\operatorname{rg}(A) \geq 3$ y $\operatorname{rg}(A \mid b) \geq 3$ independientemente del valor de $a$. Ahora calculamos el determinante de la matriz $A$.
+
+$$
+\left|\begin{array}{rrrr}
+1 & 0 & 2 & 1 \\
+2 & 1 & 1 & 0 \\
+0 & 1 & 1 & a \\
+1 & 0 & 2 a & 0
+\end{array}\right|=\left|\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+2 & 1 & 0 & 1 \\
+0 & 1 & 1 & a \\
+1 & 0 & 2 a+1 & 2
+\end{array}\right|=\left|\begin{array}{rrr}
+1 & 0 & 1 \\
+1 & 1 & a \\
+0 & 2 a+1 & 2
+\end{array}\right|=
+$$
+$$=\left|\begin{array}{rrr}
+1 & 0 & 1 \\
+0 & 1 & a+2 \\
+0 & 2 a+1 & 2
+\end{array}\right|=2-(a+2)(2 a+1)=2+a^{2}+a+1=a^{2}+a
+$$
+
+Puesto que $a^{2}+a=a(a+1)$ tenemos que si $a=0$ ó $a=2$, el determinante de $A$ vale 0 , mientras que si $a=1$, el determinante de $A$ vale $2 \neq 0$.
+
+Por tanto, si $a=0,2, r g(A)=3$ mientras que si $a=1, r g(A)=4$ en cuyo caso el sistema es compatible determinado.
+
+Estudiamos que le pasa a la matriz $(A \mid b)$ cuando $a=0$. Para eso calculamos el determinante formado por las columnas primera, segunda, tercera y quinta.
+
+$$
+\left|\begin{array}{llll}
+1 & 0 & 2 & 1 \\
+2 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 2
+\end{array}\right|=\left|\begin{array}{llll}
+1 & 0 & 2 & 1 \\
+2 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 2
+\end{array}\right|=(-1)^{4}\left|\begin{array}{lll}
+0 & 2 & 1 \\
+1 & 1 & 1 \\
+0 & 0 & 2
+\end{array}\right|=2 \cdot\left|\begin{array}{ll}
+0 & 2 \\
+1 & 1
+\end{array}\right|=2 \cdot(-2)=2 \neq 0
+$$
+
+Luego $\operatorname{rg}(A \mid b)=4$. Como el rango de $A$ valía 3, en este caso ( $a=0$ ) el sistema es incompatible.\\
+Por último estudiamos que le pasa a la matriz $(A \mid b)$ cuando $a=2$. Hacemos igual que antes.
+
+$$
+\left|\begin{array}{llll}
+1 & 0 & 2 & 1 \\
+2 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 2
+\end{array}\right|=\left|\begin{array}{cccc}
+1 & 0 & 2 & 1 \\
+2 & 1 & 1 & 1 \\
+0 & 1 & 1 & 1 \\
+2 & 0 & 0 & 0
+\end{array}\right|=(-1)^{4+1} \cdot 2\left|\begin{array}{ccc}
+0 & 2 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1
+\end{array}\right|=0
+$$
+
+El último determinante vale cero ya que la matriz tiene dos filas iguales. Por tanto $\operatorname{rg}(A \mid b)=3$ y el sistema es compatible indeterminado.
+
+En resumen tenemos:
+
+<ul>
+  <li> $a=0 . \operatorname{rg}(A)=3, \operatorname{rg}(A \mid b)=4$. Sistema incompatible. </li>
+  <li> $a=1 . r g(A)=4, r g(A \mid b)=4$. Sistema compatible determinado. </li>
+  <li> $a=2$. $r g(A)=3 \operatorname{rg}(A \mid b)=3$. Sistema compatible indeterminado. </li>
+</ul>
+
+::::
+:::::
+
 
 ::::: {.test}
 <iframe src="/assets/autoevaluacion/AutoevaluacionMSE.html" style="border:none;" height="1000" width="100%" title="Autoevaluación"></iframe>
