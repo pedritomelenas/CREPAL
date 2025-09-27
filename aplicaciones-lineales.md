@@ -50,6 +50,74 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
 })
 </script>
 
+::: {.callout-tip collapse="true" title="GLOSARIO" icon="false" .table_glossary}
+
+<table>
+    <thead>
+        <tr>
+            <th>Término</th>
+            <th>Sinónimos / Notación</th>
+            <th>Definición / Referencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Aplicación lineal</td>
+            <td>Transformación lineal<br>$f:V \longrightarrow V'$ </td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/3-aplicaciones-lineales">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Matriz asociada respecto de dos bases</td>
+            <td>$M_{B,B'}(f)$<br>$M_(f,B,B')$</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/3-aplicaciones-lineales/">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/4-1.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Núcleo de una aplicación lineal</td>
+            <td>Kernel<br>$N(f)$<br> $Ker(f)$ </td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/3-aplicaciones-lineales/">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/4-2.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Imagen de una aplicación lineal</td>
+            <td>$Im(f)$</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/3-aplicaciones-lineales/">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/4-2.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Fórmula de las dimensiones</td>
+            <td>$dim\, V=$<br> $dim \, N(f) + dim \, Im(f)$</td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td>Endomorfismo</td>
+            <td><br></td>
+            <td>Aplicación lineal en la que el espacio de partida y el de llegada son el mismo</td>
+        </tr>
+        <tr>
+            <td>Aplicación lineal inyectiva</td>
+            <td>Monomorfismo</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/3-aplicaciones-lineales/">Web del profesor Pedro García</a> <br> 
+            <a href="https://es.wikipedia.org/wiki/Correspondencia_matem%C3%A1tica#Aplicaci%C3%B3n_matem%C3%A1tica">Wikipedia: Aplicación Lineal</a></td>
+        </tr>
+        <tr>
+            <td>Aplicación lineal sobreyectiva</td>
+            <td>Epimorfismo</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/3-aplicaciones-lineales/">Web del profesor Pedro García</a> <br> 
+            <a href="https://es.wikipedia.org/wiki/Correspondencia_matem%C3%A1tica#Aplicaci%C3%B3n_matem%C3%A1tica">Wikipedia: Aplicación Lineal</a></td>
+        </tr>
+        <tr>
+            <td>Aplicación lineal biyectiva</td>
+            <td>Isomorfismo</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/3-aplicaciones-lineales/">Web del profesor Pedro García</a> <br> 
+            <a href="https://es.wikipedia.org/wiki/Correspondencia_matem%C3%A1tica#Aplicaci%C3%B3n_matem%C3%A1tica">Wikipedia: Aplicación Lineal</a></td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
+
 ::::: {#exr-1 .basico}
 
 Determina cuáles de las siguientes aplicaciones son lineales:
@@ -3545,6 +3613,6 @@ Este apartado se podría haber simplificado si nos percatamos de que el vector $
 <iframe src="/assets/autoevaluacion/AutoevaluacionAL.html" style="border:none;" height="1000" width="100%" title="Autoevaluación"></iframe>
 :::::
 
-<!-- ::::: {.test-cuerpo_finito}
+::::: {.test-cuerpo_finito}
 <iframe src="/assets/autoevaluacion/AutoevaluacionAL-CF.html" style="border:none;" height="1000" width="100%" title="Autoevaluación CF"></iframe> 
-::::: -->
+::::: 

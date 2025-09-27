@@ -20,6 +20,83 @@ format:
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media </button>
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
 
+::: {.callout-tip collapse="true" title="GLOSARIO" icon="false" .table_glossary}
+
+<table>
+    <thead>
+        <tr>
+            <th>Término</th>
+            <th>Sinónimos / Notación</th>
+            <th>Definición / Referencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Producto escalar de dos vectores</td>
+            <td>$\langle u,v \rangle$ <br> u\cdot v</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/4-espacio-euclideo/">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Matriz de Gram respecto de una base</td>
+            <td><br></td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/4-espacio-euclideo/">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/3-1.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Norma de un vector</td>
+            <td>$\|u\|$</td>
+            <td>$\|v\|= \sqrt{\langle v,v\rangle}$</td>
+        </tr>
+        <tr>
+            <td>Ángulo que forman dos vectores</td>
+            <td>$\angle (u,v)$</td>
+            <td><a href="https://es.wikipedia.org/wiki/%C3%81ngulo#%C3%81ngulos_en_un_espacio_vectorial">Wikipedia: Ángulo en un espacio vectorial</a></td>
+        </tr>
+        <tr>
+            <td>Vectores ortogonales</td>
+            <td>Vectores perpendiculares<br>$u\perp v$</td>
+            <td>Su producto escalar vale 0</td>
+        </tr>
+        <tr>
+            <td>Vector unitario</td>
+            <td><br></td>
+            <td>Aquel con norma 1</td>
+        </tr>
+        <tr>
+            <td>Base ortogonal</td>
+            <td><br></td>
+            <td>Base cuyos vectores son ortogonales dos a dos</td>
+        </tr>
+        <tr>
+            <td>Método de Gram-Schmidt</td>
+            <td><br></td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/4-espacio-euclideo/">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/3-2.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Base ortonormal</td>
+            <td></td>
+            <td>Base ortogonal cuyos vectores son todos unitarios</td>
+        </tr>
+        <tr>
+            <td>Subespacio ortogonal a uno dado</td>
+            <td>Complemento ortogonal</td>
+            <td>Menor subespacio que contiene a ambos<br>
+            <a href="https://pedritomelenas.github.io/Algebra-Lineal/4-espacio-euclideo/">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/3-3.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Proyección ortogonal de un vector sobre un subespacio</td>
+            <td>$p_U (v)$</td>
+            <td>Conjunto de vectores que pertenecen simultáneamente a ambos subespacios <br> 
+            <a href="https://pedritomelenas.github.io/Algebra-Lineal/4-espacio-euclideo/">Web del profesor Pedro García</a> <br> 
+            <a href="https://www.ugr.es/~lmerino/3-3.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
 
 ::::: {#exr-1 .medio}
 

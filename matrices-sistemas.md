@@ -77,7 +77,7 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
         <tr>
             <td>Sistemas equivalentes</td>
             <td><br></td>
-            <td>Tienen el mismo conjunto de soluciones.</td>
+            <td>Tienen el mismo conjunto de soluciones</td>
         </tr>
         <tr>
             <td>Forma escalonada reducida <br> (por filas/por columnas)</td>
@@ -87,27 +87,27 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
         <tr>
             <td>Rango de una matriz</td>
             <td></td>
-            <td>Número de pivotes en una forma escalonada reducida.</td>
+            <td>Número de pivotes en una forma escalonada reducida</td>
         </tr>
         <tr>
             <td>Matriz ampliada de un sistema</td>
             <td></td>
-            <td>Resulta de añadir a la matriz de coeficientes la columna de términos independientes.</td>
+            <td>Resulta de añadir a la matriz de coeficientes la columna de términos independientes</td>
         </tr>
         <tr>
             <td>Matrices equivalentes <br> (por filas/ por columnas)</td>
             <td></td>
-            <td>Tienen la misma forma escalonada reducida (por filas/ por columnas). <br> <a href="https://pedritomelenas.github.io/Algebra-Lineal/1-matrices-sistemas/">Web del profesor Pedro García</a> <br> <a href="https://www.ugr.es/~lmerino/1-6.html">Apuntes del profesor Luis Merino</a></td>
+            <td>Tienen la misma forma escalonada reducida (por filas/ por columnas) <br> <a href="https://pedritomelenas.github.io/Algebra-Lineal/1-matrices-sistemas/">Web del profesor Pedro García</a> <br> <a href="https://www.ugr.es/~lmerino/1-6.html">Apuntes del profesor Luis Merino</a></td>
         </tr>
         <tr>
             <td>Matrices equivalentes</td>
             <td></td>
-            <td>Tienen el mismo orden y el mismo rango. <br> <a href="https://pedritomelenas.github.io/Algebra-Lineal/1-matrices-sistemas/">Web del profesor Pedro García</a></td>
+            <td>Tienen el mismo orden y el mismo rango<br> <a href="https://pedritomelenas.github.io/Algebra-Lineal/1-matrices-sistemas/">Web del profesor Pedro García</a></td>
         </tr>
         <tr>
             <td>Matriz regular</td>
             <td>Matriz invertible</td>
-            <td>Matriz que tiene inversa.</td>
+            <td>Matriz que tiene inversa</td>
         </tr>
     </tbody>
 </table>
@@ -4124,8 +4124,6 @@ x+ay= & a^ 2
 \end{array}
 $$
 
-¿Existe $P$ regular tal que $PA=B$?
-
 :::: {.callout collapse="true" title="Solución"}
 
 La matriz ampliada del sistema es
@@ -4387,7 +4385,7 @@ $$
 1 & 1/2 & 4/3 & 1/5\\
 2 & 1 & 2/3 & 11/5\\
 \end{array}
-\right|=
+\right|
 $$
 
 :::: {.callout collapse="true" title="Solución"}
@@ -4757,7 +4755,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-44 .medio-cuerpo_finito}
+::::: {#exr-44 .medio}
 
 <ol type='a'>
 <li>Calcula el determinante de la matriz con coeficientes en $\mathbb{Q}$:
@@ -4772,7 +4770,6 @@ A=\left( \begin{array}{cccc}
 $$
 
 </li>
-<li>Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$.</li>
 <li>Discute el sistema de ecuaciones con matriz ampliada $A$ considerando sus coeficientes en $\mathbb{Q}$.</li>
 </ol>
 
@@ -4806,51 +4803,6 @@ $$
 
 y este resultado es válido en cualquier cuerpo.
 
-</li>
-<li>
-
-Puesto que el cálculo del determinante es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda=0,1$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales:
-
-$\boxed{\lambda=0}$
-
-
-$$
-A=\left( \begin{array}{cccc}
-0 & 1 & 1 & 0\\
-2 &0 & 0 & 0\\
-0 & 0 & 0 & 1\\
-0 & 2 & 2 & 2 
-\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-0 & 1 & 1 & 0\\
-1 &0 & 0 & 0\\
-0 & 0 & 0 & 1\\
-0 & 0 & 0 & 2 
-\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-1 & 0 & 0 & 0\\
-0 &1 & 1 & 0\\
-0 & 0 & 0 & 1\\
-0 & 0 & 0 & 0 
-\end{array}\right)
-$$ 
-luego el rango es 3.
-
-$\boxed{\lambda=1}$
-
-$$
-A=\left( \begin{array}{cccc}
-2 & 1 & 1 & 0\\
-2 &2 & 0 & 0\\
-0 & 2 & 2 & 1\\
-0 & 2 & 2 & 1 
-\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
-2 & 1 & 1 & 0\\
-0 &1 & 2 & 0\\
-0 & 2 & 2 & 1\\
-0 & 0 & 0 & 0 
-\end{array}\right)
-$$
-
-que tiene rango 3.
 </li>
 <li>
 
@@ -4908,6 +4860,67 @@ y de nuevo aparece la ecuación $0=1$ con lo que en este caso es <b>incompatible
 :::::
 
 ::::: {#exr-45 .basico-cuerpo_finito}
+
+Calcula el rango de la matriz $A$ según los valores de $\lambda$ considerando sus coeficientes en $\mathbb{Z}_3$:
+
+$$
+A=\left( \begin{array}{cccc}
+3-\lambda & 1 & 1 & 0\\
+5 &-\lambda & 0 & 0\\
+0 & -\lambda & -\lambda & 1\\
+0 & -1 & -1 & 2-\lambda 
+\end{array}\right)
+$$
+
+:::: {.callout collapse="true" title="Solución"}
+
+Puesto que el cálculo del determinante del [ejercicio anterior](#exr-44) es válido en $\mathbb{Z}_3$, cuando $\lambda=2$ la matriz tiene rango 4 (observamos que $2$ no es raíz del polinomio que tenemos descompuesto en factores lineales, y por tanto el determinante es distinto de $0$); en cambio, para los casos $\lambda=0,1$ (que son raíces del polinomio obtenido) es menor o igual que 3. Para estos casos calculamos el rango mediante operaciones elementales:
+
+$\boxed{\lambda=0}$
+
+
+$$
+A=\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+2 &0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 2 & 2 & 2 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+0 & 1 & 1 & 0\\
+1 &0 & 0 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 2 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 &1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$ 
+luego el rango es 3.
+
+$\boxed{\lambda=1}$
+
+$$
+A=\left( \begin{array}{cccc}
+2 & 1 & 1 & 0\\
+2 &2 & 0 & 0\\
+0 & 2 & 2 & 1\\
+0 & 2 & 2 & 1 
+\end{array}\right)\sim_{f}\left( \begin{array}{cccc}
+2 & 1 & 1 & 0\\
+0 &1 & 2 & 0\\
+0 & 2 & 2 & 1\\
+0 & 0 & 0 & 0 
+\end{array}\right)
+$$
+
+que tiene rango 3.
+
+::::
+:::::
+
+::::: {#exr-46 .basico-cuerpo_finito}
 
 Estudia para qué valores $a\in\mathbb{Z}_{11}$ los dos sistemas de ecuaciones siguientes tienen las mismas soluciones: 
 
@@ -5036,7 +5049,7 @@ Y vemos que si $a+5=7$, es decir, $a=2$, las matrices ampliadas de ambos sistema
 ::::
 :::::
 
-::::: {#exr-46 .basico-cuerpo_finito}
+::::: {#exr-47 .basico-cuerpo_finito}
 
 Dado el sistema de ecuaciones con coeficientes en $\mathbb{Z}_5$:
 $$
@@ -5149,7 +5162,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-47 .basico-cuerpo_finito}
+::::: {#exr-48 .basico-cuerpo_finito}
 
 Sea 
 $$
@@ -5274,7 +5287,7 @@ $0,1,2,3,4$ en $\mathbb{Z}_5$:
 ::::
 :::::
 
-::::: {#exr-48 .basico-cuerpo_finito}
+::::: {#exr-49 .basico-cuerpo_finito}
 
 Calcula el rango de la siguiente matriz en función del parámetro $\lambda$:
 
@@ -5370,7 +5383,7 @@ Entonces:
 ::::
 :::::
 
-::::: {#exr-49 .basico-cuerpo_finito}
+::::: {#exr-50 .basico-cuerpo_finito}
 
 Dado el sistema de ecuaciones con coeficientes en $\mathbb{Z}_3$:
 $$
@@ -5422,7 +5435,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-50 .basico}
+::::: {#exr-51 .basico}
 
 Demuestra que si $A$ es una matriz cuadrada tal que $A^2 = 0$, entonces $\operatorname{Id} - A$ es regular.
 
@@ -5439,7 +5452,7 @@ Por tanto, $\operatorname{Id} - A$ es regular y su inversa es $\operatorname{Id}
 ::::
 :::::
 
-::::: {#exr-51 .basico-cuerpo_finito}
+::::: {#exr-52 .basico-cuerpo_finito}
 
 Calcula el rango de la siguiente matriz en función del parámetro $\lambda$:
 
@@ -5533,7 +5546,7 @@ $$
 ::::
 :::::
 
-::::: {#exr-52 .basico-cuerpo_finito}
+::::: {#exr-53 .basico-cuerpo_finito}
 
 Dado el siguiente sistema de ecuaciones con coeficientes en $\mathbb{Z}_{5}$
 
@@ -5662,7 +5675,7 @@ Como la incógnita $z$ queda libre, tenemos 5 soluciones (una para cada valor de
 ::::
 :::::
 
-::::: {#exr-53 .medio}
+::::: {#exr-54 .medio}
 
 Sean $A=\left (\begin{array}{rrr} -1 & 1 & 2 \\ -2 & 3 & 7 \end{array}\right )$ y $B=\left (\begin{array}{rrr} 1 & 2 & a+6 \\ 0 & -1 & -3 \end{array}\right )$ dos matrices $2\times 3$ con coeficientes en ${\mathbb Q}$.
 
@@ -5697,7 +5710,7 @@ Y vemos que si $a=1$ ambas formas escalonadas coinciden. Por tanto, para $a=1$ e
 ::::
 :::::
 
-::::: {#exr-54 .medio-cuerpo_finito}
+::::: {#exr-55 .medio-cuerpo_finito}
 
 Discute el siguiente sistema de ecuaciones en $\mathbb{Z}_{3}$ en función del valor de $a$ :
 
