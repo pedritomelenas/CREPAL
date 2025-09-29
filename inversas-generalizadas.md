@@ -40,6 +40,52 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
 })
 </script>
 
+::: {.callout-tip collapse="true" title="GLOSARIO" icon="false" .table_glossary}
+
+<table>
+    <thead>
+        <tr>
+            <th>Término</th>
+            <th>Sinónimos / Notación</th>
+            <th>Definición / Referencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Inversa a izquierda de una matriz<br>Inversa a derecha de una matriz</td>
+            <td>$A^{L}$<br>$A^{R}$</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Matriz de rango pleno por filas (columnas)</td>
+            <td><br></td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Descomposición de rango pleno</td>
+            <td></td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Inversa de Moore-Penrose</td>
+            <td>$A^\dagger$</td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Solución de norma mínima de un sistema de ec. lineales</td>
+            <td><br></td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a></td>
+        </tr>
+        <tr>
+            <td>Solución mínimo-cuadrática de norma mínima</td>
+            <td><br></td>
+            <td><a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a></td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
 ::::: {#exr-1 .basico}
 
 Estudia si estas matrices tienen inversa a izquierda o a derecha o ninguna de ellas. 
