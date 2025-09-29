@@ -557,6 +557,103 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
   }
 })
 </script>
+<div class="table_glossary callout callout-style-default callout-tip no-icon callout-titled" title="GLOSARIO">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>GLOSARIO
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table>
+<thead>
+<tr>
+<th>
+Término
+</th>
+<th>
+Sinónimos / Notación
+</th>
+<th>
+Definición / Referencias
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Inversa a izquierda de una matriz<br>Inversa a derecha de una matriz
+</td>
+<td>
+<span class="math inline">\(A^{L}\)</span><br><span class="math inline">\(A^{R}\)</span>
+</td>
+<td>
+<a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a>
+</td>
+</tr>
+<tr>
+<td>
+Matriz de rango pleno por filas (columnas)
+</td>
+<td>
+<br>
+</td>
+<td>
+<a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a>
+</td>
+</tr>
+<tr>
+<td>
+Descomposición de rango pleno
+</td>
+<td>
+</td>
+<td>
+<a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a>
+</td>
+</tr>
+<tr>
+<td>
+Inversa de Moore-Penrose
+</td>
+<td>
+<span class="math inline">\(A^\dagger\)</span>
+</td>
+<td>
+<a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a>
+</td>
+</tr>
+<tr>
+<td>
+Solución de norma mínima de un sistema de ec. lineales
+</td>
+<td>
+<br>
+</td>
+<td>
+<a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a>
+</td>
+</tr>
+<tr>
+<td>
+Solución mínimo-cuadrática de norma mínima
+</td>
+<td>
+<br>
+</td>
+<td>
+<a href="https://pedritomelenas.github.io/Algebra-Lineal/6-descomposicion-diagonalizacion/">Web del profesor Pedro García</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <div id="exr-1" class="basico theorem exercise">
 <p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Estudia si estas matrices tienen inversa a izquierda o a derecha o ninguna de ellas. <span class="math display">\[A_1=\left( \begin{array}{rrr}
 1 &amp; 2 &amp; 3\\
@@ -575,7 +672,7 @@ A_3=\left( \begin{array}{rrrrr}
 \end{array}\right)
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -584,7 +681,7 @@ A_3=\left( \begin{array}{rrrrr}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Una matriz tiene inversa a izquierda si, y solo si, es de rango pleno por columnas (es decir, su rango coincide con el número de columnas) y tiene inversa a derecha si, y solo si, es de rango pleno por filas. Calculamos los rangos de cada una de las matrices:</p>
 <p><span class="math display">\[
@@ -650,7 +747,7 @@ A_3=\left( \begin{array}{rrrrr}
 \end{array}\right)
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -659,7 +756,7 @@ A_3=\left( \begin{array}{rrrrr}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>En primer lugar comprobamos que existe, calculando el rango de la matriz:</p>
 <p><span class="math display">\[
@@ -836,7 +933,7 @@ A^L = \left(\begin{array}{rrr}
 \end{array}\right)
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -845,7 +942,7 @@ A^L = \left(\begin{array}{rrr}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Si calculamos la forma escalonada reducida por columnas de esta matriz (en este caso mediante un software adecuado) junto con una matriz de paso obtenemos</p>
 <p><span class="math display">\[
@@ -899,7 +996,7 @@ B=\left( \begin{array}{rrr}
 \end{array}\right)
 \]</span></p>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -908,7 +1005,7 @@ B=\left( \begin{array}{rrr}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Comenzamos calculando la forma escalonada reducida por filas de <span class="math inline">\(A\)</span> y una matriz de paso <span class="math inline">\(Q\)</span>: <span class="math display">\[
 \left( \begin{array}{rr|rr}
@@ -1053,7 +1150,7 @@ Encuentra la única solución mínimo-cuadrática del sistema.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1062,7 +1159,7 @@ Encuentra la única solución mínimo-cuadrática del sistema.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1161,7 +1258,7 @@ Encuentra la solución de norma mínima del sistema.
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1170,7 +1267,7 @@ Encuentra la solución de norma mínima del sistema.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1240,7 +1337,7 @@ Para <span class="math inline">\(b=(1,1,1,1)\)</span>, calcula la solución mín
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1249,7 +1346,7 @@ Para <span class="math inline">\(b=(1,1,1,1)\)</span>, calcula la solución mín
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
@@ -1319,7 +1416,7 @@ Para <span class="math inline">\(b=(1,2,3,4)^t\)</span>, calcula la solución m�
 </li>
 </ol>
 <div class="callout callout-style-simple callout-none no-icon callout-titled" title="Solución">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1328,7 +1425,7 @@ Para <span class="math inline">\(b=(1,2,3,4)^t\)</span>, calcula la solución m�
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
 <li>
