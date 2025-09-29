@@ -58,6 +58,62 @@ $('#titulacion').on('hide.bs.dropdown', ({ clickEvent }) => {
 })
 </script>
 
+::: {.callout-tip collapse="true" title="GLOSARIO" icon="false" .table_glossary}
+
+<table>
+    <thead>
+        <tr>
+            <th>Término</th>
+            <th>Sinónimos / Notación</th>
+            <th>Definición / Referencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Endomorfismo</td>
+            <td><br></td>
+            <td>Aplicación lineal en la que el espacio de partida y el de llegada son el mismo</td>
+        </tr>
+        <tr>
+            <td>Matrices semejantes</td>
+            <td><br></td>
+            <td>$A$ y $C$ lo son cuando existe $P$ regular tal que $C=P^{-1}AP$</td>
+        </tr>
+        <tr>
+            <td>Polinomio característico de una matriz</td>
+            <td></td>
+            <td>$p(\lambda)=|A-\lambda I|$</td>
+        </tr>
+        <tr>
+            <td>Valor propio</td>
+            <td>Autovalor</td>
+            <td><a href="https://www.ugr.es/~lmerino/5-2.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Vector propio (asociado a un valor propio)</td>
+            <td>Autovector<br>Eigenvector</td>
+            <td><a href="https://www.ugr.es/~lmerino/5-2.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Subespacio propio (asociado al valor propio $\lambda$)</td>
+            <td>$V_{\lambda}$</td>
+            <td><a href="https://www.ugr.es/~lmerino/5-2.html">Apuntes del profesor Luis Merino</a></td>
+        </tr>
+        <tr>
+            <td>Multiplicidad algebraica de un valor propio</td>
+            <td><br></td>
+            <td>Multiplicad como raíz del polinomio característico</td>
+        </tr>
+        <tr>
+            <td>Multiplicidad geométrica de un valor propio</td>
+            <td><br></td>
+            <td>Dimensión del subespacio propio asociado</td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
 ::::: {#exr-1 .cuerpo_finito-medio}
 
 Se considera la matriz sobre $\mathbb{Z}_5$: 

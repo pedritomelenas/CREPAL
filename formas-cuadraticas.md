@@ -20,6 +20,52 @@ format:
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_medio" value="medioon" checked onclick="mostrar();"> Dificultad media </button>
 <button class="btn btn-outline-secondary btn-sm mb-2"><input type="checkbox" id="casilla_avanzado" value="avanzadon" checked onclick="mostrar();"> Avanzados. </button>
 
+::: {.callout-tip collapse="true" title="GLOSARIO" icon="false" .table_glossary}
+
+<table>
+    <thead>
+        <tr>
+            <th>Término</th>
+            <!--<th>Sinónimos / Notación</th>-->
+            <th>Definición / Referencias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Forma bilineal</td>
+            <!-- <td><br></td> -->
+            <td><a href="https://www2.montes.upm.es/Dptos/DMat/antonia/algebra/curso06-07/TFB07.PDF">Apuntes de la profesora Antonia González (UPM)</a></td>
+        </tr>
+        <tr>
+            <td>Forma cuadrática</td>
+            <!-- <td><br></td> -->
+            <td><a href="https://www2.montes.upm.es/Dptos/DMat/antonia/algebra/curso06-07/TFB07.PDF">Apuntes de la profesora Antonia González (UPM)</a></td>
+        </tr>
+        <tr>
+            <td>Matriz asociada a una forma cuadrática</td>
+            <!-- <td></td> -->
+            <td><a href="https://www2.montes.upm.es/Dptos/DMat/antonia/algebra/curso06-07/TFB07.PDF">Apuntes de la profesora Antonia González (UPM)</a></td>
+        </tr>
+        <tr>
+            <td>Matrices congruentes</td>
+            <!-- <td></td> -->
+            <td>$A$ y $C$ son congruentes cuando existe $P$ regular tal que $C=P^tAP$</td>
+        </tr>
+        <tr>
+            <td>Ley de inercia de Sylvester</td>
+            <!-- <td></td> -->
+            <td><a href="https://es.wikipedia.org/wiki/Ley_de_inercia_de_Sylvester">Wikipedia: Ley de inercia de Sylvester</a></td>
+        </tr>
+        <tr>
+            <td>Signatura de una matriz simétrica</td>
+            <!-- <td><br></td> -->
+            <td><a href="https://es.wikipedia.org/wiki/Ley_de_inercia_de_Sylvester">Wikipedia: Ley de inercia de Sylvester</a></td>
+        </tr>
+    </tbody>
+</table>
+
+:::
+
 ::::: {#exr-1 .medio}
 
 Determina, en función de  $b$, la signatura de la forma cuadrática $\phi:\mathbb{R}^{2} \to \mathbb{R}$ dada por 
