@@ -1,5 +1,5 @@
 ---
-title: Otros
+title: Miscelánea
 lang: es
 format:
    html:
@@ -1885,13 +1885,15 @@ También puede emplearse cualquier otro método (descomponer en dos vectores uno
 ::::
 :::::
 
-::::: {#exr-o14 medio-cuerpo_finito}
+::::: {#exr-o14}
 
 De una aplicación lineal $f : (\mathbb{Z}_5)^3 \to (\mathbb{Z}_5)^3$ sabemos que:
 
-$$
-(2,3,1) \in N(f), \quad (1,2,4) \text{ es vector propio de valor propio } 2, \quad f(1,1,1)=(4,0,3).
-$$
+<ul>
+<li> $(2,3,1) \in N(f)$ </li>
+<li> $(1,2,4)$ es vector propio del valor propio $2$ </li>
+<li> $f(1,1,1)=(4,0,3)$ </li>
+</ul>
 
 <ol type="a">
 <li> Calcula la matriz de $f$ en la base canónica.</li>
