@@ -2,12 +2,6 @@
 title: "Álgebra Lineal"
 ---
 
-Los ejercicios aquí mostrados han sido amablemente proporcionados por [Evangelina Santos](https://www.ugr.es/~esantos/) y maquetados por [Juan Rivas](https://github.com/MrRiversGit) (becario de colaboración), [Juan Francisco Ocaña Rivas](https://github.com/jfocana) (prácticas ÍCARO) y [Pedro A. García Sánchez](https://github.com/pedritomelenas).
-
-En los repositorios <a href="https://github.com/pedritomelenas/R-algebra-lineal">Álgebra lineal con R</a> y <a href="https://github.com/pedritomelenas/Python-algebra-lineal">Álgebra lineal con Python</a> se encuentran ejemplos hechos en <code>R</code> y <code>Python</code> que complementan los ejercicios que aquí se proponen.
-
-Los cuestionarios de autoevaluación están hechos con <a href="https://app.lumi.education/">LUMI</a>, plataforma que utiliza <a href="https://h5p.org/">h5p</a>.
-
 Los contenidos de este repositorio forman parte del Proyecto de Innovación Docente PID-24-117 "Creación de Repositorio de Ejercicios para Álgebra Lineal (CREPAL)" aprobado en la convocatoria 2024-25 (Plan AcademiaUGR) de la Universidad de Granada.
 
 Los componentes del equipo son 
@@ -16,5 +10,12 @@ Los componentes del equipo son
 - Jesús García Miranda
 - Pedro A. García Sánchez
 - Luis M. Merino González
+
+
+Los ejercicios aquí mostrados han sido maquetados por [Juan Rivas](https://github.com/MrRiversGit) (becario de colaboración), [Juan Francisco Ocaña Rivas](https://github.com/jfocana) (prácticas ÍCARO) y [Pedro A. García Sánchez](https://github.com/pedritomelenas).
+
+En los repositorios <a href="https://github.com/pedritomelenas/R-algebra-lineal">Álgebra lineal con R</a> y <a href="https://github.com/pedritomelenas/Python-algebra-lineal">Álgebra lineal con Python</a> se encuentran ejemplos hechos en <code>R</code> y <code>Python</code> que complementan los ejercicios que aquí se proponen.
+
+Los cuestionarios de autoevaluación están hechos con <a href="https://app.lumi.education/">LUMI</a>, plataforma que utiliza <a href="https://h5p.org/">h5p</a>.
 
 Si detecta algún error, por favor informe a través del <a href="https://github.com/pedritomelenas/CREPAL/issues">portal de errores</a> de este <a href="https://github.com/pedritomelenas/CREPAL">repositorio</a>.
