@@ -18,4 +18,4 @@ En los repositorios <a href="https://github.com/pedritomelenas/R-algebra-lineal"
 
 Los cuestionarios de autoevaluación están hechos con <a href="https://app.lumi.education/">LUMI</a>, plataforma que utiliza <a href="https://h5p.org/">h5p</a>.
 
-Si detecta algún error, por favor informe a través del <a href="https://github.com/pedritomelenas/CREPAL/issues">portal de errores</a> de este <a href="https://github.com/pedritomelenas/CREPAL">repositorio</a>.
+Si detecta algún error, por favor informe a través del <a href="https://github.com/pedritomelenas/CREPAL/issues" target="_blank">portal de errores</a> de este <a href="https://github.com/pedritomelenas/CREPAL">repositorio</a>.
