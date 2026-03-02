@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/espacios-vectoriales.html</loc>
-    <lastmod>2025-10-02T15:53:07.632Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/espacio-euclideo.html</loc>
-    <lastmod>2025-10-02T15:53:07.631Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/aplicaciones-lineales.html</loc>
-    <lastmod>2025-10-02T15:53:07.582Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/index.html</loc>
-    <lastmod>2025-10-02T15:53:07.632Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/inversas-generalizadas.html</loc>
-    <lastmod>2025-10-02T15:53:07.632Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pedritomelenas.github.io/CREPAL/resueltos-examenes.html</loc>
-    <lastmod>2025-10-02T15:53:07.633Z</lastmod>
-  </url>
-  <url>
     <loc>https://pedritomelenas.github.io/CREPAL/matrices-sistemas.html</loc>
-    <lastmod>2025-10-02T15:53:07.633Z</lastmod>
+    <lastmod>2026-03-02T09:29:36.702Z</lastmod>
   </url>
   <url>
     <loc>https://pedritomelenas.github.io/CREPAL/instrucciones.html</loc>
-    <lastmod>2025-10-02T15:53:07.632Z</lastmod>
+    <lastmod>2025-02-24T08:10:44.354Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/espacio-euclideo.html</loc>
+    <lastmod>2026-03-02T09:29:36.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/inversas-generalizadas.html</loc>
+    <lastmod>2026-03-02T09:29:36.701Z</lastmod>
   </url>
   <url>
     <loc>https://pedritomelenas.github.io/CREPAL/formas-cuadraticas.html</loc>
-    <lastmod>2025-10-02T15:53:07.632Z</lastmod>
+    <lastmod>2026-03-02T09:29:36.700Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/resueltos-examenes.html</loc>
+    <lastmod>2026-03-02T09:29:36.703Z</lastmod>
   </url>
   <url>
     <loc>https://pedritomelenas.github.io/CREPAL/diagonalizacion-semejanza.html</loc>
-    <lastmod>2025-10-02T15:53:07.631Z</lastmod>
+    <lastmod>2026-03-02T09:29:36.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/index.html</loc>
+    <lastmod>2026-03-02T09:31:11.337Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/aplicaciones-lineales.html</loc>
+    <lastmod>2026-03-02T09:29:36.645Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pedritomelenas.github.io/CREPAL/espacios-vectoriales.html</loc>
+    <lastmod>2026-03-02T09:29:36.699Z</lastmod>
   </url>
 </urlset>
